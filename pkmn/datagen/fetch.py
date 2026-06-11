@@ -77,6 +77,18 @@ CURATED_ITEMS = {
     "poke-ball":     {"name": "Poke Ball", "category": "ball", "ball_rate": 1.0},
     "great-ball":    {"name": "Great Ball", "category": "ball", "ball_rate": 1.5},
     "ultra-ball":    {"name": "Ultra Ball", "category": "ball", "ball_rate": 2.0},
+    # ── held items (battle effects implemented in pkmn/battle/passives.py) ──
+    "leftovers":     {"name": "Leftovers", "category": "held"},
+    "oran-berry":    {"name": "Oran Berry", "category": "held"},
+    "sitrus-berry":  {"name": "Sitrus Berry", "category": "held"},
+    "lum-berry":     {"name": "Lum Berry", "category": "held"},
+    "choice-band":   {"name": "Choice Band", "category": "held"},
+    "choice-specs":  {"name": "Choice Specs", "category": "held"},
+    "choice-scarf":  {"name": "Choice Scarf", "category": "held"},
+    "life-orb":      {"name": "Life Orb", "category": "held"},
+    "focus-sash":    {"name": "Focus Sash", "category": "held"},
+    "scope-lens":    {"name": "Scope Lens", "category": "held"},
+    "razor-claw":    {"name": "Razor Claw", "category": "held"},
 }
 
 
@@ -201,7 +213,10 @@ def build_from_csv(out: str, cache: str, *, log=print) -> None:
         if int(r["generation_id"]) > GEN or mid >= 10000:
             continue
         type_id = int(r["type_id"])
-        if type_id not in gen5_types and type_id != 10001:  # 10001 == shadow
+        # 18 == fairy: Gen <=5 moves retyped to fairy in Gen 6 (Sweet Kiss,
+        # Charm, Moonlight) get their original type restored by the
+        # changelog walk below; true fairy moves die at the post-walk check.
+        if type_id not in gen5_types and type_id not in (18, 10001):
             continue
         vals = {"power": _i(r["power"]), "pp": _i(r["pp"]),
                 "accuracy": _i(r["accuracy"]), "priority": int(r["priority"]),

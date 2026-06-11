@@ -1,0 +1,27 @@
+{
+ "id": "sweet-kiss",
+ "name": "Sweet Kiss",
+ "type": "normal",
+ "category": "status",
+ "power": null,
+ "accuracy": 75,
+ "pp": 10,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "protect"
+ ],
+ "effect": {
+  "kind": "ailment",
+  "ailment": "confusion",
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

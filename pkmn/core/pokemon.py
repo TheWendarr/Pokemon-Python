@@ -49,6 +49,7 @@ class PokemonState:
     current_hp: int = -1             # -1 -> set to max on bind
     status: Optional[str] = None
     nickname: Optional[str] = None
+    held_item: Optional[str] = None
 
     # Derived (filled by bind()):
     stats: dict = field(default_factory=dict, repr=False)
@@ -88,8 +89,12 @@ class PokemonState:
             moves = species.level_up_moves(level)[-4:]  # last four learned
         slots = []
         for mid in moves[:4]:
+            if not data.has_move(mid):
+                continue  # tolerate dataset gaps in learnsets
             md = data.move(mid)
             slots.append(MoveSlot(md.id, md.pp, md.pp))
+        if not slots:
+            slots.append(MoveSlot("tackle", 35, 35))
         ps = PokemonState(species_id=species.id, level=level, ivs=ivs, evs=evs,
                           nature=nature, ability=ability, moves=slots)
         return ps.bind(data)
@@ -141,6 +146,7 @@ class PokemonState:
             "current_hp": self.current_hp,
             "status": self.status,
             "nickname": self.nickname,
+            "held_item": self.held_item,
         }
 
     @staticmethod
@@ -163,6 +169,7 @@ class PokemonState:
             current_hp=int(d.get("current_hp", -1)),
             status=d.get("status"),
             nickname=d.get("nickname"),
+            held_item=d.get("held_item"),
         )
         # Fill missing IV/EV keys so partial save data can't KeyError.
         from ..data.models import norm_stat

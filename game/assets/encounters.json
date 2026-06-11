@@ -1,0 +1,28 @@
+{
+ "route1": [
+  {
+   "species": "patrat",
+   "min": 3,
+   "max": 5,
+   "weight": 35
+  },
+  {
+   "species": "lillipup",
+   "min": 3,
+   "max": 5,
+   "weight": 35
+  },
+  {
+   "species": "purrloin",
+   "min": 4,
+   "max": 6,
+   "weight": 20
+  },
+  {
+   "species": "pidove",
+   "min": 4,
+   "max": 6,
+   "weight": 10
+  }
+ ]
+}

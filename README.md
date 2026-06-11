@@ -4,10 +4,21 @@ A Gen 4/5-style Pokemon engine and (eventually) game-authoring toolkit,
 written in Python. Ground-up rewrite — the original prototype's code was
 used as inspiration only.
 
-**Phase 1 status: battle engine, done right.** Full Gen 5 damage model,
-statuses, stat stages, priority/speed ordering, PP and Struggle, switching,
-items, fleeing and catching in wild battles — pure, deterministic, and
-covered by 50 tests. See `docs/ROADMAP.md` for what comes next.
+**Phase 3 status: playable overworld.** `python -m pkmn.game.play`
+opens a Pygame-CE window: walk Hexton town, head north into Route 1's
+tall grass, and fight or catch wild Pokemon with a full battle UI.
+Arrows/WASD move, Z/Enter confirms, X/Esc cancels. Requires
+`pip install pygame-ce pytmx`; regenerate placeholder art and Tiled
+maps any time with `python tools/make_assets.py`.
+
+**Phase 2 status: battle completeness.** Everything from Phase 1 (full
+Gen 5 damage model, statuses, stages, priority ordering, PP/Struggle,
+switching, items, fleeing, catching) plus abilities, held items,
+weather, entry hazards, screens, Protect, two-turn/recharge/rampage
+moves, trapping, and ~50 special-case move handlers — pure,
+deterministic, covered by 91 tests, with a 3.6% unimplemented-effect
+rate across the full Gen 5 movepool (`python -m pkmn.cli.coverage`).
+See `docs/ROADMAP.md` for what comes next.
 
 ## Quickstart
 

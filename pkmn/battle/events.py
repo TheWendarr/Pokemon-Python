@@ -57,6 +57,27 @@ class E(str, Enum):
     CATCH_SUCCESS = "catch_success"
     CATCH_FAIL = "catch_fail"
 
+    WEATHER_START = "weather_start"
+    WEATHER_DAMAGE = "weather_damage"
+    WEATHER_END = "weather_end"
+    HAZARD_SET = "hazard_set"
+    HAZARD_DAMAGE = "hazard_damage"
+    HAZARD_CLEARED = "hazard_cleared"
+    SCREEN_START = "screen_start"
+    SCREEN_END = "screen_end"
+    PROTECTED = "protected"              # data: setup True/False
+    CHARGING = "charging"                # two-turn move, turn 1
+    RECHARGING = "recharging"            # Hyper Beam family rest turn
+    DRAGGED = "dragged"                  # Roar/Whirlwind forced switch
+    LEECH_SEED = "leech_seed"
+    LEECH_DRAIN = "leech_drain"
+    TRAPPED = "trapped"
+    TRAP_DAMAGE = "trap_damage"
+    TRAP_END = "trap_end"
+    STAGES_RESET = "stages_reset"        # Haze
+    ABILITY = "ability"                  # generic ability proc
+    ITEM_HELD = "item_held"              # held-item proc
+
     EFFECT_SKIPPED = "effect_skipped"    # honest marker for unimplemented effects
     BATTLE_END = "battle_end"
 

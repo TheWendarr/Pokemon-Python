@@ -119,6 +119,57 @@ def format_event(ev: Event) -> str | None:
         return "Oh no! It broke free!"
     if t == E.BATTLE_END:
         return f"\n=== Battle over: {d['winner']} ==="
+    if t == E.WEATHER_START:
+        return {"rain": "It started to rain!", "sun": "The sunlight turned harsh!",
+                "sandstorm": "A sandstorm kicked up!",
+                "hail": "It started to hail!"}[d["weather"]]
+    if t == E.WEATHER_DAMAGE:
+        w = "the sandstorm" if d["weather"] == "sandstorm" else "the hail"
+        return f"{s}{d['pokemon']} is buffeted by {w}! ({d['amount']})"
+    if t == E.WEATHER_END:
+        return {"rain": "The rain stopped.", "sun": "The sunlight faded.",
+                "sandstorm": "The sandstorm subsided.",
+                "hail": "The hail stopped."}[d["weather"]]
+    if t == E.HAZARD_SET:
+        nice = d["hazard"].replace("-", " ")
+        return f"{nice.title()} scattered around {WHO.get(ev.side, 'the')} side!"
+    if t == E.HAZARD_DAMAGE:
+        return (f"{s}{d['pokemon']} is hurt by {d['hazard'].replace('-', ' ')}!"
+                f" ({d['amount']})")
+    if t == E.HAZARD_CLEARED:
+        return f"The {d['hazard'].replace('-', ' ')} disappeared!"
+    if t == E.SCREEN_START:
+        return ("Reflect raised physical defense!" if d["screen"] == "reflect"
+                else "Light Screen raised special defense!")
+    if t == E.SCREEN_END:
+        return f"The {d['screen'].replace('-', ' ').title()} wore off!"
+    if t == E.PROTECTED:
+        return (f"{s}{d['pokemon']} protected itself!" if d.get("setup")
+                else f"{s}{d['pokemon']} protected itself from the attack!")
+    if t == E.CHARGING:
+        return f"{s}{d['pokemon']} is charging {d['move']}!"
+    if t == E.RECHARGING:
+        return f"{s}{d['pokemon']} must recharge!"
+    if t == E.DRAGGED:
+        return f"{s}{d['pokemon']} was dragged out!"
+    if t == E.LEECH_SEED:
+        return f"{s}{d['pokemon']} was seeded!"
+    if t == E.LEECH_DRAIN:
+        return f"{s}{d['pokemon']}'s health is sapped by Leech Seed! ({d['amount']})"
+    if t == E.TRAPPED:
+        return f"{s}{d['pokemon']} was trapped by {d['move']}!"
+    if t == E.TRAP_DAMAGE:
+        return f"{s}{d['pokemon']} is hurt by {d['move']}! ({d['amount']})"
+    if t == E.TRAP_END:
+        return f"{s}{d['pokemon']} was freed!"
+    if t == E.STAGES_RESET:
+        return "All stat changes were eliminated!"
+    if t == E.ABILITY:
+        extra = " It endured the hit!" if d.get("endure") else ""
+        return f"[{s}{d['pokemon']}'s {d['ability'].replace('-', ' ').title()}]{extra}"
+    if t == E.ITEM_HELD:
+        extra = " It hung on!" if d.get("endure") else ""
+        return f"[{s}{d['pokemon']}'s {d['item'].replace('-', ' ').title()}]{extra}"
     if t == E.EFFECT_SKIPPED:
         return f"({d['move']}: effect '{d['effect']}' not implemented yet)"
     return None

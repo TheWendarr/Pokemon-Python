@@ -86,3 +86,48 @@ Known simplifications (documented so they're decisions, not surprises):
 * `BattlePokemon` — held-item slot and ability triggers.
 * `MoveData.flags` already carries PokeAPI flags (`contact`, `protect`,
   `defrost`, ...) for ability/item interactions.
+
+## Phase 2 additions
+
+* **`pkmn/battle/passives.py`** — every ability and held-item hook in
+  one place (stat/power/speed modifiers, immunities and absorbs,
+  contact punishment, switch-in effects, end-of-turn residuals,
+  survive-lethal). Adding an ability usually touches only this file.
+* **`pkmn/battle/field.py`** — `SideState`: hazards (Spikes layers,
+  Toxic Spikes layers, Stealth Rock) and timed side conditions
+  (Reflect, Light Screen, Safeguard, Mist, Lucky Chant, Tailwind,
+  Healing Wish). Weather lives on the engine (whole-field).
+* **Two-turn flow** — charge/semi-invulnerable state, recharge turns,
+  and rampage locks are engine concerns (`_do_move`); `legal_actions`
+  reflects every lock (charging, recharging, rampaging, choice items,
+  Encore, Torment, Taunt, Imprison, trapping).
+* **Handler registry** — ~50 moves with bespoke behavior register via
+  `@handler("move-id")` in `moves.py`. Unknown effects still emit
+  `EFFECT_SKIPPED`, and `pkmn/cli/coverage.py` measures the honest gap.
+
+### Documented simplifications
+* Attract ignores gender (genders aren't modeled yet) and always takes.
+* Baton Pass sends a random able bench member (a client will prompt in
+  Phase 3); stages and passable volatiles carry over, hazards apply.
+* Mud/Water Sport last 5 turns instead of "while the user is active".
+* Weather moves ignore the duration-extending rocks (Damp Rock etc.).
+* Sleep counters tick on failed move attempts, not elapsed turns.
+
+## Phase 3 additions (`pkmn/game/`)
+
+* **`scene.py`** — `Game` shell + scene stack + an `Input` abstraction.
+  The pygame event pump only *feeds* Input, so tests drive the real
+  game frame by frame with SDL's dummy drivers — every client test runs
+  headless in CI.
+* **`tilemap.py`** — pytmx wrapper exposing the gameplay queries
+  (blocked / tall grass via tile properties; warps, NPCs, signs, spawn
+  via the object layer). Maps remain ordinary Tiled files.
+* **`overworld.py`** — grid movement with pixel interpolation, NPC
+  collision + interaction, warp handling, encounter rolls.
+* **`battle_scene.py`** — a state machine (msg/menu/moves/bag/party)
+  over the pure engine. Battle text comes from the same `format_event`
+  as the CLI demo; HP bars animate toward engine truth each frame. The
+  engine still never imports the client.
+* **`tools/make_assets.py`** — procedurally draws the tileset and
+  character strips and writes the .tmx maps, so the repo ships no
+  third-party art.

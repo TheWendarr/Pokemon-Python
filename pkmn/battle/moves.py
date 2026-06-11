@@ -4,17 +4,16 @@ Two layers:
 
 1. A data-driven interpreter that executes any move from its MoveEffect
    metadata (damage, multi-hit, drain/recoil, ailments, stat changes,
-   flinch, healing, fixed damage, OHKO). This covers the large majority
-   of Gen 4/5 moves with zero per-move code.
+   flinch, healing, fixed damage, OHKO, traps, force-switch).
 2. A handler registry (`@handler("rest")`) for moves whose behavior
-   can't be expressed in metadata. Phase 2 grows this registry (two-turn
-   moves, counters, field effects...). Unknown effect kinds emit an
-   EFFECT_SKIPPED event instead of silently misbehaving, so coverage
-   gaps are visible in logs and tests.
+   can't be expressed in metadata: Protect, weather moves, screens,
+   hazards, Explosion, Rapid Spin... Unknown effect kinds emit an
+   EFFECT_SKIPPED event instead of silently misbehaving.
 """
 from __future__ import annotations
 
 from ..data.models import MoveData, MoveEffect, STATUS
+from . import passives
 from .damage import accuracy_check, calc_damage
 from .events import E, Event
 from .state import BattlePokemon, other
@@ -28,11 +27,32 @@ STRUGGLE = MoveData(id="struggle", name="Struggle", type="typeless",
 CONFUSION_HIT = MoveData(id="confusion-self-hit", name="confusion", type="typeless",
                          category="physical", power=40, accuracy=None, pp=1)
 
+RECHARGE_PSEUDO = MoveData(id="recharge", name="Recharge", type="typeless",
+                           category="status", power=None, accuracy=None, pp=1)
+
 # ── Tables ───────────────────────────────────────────────────────────
 
 FIXED_DAMAGE = {"sonic-boom": 20, "dragon-rage": 40}
 LEVEL_DAMAGE = {"seismic-toss", "night-shade"}
-TOXIC_MOVES = {"toxic", "poison-fang"}  # ailment 'poison' upgraded to badly poisoned
+TOXIC_MOVES = {"toxic", "poison-fang"}
+
+# Two-turn moves: value is the semi-invulnerable state (or None = charge
+# in place). Solar Beam skips its charge turn in sun.
+CHARGE_MOVES = {"fly": "fly", "bounce": "bounce", "dig": "dig", "dive": "dive",
+                "solar-beam": None, "razor-wind": None, "sky-attack": None,
+                "skull-bash": None}
+# Moves that can hit a semi-invulnerable target: power multiplier applied.
+SEMI_HIT = {
+    "fly": {"gust": 2.0, "twister": 2.0, "thunder": 1.0, "hurricane": 1.0,
+            "sky-uppercut": 1.0},
+    "bounce": {"gust": 2.0, "twister": 2.0, "thunder": 1.0, "hurricane": 1.0,
+               "sky-uppercut": 1.0},
+    "dig": {"earthquake": 2.0, "magnitude": 2.0},
+    "dive": {"surf": 2.0, "whirlpool": 2.0},
+}
+RECHARGE_MOVES = {"hyper-beam", "giga-impact", "blast-burn", "frenzy-plant",
+                  "hydro-cannon", "rock-wrecker", "roar-of-time"}
+RAMPAGE_MOVES = {"thrash", "outrage", "petal-dance"}
 
 # Gen 2-5 status immunities by defender type.
 STATUS_TYPE_IMMUNITY = {
@@ -47,7 +67,6 @@ STATUS_TYPE_IMMUNITY = {
 VOLATILE_AILMENTS = {"confusion"}
 NONVOLATILE_AILMENTS = {"paralysis", "sleep", "freeze", "burn", "poison"}
 
-# Gen 5 multi-hit distribution for 2-5 hit moves.
 MULTI_HIT_WEIGHTS = ((2, 2), (3, 2), (4, 1), (5, 1))
 
 HANDLERS: dict = {}
@@ -62,15 +81,25 @@ def handler(move_id: str):
 
 # ── Status application ───────────────────────────────────────────────
 
+def _hits(eng, user, target, move) -> bool:
+    """Accuracy gate with Lock-On / Telekinesis sure-hit handling."""
+    if user.vol.lock_on:
+        user.vol.lock_on = False
+        return True
+    if target.vol.telekinesis_turns > 0:
+        return True
+    return accuracy_check(move, user, target, rng=eng.rng, weather=eng.weather)
+
+
 def apply_status(eng, target: BattlePokemon, status: str, events, *,
-                 source_side: str | None = None, turns: int | None = None) -> bool:
+                 turns: int | None = None) -> bool:
     """Apply a non-volatile status with Gen 5 rules. Returns success."""
-    if target.fainted:
-        return False
-    if target.status is not None:
+    if target.fainted or target.status is not None:
         return False
     immune_types = STATUS_TYPE_IMMUNITY.get(status, set())
     if any(t in immune_types for t in target.types):
+        return False
+    if passives.status_blocked(target, status):
         return False
     target.status = status
     if status == "toxic":
@@ -79,6 +108,7 @@ def apply_status(eng, target: BattlePokemon, status: str, events, *,
         target.vol.sleep_turns = turns if turns is not None else eng.rng.randint(1, 3)
     events.append(Event(E.STATUS_APPLIED, eng.side_of(target),
                         {"status": status, "pokemon": target.name}))
+    passives.check_lum(eng, target, events)
     return True
 
 
@@ -87,11 +117,19 @@ def apply_ailment(eng, user: BattlePokemon, target: BattlePokemon,
     ailment = move.effect.ailment
     if not ailment or ailment == "none":
         return
+    if target is not user and ailment in NONVOLATILE_AILMENTS | {"confusion"} \
+            and eng.sides[eng.side_of(target)].safeguard > 0:
+        if move.category == STATUS:
+            events.append(Event(E.MOVE_FAILED, eng.side_of(user),
+                                {"move": move.name, "safeguard": True}))
+        return
     if ailment == "confusion":
-        if target.vol.confusion_turns <= 0 and not target.fainted:
+        if target.vol.confusion_turns <= 0 and not target.fainted \
+                and not passives.confusion_blocked(target):
             target.vol.confusion_turns = eng.rng.randint(2, 5)
             events.append(Event(E.CONFUSED, eng.side_of(target),
                                 {"pokemon": target.name, "start": True}))
+            passives.check_lum(eng, target, events)
         return
     if ailment in NONVOLATILE_AILMENTS:
         status = "toxic" if (ailment == "poison" and move.id in TOXIC_MOVES) else ailment
@@ -99,17 +137,39 @@ def apply_ailment(eng, user: BattlePokemon, target: BattlePokemon,
         if not ok and move.category == STATUS:
             events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
         return
-    # trap / leech-seed / infatuation / etc. -- Phase 2
+    if ailment == "leech-seed":
+        if "grass" in target.types or target.vol.leech_seeded:
+            events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        else:
+            target.vol.leech_seeded = True
+            events.append(Event(E.LEECH_SEED, eng.side_of(target),
+                                {"pokemon": target.name}))
+        return
+    if ailment == "infatuation":
+        # Simplification: genders aren't modeled yet, so Attract always
+        # takes (documented in ARCHITECTURE.md).
+        if not target.vol.infatuated and not target.fainted:
+            target.vol.infatuated = True
+            events.append(Event(E.CONFUSED, eng.side_of(target),
+                                {"pokemon": target.name, "start": True,
+                                 "infatuated": True}))
+        return
+    if ailment == "trap":
+        if target.vol.trap_turns <= 0 and not target.fainted:
+            target.vol.trap_turns = eng.rng.randint(4, 5)
+            target.vol.trap_name = move.name
+            events.append(Event(E.TRAPPED, eng.side_of(target),
+                                {"pokemon": target.name, "move": move.name}))
+        return
+    # disable / encore / infatuation / etc. -- later phases
     events.append(Event(E.EFFECT_SKIPPED, eng.side_of(user),
                         {"move": move.id, "effect": ailment}))
 
 
-def apply_stat_changes(eng, user, target, move: MoveData, events) -> None:
+def apply_stat_changes(eng, user, target, move: MoveData, events, *,
+                       chance_mult: float = 1.0) -> None:
     eff = move.effect
     if not eff.stat_changes:
-        return
-    chance = eff.stat_chance or 100
-    if eng.rng.randint(1, 100) > chance:
         return
     # PokeAPI convention: for damaging moves, 'damage+raise' stat changes
     # apply to the USER (incl. Superpower/Overheat's self-drops), while
@@ -119,8 +179,20 @@ def apply_stat_changes(eng, user, target, move: MoveData, events) -> None:
         recipient = user if kind == "damage-raise" else target
     else:
         recipient = user if move.targets_user else target
+    chance = eff.stat_chance or 100
+    if chance < 100:
+        mult = passives.secondary_mult(user, recipient is target, target)
+        chance = chance * mult
+    if eng.rng.randint(1, 100) > chance:
+        return
+    misted = (recipient is target and recipient is not user
+              and eng.sides[eng.side_of(recipient)].mist > 0)
     for sc in eff.stat_changes:
         if recipient.fainted:
+            continue
+        if misted and sc.change < 0:
+            events.append(Event(E.MOVE_FAILED, eng.side_of(user),
+                                {"move": move.name, "mist": True}))
             continue
         applied = recipient.modify_stage(sc.stat, sc.change)
         side = eng.side_of(recipient)
@@ -139,6 +211,25 @@ def apply_stat_changes(eng, user, target, move: MoveData, events) -> None:
 
 def deal_damage(eng, target: BattlePokemon, amount: int, events,
                 detail: dict | None = None) -> int:
+    if amount >= target.current_hp and target.vol.endured:
+        amount = target.current_hp - 1
+        events.append(Event(E.PROTECTED, eng.side_of(target),
+                            {"pokemon": target.name, "setup": False,
+                             "endure": True}))
+    if amount >= target.current_hp:
+        survive = passives.survives_lethal(target)
+        if survive:
+            kind, name = survive
+            amount = target.current_hp - 1
+            if kind == "item":
+                target.state.held_item = None
+                events.append(Event(E.ITEM_HELD, eng.side_of(target),
+                                    {"item": name, "pokemon": target.name,
+                                     "endure": True}))
+            else:
+                events.append(Event(E.ABILITY, eng.side_of(target),
+                                    {"ability": name, "pokemon": target.name,
+                                     "endure": True}))
     dealt = target.take_damage(amount)
     ev = {"pokemon": target.name, "amount": dealt,
           "remaining_hp": target.current_hp, "max_hp": target.max_hp}
@@ -147,6 +238,7 @@ def deal_damage(eng, target: BattlePokemon, amount: int, events,
                    "effectiveness": detail.get("effectiveness", 1.0)})
     events.append(Event(E.DAMAGE, eng.side_of(target), ev))
     eng.announce_faint(target, events)
+    passives.check_hp_berry(eng, target, events)
     return dealt
 
 
@@ -161,21 +253,59 @@ def roll_hits(eng, eff: MoveEffect) -> int:
     return eng.rng.randint(eff.min_hits, eff.max_hits)
 
 
+def force_switch(eng, target_side: str, events) -> bool:
+    """Roar/Whirlwind/Dragon Tail. Wild battles end; trainer battles drag
+    a random able benched Pokemon in."""
+    if eng.wild:
+        events.append(Event(E.RUN_SUCCESS, target_side, {"forced": True}))
+        eng._end_battle("escaped", events)
+        return True
+    bench = eng.bench(target_side)
+    if not bench:
+        return False
+    old = eng.active(target_side)
+    old.on_switch_out()
+    eng.active_idx[target_side] = eng.rng.choice(bench)
+    events.append(Event(E.DRAGGED, target_side,
+                        {"pokemon": eng.active(target_side).name}))
+    events.append(eng._send_in_event(target_side))
+    eng._switch_in_effects(target_side, events)
+    return True
+
+
 # ── Main entry ───────────────────────────────────────────────────────
 
-def execute_move(eng, side: str, move: MoveData, events) -> None:
-    """Execute `move` by the active Pokemon on `side`. Incapacity checks
-    (sleep/para/etc.) and PP accounting happen in the engine before this."""
+def execute_move(eng, side: str, move: MoveData, events,
+                 power_mult: float = 1.0) -> None:
+    """Execute `move` by the active Pokemon on `side`. Incapacity checks,
+    PP, and two-turn/rampage bookkeeping happen in the engine before this."""
     user = eng.active(side)
     target = eng.active(other(side))
 
     events.append(Event(E.MOVE_USED, side, {"pokemon": user.name, "move": move.name}))
 
+    targets_foe = not move.targets_user
+
+    # Protection blocks foe-targeted moves carrying the 'protect' flag.
+    if targets_foe and target.vol.protected and "protect" in move.flags:
+        events.append(Event(E.PROTECTED, eng.side_of(target),
+                            {"pokemon": target.name, "setup": False}))
+        return
+
+    # Semi-invulnerable target (Fly/Dig/...): auto-miss unless excepted.
+    semi = target.vol.semi_invulnerable
+    if targets_foe and semi:
+        mult = SEMI_HIT.get(semi, {}).get(move.id)
+        if mult is None:
+            events.append(Event(E.MOVE_MISSED, side, {"move": move.name}))
+            return
+        power_mult *= mult
+
     if move.id in HANDLERS:
         HANDLERS[move.id](eng, user, target, move, events)
         return
 
-    kind = move.effect.kind
+    kind = move.effect.kind.replace("+", "-")
 
     # ── OHKO moves ──
     if kind == "ohko":
@@ -195,46 +325,73 @@ def execute_move(eng, side: str, move: MoveData, events) -> None:
 
     # ── Damaging moves ──
     if move.is_damaging:
+        absorb = passives.immunity_or_absorb(target, move)
+        if absorb == "immune":
+            events.append(Event(E.ABILITY, eng.side_of(target),
+                                {"ability": passives.abil(target),
+                                 "pokemon": target.name}))
+            events.append(Event(E.MOVE_IMMUNE, eng.side_of(target),
+                                {"pokemon": target.name}))
+            return
+        if absorb == "absorb":
+            events.append(Event(E.ABILITY, eng.side_of(target),
+                                {"ability": passives.abil(target),
+                                 "pokemon": target.name}))
+            healed = target.heal(max(1, target.max_hp // 4))
+            if healed:
+                events.append(Event(E.HEAL, eng.side_of(target),
+                                    {"pokemon": target.name, "amount": healed,
+                                     "remaining_hp": target.current_hp}))
+            return
         eff_mult = (1.0 if move.type == "typeless"
                     else eng.data.effectiveness(move.type, target.types))
         if eff_mult == 0:
             events.append(Event(E.MOVE_IMMUNE, eng.side_of(target), {"pokemon": target.name}))
             return
-        if not accuracy_check(move, user, target, rng=eng.rng):
+        if not _hits(eng, user, target, move):
             events.append(Event(E.MOVE_MISSED, side, {"move": move.name}))
             return
 
-        # Fixed / level-based damage
+        if move.type == "electric" and eng.sport["mud"] > 0:
+            power_mult *= 0.33
+        if move.type == "fire" and eng.sport["water"] > 0:
+            power_mult *= 0.33
+
+        screened = eng.screened(other(side), move)
         if move.id in FIXED_DAMAGE:
             deal_damage(eng, target, FIXED_DAMAGE[move.id], events,
                         {"effectiveness": 1.0, "crit": False})
-            total = FIXED_DAMAGE[move.id]
+            total, landed = FIXED_DAMAGE[move.id], 1
         elif move.id in LEVEL_DAMAGE:
             deal_damage(eng, target, user.level, events,
                         {"effectiveness": 1.0, "crit": False})
-            total = user.level
+            total, landed = user.level, 1
         else:
             hits = roll_hits(eng, move.effect)
-            total = 0
-            landed = 0
+            total, landed = 0, 0
             for _ in range(hits):
                 if target.fainted or user.fainted:
                     break
-                crit = eng.rng.random() < eng.crit_chance_for(user, move)
+                crit = eng.rng.random() < eng.crit_chance_for(user, move, target)
                 dmg, detail = calc_damage(eng.data, user, target, move,
-                                          rng=eng.rng, crit=crit)
+                                          rng=eng.rng, crit=crit,
+                                          weather=eng.weather, screened=screened,
+                                          power_mult=power_mult)
                 total += deal_damage(eng, target, dmg, events, detail)
                 landed += 1
             if hits > 1:
                 events.append(Event(E.MULTI_HIT, side, {"hits": landed}))
+        if total > 0:
+            target.vol.last_hit = (move.category, total)
 
-        # Thaw a frozen target hit by a fire move
         if target.status == "freeze" and move.type == "fire" and not target.fainted:
             target.status = None
             events.append(Event(E.THAWED, eng.side_of(target), {"pokemon": target.name}))
 
         # Drain / recoil
         drain = move.effect.drain
+        if drain > 0 and user.vol.heal_block_turns > 0:
+            drain = 0
         if drain > 0 and total > 0 and not user.fainted:
             healed = user.heal(max(1, total * drain // 100))
             if healed:
@@ -246,34 +403,62 @@ def execute_move(eng, side: str, move: MoveData, events) -> None:
                                                  "remaining_hp": user.current_hp}))
             eng.announce_faint(user, events)
 
+        # Contact abilities punish the attacker
+        if landed and "contact" in move.flags and not user.fainted:
+            passives.on_contact(eng, user, target, events)
+
         # Secondary effects only land if the target is still standing
-        if not target.fainted:
+        if not target.fainted and landed:
+            sec_mult = passives.secondary_mult(user, True, target)
             ail_chance = move.effect.ailment_chance or (100 if move.effect.ailment else 0)
+            if ail_chance < 100:
+                ail_chance *= sec_mult
             if move.effect.ailment and eng.rng.randint(1, 100) <= ail_chance:
                 apply_ailment(eng, user, target, move, events)
-            if move.effect.flinch_chance and not target.vol.has_moved:
-                if eng.rng.randint(1, 100) <= move.effect.flinch_chance:
+            flinch = move.effect.flinch_chance * sec_mult
+            if flinch and not target.vol.has_moved:
+                if eng.rng.randint(1, 100) <= flinch:
                     target.vol.flinched = True
         apply_stat_changes(eng, user, target, move, events)
 
-        # Struggle recoil: quarter of user's max HP (Gen 5)
+        # Force-switch riders (Dragon Tail / Circle Throw)
+        if kind == "force-switch" and not target.fainted and not eng.over:
+            force_switch(eng, other(side), events)
+
+        # Life Orb recoil
+        if landed and total > 0 and passives.held(user) == "life-orb" \
+                and not user.fainted:
+            rec = max(1, user.max_hp // 10)
+            user.take_damage(rec)
+            events.append(Event(E.ITEM_HELD, side, {"item": "life-orb",
+                                                    "pokemon": user.name}))
+            events.append(Event(E.RECOIL, side, {"pokemon": user.name, "amount": rec,
+                                                 "remaining_hp": user.current_hp}))
+            eng.announce_faint(user, events)
+
         if move.id == "struggle" and not user.fainted:
             rec = max(1, user.max_hp // 4)
             user.take_damage(rec)
             events.append(Event(E.RECOIL, side, {"pokemon": user.name, "amount": rec,
                                                  "remaining_hp": user.current_hp}))
             eng.announce_faint(user, events)
+
+        if move.id in RECHARGE_MOVES and landed and not user.fainted:
+            user.vol.recharging = True
         return
 
     # ── Status moves ──
-    # Thunder Wave-style type immunity: a pure-ailment status move whose
-    # type the target is immune to fails (Gen 5 behavior).
     if move.effect.ailment and move.effect.ailment in NONVOLATILE_AILMENTS:
         if eng.data.effectiveness(move.type, target.types) == 0:
             events.append(Event(E.MOVE_IMMUNE, eng.side_of(target), {"pokemon": target.name}))
             return
-    if not move.targets_user and not accuracy_check(move, user, target, rng=eng.rng):
+    if targets_foe and not _hits(eng, user, target, move):
         events.append(Event(E.MOVE_MISSED, side, {"move": move.name}))
+        return
+
+    if kind == "force-switch":
+        if not force_switch(eng, other(side), events):
+            events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
         return
 
     did_something = False
@@ -285,6 +470,10 @@ def execute_move(eng, side: str, move: MoveData, events) -> None:
         did_something = True
     if move.effect.healing:
         recipient = user if move.targets_user else target
+        if recipient.vol.heal_block_turns > 0:
+            events.append(Event(E.MOVE_FAILED, side, {"move": move.name,
+                                                      "heal_block": True}))
+            return
         healed = recipient.heal(max(1, recipient.max_hp * move.effect.healing // 100))
         if healed:
             events.append(Event(E.HEAL, eng.side_of(recipient),
@@ -298,11 +487,12 @@ def execute_move(eng, side: str, move: MoveData, events) -> None:
                             {"move": move.id, "effect": move.effect.kind}))
 
 
-# ── Special-case handlers (the extension point for Phase 2) ──────────
+# ── Special-case handlers (the Phase 2 extension point) ──────────────
 
 @handler("rest")
 def _rest(eng, user, target, move, events):
-    if user.current_hp == user.max_hp or user.status == "sleep":
+    if user.current_hp == user.max_hp or user.status == "sleep" \
+            or passives.status_blocked(user, "sleep"):
         events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
         return
     user.status = None
@@ -315,3 +505,613 @@ def _rest(eng, user, target, move, events):
                          "remaining_hp": user.current_hp}))
     events.append(Event(E.STATUS_APPLIED, eng.side_of(user),
                         {"status": "sleep", "pokemon": user.name, "rest": True}))
+
+
+def _protect(eng, user, target, move, events):
+    side = eng.side_of(user)
+    ok = user.vol.protect_count == 0 or \
+        eng.rng.random() < 0.5 ** user.vol.protect_count
+    if ok:
+        user.vol.protected = True
+        user.vol.protect_count += 1
+        events.append(Event(E.PROTECTED, side, {"pokemon": user.name,
+                                                "setup": True}))
+    else:
+        user.vol.protect_count = 0
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+
+
+HANDLERS["protect"] = _protect
+HANDLERS["detect"] = _protect
+
+
+def _weather_move(kind):
+    def fn(eng, user, target, move, events):
+        if eng.weather == kind:
+            events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        else:
+            eng.set_weather(kind, 5, events)
+    return fn
+
+
+HANDLERS["rain-dance"] = _weather_move("rain")
+HANDLERS["sunny-day"] = _weather_move("sun")
+HANDLERS["sandstorm"] = _weather_move("sandstorm")
+HANDLERS["hail"] = _weather_move("hail")
+
+
+def _screen(attr):
+    def fn(eng, user, target, move, events):
+        side = eng.side_of(user)
+        ss = eng.sides[side]
+        if getattr(ss, attr) > 0:
+            events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+            return
+        setattr(ss, attr, 5)
+        events.append(Event(E.SCREEN_START, side, {"screen": attr.replace("_", "-")}))
+    return fn
+
+
+HANDLERS["reflect"] = _screen("reflect")
+HANDLERS["light-screen"] = _screen("light_screen")
+
+
+def _hazard(attr, maximum):
+    def fn(eng, user, target, move, events):
+        side = eng.side_of(user)
+        foe_side = other(side)
+        ss = eng.sides[foe_side]
+        cur = getattr(ss, attr)
+        if cur is True or cur == maximum:
+            events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+            return
+        setattr(ss, attr, True if maximum is True else cur + 1)
+        events.append(Event(E.HAZARD_SET, foe_side,
+                            {"hazard": attr.replace("_", "-"),
+                             "layers": 1 if maximum is True else cur + 1}))
+    return fn
+
+
+HANDLERS["stealth-rock"] = _hazard("stealth_rock", True)
+HANDLERS["spikes"] = _hazard("spikes", 3)
+HANDLERS["toxic-spikes"] = _hazard("toxic_spikes", 2)
+
+
+@handler("rapid-spin")
+def _rapid_spin(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if not accuracy_check(move, user, target, rng=eng.rng, weather=eng.weather):
+        events.append(Event(E.MOVE_MISSED, side, {"move": move.name}))
+        return
+    eff = eng.data.effectiveness(move.type, target.types)
+    if eff > 0:
+        crit = eng.rng.random() < eng.crit_chance_for(user, move, target)
+        dmg, detail = calc_damage(eng.data, user, target, move, rng=eng.rng,
+                                  crit=crit, weather=eng.weather,
+                                  screened=eng.screened(other(side), move))
+        deal_damage(eng, target, dmg, events, detail)
+    else:
+        events.append(Event(E.MOVE_IMMUNE, eng.side_of(target),
+                            {"pokemon": target.name}))
+    for hz in eng.sides[side].clear_hazards():
+        events.append(Event(E.HAZARD_CLEARED, side, {"hazard": hz}))
+    user.vol.leech_seeded = False
+    if user.vol.trap_turns > 0:
+        user.vol.trap_turns = 0
+        events.append(Event(E.TRAP_END, side, {"pokemon": user.name}))
+
+
+@handler("focus-energy")
+def _focus_energy(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if user.vol.crit_bonus > 0:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    user.vol.crit_bonus = 2
+    events.append(Event(E.STAT_CHANGE, side,
+                        {"pokemon": user.name, "stat": "crit_rate",
+                         "change": 2, "stage": 2}))
+
+
+@handler("haze")
+def _haze(eng, user, target, move, events):
+    for bp in (user, target):
+        bp.stages = {k: 0 for k in bp.stages}
+    events.append(Event(E.STAGES_RESET, None, {}))
+
+
+def _explode(eng, user, target, move, events):
+    side = eng.side_of(user)
+
+    def faint_user():
+        user.take_damage(user.current_hp)
+        eng.announce_faint(user, events)
+
+    if target.vol.protected:
+        events.append(Event(E.PROTECTED, eng.side_of(target),
+                            {"pokemon": target.name, "setup": False}))
+        faint_user()
+        return
+    eff = eng.data.effectiveness(move.type, target.types)
+    if eff == 0:
+        events.append(Event(E.MOVE_IMMUNE, eng.side_of(target), {"pokemon": target.name}))
+        faint_user()
+        return
+    if not accuracy_check(move, user, target, rng=eng.rng, weather=eng.weather):
+        events.append(Event(E.MOVE_MISSED, side, {"move": move.name}))
+        faint_user()
+        return
+    crit = eng.rng.random() < eng.crit_chance_for(user, move, target)
+    dmg, detail = calc_damage(eng.data, user, target, move, rng=eng.rng,
+                              crit=crit, weather=eng.weather,
+                              screened=eng.screened(other(side), move))
+    deal_damage(eng, target, dmg, events, detail)
+    faint_user()
+
+
+HANDLERS["explosion"] = _explode
+HANDLERS["self-destruct"] = _explode
+
+
+@handler("false-swipe")
+def _false_swipe(eng, user, target, move, events):
+    side = eng.side_of(user)
+    eff = eng.data.effectiveness(move.type, target.types)
+    if eff == 0:
+        events.append(Event(E.MOVE_IMMUNE, eng.side_of(target), {"pokemon": target.name}))
+        return
+    if not accuracy_check(move, user, target, rng=eng.rng, weather=eng.weather):
+        events.append(Event(E.MOVE_MISSED, side, {"move": move.name}))
+        return
+    crit = eng.rng.random() < eng.crit_chance_for(user, move, target)
+    dmg, detail = calc_damage(eng.data, user, target, move, rng=eng.rng,
+                              crit=crit, weather=eng.weather,
+                              screened=eng.screened(other(side), move))
+    dmg = min(dmg, max(0, target.current_hp - 1))
+    if dmg:
+        deal_damage(eng, target, dmg, events, detail)
+    else:
+        events.append(Event(E.DAMAGE, eng.side_of(target),
+                            {"pokemon": target.name, "amount": 0,
+                             "remaining_hp": target.current_hp,
+                             "max_hp": target.max_hp, "crit": False,
+                             "effectiveness": eff}))
+
+
+# ── Phase 2 status-move handlers (coverage batch) ────────────────────
+
+def _fails_in_singles(eng, user, target, move, events):
+    events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+
+
+for _m in ("helping-hand", "follow-me", "rage-powder", "ally-switch", "splash"):
+    HANDLERS[_m] = _fails_in_singles
+
+
+def _endure(eng, user, target, move, events):
+    side = eng.side_of(user)
+    ok = user.vol.protect_count == 0 or \
+        eng.rng.random() < 0.5 ** user.vol.protect_count
+    if ok:
+        user.vol.endured = True
+        user.vol.protect_count += 1
+        events.append(Event(E.PROTECTED, side, {"pokemon": user.name,
+                                                "setup": True, "endure": True}))
+    else:
+        user.vol.protect_count = 0
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+
+
+HANDLERS["endure"] = _endure
+
+
+def _side_condition(attr, turns):
+    def fn(eng, user, target, move, events):
+        side = eng.side_of(user)
+        ss = eng.sides[side]
+        if getattr(ss, attr) > 0:
+            events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+            return
+        setattr(ss, attr, turns)
+        events.append(Event(E.SCREEN_START, side,
+                            {"screen": attr.replace("_", "-")}))
+    return fn
+
+
+HANDLERS["safeguard"] = _side_condition("safeguard", 5)
+HANDLERS["mist"] = _side_condition("mist", 5)
+HANDLERS["lucky-chant"] = _side_condition("lucky_chant", 5)
+HANDLERS["tailwind"] = _side_condition("tailwind", 4)
+
+
+def _lock_on(eng, user, target, move, events):
+    user.vol.lock_on = True
+    events.append(Event(E.STAT_CHANGE, eng.side_of(user),
+                        {"pokemon": user.name, "stat": "accuracy",
+                         "change": 0, "stage": 0, "lock_on": True}))
+
+
+HANDLERS["lock-on"] = _lock_on
+HANDLERS["mind-reader"] = _lock_on
+
+
+@handler("psych-up")
+def _psych_up(eng, user, target, move, events):
+    user.stages = dict(target.stages)
+    events.append(Event(E.STAGES_RESET, eng.side_of(user), {"copied": True}))
+
+
+@handler("taunt")
+def _taunt(eng, user, target, move, events):
+    if target.vol.taunt_turns > 0:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    target.vol.taunt_turns = 3
+    events.append(Event(E.TRAPPED, eng.side_of(target),
+                        {"pokemon": target.name, "move": move.name, "taunt": True}))
+
+
+def _mean_look(eng, user, target, move, events):
+    if target.vol.no_escape:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    target.vol.no_escape = True
+    events.append(Event(E.TRAPPED, eng.side_of(target),
+                        {"pokemon": target.name, "move": move.name}))
+
+
+for _m in ("mean-look", "block", "spider-web"):
+    HANDLERS[_m] = _mean_look
+
+
+@handler("gastro-acid")
+def _gastro_acid(eng, user, target, move, events):
+    if target.vol.ability_suppressed:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    target.vol.ability_suppressed = True
+    events.append(Event(E.ABILITY, eng.side_of(target),
+                        {"ability": "suppressed", "pokemon": target.name}))
+
+
+@handler("ingrain")
+def _ingrain(eng, user, target, move, events):
+    if user.vol.ingrained:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    user.vol.ingrained = True
+    events.append(Event(E.LEECH_SEED, eng.side_of(user),
+                        {"pokemon": user.name, "ingrain": True}))
+
+
+@handler("telekinesis")
+def _telekinesis(eng, user, target, move, events):
+    if target.vol.telekinesis_turns > 0:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    target.vol.telekinesis_turns = 3
+    events.append(Event(E.STAT_CHANGE, eng.side_of(target),
+                        {"pokemon": target.name, "stat": "evasion",
+                         "change": 0, "stage": 0, "telekinesis": True}))
+
+
+@handler("refresh")
+def _refresh(eng, user, target, move, events):
+    if user.status in ("burn", "paralysis", "poison", "toxic"):
+        cured = user.status
+        user.status = None
+        user.vol.toxic_counter = 0
+        events.append(Event(E.STATUS_CURED, eng.side_of(user),
+                            {"pokemon": user.name, "status": cured}))
+    else:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+
+
+def _heal_bell(eng, user, target, move, events):
+    side = eng.side_of(user)
+    any_cured = False
+    for bp in eng.parties[side]:
+        if bp.status and not bp.fainted:
+            cured = bp.status
+            bp.status = None
+            bp.vol.toxic_counter = 0
+            events.append(Event(E.STATUS_CURED, side,
+                                {"pokemon": bp.name, "status": cured}))
+            any_cured = True
+    if not any_cured:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+
+
+HANDLERS["heal-bell"] = _heal_bell
+HANDLERS["aromatherapy"] = _heal_bell
+
+
+@handler("curse")
+def _curse(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if "ghost" in user.types:
+        if target.vol.cursed:
+            events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+            return
+        cost = max(1, user.max_hp // 2)
+        user.take_damage(cost)
+        events.append(Event(E.DAMAGE, side, {"pokemon": user.name, "amount": cost,
+                                             "remaining_hp": user.current_hp,
+                                             "max_hp": user.max_hp,
+                                             "crit": False, "effectiveness": 1.0}))
+        eng.announce_faint(user, events)
+        target.vol.cursed = True
+        events.append(Event(E.LEECH_SEED, eng.side_of(target),
+                            {"pokemon": target.name, "curse": True}))
+    else:
+        for stat, delta in (("attack", 1), ("defense", 1), ("speed", -1)):
+            applied = user.modify_stage(stat, delta)
+            if applied:
+                events.append(Event(E.STAT_CHANGE, side,
+                                    {"pokemon": user.name, "stat": stat,
+                                     "change": applied,
+                                     "stage": user.stages[stat]}))
+
+
+@handler("pain-split")
+def _pain_split(eng, user, target, move, events):
+    avg = (user.current_hp + target.current_hp) // 2
+    for bp in (user, target):
+        s = eng.side_of(bp)
+        if avg < bp.current_hp:
+            bp.take_damage(bp.current_hp - avg)
+            events.append(Event(E.DAMAGE, s, {"pokemon": bp.name,
+                                              "amount": bp.current_hp - avg,
+                                              "remaining_hp": bp.current_hp,
+                                              "max_hp": bp.max_hp,
+                                              "crit": False, "effectiveness": 1.0}))
+        elif avg > bp.current_hp:
+            healed = bp.heal(avg - bp.current_hp)
+            events.append(Event(E.HEAL, s, {"pokemon": bp.name, "amount": healed,
+                                            "remaining_hp": bp.current_hp}))
+
+
+@handler("super-fang")
+def _super_fang(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if eng.data.effectiveness(move.type, target.types) == 0:
+        events.append(Event(E.MOVE_IMMUNE, eng.side_of(target), {"pokemon": target.name}))
+        return
+    if not _hits(eng, user, target, move):
+        events.append(Event(E.MOVE_MISSED, side, {"move": move.name}))
+        return
+    deal_damage(eng, target, max(1, target.current_hp // 2), events,
+                {"effectiveness": 1.0, "crit": False})
+
+
+@handler("teleport")
+def _teleport(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if eng.wild:
+        events.append(Event(E.RUN_SUCCESS, side, {}))
+        eng._end_battle("escaped", events)
+    else:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+
+
+def _counter(category, mult):
+    def fn(eng, user, target, move, events):
+        side = eng.side_of(user)
+        hit = user.vol.last_hit
+        if not hit or hit[0] != category or hit[1] <= 0:
+            events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+            return
+        deal_damage(eng, target, hit[1] * mult, events,
+                    {"effectiveness": 1.0, "crit": False})
+    return fn
+
+
+HANDLERS["counter"] = _counter("physical", 2)
+HANDLERS["mirror-coat"] = _counter("special", 2)
+
+
+# ── Phase 2 status-move handlers (second coverage batch) ─────────────
+
+@handler("aqua-ring")
+def _aqua_ring(eng, user, target, move, events):
+    if user.vol.aqua_ring:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    user.vol.aqua_ring = True
+    events.append(Event(E.LEECH_SEED, eng.side_of(user),
+                        {"pokemon": user.name, "aqua_ring": True}))
+
+
+def _ability_override(which):
+    """Worry Seed / Entrainment / Simple Beam set a volatile ability
+    override (the underlying PokemonState is untouched)."""
+    def fn(eng, user, target, move, events):
+        new = which if which else passives.abil(user)
+        if not new or passives.abil(target) == new:
+            events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+            return
+        target.vol.ability_override = new
+        events.append(Event(E.ABILITY, eng.side_of(target),
+                            {"ability": new, "pokemon": target.name,
+                             "overridden": True}))
+    return fn
+
+
+HANDLERS["worry-seed"] = _ability_override("insomnia")
+HANDLERS["simple-beam"] = _ability_override("simple")
+HANDLERS["entrainment"] = _ability_override(None)
+
+
+@handler("encore")
+def _encore(eng, user, target, move, events):
+    last = target.vol.last_move
+    slot = target.state.move_slot(last) if last else None
+    if not last or target.vol.encore_move or slot is None or slot.pp <= 0:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    target.vol.encore_move = last
+    target.vol.encore_turns = 3
+    events.append(Event(E.TRAPPED, eng.side_of(target),
+                        {"pokemon": target.name, "move": move.name,
+                         "encore": last}))
+
+
+@handler("torment")
+def _torment(eng, user, target, move, events):
+    if target.vol.tormented:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    target.vol.tormented = True
+    events.append(Event(E.TRAPPED, eng.side_of(target),
+                        {"pokemon": target.name, "move": move.name,
+                         "torment": True}))
+
+
+@handler("imprison")
+def _imprison(eng, user, target, move, events):
+    if user.vol.imprison:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    user.vol.imprison = True
+    events.append(Event(E.TRAPPED, eng.side_of(user),
+                        {"pokemon": user.name, "move": move.name,
+                         "imprison": True}))
+
+
+@handler("copycat")
+def _copycat(eng, user, target, move, events):
+    last = target.vol.last_move
+    if not last or last == "copycat" or not eng.data.has_move(last):
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    execute_move(eng, eng.side_of(user), eng.data.move(last), events)
+
+
+@handler("bestow")
+def _bestow(eng, user, target, move, events):
+    if not user.state.held_item or target.state.held_item:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    item = user.state.held_item
+    user.state.held_item = None
+    target.state.held_item = item
+    events.append(Event(E.ITEM_HELD, eng.side_of(target),
+                        {"item": item, "pokemon": target.name, "bestow": True}))
+
+
+@handler("healing-wish")
+def _healing_wish(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if not eng.bench(side):
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    eng.sides[side].healing_wish = True
+    user.take_damage(user.current_hp)
+    eng.announce_faint(user, events)
+
+
+@handler("heal-block")
+def _heal_block(eng, user, target, move, events):
+    if target.vol.heal_block_turns > 0:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    target.vol.heal_block_turns = 5
+    events.append(Event(E.TRAPPED, eng.side_of(target),
+                        {"pokemon": target.name, "move": move.name,
+                         "heal_block": True}))
+
+
+@handler("embargo")
+def _embargo(eng, user, target, move, events):
+    if target.vol.embargo_turns > 0:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    target.vol.embargo_turns = 5
+    events.append(Event(E.TRAPPED, eng.side_of(target),
+                        {"pokemon": target.name, "move": move.name,
+                         "embargo": True}))
+
+
+def _sport(kind):
+    def fn(eng, user, target, move, events):
+        if eng.sport[kind] > 0:
+            events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+            return
+        eng.sport[kind] = 5  # simplification: 5 turns (Gen 5 ties it to
+        # the user staying in; documented in ARCHITECTURE.md)
+        events.append(Event(E.SCREEN_START, None, {"screen": f"{kind}-sport"}))
+    return fn
+
+
+HANDLERS["mud-sport"] = _sport("mud")
+HANDLERS["water-sport"] = _sport("water")
+
+
+@handler("baton-pass")
+def _baton_pass(eng, user, target, move, events):
+    """Simplification: passes to a random able bench member (a real
+    client will prompt for the recipient in Phase 3). Stages and the
+    passable volatiles carry over; hazards still apply."""
+    side = eng.side_of(user)
+    bench = eng.bench(side)
+    if not bench:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    carry_stages = dict(user.stages)
+    v = user.vol
+    carry = {"crit_bonus": v.crit_bonus, "leech_seeded": v.leech_seeded,
+             "confusion_turns": v.confusion_turns, "ingrained": v.ingrained,
+             "aqua_ring": v.aqua_ring, "no_escape": v.no_escape}
+    user.on_switch_out()
+    events.append(Event(E.SWITCH_OUT, side, {"pokemon": user.name}))
+    eng.active_idx[side] = eng.rng.choice(bench)
+    incoming = eng.active(side)
+    incoming.stages.update(carry_stages)
+    for k, val in carry.items():
+        setattr(incoming.vol, k, val)
+    events.append(eng._send_in_event(side))
+    eng._switch_in_effects(side, events)
+
+
+@handler("belly-drum")
+def _belly_drum(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if user.stages["attack"] >= 6 or user.current_hp * 2 <= user.max_hp:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    cost = user.max_hp // 2
+    user.take_damage(cost)
+    events.append(Event(E.DAMAGE, side, {"pokemon": user.name, "amount": cost,
+                                         "remaining_hp": user.current_hp,
+                                         "max_hp": user.max_hp,
+                                         "crit": False, "effectiveness": 1.0}))
+    user.modify_stage("attack", 12)
+    events.append(Event(E.STAT_CHANGE, side, {"pokemon": user.name,
+                                              "stat": "attack", "change": 12,
+                                              "stage": user.stages["attack"]}))
+
+
+@handler("spite")
+def _spite(eng, user, target, move, events):
+    side = eng.side_of(user)
+    last = target.vol.last_move
+    slot = target.state.move_slot(last) if last else None
+    if slot is None or slot.pp <= 0:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    slot.pp = max(0, slot.pp - 4)
+    events.append(Event(E.TRAPPED, eng.side_of(target),
+                        {"pokemon": target.name, "move": move.name,
+                         "spite": last}))
+
+
+@handler("role-play")
+def _role_play(eng, user, target, move, events):
+    new = passives.abil(target)
+    if not new or passives.abil(user) == new:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    user.vol.ability_override = new
+    events.append(Event(E.ABILITY, eng.side_of(user),
+                        {"ability": new, "pokemon": user.name,
+                         "overridden": True}))

@@ -84,5 +84,49 @@
   "name": "Ultra Ball",
   "category": "ball",
   "ball_rate": 2.0
+ },
+ "leftovers": {
+  "name": "Leftovers",
+  "category": "held"
+ },
+ "oran-berry": {
+  "name": "Oran Berry",
+  "category": "held"
+ },
+ "sitrus-berry": {
+  "name": "Sitrus Berry",
+  "category": "held"
+ },
+ "lum-berry": {
+  "name": "Lum Berry",
+  "category": "held"
+ },
+ "choice-band": {
+  "name": "Choice Band",
+  "category": "held"
+ },
+ "choice-specs": {
+  "name": "Choice Specs",
+  "category": "held"
+ },
+ "choice-scarf": {
+  "name": "Choice Scarf",
+  "category": "held"
+ },
+ "life-orb": {
+  "name": "Life Orb",
+  "category": "held"
+ },
+ "focus-sash": {
+  "name": "Focus Sash",
+  "category": "held"
+ },
+ "scope-lens": {
+  "name": "Scope Lens",
+  "category": "held"
+ },
+ "razor-claw": {
+  "name": "Razor Claw",
+  "category": "held"
  }
 }

@@ -11,6 +11,7 @@ from __future__ import annotations
 import random
 from typing import Optional
 
+from . import moves as movex
 from .damage import calc_damage
 from .engine import BattleEngine
 from .state import MoveAction, SwitchAction, other
@@ -44,16 +45,23 @@ class GreedyAI:
         self._avg = _AvgRoll()
 
     def _expected_damage(self, eng, move_id: str) -> float:
-        move = eng.data.move(move_id)
+        if move_id == "recharge":
+            return 0.0
+        move = movex.STRUGGLE if move_id == "struggle" else eng.data.move(move_id)
         user, target = eng.active(self.side), eng.active(other(self.side))
         if not move.is_damaging or move.power is None:
             return 0.0
-        if eng.data.effectiveness(move.type, target.types) == 0:
+        if move.type != "typeless" \
+                and eng.data.effectiveness(move.type, target.types) == 0:
             return 0.0
-        dmg, _ = calc_damage(eng.data, user, target, move, rng=self._avg, crit=False)
+        dmg, _ = calc_damage(eng.data, user, target, move, rng=self._avg,
+                             crit=False, weather=eng.weather)
         hit_rate = (move.accuracy or 100) / 100
         hits = move.effect.min_hits or 1
-        return dmg * hit_rate * hits
+        score = dmg * hit_rate * hits
+        if dmg >= target.current_hp:    # prefer finishing the target off
+            score += 1000 * hit_rate
+        return score
 
     def choose_action(self, eng: BattleEngine):
         moves = [a for a in eng.legal_actions(self.side) if isinstance(a, MoveAction)]

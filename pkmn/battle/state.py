@@ -8,6 +8,7 @@ from typing import Optional
 
 from ..core.pokemon import PokemonState
 from ..core.stats import stage_multiplier
+from . import passives
 from ..data.models import STAGE_KEYS, SPEED
 from ..data.repository import GameData
 
@@ -59,6 +60,38 @@ class Volatiles:
     toxic_counter: int = 0
     sleep_turns: int = -1      # -1 == roll on next attempt
     has_moved: bool = False    # this turn (gates flinch)
+    # Phase 2 volatiles
+    protected: bool = False        # this turn
+    protect_count: int = 0         # consecutive uses (success halves)
+    charging: Optional[str] = None         # two-turn move being charged
+    semi_invulnerable: Optional[str] = None  # 'fly'|'dig'|'dive'|'bounce'
+    recharging: bool = False       # Hyper Beam family
+    rampage_move: Optional[str] = None     # Outrage family lock
+    rampage_turns: int = 0
+    choice_lock: Optional[str] = None      # choice-item move lock
+    crit_bonus: int = 0            # Focus Energy
+    leech_seeded: bool = False
+    trap_turns: int = 0            # Wrap family
+    trap_name: str = ""
+    endured: bool = False          # this turn (Endure)
+    lock_on: bool = False          # next move can't miss
+    taunt_turns: int = 0
+    no_escape: bool = False        # Mean Look family
+    ability_suppressed: bool = False   # Gastro Acid
+    ingrained: bool = False
+    cursed: bool = False           # Ghost-type Curse
+    telekinesis_turns: int = 0
+    last_hit: Optional[tuple] = None   # (category, amount) taken this turn
+    last_move: Optional[str] = None
+    aqua_ring: bool = False
+    ability_override: Optional[str] = None  # Worry Seed / Entrainment
+    infatuated: bool = False
+    encore_move: Optional[str] = None
+    encore_turns: int = 0
+    tormented: bool = False
+    imprison: bool = False
+    heal_block_turns: int = 0
+    embargo_turns: int = 0
 
 
 class BattlePokemon:
@@ -93,13 +126,16 @@ class BattlePokemon:
     @property
     def types(self): return self.species.types
     @property
+    def held_item(self): return self.state.held_item
+    @property
     def moves(self): return self.state.moves
 
     def take_damage(self, n: int) -> int: return self.state.take_damage(n)
     def heal(self, n: int) -> int: return self.state.heal(n)
 
-    def effective_speed(self) -> int:
+    def effective_speed(self, weather: Optional[str] = None) -> int:
         s = int(self.stats[SPEED] * stage_multiplier(self.stages[SPEED]))
+        s = int(s * passives.speed_mod(self, weather))
         if self.status == "paralysis":
             s //= 4  # Gen 5 paralysis quarters speed
         return s

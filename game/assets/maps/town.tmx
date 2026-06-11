@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="24" height="18" tilewidth="16" tileheight="16" infinite="0" nextobjectid="99">
+ <tileset firstgid="1" source="../tiles.tsx"/>
+ <layer id="1" name="ground" width="24" height="18">
+  <data encoding="csv">
+5,5,5,5,5,5,5,5,5,5,5,3,3,5,5,5,5,5,5,5,5,5,5,5,
+5,1,1,1,1,1,1,1,1,1,1,3,3,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,3,3,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,7,7,7,7,7,7,1,3,3,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,7,7,7,7,7,7,1,3,3,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,6,6,6,6,6,6,1,3,3,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,6,6,8,6,6,6,1,3,3,1,10,10,10,10,10,10,10,1,1,5,
+5,1,1,1,1,1,3,1,1,1,1,3,3,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,11,1,3,3,1,1,1,4,4,4,1,1,1,1,5,
+5,1,1,1,1,9,1,1,1,1,1,3,3,1,1,1,4,4,4,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,3,3,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,3,3,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,9,1,1,1,1,1,1,1,1,1,1,1,9,1,1,9,1,1,1,1,5,
+5,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+</data>
+ </layer>
+ <objectgroup id="2" name="objects">
+  <object id="1" name="spawn" x="176" y="208" width="16" height="16"><properties></properties></object>
+  <object id="2" name="warp" x="176" y="0" width="16" height="16"><properties><property name="to_map" value="route1"/><property name="to_x" type="int" value="11"/><property name="to_y" type="int" value="16"/><property name="facing" value="up"/></properties></object>
+  <object id="3" name="warp" x="192" y="0" width="16" height="16"><properties><property name="to_map" value="route1"/><property name="to_x" type="int" value="12"/><property name="to_y" type="int" value="16"/><property name="facing" value="up"/></properties></object>
+  <object id="4" name="npc" x="128" y="192" width="16" height="16"><properties><property name="display" value="Maple"/><property name="facing" value="down"/><property name="dialog" value="Welcome to Hexton!|Tall grass north of town is full of wild Pokemon."/></properties></object>
+  <object id="5" name="npc" x="112" y="112" width="16" height="16"><properties><property name="display" value="Nurse Hazel"/><property name="facing" value="down"/><property name="heal" type="bool" value="true"/><property name="dialog" value="Your Pokemon look tired.|There. They're fighting fit again!"/></properties></object>
+  <object id="6" name="sign" x="144" y="128" width="16" height="16"><properties><property name="dialog" value="HEXTON - Where small things add up."/></properties></object>
+ </objectgroup>
+</map>
