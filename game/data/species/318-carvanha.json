@@ -1,0 +1,128 @@
+{
+ "id": "carvanha",
+ "name": "Carvanha",
+ "dex": 318,
+ "types": [
+  "water",
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 90,
+  "defense": 20,
+  "special_attack": 65,
+  "special_defense": 20,
+  "speed": 65
+ },
+ "abilities": [
+  "rough-skin",
+  "speed-boost"
+ ],
+ "base_experience": 61,
+ "growth_rate": "slow",
+ "catch_rate": 225,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "rage",
+    "level": 6
+   },
+   {
+    "move": "focus-energy",
+    "level": 8
+   },
+   {
+    "move": "scary-face",
+    "level": 11
+   },
+   {
+    "move": "ice-fang",
+    "level": 16
+   },
+   {
+    "move": "screech",
+    "level": 18
+   },
+   {
+    "move": "swagger",
+    "level": 21
+   },
+   {
+    "move": "assurance",
+    "level": 26
+   },
+   {
+    "move": "crunch",
+    "level": 28
+   },
+   {
+    "move": "aqua-jet",
+    "level": 31
+   },
+   {
+    "move": "agility",
+    "level": 36
+   },
+   {
+    "move": "take-down",
+    "level": 38
+   }
+  ],
+  "egg": [
+   "thrash",
+   "double-edge",
+   "hydro-pump",
+   "swift",
+   "ancient-power",
+   "brine"
+  ],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "bounce",
+   "dark-pulse",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "torment",
+   "facade",
+   "taunt",
+   "dive",
+   "payback",
+   "round",
+   "scald",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

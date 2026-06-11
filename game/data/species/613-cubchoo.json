@@ -1,0 +1,139 @@
+{
+ "id": "cubchoo",
+ "name": "Cubchoo",
+ "dex": 613,
+ "types": [
+  "ice"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 70,
+  "defense": 40,
+  "special_attack": 60,
+  "special_defense": 40,
+  "speed": 40
+ },
+ "abilities": [
+  "snow-cloak",
+  "slush-rush",
+  "rattled"
+ ],
+ "base_experience": 61,
+ "growth_rate": "medium",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "powder-snow",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 5
+   },
+   {
+    "move": "bide",
+    "level": 9
+   },
+   {
+    "move": "icy-wind",
+    "level": 13
+   },
+   {
+    "move": "fury-swipes",
+    "level": 17
+   },
+   {
+    "move": "brine",
+    "level": 21
+   },
+   {
+    "move": "endure",
+    "level": 25
+   },
+   {
+    "move": "charm",
+    "level": 29
+   },
+   {
+    "move": "slash",
+    "level": 33
+   },
+   {
+    "move": "flail",
+    "level": 36
+   },
+   {
+    "move": "rest",
+    "level": 41
+   },
+   {
+    "move": "blizzard",
+    "level": 45
+   },
+   {
+    "move": "hail",
+    "level": 49
+   },
+   {
+    "move": "thrash",
+    "level": 53
+   },
+   {
+    "move": "sheer-cold",
+    "level": 57
+   }
+  ],
+  "egg": [
+   "ice-punch",
+   "sleep-talk",
+   "encore",
+   "focus-punch",
+   "yawn",
+   "assurance",
+   "night-slash",
+   "avalanche"
+  ],
+  "tutor": [
+   "ice-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "superpower",
+   "covet"
+  ],
+  "machine": [
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "rock-tomb",
+   "aerial-ace",
+   "fling",
+   "shadow-claw",
+   "grass-knot",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "frost-breath"
+  ]
+ }
+}

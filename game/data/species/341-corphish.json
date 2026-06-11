@@ -1,0 +1,141 @@
+{
+ "id": "corphish",
+ "name": "Corphish",
+ "dex": 341,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 43,
+  "attack": 80,
+  "defense": 65,
+  "special_attack": 50,
+  "special_defense": 35,
+  "speed": 35
+ },
+ "abilities": [
+  "hyper-cutter",
+  "shell-armor",
+  "adaptability"
+ ],
+ "base_experience": 62,
+ "growth_rate": "fast-then-very-slow",
+ "catch_rate": 205,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 7
+   },
+   {
+    "move": "vice-grip",
+    "level": 10
+   },
+   {
+    "move": "leer",
+    "level": 13
+   },
+   {
+    "move": "bubble-beam",
+    "level": 20
+   },
+   {
+    "move": "protect",
+    "level": 23
+   },
+   {
+    "move": "knock-off",
+    "level": 26
+   },
+   {
+    "move": "taunt",
+    "level": 32
+   },
+   {
+    "move": "night-slash",
+    "level": 35
+   },
+   {
+    "move": "crabhammer",
+    "level": 38
+   },
+   {
+    "move": "swords-dance",
+    "level": 44
+   },
+   {
+    "move": "crunch",
+    "level": 47
+   },
+   {
+    "move": "guillotine",
+    "level": 53
+   }
+  ],
+  "egg": [
+   "body-slam",
+   "double-edge",
+   "metal-claw",
+   "ancient-power",
+   "superpower",
+   "knock-off",
+   "endeavor",
+   "mud-sport",
+   "dragon-dance",
+   "trump-card",
+   "chip-away"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "superpower",
+   "knock-off",
+   "endeavor",
+   "iron-defense"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "payback",
+   "fling",
+   "x-scissor",
+   "hone-claws",
+   "round",
+   "scald"
+  ]
+ }
+}

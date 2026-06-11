@@ -1,0 +1,127 @@
+{
+ "id": "bagon",
+ "name": "Bagon",
+ "dex": 371,
+ "types": [
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 75,
+  "defense": 60,
+  "special_attack": 40,
+  "special_defense": 30,
+  "speed": 50
+ },
+ "abilities": [
+  "rock-head",
+  "sheer-force"
+ ],
+ "base_experience": 60,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "rage",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 5
+   },
+   {
+    "move": "leer",
+    "level": 10
+   },
+   {
+    "move": "headbutt",
+    "level": 16
+   },
+   {
+    "move": "focus-energy",
+    "level": 20
+   },
+   {
+    "move": "ember",
+    "level": 25
+   },
+   {
+    "move": "dragon-breath",
+    "level": 31
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 35
+   },
+   {
+    "move": "scary-face",
+    "level": 40
+   },
+   {
+    "move": "crunch",
+    "level": 46
+   },
+   {
+    "move": "dragon-claw",
+    "level": 50
+   },
+   {
+    "move": "double-edge",
+    "level": 55
+   }
+  ],
+  "egg": [
+   "thrash",
+   "hydro-pump",
+   "dragon-rage",
+   "defense-curl",
+   "endure",
+   "twister",
+   "dragon-dance",
+   "dragon-pulse",
+   "dragon-rush",
+   "fire-fang"
+  ],
+  "tutor": [
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "hyper-voice",
+   "dragon-pulse",
+   "zen-headbutt",
+   "draco-meteor"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "flamethrower",
+   "strength",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "incinerate"
+  ]
+ }
+}

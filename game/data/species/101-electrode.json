@@ -1,0 +1,139 @@
+{
+ "id": "electrode",
+ "name": "Electrode",
+ "dex": 101,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 50,
+  "defense": 70,
+  "special_attack": 80,
+  "special_defense": 80,
+  "speed": 150
+ },
+ "abilities": [
+  "soundproof",
+  "static",
+  "aftermath"
+ ],
+ "base_experience": 172,
+ "growth_rate": "medium",
+ "catch_rate": 60,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "charge",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "sonic-boom",
+    "level": 1
+   },
+   {
+    "move": "spark",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 5
+   },
+   {
+    "move": "sonic-boom",
+    "level": 8
+   },
+   {
+    "move": "spark",
+    "level": 12
+   },
+   {
+    "move": "rollout",
+    "level": 15
+   },
+   {
+    "move": "screech",
+    "level": 19
+   },
+   {
+    "move": "charge-beam",
+    "level": 22
+   },
+   {
+    "move": "light-screen",
+    "level": 26
+   },
+   {
+    "move": "electro-ball",
+    "level": 29
+   },
+   {
+    "move": "self-destruct",
+    "level": 35
+   },
+   {
+    "move": "swift",
+    "level": 40
+   },
+   {
+    "move": "magnet-rise",
+    "level": 46
+   },
+   {
+    "move": "gyro-ball",
+    "level": 51
+   },
+   {
+    "move": "explosion",
+    "level": 57
+   },
+   {
+    "move": "mirror-coat",
+    "level": 62
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "magic-coat",
+   "signal-beam",
+   "magnet-rise",
+   "foul-play"
+  ],
+  "machine": [
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "explosion",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "torment",
+   "facade",
+   "taunt",
+   "gyro-ball",
+   "giga-impact",
+   "charge-beam",
+   "round",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

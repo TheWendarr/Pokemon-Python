@@ -1,0 +1,102 @@
+{
+ "id": "simisage",
+ "name": "Simisage",
+ "dex": 512,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 98,
+  "defense": 63,
+  "special_attack": 98,
+  "special_defense": 63,
+  "speed": 101
+ },
+ "abilities": [
+  "gluttony",
+  "overgrow"
+ ],
+ "base_experience": 174,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "lick",
+    "level": 1
+   },
+   {
+    "move": "fury-swipes",
+    "level": 1
+   },
+   {
+    "move": "seed-bomb",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "synthesis",
+   "uproar",
+   "helping-hand",
+   "role-play",
+   "superpower",
+   "recycle",
+   "knock-off",
+   "endeavor",
+   "covet",
+   "worry-seed",
+   "seed-bomb",
+   "gunk-shot"
+  ],
+  "machine": [
+   "cut",
+   "hyper-beam",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "payback",
+   "fling",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "shadow-claw",
+   "grass-knot",
+   "hone-claws",
+   "low-sweep",
+   "round",
+   "acrobatics",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,160 @@
+{
+ "id": "flygon",
+ "name": "Flygon",
+ "dex": 330,
+ "types": [
+  "ground",
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 100,
+  "defense": 80,
+  "special_attack": 80,
+  "special_defense": 80,
+  "speed": 100
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 234,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "sonic-boom",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 1
+   },
+   {
+    "move": "feint-attack",
+    "level": 1
+   },
+   {
+    "move": "sand-tomb",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 4
+   },
+   {
+    "move": "feint-attack",
+    "level": 7
+   },
+   {
+    "move": "sand-tomb",
+    "level": 10
+   },
+   {
+    "move": "mud-slap",
+    "level": 13
+   },
+   {
+    "move": "bide",
+    "level": 17
+   },
+   {
+    "move": "bulldoze",
+    "level": 21
+   },
+   {
+    "move": "rock-slide",
+    "level": 25
+   },
+   {
+    "move": "supersonic",
+    "level": 29
+   },
+   {
+    "move": "screech",
+    "level": 34
+   },
+   {
+    "move": "dragon-breath",
+    "level": 35
+   },
+   {
+    "move": "earth-power",
+    "level": 39
+   },
+   {
+    "move": "sandstorm",
+    "level": 44
+   },
+   {
+    "move": "dragon-tail",
+    "level": 45
+   },
+   {
+    "move": "hyper-beam",
+    "level": 49
+   },
+   {
+    "move": "dragon-claw",
+    "level": 55
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "snore",
+   "outrage",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "heat-wave",
+   "superpower",
+   "signal-beam",
+   "roost",
+   "tailwind",
+   "dragon-pulse",
+   "earth-power",
+   "draco-meteor",
+   "bug-bite"
+  ],
+  "machine": [
+   "fly",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "u-turn",
+   "giga-impact",
+   "stone-edge",
+   "hone-claws",
+   "round",
+   "incinerate",
+   "struggle-bug",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

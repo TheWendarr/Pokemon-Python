@@ -1,0 +1,30 @@
+{
+ "id": "flare-blitz",
+ "name": "Flare Blitz",
+ "type": "fire",
+ "category": "physical",
+ "power": 120,
+ "accuracy": 100,
+ "pp": 15,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "contact",
+  "defrost",
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-ailment",
+  "ailment": "burn",
+  "ailment_chance": 10,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": -33,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

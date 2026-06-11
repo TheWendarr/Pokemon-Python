@@ -1,0 +1,28 @@
+{
+ "id": "incinerate",
+ "name": "Incinerate",
+ "type": "fire",
+ "category": "special",
+ "power": 30,
+ "accuracy": 100,
+ "pp": 15,
+ "priority": 0,
+ "target": "all-opponents",
+ "crit_stage": 0,
+ "flags": [
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

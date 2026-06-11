@@ -1,0 +1,151 @@
+{
+ "id": "minccino",
+ "name": "Minccino",
+ "dex": 572,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 50,
+  "defense": 40,
+  "special_attack": 40,
+  "special_defense": 40,
+  "speed": 75
+ },
+ "abilities": [
+  "cute-charm",
+  "technician",
+  "skill-link"
+ ],
+ "base_experience": 60,
+ "growth_rate": "fast",
+ "catch_rate": 255,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 3
+   },
+   {
+    "move": "helping-hand",
+    "level": 7
+   },
+   {
+    "move": "tickle",
+    "level": 9
+   },
+   {
+    "move": "double-slap",
+    "level": 13
+   },
+   {
+    "move": "encore",
+    "level": 15
+   },
+   {
+    "move": "swift",
+    "level": 19
+   },
+   {
+    "move": "sing",
+    "level": 21
+   },
+   {
+    "move": "tail-slap",
+    "level": 25
+   },
+   {
+    "move": "charm",
+    "level": 27
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 31
+   },
+   {
+    "move": "echoed-voice",
+    "level": 33
+   },
+   {
+    "move": "slam",
+    "level": 37
+   },
+   {
+    "move": "captivate",
+    "level": 39
+   },
+   {
+    "move": "hyper-voice",
+    "level": 43
+   },
+   {
+    "move": "last-resort",
+    "level": 45
+   },
+   {
+    "move": "after-you",
+    "level": 49
+   }
+  ],
+  "egg": [
+   "tail-whip",
+   "flail",
+   "mud-slap",
+   "endure",
+   "sleep-talk",
+   "iron-tail",
+   "knock-off",
+   "fake-tears",
+   "aqua-tail"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "knock-off",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "aqua-tail",
+   "seed-bomb",
+   "gunk-shot",
+   "after-you"
+  ],
+  "machine": [
+   "thunderbolt",
+   "thunder-wave",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "facade",
+   "calm-mind",
+   "u-turn",
+   "fling",
+   "grass-knot",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

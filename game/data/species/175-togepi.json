@@ -1,0 +1,154 @@
+{
+ "id": "togepi",
+ "name": "Togepi",
+ "dex": 175,
+ "types": [
+  "fairy"
+ ],
+ "base_stats": {
+  "hp": 35,
+  "attack": 20,
+  "defense": 65,
+  "special_attack": 40,
+  "special_defense": 65,
+  "speed": 20
+ },
+ "abilities": [
+  "hustle",
+  "serene-grace",
+  "super-luck"
+ ],
+ "base_experience": 49,
+ "growth_rate": "fast",
+ "catch_rate": 190,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "charm",
+    "level": 1
+   },
+   {
+    "move": "metronome",
+    "level": 5
+   },
+   {
+    "move": "sweet-kiss",
+    "level": 9
+   },
+   {
+    "move": "yawn",
+    "level": 13
+   },
+   {
+    "move": "encore",
+    "level": 17
+   },
+   {
+    "move": "follow-me",
+    "level": 21
+   },
+   {
+    "move": "bestow",
+    "level": 25
+   },
+   {
+    "move": "wish",
+    "level": 29
+   },
+   {
+    "move": "ancient-power",
+    "level": 33
+   },
+   {
+    "move": "safeguard",
+    "level": 37
+   },
+   {
+    "move": "baton-pass",
+    "level": 41
+   },
+   {
+    "move": "double-edge",
+    "level": 45
+   },
+   {
+    "move": "last-resort",
+    "level": 49
+   },
+   {
+    "move": "after-you",
+    "level": 53
+   }
+  ],
+  "egg": [
+   "peck",
+   "mirror-move",
+   "foresight",
+   "present",
+   "morning-sun",
+   "future-sight",
+   "secret-power",
+   "extrasensory",
+   "psycho-shift",
+   "lucky-chant",
+   "nasty-plot",
+   "stored-power"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heal-bell",
+   "uproar",
+   "trick",
+   "magic-coat",
+   "endeavor",
+   "hyper-voice",
+   "signal-beam",
+   "covet",
+   "last-resort",
+   "zen-headbutt",
+   "after-you"
+  ],
+  "machine": [
+   "flamethrower",
+   "solar-beam",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "fling",
+   "grass-knot",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "id": "cubone",
+ "name": "Cubone",
+ "dex": 104,
+ "types": [
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 50,
+  "defense": 95,
+  "special_attack": 40,
+  "special_defense": 50,
+  "speed": 35
+ },
+ "abilities": [
+  "rock-head",
+  "lightning-rod",
+  "battle-armor"
+ ],
+ "base_experience": 64,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 3
+   },
+   {
+    "move": "bone-club",
+    "level": 7
+   },
+   {
+    "move": "headbutt",
+    "level": 11
+   },
+   {
+    "move": "leer",
+    "level": 13
+   },
+   {
+    "move": "focus-energy",
+    "level": 17
+   },
+   {
+    "move": "bonemerang",
+    "level": 21
+   },
+   {
+    "move": "rage",
+    "level": 23
+   },
+   {
+    "move": "false-swipe",
+    "level": 27
+   },
+   {
+    "move": "thrash",
+    "level": 31
+   },
+   {
+    "move": "fling",
+    "level": 33
+   },
+   {
+    "move": "bone-rush",
+    "level": 37
+   },
+   {
+    "move": "endeavor",
+    "level": 41
+   },
+   {
+    "move": "double-edge",
+    "level": 43
+   },
+   {
+    "move": "retaliate",
+    "level": 47
+   }
+  ],
+  "egg": [
+   "double-kick",
+   "screech",
+   "skull-bash",
+   "belly-drum",
+   "perish-song",
+   "detect",
+   "endure",
+   "ancient-power",
+   "iron-head",
+   "chip-away"
+  ],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "knock-off",
+   "endeavor",
+   "iron-defense",
+   "earth-power",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "swords-dance",
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "fling",
+   "smack-down",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "retaliate",
+   "bulldoze"
+  ]
+ }
+}

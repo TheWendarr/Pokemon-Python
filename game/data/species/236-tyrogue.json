@@ -1,0 +1,94 @@
+{
+ "id": "tyrogue",
+ "name": "Tyrogue",
+ "dex": 236,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 35,
+  "attack": 35,
+  "defense": 35,
+  "special_attack": 35,
+  "special_defense": 35,
+  "speed": 35
+ },
+ "abilities": [
+  "guts",
+  "steadfast",
+  "vital-spirit"
+ ],
+ "base_experience": 42,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "helping-hand",
+    "level": 1
+   },
+   {
+    "move": "fake-out",
+    "level": 1
+   },
+   {
+    "move": "foresight",
+    "level": 1
+   }
+  ],
+  "egg": [
+   "counter",
+   "high-jump-kick",
+   "mind-reader",
+   "mach-punch",
+   "endure",
+   "pursuit",
+   "rapid-spin",
+   "helping-hand",
+   "feint",
+   "vacuum-wave",
+   "bullet-punch"
+  ],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "helping-hand",
+   "role-play",
+   "covet"
+  ],
+  "machine": [
+   "strength",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "bulk-up",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,144 @@
+{
+ "id": "whiscash",
+ "name": "Whiscash",
+ "dex": 340,
+ "types": [
+  "water",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 110,
+  "attack": 78,
+  "defense": 73,
+  "special_attack": 76,
+  "special_defense": 71,
+  "speed": 60
+ },
+ "abilities": [
+  "oblivious",
+  "anticipation",
+  "hydration"
+ ],
+ "base_experience": 164,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "zen-headbutt",
+    "level": 1
+   },
+   {
+    "move": "tickle",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 1
+   },
+   {
+    "move": "water-sport",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 6
+   },
+   {
+    "move": "water-sport",
+    "level": 6
+   },
+   {
+    "move": "water-gun",
+    "level": 10
+   },
+   {
+    "move": "mud-bomb",
+    "level": 14
+   },
+   {
+    "move": "amnesia",
+    "level": 18
+   },
+   {
+    "move": "water-pulse",
+    "level": 22
+   },
+   {
+    "move": "magnitude",
+    "level": 26
+   },
+   {
+    "move": "rest",
+    "level": 33
+   },
+   {
+    "move": "snore",
+    "level": 33
+   },
+   {
+    "move": "aqua-tail",
+    "level": 39
+   },
+   {
+    "move": "earthquake",
+    "level": 45
+   },
+   {
+    "move": "future-sight",
+    "level": 51
+   },
+   {
+    "move": "fissure",
+    "level": 57
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "bounce",
+   "aqua-tail",
+   "earth-power",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "dive",
+   "rock-tomb",
+   "giga-impact",
+   "stone-edge",
+   "round",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

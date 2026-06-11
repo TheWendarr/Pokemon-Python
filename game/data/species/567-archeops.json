@@ -1,0 +1,163 @@
+{
+ "id": "archeops",
+ "name": "Archeops",
+ "dex": 567,
+ "types": [
+  "rock",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 140,
+  "defense": 65,
+  "special_attack": 112,
+  "special_defense": 65,
+  "speed": 110
+ },
+ "abilities": [
+  "defeatist"
+ ],
+ "base_experience": 177,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "wing-attack",
+    "level": 1
+   },
+   {
+    "move": "rock-throw",
+    "level": 1
+   },
+   {
+    "move": "rock-throw",
+    "level": 5
+   },
+   {
+    "move": "double-team",
+    "level": 8
+   },
+   {
+    "move": "scary-face",
+    "level": 11
+   },
+   {
+    "move": "pluck",
+    "level": 15
+   },
+   {
+    "move": "ancient-power",
+    "level": 18
+   },
+   {
+    "move": "agility",
+    "level": 21
+   },
+   {
+    "move": "quick-guard",
+    "level": 25
+   },
+   {
+    "move": "acrobatics",
+    "level": 28
+   },
+   {
+    "move": "dragon-breath",
+    "level": 31
+   },
+   {
+    "move": "crunch",
+    "level": 35
+   },
+   {
+    "move": "endeavor",
+    "level": 40
+   },
+   {
+    "move": "u-turn",
+    "level": 45
+   },
+   {
+    "move": "rock-slide",
+    "level": 51
+   },
+   {
+    "move": "dragon-claw",
+    "level": 56
+   },
+   {
+    "move": "thrash",
+    "level": 61
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "heat-wave",
+   "endeavor",
+   "iron-defense",
+   "bounce",
+   "roost",
+   "tailwind",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "cut",
+   "fly",
+   "roar",
+   "hyper-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "pluck",
+   "u-turn",
+   "rock-polish",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "stone-edge",
+   "hone-claws",
+   "smack-down",
+   "round",
+   "acrobatics",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

@@ -1,0 +1,148 @@
+{
+ "id": "scolipede",
+ "name": "Scolipede",
+ "dex": 545,
+ "types": [
+  "bug",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 100,
+  "defense": 89,
+  "special_attack": 55,
+  "special_defense": 69,
+  "speed": 112
+ },
+ "abilities": [
+  "poison-point",
+  "swarm",
+  "speed-boost"
+ ],
+ "base_experience": 218,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "megahorn",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 1
+   },
+   {
+    "move": "rollout",
+    "level": 1
+   },
+   {
+    "move": "poison-sting",
+    "level": 1
+   },
+   {
+    "move": "screech",
+    "level": 1
+   },
+   {
+    "move": "poison-sting",
+    "level": 5
+   },
+   {
+    "move": "screech",
+    "level": 8
+   },
+   {
+    "move": "pursuit",
+    "level": 12
+   },
+   {
+    "move": "protect",
+    "level": 15
+   },
+   {
+    "move": "poison-tail",
+    "level": 19
+   },
+   {
+    "move": "bug-bite",
+    "level": 23
+   },
+   {
+    "move": "venoshock",
+    "level": 28
+   },
+   {
+    "move": "baton-pass",
+    "level": 30
+   },
+   {
+    "move": "agility",
+    "level": 33
+   },
+   {
+    "move": "steamroller",
+    "level": 39
+   },
+   {
+    "move": "toxic",
+    "level": 44
+   },
+   {
+    "move": "rock-climb",
+    "level": 50
+   },
+   {
+    "move": "double-edge",
+    "level": 55
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "superpower",
+   "endeavor",
+   "snatch",
+   "iron-defense",
+   "aqua-tail",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "gyro-ball",
+   "payback",
+   "poison-jab",
+   "x-scissor",
+   "giga-impact",
+   "venoshock",
+   "round",
+   "struggle-bug",
+   "bulldoze"
+  ]
+ }
+}

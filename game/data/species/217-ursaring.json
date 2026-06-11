@@ -1,0 +1,144 @@
+{
+ "id": "ursaring",
+ "name": "Ursaring",
+ "dex": 217,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 130,
+  "defense": 75,
+  "special_attack": 75,
+  "special_defense": 75,
+  "speed": 55
+ },
+ "abilities": [
+  "guts",
+  "quick-feet",
+  "unnerve"
+ ],
+ "base_experience": 175,
+ "growth_rate": "medium",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "covet",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "lick",
+    "level": 1
+   },
+   {
+    "move": "fake-tears",
+    "level": 1
+   },
+   {
+    "move": "fury-swipes",
+    "level": 8
+   },
+   {
+    "move": "feint-attack",
+    "level": 15
+   },
+   {
+    "move": "sweet-scent",
+    "level": 22
+   },
+   {
+    "move": "slash",
+    "level": 29
+   },
+   {
+    "move": "scary-face",
+    "level": 38
+   },
+   {
+    "move": "rest",
+    "level": 47
+   },
+   {
+    "move": "snore",
+    "level": 49
+   },
+   {
+    "move": "thrash",
+    "level": 58
+   },
+   {
+    "move": "hammer-arm",
+    "level": 67
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "superpower",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "seed-bomb",
+   "gunk-shot"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "bulk-up",
+   "payback",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "stone-edge",
+   "hone-claws",
+   "smack-down",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

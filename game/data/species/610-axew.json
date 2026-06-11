@@ -1,0 +1,151 @@
+{
+ "id": "axew",
+ "name": "Axew",
+ "dex": 610,
+ "types": [
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 46,
+  "attack": 87,
+  "defense": 60,
+  "special_attack": 30,
+  "special_defense": 40,
+  "speed": 57
+ },
+ "abilities": [
+  "rivalry",
+  "mold-breaker",
+  "unnerve"
+ ],
+ "base_experience": 64,
+ "growth_rate": "slow",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 4
+   },
+   {
+    "move": "assurance",
+    "level": 7
+   },
+   {
+    "move": "dragon-rage",
+    "level": 10
+   },
+   {
+    "move": "dual-chop",
+    "level": 13
+   },
+   {
+    "move": "scary-face",
+    "level": 16
+   },
+   {
+    "move": "slash",
+    "level": 20
+   },
+   {
+    "move": "false-swipe",
+    "level": 24
+   },
+   {
+    "move": "dragon-claw",
+    "level": 28
+   },
+   {
+    "move": "dragon-dance",
+    "level": 32
+   },
+   {
+    "move": "taunt",
+    "level": 36
+   },
+   {
+    "move": "dragon-pulse",
+    "level": 41
+   },
+   {
+    "move": "swords-dance",
+    "level": 46
+   },
+   {
+    "move": "guillotine",
+    "level": 51
+   },
+   {
+    "move": "outrage",
+    "level": 56
+   },
+   {
+    "move": "giga-impact",
+    "level": 61
+   }
+  ],
+  "egg": [
+   "razor-wind",
+   "counter",
+   "harden",
+   "focus-energy",
+   "reversal",
+   "endure",
+   "iron-tail",
+   "endeavor",
+   "night-slash",
+   "dragon-pulse"
+  ],
+  "tutor": [
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "superpower",
+   "endeavor",
+   "aqua-tail",
+   "dragon-pulse",
+   "draco-meteor",
+   "dual-chop"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "payback",
+   "fling",
+   "poison-jab",
+   "x-scissor",
+   "giga-impact",
+   "hone-claws",
+   "round",
+   "incinerate"
+  ]
+ }
+}

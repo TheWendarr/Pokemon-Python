@@ -1,0 +1,135 @@
+{
+ "id": "mudkip",
+ "name": "Mudkip",
+ "dex": 258,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 70,
+  "defense": 50,
+  "special_attack": 50,
+  "special_defense": 50,
+  "speed": 40
+ },
+ "abilities": [
+  "torrent",
+  "damp"
+ ],
+ "base_experience": 62,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 6
+   },
+   {
+    "move": "water-gun",
+    "level": 10
+   },
+   {
+    "move": "bide",
+    "level": 15
+   },
+   {
+    "move": "foresight",
+    "level": 19
+   },
+   {
+    "move": "mud-sport",
+    "level": 24
+   },
+   {
+    "move": "take-down",
+    "level": 28
+   },
+   {
+    "move": "whirlpool",
+    "level": 33
+   },
+   {
+    "move": "protect",
+    "level": 37
+   },
+   {
+    "move": "hydro-pump",
+    "level": 42
+   },
+   {
+    "move": "endeavor",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "stomp",
+   "double-edge",
+   "bite",
+   "counter",
+   "sludge",
+   "curse",
+   "mirror-coat",
+   "ancient-power",
+   "whirlpool",
+   "uproar",
+   "yawn",
+   "refresh",
+   "ice-ball",
+   "avalanche",
+   "mud-bomb",
+   "wide-guard"
+  ],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "superpower",
+   "endeavor",
+   "aqua-tail",
+   "earth-power",
+   "water-pledge"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "dive",
+   "rock-tomb",
+   "sludge-wave",
+   "round",
+   "echoed-voice",
+   "scald"
+  ]
+ }
+}

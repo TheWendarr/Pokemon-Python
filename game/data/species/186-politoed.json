@@ -1,0 +1,104 @@
+{
+ "id": "politoed",
+ "name": "Politoed",
+ "dex": 186,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 75,
+  "defense": 75,
+  "special_attack": 90,
+  "special_defense": 100,
+  "speed": 70
+ },
+ "abilities": [
+  "water-absorb",
+  "damp",
+  "drizzle"
+ ],
+ "base_experience": 225,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bubble-beam",
+    "level": 1
+   },
+   {
+    "move": "hypnosis",
+    "level": 1
+   },
+   {
+    "move": "double-slap",
+    "level": 1
+   },
+   {
+    "move": "perish-song",
+    "level": 1
+   },
+   {
+    "move": "swagger",
+    "level": 27
+   },
+   {
+    "move": "bounce",
+    "level": 37
+   },
+   {
+    "move": "hyper-voice",
+    "level": 48
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "helping-hand",
+   "endeavor",
+   "hyper-voice",
+   "bounce"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "payback",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "round",
+   "echoed-voice",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

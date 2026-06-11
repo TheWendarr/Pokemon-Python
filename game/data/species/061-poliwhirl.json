@@ -1,0 +1,129 @@
+{
+ "id": "poliwhirl",
+ "name": "Poliwhirl",
+ "dex": 61,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 65,
+  "defense": 65,
+  "special_attack": 50,
+  "special_defense": 50,
+  "speed": 90
+ },
+ "abilities": [
+  "water-absorb",
+  "damp",
+  "swift-swim"
+ ],
+ "base_experience": 135,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "water-sport",
+    "level": 1
+   },
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "hypnosis",
+    "level": 1
+   },
+   {
+    "move": "bubble",
+    "level": 5
+   },
+   {
+    "move": "hypnosis",
+    "level": 8
+   },
+   {
+    "move": "water-gun",
+    "level": 11
+   },
+   {
+    "move": "double-slap",
+    "level": 15
+   },
+   {
+    "move": "rain-dance",
+    "level": 18
+   },
+   {
+    "move": "body-slam",
+    "level": 21
+   },
+   {
+    "move": "bubble-beam",
+    "level": 27
+   },
+   {
+    "move": "mud-shot",
+    "level": 32
+   },
+   {
+    "move": "belly-drum",
+    "level": 37
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 43
+   },
+   {
+    "move": "hydro-pump",
+    "level": 48
+   },
+   {
+    "move": "mud-bomb",
+    "level": 53
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "helping-hand",
+   "endeavor"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "fling",
+   "round",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

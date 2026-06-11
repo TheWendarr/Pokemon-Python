@@ -1,0 +1,125 @@
+{
+ "id": "larvesta",
+ "name": "Larvesta",
+ "dex": 636,
+ "types": [
+  "bug",
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 85,
+  "defense": 55,
+  "special_attack": 50,
+  "special_defense": 55,
+  "speed": 60
+ },
+ "abilities": [
+  "flame-body",
+  "swarm"
+ ],
+ "base_experience": 72,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "string-shot",
+    "level": 1
+   },
+   {
+    "move": "leech-life",
+    "level": 10
+   },
+   {
+    "move": "take-down",
+    "level": 20
+   },
+   {
+    "move": "flame-charge",
+    "level": 30
+   },
+   {
+    "move": "bug-bite",
+    "level": 40
+   },
+   {
+    "move": "double-edge",
+    "level": 50
+   },
+   {
+    "move": "flame-wheel",
+    "level": 60
+   },
+   {
+    "move": "bug-buzz",
+    "level": 70
+   },
+   {
+    "move": "amnesia",
+    "level": 80
+   },
+   {
+    "move": "thrash",
+    "level": 90
+   },
+   {
+    "move": "flare-blitz",
+    "level": 100
+   }
+  ],
+  "egg": [
+   "string-shot",
+   "harden",
+   "foresight",
+   "endure",
+   "morning-sun",
+   "magnet-rise",
+   "zen-headbutt"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "heat-wave",
+   "signal-beam",
+   "magnet-rise",
+   "zen-headbutt",
+   "bug-bite"
+  ],
+  "machine": [
+   "flamethrower",
+   "solar-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "fire-blast",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "will-o-wisp",
+   "facade",
+   "overheat",
+   "calm-mind",
+   "u-turn",
+   "flame-charge",
+   "round",
+   "incinerate",
+   "acrobatics",
+   "struggle-bug",
+   "wild-charge"
+  ]
+ }
+}

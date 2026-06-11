@@ -1,0 +1,109 @@
+{
+ "id": "mismagius",
+ "name": "Mismagius",
+ "dex": 429,
+ "types": [
+  "ghost"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 60,
+  "defense": 60,
+  "special_attack": 105,
+  "special_defense": 105,
+  "speed": 105
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 173,
+ "growth_rate": "fast",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "lucky-chant",
+    "level": 1
+   },
+   {
+    "move": "magical-leaf",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "psywave",
+    "level": 1
+   },
+   {
+    "move": "spite",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "pain-split",
+   "uproar",
+   "trick",
+   "magic-coat",
+   "skill-swap",
+   "snatch",
+   "hyper-voice",
+   "dark-pulse",
+   "wonder-room",
+   "magic-room",
+   "foul-play"
+  ],
+  "machine": [
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "calm-mind",
+   "payback",
+   "embargo",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "charge-beam",
+   "telekinesis",
+   "round",
+   "echoed-voice"
+  ]
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "id": "phione",
+ "name": "Phione",
+ "dex": 489,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 80,
+  "defense": 80,
+  "special_attack": 80,
+  "special_defense": 80,
+  "speed": 80
+ },
+ "abilities": [
+  "hydration"
+ ],
+ "base_experience": 216,
+ "growth_rate": "slow",
+ "catch_rate": 30,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "water-sport",
+    "level": 1
+   },
+   {
+    "move": "charm",
+    "level": 9
+   },
+   {
+    "move": "supersonic",
+    "level": 16
+   },
+   {
+    "move": "bubble-beam",
+    "level": 24
+   },
+   {
+    "move": "acid-armor",
+    "level": 31
+   },
+   {
+    "move": "whirlpool",
+    "level": 39
+   },
+   {
+    "move": "water-pulse",
+    "level": 46
+   },
+   {
+    "move": "aqua-ring",
+    "level": 54
+   },
+   {
+    "move": "dive",
+    "level": 61
+   },
+   {
+    "move": "rain-dance",
+    "level": 69
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "uproar",
+   "helping-hand",
+   "knock-off",
+   "signal-beam",
+   "bounce",
+   "covet",
+   "last-resort"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "hail",
+   "facade",
+   "dive",
+   "u-turn",
+   "fling",
+   "grass-knot",
+   "round",
+   "scald"
+  ]
+ }
+}

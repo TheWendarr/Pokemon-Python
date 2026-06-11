@@ -1,0 +1,137 @@
+{
+ "id": "armaldo",
+ "name": "Armaldo",
+ "dex": 348,
+ "types": [
+  "rock",
+  "bug"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 125,
+  "defense": 100,
+  "special_attack": 70,
+  "special_defense": 80,
+  "speed": 45
+ },
+ "abilities": [
+  "battle-armor",
+  "swift-swim"
+ ],
+ "base_experience": 173,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 7
+   },
+   {
+    "move": "water-gun",
+    "level": 13
+   },
+   {
+    "move": "metal-claw",
+    "level": 19
+   },
+   {
+    "move": "protect",
+    "level": 25
+   },
+   {
+    "move": "ancient-power",
+    "level": 31
+   },
+   {
+    "move": "fury-cutter",
+    "level": 37
+   },
+   {
+    "move": "slash",
+    "level": 46
+   },
+   {
+    "move": "rock-blast",
+    "level": 55
+   },
+   {
+    "move": "crush-claw",
+    "level": 67
+   },
+   {
+    "move": "x-scissor",
+    "level": 73
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "superpower",
+   "knock-off",
+   "iron-defense",
+   "block",
+   "aqua-tail",
+   "earth-power",
+   "stealth-rock",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "rock-polish",
+   "x-scissor",
+   "giga-impact",
+   "flash-cannon",
+   "stone-edge",
+   "hone-claws",
+   "smack-down",
+   "round",
+   "struggle-bug",
+   "bulldoze"
+  ]
+ }
+}

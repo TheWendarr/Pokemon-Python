@@ -1,0 +1,136 @@
+{
+ "id": "magby",
+ "name": "Magby",
+ "dex": 240,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 75,
+  "defense": 37,
+  "special_attack": 70,
+  "special_defense": 55,
+  "speed": 83
+ },
+ "abilities": [
+  "flame-body",
+  "vital-spirit"
+ ],
+ "base_experience": 73,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 2,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "smog",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 5
+   },
+   {
+    "move": "smokescreen",
+    "level": 8
+   },
+   {
+    "move": "feint-attack",
+    "level": 12
+   },
+   {
+    "move": "fire-spin",
+    "level": 15
+   },
+   {
+    "move": "clear-smog",
+    "level": 19
+   },
+   {
+    "move": "flame-burst",
+    "level": 22
+   },
+   {
+    "move": "confuse-ray",
+    "level": 26
+   },
+   {
+    "move": "fire-punch",
+    "level": 29
+   },
+   {
+    "move": "lava-plume",
+    "level": 33
+   },
+   {
+    "move": "sunny-day",
+    "level": 36
+   },
+   {
+    "move": "flamethrower",
+    "level": 40
+   },
+   {
+    "move": "fire-blast",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "karate-chop",
+   "mega-punch",
+   "thunder-punch",
+   "screech",
+   "barrier",
+   "focus-energy",
+   "mach-punch",
+   "belly-drum",
+   "dynamic-punch",
+   "iron-tail",
+   "cross-chop",
+   "flare-blitz"
+  ],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "heat-wave",
+   "helping-hand",
+   "covet",
+   "dual-chop"
+  ],
+  "machine": [
+   "flamethrower",
+   "toxic",
+   "psychic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "brick-break",
+   "overheat",
+   "fling",
+   "flame-charge",
+   "round",
+   "incinerate"
+  ]
+ }
+}

@@ -1,0 +1,167 @@
+{
+ "id": "hydreigon",
+ "name": "Hydreigon",
+ "dex": 635,
+ "types": [
+  "dark",
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 92,
+  "attack": 105,
+  "defense": 90,
+  "special_attack": 125,
+  "special_defense": 90,
+  "speed": 98
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 270,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tri-attack",
+    "level": 1
+   },
+   {
+    "move": "dragon-rage",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 4
+   },
+   {
+    "move": "bite",
+    "level": 9
+   },
+   {
+    "move": "headbutt",
+    "level": 12
+   },
+   {
+    "move": "dragon-breath",
+    "level": 17
+   },
+   {
+    "move": "roar",
+    "level": 20
+   },
+   {
+    "move": "crunch",
+    "level": 25
+   },
+   {
+    "move": "slam",
+    "level": 28
+   },
+   {
+    "move": "dragon-pulse",
+    "level": 32
+   },
+   {
+    "move": "work-up",
+    "level": 38
+   },
+   {
+    "move": "dragon-rush",
+    "level": 42
+   },
+   {
+    "move": "body-slam",
+    "level": 48
+   },
+   {
+    "move": "scary-face",
+    "level": 55
+   },
+   {
+    "move": "hyper-voice",
+    "level": 68
+   },
+   {
+    "move": "outrage",
+    "level": 79
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "heat-wave",
+   "superpower",
+   "hyper-voice",
+   "signal-beam",
+   "roost",
+   "tailwind",
+   "dark-pulse",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "zen-headbutt",
+   "draco-meteor"
+  ],
+  "machine": [
+   "fly",
+   "roar",
+   "flamethrower",
+   "surf",
+   "hyper-beam",
+   "strength",
+   "thunder-wave",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "reflect",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "u-turn",
+   "payback",
+   "focus-blast",
+   "giga-impact",
+   "flash-cannon",
+   "stone-edge",
+   "charge-beam",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "acrobatics",
+   "bulldoze",
+   "dragon-tail",
+   "work-up"
+  ]
+ }
+}

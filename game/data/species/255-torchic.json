@@ -1,0 +1,130 @@
+{
+ "id": "torchic",
+ "name": "Torchic",
+ "dex": 255,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 60,
+  "defense": 40,
+  "special_attack": 70,
+  "special_defense": 50,
+  "speed": 45
+ },
+ "abilities": [
+  "blaze",
+  "speed-boost"
+ ],
+ "base_experience": 62,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 7
+   },
+   {
+    "move": "ember",
+    "level": 10
+   },
+   {
+    "move": "peck",
+    "level": 16
+   },
+   {
+    "move": "sand-attack",
+    "level": 19
+   },
+   {
+    "move": "fire-spin",
+    "level": 25
+   },
+   {
+    "move": "quick-attack",
+    "level": 28
+   },
+   {
+    "move": "slash",
+    "level": 34
+   },
+   {
+    "move": "mirror-move",
+    "level": 37
+   },
+   {
+    "move": "flamethrower",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "low-kick",
+   "counter",
+   "agility",
+   "curse",
+   "reversal",
+   "endure",
+   "baton-pass",
+   "smelling-salts",
+   "feather-dance",
+   "crush-claw",
+   "feint",
+   "last-resort",
+   "night-slash",
+   "flame-burst"
+  ],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "heat-wave",
+   "helping-hand",
+   "bounce",
+   "last-resort",
+   "fire-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "flamethrower",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "overheat",
+   "rock-tomb",
+   "aerial-ace",
+   "shadow-claw",
+   "hone-claws",
+   "flame-charge",
+   "round",
+   "echoed-voice",
+   "incinerate"
+  ]
+ }
+}

@@ -1,0 +1,142 @@
+{
+ "id": "mightyena",
+ "name": "Mightyena",
+ "dex": 262,
+ "types": [
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 90,
+  "defense": 70,
+  "special_attack": 60,
+  "special_defense": 60,
+  "speed": 70
+ },
+ "abilities": [
+  "intimidate",
+  "quick-feet",
+  "moxie"
+ ],
+ "base_experience": 147,
+ "growth_rate": "medium",
+ "catch_rate": 127,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "howl",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "howl",
+    "level": 5
+   },
+   {
+    "move": "sand-attack",
+    "level": 9
+   },
+   {
+    "move": "bite",
+    "level": 13
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 17
+   },
+   {
+    "move": "roar",
+    "level": 22
+   },
+   {
+    "move": "swagger",
+    "level": 27
+   },
+   {
+    "move": "assurance",
+    "level": 32
+   },
+   {
+    "move": "scary-face",
+    "level": 37
+   },
+   {
+    "move": "taunt",
+    "level": 42
+   },
+   {
+    "move": "embargo",
+    "level": 47
+   },
+   {
+    "move": "take-down",
+    "level": 52
+   },
+   {
+    "move": "thief",
+    "level": 57
+   },
+   {
+    "move": "sucker-punch",
+    "level": 62
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "spite",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "snatch",
+   "hyper-voice",
+   "covet",
+   "dark-pulse",
+   "foul-play"
+  ],
+  "machine": [
+   "roar",
+   "hyper-beam",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "payback",
+   "embargo",
+   "giga-impact",
+   "round",
+   "incinerate",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

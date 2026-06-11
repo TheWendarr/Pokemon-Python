@@ -1,0 +1,144 @@
+{
+ "id": "servine",
+ "name": "Servine",
+ "dex": 496,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 60,
+  "defense": 75,
+  "special_attack": 60,
+  "special_defense": 75,
+  "speed": 83
+ },
+ "abilities": [
+  "overgrow",
+  "contrary"
+ ],
+ "base_experience": 145,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "vine-whip",
+    "level": 1
+   },
+   {
+    "move": "wrap",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 4
+   },
+   {
+    "move": "vine-whip",
+    "level": 7
+   },
+   {
+    "move": "wrap",
+    "level": 10
+   },
+   {
+    "move": "growth",
+    "level": 13
+   },
+   {
+    "move": "leaf-tornado",
+    "level": 16
+   },
+   {
+    "move": "leech-seed",
+    "level": 20
+   },
+   {
+    "move": "mega-drain",
+    "level": 24
+   },
+   {
+    "move": "slam",
+    "level": 28
+   },
+   {
+    "move": "leaf-blade",
+    "level": 32
+   },
+   {
+    "move": "coil",
+    "level": 36
+   },
+   {
+    "move": "giga-drain",
+    "level": 40
+   },
+   {
+    "move": "wring-out",
+    "level": 44
+   },
+   {
+    "move": "gastro-acid",
+    "level": 48
+   },
+   {
+    "move": "leaf-storm",
+    "level": 52
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "synthesis",
+   "knock-off",
+   "snatch",
+   "gastro-acid",
+   "worry-seed",
+   "aqua-tail",
+   "seed-bomb",
+   "grass-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "torment",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "calm-mind",
+   "energy-ball",
+   "grass-knot",
+   "round"
+  ]
+ }
+}

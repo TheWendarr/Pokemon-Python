@@ -1,0 +1,124 @@
+{
+ "id": "beedrill",
+ "name": "Beedrill",
+ "dex": 15,
+ "types": [
+  "bug",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 90,
+  "defense": 40,
+  "special_attack": 45,
+  "special_defense": 80,
+  "speed": 75
+ },
+ "abilities": [
+  "swarm",
+  "sniper"
+ ],
+ "base_experience": 178,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fury-attack",
+    "level": 1
+   },
+   {
+    "move": "fury-attack",
+    "level": 10
+   },
+   {
+    "move": "focus-energy",
+    "level": 13
+   },
+   {
+    "move": "twineedle",
+    "level": 16
+   },
+   {
+    "move": "rage",
+    "level": 19
+   },
+   {
+    "move": "pursuit",
+    "level": 22
+   },
+   {
+    "move": "toxic-spikes",
+    "level": 25
+   },
+   {
+    "move": "pin-missile",
+    "level": 28
+   },
+   {
+    "move": "agility",
+    "level": 31
+   },
+   {
+    "move": "assurance",
+    "level": 34
+   },
+   {
+    "move": "poison-jab",
+    "level": 37
+   },
+   {
+    "move": "endeavor",
+    "level": 40
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "knock-off",
+   "endeavor",
+   "roost",
+   "tailwind",
+   "bug-bite",
+   "electroweb",
+   "drill-run"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "aerial-ace",
+   "u-turn",
+   "payback",
+   "poison-jab",
+   "x-scissor",
+   "giga-impact",
+   "venoshock",
+   "round",
+   "acrobatics",
+   "struggle-bug"
+  ]
+ }
+}

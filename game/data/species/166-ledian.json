@@ -1,0 +1,138 @@
+{
+ "id": "ledian",
+ "name": "Ledian",
+ "dex": 166,
+ "types": [
+  "bug",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 35,
+  "defense": 50,
+  "special_attack": 55,
+  "special_defense": 110,
+  "speed": 85
+ },
+ "abilities": [
+  "swarm",
+  "early-bird",
+  "iron-fist"
+ ],
+ "base_experience": 137,
+ "growth_rate": "fast",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 1
+   },
+   {
+    "move": "comet-punch",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 6
+   },
+   {
+    "move": "comet-punch",
+    "level": 9
+   },
+   {
+    "move": "light-screen",
+    "level": 14
+   },
+   {
+    "move": "reflect",
+    "level": 14
+   },
+   {
+    "move": "safeguard",
+    "level": 14
+   },
+   {
+    "move": "mach-punch",
+    "level": 17
+   },
+   {
+    "move": "baton-pass",
+    "level": 24
+   },
+   {
+    "move": "silver-wind",
+    "level": 29
+   },
+   {
+    "move": "agility",
+    "level": 36
+   },
+   {
+    "move": "swift",
+    "level": 41
+   },
+   {
+    "move": "double-edge",
+    "level": 48
+   },
+   {
+    "move": "bug-buzz",
+    "level": 53
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "uproar",
+   "knock-off",
+   "roost",
+   "tailwind",
+   "drain-punch",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "aerial-ace",
+   "u-turn",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "round",
+   "acrobatics",
+   "struggle-bug"
+  ]
+ }
+}

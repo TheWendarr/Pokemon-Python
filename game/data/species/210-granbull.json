@@ -1,0 +1,160 @@
+{
+ "id": "granbull",
+ "name": "Granbull",
+ "dex": 210,
+ "types": [
+  "fairy"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 120,
+  "defense": 75,
+  "special_attack": 60,
+  "special_defense": 60,
+  "speed": 45
+ },
+ "abilities": [
+  "intimidate",
+  "quick-feet",
+  "rattled"
+ ],
+ "base_experience": 158,
+ "growth_rate": "fast",
+ "catch_rate": 75,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ice-fang",
+    "level": 1
+   },
+   {
+    "move": "fire-fang",
+    "level": 1
+   },
+   {
+    "move": "thunder-fang",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "scary-face",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "charm",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 7
+   },
+   {
+    "move": "lick",
+    "level": 13
+   },
+   {
+    "move": "headbutt",
+    "level": 19
+   },
+   {
+    "move": "roar",
+    "level": 27
+   },
+   {
+    "move": "rage",
+    "level": 35
+   },
+   {
+    "move": "take-down",
+    "level": 43
+   },
+   {
+    "move": "payback",
+    "level": 51
+   },
+   {
+    "move": "crunch",
+    "level": 59
+   },
+   {
+    "move": "outrage",
+    "level": 67
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "super-fang",
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "superpower",
+   "hyper-voice",
+   "covet",
+   "last-resort"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "reflect",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "bulk-up",
+   "payback",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "round",
+   "incinerate",
+   "retaliate",
+   "bulldoze",
+   "work-up",
+   "wild-charge",
+   "snarl"
+  ]
+ }
+}

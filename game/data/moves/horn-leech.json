@@ -1,0 +1,30 @@
+{
+ "id": "horn-leech",
+ "name": "Horn Leech",
+ "type": "grass",
+ "category": "physical",
+ "power": 75,
+ "accuracy": 100,
+ "pp": 10,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "contact",
+  "heal",
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-heal",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 50,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

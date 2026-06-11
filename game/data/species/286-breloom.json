@@ -1,0 +1,148 @@
+{
+ "id": "breloom",
+ "name": "Breloom",
+ "dex": 286,
+ "types": [
+  "grass",
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 130,
+  "defense": 80,
+  "special_attack": 60,
+  "special_defense": 60,
+  "speed": 70
+ },
+ "abilities": [
+  "effect-spore",
+  "poison-heal",
+  "technician"
+ ],
+ "base_experience": 161,
+ "growth_rate": "fast-then-very-slow",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "absorb",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "stun-spore",
+    "level": 1
+   },
+   {
+    "move": "leech-seed",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 5
+   },
+   {
+    "move": "stun-spore",
+    "level": 9
+   },
+   {
+    "move": "leech-seed",
+    "level": 13
+   },
+   {
+    "move": "mega-drain",
+    "level": 17
+   },
+   {
+    "move": "headbutt",
+    "level": 21
+   },
+   {
+    "move": "mach-punch",
+    "level": 23
+   },
+   {
+    "move": "counter",
+    "level": 25
+   },
+   {
+    "move": "force-palm",
+    "level": 29
+   },
+   {
+    "move": "sky-uppercut",
+    "level": 33
+   },
+   {
+    "move": "mind-reader",
+    "level": 37
+   },
+   {
+    "move": "seed-bomb",
+    "level": 41
+   },
+   {
+    "move": "dynamic-punch",
+    "level": 45
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "thunder-punch",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "synthesis",
+   "helping-hand",
+   "superpower",
+   "snatch",
+   "worry-seed",
+   "seed-bomb",
+   "drain-punch"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "fling",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "stone-edge",
+   "grass-knot",
+   "venoshock",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "id": "rock-tomb",
+ "name": "Rock Tomb",
+ "type": "rock",
+ "category": "physical",
+ "power": 50,
+ "accuracy": 80,
+ "pp": 10,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-lower",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [
+   {
+    "stat": "speed",
+    "change": -1
+   }
+  ],
+  "stat_chance": 100,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

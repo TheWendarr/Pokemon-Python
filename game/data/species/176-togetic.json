@@ -1,0 +1,163 @@
+{
+ "id": "togetic",
+ "name": "Togetic",
+ "dex": 176,
+ "types": [
+  "fairy",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 40,
+  "defense": 85,
+  "special_attack": 80,
+  "special_defense": 105,
+  "speed": 40
+ },
+ "abilities": [
+  "hustle",
+  "serene-grace",
+  "super-luck"
+ ],
+ "base_experience": 142,
+ "growth_rate": "fast",
+ "catch_rate": 75,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "magical-leaf",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "charm",
+    "level": 1
+   },
+   {
+    "move": "metronome",
+    "level": 1
+   },
+   {
+    "move": "sweet-kiss",
+    "level": 1
+   },
+   {
+    "move": "metronome",
+    "level": 5
+   },
+   {
+    "move": "sweet-kiss",
+    "level": 9
+   },
+   {
+    "move": "yawn",
+    "level": 13
+   },
+   {
+    "move": "encore",
+    "level": 17
+   },
+   {
+    "move": "follow-me",
+    "level": 21
+   },
+   {
+    "move": "bestow",
+    "level": 25
+   },
+   {
+    "move": "wish",
+    "level": 29
+   },
+   {
+    "move": "ancient-power",
+    "level": 33
+   },
+   {
+    "move": "safeguard",
+    "level": 37
+   },
+   {
+    "move": "baton-pass",
+    "level": 41
+   },
+   {
+    "move": "double-edge",
+    "level": 45
+   },
+   {
+    "move": "last-resort",
+    "level": 49
+   },
+   {
+    "move": "after-you",
+    "level": 53
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heal-bell",
+   "heat-wave",
+   "trick",
+   "magic-coat",
+   "endeavor",
+   "hyper-voice",
+   "signal-beam",
+   "covet",
+   "roost",
+   "tailwind",
+   "last-resort",
+   "drain-punch",
+   "zen-headbutt",
+   "after-you"
+  ],
+  "machine": [
+   "fly",
+   "flamethrower",
+   "hyper-beam",
+   "solar-beam",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "aerial-ace",
+   "fling",
+   "giga-impact",
+   "grass-knot",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

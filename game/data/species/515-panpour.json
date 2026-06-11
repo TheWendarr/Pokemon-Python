@@ -1,0 +1,154 @@
+{
+ "id": "panpour",
+ "name": "Panpour",
+ "dex": 515,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 53,
+  "defense": 48,
+  "special_attack": 53,
+  "special_defense": 48,
+  "speed": 64
+ },
+ "abilities": [
+  "gluttony",
+  "torrent"
+ ],
+ "base_experience": 63,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 4
+   },
+   {
+    "move": "lick",
+    "level": 7
+   },
+   {
+    "move": "water-gun",
+    "level": 10
+   },
+   {
+    "move": "fury-swipes",
+    "level": 13
+   },
+   {
+    "move": "water-sport",
+    "level": 16
+   },
+   {
+    "move": "bite",
+    "level": 19
+   },
+   {
+    "move": "scald",
+    "level": 22
+   },
+   {
+    "move": "taunt",
+    "level": 25
+   },
+   {
+    "move": "fling",
+    "level": 28
+   },
+   {
+    "move": "acrobatics",
+    "level": 31
+   },
+   {
+    "move": "brine",
+    "level": 34
+   },
+   {
+    "move": "recycle",
+    "level": 37
+   },
+   {
+    "move": "natural-gift",
+    "level": 40
+   },
+   {
+    "move": "crunch",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "hydro-pump",
+   "low-kick",
+   "role-play",
+   "mud-sport",
+   "astonish",
+   "tickle",
+   "covet",
+   "aqua-ring",
+   "aqua-tail",
+   "nasty-plot"
+  ],
+  "tutor": [
+   "ice-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "role-play",
+   "recycle",
+   "knock-off",
+   "endeavor",
+   "covet",
+   "aqua-tail",
+   "gunk-shot"
+  ],
+  "machine": [
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "torment",
+   "facade",
+   "taunt",
+   "dive",
+   "rock-tomb",
+   "payback",
+   "fling",
+   "shadow-claw",
+   "grass-knot",
+   "hone-claws",
+   "low-sweep",
+   "round",
+   "scald",
+   "acrobatics",
+   "work-up"
+  ]
+ }
+}

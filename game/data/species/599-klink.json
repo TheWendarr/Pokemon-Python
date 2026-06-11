@@ -1,0 +1,125 @@
+{
+ "id": "klink",
+ "name": "Klink",
+ "dex": 599,
+ "types": [
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 55,
+  "defense": 70,
+  "special_attack": 45,
+  "special_defense": 60,
+  "speed": 30
+ },
+ "abilities": [
+  "plus",
+  "minus",
+  "clear-body"
+ ],
+ "base_experience": 60,
+ "growth_rate": "medium-slow",
+ "catch_rate": 130,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "vice-grip",
+    "level": 1
+   },
+   {
+    "move": "charge",
+    "level": 6
+   },
+   {
+    "move": "thunder-shock",
+    "level": 11
+   },
+   {
+    "move": "gear-grind",
+    "level": 16
+   },
+   {
+    "move": "bind",
+    "level": 21
+   },
+   {
+    "move": "charge-beam",
+    "level": 26
+   },
+   {
+    "move": "autotomize",
+    "level": 31
+   },
+   {
+    "move": "mirror-shot",
+    "level": 36
+   },
+   {
+    "move": "screech",
+    "level": 39
+   },
+   {
+    "move": "discharge",
+    "level": 42
+   },
+   {
+    "move": "metal-sound",
+    "level": 45
+   },
+   {
+    "move": "shift-gear",
+    "level": 48
+   },
+   {
+    "move": "lock-on",
+    "level": 51
+   },
+   {
+    "move": "zap-cannon",
+    "level": 54
+   },
+   {
+    "move": "hyper-beam",
+    "level": 57
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "magic-coat",
+   "recycle",
+   "signal-beam",
+   "iron-defense",
+   "gravity",
+   "magnet-rise"
+  ],
+  "machine": [
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rock-smash",
+   "facade",
+   "rock-polish",
+   "flash-cannon",
+   "charge-beam",
+   "round",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

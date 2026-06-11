@@ -1,0 +1,119 @@
+{
+ "id": "wigglytuff",
+ "name": "Wigglytuff",
+ "dex": 40,
+ "types": [
+  "normal",
+  "fairy"
+ ],
+ "base_stats": {
+  "hp": 140,
+  "attack": 70,
+  "defense": 45,
+  "special_attack": 85,
+  "special_defense": 50,
+  "speed": 45
+ },
+ "abilities": [
+  "cute-charm",
+  "competitive",
+  "frisk"
+ ],
+ "base_experience": 196,
+ "growth_rate": "fast",
+ "catch_rate": 50,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "sing",
+    "level": 1
+   },
+   {
+    "move": "disable",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 1
+   },
+   {
+    "move": "double-slap",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "pain-split",
+   "helping-hand",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "knock-off",
+   "endeavor",
+   "snatch",
+   "hyper-voice",
+   "bounce",
+   "covet",
+   "gravity",
+   "last-resort",
+   "drain-punch",
+   "stealth-rock",
+   "magic-room"
+  ],
+  "machine": [
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "brick-break",
+   "gyro-ball",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "grass-knot",
+   "charge-beam",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "retaliate",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

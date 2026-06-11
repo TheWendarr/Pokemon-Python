@@ -1,0 +1,139 @@
+{
+ "id": "patrat",
+ "name": "Patrat",
+ "dex": 504,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 55,
+  "defense": 39,
+  "special_attack": 35,
+  "special_defense": 39,
+  "speed": 42
+ },
+ "abilities": [
+  "run-away",
+  "keen-eye",
+  "analytic"
+ ],
+ "base_experience": 51,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 3
+   },
+   {
+    "move": "bite",
+    "level": 6
+   },
+   {
+    "move": "bide",
+    "level": 8
+   },
+   {
+    "move": "detect",
+    "level": 11
+   },
+   {
+    "move": "sand-attack",
+    "level": 13
+   },
+   {
+    "move": "crunch",
+    "level": 16
+   },
+   {
+    "move": "hypnosis",
+    "level": 18
+   },
+   {
+    "move": "super-fang",
+    "level": 21
+   },
+   {
+    "move": "after-you",
+    "level": 23
+   },
+   {
+    "move": "work-up",
+    "level": 26
+   },
+   {
+    "move": "hyper-fang",
+    "level": 28
+   },
+   {
+    "move": "mean-look",
+    "level": 31
+   },
+   {
+    "move": "baton-pass",
+    "level": 33
+   },
+   {
+    "move": "slam",
+    "level": 36
+   }
+  ],
+  "egg": [
+   "screech",
+   "flail",
+   "foresight",
+   "pursuit",
+   "iron-tail",
+   "revenge",
+   "assurance"
+  ],
+  "tutor": [
+   "low-kick",
+   "super-fang",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "endeavor",
+   "covet",
+   "last-resort",
+   "aqua-tail",
+   "seed-bomb",
+   "zen-headbutt",
+   "gunk-shot",
+   "after-you"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "thunderbolt",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "facade",
+   "fling",
+   "grass-knot",
+   "round",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

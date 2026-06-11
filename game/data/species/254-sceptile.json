@@ -1,0 +1,152 @@
+{
+ "id": "sceptile",
+ "name": "Sceptile",
+ "dex": 254,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 85,
+  "defense": 65,
+  "special_attack": 105,
+  "special_defense": 85,
+  "speed": 120
+ },
+ "abilities": [
+  "overgrow",
+  "unburden"
+ ],
+ "base_experience": 239,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "night-slash",
+    "level": 1
+   },
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 6
+   },
+   {
+    "move": "quick-attack",
+    "level": 11
+   },
+   {
+    "move": "x-scissor",
+    "level": 16
+   },
+   {
+    "move": "pursuit",
+    "level": 17
+   },
+   {
+    "move": "screech",
+    "level": 23
+   },
+   {
+    "move": "leaf-blade",
+    "level": 29
+   },
+   {
+    "move": "agility",
+    "level": 35
+   },
+   {
+    "move": "slam",
+    "level": 43
+   },
+   {
+    "move": "detect",
+    "level": 51
+   },
+   {
+    "move": "false-swipe",
+    "level": 59
+   },
+   {
+    "move": "leaf-storm",
+    "level": 67
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "outrage",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "synthesis",
+   "endeavor",
+   "frenzy-plant",
+   "worry-seed",
+   "seed-bomb",
+   "dragon-pulse",
+   "drain-punch",
+   "grass-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "fling",
+   "x-scissor",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "hone-claws",
+   "low-sweep",
+   "round",
+   "acrobatics",
+   "bulldoze"
+  ]
+ }
+}

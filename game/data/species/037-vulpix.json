@@ -1,0 +1,159 @@
+{
+ "id": "vulpix",
+ "name": "Vulpix",
+ "dex": 37,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 38,
+  "attack": 41,
+  "defense": 40,
+  "special_attack": 50,
+  "special_defense": 65,
+  "speed": 65
+ },
+ "abilities": [
+  "flash-fire",
+  "drought"
+ ],
+ "base_experience": 60,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 4
+   },
+   {
+    "move": "roar",
+    "level": 7
+   },
+   {
+    "move": "quick-attack",
+    "level": 10
+   },
+   {
+    "move": "fire-spin",
+    "level": 12
+   },
+   {
+    "move": "confuse-ray",
+    "level": 15
+   },
+   {
+    "move": "imprison",
+    "level": 18
+   },
+   {
+    "move": "feint-attack",
+    "level": 20
+   },
+   {
+    "move": "flame-burst",
+    "level": 23
+   },
+   {
+    "move": "will-o-wisp",
+    "level": 26
+   },
+   {
+    "move": "hex",
+    "level": 28
+   },
+   {
+    "move": "payback",
+    "level": 31
+   },
+   {
+    "move": "flamethrower",
+    "level": 34
+   },
+   {
+    "move": "safeguard",
+    "level": 36
+   },
+   {
+    "move": "extrasensory",
+    "level": 39
+   },
+   {
+    "move": "fire-blast",
+    "level": 42
+   },
+   {
+    "move": "grudge",
+    "level": 44
+   },
+   {
+    "move": "captivate",
+    "level": 47
+   },
+   {
+    "move": "inferno",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "disable",
+   "hypnosis",
+   "flail",
+   "spite",
+   "feint-attack",
+   "heat-wave",
+   "secret-power",
+   "extrasensory",
+   "howl",
+   "power-swap",
+   "flare-blitz",
+   "hex",
+   "tail-slap"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "sleep-talk",
+   "pain-split",
+   "iron-tail",
+   "heat-wave",
+   "role-play",
+   "covet",
+   "dark-pulse",
+   "zen-headbutt",
+   "foul-play"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "will-o-wisp",
+   "facade",
+   "overheat",
+   "payback",
+   "energy-ball",
+   "flame-charge",
+   "round",
+   "incinerate"
+  ]
+ }
+}

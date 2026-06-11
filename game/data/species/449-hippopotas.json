@@ -1,0 +1,116 @@
+{
+ "id": "hippopotas",
+ "name": "Hippopotas",
+ "dex": 449,
+ "types": [
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 68,
+  "attack": 72,
+  "defense": 78,
+  "special_attack": 38,
+  "special_defense": 42,
+  "speed": 32
+ },
+ "abilities": [
+  "sand-stream",
+  "sand-force"
+ ],
+ "base_experience": 66,
+ "growth_rate": "slow",
+ "catch_rate": 140,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 7
+   },
+   {
+    "move": "yawn",
+    "level": 13
+   },
+   {
+    "move": "take-down",
+    "level": 19
+   },
+   {
+    "move": "dig",
+    "level": 19
+   },
+   {
+    "move": "sand-tomb",
+    "level": 25
+   },
+   {
+    "move": "crunch",
+    "level": 31
+   },
+   {
+    "move": "earthquake",
+    "level": 37
+   },
+   {
+    "move": "double-edge",
+    "level": 44
+   },
+   {
+    "move": "fissure",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "whirlwind",
+   "body-slam",
+   "curse",
+   "sleep-talk",
+   "stockpile",
+   "spit-up",
+   "swallow",
+   "revenge",
+   "slack-off",
+   "sand-tomb"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "superpower",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "roar",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

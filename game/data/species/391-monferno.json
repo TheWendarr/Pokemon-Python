@@ -1,0 +1,151 @@
+{
+ "id": "monferno",
+ "name": "Monferno",
+ "dex": 391,
+ "types": [
+  "fire",
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 64,
+  "attack": 78,
+  "defense": 52,
+  "special_attack": 78,
+  "special_defense": 52,
+  "speed": 81
+ },
+ "abilities": [
+  "blaze",
+  "iron-fist"
+ ],
+ "base_experience": 142,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 7
+   },
+   {
+    "move": "taunt",
+    "level": 9
+   },
+   {
+    "move": "mach-punch",
+    "level": 14
+   },
+   {
+    "move": "fury-swipes",
+    "level": 16
+   },
+   {
+    "move": "flame-wheel",
+    "level": 19
+   },
+   {
+    "move": "feint",
+    "level": 26
+   },
+   {
+    "move": "torment",
+    "level": 29
+   },
+   {
+    "move": "close-combat",
+    "level": 36
+   },
+   {
+    "move": "fire-spin",
+    "level": 39
+   },
+   {
+    "move": "acrobatics",
+    "level": 46
+   },
+   {
+    "move": "slack-off",
+    "level": 49
+   },
+   {
+    "move": "flare-blitz",
+    "level": 56
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "heat-wave",
+   "helping-hand",
+   "role-play",
+   "endeavor",
+   "covet",
+   "gunk-shot",
+   "stealth-rock",
+   "fire-pledge",
+   "dual-chop"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "flamethrower",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "aerial-ace",
+   "bulk-up",
+   "u-turn",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "shadow-claw",
+   "grass-knot",
+   "hone-claws",
+   "flame-charge",
+   "low-sweep",
+   "round",
+   "incinerate",
+   "acrobatics",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

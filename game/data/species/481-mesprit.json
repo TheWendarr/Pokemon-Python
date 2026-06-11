@@ -1,0 +1,137 @@
+{
+ "id": "mesprit",
+ "name": "Mesprit",
+ "dex": 481,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 105,
+  "defense": 105,
+  "special_attack": 105,
+  "special_defense": 105,
+  "speed": 80
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "rest",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "imprison",
+    "level": 6
+   },
+   {
+    "move": "protect",
+    "level": 16
+   },
+   {
+    "move": "swift",
+    "level": 21
+   },
+   {
+    "move": "lucky-chant",
+    "level": 31
+   },
+   {
+    "move": "future-sight",
+    "level": 36
+   },
+   {
+    "move": "charm",
+    "level": 46
+   },
+   {
+    "move": "extrasensory",
+    "level": 51
+   },
+   {
+    "move": "copycat",
+    "level": 61
+   },
+   {
+    "move": "natural-gift",
+    "level": 66
+   },
+   {
+    "move": "healing-wish",
+    "level": 76
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "knock-off",
+   "skill-swap",
+   "signal-beam",
+   "zen-headbutt",
+   "stealth-rock",
+   "wonder-room",
+   "magic-room"
+  ],
+  "machine": [
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "calm-mind",
+   "u-turn",
+   "fling",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "acrobatics"
+  ]
+ }
+}

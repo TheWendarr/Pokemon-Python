@@ -1,0 +1,117 @@
+{
+ "id": "azurill",
+ "name": "Azurill",
+ "dex": 298,
+ "types": [
+  "normal",
+  "fairy"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 20,
+  "defense": 40,
+  "special_attack": 20,
+  "special_defense": 40,
+  "speed": 20
+ },
+ "abilities": [
+  "thick-fat",
+  "huge-power",
+  "sap-sipper"
+ ],
+ "base_experience": 38,
+ "growth_rate": "fast",
+ "catch_rate": 150,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "splash",
+    "level": 1
+   },
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 2
+   },
+   {
+    "move": "water-sport",
+    "level": 5
+   },
+   {
+    "move": "water-gun",
+    "level": 7
+   },
+   {
+    "move": "charm",
+    "level": 10
+   },
+   {
+    "move": "bubble-beam",
+    "level": 13
+   },
+   {
+    "move": "helping-hand",
+    "level": 16
+   },
+   {
+    "move": "slam",
+    "level": 20
+   },
+   {
+    "move": "bounce",
+    "level": 23
+   }
+  ],
+  "egg": [
+   "slam",
+   "body-slam",
+   "sing",
+   "encore",
+   "refresh",
+   "fake-tears",
+   "tickle",
+   "muddy-water",
+   "water-sport",
+   "soak"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "knock-off",
+   "hyper-voice",
+   "bounce",
+   "covet"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "round",
+   "scald",
+   "work-up"
+  ]
+ }
+}

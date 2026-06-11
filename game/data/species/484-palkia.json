@@ -1,0 +1,144 @@
+{
+ "id": "palkia",
+ "name": "Palkia",
+ "dex": 484,
+ "types": [
+  "water",
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 120,
+  "defense": 100,
+  "special_attack": 150,
+  "special_defense": 120,
+  "speed": 100
+ },
+ "abilities": [
+  "pressure",
+  "telepathy"
+ ],
+ "base_experience": 306,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "dragon-breath",
+    "level": 1
+   },
+   {
+    "move": "scary-face",
+    "level": 1
+   },
+   {
+    "move": "water-pulse",
+    "level": 6
+   },
+   {
+    "move": "ancient-power",
+    "level": 10
+   },
+   {
+    "move": "slash",
+    "level": 15
+   },
+   {
+    "move": "power-gem",
+    "level": 19
+   },
+   {
+    "move": "aqua-tail",
+    "level": 24
+   },
+   {
+    "move": "dragon-claw",
+    "level": 28
+   },
+   {
+    "move": "earth-power",
+    "level": 33
+   },
+   {
+    "move": "aura-sphere",
+    "level": 37
+   },
+   {
+    "move": "aqua-tail",
+    "level": 42
+   },
+   {
+    "move": "spacial-rend",
+    "level": 46
+   },
+   {
+    "move": "hydro-pump",
+    "level": 50
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "hyper-voice",
+   "gravity",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "draco-meteor"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "bulk-up",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "trick-room",
+   "stone-edge",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

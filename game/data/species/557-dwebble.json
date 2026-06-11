@@ -1,0 +1,143 @@
+{
+ "id": "dwebble",
+ "name": "Dwebble",
+ "dex": 557,
+ "types": [
+  "bug",
+  "rock"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 65,
+  "defense": 85,
+  "special_attack": 35,
+  "special_defense": 35,
+  "speed": 55
+ },
+ "abilities": [
+  "sturdy",
+  "shell-armor",
+  "weak-armor"
+ ],
+ "base_experience": 65,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fury-cutter",
+    "level": 1
+   },
+   {
+    "move": "rock-blast",
+    "level": 5
+   },
+   {
+    "move": "withdraw",
+    "level": 7
+   },
+   {
+    "move": "sand-attack",
+    "level": 11
+   },
+   {
+    "move": "feint-attack",
+    "level": 13
+   },
+   {
+    "move": "smack-down",
+    "level": 17
+   },
+   {
+    "move": "rock-polish",
+    "level": 19
+   },
+   {
+    "move": "bug-bite",
+    "level": 23
+   },
+   {
+    "move": "stealth-rock",
+    "level": 24
+   },
+   {
+    "move": "rock-slide",
+    "level": 29
+   },
+   {
+    "move": "slash",
+    "level": 31
+   },
+   {
+    "move": "x-scissor",
+    "level": 35
+   },
+   {
+    "move": "shell-smash",
+    "level": 37
+   },
+   {
+    "move": "flail",
+    "level": 41
+   },
+   {
+    "move": "rock-wrecker",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "counter",
+   "curse",
+   "spikes",
+   "endure",
+   "sand-tomb",
+   "iron-defense",
+   "block",
+   "night-slash"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "knock-off",
+   "iron-defense",
+   "block",
+   "stealth-rock",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "aerial-ace",
+   "rock-polish",
+   "poison-jab",
+   "x-scissor",
+   "shadow-claw",
+   "stone-edge",
+   "hone-claws",
+   "smack-down",
+   "round",
+   "struggle-bug",
+   "bulldoze"
+  ]
+ }
+}

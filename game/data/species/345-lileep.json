@@ -1,0 +1,131 @@
+{
+ "id": "lileep",
+ "name": "Lileep",
+ "dex": 345,
+ "types": [
+  "rock",
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 66,
+  "attack": 41,
+  "defense": 77,
+  "special_attack": 61,
+  "special_defense": 87,
+  "speed": 23
+ },
+ "abilities": [
+  "suction-cups",
+  "storm-drain"
+ ],
+ "base_experience": 71,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "constrict",
+    "level": 1
+   },
+   {
+    "move": "acid",
+    "level": 8
+   },
+   {
+    "move": "ingrain",
+    "level": 15
+   },
+   {
+    "move": "confuse-ray",
+    "level": 22
+   },
+   {
+    "move": "amnesia",
+    "level": 29
+   },
+   {
+    "move": "gastro-acid",
+    "level": 36
+   },
+   {
+    "move": "ancient-power",
+    "level": 43
+   },
+   {
+    "move": "energy-ball",
+    "level": 50
+   },
+   {
+    "move": "stockpile",
+    "level": 57
+   },
+   {
+    "move": "spit-up",
+    "level": 57
+   },
+   {
+    "move": "swallow",
+    "level": 57
+   },
+   {
+    "move": "wring-out",
+    "level": 64
+   }
+  ],
+  "egg": [
+   "mega-drain",
+   "recover",
+   "barrier",
+   "curse",
+   "endure",
+   "mirror-coat",
+   "tickle",
+   "wring-out",
+   "stealth-rock"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "pain-split",
+   "synthesis",
+   "gastro-acid",
+   "worry-seed",
+   "seed-bomb",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "swords-dance",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "rock-tomb",
+   "rock-polish",
+   "energy-ball",
+   "grass-knot",
+   "smack-down",
+   "round"
+  ]
+ }
+}

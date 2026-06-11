@@ -1,0 +1,150 @@
+{
+ "id": "seviper",
+ "name": "Seviper",
+ "dex": 336,
+ "types": [
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 73,
+  "attack": 100,
+  "defense": 60,
+  "special_attack": 100,
+  "special_defense": 60,
+  "speed": 65
+ },
+ "abilities": [
+  "shed-skin",
+  "infiltrator"
+ ],
+ "base_experience": 160,
+ "growth_rate": "fast-then-very-slow",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "wrap",
+    "level": 1
+   },
+   {
+    "move": "lick",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 5
+   },
+   {
+    "move": "swagger",
+    "level": 9
+   },
+   {
+    "move": "poison-tail",
+    "level": 12
+   },
+   {
+    "move": "screech",
+    "level": 16
+   },
+   {
+    "move": "venoshock",
+    "level": 20
+   },
+   {
+    "move": "glare",
+    "level": 23
+   },
+   {
+    "move": "poison-fang",
+    "level": 27
+   },
+   {
+    "move": "night-slash",
+    "level": 31
+   },
+   {
+    "move": "gastro-acid",
+    "level": 34
+   },
+   {
+    "move": "haze",
+    "level": 38
+   },
+   {
+    "move": "poison-jab",
+    "level": 42
+   },
+   {
+    "move": "crunch",
+    "level": 45
+   },
+   {
+    "move": "coil",
+    "level": 49
+   },
+   {
+    "move": "wring-out",
+    "level": 53
+   }
+  ],
+  "egg": [
+   "body-slam",
+   "scary-face",
+   "iron-tail",
+   "stockpile",
+   "spit-up",
+   "swallow",
+   "assurance",
+   "wring-out",
+   "punishment",
+   "night-slash",
+   "switcheroo",
+   "final-gambit"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "knock-off",
+   "snatch",
+   "gastro-acid",
+   "dark-pulse",
+   "aqua-tail"
+  ],
+  "machine": [
+   "flamethrower",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "payback",
+   "poison-jab",
+   "x-scissor",
+   "venoshock",
+   "sludge-wave",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

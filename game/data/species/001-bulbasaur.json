@@ -1,0 +1,140 @@
+{
+ "id": "bulbasaur",
+ "name": "Bulbasaur",
+ "dex": 1,
+ "types": [
+  "grass",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 49,
+  "defense": 49,
+  "special_attack": 65,
+  "special_defense": 65,
+  "speed": 45
+ },
+ "abilities": [
+  "overgrow",
+  "chlorophyll"
+ ],
+ "base_experience": 64,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 3
+   },
+   {
+    "move": "leech-seed",
+    "level": 7
+   },
+   {
+    "move": "vine-whip",
+    "level": 9
+   },
+   {
+    "move": "poison-powder",
+    "level": 13
+   },
+   {
+    "move": "sleep-powder",
+    "level": 13
+   },
+   {
+    "move": "take-down",
+    "level": 15
+   },
+   {
+    "move": "razor-leaf",
+    "level": 19
+   },
+   {
+    "move": "sweet-scent",
+    "level": 21
+   },
+   {
+    "move": "growth",
+    "level": 25
+   },
+   {
+    "move": "double-edge",
+    "level": 27
+   },
+   {
+    "move": "worry-seed",
+    "level": 31
+   },
+   {
+    "move": "synthesis",
+    "level": 33
+   },
+   {
+    "move": "seed-bomb",
+    "level": 37
+   }
+  ],
+  "egg": [
+   "petal-dance",
+   "sludge",
+   "skull-bash",
+   "amnesia",
+   "curse",
+   "giga-drain",
+   "endure",
+   "charm",
+   "nature-power",
+   "ingrain",
+   "grass-whistle",
+   "magical-leaf",
+   "leaf-storm",
+   "power-whip"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "knock-off",
+   "worry-seed",
+   "seed-bomb",
+   "grass-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "energy-ball",
+   "grass-knot",
+   "venoshock",
+   "round",
+   "echoed-voice"
+  ]
+ }
+}

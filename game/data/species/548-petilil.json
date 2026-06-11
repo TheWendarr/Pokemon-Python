@@ -1,0 +1,138 @@
+{
+ "id": "petilil",
+ "name": "Petilil",
+ "dex": 548,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 35,
+  "defense": 50,
+  "special_attack": 70,
+  "special_defense": 50,
+  "speed": 30
+ },
+ "abilities": [
+  "chlorophyll",
+  "own-tempo",
+  "leaf-guard"
+ ],
+ "base_experience": 56,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 8,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "absorb",
+    "level": 1
+   },
+   {
+    "move": "growth",
+    "level": 4
+   },
+   {
+    "move": "leech-seed",
+    "level": 8
+   },
+   {
+    "move": "sleep-powder",
+    "level": 10
+   },
+   {
+    "move": "mega-drain",
+    "level": 13
+   },
+   {
+    "move": "synthesis",
+    "level": 17
+   },
+   {
+    "move": "magical-leaf",
+    "level": 19
+   },
+   {
+    "move": "stun-spore",
+    "level": 22
+   },
+   {
+    "move": "giga-drain",
+    "level": 26
+   },
+   {
+    "move": "aromatherapy",
+    "level": 28
+   },
+   {
+    "move": "helping-hand",
+    "level": 31
+   },
+   {
+    "move": "energy-ball",
+    "level": 35
+   },
+   {
+    "move": "entrainment",
+    "level": 37
+   },
+   {
+    "move": "sunny-day",
+    "level": 40
+   },
+   {
+    "move": "after-you",
+    "level": 44
+   },
+   {
+    "move": "leaf-storm",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "bide",
+   "endure",
+   "charm",
+   "sweet-scent",
+   "ingrain",
+   "grass-whistle",
+   "healing-wish",
+   "natural-gift",
+   "worry-seed"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "heal-bell",
+   "synthesis",
+   "helping-hand",
+   "covet",
+   "worry-seed",
+   "seed-bomb",
+   "after-you"
+  ],
+  "machine": [
+   "cut",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "energy-ball",
+   "grass-knot",
+   "round"
+  ]
+ }
+}

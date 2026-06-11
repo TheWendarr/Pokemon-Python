@@ -1,0 +1,157 @@
+{
+ "id": "alakazam",
+ "name": "Alakazam",
+ "dex": 65,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 50,
+  "defense": 45,
+  "special_attack": 135,
+  "special_defense": 95,
+  "speed": 120
+ },
+ "abilities": [
+  "synchronize",
+  "inner-focus",
+  "magic-guard"
+ ],
+ "base_experience": 225,
+ "growth_rate": "medium-slow",
+ "catch_rate": 50,
+ "gender_rate": 2,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "teleport",
+    "level": 1
+   },
+   {
+    "move": "kinesis",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 16
+   },
+   {
+    "move": "disable",
+    "level": 18
+   },
+   {
+    "move": "miracle-eye",
+    "level": 22
+   },
+   {
+    "move": "ally-switch",
+    "level": 24
+   },
+   {
+    "move": "psybeam",
+    "level": 28
+   },
+   {
+    "move": "reflect",
+    "level": 30
+   },
+   {
+    "move": "telekinesis",
+    "level": 34
+   },
+   {
+    "move": "recover",
+    "level": 36
+   },
+   {
+    "move": "psycho-cut",
+    "level": 40
+   },
+   {
+    "move": "calm-mind",
+    "level": 42
+   },
+   {
+    "move": "psychic",
+    "level": 46
+   },
+   {
+    "move": "future-sight",
+    "level": 48
+   },
+   {
+    "move": "trick",
+    "level": 52
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "knock-off",
+   "skill-swap",
+   "snatch",
+   "signal-beam",
+   "gravity",
+   "drain-punch",
+   "zen-headbutt",
+   "wonder-room",
+   "magic-room",
+   "foul-play"
+  ],
+  "machine": [
+   "hyper-beam",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "calm-mind",
+   "embargo",
+   "fling",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "ally-switch"
+  ]
+ }
+}

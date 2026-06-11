@@ -1,0 +1,28 @@
+{
+ "id": "self-destruct",
+ "name": "Self Destruct",
+ "type": "normal",
+ "category": "physical",
+ "power": 200,
+ "accuracy": 100,
+ "pp": 5,
+ "priority": 0,
+ "target": "all-other-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

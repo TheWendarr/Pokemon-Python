@@ -1,0 +1,135 @@
+{
+ "id": "dragonair",
+ "name": "Dragonair",
+ "dex": 148,
+ "types": [
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 61,
+  "attack": 84,
+  "defense": 65,
+  "special_attack": 70,
+  "special_defense": 70,
+  "speed": 70
+ },
+ "abilities": [
+  "shed-skin",
+  "marvel-scale"
+ ],
+ "base_experience": 147,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "wrap",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "thunder-wave",
+    "level": 1
+   },
+   {
+    "move": "twister",
+    "level": 1
+   },
+   {
+    "move": "thunder-wave",
+    "level": 5
+   },
+   {
+    "move": "twister",
+    "level": 11
+   },
+   {
+    "move": "dragon-rage",
+    "level": 15
+   },
+   {
+    "move": "slam",
+    "level": 21
+   },
+   {
+    "move": "agility",
+    "level": 25
+   },
+   {
+    "move": "dragon-tail",
+    "level": 33
+   },
+   {
+    "move": "aqua-tail",
+    "level": 39
+   },
+   {
+    "move": "dragon-rush",
+    "level": 47
+   },
+   {
+    "move": "safeguard",
+    "level": 53
+   },
+   {
+    "move": "dragon-dance",
+    "level": 61
+   },
+   {
+    "move": "outrage",
+    "level": 67
+   },
+   {
+    "move": "hyper-beam",
+    "level": 75
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "aqua-tail",
+   "dragon-pulse",
+   "draco-meteor"
+  ],
+  "machine": [
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "fire-blast",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "hail",
+   "facade",
+   "round",
+   "incinerate",
+   "dragon-tail"
+  ]
+ }
+}

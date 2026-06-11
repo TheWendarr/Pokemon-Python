@@ -1,0 +1,147 @@
+{
+ "id": "exeggcute",
+ "name": "Exeggcute",
+ "dex": 102,
+ "types": [
+  "grass",
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 40,
+  "defense": 80,
+  "special_attack": 60,
+  "special_defense": 45,
+  "speed": 40
+ },
+ "abilities": [
+  "chlorophyll",
+  "harvest"
+ ],
+ "base_experience": 65,
+ "growth_rate": "slow",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "barrage",
+    "level": 1
+   },
+   {
+    "move": "uproar",
+    "level": 1
+   },
+   {
+    "move": "hypnosis",
+    "level": 1
+   },
+   {
+    "move": "reflect",
+    "level": 7
+   },
+   {
+    "move": "leech-seed",
+    "level": 11
+   },
+   {
+    "move": "bullet-seed",
+    "level": 17
+   },
+   {
+    "move": "stun-spore",
+    "level": 19
+   },
+   {
+    "move": "poison-powder",
+    "level": 21
+   },
+   {
+    "move": "sleep-powder",
+    "level": 23
+   },
+   {
+    "move": "confusion",
+    "level": 27
+   },
+   {
+    "move": "worry-seed",
+    "level": 33
+   },
+   {
+    "move": "natural-gift",
+    "level": 37
+   },
+   {
+    "move": "solar-beam",
+    "level": 43
+   },
+   {
+    "move": "extrasensory",
+    "level": 47
+   },
+   {
+    "move": "bestow",
+    "level": 53
+   }
+  ],
+  "egg": [
+   "curse",
+   "giga-drain",
+   "synthesis",
+   "moonlight",
+   "ancient-power",
+   "nature-power",
+   "ingrain",
+   "skill-swap",
+   "block",
+   "natural-gift",
+   "lucky-chant",
+   "power-swap",
+   "leaf-storm"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "uproar",
+   "skill-swap",
+   "block",
+   "gravity",
+   "worry-seed",
+   "seed-bomb"
+  ],
+  "machine": [
+   "swords-dance",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "explosion",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "facade",
+   "energy-ball",
+   "trick-room",
+   "grass-knot",
+   "telekinesis",
+   "round"
+  ]
+ }
+}

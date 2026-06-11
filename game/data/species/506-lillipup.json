@@ -1,0 +1,132 @@
+{
+ "id": "lillipup",
+ "name": "Lillipup",
+ "dex": 506,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 60,
+  "defense": 45,
+  "special_attack": 25,
+  "special_defense": 45,
+  "speed": 55
+ },
+ "abilities": [
+  "vital-spirit",
+  "pickup",
+  "run-away"
+ ],
+ "base_experience": 55,
+ "growth_rate": "medium-slow",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 5
+   },
+   {
+    "move": "bite",
+    "level": 8
+   },
+   {
+    "move": "helping-hand",
+    "level": 12
+   },
+   {
+    "move": "take-down",
+    "level": 15
+   },
+   {
+    "move": "work-up",
+    "level": 19
+   },
+   {
+    "move": "crunch",
+    "level": 22
+   },
+   {
+    "move": "roar",
+    "level": 26
+   },
+   {
+    "move": "retaliate",
+    "level": 29
+   },
+   {
+    "move": "reversal",
+    "level": 33
+   },
+   {
+    "move": "last-resort",
+    "level": 36
+   },
+   {
+    "move": "giga-impact",
+    "level": 40
+   }
+  ],
+  "egg": [
+   "sand-attack",
+   "lick",
+   "mud-slap",
+   "endure",
+   "charm",
+   "pursuit",
+   "yawn",
+   "howl",
+   "thunder-fang",
+   "ice-fang",
+   "fire-fang"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "helping-hand",
+   "hyper-voice",
+   "covet",
+   "last-resort"
+  ],
+  "machine": [
+   "roar",
+   "thunderbolt",
+   "thunder-wave",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "aerial-ace",
+   "giga-impact",
+   "round",
+   "retaliate",
+   "work-up",
+   "wild-charge",
+   "snarl"
+  ]
+ }
+}

@@ -1,0 +1,136 @@
+{
+ "id": "espeon",
+ "name": "Espeon",
+ "dex": 196,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 65,
+  "defense": 60,
+  "special_attack": 130,
+  "special_defense": 95,
+  "speed": 110
+ },
+ "abilities": [
+  "synchronize",
+  "magic-bounce"
+ ],
+ "base_experience": 184,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "helping-hand",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 5
+   },
+   {
+    "move": "confusion",
+    "level": 9
+   },
+   {
+    "move": "quick-attack",
+    "level": 13
+   },
+   {
+    "move": "swift",
+    "level": 17
+   },
+   {
+    "move": "psybeam",
+    "level": 21
+   },
+   {
+    "move": "future-sight",
+    "level": 25
+   },
+   {
+    "move": "psych-up",
+    "level": 29
+   },
+   {
+    "move": "morning-sun",
+    "level": 33
+   },
+   {
+    "move": "psychic",
+    "level": 37
+   },
+   {
+    "move": "last-resort",
+    "level": 41
+   },
+   {
+    "move": "power-swap",
+    "level": 45
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "helping-hand",
+   "trick",
+   "magic-coat",
+   "skill-swap",
+   "hyper-voice",
+   "signal-beam",
+   "covet",
+   "last-resort",
+   "zen-headbutt",
+   "magic-room"
+  ],
+  "machine": [
+   "cut",
+   "hyper-beam",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "calm-mind",
+   "giga-impact",
+   "trick-room",
+   "grass-knot",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

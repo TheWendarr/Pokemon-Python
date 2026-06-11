@@ -1,0 +1,161 @@
+{
+ "id": "golduck",
+ "name": "Golduck",
+ "dex": 55,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 82,
+  "defense": 78,
+  "special_attack": 95,
+  "special_defense": 80,
+  "speed": 85
+ },
+ "abilities": [
+  "damp",
+  "cloud-nine",
+  "swift-swim"
+ ],
+ "base_experience": 175,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "aqua-jet",
+    "level": 1
+   },
+   {
+    "move": "water-sport",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 4
+   },
+   {
+    "move": "water-gun",
+    "level": 8
+   },
+   {
+    "move": "disable",
+    "level": 11
+   },
+   {
+    "move": "confusion",
+    "level": 15
+   },
+   {
+    "move": "water-pulse",
+    "level": 18
+   },
+   {
+    "move": "fury-swipes",
+    "level": 22
+   },
+   {
+    "move": "screech",
+    "level": 25
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 29
+   },
+   {
+    "move": "aqua-tail",
+    "level": 32
+   },
+   {
+    "move": "soak",
+    "level": 38
+   },
+   {
+    "move": "psych-up",
+    "level": 43
+   },
+   {
+    "move": "amnesia",
+    "level": 49
+   },
+   {
+    "move": "hydro-pump",
+    "level": 54
+   },
+   {
+    "move": "wonder-room",
+    "level": 60
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "role-play",
+   "signal-beam",
+   "worry-seed",
+   "aqua-tail",
+   "zen-headbutt",
+   "wonder-room"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "waterfall",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "aerial-ace",
+   "calm-mind",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "hone-claws",
+   "psyshock",
+   "telekinesis",
+   "low-sweep",
+   "round",
+   "scald"
+  ]
+ }
+}

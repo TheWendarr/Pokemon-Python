@@ -1,0 +1,149 @@
+{
+ "id": "geodude",
+ "name": "Geodude",
+ "dex": 74,
+ "types": [
+  "rock",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 80,
+  "defense": 100,
+  "special_attack": 30,
+  "special_defense": 30,
+  "speed": 20
+ },
+ "abilities": [
+  "rock-head",
+  "sturdy",
+  "sand-veil"
+ ],
+ "base_experience": 60,
+ "growth_rate": "medium-slow",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 4
+   },
+   {
+    "move": "rock-polish",
+    "level": 8
+   },
+   {
+    "move": "rock-throw",
+    "level": 11
+   },
+   {
+    "move": "magnitude",
+    "level": 15
+   },
+   {
+    "move": "rollout",
+    "level": 18
+   },
+   {
+    "move": "rock-blast",
+    "level": 22
+   },
+   {
+    "move": "smack-down",
+    "level": 25
+   },
+   {
+    "move": "self-destruct",
+    "level": 29
+   },
+   {
+    "move": "bulldoze",
+    "level": 32
+   },
+   {
+    "move": "stealth-rock",
+    "level": 36
+   },
+   {
+    "move": "earthquake",
+    "level": 39
+   },
+   {
+    "move": "explosion",
+    "level": 43
+   },
+   {
+    "move": "double-edge",
+    "level": 46
+   },
+   {
+    "move": "stone-edge",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "mega-punch",
+   "curse",
+   "flail",
+   "endure",
+   "focus-punch",
+   "block",
+   "hammer-arm",
+   "rock-climb",
+   "autotomize"
+  ],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "superpower",
+   "iron-defense",
+   "block",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "flamethrower",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "gyro-ball",
+   "fling",
+   "rock-polish",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

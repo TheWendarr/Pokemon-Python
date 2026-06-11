@@ -1,0 +1,157 @@
+{
+ "id": "electivire",
+ "name": "Electivire",
+ "dex": 466,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 123,
+  "defense": 67,
+  "special_attack": 95,
+  "special_defense": 85,
+  "speed": 95
+ },
+ "abilities": [
+  "motor-drive",
+  "vital-spirit"
+ ],
+ "base_experience": 243,
+ "growth_rate": "medium",
+ "catch_rate": 30,
+ "gender_rate": 2,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fire-punch",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "thunder-shock",
+    "level": 1
+   },
+   {
+    "move": "low-kick",
+    "level": 1
+   },
+   {
+    "move": "thunder-shock",
+    "level": 5
+   },
+   {
+    "move": "low-kick",
+    "level": 8
+   },
+   {
+    "move": "swift",
+    "level": 12
+   },
+   {
+    "move": "shock-wave",
+    "level": 15
+   },
+   {
+    "move": "thunder-wave",
+    "level": 19
+   },
+   {
+    "move": "electro-ball",
+    "level": 22
+   },
+   {
+    "move": "light-screen",
+    "level": 26
+   },
+   {
+    "move": "thunder-punch",
+    "level": 29
+   },
+   {
+    "move": "discharge",
+    "level": 36
+   },
+   {
+    "move": "screech",
+    "level": 42
+   },
+   {
+    "move": "thunderbolt",
+    "level": 49
+   },
+   {
+    "move": "thunder",
+    "level": 55
+   },
+   {
+    "move": "giga-impact",
+    "level": 62
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "signal-beam",
+   "covet",
+   "magnet-rise",
+   "electroweb",
+   "dual-chop"
+  ],
+  "machine": [
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "charge-beam",
+   "low-sweep",
+   "round",
+   "volt-switch",
+   "bulldoze",
+   "wild-charge"
+  ]
+ }
+}

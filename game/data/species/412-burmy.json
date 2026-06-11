@@ -1,0 +1,51 @@
+{
+ "id": "burmy",
+ "name": "Burmy",
+ "dex": 412,
+ "types": [
+  "bug"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 29,
+  "defense": 45,
+  "special_attack": 29,
+  "special_defense": 45,
+  "speed": 36
+ },
+ "abilities": [
+  "shed-skin",
+  "overcoat"
+ ],
+ "base_experience": 45,
+ "growth_rate": "medium",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "protect",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 10
+   },
+   {
+    "move": "bug-bite",
+    "level": 15
+   },
+   {
+    "move": "hidden-power",
+    "level": 20
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "bug-bite",
+   "electroweb"
+  ],
+  "machine": []
+ }
+}

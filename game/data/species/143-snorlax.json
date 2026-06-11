@@ -1,0 +1,168 @@
+{
+ "id": "snorlax",
+ "name": "Snorlax",
+ "dex": 143,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 160,
+  "attack": 110,
+  "defense": 65,
+  "special_attack": 65,
+  "special_defense": 110,
+  "speed": 30
+ },
+ "abilities": [
+  "immunity",
+  "thick-fat",
+  "gluttony"
+ ],
+ "base_experience": 189,
+ "growth_rate": "slow",
+ "catch_rate": 25,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 4
+   },
+   {
+    "move": "amnesia",
+    "level": 9
+   },
+   {
+    "move": "lick",
+    "level": 12
+   },
+   {
+    "move": "belly-drum",
+    "level": 17
+   },
+   {
+    "move": "yawn",
+    "level": 20
+   },
+   {
+    "move": "chip-away",
+    "level": 25
+   },
+   {
+    "move": "rest",
+    "level": 28
+   },
+   {
+    "move": "snore",
+    "level": 28
+   },
+   {
+    "move": "sleep-talk",
+    "level": 33
+   },
+   {
+    "move": "body-slam",
+    "level": 36
+   },
+   {
+    "move": "block",
+    "level": 41
+   },
+   {
+    "move": "rollout",
+    "level": 44
+   },
+   {
+    "move": "crunch",
+    "level": 49
+   },
+   {
+    "move": "heavy-slam",
+    "level": 52
+   },
+   {
+    "move": "giga-impact",
+    "level": 57
+   }
+  ],
+  "egg": [
+   "whirlwind",
+   "double-edge",
+   "counter",
+   "fissure",
+   "lick",
+   "curse",
+   "charm",
+   "pursuit",
+   "natural-gift",
+   "after-you"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "superpower",
+   "recycle",
+   "hyper-voice",
+   "block",
+   "covet",
+   "last-resort",
+   "seed-bomb",
+   "zen-headbutt",
+   "gunk-shot",
+   "iron-head",
+   "after-you"
+  ],
+  "machine": [
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "smack-down",
+   "round",
+   "incinerate",
+   "retaliate",
+   "bulldoze",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

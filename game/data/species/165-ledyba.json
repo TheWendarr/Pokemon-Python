@@ -1,0 +1,137 @@
+{
+ "id": "ledyba",
+ "name": "Ledyba",
+ "dex": 165,
+ "types": [
+  "bug",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 20,
+  "defense": 30,
+  "special_attack": 40,
+  "special_defense": 80,
+  "speed": 55
+ },
+ "abilities": [
+  "swarm",
+  "early-bird",
+  "rattled"
+ ],
+ "base_experience": 53,
+ "growth_rate": "fast",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 6
+   },
+   {
+    "move": "comet-punch",
+    "level": 9
+   },
+   {
+    "move": "light-screen",
+    "level": 14
+   },
+   {
+    "move": "reflect",
+    "level": 14
+   },
+   {
+    "move": "safeguard",
+    "level": 14
+   },
+   {
+    "move": "mach-punch",
+    "level": 17
+   },
+   {
+    "move": "baton-pass",
+    "level": 22
+   },
+   {
+    "move": "silver-wind",
+    "level": 25
+   },
+   {
+    "move": "agility",
+    "level": 30
+   },
+   {
+    "move": "swift",
+    "level": 33
+   },
+   {
+    "move": "double-edge",
+    "level": 38
+   },
+   {
+    "move": "bug-buzz",
+    "level": 41
+   }
+  ],
+  "egg": [
+   "psybeam",
+   "screech",
+   "bide",
+   "dizzy-punch",
+   "encore",
+   "focus-punch",
+   "knock-off",
+   "silver-wind",
+   "bug-buzz",
+   "drain-punch",
+   "bug-bite"
+  ],
+  "tutor": [
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "uproar",
+   "knock-off",
+   "roost",
+   "tailwind",
+   "drain-punch",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "brick-break",
+   "aerial-ace",
+   "u-turn",
+   "fling",
+   "round",
+   "acrobatics",
+   "struggle-bug"
+  ]
+ }
+}

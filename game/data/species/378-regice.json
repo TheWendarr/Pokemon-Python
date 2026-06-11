@@ -1,0 +1,131 @@
+{
+ "id": "regice",
+ "name": "Regice",
+ "dex": 378,
+ "types": [
+  "ice"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 50,
+  "defense": 100,
+  "special_attack": 100,
+  "special_defense": 200,
+  "speed": 50
+ },
+ "abilities": [
+  "clear-body",
+  "ice-body"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "explosion",
+    "level": 1
+   },
+   {
+    "move": "stomp",
+    "level": 1
+   },
+   {
+    "move": "icy-wind",
+    "level": 9
+   },
+   {
+    "move": "curse",
+    "level": 17
+   },
+   {
+    "move": "superpower",
+    "level": 25
+   },
+   {
+    "move": "ancient-power",
+    "level": 33
+   },
+   {
+    "move": "amnesia",
+    "level": 41
+   },
+   {
+    "move": "charge-beam",
+    "level": 49
+   },
+   {
+    "move": "lock-on",
+    "level": 57
+   },
+   {
+    "move": "zap-cannon",
+    "level": 65
+   },
+   {
+    "move": "ice-beam",
+    "level": 73
+   },
+   {
+    "move": "hammer-arm",
+    "level": 81
+   },
+   {
+    "move": "hyper-beam",
+    "level": 89
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "superpower",
+   "signal-beam",
+   "block",
+   "gravity",
+   "iron-head"
+  ],
+  "machine": [
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "fling",
+   "rock-polish",
+   "focus-blast",
+   "giga-impact",
+   "flash-cannon",
+   "charge-beam",
+   "round",
+   "bulldoze",
+   "frost-breath"
+  ]
+ }
+}

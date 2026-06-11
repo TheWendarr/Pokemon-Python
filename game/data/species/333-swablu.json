@@ -1,0 +1,139 @@
+{
+ "id": "swablu",
+ "name": "Swablu",
+ "dex": 333,
+ "types": [
+  "normal",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 40,
+  "defense": 60,
+  "special_attack": 40,
+  "special_defense": 75,
+  "speed": 50
+ },
+ "abilities": [
+  "natural-cure",
+  "cloud-nine"
+ ],
+ "base_experience": 62,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 4
+   },
+   {
+    "move": "sing",
+    "level": 8
+   },
+   {
+    "move": "fury-attack",
+    "level": 10
+   },
+   {
+    "move": "safeguard",
+    "level": 13
+   },
+   {
+    "move": "mist",
+    "level": 15
+   },
+   {
+    "move": "round",
+    "level": 18
+   },
+   {
+    "move": "natural-gift",
+    "level": 21
+   },
+   {
+    "move": "take-down",
+    "level": 25
+   },
+   {
+    "move": "refresh",
+    "level": 29
+   },
+   {
+    "move": "mirror-move",
+    "level": 34
+   },
+   {
+    "move": "cotton-guard",
+    "level": 39
+   },
+   {
+    "move": "dragon-pulse",
+    "level": 42
+   },
+   {
+    "move": "perish-song",
+    "level": 48
+   }
+  ],
+  "egg": [
+   "agility",
+   "rage",
+   "haze",
+   "steel-wing",
+   "pursuit",
+   "feather-dance",
+   "hyper-voice",
+   "roost",
+   "power-swap",
+   "dragon-rush"
+  ],
+  "tutor": [
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "heal-bell",
+   "uproar",
+   "heat-wave",
+   "hyper-voice",
+   "roost",
+   "tailwind",
+   "dragon-pulse"
+  ],
+  "machine": [
+   "fly",
+   "ice-beam",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "dream-eater",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "facade",
+   "aerial-ace",
+   "pluck",
+   "round",
+   "echoed-voice"
+  ]
+ }
+}

@@ -1,0 +1,135 @@
+{
+ "id": "tranquill",
+ "name": "Tranquill",
+ "dex": 520,
+ "types": [
+  "normal",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 62,
+  "attack": 77,
+  "defense": 62,
+  "special_attack": 50,
+  "special_defense": 42,
+  "speed": 65
+ },
+ "abilities": [
+  "big-pecks",
+  "super-luck",
+  "rivalry"
+ ],
+ "base_experience": 125,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "gust",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 4
+   },
+   {
+    "move": "leer",
+    "level": 8
+   },
+   {
+    "move": "quick-attack",
+    "level": 11
+   },
+   {
+    "move": "air-cutter",
+    "level": 15
+   },
+   {
+    "move": "roost",
+    "level": 18
+   },
+   {
+    "move": "detect",
+    "level": 23
+   },
+   {
+    "move": "taunt",
+    "level": 27
+   },
+   {
+    "move": "air-slash",
+    "level": 32
+   },
+   {
+    "move": "razor-wind",
+    "level": 36
+   },
+   {
+    "move": "feather-dance",
+    "level": 41
+   },
+   {
+    "move": "swagger",
+    "level": 45
+   },
+   {
+    "move": "facade",
+    "level": 50
+   },
+   {
+    "move": "tailwind",
+    "level": 54
+   },
+   {
+    "move": "sky-attack",
+    "level": 59
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "heat-wave",
+   "roost",
+   "tailwind"
+  ],
+  "machine": [
+   "fly",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "round",
+   "echoed-voice",
+   "work-up"
+  ]
+ }
+}

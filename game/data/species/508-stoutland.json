@@ -1,0 +1,147 @@
+{
+ "id": "stoutland",
+ "name": "Stoutland",
+ "dex": 508,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 85,
+  "attack": 110,
+  "defense": 90,
+  "special_attack": 45,
+  "special_defense": 90,
+  "speed": 80
+ },
+ "abilities": [
+  "intimidate",
+  "sand-rush",
+  "scrappy"
+ ],
+ "base_experience": 225,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ice-fang",
+    "level": 1
+   },
+   {
+    "move": "fire-fang",
+    "level": 1
+   },
+   {
+    "move": "thunder-fang",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 5
+   },
+   {
+    "move": "bite",
+    "level": 8
+   },
+   {
+    "move": "helping-hand",
+    "level": 12
+   },
+   {
+    "move": "take-down",
+    "level": 15
+   },
+   {
+    "move": "work-up",
+    "level": 20
+   },
+   {
+    "move": "crunch",
+    "level": 24
+   },
+   {
+    "move": "roar",
+    "level": 29
+   },
+   {
+    "move": "retaliate",
+    "level": 36
+   },
+   {
+    "move": "reversal",
+    "level": 42
+   },
+   {
+    "move": "last-resort",
+    "level": 51
+   },
+   {
+    "move": "giga-impact",
+    "level": 59
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "helping-hand",
+   "superpower",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "iron-head"
+  ],
+  "machine": [
+   "roar",
+   "surf",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "aerial-ace",
+   "payback",
+   "giga-impact",
+   "round",
+   "retaliate",
+   "work-up",
+   "wild-charge",
+   "snarl"
+  ]
+ }
+}

@@ -1,0 +1,162 @@
+{
+ "id": "sigilyph",
+ "name": "Sigilyph",
+ "dex": 561,
+ "types": [
+  "psychic",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 72,
+  "attack": 58,
+  "defense": 80,
+  "special_attack": 103,
+  "special_defense": 80,
+  "speed": 97
+ },
+ "abilities": [
+  "wonder-skin",
+  "magic-guard",
+  "tinted-lens"
+ ],
+ "base_experience": 172,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "gust",
+    "level": 1
+   },
+   {
+    "move": "miracle-eye",
+    "level": 1
+   },
+   {
+    "move": "hypnosis",
+    "level": 4
+   },
+   {
+    "move": "psywave",
+    "level": 8
+   },
+   {
+    "move": "tailwind",
+    "level": 11
+   },
+   {
+    "move": "whirlwind",
+    "level": 14
+   },
+   {
+    "move": "psybeam",
+    "level": 18
+   },
+   {
+    "move": "air-cutter",
+    "level": 21
+   },
+   {
+    "move": "light-screen",
+    "level": 24
+   },
+   {
+    "move": "reflect",
+    "level": 28
+   },
+   {
+    "move": "synchronoise",
+    "level": 31
+   },
+   {
+    "move": "mirror-move",
+    "level": 34
+   },
+   {
+    "move": "gravity",
+    "level": 38
+   },
+   {
+    "move": "air-slash",
+    "level": 41
+   },
+   {
+    "move": "psychic",
+    "level": 44
+   },
+   {
+    "move": "cosmic-power",
+    "level": 48
+   },
+   {
+    "move": "sky-attack",
+    "level": 51
+   }
+  ],
+  "egg": [
+   "steel-wing",
+   "ancient-power",
+   "skill-swap",
+   "roost",
+   "psycho-shift",
+   "stored-power"
+  ],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heat-wave",
+   "trick",
+   "magic-coat",
+   "skill-swap",
+   "signal-beam",
+   "roost",
+   "gravity",
+   "tailwind",
+   "dark-pulse",
+   "zen-headbutt",
+   "magic-room"
+  ],
+  "machine": [
+   "fly",
+   "ice-beam",
+   "hyper-beam",
+   "solar-beam",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "aerial-ace",
+   "calm-mind",
+   "pluck",
+   "energy-ball",
+   "flash-cannon",
+   "trick-room",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "smack-down",
+   "round"
+  ]
+ }
+}

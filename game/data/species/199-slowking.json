@@ -1,0 +1,174 @@
+{
+ "id": "slowking",
+ "name": "Slowking",
+ "dex": 199,
+ "types": [
+  "water",
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 95,
+  "attack": 75,
+  "defense": 80,
+  "special_attack": 100,
+  "special_defense": 110,
+  "speed": 30
+ },
+ "abilities": [
+  "oblivious",
+  "own-tempo",
+  "regenerator"
+ ],
+ "base_experience": 172,
+ "growth_rate": "medium",
+ "catch_rate": 70,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "power-gem",
+    "level": 1
+   },
+   {
+    "move": "hidden-power",
+    "level": 1
+   },
+   {
+    "move": "curse",
+    "level": 1
+   },
+   {
+    "move": "yawn",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 5
+   },
+   {
+    "move": "water-gun",
+    "level": 9
+   },
+   {
+    "move": "confusion",
+    "level": 14
+   },
+   {
+    "move": "disable",
+    "level": 19
+   },
+   {
+    "move": "headbutt",
+    "level": 23
+   },
+   {
+    "move": "water-pulse",
+    "level": 28
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 32
+   },
+   {
+    "move": "nasty-plot",
+    "level": 36
+   },
+   {
+    "move": "swagger",
+    "level": 41
+   },
+   {
+    "move": "psychic",
+    "level": 45
+   },
+   {
+    "move": "trump-card",
+    "level": 49
+   },
+   {
+    "move": "psych-up",
+    "level": 54
+   },
+   {
+    "move": "heal-pulse",
+    "level": 58
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "trick",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "signal-beam",
+   "iron-defense",
+   "block",
+   "aqua-tail",
+   "drain-punch",
+   "zen-headbutt",
+   "wonder-room",
+   "foul-play",
+   "after-you"
+  ],
+  "machine": [
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "thunder-wave",
+   "earthquake",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "calm-mind",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "trick-room",
+   "grass-knot",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "scald",
+   "incinerate",
+   "quash",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

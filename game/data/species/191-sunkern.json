@@ -1,0 +1,144 @@
+{
+ "id": "sunkern",
+ "name": "Sunkern",
+ "dex": 191,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 30,
+  "attack": 30,
+  "defense": 30,
+  "special_attack": 30,
+  "special_defense": 30,
+  "speed": 30
+ },
+ "abilities": [
+  "chlorophyll",
+  "solar-power",
+  "early-bird"
+ ],
+ "base_experience": 36,
+ "growth_rate": "medium-slow",
+ "catch_rate": 235,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "absorb",
+    "level": 1
+   },
+   {
+    "move": "growth",
+    "level": 1
+   },
+   {
+    "move": "ingrain",
+    "level": 4
+   },
+   {
+    "move": "grass-whistle",
+    "level": 7
+   },
+   {
+    "move": "mega-drain",
+    "level": 10
+   },
+   {
+    "move": "leech-seed",
+    "level": 13
+   },
+   {
+    "move": "razor-leaf",
+    "level": 16
+   },
+   {
+    "move": "worry-seed",
+    "level": 19
+   },
+   {
+    "move": "giga-drain",
+    "level": 22
+   },
+   {
+    "move": "endeavor",
+    "level": 25
+   },
+   {
+    "move": "synthesis",
+    "level": 28
+   },
+   {
+    "move": "natural-gift",
+    "level": 31
+   },
+   {
+    "move": "solar-beam",
+    "level": 34
+   },
+   {
+    "move": "double-edge",
+    "level": 37
+   },
+   {
+    "move": "sunny-day",
+    "level": 40
+   },
+   {
+    "move": "seed-bomb",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "leech-seed",
+   "bide",
+   "curse",
+   "endure",
+   "encore",
+   "sweet-scent",
+   "morning-sun",
+   "nature-power",
+   "helping-hand",
+   "ingrain",
+   "grass-whistle",
+   "natural-gift"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "uproar",
+   "helping-hand",
+   "endeavor",
+   "worry-seed",
+   "seed-bomb",
+   "earth-power",
+   "after-you"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "energy-ball",
+   "grass-knot",
+   "round"
+  ]
+ }
+}

@@ -1,0 +1,140 @@
+{
+ "id": "klinklang",
+ "name": "Klinklang",
+ "dex": 601,
+ "types": [
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 100,
+  "defense": 115,
+  "special_attack": 70,
+  "special_defense": 85,
+  "speed": 90
+ },
+ "abilities": [
+  "plus",
+  "minus",
+  "clear-body"
+ ],
+ "base_experience": 234,
+ "growth_rate": "medium-slow",
+ "catch_rate": 30,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "vice-grip",
+    "level": 1
+   },
+   {
+    "move": "charge",
+    "level": 1
+   },
+   {
+    "move": "thunder-shock",
+    "level": 1
+   },
+   {
+    "move": "gear-grind",
+    "level": 1
+   },
+   {
+    "move": "charge",
+    "level": 6
+   },
+   {
+    "move": "thunder-shock",
+    "level": 11
+   },
+   {
+    "move": "gear-grind",
+    "level": 16
+   },
+   {
+    "move": "bind",
+    "level": 21
+   },
+   {
+    "move": "charge-beam",
+    "level": 25
+   },
+   {
+    "move": "autotomize",
+    "level": 31
+   },
+   {
+    "move": "mirror-shot",
+    "level": 36
+   },
+   {
+    "move": "screech",
+    "level": 40
+   },
+   {
+    "move": "discharge",
+    "level": 44
+   },
+   {
+    "move": "metal-sound",
+    "level": 48
+   },
+   {
+    "move": "shift-gear",
+    "level": 54
+   },
+   {
+    "move": "lock-on",
+    "level": 60
+   },
+   {
+    "move": "zap-cannon",
+    "level": 66
+   },
+   {
+    "move": "hyper-beam",
+    "level": 72
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "magic-coat",
+   "recycle",
+   "signal-beam",
+   "iron-defense",
+   "gravity",
+   "magnet-rise"
+  ],
+  "machine": [
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rock-smash",
+   "facade",
+   "rock-polish",
+   "giga-impact",
+   "flash-cannon",
+   "trick-room",
+   "charge-beam",
+   "round",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

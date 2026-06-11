@@ -1,0 +1,149 @@
+{
+ "id": "raticate",
+ "name": "Raticate",
+ "dex": 20,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 81,
+  "defense": 60,
+  "special_attack": 50,
+  "special_defense": 70,
+  "speed": 97
+ },
+ "abilities": [
+  "run-away",
+  "guts",
+  "hustle"
+ ],
+ "base_experience": 145,
+ "growth_rate": "medium",
+ "catch_rate": 127,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "swords-dance",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 4
+   },
+   {
+    "move": "focus-energy",
+    "level": 7
+   },
+   {
+    "move": "bite",
+    "level": 10
+   },
+   {
+    "move": "pursuit",
+    "level": 13
+   },
+   {
+    "move": "hyper-fang",
+    "level": 16
+   },
+   {
+    "move": "sucker-punch",
+    "level": 19
+   },
+   {
+    "move": "scary-face",
+    "level": 20
+   },
+   {
+    "move": "crunch",
+    "level": 24
+   },
+   {
+    "move": "assurance",
+    "level": 29
+   },
+   {
+    "move": "super-fang",
+    "level": 34
+   },
+   {
+    "move": "double-edge",
+    "level": 39
+   },
+   {
+    "move": "endeavor",
+    "level": 44
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "endeavor",
+   "covet",
+   "last-resort",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "pluck",
+   "u-turn",
+   "giga-impact",
+   "grass-knot",
+   "charge-beam",
+   "round",
+   "retaliate",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

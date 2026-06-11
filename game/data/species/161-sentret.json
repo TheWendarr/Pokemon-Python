@@ -1,0 +1,151 @@
+{
+ "id": "sentret",
+ "name": "Sentret",
+ "dex": 161,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 35,
+  "attack": 46,
+  "defense": 34,
+  "special_attack": 35,
+  "special_defense": 45,
+  "speed": 20
+ },
+ "abilities": [
+  "run-away",
+  "keen-eye",
+  "frisk"
+ ],
+ "base_experience": 43,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "foresight",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 4
+   },
+   {
+    "move": "quick-attack",
+    "level": 7
+   },
+   {
+    "move": "fury-swipes",
+    "level": 13
+   },
+   {
+    "move": "helping-hand",
+    "level": 16
+   },
+   {
+    "move": "follow-me",
+    "level": 19
+   },
+   {
+    "move": "slam",
+    "level": 25
+   },
+   {
+    "move": "rest",
+    "level": 28
+   },
+   {
+    "move": "sucker-punch",
+    "level": 31
+   },
+   {
+    "move": "amnesia",
+    "level": 36
+   },
+   {
+    "move": "baton-pass",
+    "level": 39
+   },
+   {
+    "move": "me-first",
+    "level": 42
+   },
+   {
+    "move": "hyper-voice",
+    "level": 47
+   }
+  ],
+  "egg": [
+   "double-edge",
+   "focus-energy",
+   "slash",
+   "reversal",
+   "charm",
+   "pursuit",
+   "iron-tail",
+   "trick",
+   "assist",
+   "covet",
+   "natural-gift",
+   "last-resort"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "super-fang",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "trick",
+   "knock-off",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "aqua-tail"
+  ],
+  "machine": [
+   "cut",
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "solar-beam",
+   "thunderbolt",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "facade",
+   "brick-break",
+   "u-turn",
+   "fling",
+   "shadow-claw",
+   "grass-knot",
+   "charge-beam",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

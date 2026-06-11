@@ -1,0 +1,163 @@
+{
+ "id": "lugia",
+ "name": "Lugia",
+ "dex": 249,
+ "types": [
+  "psychic",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 106,
+  "attack": 90,
+  "defense": 130,
+  "special_attack": 90,
+  "special_defense": 154,
+  "speed": 110
+ },
+ "abilities": [
+  "pressure",
+  "multiscale"
+ ],
+ "base_experience": 306,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "whirlwind",
+    "level": 1
+   },
+   {
+    "move": "weather-ball",
+    "level": 1
+   },
+   {
+    "move": "gust",
+    "level": 9
+   },
+   {
+    "move": "dragon-rush",
+    "level": 15
+   },
+   {
+    "move": "extrasensory",
+    "level": 23
+   },
+   {
+    "move": "rain-dance",
+    "level": 29
+   },
+   {
+    "move": "hydro-pump",
+    "level": 37
+   },
+   {
+    "move": "aeroblast",
+    "level": 43
+   },
+   {
+    "move": "punishment",
+    "level": 50
+   },
+   {
+    "move": "ancient-power",
+    "level": 57
+   },
+   {
+    "move": "safeguard",
+    "level": 65
+   },
+   {
+    "move": "recover",
+    "level": 71
+   },
+   {
+    "move": "future-sight",
+    "level": 79
+   },
+   {
+    "move": "natural-gift",
+    "level": 85
+   },
+   {
+    "move": "calm-mind",
+    "level": 93
+   },
+   {
+    "move": "sky-attack",
+    "level": 99
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "icy-wind",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "trick",
+   "skill-swap",
+   "hyper-voice",
+   "signal-beam",
+   "roost",
+   "tailwind",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "zen-headbutt",
+   "iron-head",
+   "wonder-room"
+  ],
+  "machine": [
+   "fly",
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "waterfall",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "hail",
+   "facade",
+   "dive",
+   "aerial-ace",
+   "calm-mind",
+   "giga-impact",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "sky-drop",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

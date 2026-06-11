@@ -1,0 +1,98 @@
+{
+ "id": "musharna",
+ "name": "Musharna",
+ "dex": 518,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 116,
+  "attack": 55,
+  "defense": 85,
+  "special_attack": 107,
+  "special_defense": 95,
+  "speed": 29
+ },
+ "abilities": [
+  "forewarn",
+  "synchronize",
+  "telepathy"
+ ],
+ "base_experience": 170,
+ "growth_rate": "fast",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "defense-curl",
+    "level": 1
+   },
+   {
+    "move": "lucky-chant",
+    "level": 1
+   },
+   {
+    "move": "psybeam",
+    "level": 1
+   },
+   {
+    "move": "hypnosis",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heal-bell",
+   "pain-split",
+   "helping-hand",
+   "trick",
+   "magic-coat",
+   "skill-swap",
+   "signal-beam",
+   "gravity",
+   "worry-seed",
+   "zen-headbutt",
+   "wonder-room",
+   "after-you"
+  ],
+  "machine": [
+   "hyper-beam",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "rock-tomb",
+   "calm-mind",
+   "gyro-ball",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round"
+  ]
+ }
+}

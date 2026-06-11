@@ -1,0 +1,133 @@
+{
+ "id": "wartortle",
+ "name": "Wartortle",
+ "dex": 8,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 59,
+  "attack": 63,
+  "defense": 80,
+  "special_attack": 65,
+  "special_defense": 80,
+  "speed": 58
+ },
+ "abilities": [
+  "torrent",
+  "rain-dish"
+ ],
+ "base_experience": 142,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 4
+   },
+   {
+    "move": "bubble",
+    "level": 7
+   },
+   {
+    "move": "withdraw",
+    "level": 10
+   },
+   {
+    "move": "water-gun",
+    "level": 13
+   },
+   {
+    "move": "bite",
+    "level": 16
+   },
+   {
+    "move": "rapid-spin",
+    "level": 20
+   },
+   {
+    "move": "protect",
+    "level": 24
+   },
+   {
+    "move": "water-pulse",
+    "level": 28
+   },
+   {
+    "move": "aqua-tail",
+    "level": 32
+   },
+   {
+    "move": "skull-bash",
+    "level": 36
+   },
+   {
+    "move": "iron-defense",
+    "level": 40
+   },
+   {
+    "move": "rain-dance",
+    "level": 44
+   },
+   {
+    "move": "hydro-pump",
+    "level": 48
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "iron-defense",
+   "aqua-tail",
+   "zen-headbutt",
+   "water-pledge"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "gyro-ball",
+   "fling",
+   "round",
+   "scald"
+  ]
+ }
+}

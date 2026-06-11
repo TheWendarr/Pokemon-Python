@@ -1,0 +1,174 @@
+{
+ "id": "medicham",
+ "name": "Medicham",
+ "dex": 308,
+ "types": [
+  "fighting",
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 60,
+  "defense": 75,
+  "special_attack": 60,
+  "special_defense": 75,
+  "speed": 80
+ },
+ "abilities": [
+  "pure-power",
+  "telepathy"
+ ],
+ "base_experience": 144,
+ "growth_rate": "medium",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fire-punch",
+    "level": 1
+   },
+   {
+    "move": "thunder-punch",
+    "level": 1
+   },
+   {
+    "move": "ice-punch",
+    "level": 1
+   },
+   {
+    "move": "bide",
+    "level": 1
+   },
+   {
+    "move": "meditate",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "detect",
+    "level": 1
+   },
+   {
+    "move": "meditate",
+    "level": 4
+   },
+   {
+    "move": "confusion",
+    "level": 8
+   },
+   {
+    "move": "detect",
+    "level": 11
+   },
+   {
+    "move": "hidden-power",
+    "level": 15
+   },
+   {
+    "move": "mind-reader",
+    "level": 18
+   },
+   {
+    "move": "feint",
+    "level": 22
+   },
+   {
+    "move": "calm-mind",
+    "level": 25
+   },
+   {
+    "move": "force-palm",
+    "level": 29
+   },
+   {
+    "move": "high-jump-kick",
+    "level": 32
+   },
+   {
+    "move": "psych-up",
+    "level": 36
+   },
+   {
+    "move": "acupressure",
+    "level": 42
+   },
+   {
+    "move": "power-trick",
+    "level": 49
+   },
+   {
+    "move": "reversal",
+    "level": 55
+   },
+   {
+    "move": "recover",
+    "level": 62
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "pain-split",
+   "helping-hand",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "signal-beam",
+   "gravity",
+   "drain-punch",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "hyper-beam",
+   "strength",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "calm-mind",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "psyshock",
+   "telekinesis",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

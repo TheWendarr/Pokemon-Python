@@ -1,0 +1,158 @@
+{
+ "id": "duosion",
+ "name": "Duosion",
+ "dex": 578,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 40,
+  "defense": 50,
+  "special_attack": 125,
+  "special_defense": 60,
+  "speed": 30
+ },
+ "abilities": [
+  "overcoat",
+  "magic-guard",
+  "regenerator"
+ ],
+ "base_experience": 130,
+ "growth_rate": "medium-slow",
+ "catch_rate": 100,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "psywave",
+    "level": 1
+   },
+   {
+    "move": "reflect",
+    "level": 1
+   },
+   {
+    "move": "rollout",
+    "level": 1
+   },
+   {
+    "move": "snatch",
+    "level": 1
+   },
+   {
+    "move": "reflect",
+    "level": 3
+   },
+   {
+    "move": "rollout",
+    "level": 7
+   },
+   {
+    "move": "snatch",
+    "level": 10
+   },
+   {
+    "move": "hidden-power",
+    "level": 14
+   },
+   {
+    "move": "light-screen",
+    "level": 16
+   },
+   {
+    "move": "charm",
+    "level": 19
+   },
+   {
+    "move": "recover",
+    "level": 24
+   },
+   {
+    "move": "psyshock",
+    "level": 25
+   },
+   {
+    "move": "endeavor",
+    "level": 28
+   },
+   {
+    "move": "future-sight",
+    "level": 31
+   },
+   {
+    "move": "pain-split",
+    "level": 34
+   },
+   {
+    "move": "psychic",
+    "level": 39
+   },
+   {
+    "move": "skill-swap",
+    "level": 43
+   },
+   {
+    "move": "heal-block",
+    "level": 50
+   },
+   {
+    "move": "wonder-room",
+    "level": 53
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "pain-split",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "endeavor",
+   "skill-swap",
+   "snatch",
+   "signal-beam",
+   "gravity",
+   "zen-headbutt",
+   "wonder-room",
+   "after-you"
+  ],
+  "machine": [
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "rock-tomb",
+   "calm-mind",
+   "gyro-ball",
+   "embargo",
+   "energy-ball",
+   "flash-cannon",
+   "trick-room",
+   "psyshock",
+   "telekinesis",
+   "round"
+  ]
+ }
+}

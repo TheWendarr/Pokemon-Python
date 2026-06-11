@@ -1,0 +1,28 @@
+{
+ "id": "razor-leaf",
+ "name": "Razor Leaf",
+ "type": "grass",
+ "category": "physical",
+ "power": 55,
+ "accuracy": 95,
+ "pp": 25,
+ "priority": 0,
+ "target": "all-opponents",
+ "crit_stage": 1,
+ "flags": [
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

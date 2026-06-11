@@ -1,0 +1,138 @@
+{
+ "id": "ferroseed",
+ "name": "Ferroseed",
+ "dex": 597,
+ "types": [
+  "grass",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 44,
+  "attack": 50,
+  "defense": 91,
+  "special_attack": 24,
+  "special_defense": 86,
+  "speed": 10
+ },
+ "abilities": [
+  "iron-barbs"
+ ],
+ "base_experience": 61,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "rollout",
+    "level": 6
+   },
+   {
+    "move": "curse",
+    "level": 9
+   },
+   {
+    "move": "metal-claw",
+    "level": 14
+   },
+   {
+    "move": "pin-missile",
+    "level": 18
+   },
+   {
+    "move": "gyro-ball",
+    "level": 21
+   },
+   {
+    "move": "iron-defense",
+    "level": 26
+   },
+   {
+    "move": "mirror-shot",
+    "level": 30
+   },
+   {
+    "move": "ingrain",
+    "level": 35
+   },
+   {
+    "move": "self-destruct",
+    "level": 38
+   },
+   {
+    "move": "iron-head",
+    "level": 43
+   },
+   {
+    "move": "payback",
+    "level": 47
+   },
+   {
+    "move": "flash-cannon",
+    "level": 52
+   },
+   {
+    "move": "explosion",
+    "level": 55
+   }
+  ],
+  "egg": [
+   "leech-seed",
+   "spikes",
+   "bullet-seed",
+   "gravity",
+   "worry-seed",
+   "seed-bomb",
+   "rock-climb",
+   "stealth-rock"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "endeavor",
+   "iron-defense",
+   "gravity",
+   "worry-seed",
+   "magnet-rise",
+   "seed-bomb",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "toxic",
+   "double-team",
+   "flash",
+   "explosion",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "gyro-ball",
+   "payback",
+   "rock-polish",
+   "poison-jab",
+   "energy-ball",
+   "flash-cannon",
+   "hone-claws",
+   "round"
+  ]
+ }
+}

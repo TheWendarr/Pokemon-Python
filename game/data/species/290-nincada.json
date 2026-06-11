@@ -1,0 +1,111 @@
+{
+ "id": "nincada",
+ "name": "Nincada",
+ "dex": 290,
+ "types": [
+  "bug",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 31,
+  "attack": 45,
+  "defense": 90,
+  "special_attack": 30,
+  "special_defense": 30,
+  "speed": 40
+ },
+ "abilities": [
+  "compound-eyes",
+  "run-away"
+ ],
+ "base_experience": 53,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "leech-life",
+    "level": 5
+   },
+   {
+    "move": "sand-attack",
+    "level": 9
+   },
+   {
+    "move": "fury-swipes",
+    "level": 14
+   },
+   {
+    "move": "mind-reader",
+    "level": 19
+   },
+   {
+    "move": "false-swipe",
+    "level": 25
+   },
+   {
+    "move": "mud-slap",
+    "level": 31
+   },
+   {
+    "move": "metal-claw",
+    "level": 38
+   },
+   {
+    "move": "dig",
+    "level": 45
+   }
+  ],
+  "egg": [
+   "gust",
+   "feint-attack",
+   "endure",
+   "silver-wind",
+   "night-slash",
+   "bug-buzz",
+   "bug-bite",
+   "final-gambit"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "giga-drain",
+   "sleep-talk",
+   "bug-bite"
+  ],
+  "machine": [
+   "cut",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "false-swipe",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "shadow-ball",
+   "facade",
+   "aerial-ace",
+   "x-scissor",
+   "hone-claws",
+   "round",
+   "struggle-bug"
+  ]
+ }
+}

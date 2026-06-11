@@ -1,0 +1,154 @@
+{
+ "id": "gastly",
+ "name": "Gastly",
+ "dex": 92,
+ "types": [
+  "ghost",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 30,
+  "attack": 35,
+  "defense": 30,
+  "special_attack": 100,
+  "special_defense": 35,
+  "speed": 80
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 62,
+ "growth_rate": "medium-slow",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "hypnosis",
+    "level": 1
+   },
+   {
+    "move": "lick",
+    "level": 1
+   },
+   {
+    "move": "spite",
+    "level": 5
+   },
+   {
+    "move": "mean-look",
+    "level": 8
+   },
+   {
+    "move": "curse",
+    "level": 12
+   },
+   {
+    "move": "night-shade",
+    "level": 15
+   },
+   {
+    "move": "confuse-ray",
+    "level": 19
+   },
+   {
+    "move": "sucker-punch",
+    "level": 22
+   },
+   {
+    "move": "payback",
+    "level": 26
+   },
+   {
+    "move": "shadow-ball",
+    "level": 29
+   },
+   {
+    "move": "dream-eater",
+    "level": 33
+   },
+   {
+    "move": "dark-pulse",
+    "level": 36
+   },
+   {
+    "move": "destiny-bond",
+    "level": 40
+   },
+   {
+    "move": "hex",
+    "level": 43
+   },
+   {
+    "move": "nightmare",
+    "level": 47
+   }
+  ],
+  "egg": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "disable",
+   "haze",
+   "smog",
+   "psywave",
+   "scary-face",
+   "perish-song",
+   "grudge",
+   "astonish",
+   "clear-smog"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "spite",
+   "icy-wind",
+   "giga-drain",
+   "sleep-talk",
+   "pain-split",
+   "uproar",
+   "trick",
+   "knock-off",
+   "skill-swap",
+   "snatch",
+   "dark-pulse",
+   "wonder-room",
+   "foul-play"
+  ],
+  "machine": [
+   "thunderbolt",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "explosion",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "payback",
+   "embargo",
+   "energy-ball",
+   "trick-room",
+   "venoshock",
+   "telekinesis",
+   "round"
+  ]
+ }
+}

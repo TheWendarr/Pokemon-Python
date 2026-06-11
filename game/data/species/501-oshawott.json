@@ -1,0 +1,141 @@
+{
+ "id": "oshawott",
+ "name": "Oshawott",
+ "dex": 501,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 55,
+  "defense": 45,
+  "special_attack": 63,
+  "special_defense": 45,
+  "speed": 45
+ },
+ "abilities": [
+  "torrent",
+  "shell-armor"
+ ],
+ "base_experience": 62,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 5
+   },
+   {
+    "move": "water-gun",
+    "level": 7
+   },
+   {
+    "move": "water-sport",
+    "level": 11
+   },
+   {
+    "move": "focus-energy",
+    "level": 13
+   },
+   {
+    "move": "razor-shell",
+    "level": 17
+   },
+   {
+    "move": "fury-cutter",
+    "level": 19
+   },
+   {
+    "move": "water-pulse",
+    "level": 23
+   },
+   {
+    "move": "revenge",
+    "level": 25
+   },
+   {
+    "move": "aqua-jet",
+    "level": 29
+   },
+   {
+    "move": "encore",
+    "level": 31
+   },
+   {
+    "move": "aqua-tail",
+    "level": 35
+   },
+   {
+    "move": "retaliate",
+    "level": 37
+   },
+   {
+    "move": "swords-dance",
+    "level": 41
+   },
+   {
+    "move": "hydro-pump",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "screech",
+   "detect",
+   "brine",
+   "assurance",
+   "trump-card",
+   "copycat",
+   "night-slash",
+   "air-slash"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "covet",
+   "aqua-tail",
+   "water-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "taunt",
+   "dive",
+   "aerial-ace",
+   "fling",
+   "x-scissor",
+   "grass-knot",
+   "round",
+   "scald",
+   "retaliate"
+  ]
+ }
+}

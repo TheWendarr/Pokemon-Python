@@ -1,0 +1,165 @@
+{
+ "id": "toxicroak",
+ "name": "Toxicroak",
+ "dex": 454,
+ "types": [
+  "poison",
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 83,
+  "attack": 106,
+  "defense": 65,
+  "special_attack": 86,
+  "special_defense": 65,
+  "speed": 85
+ },
+ "abilities": [
+  "anticipation",
+  "dry-skin",
+  "poison-touch"
+ ],
+ "base_experience": 172,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 1
+   },
+   {
+    "move": "poison-sting",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 3
+   },
+   {
+    "move": "poison-sting",
+    "level": 8
+   },
+   {
+    "move": "taunt",
+    "level": 10
+   },
+   {
+    "move": "pursuit",
+    "level": 15
+   },
+   {
+    "move": "feint-attack",
+    "level": 17
+   },
+   {
+    "move": "revenge",
+    "level": 22
+   },
+   {
+    "move": "swagger",
+    "level": 24
+   },
+   {
+    "move": "mud-bomb",
+    "level": 29
+   },
+   {
+    "move": "sucker-punch",
+    "level": 31
+   },
+   {
+    "move": "venoshock",
+    "level": 36
+   },
+   {
+    "move": "nasty-plot",
+    "level": 41
+   },
+   {
+    "move": "poison-jab",
+    "level": 49
+   },
+   {
+    "move": "sludge-bomb",
+    "level": 54
+   },
+   {
+    "move": "flatter",
+    "level": 62
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "super-fang",
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "helping-hand",
+   "role-play",
+   "knock-off",
+   "snatch",
+   "bounce",
+   "dark-pulse",
+   "drain-punch",
+   "gunk-shot",
+   "foul-play",
+   "dual-chop"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "payback",
+   "embargo",
+   "fling",
+   "poison-jab",
+   "x-scissor",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "venoshock",
+   "sludge-wave",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

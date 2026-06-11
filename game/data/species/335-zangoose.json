@@ -1,0 +1,164 @@
+{
+ "id": "zangoose",
+ "name": "Zangoose",
+ "dex": 335,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 73,
+  "attack": 115,
+  "defense": 60,
+  "special_attack": 60,
+  "special_defense": 60,
+  "speed": 90
+ },
+ "abilities": [
+  "immunity",
+  "toxic-boost"
+ ],
+ "base_experience": 160,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 5
+   },
+   {
+    "move": "fury-cutter",
+    "level": 8
+   },
+   {
+    "move": "pursuit",
+    "level": 12
+   },
+   {
+    "move": "slash",
+    "level": 15
+   },
+   {
+    "move": "embargo",
+    "level": 19
+   },
+   {
+    "move": "crush-claw",
+    "level": 22
+   },
+   {
+    "move": "revenge",
+    "level": 26
+   },
+   {
+    "move": "false-swipe",
+    "level": 29
+   },
+   {
+    "move": "detect",
+    "level": 33
+   },
+   {
+    "move": "x-scissor",
+    "level": 36
+   },
+   {
+    "move": "taunt",
+    "level": 40
+   },
+   {
+    "move": "swords-dance",
+    "level": 43
+   },
+   {
+    "move": "close-combat",
+    "level": 47
+   }
+  ],
+  "egg": [
+   "razor-wind",
+   "double-kick",
+   "disable",
+   "counter",
+   "fury-swipes",
+   "curse",
+   "flail",
+   "iron-tail",
+   "metal-claw",
+   "feint",
+   "night-slash",
+   "double-hit",
+   "final-gambit"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "knock-off",
+   "endeavor",
+   "last-resort"
+  ],
+  "machine": [
+   "swords-dance",
+   "roar",
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "payback",
+   "embargo",
+   "fling",
+   "poison-jab",
+   "x-scissor",
+   "focus-blast",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "incinerate",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,145 @@
+{
+ "id": "machoke",
+ "name": "Machoke",
+ "dex": 67,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 100,
+  "defense": 70,
+  "special_attack": 50,
+  "special_defense": 60,
+  "speed": 45
+ },
+ "abilities": [
+  "guts",
+  "no-guard",
+  "steadfast"
+ ],
+ "base_experience": 142,
+ "growth_rate": "medium-slow",
+ "catch_rate": 90,
+ "gender_rate": 2,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "low-kick",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "karate-chop",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 7
+   },
+   {
+    "move": "karate-chop",
+    "level": 10
+   },
+   {
+    "move": "low-sweep",
+    "level": 13
+   },
+   {
+    "move": "foresight",
+    "level": 19
+   },
+   {
+    "move": "seismic-toss",
+    "level": 22
+   },
+   {
+    "move": "revenge",
+    "level": 25
+   },
+   {
+    "move": "vital-throw",
+    "level": 32
+   },
+   {
+    "move": "submission",
+    "level": 36
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 40
+   },
+   {
+    "move": "cross-chop",
+    "level": 44
+   },
+   {
+    "move": "scary-face",
+    "level": 51
+   },
+   {
+    "move": "dynamic-punch",
+    "level": 55
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "helping-hand",
+   "role-play",
+   "superpower",
+   "knock-off",
+   "dual-chop"
+  ],
+  "machine": [
+   "flamethrower",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "smack-down",
+   "low-sweep",
+   "round",
+   "incinerate",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

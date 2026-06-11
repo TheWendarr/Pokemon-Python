@@ -1,0 +1,31 @@
+{
+ "id": "chatter",
+ "name": "Chatter",
+ "type": "flying",
+ "category": "special",
+ "power": 60,
+ "accuracy": 100,
+ "pp": 20,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "authentic",
+  "distance",
+  "mirror",
+  "protect",
+  "sound"
+ ],
+ "effect": {
+  "kind": "damage-ailment",
+  "ailment": "confusion",
+  "ailment_chance": 100,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

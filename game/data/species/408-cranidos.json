@@ -1,0 +1,144 @@
+{
+ "id": "cranidos",
+ "name": "Cranidos",
+ "dex": 408,
+ "types": [
+  "rock"
+ ],
+ "base_stats": {
+  "hp": 67,
+  "attack": 125,
+  "defense": 40,
+  "special_attack": 30,
+  "special_defense": 30,
+  "speed": 58
+ },
+ "abilities": [
+  "mold-breaker",
+  "sheer-force"
+ ],
+ "base_experience": 70,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "headbutt",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 6
+   },
+   {
+    "move": "pursuit",
+    "level": 10
+   },
+   {
+    "move": "take-down",
+    "level": 15
+   },
+   {
+    "move": "scary-face",
+    "level": 19
+   },
+   {
+    "move": "assurance",
+    "level": 24
+   },
+   {
+    "move": "chip-away",
+    "level": 28
+   },
+   {
+    "move": "ancient-power",
+    "level": 33
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 37
+   },
+   {
+    "move": "screech",
+    "level": 42
+   },
+   {
+    "move": "head-smash",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "whirlwind",
+   "slam",
+   "stomp",
+   "thrash",
+   "double-edge",
+   "leer",
+   "curse",
+   "iron-tail",
+   "crunch",
+   "hammer-arm",
+   "iron-head"
+  ],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "snore",
+   "spite",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "superpower",
+   "endeavor",
+   "dragon-pulse",
+   "earth-power",
+   "zen-headbutt",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "swords-dance",
+   "roar",
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "thunderbolt",
+   "thunder",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "payback",
+   "fling",
+   "rock-polish",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

@@ -1,0 +1,135 @@
+{
+ "id": "keldeo-ordinary",
+ "name": "Keldeo Ordinary",
+ "dex": 647,
+ "types": [
+  "water",
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 91,
+  "attack": 72,
+  "defense": 90,
+  "special_attack": 129,
+  "special_defense": 90,
+  "speed": 108
+ },
+ "abilities": [
+  "justified"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "aqua-jet",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "double-kick",
+    "level": 7
+   },
+   {
+    "move": "bubble-beam",
+    "level": 13
+   },
+   {
+    "move": "take-down",
+    "level": 19
+   },
+   {
+    "move": "helping-hand",
+    "level": 25
+   },
+   {
+    "move": "retaliate",
+    "level": 31
+   },
+   {
+    "move": "aqua-tail",
+    "level": 37
+   },
+   {
+    "move": "sacred-sword",
+    "level": 43
+   },
+   {
+    "move": "swords-dance",
+    "level": 49
+   },
+   {
+    "move": "quick-guard",
+    "level": 55
+   },
+   {
+    "move": "work-up",
+    "level": 61
+   },
+   {
+    "move": "hydro-pump",
+    "level": 67
+   },
+   {
+    "move": "close-combat",
+    "level": 73
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "helping-hand",
+   "superpower",
+   "endeavor",
+   "bounce",
+   "covet",
+   "last-resort",
+   "aqua-tail",
+   "secret-sword"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "surf",
+   "hyper-beam",
+   "strength",
+   "toxic",
+   "double-team",
+   "reflect",
+   "rest",
+   "substitute",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "rock-smash",
+   "hail",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "calm-mind",
+   "poison-jab",
+   "x-scissor",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "round",
+   "scald",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

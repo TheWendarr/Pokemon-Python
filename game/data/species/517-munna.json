@@ -1,0 +1,158 @@
+{
+ "id": "munna",
+ "name": "Munna",
+ "dex": 517,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 76,
+  "attack": 25,
+  "defense": 45,
+  "special_attack": 67,
+  "special_defense": 55,
+  "speed": 24
+ },
+ "abilities": [
+  "forewarn",
+  "synchronize",
+  "telepathy"
+ ],
+ "base_experience": 58,
+ "growth_rate": "fast",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "psywave",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 1
+   },
+   {
+    "move": "lucky-chant",
+    "level": 5
+   },
+   {
+    "move": "yawn",
+    "level": 7
+   },
+   {
+    "move": "psybeam",
+    "level": 11
+   },
+   {
+    "move": "imprison",
+    "level": 13
+   },
+   {
+    "move": "moonlight",
+    "level": 17
+   },
+   {
+    "move": "hypnosis",
+    "level": 19
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 23
+   },
+   {
+    "move": "synchronoise",
+    "level": 25
+   },
+   {
+    "move": "nightmare",
+    "level": 29
+   },
+   {
+    "move": "future-sight",
+    "level": 31
+   },
+   {
+    "move": "calm-mind",
+    "level": 35
+   },
+   {
+    "move": "psychic",
+    "level": 37
+   },
+   {
+    "move": "dream-eater",
+    "level": 41
+   },
+   {
+    "move": "telekinesis",
+    "level": 43
+   },
+   {
+    "move": "stored-power",
+    "level": 47
+   }
+  ],
+  "egg": [
+   "sonic-boom",
+   "barrier",
+   "swift",
+   "curse",
+   "sleep-talk",
+   "baton-pass",
+   "helping-hand",
+   "magic-coat",
+   "secret-power"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heal-bell",
+   "pain-split",
+   "helping-hand",
+   "trick",
+   "magic-coat",
+   "skill-swap",
+   "signal-beam",
+   "gravity",
+   "worry-seed",
+   "zen-headbutt",
+   "wonder-room",
+   "after-you"
+  ],
+  "machine": [
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "rock-tomb",
+   "calm-mind",
+   "gyro-ball",
+   "energy-ball",
+   "trick-room",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round"
+  ]
+ }
+}

@@ -1,0 +1,96 @@
+{
+ "id": "bellossom",
+ "name": "Bellossom",
+ "dex": 182,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 80,
+  "defense": 95,
+  "special_attack": 90,
+  "special_defense": 100,
+  "speed": 50
+ },
+ "abilities": [
+  "chlorophyll",
+  "healer"
+ ],
+ "base_experience": 221,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leaf-blade",
+    "level": 1
+   },
+   {
+    "move": "mega-drain",
+    "level": 1
+   },
+   {
+    "move": "sweet-scent",
+    "level": 1
+   },
+   {
+    "move": "stun-spore",
+    "level": 1
+   },
+   {
+    "move": "sunny-day",
+    "level": 1
+   },
+   {
+    "move": "magical-leaf",
+    "level": 23
+   },
+   {
+    "move": "leaf-storm",
+    "level": 53
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "uproar",
+   "gastro-acid",
+   "worry-seed",
+   "seed-bomb",
+   "drain-punch",
+   "after-you"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "fling",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "venoshock",
+   "round"
+  ]
+ }
+}

@@ -1,0 +1,134 @@
+{
+ "id": "nidoran-f",
+ "name": "Nidoran F",
+ "dex": 29,
+ "types": [
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 47,
+  "defense": 52,
+  "special_attack": 40,
+  "special_defense": 40,
+  "speed": 41
+ },
+ "abilities": [
+  "poison-point",
+  "rivalry",
+  "hustle"
+ ],
+ "base_experience": 55,
+ "growth_rate": "medium-slow",
+ "catch_rate": 235,
+ "gender_rate": 8,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 7
+   },
+   {
+    "move": "double-kick",
+    "level": 9
+   },
+   {
+    "move": "poison-sting",
+    "level": 13
+   },
+   {
+    "move": "fury-swipes",
+    "level": 19
+   },
+   {
+    "move": "bite",
+    "level": 21
+   },
+   {
+    "move": "helping-hand",
+    "level": 25
+   },
+   {
+    "move": "toxic-spikes",
+    "level": 31
+   },
+   {
+    "move": "flatter",
+    "level": 33
+   },
+   {
+    "move": "crunch",
+    "level": 37
+   },
+   {
+    "move": "captivate",
+    "level": 43
+   },
+   {
+    "move": "poison-fang",
+    "level": 45
+   }
+  ],
+  "egg": [
+   "take-down",
+   "supersonic",
+   "disable",
+   "counter",
+   "focus-energy",
+   "skull-bash",
+   "endure",
+   "charm",
+   "pursuit",
+   "iron-tail",
+   "beat-up",
+   "poison-tail",
+   "chip-away"
+  ],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand"
+  ],
+  "machine": [
+   "cut",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "thunderbolt",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "aerial-ace",
+   "poison-jab",
+   "shadow-claw",
+   "hone-claws",
+   "venoshock",
+   "round"
+  ]
+ }
+}

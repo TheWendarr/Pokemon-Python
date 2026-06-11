@@ -1,0 +1,132 @@
+{
+ "id": "turtwig",
+ "name": "Turtwig",
+ "dex": 387,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 68,
+  "defense": 64,
+  "special_attack": 45,
+  "special_defense": 55,
+  "speed": 31
+ },
+ "abilities": [
+  "overgrow",
+  "shell-armor"
+ ],
+ "base_experience": 64,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "withdraw",
+    "level": 5
+   },
+   {
+    "move": "absorb",
+    "level": 9
+   },
+   {
+    "move": "razor-leaf",
+    "level": 13
+   },
+   {
+    "move": "curse",
+    "level": 17
+   },
+   {
+    "move": "bite",
+    "level": 21
+   },
+   {
+    "move": "mega-drain",
+    "level": 25
+   },
+   {
+    "move": "leech-seed",
+    "level": 29
+   },
+   {
+    "move": "synthesis",
+    "level": 33
+   },
+   {
+    "move": "crunch",
+    "level": 37
+   },
+   {
+    "move": "giga-drain",
+    "level": 41
+   },
+   {
+    "move": "leaf-storm",
+    "level": 45
+   }
+  ],
+  "egg": [
+   "body-slam",
+   "thrash",
+   "double-edge",
+   "growth",
+   "amnesia",
+   "stockpile",
+   "spit-up",
+   "swallow",
+   "superpower",
+   "tickle",
+   "sand-tomb",
+   "worry-seed",
+   "seed-bomb",
+   "earth-power",
+   "wide-guard"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "synthesis",
+   "superpower",
+   "worry-seed",
+   "seed-bomb",
+   "earth-power",
+   "stealth-rock",
+   "grass-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "energy-ball",
+   "grass-knot",
+   "round"
+  ]
+ }
+}

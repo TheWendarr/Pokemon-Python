@@ -1,0 +1,127 @@
+{
+ "id": "nuzleaf",
+ "name": "Nuzleaf",
+ "dex": 274,
+ "types": [
+  "grass",
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 70,
+  "defense": 40,
+  "special_attack": 60,
+  "special_defense": 40,
+  "speed": 60
+ },
+ "abilities": [
+  "chlorophyll",
+  "early-bird",
+  "pickpocket"
+ ],
+ "base_experience": 119,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "razor-leaf",
+    "level": 1
+   },
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 3
+   },
+   {
+    "move": "growth",
+    "level": 7
+   },
+   {
+    "move": "nature-power",
+    "level": 13
+   },
+   {
+    "move": "fake-out",
+    "level": 19
+   },
+   {
+    "move": "torment",
+    "level": 25
+   },
+   {
+    "move": "feint-attack",
+    "level": 31
+   },
+   {
+    "move": "razor-wind",
+    "level": 37
+   },
+   {
+    "move": "swagger",
+    "level": 43
+   },
+   {
+    "move": "extrasensory",
+    "level": 49
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "spite",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "worry-seed",
+   "dark-pulse",
+   "seed-bomb",
+   "foul-play"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "flash",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "payback",
+   "embargo",
+   "fling",
+   "energy-ball",
+   "grass-knot",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

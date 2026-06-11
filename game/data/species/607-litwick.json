@@ -1,0 +1,152 @@
+{
+ "id": "litwick",
+ "name": "Litwick",
+ "dex": 607,
+ "types": [
+  "ghost",
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 30,
+  "defense": 55,
+  "special_attack": 65,
+  "special_defense": 55,
+  "speed": 20
+ },
+ "abilities": [
+  "flash-fire",
+  "flame-body",
+  "infiltrator"
+ ],
+ "base_experience": 55,
+ "growth_rate": "medium-slow",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "minimize",
+    "level": 3
+   },
+   {
+    "move": "smog",
+    "level": 5
+   },
+   {
+    "move": "fire-spin",
+    "level": 7
+   },
+   {
+    "move": "confuse-ray",
+    "level": 10
+   },
+   {
+    "move": "night-shade",
+    "level": 13
+   },
+   {
+    "move": "will-o-wisp",
+    "level": 16
+   },
+   {
+    "move": "flame-burst",
+    "level": 20
+   },
+   {
+    "move": "imprison",
+    "level": 24
+   },
+   {
+    "move": "hex",
+    "level": 28
+   },
+   {
+    "move": "memento",
+    "level": 33
+   },
+   {
+    "move": "inferno",
+    "level": 38
+   },
+   {
+    "move": "curse",
+    "level": 43
+   },
+   {
+    "move": "shadow-ball",
+    "level": 49
+   },
+   {
+    "move": "pain-split",
+    "level": 55
+   },
+   {
+    "move": "overheat",
+    "level": 61
+   }
+  ],
+  "egg": [
+   "acid",
+   "haze",
+   "acid-armor",
+   "endure",
+   "heat-wave",
+   "captivate",
+   "clear-smog"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "sleep-talk",
+   "pain-split",
+   "heat-wave",
+   "trick",
+   "dark-pulse"
+  ],
+  "machine": [
+   "flamethrower",
+   "solar-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "overheat",
+   "calm-mind",
+   "payback",
+   "embargo",
+   "energy-ball",
+   "trick-room",
+   "telekinesis",
+   "flame-charge",
+   "round",
+   "incinerate"
+  ]
+ }
+}

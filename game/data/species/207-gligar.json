@@ -1,0 +1,163 @@
+{
+ "id": "gligar",
+ "name": "Gligar",
+ "dex": 207,
+ "types": [
+  "ground",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 75,
+  "defense": 105,
+  "special_attack": 35,
+  "special_defense": 65,
+  "speed": 85
+ },
+ "abilities": [
+  "hyper-cutter",
+  "sand-veil",
+  "immunity"
+ ],
+ "base_experience": 86,
+ "growth_rate": "medium-slow",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "poison-sting",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 4
+   },
+   {
+    "move": "harden",
+    "level": 7
+   },
+   {
+    "move": "knock-off",
+    "level": 10
+   },
+   {
+    "move": "quick-attack",
+    "level": 13
+   },
+   {
+    "move": "fury-cutter",
+    "level": 16
+   },
+   {
+    "move": "feint-attack",
+    "level": 19
+   },
+   {
+    "move": "acrobatics",
+    "level": 22
+   },
+   {
+    "move": "slash",
+    "level": 27
+   },
+   {
+    "move": "u-turn",
+    "level": 30
+   },
+   {
+    "move": "screech",
+    "level": 35
+   },
+   {
+    "move": "x-scissor",
+    "level": 40
+   },
+   {
+    "move": "sky-uppercut",
+    "level": 45
+   },
+   {
+    "move": "swords-dance",
+    "level": 50
+   },
+   {
+    "move": "guillotine",
+    "level": 55
+   }
+  ],
+  "egg": [
+   "razor-wind",
+   "wing-attack",
+   "double-edge",
+   "counter",
+   "agility",
+   "baton-pass",
+   "metal-claw",
+   "sand-tomb",
+   "poison-tail",
+   "feint",
+   "power-trick",
+   "night-slash",
+   "rock-climb",
+   "cross-poison"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "knock-off",
+   "roost",
+   "tailwind",
+   "dark-pulse",
+   "aqua-tail",
+   "earth-power",
+   "stealth-rock",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "u-turn",
+   "payback",
+   "fling",
+   "rock-polish",
+   "poison-jab",
+   "x-scissor",
+   "stone-edge",
+   "hone-claws",
+   "venoshock",
+   "round",
+   "acrobatics",
+   "struggle-bug",
+   "bulldoze"
+  ]
+ }
+}

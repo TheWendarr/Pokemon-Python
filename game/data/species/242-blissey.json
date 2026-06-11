@@ -1,0 +1,173 @@
+{
+ "id": "blissey",
+ "name": "Blissey",
+ "dex": 242,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 255,
+  "attack": 10,
+  "defense": 10,
+  "special_attack": 75,
+  "special_defense": 135,
+  "speed": 55
+ },
+ "abilities": [
+  "natural-cure",
+  "serene-grace",
+  "healer"
+ ],
+ "base_experience": 608,
+ "growth_rate": "fast",
+ "catch_rate": 30,
+ "gender_rate": 8,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "defense-curl",
+    "level": 1
+   },
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 5
+   },
+   {
+    "move": "refresh",
+    "level": 9
+   },
+   {
+    "move": "double-slap",
+    "level": 12
+   },
+   {
+    "move": "soft-boiled",
+    "level": 16
+   },
+   {
+    "move": "bestow",
+    "level": 20
+   },
+   {
+    "move": "minimize",
+    "level": 23
+   },
+   {
+    "move": "take-down",
+    "level": 27
+   },
+   {
+    "move": "sing",
+    "level": 31
+   },
+   {
+    "move": "fling",
+    "level": 34
+   },
+   {
+    "move": "heal-pulse",
+    "level": 38
+   },
+   {
+    "move": "egg-bomb",
+    "level": 42
+   },
+   {
+    "move": "light-screen",
+    "level": 46
+   },
+   {
+    "move": "healing-wish",
+    "level": 50
+   },
+   {
+    "move": "double-edge",
+    "level": 54
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "helping-hand",
+   "recycle",
+   "endeavor",
+   "skill-swap",
+   "snatch",
+   "hyper-voice",
+   "block",
+   "covet",
+   "gravity",
+   "last-resort",
+   "drain-punch",
+   "zen-headbutt",
+   "stealth-rock"
+  ],
+  "machine": [
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "calm-mind",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "grass-knot",
+   "charge-beam",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "retaliate",
+   "bulldoze",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

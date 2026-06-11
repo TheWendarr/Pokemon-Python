@@ -1,0 +1,150 @@
+{
+ "id": "drifloon",
+ "name": "Drifloon",
+ "dex": 425,
+ "types": [
+  "ghost",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 50,
+  "defense": 34,
+  "special_attack": 60,
+  "special_defense": 44,
+  "speed": 70
+ },
+ "abilities": [
+  "aftermath",
+  "unburden",
+  "flare-boost"
+ ],
+ "base_experience": 70,
+ "growth_rate": "fast-then-very-slow",
+ "catch_rate": 125,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "constrict",
+    "level": 1
+   },
+   {
+    "move": "minimize",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 4
+   },
+   {
+    "move": "gust",
+    "level": 8
+   },
+   {
+    "move": "focus-energy",
+    "level": 13
+   },
+   {
+    "move": "payback",
+    "level": 16
+   },
+   {
+    "move": "ominous-wind",
+    "level": 20
+   },
+   {
+    "move": "stockpile",
+    "level": 25
+   },
+   {
+    "move": "hex",
+    "level": 27
+   },
+   {
+    "move": "swallow",
+    "level": 32
+   },
+   {
+    "move": "spit-up",
+    "level": 32
+   },
+   {
+    "move": "shadow-ball",
+    "level": 36
+   },
+   {
+    "move": "amnesia",
+    "level": 40
+   },
+   {
+    "move": "baton-pass",
+    "level": 44
+   },
+   {
+    "move": "explosion",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "body-slam",
+   "disable",
+   "hypnosis",
+   "haze",
+   "destiny-bond",
+   "memento",
+   "weather-ball",
+   "defog",
+   "clear-smog"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "pain-split",
+   "trick",
+   "magic-coat",
+   "recycle",
+   "knock-off",
+   "skill-swap",
+   "tailwind"
+  ],
+  "machine": [
+   "cut",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "explosion",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "will-o-wisp",
+   "facade",
+   "calm-mind",
+   "gyro-ball",
+   "payback",
+   "embargo",
+   "charge-beam",
+   "telekinesis",
+   "round",
+   "acrobatics"
+  ]
+ }
+}

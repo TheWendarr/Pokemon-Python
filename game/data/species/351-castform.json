@@ -1,0 +1,126 @@
+{
+ "id": "castform",
+ "name": "Castform",
+ "dex": 351,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 70,
+  "defense": 70,
+  "special_attack": 70,
+  "special_defense": 70,
+  "speed": 70
+ },
+ "abilities": [
+  "forecast"
+ ],
+ "base_experience": 147,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 10
+   },
+   {
+    "move": "ember",
+    "level": 10
+   },
+   {
+    "move": "powder-snow",
+    "level": 10
+   },
+   {
+    "move": "headbutt",
+    "level": 15
+   },
+   {
+    "move": "rain-dance",
+    "level": 20
+   },
+   {
+    "move": "sunny-day",
+    "level": 20
+   },
+   {
+    "move": "hail",
+    "level": 20
+   },
+   {
+    "move": "weather-ball",
+    "level": 30
+   },
+   {
+    "move": "hydro-pump",
+    "level": 40
+   },
+   {
+    "move": "fire-blast",
+    "level": 40
+   },
+   {
+    "move": "blizzard",
+    "level": 40
+   }
+  ],
+  "egg": [
+   "disable",
+   "amnesia",
+   "future-sight",
+   "lucky-chant",
+   "ominous-wind",
+   "clear-smog",
+   "hex"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "tailwind",
+   "last-resort"
+  ],
+  "machine": [
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "hail",
+   "facade",
+   "energy-ball",
+   "round",
+   "scald",
+   "incinerate",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

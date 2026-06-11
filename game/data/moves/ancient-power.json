@@ -1,0 +1,49 @@
+{
+ "id": "ancient-power",
+ "name": "Ancient Power",
+ "type": "rock",
+ "category": "special",
+ "power": 60,
+ "accuracy": 100,
+ "pp": 5,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-raise",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [
+   {
+    "stat": "attack",
+    "change": 1
+   },
+   {
+    "stat": "defense",
+    "change": 1
+   },
+   {
+    "stat": "special_attack",
+    "change": 1
+   },
+   {
+    "stat": "special_defense",
+    "change": 1
+   },
+   {
+    "stat": "speed",
+    "change": 1
+   }
+  ],
+  "stat_chance": 10,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

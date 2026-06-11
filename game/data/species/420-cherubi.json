@@ -1,0 +1,116 @@
+{
+ "id": "cherubi",
+ "name": "Cherubi",
+ "dex": 420,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 35,
+  "defense": 45,
+  "special_attack": 62,
+  "special_defense": 53,
+  "speed": 35
+ },
+ "abilities": [
+  "chlorophyll"
+ ],
+ "base_experience": 55,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "morning-sun",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growth",
+    "level": 7
+   },
+   {
+    "move": "leech-seed",
+    "level": 10
+   },
+   {
+    "move": "helping-hand",
+    "level": 13
+   },
+   {
+    "move": "magical-leaf",
+    "level": 19
+   },
+   {
+    "move": "sunny-day",
+    "level": 22
+   },
+   {
+    "move": "worry-seed",
+    "level": 28
+   },
+   {
+    "move": "take-down",
+    "level": 31
+   },
+   {
+    "move": "solar-beam",
+    "level": 37
+   },
+   {
+    "move": "lucky-chant",
+    "level": 40
+   }
+  ],
+  "egg": [
+   "razor-leaf",
+   "defense-curl",
+   "rollout",
+   "sweet-scent",
+   "nature-power",
+   "weather-ball",
+   "aromatherapy",
+   "grass-whistle",
+   "tickle",
+   "healing-wish",
+   "natural-gift",
+   "seed-bomb",
+   "heal-pulse"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "helping-hand",
+   "worry-seed",
+   "seed-bomb"
+  ],
+  "machine": [
+   "swords-dance",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "energy-ball",
+   "grass-knot",
+   "round"
+  ]
+ }
+}

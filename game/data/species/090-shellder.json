@@ -1,0 +1,135 @@
+{
+ "id": "shellder",
+ "name": "Shellder",
+ "dex": 90,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 30,
+  "attack": 65,
+  "defense": 100,
+  "special_attack": 45,
+  "special_defense": 25,
+  "speed": 40
+ },
+ "abilities": [
+  "shell-armor",
+  "skill-link",
+  "overcoat"
+ ],
+ "base_experience": 61,
+ "growth_rate": "slow",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "withdraw",
+    "level": 4
+   },
+   {
+    "move": "supersonic",
+    "level": 8
+   },
+   {
+    "move": "icicle-spear",
+    "level": 13
+   },
+   {
+    "move": "protect",
+    "level": 16
+   },
+   {
+    "move": "leer",
+    "level": 20
+   },
+   {
+    "move": "clamp",
+    "level": 25
+   },
+   {
+    "move": "ice-shard",
+    "level": 28
+   },
+   {
+    "move": "razor-shell",
+    "level": 32
+   },
+   {
+    "move": "aurora-beam",
+    "level": 37
+   },
+   {
+    "move": "whirlpool",
+    "level": 40
+   },
+   {
+    "move": "brine",
+    "level": 44
+   },
+   {
+    "move": "iron-defense",
+    "level": 49
+   },
+   {
+    "move": "ice-beam",
+    "level": 52
+   },
+   {
+    "move": "shell-smash",
+    "level": 56
+   },
+   {
+    "move": "hydro-pump",
+    "level": 61
+   }
+  ],
+  "egg": [
+   "take-down",
+   "twineedle",
+   "bubble-beam",
+   "screech",
+   "barrier",
+   "rapid-spin",
+   "icicle-spear",
+   "mud-shot",
+   "rock-blast",
+   "water-pulse",
+   "aqua-ring",
+   "avalanche"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-defense"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "double-team",
+   "explosion",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "dive",
+   "payback",
+   "round"
+  ]
+ }
+}

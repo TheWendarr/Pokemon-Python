@@ -1,0 +1,167 @@
+{
+ "id": "munchlax",
+ "name": "Munchlax",
+ "dex": 446,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 135,
+  "attack": 85,
+  "defense": 40,
+  "special_attack": 40,
+  "special_defense": 85,
+  "speed": 5
+ },
+ "abilities": [
+  "pickup",
+  "thick-fat",
+  "gluttony"
+ ],
+ "base_experience": 78,
+ "growth_rate": "slow",
+ "catch_rate": 50,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "metronome",
+    "level": 1
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 4
+   },
+   {
+    "move": "amnesia",
+    "level": 9
+   },
+   {
+    "move": "lick",
+    "level": 12
+   },
+   {
+    "move": "recycle",
+    "level": 17
+   },
+   {
+    "move": "screech",
+    "level": 20
+   },
+   {
+    "move": "chip-away",
+    "level": 25
+   },
+   {
+    "move": "stockpile",
+    "level": 28
+   },
+   {
+    "move": "swallow",
+    "level": 33
+   },
+   {
+    "move": "body-slam",
+    "level": 36
+   },
+   {
+    "move": "fling",
+    "level": 41
+   },
+   {
+    "move": "rollout",
+    "level": 44
+   },
+   {
+    "move": "natural-gift",
+    "level": 49
+   },
+   {
+    "move": "snatch",
+    "level": 52
+   },
+   {
+    "move": "last-resort",
+    "level": 57
+   }
+  ],
+  "egg": [
+   "whirlwind",
+   "double-edge",
+   "counter",
+   "self-destruct",
+   "lick",
+   "curse",
+   "charm",
+   "pursuit",
+   "natural-gift",
+   "zen-headbutt",
+   "after-you"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "superpower",
+   "recycle",
+   "snatch",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "seed-bomb",
+   "zen-headbutt",
+   "gunk-shot",
+   "after-you"
+  ],
+  "machine": [
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "fling",
+   "round",
+   "incinerate",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

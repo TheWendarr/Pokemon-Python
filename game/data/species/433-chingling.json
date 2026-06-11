@@ -1,0 +1,119 @@
+{
+ "id": "chingling",
+ "name": "Chingling",
+ "dex": 433,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 30,
+  "defense": 50,
+  "special_attack": 65,
+  "special_defense": 50,
+  "speed": 45
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 57,
+ "growth_rate": "fast",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "wrap",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 6
+   },
+   {
+    "move": "astonish",
+    "level": 9
+   },
+   {
+    "move": "confusion",
+    "level": 14
+   },
+   {
+    "move": "uproar",
+    "level": 17
+   },
+   {
+    "move": "last-resort",
+    "level": 22
+   },
+   {
+    "move": "entrainment",
+    "level": 25
+   }
+  ],
+  "egg": [
+   "disable",
+   "hypnosis",
+   "recover",
+   "curse",
+   "future-sight",
+   "wish",
+   "skill-swap",
+   "stored-power"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "uproar",
+   "helping-hand",
+   "trick",
+   "magic-coat",
+   "recycle",
+   "knock-off",
+   "skill-swap",
+   "snatch",
+   "hyper-voice",
+   "signal-beam",
+   "gravity",
+   "last-resort",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "calm-mind",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice"
+  ]
+ }
+}

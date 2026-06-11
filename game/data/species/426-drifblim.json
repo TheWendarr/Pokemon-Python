@@ -1,0 +1,151 @@
+{
+ "id": "drifblim",
+ "name": "Drifblim",
+ "dex": 426,
+ "types": [
+  "ghost",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 150,
+  "attack": 80,
+  "defense": 44,
+  "special_attack": 90,
+  "special_defense": 54,
+  "speed": 80
+ },
+ "abilities": [
+  "aftermath",
+  "unburden",
+  "flare-boost"
+ ],
+ "base_experience": 174,
+ "growth_rate": "fast-then-very-slow",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "constrict",
+    "level": 1
+   },
+   {
+    "move": "minimize",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "gust",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 4
+   },
+   {
+    "move": "gust",
+    "level": 8
+   },
+   {
+    "move": "focus-energy",
+    "level": 13
+   },
+   {
+    "move": "payback",
+    "level": 16
+   },
+   {
+    "move": "ominous-wind",
+    "level": 20
+   },
+   {
+    "move": "stockpile",
+    "level": 25
+   },
+   {
+    "move": "hex",
+    "level": 27
+   },
+   {
+    "move": "swallow",
+    "level": 34
+   },
+   {
+    "move": "spit-up",
+    "level": 34
+   },
+   {
+    "move": "shadow-ball",
+    "level": 40
+   },
+   {
+    "move": "amnesia",
+    "level": 46
+   },
+   {
+    "move": "baton-pass",
+    "level": 52
+   },
+   {
+    "move": "explosion",
+    "level": 60
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "pain-split",
+   "trick",
+   "magic-coat",
+   "recycle",
+   "knock-off",
+   "skill-swap",
+   "tailwind"
+  ],
+  "machine": [
+   "cut",
+   "fly",
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "explosion",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "will-o-wisp",
+   "facade",
+   "calm-mind",
+   "gyro-ball",
+   "payback",
+   "embargo",
+   "giga-impact",
+   "charge-beam",
+   "telekinesis",
+   "round",
+   "acrobatics"
+  ]
+ }
+}

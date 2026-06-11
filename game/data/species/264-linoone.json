@@ -1,0 +1,151 @@
+{
+ "id": "linoone",
+ "name": "Linoone",
+ "dex": 264,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 78,
+  "attack": 70,
+  "defense": 61,
+  "special_attack": 50,
+  "special_defense": 61,
+  "speed": 100
+ },
+ "abilities": [
+  "pickup",
+  "gluttony",
+  "quick-feet"
+ ],
+ "base_experience": 147,
+ "growth_rate": "medium",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "switcheroo",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "headbutt",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 5
+   },
+   {
+    "move": "headbutt",
+    "level": 9
+   },
+   {
+    "move": "sand-attack",
+    "level": 13
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 17
+   },
+   {
+    "move": "mud-sport",
+    "level": 23
+   },
+   {
+    "move": "fury-swipes",
+    "level": 29
+   },
+   {
+    "move": "covet",
+    "level": 35
+   },
+   {
+    "move": "bestow",
+    "level": 41
+   },
+   {
+    "move": "slash",
+    "level": 47
+   },
+   {
+    "move": "rest",
+    "level": 53
+   },
+   {
+    "move": "belly-drum",
+    "level": 59
+   },
+   {
+    "move": "fling",
+    "level": 65
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "trick",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "seed-bomb",
+   "gunk-shot"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "fling",
+   "giga-impact",
+   "shadow-claw",
+   "grass-knot",
+   "charge-beam",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

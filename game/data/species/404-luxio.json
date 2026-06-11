@@ -1,0 +1,116 @@
+{
+ "id": "luxio",
+ "name": "Luxio",
+ "dex": 404,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 85,
+  "defense": 49,
+  "special_attack": 60,
+  "special_defense": 49,
+  "speed": 60
+ },
+ "abilities": [
+  "rivalry",
+  "intimidate",
+  "guts"
+ ],
+ "base_experience": 127,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 5
+   },
+   {
+    "move": "charge",
+    "level": 9
+   },
+   {
+    "move": "spark",
+    "level": 13
+   },
+   {
+    "move": "bite",
+    "level": 18
+   },
+   {
+    "move": "roar",
+    "level": 23
+   },
+   {
+    "move": "swagger",
+    "level": 28
+   },
+   {
+    "move": "thunder-fang",
+    "level": 33
+   },
+   {
+    "move": "crunch",
+    "level": 38
+   },
+   {
+    "move": "scary-face",
+    "level": 43
+   },
+   {
+    "move": "discharge",
+    "level": 48
+   },
+   {
+    "move": "wild-charge",
+    "level": 53
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "signal-beam",
+   "magnet-rise"
+  ],
+  "machine": [
+   "roar",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "facade",
+   "charge-beam",
+   "round",
+   "volt-switch",
+   "wild-charge",
+   "snarl"
+  ]
+ }
+}

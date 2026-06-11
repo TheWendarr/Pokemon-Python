@@ -1,0 +1,173 @@
+{
+ "id": "rhyperior",
+ "name": "Rhyperior",
+ "dex": 464,
+ "types": [
+  "ground",
+  "rock"
+ ],
+ "base_stats": {
+  "hp": 115,
+  "attack": 140,
+  "defense": 130,
+  "special_attack": 55,
+  "special_defense": 55,
+  "speed": 40
+ },
+ "abilities": [
+  "lightning-rod",
+  "solid-rock",
+  "reckless"
+ ],
+ "base_experience": 241,
+ "growth_rate": "slow",
+ "catch_rate": 30,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "poison-jab",
+    "level": 1
+   },
+   {
+    "move": "horn-attack",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "stomp",
+    "level": 1
+   },
+   {
+    "move": "fury-attack",
+    "level": 1
+   },
+   {
+    "move": "stomp",
+    "level": 9
+   },
+   {
+    "move": "fury-attack",
+    "level": 19
+   },
+   {
+    "move": "scary-face",
+    "level": 19
+   },
+   {
+    "move": "rock-blast",
+    "level": 23
+   },
+   {
+    "move": "chip-away",
+    "level": 30
+   },
+   {
+    "move": "take-down",
+    "level": 41
+   },
+   {
+    "move": "hammer-arm",
+    "level": 42
+   },
+   {
+    "move": "drill-run",
+    "level": 47
+   },
+   {
+    "move": "stone-edge",
+    "level": 56
+   },
+   {
+    "move": "earthquake",
+    "level": 62
+   },
+   {
+    "move": "horn-drill",
+    "level": 71
+   },
+   {
+    "move": "megahorn",
+    "level": 77
+   },
+   {
+    "move": "rock-wrecker",
+    "level": 86
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "spite",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "superpower",
+   "endeavor",
+   "block",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "iron-head",
+   "stealth-rock",
+   "drill-run"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "payback",
+   "fling",
+   "rock-polish",
+   "poison-jab",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "flash-cannon",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "incinerate",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

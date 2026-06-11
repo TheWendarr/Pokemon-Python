@@ -1,0 +1,153 @@
+{
+ "id": "pansear",
+ "name": "Pansear",
+ "dex": 513,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 53,
+  "defense": 48,
+  "special_attack": 53,
+  "special_defense": 48,
+  "speed": 64
+ },
+ "abilities": [
+  "gluttony",
+  "blaze"
+ ],
+ "base_experience": 63,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 4
+   },
+   {
+    "move": "lick",
+    "level": 7
+   },
+   {
+    "move": "incinerate",
+    "level": 10
+   },
+   {
+    "move": "fury-swipes",
+    "level": 13
+   },
+   {
+    "move": "yawn",
+    "level": 16
+   },
+   {
+    "move": "bite",
+    "level": 19
+   },
+   {
+    "move": "flame-burst",
+    "level": 22
+   },
+   {
+    "move": "amnesia",
+    "level": 25
+   },
+   {
+    "move": "fling",
+    "level": 28
+   },
+   {
+    "move": "acrobatics",
+    "level": 31
+   },
+   {
+    "move": "fire-blast",
+    "level": 34
+   },
+   {
+    "move": "recycle",
+    "level": 37
+   },
+   {
+    "move": "natural-gift",
+    "level": 40
+   },
+   {
+    "move": "crunch",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "fire-punch",
+   "low-kick",
+   "fire-spin",
+   "sleep-talk",
+   "heat-wave",
+   "role-play",
+   "astonish",
+   "tickle",
+   "covet",
+   "nasty-plot"
+  ],
+  "tutor": [
+   "fire-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "heat-wave",
+   "helping-hand",
+   "role-play",
+   "recycle",
+   "knock-off",
+   "endeavor",
+   "covet",
+   "gunk-shot"
+  ],
+  "machine": [
+   "cut",
+   "flamethrower",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "overheat",
+   "rock-tomb",
+   "payback",
+   "fling",
+   "shadow-claw",
+   "grass-knot",
+   "hone-claws",
+   "flame-charge",
+   "low-sweep",
+   "round",
+   "incinerate",
+   "acrobatics",
+   "work-up"
+  ]
+ }
+}

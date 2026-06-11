@@ -1,0 +1,34 @@
+{
+ "id": "steel-wing",
+ "name": "Steel Wing",
+ "type": "steel",
+ "category": "physical",
+ "power": 70,
+ "accuracy": 90,
+ "pp": 25,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "contact",
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-raise",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [
+   {
+    "stat": "defense",
+    "change": 1
+   }
+  ],
+  "stat_chance": 10,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

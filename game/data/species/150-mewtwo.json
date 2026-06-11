@@ -1,0 +1,186 @@
+{
+ "id": "mewtwo",
+ "name": "Mewtwo",
+ "dex": 150,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 106,
+  "attack": 110,
+  "defense": 90,
+  "special_attack": 154,
+  "special_defense": 90,
+  "speed": 130
+ },
+ "abilities": [
+  "pressure",
+  "unnerve"
+ ],
+ "base_experience": 306,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "disable",
+    "level": 1
+   },
+   {
+    "move": "barrier",
+    "level": 1
+   },
+   {
+    "move": "swift",
+    "level": 8
+   },
+   {
+    "move": "future-sight",
+    "level": 15
+   },
+   {
+    "move": "psych-up",
+    "level": 22
+   },
+   {
+    "move": "miracle-eye",
+    "level": 29
+   },
+   {
+    "move": "mist",
+    "level": 36
+   },
+   {
+    "move": "psycho-cut",
+    "level": 43
+   },
+   {
+    "move": "amnesia",
+    "level": 50
+   },
+   {
+    "move": "power-swap",
+    "level": 57
+   },
+   {
+    "move": "guard-swap",
+    "level": 57
+   },
+   {
+    "move": "psychic",
+    "level": 64
+   },
+   {
+    "move": "me-first",
+    "level": 71
+   },
+   {
+    "move": "recover",
+    "level": 79
+   },
+   {
+    "move": "safeguard",
+    "level": 86
+   },
+   {
+    "move": "aura-sphere",
+    "level": 93
+   },
+   {
+    "move": "psystrike",
+    "level": 100
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "snatch",
+   "signal-beam",
+   "gravity",
+   "aqua-tail",
+   "drain-punch",
+   "zen-headbutt",
+   "wonder-room",
+   "magic-room",
+   "foul-play"
+  ],
+  "machine": [
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "hail",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "bulk-up",
+   "calm-mind",
+   "embargo",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "stone-edge",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "low-sweep",
+   "round",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

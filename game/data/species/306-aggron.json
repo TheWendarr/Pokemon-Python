@@ -1,0 +1,179 @@
+{
+ "id": "aggron",
+ "name": "Aggron",
+ "dex": 306,
+ "types": [
+  "steel",
+  "rock"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 110,
+  "defense": 180,
+  "special_attack": 60,
+  "special_defense": 60,
+  "speed": 50
+ },
+ "abilities": [
+  "sturdy",
+  "rock-head",
+  "heavy-metal"
+ ],
+ "base_experience": 239,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 1
+   },
+   {
+    "move": "headbutt",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 4
+   },
+   {
+    "move": "headbutt",
+    "level": 8
+   },
+   {
+    "move": "metal-claw",
+    "level": 11
+   },
+   {
+    "move": "iron-defense",
+    "level": 15
+   },
+   {
+    "move": "roar",
+    "level": 18
+   },
+   {
+    "move": "take-down",
+    "level": 22
+   },
+   {
+    "move": "iron-head",
+    "level": 25
+   },
+   {
+    "move": "protect",
+    "level": 29
+   },
+   {
+    "move": "metal-sound",
+    "level": 34
+   },
+   {
+    "move": "iron-tail",
+    "level": 40
+   },
+   {
+    "move": "autotomize",
+    "level": 48
+   },
+   {
+    "move": "heavy-slam",
+    "level": 57
+   },
+   {
+    "move": "double-edge",
+    "level": 65
+   },
+   {
+    "move": "metal-burst",
+    "level": 74
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "spite",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "superpower",
+   "endeavor",
+   "iron-defense",
+   "block",
+   "magnet-rise",
+   "dark-pulse",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "payback",
+   "fling",
+   "rock-polish",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "flash-cannon",
+   "stone-edge",
+   "hone-claws",
+   "smack-down",
+   "round",
+   "incinerate",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

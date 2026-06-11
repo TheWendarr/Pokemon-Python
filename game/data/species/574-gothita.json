@@ -1,0 +1,160 @@
+{
+ "id": "gothita",
+ "name": "Gothita",
+ "dex": 574,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 30,
+  "defense": 50,
+  "special_attack": 55,
+  "special_defense": 65,
+  "speed": 45
+ },
+ "abilities": [
+  "frisk",
+  "competitive",
+  "shadow-tag"
+ ],
+ "base_experience": 58,
+ "growth_rate": "medium-slow",
+ "catch_rate": 200,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 3
+   },
+   {
+    "move": "tickle",
+    "level": 7
+   },
+   {
+    "move": "fake-tears",
+    "level": 10
+   },
+   {
+    "move": "double-slap",
+    "level": 14
+   },
+   {
+    "move": "psybeam",
+    "level": 16
+   },
+   {
+    "move": "embargo",
+    "level": 19
+   },
+   {
+    "move": "feint-attack",
+    "level": 24
+   },
+   {
+    "move": "psyshock",
+    "level": 25
+   },
+   {
+    "move": "flatter",
+    "level": 28
+   },
+   {
+    "move": "future-sight",
+    "level": 31
+   },
+   {
+    "move": "heal-block",
+    "level": 33
+   },
+   {
+    "move": "psychic",
+    "level": 37
+   },
+   {
+    "move": "telekinesis",
+    "level": 40
+   },
+   {
+    "move": "charm",
+    "level": 46
+   },
+   {
+    "move": "magic-room",
+    "level": 48
+   }
+  ],
+  "egg": [
+   "mean-look",
+   "mirror-coat",
+   "uproar",
+   "miracle-eye",
+   "dark-pulse",
+   "captivate"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heal-bell",
+   "uproar",
+   "helping-hand",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "snatch",
+   "signal-beam",
+   "covet",
+   "gravity",
+   "zen-headbutt",
+   "magic-room",
+   "foul-play"
+  ],
+  "machine": [
+   "thunderbolt",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "calm-mind",
+   "payback",
+   "embargo",
+   "fling",
+   "energy-ball",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round"
+  ]
+ }
+}

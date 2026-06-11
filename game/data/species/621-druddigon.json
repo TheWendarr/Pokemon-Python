@@ -1,0 +1,170 @@
+{
+ "id": "druddigon",
+ "name": "Druddigon",
+ "dex": 621,
+ "types": [
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 77,
+  "attack": 120,
+  "defense": 90,
+  "special_attack": 60,
+  "special_defense": 90,
+  "speed": 48
+ },
+ "abilities": [
+  "rough-skin",
+  "sheer-force",
+  "mold-breaker"
+ ],
+ "base_experience": 170,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "hone-claws",
+    "level": 5
+   },
+   {
+    "move": "bite",
+    "level": 9
+   },
+   {
+    "move": "scary-face",
+    "level": 13
+   },
+   {
+    "move": "dragon-rage",
+    "level": 18
+   },
+   {
+    "move": "slash",
+    "level": 21
+   },
+   {
+    "move": "crunch",
+    "level": 25
+   },
+   {
+    "move": "dragon-claw",
+    "level": 27
+   },
+   {
+    "move": "chip-away",
+    "level": 31
+   },
+   {
+    "move": "revenge",
+    "level": 35
+   },
+   {
+    "move": "night-slash",
+    "level": 40
+   },
+   {
+    "move": "dragon-tail",
+    "level": 45
+   },
+   {
+    "move": "rock-climb",
+    "level": 49
+   },
+   {
+    "move": "superpower",
+    "level": 55
+   },
+   {
+    "move": "outrage",
+    "level": 62
+   }
+  ],
+  "egg": [
+   "glare",
+   "feint-attack",
+   "pursuit",
+   "iron-tail",
+   "metal-claw",
+   "snatch",
+   "crush-claw",
+   "poison-tail",
+   "sucker-punch",
+   "thunder-fang",
+   "fire-fang"
+  ],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "heat-wave",
+   "superpower",
+   "snatch",
+   "dark-pulse",
+   "aqua-tail",
+   "dragon-pulse",
+   "draco-meteor",
+   "gunk-shot",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "flamethrower",
+   "surf",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "payback",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "flash-cannon",
+   "charge-beam",
+   "hone-claws",
+   "smack-down",
+   "round",
+   "incinerate",
+   "retaliate",
+   "bulldoze",
+   "dragon-tail",
+   "snarl"
+  ]
+ }
+}

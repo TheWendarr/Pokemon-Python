@@ -1,0 +1,137 @@
+{
+ "id": "paras",
+ "name": "Paras",
+ "dex": 46,
+ "types": [
+  "bug",
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 35,
+  "attack": 70,
+  "defense": 55,
+  "special_attack": 45,
+  "special_defense": 55,
+  "speed": 25
+ },
+ "abilities": [
+  "effect-spore",
+  "dry-skin",
+  "damp"
+ ],
+ "base_experience": 57,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "stun-spore",
+    "level": 6
+   },
+   {
+    "move": "poison-powder",
+    "level": 6
+   },
+   {
+    "move": "leech-life",
+    "level": 11
+   },
+   {
+    "move": "fury-cutter",
+    "level": 17
+   },
+   {
+    "move": "spore",
+    "level": 22
+   },
+   {
+    "move": "slash",
+    "level": 27
+   },
+   {
+    "move": "growth",
+    "level": 33
+   },
+   {
+    "move": "giga-drain",
+    "level": 38
+   },
+   {
+    "move": "aromatherapy",
+    "level": 43
+   },
+   {
+    "move": "rage-powder",
+    "level": 49
+   },
+   {
+    "move": "x-scissor",
+    "level": 54
+   }
+  ],
+  "egg": [
+   "psybeam",
+   "counter",
+   "leech-seed",
+   "agility",
+   "screech",
+   "flail",
+   "endure",
+   "pursuit",
+   "sweet-scent",
+   "metal-claw",
+   "natural-gift",
+   "cross-poison",
+   "bug-bite"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "knock-off",
+   "worry-seed",
+   "seed-bomb",
+   "bug-bite",
+   "after-you"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "aerial-ace",
+   "x-scissor",
+   "energy-ball",
+   "grass-knot",
+   "hone-claws",
+   "venoshock",
+   "round",
+   "struggle-bug"
+  ]
+ }
+}

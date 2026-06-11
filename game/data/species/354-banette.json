@@ -1,0 +1,155 @@
+{
+ "id": "banette",
+ "name": "Banette",
+ "dex": 354,
+ "types": [
+  "ghost"
+ ],
+ "base_stats": {
+  "hp": 64,
+  "attack": 115,
+  "defense": 65,
+  "special_attack": 83,
+  "special_defense": 63,
+  "speed": 65
+ },
+ "abilities": [
+  "insomnia",
+  "frisk",
+  "cursed-body"
+ ],
+ "base_experience": 159,
+ "growth_rate": "fast",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "knock-off",
+    "level": 1
+   },
+   {
+    "move": "screech",
+    "level": 1
+   },
+   {
+    "move": "night-shade",
+    "level": 1
+   },
+   {
+    "move": "curse",
+    "level": 1
+   },
+   {
+    "move": "screech",
+    "level": 4
+   },
+   {
+    "move": "night-shade",
+    "level": 7
+   },
+   {
+    "move": "spite",
+    "level": 10
+   },
+   {
+    "move": "will-o-wisp",
+    "level": 13
+   },
+   {
+    "move": "shadow-sneak",
+    "level": 16
+   },
+   {
+    "move": "curse",
+    "level": 19
+   },
+   {
+    "move": "feint-attack",
+    "level": 22
+   },
+   {
+    "move": "hex",
+    "level": 26
+   },
+   {
+    "move": "shadow-ball",
+    "level": 30
+   },
+   {
+    "move": "sucker-punch",
+    "level": 34
+   },
+   {
+    "move": "embargo",
+    "level": 40
+   },
+   {
+    "move": "snatch",
+    "level": 46
+   },
+   {
+    "move": "grudge",
+    "level": 52
+   },
+   {
+    "move": "trick",
+    "level": 58
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "pain-split",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "knock-off",
+   "skill-swap",
+   "snatch",
+   "dark-pulse",
+   "magic-room",
+   "foul-play"
+  ],
+  "machine": [
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "calm-mind",
+   "payback",
+   "embargo",
+   "fling",
+   "giga-impact",
+   "shadow-claw",
+   "trick-room",
+   "charge-beam",
+   "telekinesis",
+   "round"
+  ]
+ }
+}

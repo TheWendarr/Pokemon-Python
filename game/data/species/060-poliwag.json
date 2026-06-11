@@ -1,0 +1,128 @@
+{
+ "id": "poliwag",
+ "name": "Poliwag",
+ "dex": 60,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 50,
+  "defense": 40,
+  "special_attack": 40,
+  "special_defense": 40,
+  "speed": 90
+ },
+ "abilities": [
+  "water-absorb",
+  "damp",
+  "swift-swim"
+ ],
+ "base_experience": 60,
+ "growth_rate": "medium-slow",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "water-sport",
+    "level": 1
+   },
+   {
+    "move": "bubble",
+    "level": 5
+   },
+   {
+    "move": "hypnosis",
+    "level": 8
+   },
+   {
+    "move": "water-gun",
+    "level": 11
+   },
+   {
+    "move": "double-slap",
+    "level": 15
+   },
+   {
+    "move": "rain-dance",
+    "level": 18
+   },
+   {
+    "move": "body-slam",
+    "level": 21
+   },
+   {
+    "move": "bubble-beam",
+    "level": 25
+   },
+   {
+    "move": "mud-shot",
+    "level": 28
+   },
+   {
+    "move": "belly-drum",
+    "level": 31
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 35
+   },
+   {
+    "move": "hydro-pump",
+    "level": 38
+   },
+   {
+    "move": "mud-bomb",
+    "level": 41
+   }
+  ],
+  "egg": [
+   "mist",
+   "bubble-beam",
+   "haze",
+   "splash",
+   "mind-reader",
+   "endure",
+   "encore",
+   "endeavor",
+   "refresh",
+   "ice-ball",
+   "mud-shot",
+   "water-sport",
+   "water-pulse"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "helping-hand",
+   "endeavor"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "dive",
+   "round",
+   "scald"
+  ]
+ }
+}

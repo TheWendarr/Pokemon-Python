@@ -1,0 +1,172 @@
+{
+ "id": "weavile",
+ "name": "Weavile",
+ "dex": 461,
+ "types": [
+  "dark",
+  "ice"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 120,
+  "defense": 65,
+  "special_attack": 45,
+  "special_defense": 85,
+  "speed": 125
+ },
+ "abilities": [
+  "pressure",
+  "pickpocket"
+ ],
+ "base_experience": 179,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "embargo",
+    "level": 1
+   },
+   {
+    "move": "revenge",
+    "level": 1
+   },
+   {
+    "move": "assurance",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "taunt",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 8
+   },
+   {
+    "move": "feint-attack",
+    "level": 10
+   },
+   {
+    "move": "icy-wind",
+    "level": 14
+   },
+   {
+    "move": "fury-swipes",
+    "level": 16
+   },
+   {
+    "move": "nasty-plot",
+    "level": 20
+   },
+   {
+    "move": "metal-claw",
+    "level": 22
+   },
+   {
+    "move": "hone-claws",
+    "level": 25
+   },
+   {
+    "move": "fling",
+    "level": 28
+   },
+   {
+    "move": "screech",
+    "level": 32
+   },
+   {
+    "move": "night-slash",
+    "level": 35
+   },
+   {
+    "move": "snatch",
+    "level": 40
+   },
+   {
+    "move": "punishment",
+    "level": 44
+   },
+   {
+    "move": "dark-pulse",
+    "level": 47
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "low-kick",
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "knock-off",
+   "snatch",
+   "dark-pulse",
+   "foul-play"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "reflect",
+   "dream-eater",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "hail",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "aerial-ace",
+   "calm-mind",
+   "payback",
+   "embargo",
+   "fling",
+   "poison-jab",
+   "x-scissor",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "hone-claws",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

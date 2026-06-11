@@ -1,0 +1,130 @@
+{
+ "id": "palpitoad",
+ "name": "Palpitoad",
+ "dex": 536,
+ "types": [
+  "water",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 65,
+  "defense": 55,
+  "special_attack": 65,
+  "special_defense": 55,
+  "speed": 69
+ },
+ "abilities": [
+  "swift-swim",
+  "hydration",
+  "water-absorb"
+ ],
+ "base_experience": 134,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 1
+   },
+   {
+    "move": "round",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 5
+   },
+   {
+    "move": "round",
+    "level": 9
+   },
+   {
+    "move": "bubble-beam",
+    "level": 12
+   },
+   {
+    "move": "mud-shot",
+    "level": 16
+   },
+   {
+    "move": "aqua-ring",
+    "level": 20
+   },
+   {
+    "move": "uproar",
+    "level": 23
+   },
+   {
+    "move": "muddy-water",
+    "level": 28
+   },
+   {
+    "move": "rain-dance",
+    "level": 33
+   },
+   {
+    "move": "flail",
+    "level": 37
+   },
+   {
+    "move": "echoed-voice",
+    "level": 42
+   },
+   {
+    "move": "hydro-pump",
+    "level": 47
+   },
+   {
+    "move": "hyper-voice",
+    "level": 51
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "endeavor",
+   "hyper-voice",
+   "bounce",
+   "gastro-acid",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "surf",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "sludge-wave",
+   "round",
+   "echoed-voice",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

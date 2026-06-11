@@ -1,0 +1,33 @@
+{
+ "id": "leaf-tornado",
+ "name": "Leaf Tornado",
+ "type": "grass",
+ "category": "special",
+ "power": 65,
+ "accuracy": 90,
+ "pp": 10,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-lower",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [
+   {
+    "stat": "accuracy",
+    "change": -1
+   }
+  ],
+  "stat_chance": 50,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

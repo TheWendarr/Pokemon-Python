@@ -1,0 +1,135 @@
+{
+ "id": "carnivine",
+ "name": "Carnivine",
+ "dex": 455,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 74,
+  "attack": 100,
+  "defense": 72,
+  "special_attack": 90,
+  "special_defense": 72,
+  "speed": 46
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 159,
+ "growth_rate": "slow",
+ "catch_rate": 200,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bind",
+    "level": 1
+   },
+   {
+    "move": "growth",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 7
+   },
+   {
+    "move": "vine-whip",
+    "level": 11
+   },
+   {
+    "move": "sweet-scent",
+    "level": 17
+   },
+   {
+    "move": "ingrain",
+    "level": 21
+   },
+   {
+    "move": "feint-attack",
+    "level": 27
+   },
+   {
+    "move": "leaf-tornado",
+    "level": 31
+   },
+   {
+    "move": "stockpile",
+    "level": 37
+   },
+   {
+    "move": "spit-up",
+    "level": 37
+   },
+   {
+    "move": "swallow",
+    "level": 37
+   },
+   {
+    "move": "crunch",
+    "level": 41
+   },
+   {
+    "move": "wring-out",
+    "level": 47
+   },
+   {
+    "move": "power-whip",
+    "level": 51
+   }
+  ],
+  "egg": [
+   "slam",
+   "leech-seed",
+   "razor-leaf",
+   "stun-spore",
+   "sleep-powder",
+   "giga-drain",
+   "synthesis",
+   "grass-whistle",
+   "magical-leaf",
+   "worry-seed",
+   "rage-powder"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "knock-off",
+   "gastro-acid",
+   "worry-seed",
+   "seed-bomb",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "payback",
+   "fling",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "round"
+  ]
+ }
+}

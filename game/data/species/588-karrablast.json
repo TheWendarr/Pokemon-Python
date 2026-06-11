@@ -1,0 +1,130 @@
+{
+ "id": "karrablast",
+ "name": "Karrablast",
+ "dex": 588,
+ "types": [
+  "bug"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 75,
+  "defense": 45,
+  "special_attack": 40,
+  "special_defense": 45,
+  "speed": 60
+ },
+ "abilities": [
+  "swarm",
+  "shed-skin",
+  "no-guard"
+ ],
+ "base_experience": 63,
+ "growth_rate": "medium",
+ "catch_rate": 200,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 4
+   },
+   {
+    "move": "endure",
+    "level": 8
+   },
+   {
+    "move": "fury-cutter",
+    "level": 13
+   },
+   {
+    "move": "fury-attack",
+    "level": 16
+   },
+   {
+    "move": "headbutt",
+    "level": 20
+   },
+   {
+    "move": "false-swipe",
+    "level": 25
+   },
+   {
+    "move": "bug-buzz",
+    "level": 28
+   },
+   {
+    "move": "slash",
+    "level": 32
+   },
+   {
+    "move": "take-down",
+    "level": 37
+   },
+   {
+    "move": "scary-face",
+    "level": 40
+   },
+   {
+    "move": "x-scissor",
+    "level": 44
+   },
+   {
+    "move": "flail",
+    "level": 49
+   },
+   {
+    "move": "swords-dance",
+    "level": 52
+   },
+   {
+    "move": "double-edge",
+    "level": 56
+   }
+  ],
+  "egg": [
+   "horn-attack",
+   "counter",
+   "screech",
+   "feint-attack",
+   "megahorn",
+   "pursuit",
+   "knock-off",
+   "bug-bite"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "knock-off",
+   "iron-defense",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "facade",
+   "aerial-ace",
+   "poison-jab",
+   "x-scissor",
+   "energy-ball",
+   "round",
+   "struggle-bug"
+  ]
+ }
+}

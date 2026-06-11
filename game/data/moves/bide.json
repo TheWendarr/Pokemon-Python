@@ -1,0 +1,28 @@
+{
+ "id": "bide",
+ "name": "Bide",
+ "type": "normal",
+ "category": "physical",
+ "power": null,
+ "accuracy": null,
+ "pp": 10,
+ "priority": 1,
+ "target": "user",
+ "crit_stage": 0,
+ "flags": [
+  "contact",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

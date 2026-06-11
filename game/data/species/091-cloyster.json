@@ -1,0 +1,97 @@
+{
+ "id": "cloyster",
+ "name": "Cloyster",
+ "dex": 91,
+ "types": [
+  "water",
+  "ice"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 95,
+  "defense": 180,
+  "special_attack": 85,
+  "special_defense": 45,
+  "speed": 70
+ },
+ "abilities": [
+  "shell-armor",
+  "skill-link",
+  "overcoat"
+ ],
+ "base_experience": 184,
+ "growth_rate": "slow",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "toxic-spikes",
+    "level": 1
+   },
+   {
+    "move": "withdraw",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 1
+   },
+   {
+    "move": "protect",
+    "level": 1
+   },
+   {
+    "move": "aurora-beam",
+    "level": 1
+   },
+   {
+    "move": "spike-cannon",
+    "level": 13
+   },
+   {
+    "move": "spikes",
+    "level": 28
+   },
+   {
+    "move": "icicle-crash",
+    "level": 52
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "signal-beam",
+   "iron-defense"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "toxic",
+   "double-team",
+   "explosion",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "torment",
+   "facade",
+   "dive",
+   "payback",
+   "poison-jab",
+   "giga-impact",
+   "round",
+   "frost-breath"
+  ]
+ }
+}

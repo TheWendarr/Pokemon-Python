@@ -1,0 +1,150 @@
+{
+ "id": "scizor",
+ "name": "Scizor",
+ "dex": 212,
+ "types": [
+  "bug",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 130,
+  "defense": 100,
+  "special_attack": 55,
+  "special_defense": 80,
+  "speed": 65
+ },
+ "abilities": [
+  "swarm",
+  "technician",
+  "light-metal"
+ ],
+ "base_experience": 175,
+ "growth_rate": "medium",
+ "catch_rate": 25,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bullet-punch",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 5
+   },
+   {
+    "move": "pursuit",
+    "level": 9
+   },
+   {
+    "move": "false-swipe",
+    "level": 13
+   },
+   {
+    "move": "agility",
+    "level": 17
+   },
+   {
+    "move": "metal-claw",
+    "level": 21
+   },
+   {
+    "move": "fury-cutter",
+    "level": 25
+   },
+   {
+    "move": "slash",
+    "level": 29
+   },
+   {
+    "move": "razor-wind",
+    "level": 33
+   },
+   {
+    "move": "iron-defense",
+    "level": 37
+   },
+   {
+    "move": "x-scissor",
+    "level": 41
+   },
+   {
+    "move": "night-slash",
+    "level": 45
+   },
+   {
+    "move": "double-hit",
+    "level": 49
+   },
+   {
+    "move": "iron-head",
+    "level": 53
+   },
+   {
+    "move": "swords-dance",
+    "level": 57
+   },
+   {
+    "move": "feint",
+    "level": 61
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "superpower",
+   "knock-off",
+   "iron-defense",
+   "roost",
+   "tailwind",
+   "iron-head",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "strength",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "aerial-ace",
+   "u-turn",
+   "fling",
+   "x-scissor",
+   "giga-impact",
+   "flash-cannon",
+   "venoshock",
+   "round",
+   "acrobatics",
+   "struggle-bug"
+  ]
+ }
+}

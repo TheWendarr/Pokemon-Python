@@ -1,0 +1,123 @@
+{
+ "id": "blitzle",
+ "name": "Blitzle",
+ "dex": 522,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 60,
+  "defense": 32,
+  "special_attack": 50,
+  "special_defense": 32,
+  "speed": 76
+ },
+ "abilities": [
+  "lightning-rod",
+  "motor-drive",
+  "sap-sipper"
+ ],
+ "base_experience": 59,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 4
+   },
+   {
+    "move": "charge",
+    "level": 8
+   },
+   {
+    "move": "shock-wave",
+    "level": 11
+   },
+   {
+    "move": "thunder-wave",
+    "level": 15
+   },
+   {
+    "move": "flame-charge",
+    "level": 18
+   },
+   {
+    "move": "pursuit",
+    "level": 22
+   },
+   {
+    "move": "spark",
+    "level": 25
+   },
+   {
+    "move": "stomp",
+    "level": 29
+   },
+   {
+    "move": "discharge",
+    "level": 32
+   },
+   {
+    "move": "agility",
+    "level": 36
+   },
+   {
+    "move": "wild-charge",
+    "level": 39
+   },
+   {
+    "move": "thrash",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "double-kick",
+   "sand-attack",
+   "take-down",
+   "double-edge",
+   "rage",
+   "screech",
+   "endure",
+   "shock-wave",
+   "me-first"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "signal-beam",
+   "bounce",
+   "magnet-rise"
+  ],
+  "machine": [
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "facade",
+   "charge-beam",
+   "flame-charge",
+   "round",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

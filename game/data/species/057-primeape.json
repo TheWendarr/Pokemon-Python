@@ -1,0 +1,161 @@
+{
+ "id": "primeape",
+ "name": "Primeape",
+ "dex": 57,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 105,
+  "defense": 60,
+  "special_attack": 60,
+  "special_defense": 70,
+  "speed": 95
+ },
+ "abilities": [
+  "vital-spirit",
+  "anger-point",
+  "defiant"
+ ],
+ "base_experience": 159,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fling",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "low-kick",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "fury-swipes",
+    "level": 9
+   },
+   {
+    "move": "karate-chop",
+    "level": 13
+   },
+   {
+    "move": "seismic-toss",
+    "level": 17
+   },
+   {
+    "move": "screech",
+    "level": 21
+   },
+   {
+    "move": "assurance",
+    "level": 25
+   },
+   {
+    "move": "rage",
+    "level": 28
+   },
+   {
+    "move": "swagger",
+    "level": 35
+   },
+   {
+    "move": "cross-chop",
+    "level": 41
+   },
+   {
+    "move": "thrash",
+    "level": 47
+   },
+   {
+    "move": "punishment",
+    "level": 53
+   },
+   {
+    "move": "close-combat",
+    "level": 59
+   },
+   {
+    "move": "final-gambit",
+    "level": 63
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "spite",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "role-play",
+   "endeavor",
+   "covet",
+   "seed-bomb",
+   "gunk-shot",
+   "dual-chop"
+  ],
+  "machine": [
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "aerial-ace",
+   "bulk-up",
+   "u-turn",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "hone-claws",
+   "smack-down",
+   "low-sweep",
+   "round",
+   "acrobatics",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

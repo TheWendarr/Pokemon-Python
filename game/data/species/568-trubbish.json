@@ -1,0 +1,137 @@
+{
+ "id": "trubbish",
+ "name": "Trubbish",
+ "dex": 568,
+ "types": [
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 50,
+  "defense": 62,
+  "special_attack": 40,
+  "special_defense": 62,
+  "speed": 65
+ },
+ "abilities": [
+  "stench",
+  "sticky-hold",
+  "aftermath"
+ ],
+ "base_experience": 66,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "poison-gas",
+    "level": 1
+   },
+   {
+    "move": "recycle",
+    "level": 3
+   },
+   {
+    "move": "toxic-spikes",
+    "level": 7
+   },
+   {
+    "move": "acid-spray",
+    "level": 12
+   },
+   {
+    "move": "double-slap",
+    "level": 14
+   },
+   {
+    "move": "sludge",
+    "level": 18
+   },
+   {
+    "move": "stockpile",
+    "level": 23
+   },
+   {
+    "move": "swallow",
+    "level": 23
+   },
+   {
+    "move": "take-down",
+    "level": 25
+   },
+   {
+    "move": "sludge-bomb",
+    "level": 29
+   },
+   {
+    "move": "clear-smog",
+    "level": 34
+   },
+   {
+    "move": "toxic",
+    "level": 36
+   },
+   {
+    "move": "amnesia",
+    "level": 40
+   },
+   {
+    "move": "gunk-shot",
+    "level": 45
+   },
+   {
+    "move": "explosion",
+    "level": 47
+   }
+  ],
+  "egg": [
+   "sand-attack",
+   "haze",
+   "self-destruct",
+   "curse",
+   "spikes",
+   "rollout",
+   "mud-sport",
+   "rock-blast"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "giga-drain",
+   "sleep-talk",
+   "pain-split",
+   "recycle",
+   "dark-pulse",
+   "seed-bomb",
+   "drain-punch",
+   "gunk-shot"
+  ],
+  "machine": [
+   "toxic",
+   "double-team",
+   "explosion",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "facade",
+   "payback",
+   "venoshock",
+   "sludge-wave",
+   "round"
+  ]
+ }
+}

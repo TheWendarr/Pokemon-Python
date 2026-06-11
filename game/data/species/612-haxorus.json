@@ -1,0 +1,163 @@
+{
+ "id": "haxorus",
+ "name": "Haxorus",
+ "dex": 612,
+ "types": [
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 76,
+  "attack": 147,
+  "defense": 90,
+  "special_attack": 60,
+  "special_defense": 70,
+  "speed": 97
+ },
+ "abilities": [
+  "rivalry",
+  "mold-breaker",
+  "unnerve"
+ ],
+ "base_experience": 243,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "assurance",
+    "level": 1
+   },
+   {
+    "move": "dragon-rage",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 4
+   },
+   {
+    "move": "assurance",
+    "level": 7
+   },
+   {
+    "move": "dragon-rage",
+    "level": 10
+   },
+   {
+    "move": "dual-chop",
+    "level": 13
+   },
+   {
+    "move": "scary-face",
+    "level": 16
+   },
+   {
+    "move": "slash",
+    "level": 20
+   },
+   {
+    "move": "false-swipe",
+    "level": 24
+   },
+   {
+    "move": "dragon-claw",
+    "level": 28
+   },
+   {
+    "move": "dragon-dance",
+    "level": 32
+   },
+   {
+    "move": "taunt",
+    "level": 36
+   },
+   {
+    "move": "dragon-pulse",
+    "level": 42
+   },
+   {
+    "move": "swords-dance",
+    "level": 50
+   },
+   {
+    "move": "guillotine",
+    "level": 58
+   },
+   {
+    "move": "outrage",
+    "level": 66
+   },
+   {
+    "move": "giga-impact",
+    "level": 74
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "superpower",
+   "endeavor",
+   "aqua-tail",
+   "dragon-pulse",
+   "draco-meteor",
+   "dual-chop"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "surf",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "payback",
+   "fling",
+   "poison-jab",
+   "x-scissor",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "grass-knot",
+   "hone-claws",
+   "round",
+   "incinerate",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

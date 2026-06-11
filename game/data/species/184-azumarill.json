@@ -1,0 +1,147 @@
+{
+ "id": "azumarill",
+ "name": "Azumarill",
+ "dex": 184,
+ "types": [
+  "water",
+  "fairy"
+ ],
+ "base_stats": {
+  "hp": 100,
+  "attack": 50,
+  "defense": 80,
+  "special_attack": 60,
+  "special_defense": 80,
+  "speed": 50
+ },
+ "abilities": [
+  "thick-fat",
+  "huge-power",
+  "sap-sipper"
+ ],
+ "base_experience": 189,
+ "growth_rate": "fast",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "water-sport",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 2
+   },
+   {
+    "move": "water-sport",
+    "level": 5
+   },
+   {
+    "move": "water-gun",
+    "level": 7
+   },
+   {
+    "move": "defense-curl",
+    "level": 10
+   },
+   {
+    "move": "rollout",
+    "level": 10
+   },
+   {
+    "move": "bubble-beam",
+    "level": 13
+   },
+   {
+    "move": "helping-hand",
+    "level": 16
+   },
+   {
+    "move": "aqua-tail",
+    "level": 21
+   },
+   {
+    "move": "double-edge",
+    "level": 25
+   },
+   {
+    "move": "aqua-ring",
+    "level": 31
+   },
+   {
+    "move": "rain-dance",
+    "level": 35
+   },
+   {
+    "move": "superpower",
+    "level": 42
+   },
+   {
+    "move": "hydro-pump",
+    "level": 46
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "superpower",
+   "knock-off",
+   "hyper-voice",
+   "bounce",
+   "covet",
+   "aqua-tail"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "grass-knot",
+   "round",
+   "scald",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

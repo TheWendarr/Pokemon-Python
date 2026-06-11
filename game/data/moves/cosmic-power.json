@@ -1,0 +1,36 @@
+{
+ "id": "cosmic-power",
+ "name": "Cosmic Power",
+ "type": "psychic",
+ "category": "status",
+ "power": null,
+ "accuracy": null,
+ "pp": 20,
+ "priority": 0,
+ "target": "user",
+ "crit_stage": 0,
+ "flags": [
+  "snatch"
+ ],
+ "effect": {
+  "kind": "net-good-stats",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [
+   {
+    "stat": "defense",
+    "change": 1
+   },
+   {
+    "stat": "special_defense",
+    "change": 1
+   }
+  ],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

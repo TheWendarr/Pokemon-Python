@@ -1,0 +1,139 @@
+{
+ "id": "shieldon",
+ "name": "Shieldon",
+ "dex": 410,
+ "types": [
+  "rock",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 30,
+  "attack": 42,
+  "defense": 118,
+  "special_attack": 42,
+  "special_defense": 88,
+  "speed": 30
+ },
+ "abilities": [
+  "sturdy",
+  "soundproof"
+ ],
+ "base_experience": 70,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "protect",
+    "level": 1
+   },
+   {
+    "move": "taunt",
+    "level": 6
+   },
+   {
+    "move": "metal-sound",
+    "level": 10
+   },
+   {
+    "move": "take-down",
+    "level": 15
+   },
+   {
+    "move": "iron-defense",
+    "level": 19
+   },
+   {
+    "move": "swagger",
+    "level": 24
+   },
+   {
+    "move": "ancient-power",
+    "level": 28
+   },
+   {
+    "move": "endure",
+    "level": 33
+   },
+   {
+    "move": "metal-burst",
+    "level": 37
+   },
+   {
+    "move": "iron-head",
+    "level": 42
+   },
+   {
+    "move": "heavy-slam",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "headbutt",
+   "body-slam",
+   "double-edge",
+   "counter",
+   "fissure",
+   "screech",
+   "focus-energy",
+   "curse",
+   "scary-face",
+   "rock-blast",
+   "stealth-rock",
+   "wide-guard"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "iron-defense",
+   "magnet-rise",
+   "earth-power",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "thunderbolt",
+   "thunder",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "rock-polish",
+   "flash-cannon",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

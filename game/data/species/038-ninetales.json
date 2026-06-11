@@ -1,0 +1,95 @@
+{
+ "id": "ninetales",
+ "name": "Ninetales",
+ "dex": 38,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 73,
+  "attack": 76,
+  "defense": 75,
+  "special_attack": 81,
+  "special_defense": 100,
+  "speed": 100
+ },
+ "abilities": [
+  "flash-fire",
+  "drought"
+ ],
+ "base_experience": 177,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "nasty-plot",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "confuse-ray",
+    "level": 1
+   },
+   {
+    "move": "safeguard",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "sleep-talk",
+   "pain-split",
+   "iron-tail",
+   "heat-wave",
+   "role-play",
+   "covet",
+   "dark-pulse",
+   "zen-headbutt",
+   "foul-play"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "dream-eater",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "will-o-wisp",
+   "facade",
+   "overheat",
+   "calm-mind",
+   "payback",
+   "energy-ball",
+   "giga-impact",
+   "psyshock",
+   "flame-charge",
+   "round",
+   "incinerate"
+  ]
+ }
+}

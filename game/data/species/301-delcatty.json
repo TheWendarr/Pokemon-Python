@@ -1,0 +1,99 @@
+{
+ "id": "delcatty",
+ "name": "Delcatty",
+ "dex": 301,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 65,
+  "defense": 65,
+  "special_attack": 55,
+  "special_defense": 55,
+  "speed": 90
+ },
+ "abilities": [
+  "cute-charm",
+  "normalize",
+  "wonder-skin"
+ ],
+ "base_experience": 140,
+ "growth_rate": "fast",
+ "catch_rate": 60,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fake-out",
+    "level": 1
+   },
+   {
+    "move": "attract",
+    "level": 1
+   },
+   {
+    "move": "sing",
+    "level": 1
+   },
+   {
+    "move": "double-slap",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "calm-mind",
+   "payback",
+   "giga-impact",
+   "grass-knot",
+   "charge-beam",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

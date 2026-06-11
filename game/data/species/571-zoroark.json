@@ -1,0 +1,166 @@
+{
+ "id": "zoroark",
+ "name": "Zoroark",
+ "dex": 571,
+ "types": [
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 105,
+  "defense": 60,
+  "special_attack": 120,
+  "special_defense": 60,
+  "speed": 105
+ },
+ "abilities": [
+  "illusion"
+ ],
+ "base_experience": 179,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "u-turn",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "pursuit",
+    "level": 1
+   },
+   {
+    "move": "hone-claws",
+    "level": 1
+   },
+   {
+    "move": "pursuit",
+    "level": 5
+   },
+   {
+    "move": "hone-claws",
+    "level": 9
+   },
+   {
+    "move": "fury-swipes",
+    "level": 13
+   },
+   {
+    "move": "feint-attack",
+    "level": 17
+   },
+   {
+    "move": "scary-face",
+    "level": 21
+   },
+   {
+    "move": "taunt",
+    "level": 25
+   },
+   {
+    "move": "foul-play",
+    "level": 29
+   },
+   {
+    "move": "night-slash",
+    "level": 30
+   },
+   {
+    "move": "torment",
+    "level": 34
+   },
+   {
+    "move": "agility",
+    "level": 39
+   },
+   {
+    "move": "embargo",
+    "level": 44
+   },
+   {
+    "move": "punishment",
+    "level": 49
+   },
+   {
+    "move": "nasty-plot",
+    "level": 54
+   },
+   {
+    "move": "imprison",
+    "level": 59
+   },
+   {
+    "move": "night-daze",
+    "level": 64
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "spite",
+   "sleep-talk",
+   "uproar",
+   "trick",
+   "knock-off",
+   "snatch",
+   "hyper-voice",
+   "bounce",
+   "covet",
+   "dark-pulse",
+   "foul-play"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "calm-mind",
+   "u-turn",
+   "payback",
+   "embargo",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "grass-knot",
+   "hone-claws",
+   "low-sweep",
+   "round",
+   "incinerate",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

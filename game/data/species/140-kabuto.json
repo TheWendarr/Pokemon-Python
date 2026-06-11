@@ -1,0 +1,131 @@
+{
+ "id": "kabuto",
+ "name": "Kabuto",
+ "dex": 140,
+ "types": [
+  "rock",
+  "water"
+ ],
+ "base_stats": {
+  "hp": 30,
+  "attack": 80,
+  "defense": 90,
+  "special_attack": 55,
+  "special_defense": 45,
+  "speed": 55
+ },
+ "abilities": [
+  "swift-swim",
+  "battle-armor",
+  "weak-armor"
+ ],
+ "base_experience": 71,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 6
+   },
+   {
+    "move": "leer",
+    "level": 11
+   },
+   {
+    "move": "mud-shot",
+    "level": 16
+   },
+   {
+    "move": "sand-attack",
+    "level": 21
+   },
+   {
+    "move": "endure",
+    "level": 26
+   },
+   {
+    "move": "aqua-jet",
+    "level": 31
+   },
+   {
+    "move": "mega-drain",
+    "level": 36
+   },
+   {
+    "move": "metal-sound",
+    "level": 41
+   },
+   {
+    "move": "ancient-power",
+    "level": 46
+   },
+   {
+    "move": "wring-out",
+    "level": 51
+   }
+  ],
+  "egg": [
+   "bubble-beam",
+   "aurora-beam",
+   "screech",
+   "confuse-ray",
+   "flail",
+   "foresight",
+   "icy-wind",
+   "giga-drain",
+   "rapid-spin",
+   "knock-off",
+   "mud-shot"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "giga-drain",
+   "sleep-talk",
+   "knock-off",
+   "iron-defense",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "rock-tomb",
+   "rock-polish",
+   "hone-claws",
+   "smack-down",
+   "round",
+   "scald"
+  ]
+ }
+}

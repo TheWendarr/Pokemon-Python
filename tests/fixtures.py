@@ -1,0 +1,153 @@
+"""Minimal hand-written dataset for tests. Real values where they
+matter (base stats, Gen 5 move numbers), no network required."""
+
+TYPES = {
+    "normal":   {"rock": 0.5, "ghost": 0.0, "steel": 0.5},
+    "fire":     {"fire": 0.5, "water": 0.5, "grass": 2, "ice": 2, "bug": 2,
+                 "rock": 0.5, "dragon": 0.5, "steel": 2},
+    "water":    {"fire": 2, "water": 0.5, "grass": 0.5, "ground": 2,
+                 "rock": 2, "dragon": 0.5},
+    "electric": {"water": 2, "electric": 0.5, "grass": 0.5, "ground": 0.0,
+                 "flying": 2, "dragon": 0.5},
+    "grass":    {"fire": 0.5, "water": 2, "grass": 0.5, "poison": 0.5,
+                 "ground": 2, "flying": 0.5, "bug": 0.5, "rock": 2,
+                 "dragon": 0.5, "steel": 0.5},
+    "ice":      {"fire": 0.5, "water": 0.5, "grass": 2, "ice": 0.5,
+                 "ground": 2, "flying": 2, "dragon": 2, "steel": 0.5},
+    "fighting": {"normal": 2, "ice": 2, "poison": 0.5, "flying": 0.5,
+                 "psychic": 0.5, "bug": 0.5, "rock": 2, "ghost": 0.0,
+                 "dark": 2, "steel": 2},
+    "poison":   {"grass": 2, "poison": 0.5, "ground": 0.5, "rock": 0.5,
+                 "ghost": 0.5, "steel": 0.0},
+    "ground":   {"fire": 2, "electric": 2, "grass": 0.5, "poison": 2,
+                 "flying": 0.0, "bug": 0.5, "rock": 2, "steel": 2},
+    "flying":   {"electric": 0.5, "grass": 2, "fighting": 2, "bug": 2,
+                 "rock": 0.5, "steel": 0.5},
+    "psychic":  {"fighting": 2, "poison": 2, "psychic": 0.5, "dark": 0.0,
+                 "steel": 0.5},
+    "bug":      {"fire": 0.5, "grass": 2, "fighting": 0.5, "poison": 0.5,
+                 "flying": 0.5, "psychic": 2, "ghost": 0.5, "dark": 2,
+                 "steel": 0.5},
+    "rock":     {"fire": 2, "ice": 2, "fighting": 0.5, "ground": 0.5,
+                 "flying": 2, "bug": 2, "steel": 0.5},
+    "ghost":    {"normal": 0.0, "psychic": 2, "ghost": 2, "dark": 0.5,
+                 "steel": 0.5},
+    "dragon":   {"dragon": 2, "steel": 0.5},
+    "dark":     {"fighting": 0.5, "psychic": 2, "ghost": 2, "dark": 0.5,
+                 "steel": 0.5},
+    "steel":    {"fire": 0.5, "water": 0.5, "electric": 0.5, "ice": 2,
+                 "rock": 2, "steel": 0.5},
+}
+
+NATURES = {
+    "hardy": {"up": None, "down": None},
+    "adamant": {"up": "attack", "down": "special_attack"},
+    "modest": {"up": "special_attack", "down": "attack"},
+    "timid": {"up": "speed", "down": "attack"},
+    "jolly": {"up": "speed", "down": "special_attack"},
+}
+
+ITEMS = {
+    "potion": {"name": "Potion", "category": "medicine", "heal": 20},
+    "full-heal": {"name": "Full Heal", "category": "medicine", "cures": ["all"]},
+    "paralyze-heal": {"name": "Paralyze Heal", "category": "medicine",
+                      "cures": ["paralysis"]},
+    "poke-ball": {"name": "Poke Ball", "category": "ball", "ball_rate": 1.0},
+    "master-ball-ish": {"name": "Master Ball-ish", "category": "ball",
+                        "ball_rate": 255.0},
+}
+
+
+def _mv(id, type, category, power, accuracy, pp, *, priority=0, target="selected-pokemon",
+        crit_stage=0, flags=(), kind="damage", ailment=None, ailment_chance=0,
+        stat_changes=(), stat_chance=0, flinch_chance=0, drain=0, healing=0,
+        min_hits=None, max_hits=None):
+    return {
+        "id": id, "type": type, "category": category, "power": power,
+        "accuracy": accuracy, "pp": pp, "priority": priority, "target": target,
+        "crit_stage": crit_stage, "flags": list(flags),
+        "effect": {"kind": kind, "ailment": ailment, "ailment_chance": ailment_chance,
+                   "stat_changes": list(stat_changes), "stat_chance": stat_chance,
+                   "flinch_chance": flinch_chance, "drain": drain, "healing": healing,
+                   "min_hits": min_hits, "max_hits": max_hits},
+    }
+
+
+MOVES = {
+    "tackle": _mv("tackle", "normal", "physical", 50, 100, 35),
+    "thunderbolt": _mv("thunderbolt", "electric", "special", 95, 100, 15,
+                       kind="damage+ailment", ailment="paralysis", ailment_chance=10),
+    "thunder-wave": _mv("thunder-wave", "electric", "status", None, 100, 20,
+                        kind="ailment", ailment="paralysis"),
+    "ember": _mv("ember", "fire", "special", 40, 100, 25,
+                 kind="damage+ailment", ailment="burn", ailment_chance=10),
+    "water-gun": _mv("water-gun", "water", "special", 40, 100, 25),
+    "growl": _mv("growl", "normal", "status", None, 100, 40,
+                 kind="net-good-stats",
+                 stat_changes=[{"stat": "attack", "change": -1}]),
+    "swords-dance": _mv("swords-dance", "normal", "status", None, None, 20,
+                        target="user", kind="net-good-stats",
+                        stat_changes=[{"stat": "attack", "change": 2}]),
+    "quick-attack": _mv("quick-attack", "normal", "physical", 40, 100, 30,
+                        priority=1),
+    "toxic": _mv("toxic", "poison", "status", None, 90, 10,
+                 kind="ailment", ailment="poison"),
+    "will-o-wisp": _mv("will-o-wisp", "fire", "status", None, 75, 15,
+                       kind="ailment", ailment="burn"),
+    "hypnosis": _mv("hypnosis", "psychic", "status", None, 60, 20,
+                    kind="ailment", ailment="sleep"),
+    "confuse-ray": _mv("confuse-ray", "ghost", "status", None, 100, 10,
+                       kind="ailment", ailment="confusion"),
+    "double-kick": _mv("double-kick", "fighting", "physical", 30, 100, 30,
+                       min_hits=2, max_hits=2),
+    "fury-swipes": _mv("fury-swipes", "normal", "physical", 18, 80, 15,
+                       min_hits=2, max_hits=5),
+    "giga-drain": _mv("giga-drain", "grass", "special", 75, 100, 10,
+                      kind="damage+heal", drain=50),
+    "double-edge": _mv("double-edge", "normal", "physical", 120, 100, 15,
+                       drain=-33),
+    "recover": _mv("recover", "normal", "status", None, None, 10,
+                   target="user", kind="heal", healing=50),
+    "rest": _mv("rest", "psychic", "status", None, None, 10, target="user",
+                kind="heal"),
+    "earthquake": _mv("earthquake", "ground", "physical", 100, 100, 10),
+    "seismic-toss": _mv("seismic-toss", "fighting", "physical", None, 100, 20),
+    "fissure": _mv("fissure", "ground", "physical", None, 30, 5, kind="ohko"),
+    "iron-tail": _mv("iron-tail", "steel", "physical", 100, 75, 15,
+                     kind="damage+lower", stat_chance=30,
+                     stat_changes=[{"stat": "defense", "change": -1}]),
+    "headbutt": _mv("headbutt", "normal", "physical", 70, 100, 15,
+                    flinch_chance=30),
+    "splash": _mv("splash", "normal", "status", None, None, 40, target="user",
+                  kind="unique"),
+}
+
+
+def _sp(id, dex, types, hp, atk, dfn, spa, spd, spe, *, moves, catch_rate=45):
+    return {
+        "id": id, "dex": dex, "types": list(types),
+        "base_stats": {"hp": hp, "attack": atk, "defense": dfn,
+                       "special_attack": spa, "special_defense": spd, "speed": spe},
+        "abilities": ["test-ability"],
+        "base_experience": 100, "growth_rate": "medium-fast",
+        "catch_rate": catch_rate, "gender_rate": 4,
+        "learnset": {"level_up": [{"move": m, "level": i + 1}
+                                  for i, m in enumerate(moves)],
+                     "machine": [], "egg": [], "tutor": []},
+    }
+
+
+SPECIES = {
+    "pikachu": _sp("pikachu", 25, ["electric"], 35, 55, 40, 50, 50, 90,
+                   moves=["tackle", "thunder-wave", "quick-attack", "thunderbolt"]),
+    "bulbasaur": _sp("bulbasaur", 1, ["grass", "poison"], 45, 49, 49, 65, 65, 45,
+                     moves=["tackle", "growl", "toxic", "giga-drain"]),
+    "charmander": _sp("charmander", 4, ["fire"], 39, 52, 43, 60, 50, 65,
+                      moves=["tackle", "growl", "ember", "will-o-wisp"]),
+    "squirtle": _sp("squirtle", 7, ["water"], 44, 48, 65, 50, 64, 43,
+                    moves=["tackle", "growl", "water-gun", "recover"]),
+    "geodude": _sp("geodude", 74, ["rock", "ground"], 40, 80, 100, 30, 30, 20,
+                   moves=["tackle", "earthquake", "fissure", "rest"], catch_rate=255),
+    "gengar": _sp("gengar", 94, ["ghost", "poison"], 60, 65, 60, 130, 75, 110,
+                  moves=["hypnosis", "confuse-ray", "giga-drain", "double-edge"]),
+}

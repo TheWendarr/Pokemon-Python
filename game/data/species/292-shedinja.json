@@ -1,0 +1,117 @@
+{
+ "id": "shedinja",
+ "name": "Shedinja",
+ "dex": 292,
+ "types": [
+  "bug",
+  "ghost"
+ ],
+ "base_stats": {
+  "hp": 1,
+  "attack": 90,
+  "defense": 45,
+  "special_attack": 30,
+  "special_defense": 30,
+  "speed": 40
+ },
+ "abilities": [
+  "wonder-guard"
+ ],
+ "base_experience": 83,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 45,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "leech-life",
+    "level": 5
+   },
+   {
+    "move": "sand-attack",
+    "level": 9
+   },
+   {
+    "move": "fury-swipes",
+    "level": 14
+   },
+   {
+    "move": "mind-reader",
+    "level": 19
+   },
+   {
+    "move": "spite",
+    "level": 25
+   },
+   {
+    "move": "confuse-ray",
+    "level": 31
+   },
+   {
+    "move": "shadow-sneak",
+    "level": 38
+   },
+   {
+    "move": "grudge",
+    "level": 45
+   },
+   {
+    "move": "heal-block",
+    "level": 52
+   },
+   {
+    "move": "shadow-ball",
+    "level": 59
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "giga-drain",
+   "sleep-talk",
+   "trick",
+   "bug-bite"
+  ],
+  "machine": [
+   "cut",
+   "hyper-beam",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "false-swipe",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "shadow-ball",
+   "will-o-wisp",
+   "facade",
+   "aerial-ace",
+   "x-scissor",
+   "giga-impact",
+   "shadow-claw",
+   "hone-claws",
+   "telekinesis",
+   "round",
+   "struggle-bug"
+  ]
+ }
+}

@@ -1,0 +1,164 @@
+{
+ "id": "jynx",
+ "name": "Jynx",
+ "dex": 124,
+ "types": [
+  "ice",
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 50,
+  "defense": 35,
+  "special_attack": 115,
+  "special_defense": 95,
+  "speed": 95
+ },
+ "abilities": [
+  "oblivious",
+  "forewarn",
+  "dry-skin"
+ ],
+ "base_experience": 159,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 8,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "lick",
+    "level": 1
+   },
+   {
+    "move": "lovely-kiss",
+    "level": 1
+   },
+   {
+    "move": "powder-snow",
+    "level": 1
+   },
+   {
+    "move": "lick",
+    "level": 5
+   },
+   {
+    "move": "lovely-kiss",
+    "level": 8
+   },
+   {
+    "move": "powder-snow",
+    "level": 11
+   },
+   {
+    "move": "double-slap",
+    "level": 15
+   },
+   {
+    "move": "ice-punch",
+    "level": 18
+   },
+   {
+    "move": "heart-stamp",
+    "level": 21
+   },
+   {
+    "move": "mean-look",
+    "level": 25
+   },
+   {
+    "move": "fake-tears",
+    "level": 28
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 33
+   },
+   {
+    "move": "avalanche",
+    "level": 39
+   },
+   {
+    "move": "body-slam",
+    "level": 44
+   },
+   {
+    "move": "wring-out",
+    "level": 49
+   },
+   {
+    "move": "perish-song",
+    "level": 55
+   },
+   {
+    "move": "blizzard",
+    "level": 60
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "helping-hand",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "hyper-voice",
+   "signal-beam",
+   "covet",
+   "drain-punch",
+   "zen-headbutt",
+   "magic-room"
+  ],
+  "machine": [
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "hail",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "calm-mind",
+   "payback",
+   "fling",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "grass-knot",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "frost-breath"
+  ]
+ }
+}

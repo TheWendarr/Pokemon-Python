@@ -1,0 +1,149 @@
+{
+ "id": "gurdurr",
+ "name": "Gurdurr",
+ "dex": 533,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 85,
+  "attack": 105,
+  "defense": 85,
+  "special_attack": 40,
+  "special_defense": 50,
+  "speed": 40
+ },
+ "abilities": [
+  "guts",
+  "sheer-force",
+  "iron-fist"
+ ],
+ "base_experience": 142,
+ "growth_rate": "medium-slow",
+ "catch_rate": 90,
+ "gender_rate": 2,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "bide",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 4
+   },
+   {
+    "move": "bide",
+    "level": 8
+   },
+   {
+    "move": "low-kick",
+    "level": 12
+   },
+   {
+    "move": "rock-throw",
+    "level": 16
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 20
+   },
+   {
+    "move": "chip-away",
+    "level": 24
+   },
+   {
+    "move": "bulk-up",
+    "level": 29
+   },
+   {
+    "move": "rock-slide",
+    "level": 33
+   },
+   {
+    "move": "dynamic-punch",
+    "level": 37
+   },
+   {
+    "move": "scary-face",
+    "level": 41
+   },
+   {
+    "move": "hammer-arm",
+    "level": 45
+   },
+   {
+    "move": "stone-edge",
+    "level": 49
+   },
+   {
+    "move": "focus-punch",
+    "level": 53
+   },
+   {
+    "move": "superpower",
+    "level": 57
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "helping-hand",
+   "superpower",
+   "knock-off",
+   "block",
+   "drain-punch"
+  ],
+  "machine": [
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "stone-edge",
+   "grass-knot",
+   "smack-down",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

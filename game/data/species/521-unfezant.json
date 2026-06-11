@@ -1,0 +1,138 @@
+{
+ "id": "unfezant",
+ "name": "Unfezant",
+ "dex": 521,
+ "types": [
+  "normal",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 115,
+  "defense": 80,
+  "special_attack": 65,
+  "special_defense": 55,
+  "speed": 93
+ },
+ "abilities": [
+  "big-pecks",
+  "super-luck",
+  "rivalry"
+ ],
+ "base_experience": 220,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "gust",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 4
+   },
+   {
+    "move": "leer",
+    "level": 8
+   },
+   {
+    "move": "quick-attack",
+    "level": 11
+   },
+   {
+    "move": "air-cutter",
+    "level": 15
+   },
+   {
+    "move": "roost",
+    "level": 18
+   },
+   {
+    "move": "detect",
+    "level": 23
+   },
+   {
+    "move": "taunt",
+    "level": 27
+   },
+   {
+    "move": "air-slash",
+    "level": 33
+   },
+   {
+    "move": "razor-wind",
+    "level": 38
+   },
+   {
+    "move": "feather-dance",
+    "level": 44
+   },
+   {
+    "move": "swagger",
+    "level": 49
+   },
+   {
+    "move": "facade",
+    "level": 55
+   },
+   {
+    "move": "tailwind",
+    "level": 60
+   },
+   {
+    "move": "sky-attack",
+    "level": 66
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "heat-wave",
+   "roost",
+   "tailwind"
+  ],
+  "machine": [
+   "fly",
+   "hyper-beam",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "giga-impact",
+   "round",
+   "echoed-voice",
+   "work-up"
+  ]
+ }
+}

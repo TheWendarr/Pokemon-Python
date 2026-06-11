@@ -1,0 +1,129 @@
+{
+ "id": "mothim",
+ "name": "Mothim",
+ "dex": 414,
+ "types": [
+  "bug",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 94,
+  "defense": 50,
+  "special_attack": 94,
+  "special_defense": 50,
+  "speed": 66
+ },
+ "abilities": [
+  "swarm",
+  "tinted-lens"
+ ],
+ "base_experience": 148,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "protect",
+    "level": 10
+   },
+   {
+    "move": "bug-bite",
+    "level": 15
+   },
+   {
+    "move": "hidden-power",
+    "level": 20
+   },
+   {
+    "move": "confusion",
+    "level": 23
+   },
+   {
+    "move": "gust",
+    "level": 26
+   },
+   {
+    "move": "poison-powder",
+    "level": 29
+   },
+   {
+    "move": "psybeam",
+    "level": 32
+   },
+   {
+    "move": "camouflage",
+    "level": 35
+   },
+   {
+    "move": "silver-wind",
+    "level": 38
+   },
+   {
+    "move": "air-slash",
+    "level": 41
+   },
+   {
+    "move": "psychic",
+    "level": 44
+   },
+   {
+    "move": "bug-buzz",
+    "level": 47
+   },
+   {
+    "move": "quiver-dance",
+    "level": 50
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "skill-swap",
+   "signal-beam",
+   "roost",
+   "tailwind",
+   "bug-bite",
+   "electroweb"
+  ],
+  "machine": [
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "aerial-ace",
+   "u-turn",
+   "energy-ball",
+   "giga-impact",
+   "venoshock",
+   "round",
+   "acrobatics",
+   "struggle-bug"
+  ]
+ }
+}

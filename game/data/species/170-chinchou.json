@@ -1,0 +1,139 @@
+{
+ "id": "chinchou",
+ "name": "Chinchou",
+ "dex": 170,
+ "types": [
+  "water",
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 38,
+  "defense": 38,
+  "special_attack": 56,
+  "special_defense": 56,
+  "speed": 67
+ },
+ "abilities": [
+  "volt-absorb",
+  "illuminate",
+  "water-absorb"
+ ],
+ "base_experience": 66,
+ "growth_rate": "slow",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "supersonic",
+    "level": 1
+   },
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "thunder-wave",
+    "level": 6
+   },
+   {
+    "move": "flail",
+    "level": 9
+   },
+   {
+    "move": "confuse-ray",
+    "level": 12
+   },
+   {
+    "move": "water-gun",
+    "level": 17
+   },
+   {
+    "move": "spark",
+    "level": 20
+   },
+   {
+    "move": "take-down",
+    "level": 23
+   },
+   {
+    "move": "electro-ball",
+    "level": 28
+   },
+   {
+    "move": "bubble-beam",
+    "level": 31
+   },
+   {
+    "move": "signal-beam",
+    "level": 34
+   },
+   {
+    "move": "discharge",
+    "level": 39
+   },
+   {
+    "move": "aqua-ring",
+    "level": 42
+   },
+   {
+    "move": "hydro-pump",
+    "level": 45
+   },
+   {
+    "move": "charge",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "mist",
+   "psybeam",
+   "agility",
+   "screech",
+   "amnesia",
+   "flail",
+   "whirlpool",
+   "shock-wave",
+   "water-pulse",
+   "brine"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "signal-beam",
+   "bounce"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "dive",
+   "charge-beam",
+   "round",
+   "scald",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

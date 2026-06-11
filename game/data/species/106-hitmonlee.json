@@ -1,0 +1,141 @@
+{
+ "id": "hitmonlee",
+ "name": "Hitmonlee",
+ "dex": 106,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 120,
+  "defense": 53,
+  "special_attack": 35,
+  "special_defense": 110,
+  "speed": 87
+ },
+ "abilities": [
+  "limber",
+  "reckless",
+  "unburden"
+ ],
+ "base_experience": 159,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "revenge",
+    "level": 1
+   },
+   {
+    "move": "double-kick",
+    "level": 1
+   },
+   {
+    "move": "meditate",
+    "level": 5
+   },
+   {
+    "move": "rolling-kick",
+    "level": 9
+   },
+   {
+    "move": "jump-kick",
+    "level": 13
+   },
+   {
+    "move": "brick-break",
+    "level": 17
+   },
+   {
+    "move": "focus-energy",
+    "level": 21
+   },
+   {
+    "move": "feint",
+    "level": 25
+   },
+   {
+    "move": "high-jump-kick",
+    "level": 29
+   },
+   {
+    "move": "mind-reader",
+    "level": 33
+   },
+   {
+    "move": "foresight",
+    "level": 37
+   },
+   {
+    "move": "wide-guard",
+    "level": 41
+   },
+   {
+    "move": "blaze-kick",
+    "level": 45
+   },
+   {
+    "move": "endure",
+    "level": 49
+   },
+   {
+    "move": "mega-kick",
+    "level": 53
+   },
+   {
+    "move": "close-combat",
+    "level": 57
+   },
+   {
+    "move": "reversal",
+    "level": 61
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "helping-hand",
+   "role-play",
+   "superpower",
+   "knock-off",
+   "bounce",
+   "covet"
+  ],
+  "machine": [
+   "strength",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "stone-edge",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

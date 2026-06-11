@@ -1,0 +1,124 @@
+{
+ "id": "venipede",
+ "name": "Venipede",
+ "dex": 543,
+ "types": [
+  "bug",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 30,
+  "attack": 45,
+  "defense": 59,
+  "special_attack": 30,
+  "special_defense": 39,
+  "speed": 57
+ },
+ "abilities": [
+  "poison-point",
+  "swarm",
+  "speed-boost"
+ ],
+ "base_experience": 52,
+ "growth_rate": "medium-slow",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "defense-curl",
+    "level": 1
+   },
+   {
+    "move": "rollout",
+    "level": 1
+   },
+   {
+    "move": "poison-sting",
+    "level": 5
+   },
+   {
+    "move": "screech",
+    "level": 8
+   },
+   {
+    "move": "pursuit",
+    "level": 12
+   },
+   {
+    "move": "protect",
+    "level": 15
+   },
+   {
+    "move": "poison-tail",
+    "level": 19
+   },
+   {
+    "move": "bug-bite",
+    "level": 22
+   },
+   {
+    "move": "venoshock",
+    "level": 26
+   },
+   {
+    "move": "agility",
+    "level": 29
+   },
+   {
+    "move": "steamroller",
+    "level": 33
+   },
+   {
+    "move": "toxic",
+    "level": 36
+   },
+   {
+    "move": "rock-climb",
+    "level": 40
+   },
+   {
+    "move": "double-edge",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "take-down",
+   "twineedle",
+   "pin-missile",
+   "spikes",
+   "toxic-spikes",
+   "rock-climb"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "endeavor",
+   "iron-defense",
+   "bug-bite"
+  ],
+  "machine": [
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "gyro-ball",
+   "payback",
+   "poison-jab",
+   "venoshock",
+   "round",
+   "struggle-bug"
+  ]
+ }
+}

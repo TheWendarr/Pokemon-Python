@@ -1,0 +1,138 @@
+{
+ "id": "quagsire",
+ "name": "Quagsire",
+ "dex": 195,
+ "types": [
+  "water",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 95,
+  "attack": 85,
+  "defense": 85,
+  "special_attack": 65,
+  "special_defense": 65,
+  "speed": 35
+ },
+ "abilities": [
+  "damp",
+  "water-absorb",
+  "unaware"
+ ],
+ "base_experience": 151,
+ "growth_rate": "medium",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 5
+   },
+   {
+    "move": "mud-shot",
+    "level": 9
+   },
+   {
+    "move": "slam",
+    "level": 15
+   },
+   {
+    "move": "mud-bomb",
+    "level": 19
+   },
+   {
+    "move": "amnesia",
+    "level": 24
+   },
+   {
+    "move": "yawn",
+    "level": 31
+   },
+   {
+    "move": "earthquake",
+    "level": 36
+   },
+   {
+    "move": "rain-dance",
+    "level": 41
+   },
+   {
+    "move": "mist",
+    "level": 48
+   },
+   {
+    "move": "haze",
+    "level": 48
+   },
+   {
+    "move": "muddy-water",
+    "level": 53
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "aqua-tail",
+   "earth-power",
+   "after-you"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "sludge-wave",
+   "round",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

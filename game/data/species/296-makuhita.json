@@ -1,0 +1,158 @@
+{
+ "id": "makuhita",
+ "name": "Makuhita",
+ "dex": 296,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 72,
+  "attack": 60,
+  "defense": 30,
+  "special_attack": 20,
+  "special_defense": 30,
+  "speed": 25
+ },
+ "abilities": [
+  "thick-fat",
+  "guts",
+  "sheer-force"
+ ],
+ "base_experience": 47,
+ "growth_rate": "fast-then-very-slow",
+ "catch_rate": 180,
+ "gender_rate": 2,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 4
+   },
+   {
+    "move": "arm-thrust",
+    "level": 7
+   },
+   {
+    "move": "vital-throw",
+    "level": 10
+   },
+   {
+    "move": "fake-out",
+    "level": 13
+   },
+   {
+    "move": "whirlwind",
+    "level": 16
+   },
+   {
+    "move": "knock-off",
+    "level": 19
+   },
+   {
+    "move": "smelling-salts",
+    "level": 22
+   },
+   {
+    "move": "belly-drum",
+    "level": 25
+   },
+   {
+    "move": "force-palm",
+    "level": 28
+   },
+   {
+    "move": "seismic-toss",
+    "level": 31
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 34
+   },
+   {
+    "move": "endure",
+    "level": 37
+   },
+   {
+    "move": "close-combat",
+    "level": 40
+   },
+   {
+    "move": "reversal",
+    "level": 43
+   },
+   {
+    "move": "heavy-slam",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "counter",
+   "feint-attack",
+   "foresight",
+   "detect",
+   "dynamic-punch",
+   "cross-chop",
+   "focus-punch",
+   "helping-hand",
+   "revenge",
+   "wake-up-slap",
+   "feint",
+   "bullet-punch",
+   "wide-guard",
+   "chip-away"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "helping-hand",
+   "role-play",
+   "superpower",
+   "knock-off"
+  ],
+  "machine": [
+   "surf",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "smack-down",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

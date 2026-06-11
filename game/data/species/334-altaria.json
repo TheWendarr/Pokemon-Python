@@ -1,0 +1,163 @@
+{
+ "id": "altaria",
+ "name": "Altaria",
+ "dex": 334,
+ "types": [
+  "dragon",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 70,
+  "defense": 90,
+  "special_attack": 70,
+  "special_defense": 105,
+  "speed": 80
+ },
+ "abilities": [
+  "natural-cure",
+  "cloud-nine"
+ ],
+ "base_experience": 172,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pluck",
+    "level": 1
+   },
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "sing",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 4
+   },
+   {
+    "move": "sing",
+    "level": 8
+   },
+   {
+    "move": "fury-attack",
+    "level": 10
+   },
+   {
+    "move": "safeguard",
+    "level": 13
+   },
+   {
+    "move": "mist",
+    "level": 15
+   },
+   {
+    "move": "round",
+    "level": 18
+   },
+   {
+    "move": "natural-gift",
+    "level": 21
+   },
+   {
+    "move": "take-down",
+    "level": 25
+   },
+   {
+    "move": "refresh",
+    "level": 29
+   },
+   {
+    "move": "dragon-dance",
+    "level": 34
+   },
+   {
+    "move": "dragon-breath",
+    "level": 35
+   },
+   {
+    "move": "cotton-guard",
+    "level": 42
+   },
+   {
+    "move": "dragon-pulse",
+    "level": 48
+   },
+   {
+    "move": "perish-song",
+    "level": 57
+   },
+   {
+    "move": "sky-attack",
+    "level": 64
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "uproar",
+   "heat-wave",
+   "hyper-voice",
+   "roost",
+   "tailwind",
+   "dragon-pulse",
+   "draco-meteor",
+   "wonder-room"
+  ],
+  "machine": [
+   "fly",
+   "roar",
+   "flamethrower",
+   "ice-beam",
+   "hyper-beam",
+   "solar-beam",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "dream-eater",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "rock-smash",
+   "facade",
+   "aerial-ace",
+   "dragon-claw",
+   "pluck",
+   "giga-impact",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

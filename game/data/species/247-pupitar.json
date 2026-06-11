@@ -1,0 +1,140 @@
+{
+ "id": "pupitar",
+ "name": "Pupitar",
+ "dex": 247,
+ "types": [
+  "rock",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 84,
+  "defense": 70,
+  "special_attack": 65,
+  "special_defense": 70,
+  "speed": 51
+ },
+ "abilities": [
+  "shed-skin"
+ ],
+ "base_experience": 144,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "sandstorm",
+    "level": 1
+   },
+   {
+    "move": "screech",
+    "level": 1
+   },
+   {
+    "move": "sandstorm",
+    "level": 5
+   },
+   {
+    "move": "screech",
+    "level": 10
+   },
+   {
+    "move": "chip-away",
+    "level": 14
+   },
+   {
+    "move": "rock-slide",
+    "level": 19
+   },
+   {
+    "move": "scary-face",
+    "level": 23
+   },
+   {
+    "move": "thrash",
+    "level": 28
+   },
+   {
+    "move": "dark-pulse",
+    "level": 34
+   },
+   {
+    "move": "payback",
+    "level": 41
+   },
+   {
+    "move": "crunch",
+    "level": 47
+   },
+   {
+    "move": "earthquake",
+    "level": 54
+   },
+   {
+    "move": "stone-edge",
+    "level": 60
+   },
+   {
+    "move": "hyper-beam",
+    "level": 67
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "superpower",
+   "iron-defense",
+   "dark-pulse",
+   "earth-power",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "hyper-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "payback",
+   "rock-polish",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "snarl"
+  ]
+ }
+}

@@ -1,0 +1,148 @@
+{
+ "id": "excadrill",
+ "name": "Excadrill",
+ "dex": 530,
+ "types": [
+  "ground",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 110,
+  "attack": 135,
+  "defense": 60,
+  "special_attack": 50,
+  "special_defense": 65,
+  "speed": 88
+ },
+ "abilities": [
+  "sand-rush",
+  "sand-force",
+  "mold-breaker"
+ ],
+ "base_experience": 178,
+ "growth_rate": "medium",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 1
+   },
+   {
+    "move": "rapid-spin",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 1
+   },
+   {
+    "move": "rapid-spin",
+    "level": 5
+   },
+   {
+    "move": "mud-slap",
+    "level": 8
+   },
+   {
+    "move": "fury-swipes",
+    "level": 12
+   },
+   {
+    "move": "metal-claw",
+    "level": 15
+   },
+   {
+    "move": "dig",
+    "level": 19
+   },
+   {
+    "move": "hone-claws",
+    "level": 22
+   },
+   {
+    "move": "slash",
+    "level": 26
+   },
+   {
+    "move": "rock-slide",
+    "level": 29
+   },
+   {
+    "move": "horn-drill",
+    "level": 31
+   },
+   {
+    "move": "earthquake",
+    "level": 36
+   },
+   {
+    "move": "swords-dance",
+    "level": 42
+   },
+   {
+    "move": "sandstorm",
+    "level": 49
+   },
+   {
+    "move": "drill-run",
+    "level": 55
+   },
+   {
+    "move": "fissure",
+    "level": 62
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-defense",
+   "magnet-rise",
+   "earth-power",
+   "iron-head",
+   "stealth-rock",
+   "drill-run"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "fling",
+   "poison-jab",
+   "x-scissor",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

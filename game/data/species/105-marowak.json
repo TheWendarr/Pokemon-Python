@@ -1,0 +1,160 @@
+{
+ "id": "marowak",
+ "name": "Marowak",
+ "dex": 105,
+ "types": [
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 80,
+  "defense": 110,
+  "special_attack": 50,
+  "special_defense": 80,
+  "speed": 45
+ },
+ "abilities": [
+  "rock-head",
+  "lightning-rod",
+  "battle-armor"
+ ],
+ "base_experience": 149,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "bone-club",
+    "level": 1
+   },
+   {
+    "move": "headbutt",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 3
+   },
+   {
+    "move": "bone-club",
+    "level": 7
+   },
+   {
+    "move": "headbutt",
+    "level": 11
+   },
+   {
+    "move": "leer",
+    "level": 13
+   },
+   {
+    "move": "focus-energy",
+    "level": 17
+   },
+   {
+    "move": "bonemerang",
+    "level": 21
+   },
+   {
+    "move": "rage",
+    "level": 23
+   },
+   {
+    "move": "false-swipe",
+    "level": 27
+   },
+   {
+    "move": "thrash",
+    "level": 33
+   },
+   {
+    "move": "fling",
+    "level": 37
+   },
+   {
+    "move": "bone-rush",
+    "level": 43
+   },
+   {
+    "move": "endeavor",
+    "level": 49
+   },
+   {
+    "move": "double-edge",
+    "level": 53
+   },
+   {
+    "move": "retaliate",
+    "level": 59
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "knock-off",
+   "endeavor",
+   "iron-defense",
+   "earth-power",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "swords-dance",
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "retaliate",
+   "bulldoze"
+  ]
+ }
+}

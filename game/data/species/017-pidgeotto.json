@@ -1,0 +1,125 @@
+{
+ "id": "pidgeotto",
+ "name": "Pidgeotto",
+ "dex": 17,
+ "types": [
+  "normal",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 63,
+  "attack": 60,
+  "defense": 55,
+  "special_attack": 50,
+  "special_defense": 50,
+  "speed": 71
+ },
+ "abilities": [
+  "keen-eye",
+  "tangled-feet",
+  "big-pecks"
+ ],
+ "base_experience": 122,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 1
+   },
+   {
+    "move": "gust",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 5
+   },
+   {
+    "move": "gust",
+    "level": 9
+   },
+   {
+    "move": "quick-attack",
+    "level": 13
+   },
+   {
+    "move": "whirlwind",
+    "level": 17
+   },
+   {
+    "move": "twister",
+    "level": 22
+   },
+   {
+    "move": "feather-dance",
+    "level": 27
+   },
+   {
+    "move": "agility",
+    "level": 32
+   },
+   {
+    "move": "wing-attack",
+    "level": 37
+   },
+   {
+    "move": "roost",
+    "level": 42
+   },
+   {
+    "move": "tailwind",
+    "level": 47
+   },
+   {
+    "move": "mirror-move",
+    "level": 52
+   },
+   {
+    "move": "air-slash",
+    "level": 57
+   },
+   {
+    "move": "hurricane",
+    "level": 62
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "heat-wave",
+   "roost",
+   "tailwind"
+  ],
+  "machine": [
+   "fly",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "facade",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "round",
+   "work-up"
+  ]
+ }
+}

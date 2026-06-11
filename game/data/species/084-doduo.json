@@ -1,0 +1,123 @@
+{
+ "id": "doduo",
+ "name": "Doduo",
+ "dex": 84,
+ "types": [
+  "normal",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 35,
+  "attack": 85,
+  "defense": 45,
+  "special_attack": 35,
+  "special_defense": 35,
+  "speed": 75
+ },
+ "abilities": [
+  "run-away",
+  "early-bird",
+  "tangled-feet"
+ ],
+ "base_experience": 62,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 5
+   },
+   {
+    "move": "rage",
+    "level": 10
+   },
+   {
+    "move": "fury-attack",
+    "level": 14
+   },
+   {
+    "move": "pursuit",
+    "level": 19
+   },
+   {
+    "move": "uproar",
+    "level": 23
+   },
+   {
+    "move": "acupressure",
+    "level": 28
+   },
+   {
+    "move": "double-hit",
+    "level": 32
+   },
+   {
+    "move": "agility",
+    "level": 37
+   },
+   {
+    "move": "drill-peck",
+    "level": 41
+   },
+   {
+    "move": "endeavor",
+    "level": 46
+   },
+   {
+    "move": "thrash",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "supersonic",
+   "quick-attack",
+   "haze",
+   "mirror-move",
+   "flail",
+   "feint-attack",
+   "endeavor",
+   "natural-gift",
+   "assurance",
+   "brave-bird"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "knock-off",
+   "endeavor",
+   "roost"
+  ],
+  "machine": [
+   "fly",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "aerial-ace",
+   "pluck",
+   "round",
+   "echoed-voice",
+   "work-up"
+  ]
+ }
+}

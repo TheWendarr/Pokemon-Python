@@ -1,0 +1,29 @@
+{
+ "id": "freeze-shock",
+ "name": "Freeze Shock",
+ "type": "ice",
+ "category": "physical",
+ "power": 140,
+ "accuracy": 90,
+ "pp": 5,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "charge",
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-ailment",
+  "ailment": "paralysis",
+  "ailment_chance": 30,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

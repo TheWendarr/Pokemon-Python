@@ -1,0 +1,143 @@
+{
+ "id": "snivy",
+ "name": "Snivy",
+ "dex": 495,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 45,
+  "defense": 55,
+  "special_attack": 45,
+  "special_defense": 55,
+  "speed": 63
+ },
+ "abilities": [
+  "overgrow",
+  "contrary"
+ ],
+ "base_experience": 62,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 4
+   },
+   {
+    "move": "vine-whip",
+    "level": 7
+   },
+   {
+    "move": "wrap",
+    "level": 10
+   },
+   {
+    "move": "growth",
+    "level": 13
+   },
+   {
+    "move": "leaf-tornado",
+    "level": 16
+   },
+   {
+    "move": "leech-seed",
+    "level": 19
+   },
+   {
+    "move": "mega-drain",
+    "level": 22
+   },
+   {
+    "move": "slam",
+    "level": 25
+   },
+   {
+    "move": "leaf-blade",
+    "level": 28
+   },
+   {
+    "move": "coil",
+    "level": 31
+   },
+   {
+    "move": "giga-drain",
+    "level": 34
+   },
+   {
+    "move": "wring-out",
+    "level": 37
+   },
+   {
+    "move": "gastro-acid",
+    "level": 40
+   },
+   {
+    "move": "leaf-storm",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "glare",
+   "mean-look",
+   "pursuit",
+   "sweet-scent",
+   "iron-tail",
+   "twister",
+   "mirror-coat",
+   "magical-leaf",
+   "natural-gift",
+   "captivate"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "synthesis",
+   "knock-off",
+   "snatch",
+   "gastro-acid",
+   "worry-seed",
+   "aqua-tail",
+   "seed-bomb",
+   "grass-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "torment",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "calm-mind",
+   "energy-ball",
+   "grass-knot",
+   "round"
+  ]
+ }
+}

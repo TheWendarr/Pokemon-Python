@@ -1,0 +1,133 @@
+{
+ "id": "leafeon",
+ "name": "Leafeon",
+ "dex": 470,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 110,
+  "defense": 130,
+  "special_attack": 60,
+  "special_defense": 65,
+  "speed": 95
+ },
+ "abilities": [
+  "leaf-guard",
+  "chlorophyll"
+ ],
+ "base_experience": 184,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "helping-hand",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 5
+   },
+   {
+    "move": "razor-leaf",
+    "level": 9
+   },
+   {
+    "move": "quick-attack",
+    "level": 13
+   },
+   {
+    "move": "grass-whistle",
+    "level": 17
+   },
+   {
+    "move": "magical-leaf",
+    "level": 21
+   },
+   {
+    "move": "giga-drain",
+    "level": 25
+   },
+   {
+    "move": "swords-dance",
+    "level": 29
+   },
+   {
+    "move": "synthesis",
+    "level": 33
+   },
+   {
+    "move": "sunny-day",
+    "level": 37
+   },
+   {
+    "move": "last-resort",
+    "level": 41
+   },
+   {
+    "move": "leaf-blade",
+    "level": 45
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "synthesis",
+   "helping-hand",
+   "knock-off",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "worry-seed",
+   "seed-bomb"
+  ],
+  "machine": [
+   "swords-dance",
+   "roar",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "aerial-ace",
+   "x-scissor",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

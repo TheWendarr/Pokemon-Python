@@ -1,0 +1,136 @@
+{
+ "id": "charmander",
+ "name": "Charmander",
+ "dex": 4,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 39,
+  "attack": 52,
+  "defense": 43,
+  "special_attack": 60,
+  "special_defense": 50,
+  "speed": 65
+ },
+ "abilities": [
+  "blaze",
+  "solar-power"
+ ],
+ "base_experience": 62,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 7
+   },
+   {
+    "move": "smokescreen",
+    "level": 10
+   },
+   {
+    "move": "dragon-rage",
+    "level": 16
+   },
+   {
+    "move": "scary-face",
+    "level": 19
+   },
+   {
+    "move": "fire-fang",
+    "level": 25
+   },
+   {
+    "move": "flame-burst",
+    "level": 28
+   },
+   {
+    "move": "slash",
+    "level": 34
+   },
+   {
+    "move": "flamethrower",
+    "level": 37
+   },
+   {
+    "move": "fire-spin",
+    "level": 43
+   },
+   {
+    "move": "inferno",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "bite",
+   "counter",
+   "belly-drum",
+   "outrage",
+   "metal-claw",
+   "crunch",
+   "ancient-power",
+   "beat-up",
+   "focus-punch",
+   "dragon-dance",
+   "flare-blitz",
+   "dragon-pulse",
+   "dragon-rush"
+  ],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "heat-wave",
+   "fire-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "flamethrower",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "fling",
+   "shadow-claw",
+   "hone-claws",
+   "flame-charge",
+   "round",
+   "echoed-voice",
+   "incinerate"
+  ]
+ }
+}

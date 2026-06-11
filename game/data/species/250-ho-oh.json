@@ -1,0 +1,156 @@
+{
+ "id": "ho-oh",
+ "name": "Ho Oh",
+ "dex": 250,
+ "types": [
+  "fire",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 106,
+  "attack": 130,
+  "defense": 90,
+  "special_attack": 110,
+  "special_defense": 154,
+  "speed": 90
+ },
+ "abilities": [
+  "pressure",
+  "regenerator"
+ ],
+ "base_experience": 306,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "whirlwind",
+    "level": 1
+   },
+   {
+    "move": "weather-ball",
+    "level": 1
+   },
+   {
+    "move": "gust",
+    "level": 9
+   },
+   {
+    "move": "brave-bird",
+    "level": 15
+   },
+   {
+    "move": "extrasensory",
+    "level": 23
+   },
+   {
+    "move": "sunny-day",
+    "level": 29
+   },
+   {
+    "move": "fire-blast",
+    "level": 37
+   },
+   {
+    "move": "sacred-fire",
+    "level": 43
+   },
+   {
+    "move": "punishment",
+    "level": 50
+   },
+   {
+    "move": "ancient-power",
+    "level": 57
+   },
+   {
+    "move": "safeguard",
+    "level": 65
+   },
+   {
+    "move": "recover",
+    "level": 71
+   },
+   {
+    "move": "future-sight",
+    "level": 79
+   },
+   {
+    "move": "natural-gift",
+    "level": 85
+   },
+   {
+    "move": "calm-mind",
+    "level": 93
+   },
+   {
+    "move": "sky-attack",
+    "level": 99
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "heat-wave",
+   "hyper-voice",
+   "signal-beam",
+   "roost",
+   "tailwind",
+   "earth-power",
+   "zen-headbutt",
+   "iron-head"
+  ],
+  "machine": [
+   "fly",
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "overheat",
+   "aerial-ace",
+   "calm-mind",
+   "pluck",
+   "giga-impact",
+   "charge-beam",
+   "flame-charge",
+   "round",
+   "echoed-voice",
+   "sky-drop",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

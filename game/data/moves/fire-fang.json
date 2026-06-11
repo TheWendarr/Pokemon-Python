@@ -1,0 +1,30 @@
+{
+ "id": "fire-fang",
+ "name": "Fire Fang",
+ "type": "fire",
+ "category": "physical",
+ "power": 65,
+ "accuracy": 95,
+ "pp": 15,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "bite",
+  "contact",
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-ailment",
+  "ailment": "burn",
+  "ailment_chance": 10,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 10,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

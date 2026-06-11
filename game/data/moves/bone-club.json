@@ -1,0 +1,28 @@
+{
+ "id": "bone-club",
+ "name": "Bone Club",
+ "type": "ground",
+ "category": "physical",
+ "power": 65,
+ "accuracy": 85,
+ "pp": 20,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 10,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

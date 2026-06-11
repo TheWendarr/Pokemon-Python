@@ -1,0 +1,144 @@
+{
+ "id": "krabby",
+ "name": "Krabby",
+ "dex": 98,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 30,
+  "attack": 105,
+  "defense": 90,
+  "special_attack": 25,
+  "special_defense": 25,
+  "speed": 50
+ },
+ "abilities": [
+  "hyper-cutter",
+  "shell-armor",
+  "sheer-force"
+ ],
+ "base_experience": 65,
+ "growth_rate": "medium",
+ "catch_rate": 225,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "mud-sport",
+    "level": 1
+   },
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "vice-grip",
+    "level": 5
+   },
+   {
+    "move": "leer",
+    "level": 9
+   },
+   {
+    "move": "harden",
+    "level": 11
+   },
+   {
+    "move": "bubble-beam",
+    "level": 15
+   },
+   {
+    "move": "mud-shot",
+    "level": 19
+   },
+   {
+    "move": "metal-claw",
+    "level": 21
+   },
+   {
+    "move": "stomp",
+    "level": 25
+   },
+   {
+    "move": "protect",
+    "level": 29
+   },
+   {
+    "move": "guillotine",
+    "level": 31
+   },
+   {
+    "move": "slam",
+    "level": 35
+   },
+   {
+    "move": "brine",
+    "level": 39
+   },
+   {
+    "move": "crabhammer",
+    "level": 41
+   },
+   {
+    "move": "flail",
+    "level": 45
+   }
+  ],
+  "egg": [
+   "slam",
+   "agility",
+   "haze",
+   "bide",
+   "amnesia",
+   "flail",
+   "endure",
+   "ancient-power",
+   "knock-off",
+   "tickle",
+   "chip-away"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "superpower",
+   "knock-off",
+   "iron-defense"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "fling",
+   "x-scissor",
+   "hone-claws",
+   "round",
+   "scald"
+  ]
+ }
+}

@@ -1,0 +1,150 @@
+{
+ "id": "ekans",
+ "name": "Ekans",
+ "dex": 23,
+ "types": [
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 35,
+  "attack": 60,
+  "defense": 44,
+  "special_attack": 40,
+  "special_defense": 54,
+  "speed": 55
+ },
+ "abilities": [
+  "intimidate",
+  "shed-skin",
+  "unnerve"
+ ],
+ "base_experience": 58,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "wrap",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "poison-sting",
+    "level": 4
+   },
+   {
+    "move": "bite",
+    "level": 9
+   },
+   {
+    "move": "glare",
+    "level": 12
+   },
+   {
+    "move": "screech",
+    "level": 17
+   },
+   {
+    "move": "acid",
+    "level": 20
+   },
+   {
+    "move": "stockpile",
+    "level": 25
+   },
+   {
+    "move": "swallow",
+    "level": 25
+   },
+   {
+    "move": "spit-up",
+    "level": 25
+   },
+   {
+    "move": "acid-spray",
+    "level": 28
+   },
+   {
+    "move": "mud-bomb",
+    "level": 33
+   },
+   {
+    "move": "gastro-acid",
+    "level": 36
+   },
+   {
+    "move": "haze",
+    "level": 41
+   },
+   {
+    "move": "coil",
+    "level": 44
+   },
+   {
+    "move": "gunk-shot",
+    "level": 49
+   }
+  ],
+  "egg": [
+   "slam",
+   "disable",
+   "spite",
+   "scary-face",
+   "pursuit",
+   "iron-tail",
+   "beat-up",
+   "snatch",
+   "poison-fang",
+   "poison-tail",
+   "sucker-punch",
+   "switcheroo"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "spite",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "snatch",
+   "gastro-acid",
+   "dark-pulse",
+   "aqua-tail",
+   "seed-bomb",
+   "gunk-shot"
+  ],
+  "machine": [
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "torment",
+   "facade",
+   "rock-tomb",
+   "payback",
+   "poison-jab",
+   "venoshock",
+   "sludge-wave",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

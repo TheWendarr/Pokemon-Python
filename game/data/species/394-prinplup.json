@@ -1,0 +1,134 @@
+{
+ "id": "prinplup",
+ "name": "Prinplup",
+ "dex": 394,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 64,
+  "attack": 66,
+  "defense": 68,
+  "special_attack": 81,
+  "special_defense": 76,
+  "speed": 50
+ },
+ "abilities": [
+  "torrent",
+  "competitive"
+ ],
+ "base_experience": 142,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 4
+   },
+   {
+    "move": "bubble",
+    "level": 8
+   },
+   {
+    "move": "water-sport",
+    "level": 11
+   },
+   {
+    "move": "peck",
+    "level": 15
+   },
+   {
+    "move": "metal-claw",
+    "level": 16
+   },
+   {
+    "move": "bubble-beam",
+    "level": 19
+   },
+   {
+    "move": "bide",
+    "level": 24
+   },
+   {
+    "move": "fury-attack",
+    "level": 28
+   },
+   {
+    "move": "brine",
+    "level": 33
+   },
+   {
+    "move": "whirlpool",
+    "level": 37
+   },
+   {
+    "move": "mist",
+    "level": 42
+   },
+   {
+    "move": "drill-peck",
+    "level": 46
+   },
+   {
+    "move": "hydro-pump",
+    "level": 51
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "signal-beam",
+   "covet",
+   "stealth-rock",
+   "water-pledge"
+  ],
+  "machine": [
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "aerial-ace",
+   "pluck",
+   "fling",
+   "shadow-claw",
+   "grass-knot",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "scald",
+   "quash"
+  ]
+ }
+}

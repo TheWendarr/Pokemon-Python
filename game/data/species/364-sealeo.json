@@ -1,0 +1,126 @@
+{
+ "id": "sealeo",
+ "name": "Sealeo",
+ "dex": 364,
+ "types": [
+  "ice",
+  "water"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 60,
+  "defense": 70,
+  "special_attack": 75,
+  "special_defense": 70,
+  "speed": 45
+ },
+ "abilities": [
+  "thick-fat",
+  "ice-body",
+  "oblivious"
+ ],
+ "base_experience": 144,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "powder-snow",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "encore",
+    "level": 1
+   },
+   {
+    "move": "encore",
+    "level": 7
+   },
+   {
+    "move": "ice-ball",
+    "level": 13
+   },
+   {
+    "move": "body-slam",
+    "level": 19
+   },
+   {
+    "move": "aurora-beam",
+    "level": 25
+   },
+   {
+    "move": "hail",
+    "level": 31
+   },
+   {
+    "move": "swagger",
+    "level": 32
+   },
+   {
+    "move": "rest",
+    "level": 39
+   },
+   {
+    "move": "snore",
+    "level": 39
+   },
+   {
+    "move": "blizzard",
+    "level": 47
+   },
+   {
+    "move": "sheer-cold",
+    "level": 55
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "signal-beam",
+   "aqua-tail"
+  ],
+  "machine": [
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "dive",
+   "rock-tomb",
+   "round",
+   "echoed-voice",
+   "bulldoze",
+   "frost-breath"
+  ]
+ }
+}

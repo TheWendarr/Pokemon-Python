@@ -1,0 +1,135 @@
+{
+ "id": "staryu",
+ "name": "Staryu",
+ "dex": 120,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 30,
+  "attack": 45,
+  "defense": 55,
+  "special_attack": 70,
+  "special_defense": 55,
+  "speed": 85
+ },
+ "abilities": [
+  "illuminate",
+  "natural-cure",
+  "analytic"
+ ],
+ "base_experience": 68,
+ "growth_rate": "slow",
+ "catch_rate": 225,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 6
+   },
+   {
+    "move": "rapid-spin",
+    "level": 10
+   },
+   {
+    "move": "recover",
+    "level": 12
+   },
+   {
+    "move": "camouflage",
+    "level": 15
+   },
+   {
+    "move": "swift",
+    "level": 18
+   },
+   {
+    "move": "bubble-beam",
+    "level": 22
+   },
+   {
+    "move": "minimize",
+    "level": 25
+   },
+   {
+    "move": "gyro-ball",
+    "level": 30
+   },
+   {
+    "move": "light-screen",
+    "level": 33
+   },
+   {
+    "move": "brine",
+    "level": 36
+   },
+   {
+    "move": "reflect-type",
+    "level": 40
+   },
+   {
+    "move": "power-gem",
+    "level": 43
+   },
+   {
+    "move": "cosmic-power",
+    "level": 48
+   },
+   {
+    "move": "hydro-pump",
+    "level": 52
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "pain-split",
+   "magic-coat",
+   "recycle",
+   "signal-beam",
+   "gravity"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "waterfall",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "hail",
+   "facade",
+   "dive",
+   "gyro-ball",
+   "flash-cannon",
+   "round",
+   "scald"
+  ]
+ }
+}

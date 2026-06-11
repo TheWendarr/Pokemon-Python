@@ -1,0 +1,30 @@
+{
+ "id": "stomp",
+ "name": "Stomp",
+ "type": "normal",
+ "category": "physical",
+ "power": 65,
+ "accuracy": 100,
+ "pp": 20,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "contact",
+  "mirror",
+  "non-sky-battle",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 30,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

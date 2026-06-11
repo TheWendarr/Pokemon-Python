@@ -1,0 +1,154 @@
+{
+ "id": "empoleon",
+ "name": "Empoleon",
+ "dex": 395,
+ "types": [
+  "water",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 84,
+  "attack": 86,
+  "defense": 88,
+  "special_attack": 111,
+  "special_defense": 101,
+  "speed": 60
+ },
+ "abilities": [
+  "torrent",
+  "competitive"
+ ],
+ "base_experience": 239,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 4
+   },
+   {
+    "move": "bubble",
+    "level": 8
+   },
+   {
+    "move": "swords-dance",
+    "level": 11
+   },
+   {
+    "move": "peck",
+    "level": 15
+   },
+   {
+    "move": "metal-claw",
+    "level": 16
+   },
+   {
+    "move": "bubble-beam",
+    "level": 19
+   },
+   {
+    "move": "swagger",
+    "level": 24
+   },
+   {
+    "move": "fury-attack",
+    "level": 28
+   },
+   {
+    "move": "brine",
+    "level": 33
+   },
+   {
+    "move": "aqua-jet",
+    "level": 36
+   },
+   {
+    "move": "whirlpool",
+    "level": 39
+   },
+   {
+    "move": "mist",
+    "level": 46
+   },
+   {
+    "move": "drill-peck",
+    "level": 52
+   },
+   {
+    "move": "hydro-pump",
+    "level": 59
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "knock-off",
+   "hydro-cannon",
+   "signal-beam",
+   "iron-defense",
+   "covet",
+   "stealth-rock",
+   "water-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "aerial-ace",
+   "pluck",
+   "fling",
+   "giga-impact",
+   "shadow-claw",
+   "flash-cannon",
+   "grass-knot",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "scald",
+   "quash",
+   "bulldoze"
+  ]
+ }
+}

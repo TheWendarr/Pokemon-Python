@@ -1,0 +1,129 @@
+{
+ "id": "flareon",
+ "name": "Flareon",
+ "dex": 136,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 130,
+  "defense": 60,
+  "special_attack": 95,
+  "special_defense": 110,
+  "speed": 65
+ },
+ "abilities": [
+  "flash-fire",
+  "guts"
+ ],
+ "base_experience": 184,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "helping-hand",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 5
+   },
+   {
+    "move": "ember",
+    "level": 9
+   },
+   {
+    "move": "quick-attack",
+    "level": 13
+   },
+   {
+    "move": "bite",
+    "level": 17
+   },
+   {
+    "move": "fire-fang",
+    "level": 21
+   },
+   {
+    "move": "fire-spin",
+    "level": 25
+   },
+   {
+    "move": "scary-face",
+    "level": 29
+   },
+   {
+    "move": "smog",
+    "level": 33
+   },
+   {
+    "move": "lava-plume",
+    "level": 37
+   },
+   {
+    "move": "last-resort",
+    "level": 41
+   },
+   {
+    "move": "fire-blast",
+    "level": 45
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "heat-wave",
+   "helping-hand",
+   "superpower",
+   "hyper-voice",
+   "covet",
+   "last-resort"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "overheat",
+   "giga-impact",
+   "flame-charge",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

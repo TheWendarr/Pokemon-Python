@@ -1,0 +1,113 @@
+{
+ "id": "taillow",
+ "name": "Taillow",
+ "dex": 276,
+ "types": [
+  "normal",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 55,
+  "defense": 30,
+  "special_attack": 30,
+  "special_defense": 30,
+  "speed": 85
+ },
+ "abilities": [
+  "guts",
+  "scrappy"
+ ],
+ "base_experience": 54,
+ "growth_rate": "medium-slow",
+ "catch_rate": 200,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 4
+   },
+   {
+    "move": "quick-attack",
+    "level": 8
+   },
+   {
+    "move": "wing-attack",
+    "level": 13
+   },
+   {
+    "move": "double-team",
+    "level": 19
+   },
+   {
+    "move": "endeavor",
+    "level": 26
+   },
+   {
+    "move": "aerial-ace",
+    "level": 34
+   },
+   {
+    "move": "agility",
+    "level": 43
+   },
+   {
+    "move": "air-slash",
+    "level": 53
+   }
+  ],
+  "egg": [
+   "whirlwind",
+   "supersonic",
+   "rage",
+   "mirror-move",
+   "sky-attack",
+   "steel-wing",
+   "pursuit",
+   "refresh",
+   "roost",
+   "brave-bird",
+   "defog"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heat-wave",
+   "endeavor",
+   "roost",
+   "tailwind"
+  ],
+  "machine": [
+   "fly",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "facade",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "round",
+   "echoed-voice",
+   "work-up"
+  ]
+ }
+}

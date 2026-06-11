@@ -1,0 +1,143 @@
+{
+ "id": "zweilous",
+ "name": "Zweilous",
+ "dex": 634,
+ "types": [
+  "dark",
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 72,
+  "attack": 85,
+  "defense": 70,
+  "special_attack": 65,
+  "special_defense": 70,
+  "speed": 58
+ },
+ "abilities": [
+  "hustle"
+ ],
+ "base_experience": 147,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "double-hit",
+    "level": 1
+   },
+   {
+    "move": "dragon-rage",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 4
+   },
+   {
+    "move": "bite",
+    "level": 9
+   },
+   {
+    "move": "headbutt",
+    "level": 12
+   },
+   {
+    "move": "dragon-breath",
+    "level": 17
+   },
+   {
+    "move": "roar",
+    "level": 20
+   },
+   {
+    "move": "crunch",
+    "level": 25
+   },
+   {
+    "move": "slam",
+    "level": 28
+   },
+   {
+    "move": "dragon-pulse",
+    "level": 32
+   },
+   {
+    "move": "work-up",
+    "level": 38
+   },
+   {
+    "move": "dragon-rush",
+    "level": 42
+   },
+   {
+    "move": "body-slam",
+    "level": 48
+   },
+   {
+    "move": "scary-face",
+    "level": 55
+   },
+   {
+    "move": "hyper-voice",
+    "level": 64
+   },
+   {
+    "move": "outrage",
+    "level": 71
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "outrage",
+   "sleep-talk",
+   "uproar",
+   "superpower",
+   "hyper-voice",
+   "dark-pulse",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "zen-headbutt",
+   "draco-meteor"
+  ],
+  "machine": [
+   "roar",
+   "strength",
+   "thunder-wave",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "round",
+   "incinerate",
+   "dragon-tail",
+   "work-up"
+  ]
+ }
+}

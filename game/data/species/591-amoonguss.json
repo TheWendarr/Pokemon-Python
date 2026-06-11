@@ -1,0 +1,138 @@
+{
+ "id": "amoonguss",
+ "name": "Amoonguss",
+ "dex": 591,
+ "types": [
+  "grass",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 114,
+  "attack": 85,
+  "defense": 70,
+  "special_attack": 85,
+  "special_defense": 80,
+  "speed": 30
+ },
+ "abilities": [
+  "effect-spore",
+  "regenerator"
+ ],
+ "base_experience": 162,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "absorb",
+    "level": 1
+   },
+   {
+    "move": "growth",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "bide",
+    "level": 1
+   },
+   {
+    "move": "growth",
+    "level": 6
+   },
+   {
+    "move": "astonish",
+    "level": 8
+   },
+   {
+    "move": "bide",
+    "level": 12
+   },
+   {
+    "move": "mega-drain",
+    "level": 15
+   },
+   {
+    "move": "ingrain",
+    "level": 18
+   },
+   {
+    "move": "feint-attack",
+    "level": 20
+   },
+   {
+    "move": "sweet-scent",
+    "level": 24
+   },
+   {
+    "move": "giga-drain",
+    "level": 28
+   },
+   {
+    "move": "toxic",
+    "level": 32
+   },
+   {
+    "move": "synthesis",
+    "level": 35
+   },
+   {
+    "move": "clear-smog",
+    "level": 43
+   },
+   {
+    "move": "solar-beam",
+    "level": 49
+   },
+   {
+    "move": "rage-powder",
+    "level": 54
+   },
+   {
+    "move": "spore",
+    "level": 62
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "gastro-acid",
+   "worry-seed",
+   "seed-bomb",
+   "foul-play",
+   "after-you"
+  ],
+  "machine": [
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "facade",
+   "payback",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "venoshock",
+   "round"
+  ]
+ }
+}

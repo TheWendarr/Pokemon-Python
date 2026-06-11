@@ -1,0 +1,136 @@
+{
+ "id": "buizel",
+ "name": "Buizel",
+ "dex": 418,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 65,
+  "defense": 35,
+  "special_attack": 60,
+  "special_defense": 30,
+  "speed": 85
+ },
+ "abilities": [
+  "swift-swim",
+  "water-veil"
+ ],
+ "base_experience": 66,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "sonic-boom",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 4
+   },
+   {
+    "move": "water-sport",
+    "level": 7
+   },
+   {
+    "move": "quick-attack",
+    "level": 11
+   },
+   {
+    "move": "water-gun",
+    "level": 15
+   },
+   {
+    "move": "pursuit",
+    "level": 18
+   },
+   {
+    "move": "swift",
+    "level": 21
+   },
+   {
+    "move": "aqua-jet",
+    "level": 24
+   },
+   {
+    "move": "double-hit",
+    "level": 27
+   },
+   {
+    "move": "whirlpool",
+    "level": 31
+   },
+   {
+    "move": "razor-wind",
+    "level": 35
+   },
+   {
+    "move": "aqua-tail",
+    "level": 38
+   },
+   {
+    "move": "agility",
+    "level": 41
+   },
+   {
+    "move": "hydro-pump",
+    "level": 45
+   }
+  ],
+  "egg": [
+   "double-slap",
+   "headbutt",
+   "fury-swipes",
+   "slash",
+   "mud-slap",
+   "fury-cutter",
+   "baton-pass",
+   "odor-sleuth",
+   "me-first",
+   "aqua-ring",
+   "aqua-tail",
+   "switcheroo",
+   "tail-slap"
+  ],
+  "tutor": [
+   "ice-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "aqua-tail"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "bulk-up",
+   "round",
+   "echoed-voice",
+   "scald"
+  ]
+ }
+}

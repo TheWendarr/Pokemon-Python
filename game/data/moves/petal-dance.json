@@ -1,0 +1,30 @@
+{
+ "id": "petal-dance",
+ "name": "Petal Dance",
+ "type": "grass",
+ "category": "special",
+ "power": 120,
+ "accuracy": 100,
+ "pp": 10,
+ "priority": 0,
+ "target": "random-opponent",
+ "crit_stage": 0,
+ "flags": [
+  "contact",
+  "dance",
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

@@ -1,0 +1,162 @@
+{
+ "id": "mawile",
+ "name": "Mawile",
+ "dex": 303,
+ "types": [
+  "steel",
+  "fairy"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 85,
+  "defense": 85,
+  "special_attack": 55,
+  "special_defense": 55,
+  "speed": 50
+ },
+ "abilities": [
+  "hyper-cutter",
+  "intimidate",
+  "sheer-force"
+ ],
+ "base_experience": 133,
+ "growth_rate": "fast",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "fake-tears",
+    "level": 6
+   },
+   {
+    "move": "bite",
+    "level": 11
+   },
+   {
+    "move": "sweet-scent",
+    "level": 16
+   },
+   {
+    "move": "vice-grip",
+    "level": 21
+   },
+   {
+    "move": "feint-attack",
+    "level": 26
+   },
+   {
+    "move": "baton-pass",
+    "level": 31
+   },
+   {
+    "move": "crunch",
+    "level": 36
+   },
+   {
+    "move": "iron-defense",
+    "level": 41
+   },
+   {
+    "move": "sucker-punch",
+    "level": 46
+   },
+   {
+    "move": "stockpile",
+    "level": 51
+   },
+   {
+    "move": "swallow",
+    "level": 51
+   },
+   {
+    "move": "spit-up",
+    "level": 51
+   },
+   {
+    "move": "iron-head",
+    "level": 56
+   }
+  ],
+  "egg": [
+   "slam",
+   "ancient-power",
+   "poison-fang",
+   "tickle",
+   "metal-burst",
+   "guard-swap",
+   "punishment",
+   "sucker-punch",
+   "thunder-fang",
+   "ice-fang",
+   "fire-fang",
+   "captivate"
+  ],
+  "tutor": [
+   "ice-punch",
+   "thunder-punch",
+   "super-fang",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "pain-split",
+   "knock-off",
+   "snatch",
+   "iron-defense",
+   "last-resort",
+   "magnet-rise",
+   "dark-pulse",
+   "iron-head",
+   "stealth-rock",
+   "foul-play"
+  ],
+  "machine": [
+   "swords-dance",
+   "flamethrower",
+   "ice-beam",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "payback",
+   "embargo",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "flash-cannon",
+   "stone-edge",
+   "grass-knot",
+   "charge-beam",
+   "round",
+   "incinerate"
+  ]
+ }
+}

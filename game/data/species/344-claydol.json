@@ -1,0 +1,171 @@
+{
+ "id": "claydol",
+ "name": "Claydol",
+ "dex": 344,
+ "types": [
+  "ground",
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 70,
+  "defense": 105,
+  "special_attack": 70,
+  "special_defense": 120,
+  "speed": 75
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 175,
+ "growth_rate": "medium",
+ "catch_rate": 90,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "teleport",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "rapid-spin",
+    "level": 1
+   },
+   {
+    "move": "rapid-spin",
+    "level": 4
+   },
+   {
+    "move": "mud-slap",
+    "level": 7
+   },
+   {
+    "move": "rock-tomb",
+    "level": 10
+   },
+   {
+    "move": "psybeam",
+    "level": 13
+   },
+   {
+    "move": "power-trick",
+    "level": 17
+   },
+   {
+    "move": "ancient-power",
+    "level": 21
+   },
+   {
+    "move": "self-destruct",
+    "level": 25
+   },
+   {
+    "move": "extrasensory",
+    "level": 28
+   },
+   {
+    "move": "cosmic-power",
+    "level": 31
+   },
+   {
+    "move": "guard-split",
+    "level": 34
+   },
+   {
+    "move": "power-split",
+    "level": 34
+   },
+   {
+    "move": "hyper-beam",
+    "level": 36
+   },
+   {
+    "move": "earth-power",
+    "level": 40
+   },
+   {
+    "move": "sandstorm",
+    "level": 47
+   },
+   {
+    "move": "heal-block",
+    "level": 54
+   },
+   {
+    "move": "explosion",
+    "level": 61
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "trick",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "signal-beam",
+   "gravity",
+   "earth-power",
+   "zen-headbutt",
+   "stealth-rock",
+   "wonder-room",
+   "drill-run"
+  ],
+  "machine": [
+   "ice-beam",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "calm-mind",
+   "gyro-ball",
+   "rock-polish",
+   "giga-impact",
+   "trick-room",
+   "stone-edge",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "smack-down",
+   "round",
+   "ally-switch",
+   "bulldoze"
+  ]
+ }
+}

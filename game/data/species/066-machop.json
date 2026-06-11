@@ -1,0 +1,152 @@
+{
+ "id": "machop",
+ "name": "Machop",
+ "dex": 66,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 80,
+  "defense": 50,
+  "special_attack": 35,
+  "special_defense": 35,
+  "speed": 35
+ },
+ "abilities": [
+  "guts",
+  "no-guard",
+  "steadfast"
+ ],
+ "base_experience": 61,
+ "growth_rate": "medium-slow",
+ "catch_rate": 180,
+ "gender_rate": 2,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "low-kick",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 7
+   },
+   {
+    "move": "karate-chop",
+    "level": 10
+   },
+   {
+    "move": "low-sweep",
+    "level": 13
+   },
+   {
+    "move": "foresight",
+    "level": 19
+   },
+   {
+    "move": "seismic-toss",
+    "level": 22
+   },
+   {
+    "move": "revenge",
+    "level": 25
+   },
+   {
+    "move": "vital-throw",
+    "level": 31
+   },
+   {
+    "move": "submission",
+    "level": 34
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 37
+   },
+   {
+    "move": "cross-chop",
+    "level": 43
+   },
+   {
+    "move": "scary-face",
+    "level": 46
+   },
+   {
+    "move": "dynamic-punch",
+    "level": 49
+   }
+  ],
+  "egg": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "rolling-kick",
+   "counter",
+   "meditate",
+   "encore",
+   "smelling-salts",
+   "knock-off",
+   "tickle",
+   "close-combat",
+   "power-trick",
+   "bullet-punch",
+   "heavy-slam"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "helping-hand",
+   "role-play",
+   "superpower",
+   "knock-off",
+   "dual-chop"
+  ],
+  "machine": [
+   "flamethrower",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "smack-down",
+   "low-sweep",
+   "round",
+   "incinerate",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

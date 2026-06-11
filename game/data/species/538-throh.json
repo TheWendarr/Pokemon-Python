@@ -1,0 +1,140 @@
+{
+ "id": "throh",
+ "name": "Throh",
+ "dex": 538,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 120,
+  "attack": 100,
+  "defense": 85,
+  "special_attack": 30,
+  "special_defense": 85,
+  "speed": 45
+ },
+ "abilities": [
+  "guts",
+  "inner-focus",
+  "mold-breaker"
+ ],
+ "base_experience": 163,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bind",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "bide",
+    "level": 5
+   },
+   {
+    "move": "focus-energy",
+    "level": 9
+   },
+   {
+    "move": "seismic-toss",
+    "level": 13
+   },
+   {
+    "move": "vital-throw",
+    "level": 17
+   },
+   {
+    "move": "revenge",
+    "level": 21
+   },
+   {
+    "move": "storm-throw",
+    "level": 25
+   },
+   {
+    "move": "body-slam",
+    "level": 29
+   },
+   {
+    "move": "bulk-up",
+    "level": 33
+   },
+   {
+    "move": "circle-throw",
+    "level": 37
+   },
+   {
+    "move": "endure",
+    "level": 41
+   },
+   {
+    "move": "wide-guard",
+    "level": 45
+   },
+   {
+    "move": "superpower",
+    "level": 49
+   },
+   {
+    "move": "reversal",
+    "level": 53
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "bind",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "pain-split",
+   "helping-hand",
+   "superpower",
+   "knock-off",
+   "block"
+  ],
+  "machine": [
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "grass-knot",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

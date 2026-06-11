@@ -1,0 +1,131 @@
+{
+ "id": "bayleef",
+ "name": "Bayleef",
+ "dex": 153,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 62,
+  "defense": 80,
+  "special_attack": 63,
+  "special_defense": 80,
+  "speed": 60
+ },
+ "abilities": [
+  "overgrow",
+  "leaf-guard"
+ ],
+ "base_experience": 142,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "razor-leaf",
+    "level": 1
+   },
+   {
+    "move": "poison-powder",
+    "level": 1
+   },
+   {
+    "move": "razor-leaf",
+    "level": 6
+   },
+   {
+    "move": "poison-powder",
+    "level": 9
+   },
+   {
+    "move": "synthesis",
+    "level": 12
+   },
+   {
+    "move": "reflect",
+    "level": 18
+   },
+   {
+    "move": "magical-leaf",
+    "level": 22
+   },
+   {
+    "move": "natural-gift",
+    "level": 26
+   },
+   {
+    "move": "sweet-scent",
+    "level": 32
+   },
+   {
+    "move": "light-screen",
+    "level": 36
+   },
+   {
+    "move": "body-slam",
+    "level": 40
+   },
+   {
+    "move": "safeguard",
+    "level": 46
+   },
+   {
+    "move": "aromatherapy",
+    "level": 50
+   },
+   {
+    "move": "solar-beam",
+    "level": 54
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "synthesis",
+   "magic-coat",
+   "worry-seed",
+   "seed-bomb",
+   "grass-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "energy-ball",
+   "grass-knot",
+   "round",
+   "echoed-voice"
+  ]
+ }
+}

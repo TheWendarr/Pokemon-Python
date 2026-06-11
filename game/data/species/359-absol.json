@@ -1,0 +1,187 @@
+{
+ "id": "absol",
+ "name": "Absol",
+ "dex": 359,
+ "types": [
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 130,
+  "defense": 60,
+  "special_attack": 75,
+  "special_defense": 60,
+  "speed": 75
+ },
+ "abilities": [
+  "pressure",
+  "super-luck",
+  "justified"
+ ],
+ "base_experience": 163,
+ "growth_rate": "medium-slow",
+ "catch_rate": 30,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "feint",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 4
+   },
+   {
+    "move": "quick-attack",
+    "level": 9
+   },
+   {
+    "move": "pursuit",
+    "level": 12
+   },
+   {
+    "move": "taunt",
+    "level": 17
+   },
+   {
+    "move": "bite",
+    "level": 20
+   },
+   {
+    "move": "double-team",
+    "level": 25
+   },
+   {
+    "move": "slash",
+    "level": 28
+   },
+   {
+    "move": "swords-dance",
+    "level": 33
+   },
+   {
+    "move": "future-sight",
+    "level": 36
+   },
+   {
+    "move": "night-slash",
+    "level": 41
+   },
+   {
+    "move": "detect",
+    "level": 44
+   },
+   {
+    "move": "psycho-cut",
+    "level": 49
+   },
+   {
+    "move": "sucker-punch",
+    "level": 52
+   },
+   {
+    "move": "razor-wind",
+    "level": 57
+   },
+   {
+    "move": "me-first",
+    "level": 60
+   },
+   {
+    "move": "perish-song",
+    "level": 65
+   }
+  ],
+  "egg": [
+   "double-edge",
+   "curse",
+   "feint-attack",
+   "perish-song",
+   "mean-look",
+   "megahorn",
+   "baton-pass",
+   "magic-coat",
+   "assurance",
+   "me-first",
+   "punishment",
+   "sucker-punch",
+   "zen-headbutt",
+   "hex"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "role-play",
+   "superpower",
+   "magic-coat",
+   "knock-off",
+   "snatch",
+   "bounce",
+   "dark-pulse",
+   "zen-headbutt",
+   "foul-play"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "hail",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "aerial-ace",
+   "calm-mind",
+   "payback",
+   "x-scissor",
+   "giga-impact",
+   "shadow-claw",
+   "stone-edge",
+   "charge-beam",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

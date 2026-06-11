@@ -1,0 +1,40 @@
+{
+ "id": "beldum",
+ "name": "Beldum",
+ "dex": 374,
+ "types": [
+  "steel",
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 55,
+  "defense": 80,
+  "special_attack": 35,
+  "special_defense": 60,
+  "speed": 30
+ },
+ "abilities": [
+  "clear-body",
+  "light-metal"
+ ],
+ "base_experience": 60,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "take-down",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "iron-defense",
+   "zen-headbutt",
+   "iron-head"
+  ],
+  "machine": []
+ }
+}

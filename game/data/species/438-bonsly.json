@@ -1,0 +1,132 @@
+{
+ "id": "bonsly",
+ "name": "Bonsly",
+ "dex": 438,
+ "types": [
+  "rock"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 80,
+  "defense": 95,
+  "special_attack": 10,
+  "special_defense": 45,
+  "speed": 10
+ },
+ "abilities": [
+  "sturdy",
+  "rock-head",
+  "rattled"
+ ],
+ "base_experience": 58,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fake-tears",
+    "level": 1
+   },
+   {
+    "move": "copycat",
+    "level": 1
+   },
+   {
+    "move": "flail",
+    "level": 5
+   },
+   {
+    "move": "low-kick",
+    "level": 8
+   },
+   {
+    "move": "rock-throw",
+    "level": 12
+   },
+   {
+    "move": "slam",
+    "level": 15
+   },
+   {
+    "move": "feint-attack",
+    "level": 19
+   },
+   {
+    "move": "rock-tomb",
+    "level": 22
+   },
+   {
+    "move": "block",
+    "level": 26
+   },
+   {
+    "move": "rock-slide",
+    "level": 29
+   },
+   {
+    "move": "mimic",
+    "level": 33
+   },
+   {
+    "move": "sucker-punch",
+    "level": 36
+   },
+   {
+    "move": "double-edge",
+    "level": 40
+   }
+  ],
+  "egg": [
+   "headbutt",
+   "harden",
+   "defense-curl",
+   "self-destruct",
+   "curse",
+   "endure",
+   "rollout",
+   "sand-tomb",
+   "stealth-rock"
+  ],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "helping-hand",
+   "role-play",
+   "block",
+   "covet",
+   "earth-power",
+   "stealth-rock",
+   "foul-play",
+   "after-you"
+  ],
+  "machine": [
+   "dig",
+   "toxic",
+   "double-team",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "calm-mind",
+   "rock-polish",
+   "smack-down",
+   "round"
+  ]
+ }
+}

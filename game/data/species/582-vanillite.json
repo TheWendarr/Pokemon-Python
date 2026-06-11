@@ -1,0 +1,132 @@
+{
+ "id": "vanillite",
+ "name": "Vanillite",
+ "dex": 582,
+ "types": [
+  "ice"
+ ],
+ "base_stats": {
+  "hp": 36,
+  "attack": 50,
+  "defense": 50,
+  "special_attack": 65,
+  "special_defense": 60,
+  "speed": 44
+ },
+ "abilities": [
+  "ice-body",
+  "snow-cloak",
+  "weak-armor"
+ ],
+ "base_experience": 61,
+ "growth_rate": "slow",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "icicle-spear",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 4
+   },
+   {
+    "move": "astonish",
+    "level": 7
+   },
+   {
+    "move": "uproar",
+    "level": 10
+   },
+   {
+    "move": "icy-wind",
+    "level": 13
+   },
+   {
+    "move": "mist",
+    "level": 16
+   },
+   {
+    "move": "avalanche",
+    "level": 19
+   },
+   {
+    "move": "taunt",
+    "level": 22
+   },
+   {
+    "move": "mirror-shot",
+    "level": 26
+   },
+   {
+    "move": "acid-armor",
+    "level": 31
+   },
+   {
+    "move": "ice-beam",
+    "level": 35
+   },
+   {
+    "move": "hail",
+    "level": 40
+   },
+   {
+    "move": "mirror-coat",
+    "level": 44
+   },
+   {
+    "move": "blizzard",
+    "level": 49
+   },
+   {
+    "move": "sheer-cold",
+    "level": 53
+   }
+  ],
+  "egg": [
+   "powder-snow",
+   "imprison",
+   "iron-defense",
+   "water-pulse",
+   "natural-gift",
+   "magnet-rise",
+   "ice-shard",
+   "autotomize"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "magic-coat",
+   "signal-beam",
+   "iron-defense",
+   "magnet-rise"
+  ],
+  "machine": [
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "explosion",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "taunt",
+   "flash-cannon",
+   "round",
+   "frost-breath"
+  ]
+ }
+}

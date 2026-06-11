@@ -1,0 +1,164 @@
+{
+ "id": "infernape",
+ "name": "Infernape",
+ "dex": 392,
+ "types": [
+  "fire",
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 76,
+  "attack": 104,
+  "defense": 71,
+  "special_attack": 104,
+  "special_defense": 71,
+  "speed": 108
+ },
+ "abilities": [
+  "blaze",
+  "iron-fist"
+ ],
+ "base_experience": 240,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "taunt",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 7
+   },
+   {
+    "move": "taunt",
+    "level": 9
+   },
+   {
+    "move": "mach-punch",
+    "level": 14
+   },
+   {
+    "move": "fury-swipes",
+    "level": 16
+   },
+   {
+    "move": "flame-wheel",
+    "level": 19
+   },
+   {
+    "move": "feint",
+    "level": 26
+   },
+   {
+    "move": "punishment",
+    "level": 29
+   },
+   {
+    "move": "close-combat",
+    "level": 36
+   },
+   {
+    "move": "fire-spin",
+    "level": 42
+   },
+   {
+    "move": "acrobatics",
+    "level": 52
+   },
+   {
+    "move": "calm-mind",
+    "level": 58
+   },
+   {
+    "move": "flare-blitz",
+    "level": 68
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "heat-wave",
+   "helping-hand",
+   "role-play",
+   "endeavor",
+   "blast-burn",
+   "covet",
+   "gunk-shot",
+   "stealth-rock",
+   "fire-pledge",
+   "dual-chop"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "aerial-ace",
+   "bulk-up",
+   "calm-mind",
+   "u-turn",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "stone-edge",
+   "grass-knot",
+   "hone-claws",
+   "flame-charge",
+   "low-sweep",
+   "round",
+   "incinerate",
+   "acrobatics",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

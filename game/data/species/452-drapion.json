@@ -1,0 +1,166 @@
+{
+ "id": "drapion",
+ "name": "Drapion",
+ "dex": 452,
+ "types": [
+  "poison",
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 90,
+  "defense": 110,
+  "special_attack": 60,
+  "special_defense": 75,
+  "speed": 95
+ },
+ "abilities": [
+  "battle-armor",
+  "sniper",
+  "keen-eye"
+ ],
+ "base_experience": 175,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "thunder-fang",
+    "level": 1
+   },
+   {
+    "move": "ice-fang",
+    "level": 1
+   },
+   {
+    "move": "fire-fang",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "poison-sting",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "knock-off",
+    "level": 1
+   },
+   {
+    "move": "knock-off",
+    "level": 5
+   },
+   {
+    "move": "pin-missile",
+    "level": 9
+   },
+   {
+    "move": "acupressure",
+    "level": 13
+   },
+   {
+    "move": "pursuit",
+    "level": 16
+   },
+   {
+    "move": "bug-bite",
+    "level": 20
+   },
+   {
+    "move": "poison-fang",
+    "level": 23
+   },
+   {
+    "move": "venoshock",
+    "level": 27
+   },
+   {
+    "move": "hone-claws",
+    "level": 30
+   },
+   {
+    "move": "toxic-spikes",
+    "level": 34
+   },
+   {
+    "move": "night-slash",
+    "level": 38
+   },
+   {
+    "move": "scary-face",
+    "level": 43
+   },
+   {
+    "move": "crunch",
+    "level": 49
+   },
+   {
+    "move": "cross-poison",
+    "level": 57
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "knock-off",
+   "dark-pulse",
+   "aqua-tail",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "payback",
+   "fling",
+   "poison-jab",
+   "x-scissor",
+   "giga-impact",
+   "hone-claws",
+   "venoshock",
+   "round",
+   "retaliate",
+   "struggle-bug",
+   "bulldoze",
+   "snarl"
+  ]
+ }
+}

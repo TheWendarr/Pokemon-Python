@@ -1,0 +1,130 @@
+{
+ "id": "suicune",
+ "name": "Suicune",
+ "dex": 245,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 100,
+  "attack": 75,
+  "defense": 115,
+  "special_attack": 90,
+  "special_defense": 115,
+  "speed": 85
+ },
+ "abilities": [
+  "pressure",
+  "inner-focus"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "bubble-beam",
+    "level": 8
+   },
+   {
+    "move": "rain-dance",
+    "level": 15
+   },
+   {
+    "move": "gust",
+    "level": 22
+   },
+   {
+    "move": "aurora-beam",
+    "level": 29
+   },
+   {
+    "move": "mist",
+    "level": 36
+   },
+   {
+    "move": "mirror-coat",
+    "level": 43
+   },
+   {
+    "move": "ice-fang",
+    "level": 50
+   },
+   {
+    "move": "tailwind",
+    "level": 57
+   },
+   {
+    "move": "extrasensory",
+    "level": 64
+   },
+   {
+    "move": "hydro-pump",
+    "level": 71
+   },
+   {
+    "move": "calm-mind",
+    "level": 78
+   },
+   {
+    "move": "blizzard",
+    "level": 85
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "signal-beam",
+   "tailwind",
+   "iron-head"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "reflect",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "hail",
+   "facade",
+   "dive",
+   "calm-mind",
+   "giga-impact",
+   "round",
+   "scald",
+   "quash",
+   "bulldoze",
+   "snarl"
+  ]
+ }
+}

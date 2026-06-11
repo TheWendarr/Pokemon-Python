@@ -1,0 +1,153 @@
+{
+ "id": "sandshrew",
+ "name": "Sandshrew",
+ "dex": 27,
+ "types": [
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 75,
+  "defense": 85,
+  "special_attack": 20,
+  "special_defense": 30,
+  "speed": 40
+ },
+ "abilities": [
+  "sand-veil",
+  "sand-rush"
+ ],
+ "base_experience": 60,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 3
+   },
+   {
+    "move": "poison-sting",
+    "level": 5
+   },
+   {
+    "move": "rollout",
+    "level": 7
+   },
+   {
+    "move": "rapid-spin",
+    "level": 9
+   },
+   {
+    "move": "swift",
+    "level": 11
+   },
+   {
+    "move": "fury-cutter",
+    "level": 14
+   },
+   {
+    "move": "magnitude",
+    "level": 17
+   },
+   {
+    "move": "fury-swipes",
+    "level": 20
+   },
+   {
+    "move": "sand-tomb",
+    "level": 23
+   },
+   {
+    "move": "slash",
+    "level": 26
+   },
+   {
+    "move": "dig",
+    "level": 30
+   },
+   {
+    "move": "gyro-ball",
+    "level": 34
+   },
+   {
+    "move": "swords-dance",
+    "level": 38
+   },
+   {
+    "move": "sandstorm",
+    "level": 42
+   },
+   {
+    "move": "earthquake",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "counter",
+   "flail",
+   "endure",
+   "rapid-spin",
+   "metal-claw",
+   "crush-claw",
+   "mud-shot",
+   "night-slash",
+   "rock-climb",
+   "chip-away"
+  ],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "knock-off",
+   "covet",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "gyro-ball",
+   "fling",
+   "poison-jab",
+   "x-scissor",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

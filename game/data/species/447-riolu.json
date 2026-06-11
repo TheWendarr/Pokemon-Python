@@ -1,0 +1,140 @@
+{
+ "id": "riolu",
+ "name": "Riolu",
+ "dex": 447,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 70,
+  "defense": 40,
+  "special_attack": 35,
+  "special_defense": 40,
+  "speed": 60
+ },
+ "abilities": [
+  "steadfast",
+  "inner-focus",
+  "prankster"
+ ],
+ "base_experience": 57,
+ "growth_rate": "medium-slow",
+ "catch_rate": 75,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "foresight",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "endure",
+    "level": 1
+   },
+   {
+    "move": "counter",
+    "level": 6
+   },
+   {
+    "move": "feint",
+    "level": 11
+   },
+   {
+    "move": "force-palm",
+    "level": 15
+   },
+   {
+    "move": "copycat",
+    "level": 19
+   },
+   {
+    "move": "screech",
+    "level": 24
+   },
+   {
+    "move": "reversal",
+    "level": 29
+   },
+   {
+    "move": "nasty-plot",
+    "level": 47
+   },
+   {
+    "move": "final-gambit",
+    "level": 55
+   }
+  ],
+  "egg": [
+   "bite",
+   "low-kick",
+   "agility",
+   "high-jump-kick",
+   "mind-reader",
+   "detect",
+   "cross-chop",
+   "crunch",
+   "follow-me",
+   "blaze-kick",
+   "sky-uppercut",
+   "iron-defense",
+   "vacuum-wave",
+   "bullet-punch",
+   "circle-throw"
+  ],
+  "tutor": [
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "role-play",
+   "iron-defense",
+   "magnet-rise",
+   "drain-punch",
+   "zen-headbutt",
+   "dual-chop"
+  ],
+  "machine": [
+   "swords-dance",
+   "roar",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "shadow-claw",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

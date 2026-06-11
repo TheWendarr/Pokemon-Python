@@ -1,0 +1,148 @@
+{
+ "id": "noctowl",
+ "name": "Noctowl",
+ "dex": 164,
+ "types": [
+  "normal",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 100,
+  "attack": 50,
+  "defense": 50,
+  "special_attack": 86,
+  "special_defense": 96,
+  "speed": 70
+ },
+ "abilities": [
+  "insomnia",
+  "keen-eye",
+  "tinted-lens"
+ ],
+ "base_experience": 158,
+ "growth_rate": "medium",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "sky-attack",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "foresight",
+    "level": 1
+   },
+   {
+    "move": "hypnosis",
+    "level": 1
+   },
+   {
+    "move": "hypnosis",
+    "level": 5
+   },
+   {
+    "move": "peck",
+    "level": 9
+   },
+   {
+    "move": "uproar",
+    "level": 13
+   },
+   {
+    "move": "reflect",
+    "level": 17
+   },
+   {
+    "move": "confusion",
+    "level": 22
+   },
+   {
+    "move": "echoed-voice",
+    "level": 27
+   },
+   {
+    "move": "take-down",
+    "level": 32
+   },
+   {
+    "move": "air-slash",
+    "level": 37
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 42
+   },
+   {
+    "move": "synchronoise",
+    "level": 47
+   },
+   {
+    "move": "extrasensory",
+    "level": 52
+   },
+   {
+    "move": "psycho-shift",
+    "level": 57
+   },
+   {
+    "move": "roost",
+    "level": 62
+   },
+   {
+    "move": "dream-eater",
+    "level": 67
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "sleep-talk",
+   "uproar",
+   "heat-wave",
+   "magic-coat",
+   "recycle",
+   "hyper-voice",
+   "roost",
+   "tailwind",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "fly",
+   "hyper-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "reflect",
+   "dream-eater",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "aerial-ace",
+   "pluck",
+   "giga-impact",
+   "round",
+   "echoed-voice",
+   "work-up"
+  ]
+ }
+}

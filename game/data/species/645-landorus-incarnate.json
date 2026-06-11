@@ -1,0 +1,152 @@
+{
+ "id": "landorus-incarnate",
+ "name": "Landorus Incarnate",
+ "dex": 645,
+ "types": [
+  "ground",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 89,
+  "attack": 125,
+  "defense": 90,
+  "special_attack": 115,
+  "special_defense": 80,
+  "speed": 101
+ },
+ "abilities": [
+  "sand-force",
+  "sheer-force"
+ ],
+ "base_experience": 270,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "block",
+    "level": 1
+   },
+   {
+    "move": "mud-shot",
+    "level": 1
+   },
+   {
+    "move": "rock-tomb",
+    "level": 1
+   },
+   {
+    "move": "imprison",
+    "level": 7
+   },
+   {
+    "move": "punishment",
+    "level": 13
+   },
+   {
+    "move": "bulldoze",
+    "level": 19
+   },
+   {
+    "move": "rock-throw",
+    "level": 25
+   },
+   {
+    "move": "extrasensory",
+    "level": 31
+   },
+   {
+    "move": "swords-dance",
+    "level": 37
+   },
+   {
+    "move": "earth-power",
+    "level": 43
+   },
+   {
+    "move": "rock-slide",
+    "level": 49
+   },
+   {
+    "move": "earthquake",
+    "level": 55
+   },
+   {
+    "move": "sandstorm",
+    "level": 61
+   },
+   {
+    "move": "fissure",
+    "level": 67
+   },
+   {
+    "move": "stone-edge",
+    "level": 73
+   },
+   {
+    "move": "hammer-arm",
+    "level": 79
+   },
+   {
+    "move": "outrage",
+    "level": 85
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "role-play",
+   "superpower",
+   "knock-off",
+   "block",
+   "gravity",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "swords-dance",
+   "fly",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "calm-mind",
+   "u-turn",
+   "payback",
+   "fling",
+   "rock-polish",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "grass-knot",
+   "smack-down",
+   "sludge-wave",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

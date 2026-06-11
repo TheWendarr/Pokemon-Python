@@ -1,0 +1,100 @@
+{
+ "id": "arcanine",
+ "name": "Arcanine",
+ "dex": 59,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 110,
+  "defense": 80,
+  "special_attack": 100,
+  "special_defense": 80,
+  "speed": 95
+ },
+ "abilities": [
+  "intimidate",
+  "flash-fire",
+  "justified"
+ ],
+ "base_experience": 194,
+ "growth_rate": "slow",
+ "catch_rate": 75,
+ "gender_rate": 2,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "thunder-fang",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "roar",
+    "level": 1
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 1
+   },
+   {
+    "move": "fire-fang",
+    "level": 1
+   },
+   {
+    "move": "extreme-speed",
+    "level": 34
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "heat-wave",
+   "helping-hand",
+   "covet",
+   "dragon-pulse",
+   "iron-head"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "overheat",
+   "aerial-ace",
+   "giga-impact",
+   "flame-charge",
+   "round",
+   "incinerate",
+   "retaliate",
+   "bulldoze",
+   "wild-charge",
+   "snarl"
+  ]
+ }
+}

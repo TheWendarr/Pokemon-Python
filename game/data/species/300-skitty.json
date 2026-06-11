@@ -1,0 +1,161 @@
+{
+ "id": "skitty",
+ "name": "Skitty",
+ "dex": 300,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 45,
+  "defense": 45,
+  "special_attack": 35,
+  "special_defense": 35,
+  "speed": 50
+ },
+ "abilities": [
+  "cute-charm",
+  "normalize",
+  "wonder-skin"
+ ],
+ "base_experience": 52,
+ "growth_rate": "fast",
+ "catch_rate": 255,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fake-out",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "foresight",
+    "level": 4
+   },
+   {
+    "move": "attract",
+    "level": 8
+   },
+   {
+    "move": "sing",
+    "level": 11
+   },
+   {
+    "move": "double-slap",
+    "level": 15
+   },
+   {
+    "move": "copycat",
+    "level": 18
+   },
+   {
+    "move": "assist",
+    "level": 22
+   },
+   {
+    "move": "charm",
+    "level": 25
+   },
+   {
+    "move": "feint-attack",
+    "level": 29
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 32
+   },
+   {
+    "move": "covet",
+    "level": 36
+   },
+   {
+    "move": "heal-bell",
+    "level": 39
+   },
+   {
+    "move": "double-edge",
+    "level": 42
+   },
+   {
+    "move": "captivate",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "baton-pass",
+   "fake-out",
+   "uproar",
+   "helping-hand",
+   "wish",
+   "fake-tears",
+   "tickle",
+   "last-resort",
+   "sucker-punch",
+   "mud-bomb",
+   "zen-headbutt",
+   "captivate",
+   "simple-beam"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "ice-beam",
+   "blizzard",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "calm-mind",
+   "payback",
+   "grass-knot",
+   "charge-beam",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

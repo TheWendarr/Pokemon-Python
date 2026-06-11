@@ -1,0 +1,140 @@
+{
+ "id": "elekid",
+ "name": "Elekid",
+ "dex": 239,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 63,
+  "defense": 37,
+  "special_attack": 65,
+  "special_defense": 55,
+  "speed": 95
+ },
+ "abilities": [
+  "static",
+  "vital-spirit"
+ ],
+ "base_experience": 72,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 2,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "thunder-shock",
+    "level": 5
+   },
+   {
+    "move": "low-kick",
+    "level": 8
+   },
+   {
+    "move": "swift",
+    "level": 12
+   },
+   {
+    "move": "shock-wave",
+    "level": 15
+   },
+   {
+    "move": "thunder-wave",
+    "level": 19
+   },
+   {
+    "move": "electro-ball",
+    "level": 22
+   },
+   {
+    "move": "light-screen",
+    "level": 26
+   },
+   {
+    "move": "thunder-punch",
+    "level": 29
+   },
+   {
+    "move": "discharge",
+    "level": 33
+   },
+   {
+    "move": "screech",
+    "level": 36
+   },
+   {
+    "move": "thunderbolt",
+    "level": 40
+   },
+   {
+    "move": "thunder",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "karate-chop",
+   "fire-punch",
+   "ice-punch",
+   "rolling-kick",
+   "meditate",
+   "barrier",
+   "dynamic-punch",
+   "cross-chop",
+   "focus-punch",
+   "hammer-arm",
+   "feint"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "helping-hand",
+   "signal-beam",
+   "covet",
+   "magnet-rise",
+   "electroweb",
+   "dual-chop"
+  ],
+  "machine": [
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "fling",
+   "charge-beam",
+   "round",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

@@ -1,0 +1,144 @@
+{
+ "id": "dewott",
+ "name": "Dewott",
+ "dex": 502,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 75,
+  "defense": 60,
+  "special_attack": 83,
+  "special_defense": 60,
+  "speed": 60
+ },
+ "abilities": [
+  "torrent",
+  "shell-armor"
+ ],
+ "base_experience": 145,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "water-sport",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 5
+   },
+   {
+    "move": "water-gun",
+    "level": 7
+   },
+   {
+    "move": "water-sport",
+    "level": 11
+   },
+   {
+    "move": "focus-energy",
+    "level": 13
+   },
+   {
+    "move": "razor-shell",
+    "level": 17
+   },
+   {
+    "move": "fury-cutter",
+    "level": 20
+   },
+   {
+    "move": "water-pulse",
+    "level": 25
+   },
+   {
+    "move": "revenge",
+    "level": 28
+   },
+   {
+    "move": "aqua-jet",
+    "level": 33
+   },
+   {
+    "move": "encore",
+    "level": 36
+   },
+   {
+    "move": "aqua-tail",
+    "level": 41
+   },
+   {
+    "move": "retaliate",
+    "level": 44
+   },
+   {
+    "move": "swords-dance",
+    "level": 49
+   },
+   {
+    "move": "hydro-pump",
+    "level": 52
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "covet",
+   "aqua-tail",
+   "water-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "taunt",
+   "dive",
+   "aerial-ace",
+   "fling",
+   "x-scissor",
+   "grass-knot",
+   "round",
+   "scald",
+   "retaliate"
+  ]
+ }
+}

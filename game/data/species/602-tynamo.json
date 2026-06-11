@@ -1,0 +1,48 @@
+{
+ "id": "tynamo",
+ "name": "Tynamo",
+ "dex": 602,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 35,
+  "attack": 55,
+  "defense": 40,
+  "special_attack": 45,
+  "special_defense": 40,
+  "speed": 60
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 55,
+ "growth_rate": "slow",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "thunder-wave",
+    "level": 1
+   },
+   {
+    "move": "spark",
+    "level": 1
+   },
+   {
+    "move": "charge-beam",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "magnet-rise"
+  ],
+  "machine": []
+ }
+}

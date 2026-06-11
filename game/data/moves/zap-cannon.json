@@ -1,0 +1,29 @@
+{
+ "id": "zap-cannon",
+ "name": "Zap Cannon",
+ "type": "electric",
+ "category": "special",
+ "power": 120,
+ "accuracy": 50,
+ "pp": 5,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "ballistics",
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-ailment",
+  "ailment": "paralysis",
+  "ailment_chance": 100,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

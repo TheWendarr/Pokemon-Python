@@ -1,0 +1,156 @@
+{
+ "id": "growlithe",
+ "name": "Growlithe",
+ "dex": 58,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 70,
+  "defense": 45,
+  "special_attack": 70,
+  "special_defense": 50,
+  "speed": 60
+ },
+ "abilities": [
+  "intimidate",
+  "flash-fire",
+  "justified"
+ ],
+ "base_experience": 70,
+ "growth_rate": "slow",
+ "catch_rate": 190,
+ "gender_rate": 2,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "roar",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 6
+   },
+   {
+    "move": "leer",
+    "level": 8
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 10
+   },
+   {
+    "move": "helping-hand",
+    "level": 12
+   },
+   {
+    "move": "flame-wheel",
+    "level": 17
+   },
+   {
+    "move": "reversal",
+    "level": 19
+   },
+   {
+    "move": "fire-fang",
+    "level": 21
+   },
+   {
+    "move": "take-down",
+    "level": 23
+   },
+   {
+    "move": "flame-burst",
+    "level": 28
+   },
+   {
+    "move": "agility",
+    "level": 30
+   },
+   {
+    "move": "retaliate",
+    "level": 32
+   },
+   {
+    "move": "flamethrower",
+    "level": 34
+   },
+   {
+    "move": "crunch",
+    "level": 39
+   },
+   {
+    "move": "heat-wave",
+    "level": 41
+   },
+   {
+    "move": "outrage",
+    "level": 43
+   },
+   {
+    "move": "flare-blitz",
+    "level": 45
+   }
+  ],
+  "egg": [
+   "double-kick",
+   "body-slam",
+   "thrash",
+   "double-edge",
+   "fire-spin",
+   "iron-tail",
+   "morning-sun",
+   "crunch",
+   "heat-wave",
+   "howl",
+   "covet",
+   "close-combat",
+   "flare-blitz"
+  ],
+  "tutor": [
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "heat-wave",
+   "helping-hand",
+   "covet"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "overheat",
+   "aerial-ace",
+   "flame-charge",
+   "round",
+   "incinerate",
+   "retaliate",
+   "wild-charge",
+   "snarl"
+  ]
+ }
+}

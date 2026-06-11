@@ -1,0 +1,109 @@
+{
+ "id": "victreebel",
+ "name": "Victreebel",
+ "dex": 71,
+ "types": [
+  "grass",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 105,
+  "defense": 65,
+  "special_attack": 100,
+  "special_defense": 70,
+  "speed": 70
+ },
+ "abilities": [
+  "chlorophyll",
+  "gluttony"
+ ],
+ "base_experience": 221,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "stockpile",
+    "level": 1
+   },
+   {
+    "move": "swallow",
+    "level": 1
+   },
+   {
+    "move": "spit-up",
+    "level": 1
+   },
+   {
+    "move": "vine-whip",
+    "level": 1
+   },
+   {
+    "move": "sleep-powder",
+    "level": 1
+   },
+   {
+    "move": "sweet-scent",
+    "level": 1
+   },
+   {
+    "move": "razor-leaf",
+    "level": 1
+   },
+   {
+    "move": "leaf-tornado",
+    "level": 27
+   },
+   {
+    "move": "leaf-storm",
+    "level": 47
+   },
+   {
+    "move": "leaf-blade",
+    "level": 47
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "knock-off",
+   "gastro-acid",
+   "worry-seed",
+   "seed-bomb",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "reflect",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "venoshock",
+   "round"
+  ]
+ }
+}

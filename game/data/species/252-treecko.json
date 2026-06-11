@@ -1,0 +1,138 @@
+{
+ "id": "treecko",
+ "name": "Treecko",
+ "dex": 252,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 45,
+  "defense": 35,
+  "special_attack": 65,
+  "special_defense": 55,
+  "speed": 70
+ },
+ "abilities": [
+  "overgrow",
+  "unburden"
+ ],
+ "base_experience": 62,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 6
+   },
+   {
+    "move": "quick-attack",
+    "level": 11
+   },
+   {
+    "move": "pursuit",
+    "level": 16
+   },
+   {
+    "move": "screech",
+    "level": 21
+   },
+   {
+    "move": "mega-drain",
+    "level": 26
+   },
+   {
+    "move": "agility",
+    "level": 31
+   },
+   {
+    "move": "slam",
+    "level": 36
+   },
+   {
+    "move": "detect",
+    "level": 41
+   },
+   {
+    "move": "giga-drain",
+    "level": 46
+   },
+   {
+    "move": "energy-ball",
+    "level": 51
+   }
+  ],
+  "egg": [
+   "razor-wind",
+   "double-kick",
+   "leech-seed",
+   "dragon-breath",
+   "synthesis",
+   "crunch",
+   "endeavor",
+   "mud-sport",
+   "crush-claw",
+   "grass-whistle",
+   "bullet-seed",
+   "magical-leaf",
+   "natural-gift",
+   "worry-seed",
+   "leaf-storm"
+  ],
+  "tutor": [
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "synthesis",
+   "endeavor",
+   "worry-seed",
+   "seed-bomb",
+   "drain-punch",
+   "grass-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "strength",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "fling",
+   "energy-ball",
+   "grass-knot",
+   "round",
+   "acrobatics"
+  ]
+ }
+}

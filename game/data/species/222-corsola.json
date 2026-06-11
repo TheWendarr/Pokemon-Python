@@ -1,0 +1,161 @@
+{
+ "id": "corsola",
+ "name": "Corsola",
+ "dex": 222,
+ "types": [
+  "water",
+  "rock"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 55,
+  "defense": 95,
+  "special_attack": 65,
+  "special_defense": 95,
+  "speed": 35
+ },
+ "abilities": [
+  "hustle",
+  "natural-cure",
+  "regenerator"
+ ],
+ "base_experience": 144,
+ "growth_rate": "fast",
+ "catch_rate": 60,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 4
+   },
+   {
+    "move": "bubble",
+    "level": 8
+   },
+   {
+    "move": "recover",
+    "level": 10
+   },
+   {
+    "move": "refresh",
+    "level": 13
+   },
+   {
+    "move": "bubble-beam",
+    "level": 17
+   },
+   {
+    "move": "ancient-power",
+    "level": 20
+   },
+   {
+    "move": "lucky-chant",
+    "level": 23
+   },
+   {
+    "move": "spike-cannon",
+    "level": 27
+   },
+   {
+    "move": "iron-defense",
+    "level": 29
+   },
+   {
+    "move": "rock-blast",
+    "level": 31
+   },
+   {
+    "move": "endure",
+    "level": 35
+   },
+   {
+    "move": "aqua-ring",
+    "level": 38
+   },
+   {
+    "move": "power-gem",
+    "level": 41
+   },
+   {
+    "move": "mirror-coat",
+    "level": 45
+   },
+   {
+    "move": "earth-power",
+    "level": 47
+   },
+   {
+    "move": "flail",
+    "level": 52
+   }
+  ],
+  "egg": [
+   "mist",
+   "screech",
+   "confuse-ray",
+   "barrier",
+   "bide",
+   "amnesia",
+   "curse",
+   "nature-power",
+   "ingrain",
+   "icicle-spear",
+   "water-pulse",
+   "aqua-ring",
+   "head-smash"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "magic-coat",
+   "endeavor",
+   "iron-defense",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "hail",
+   "facade",
+   "rock-tomb",
+   "calm-mind",
+   "rock-polish",
+   "stone-edge",
+   "round",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

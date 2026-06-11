@@ -1,0 +1,151 @@
+{
+ "id": "kabutops",
+ "name": "Kabutops",
+ "dex": 141,
+ "types": [
+  "rock",
+  "water"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 115,
+  "defense": 105,
+  "special_attack": 65,
+  "special_defense": 70,
+  "speed": 80
+ },
+ "abilities": [
+  "swift-swim",
+  "battle-armor",
+  "weak-armor"
+ ],
+ "base_experience": 173,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "feint",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 6
+   },
+   {
+    "move": "leer",
+    "level": 11
+   },
+   {
+    "move": "mud-shot",
+    "level": 16
+   },
+   {
+    "move": "sand-attack",
+    "level": 21
+   },
+   {
+    "move": "endure",
+    "level": 26
+   },
+   {
+    "move": "aqua-jet",
+    "level": 31
+   },
+   {
+    "move": "mega-drain",
+    "level": 36
+   },
+   {
+    "move": "slash",
+    "level": 40
+   },
+   {
+    "move": "metal-sound",
+    "level": 45
+   },
+   {
+    "move": "ancient-power",
+    "level": 54
+   },
+   {
+    "move": "wring-out",
+    "level": 63
+   },
+   {
+    "move": "night-slash",
+    "level": 72
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "giga-drain",
+   "sleep-talk",
+   "superpower",
+   "knock-off",
+   "iron-defense",
+   "aqua-tail",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "aerial-ace",
+   "rock-polish",
+   "x-scissor",
+   "giga-impact",
+   "stone-edge",
+   "hone-claws",
+   "smack-down",
+   "round",
+   "scald"
+  ]
+ }
+}

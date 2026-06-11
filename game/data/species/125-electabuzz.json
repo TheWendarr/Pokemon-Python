@@ -1,0 +1,137 @@
+{
+ "id": "electabuzz",
+ "name": "Electabuzz",
+ "dex": 125,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 83,
+  "defense": 57,
+  "special_attack": 95,
+  "special_defense": 85,
+  "speed": 105
+ },
+ "abilities": [
+  "static",
+  "vital-spirit"
+ ],
+ "base_experience": 172,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 2,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "thunder-shock",
+    "level": 1
+   },
+   {
+    "move": "thunder-shock",
+    "level": 5
+   },
+   {
+    "move": "low-kick",
+    "level": 8
+   },
+   {
+    "move": "swift",
+    "level": 12
+   },
+   {
+    "move": "shock-wave",
+    "level": 15
+   },
+   {
+    "move": "thunder-wave",
+    "level": 19
+   },
+   {
+    "move": "electro-ball",
+    "level": 22
+   },
+   {
+    "move": "light-screen",
+    "level": 26
+   },
+   {
+    "move": "thunder-punch",
+    "level": 29
+   },
+   {
+    "move": "discharge",
+    "level": 36
+   },
+   {
+    "move": "screech",
+    "level": 42
+   },
+   {
+    "move": "thunderbolt",
+    "level": 49
+   },
+   {
+    "move": "thunder",
+    "level": 55
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "signal-beam",
+   "covet",
+   "magnet-rise",
+   "electroweb",
+   "dual-chop"
+  ],
+  "machine": [
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "charge-beam",
+   "low-sweep",
+   "round",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

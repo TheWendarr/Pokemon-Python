@@ -1,0 +1,148 @@
+{
+ "id": "maractus",
+ "name": "Maractus",
+ "dex": 556,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 86,
+  "defense": 67,
+  "special_attack": 106,
+  "special_defense": 67,
+  "speed": 60
+ },
+ "abilities": [
+  "water-absorb",
+  "chlorophyll",
+  "storm-drain"
+ ],
+ "base_experience": 161,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 1
+   },
+   {
+    "move": "sweet-scent",
+    "level": 3
+   },
+   {
+    "move": "growth",
+    "level": 6
+   },
+   {
+    "move": "pin-missile",
+    "level": 10
+   },
+   {
+    "move": "mega-drain",
+    "level": 13
+   },
+   {
+    "move": "synthesis",
+    "level": 15
+   },
+   {
+    "move": "cotton-spore",
+    "level": 18
+   },
+   {
+    "move": "needle-arm",
+    "level": 22
+   },
+   {
+    "move": "giga-drain",
+    "level": 26
+   },
+   {
+    "move": "acupressure",
+    "level": 29
+   },
+   {
+    "move": "ingrain",
+    "level": 33
+   },
+   {
+    "move": "petal-dance",
+    "level": 38
+   },
+   {
+    "move": "sucker-punch",
+    "level": 42
+   },
+   {
+    "move": "sunny-day",
+    "level": 45
+   },
+   {
+    "move": "solar-beam",
+    "level": 50
+   },
+   {
+    "move": "cotton-guard",
+    "level": 55
+   },
+   {
+    "move": "after-you",
+    "level": 57
+   }
+  ],
+  "egg": [
+   "leech-seed",
+   "spikes",
+   "grass-whistle",
+   "bullet-seed",
+   "bounce",
+   "worry-seed",
+   "seed-bomb",
+   "wood-hammer"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "uproar",
+   "helping-hand",
+   "knock-off",
+   "endeavor",
+   "hyper-voice",
+   "bounce",
+   "worry-seed",
+   "seed-bomb",
+   "drain-punch",
+   "after-you"
+  ],
+  "machine": [
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "aerial-ace",
+   "poison-jab",
+   "energy-ball",
+   "grass-knot",
+   "round"
+  ]
+ }
+}

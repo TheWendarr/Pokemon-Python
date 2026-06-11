@@ -1,0 +1,35 @@
+{
+ "id": "meteor-mash",
+ "name": "Meteor Mash",
+ "type": "steel",
+ "category": "physical",
+ "power": 100,
+ "accuracy": 85,
+ "pp": 10,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "contact",
+  "mirror",
+  "protect",
+  "punch"
+ ],
+ "effect": {
+  "kind": "damage-raise",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [
+   {
+    "stat": "attack",
+    "change": 1
+   }
+  ],
+  "stat_chance": 20,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

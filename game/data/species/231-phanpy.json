@@ -1,0 +1,131 @@
+{
+ "id": "phanpy",
+ "name": "Phanpy",
+ "dex": 231,
+ "types": [
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 60,
+  "defense": 60,
+  "special_attack": 40,
+  "special_defense": 40,
+  "speed": 40
+ },
+ "abilities": [
+  "pickup",
+  "sand-veil"
+ ],
+ "base_experience": 66,
+ "growth_rate": "medium",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "odor-sleuth",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 1
+   },
+   {
+    "move": "flail",
+    "level": 6
+   },
+   {
+    "move": "take-down",
+    "level": 10
+   },
+   {
+    "move": "rollout",
+    "level": 15
+   },
+   {
+    "move": "natural-gift",
+    "level": 19
+   },
+   {
+    "move": "slam",
+    "level": 24
+   },
+   {
+    "move": "endure",
+    "level": 28
+   },
+   {
+    "move": "charm",
+    "level": 33
+   },
+   {
+    "move": "last-resort",
+    "level": 37
+   },
+   {
+    "move": "double-edge",
+    "level": 42
+   }
+  ],
+  "egg": [
+   "body-slam",
+   "counter",
+   "fissure",
+   "focus-energy",
+   "snore",
+   "mud-slap",
+   "ancient-power",
+   "endeavor",
+   "ice-shard",
+   "head-smash",
+   "heavy-slam"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "superpower",
+   "knock-off",
+   "endeavor",
+   "hyper-voice",
+   "last-resort",
+   "seed-bomb",
+   "earth-power",
+   "gunk-shot",
+   "stealth-rock"
+  ],
+  "machine": [
+   "roar",
+   "strength",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "round",
+   "echoed-voice",
+   "bulldoze"
+  ]
+ }
+}

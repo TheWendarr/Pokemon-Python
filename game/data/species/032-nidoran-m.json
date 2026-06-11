@@ -1,0 +1,135 @@
+{
+ "id": "nidoran-m",
+ "name": "Nidoran M",
+ "dex": 32,
+ "types": [
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 46,
+  "attack": 57,
+  "defense": 40,
+  "special_attack": 40,
+  "special_defense": 40,
+  "speed": 50
+ },
+ "abilities": [
+  "poison-point",
+  "rivalry",
+  "hustle"
+ ],
+ "base_experience": 55,
+ "growth_rate": "medium-slow",
+ "catch_rate": 235,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 7
+   },
+   {
+    "move": "double-kick",
+    "level": 9
+   },
+   {
+    "move": "poison-sting",
+    "level": 13
+   },
+   {
+    "move": "fury-attack",
+    "level": 19
+   },
+   {
+    "move": "horn-attack",
+    "level": 21
+   },
+   {
+    "move": "helping-hand",
+    "level": 25
+   },
+   {
+    "move": "toxic-spikes",
+    "level": 31
+   },
+   {
+    "move": "flatter",
+    "level": 33
+   },
+   {
+    "move": "poison-jab",
+    "level": 37
+   },
+   {
+    "move": "captivate",
+    "level": 43
+   },
+   {
+    "move": "horn-drill",
+    "level": 45
+   }
+  ],
+  "egg": [
+   "take-down",
+   "supersonic",
+   "disable",
+   "counter",
+   "confusion",
+   "amnesia",
+   "endure",
+   "iron-tail",
+   "beat-up",
+   "poison-tail",
+   "sucker-punch",
+   "head-smash",
+   "chip-away"
+  ],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "drill-run"
+  ],
+  "machine": [
+   "cut",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "thunderbolt",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "poison-jab",
+   "shadow-claw",
+   "hone-claws",
+   "venoshock",
+   "round",
+   "echoed-voice"
+  ]
+ }
+}

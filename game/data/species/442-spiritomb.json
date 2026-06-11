@@ -1,0 +1,138 @@
+{
+ "id": "spiritomb",
+ "name": "Spiritomb",
+ "dex": 442,
+ "types": [
+  "ghost",
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 92,
+  "defense": 108,
+  "special_attack": 92,
+  "special_defense": 108,
+  "speed": 35
+ },
+ "abilities": [
+  "pressure",
+  "infiltrator"
+ ],
+ "base_experience": 170,
+ "growth_rate": "medium",
+ "catch_rate": 100,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "curse",
+    "level": 1
+   },
+   {
+    "move": "pursuit",
+    "level": 1
+   },
+   {
+    "move": "confuse-ray",
+    "level": 1
+   },
+   {
+    "move": "spite",
+    "level": 1
+   },
+   {
+    "move": "shadow-sneak",
+    "level": 1
+   },
+   {
+    "move": "feint-attack",
+    "level": 7
+   },
+   {
+    "move": "hypnosis",
+    "level": 13
+   },
+   {
+    "move": "dream-eater",
+    "level": 19
+   },
+   {
+    "move": "ominous-wind",
+    "level": 25
+   },
+   {
+    "move": "sucker-punch",
+    "level": 31
+   },
+   {
+    "move": "nasty-plot",
+    "level": 37
+   },
+   {
+    "move": "memento",
+    "level": 43
+   },
+   {
+    "move": "dark-pulse",
+    "level": 49
+   }
+  ],
+  "egg": [
+   "smokescreen",
+   "nightmare",
+   "destiny-bond",
+   "pain-split",
+   "imprison",
+   "grudge",
+   "shadow-sneak",
+   "captivate"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "pain-split",
+   "uproar",
+   "trick",
+   "snatch",
+   "dark-pulse",
+   "wonder-room",
+   "foul-play"
+  ],
+  "machine": [
+   "hyper-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "calm-mind",
+   "embargo",
+   "giga-impact",
+   "telekinesis",
+   "round",
+   "quash",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

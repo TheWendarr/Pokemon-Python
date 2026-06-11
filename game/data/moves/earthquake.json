@@ -1,0 +1,29 @@
+{
+ "id": "earthquake",
+ "name": "Earthquake",
+ "type": "ground",
+ "category": "physical",
+ "power": 100,
+ "accuracy": 100,
+ "pp": 10,
+ "priority": 0,
+ "target": "all-other-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "mirror",
+  "non-sky-battle",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

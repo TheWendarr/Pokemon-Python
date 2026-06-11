@@ -1,0 +1,155 @@
+{
+ "id": "fraxure",
+ "name": "Fraxure",
+ "dex": 611,
+ "types": [
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 66,
+  "attack": 117,
+  "defense": 70,
+  "special_attack": 40,
+  "special_defense": 50,
+  "speed": 67
+ },
+ "abilities": [
+  "rivalry",
+  "mold-breaker",
+  "unnerve"
+ ],
+ "base_experience": 144,
+ "growth_rate": "slow",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "assurance",
+    "level": 1
+   },
+   {
+    "move": "dragon-rage",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 4
+   },
+   {
+    "move": "assurance",
+    "level": 7
+   },
+   {
+    "move": "dragon-rage",
+    "level": 10
+   },
+   {
+    "move": "dual-chop",
+    "level": 13
+   },
+   {
+    "move": "scary-face",
+    "level": 16
+   },
+   {
+    "move": "slash",
+    "level": 20
+   },
+   {
+    "move": "false-swipe",
+    "level": 24
+   },
+   {
+    "move": "dragon-claw",
+    "level": 28
+   },
+   {
+    "move": "dragon-dance",
+    "level": 32
+   },
+   {
+    "move": "taunt",
+    "level": 36
+   },
+   {
+    "move": "dragon-pulse",
+    "level": 42
+   },
+   {
+    "move": "swords-dance",
+    "level": 48
+   },
+   {
+    "move": "guillotine",
+    "level": 54
+   },
+   {
+    "move": "outrage",
+    "level": 60
+   },
+   {
+    "move": "giga-impact",
+    "level": 66
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "superpower",
+   "endeavor",
+   "aqua-tail",
+   "dragon-pulse",
+   "draco-meteor",
+   "dual-chop"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "payback",
+   "fling",
+   "poison-jab",
+   "x-scissor",
+   "giga-impact",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "incinerate",
+   "dragon-tail"
+  ]
+ }
+}

@@ -1,0 +1,161 @@
+{
+ "id": "swoobat",
+ "name": "Swoobat",
+ "dex": 528,
+ "types": [
+  "psychic",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 67,
+  "attack": 57,
+  "defense": 55,
+  "special_attack": 77,
+  "special_defense": 55,
+  "speed": 114
+ },
+ "abilities": [
+  "unaware",
+  "klutz",
+  "simple"
+ ],
+ "base_experience": 149,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 1
+   },
+   {
+    "move": "gust",
+    "level": 1
+   },
+   {
+    "move": "assurance",
+    "level": 1
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 4
+   },
+   {
+    "move": "gust",
+    "level": 8
+   },
+   {
+    "move": "assurance",
+    "level": 12
+   },
+   {
+    "move": "heart-stamp",
+    "level": 15
+   },
+   {
+    "move": "imprison",
+    "level": 19
+   },
+   {
+    "move": "air-cutter",
+    "level": 21
+   },
+   {
+    "move": "attract",
+    "level": 25
+   },
+   {
+    "move": "amnesia",
+    "level": 29
+   },
+   {
+    "move": "calm-mind",
+    "level": 29
+   },
+   {
+    "move": "air-slash",
+    "level": 32
+   },
+   {
+    "move": "future-sight",
+    "level": 36
+   },
+   {
+    "move": "psychic",
+    "level": 41
+   },
+   {
+    "move": "endeavor",
+    "level": 47
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "super-fang",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "uproar",
+   "heat-wave",
+   "helping-hand",
+   "trick",
+   "magic-coat",
+   "knock-off",
+   "endeavor",
+   "skill-swap",
+   "signal-beam",
+   "roost",
+   "tailwind",
+   "zen-headbutt",
+   "after-you"
+  ],
+  "machine": [
+   "fly",
+   "hyper-beam",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "calm-mind",
+   "gyro-ball",
+   "pluck",
+   "u-turn",
+   "embargo",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "acrobatics"
+  ]
+ }
+}

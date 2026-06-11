@@ -1,0 +1,117 @@
+{
+ "id": "beautifly",
+ "name": "Beautifly",
+ "dex": 267,
+ "types": [
+  "bug",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 70,
+  "defense": 50,
+  "special_attack": 100,
+  "special_defense": 50,
+  "speed": 65
+ },
+ "abilities": [
+  "swarm",
+  "rivalry"
+ ],
+ "base_experience": 178,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "absorb",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 10
+   },
+   {
+    "move": "gust",
+    "level": 13
+   },
+   {
+    "move": "stun-spore",
+    "level": 17
+   },
+   {
+    "move": "morning-sun",
+    "level": 20
+   },
+   {
+    "move": "mega-drain",
+    "level": 24
+   },
+   {
+    "move": "whirlwind",
+    "level": 27
+   },
+   {
+    "move": "attract",
+    "level": 31
+   },
+   {
+    "move": "silver-wind",
+    "level": 34
+   },
+   {
+    "move": "giga-drain",
+    "level": 38
+   },
+   {
+    "move": "bug-buzz",
+    "level": 41
+   },
+   {
+    "move": "quiver-dance",
+    "level": 45
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "signal-beam",
+   "roost",
+   "tailwind",
+   "bug-bite",
+   "electroweb"
+  ],
+  "machine": [
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "shadow-ball",
+   "facade",
+   "aerial-ace",
+   "u-turn",
+   "energy-ball",
+   "giga-impact",
+   "venoshock",
+   "round",
+   "acrobatics",
+   "struggle-bug"
+  ]
+ }
+}

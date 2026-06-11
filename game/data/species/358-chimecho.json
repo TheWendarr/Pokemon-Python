@@ -1,0 +1,151 @@
+{
+ "id": "chimecho",
+ "name": "Chimecho",
+ "dex": 358,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 50,
+  "defense": 80,
+  "special_attack": 95,
+  "special_defense": 90,
+  "speed": 65
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 159,
+ "growth_rate": "fast",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "wrap",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 6
+   },
+   {
+    "move": "astonish",
+    "level": 9
+   },
+   {
+    "move": "confusion",
+    "level": 14
+   },
+   {
+    "move": "uproar",
+    "level": 17
+   },
+   {
+    "move": "take-down",
+    "level": 22
+   },
+   {
+    "move": "yawn",
+    "level": 25
+   },
+   {
+    "move": "psywave",
+    "level": 30
+   },
+   {
+    "move": "double-edge",
+    "level": 33
+   },
+   {
+    "move": "heal-bell",
+    "level": 38
+   },
+   {
+    "move": "safeguard",
+    "level": 41
+   },
+   {
+    "move": "extrasensory",
+    "level": 46
+   },
+   {
+    "move": "heal-pulse",
+    "level": 49
+   },
+   {
+    "move": "synchronoise",
+    "level": 54
+   },
+   {
+    "move": "healing-wish",
+    "level": 57
+   }
+  ],
+  "egg": [
+   "disable",
+   "hypnosis",
+   "curse",
+   "future-sight",
+   "wish",
+   "skill-swap",
+   "stored-power"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "uproar",
+   "helping-hand",
+   "trick",
+   "magic-coat",
+   "recycle",
+   "knock-off",
+   "skill-swap",
+   "snatch",
+   "hyper-voice",
+   "signal-beam",
+   "gravity",
+   "last-resort",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "calm-mind",
+   "energy-ball",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice"
+  ]
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "id": "smeargle",
+ "name": "Smeargle",
+ "dex": 235,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 20,
+  "defense": 35,
+  "special_attack": 20,
+  "special_defense": 45,
+  "speed": 75
+ },
+ "abilities": [
+  "own-tempo",
+  "technician",
+  "moody"
+ ],
+ "base_experience": 88,
+ "growth_rate": "fast",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "sketch",
+    "level": 1
+   },
+   {
+    "move": "sketch",
+    "level": 11
+   },
+   {
+    "move": "sketch",
+    "level": 21
+   },
+   {
+    "move": "sketch",
+    "level": 31
+   },
+   {
+    "move": "sketch",
+    "level": 41
+   },
+   {
+    "move": "sketch",
+    "level": 51
+   },
+   {
+    "move": "sketch",
+    "level": 61
+   },
+   {
+    "move": "sketch",
+    "level": 71
+   },
+   {
+    "move": "sketch",
+    "level": 81
+   },
+   {
+    "move": "sketch",
+    "level": 91
+   }
+  ],
+  "egg": [],
+  "tutor": [],
+  "machine": []
+ }
+}

@@ -1,0 +1,153 @@
+{
+ "id": "spinda",
+ "name": "Spinda",
+ "dex": 327,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 60,
+  "defense": 60,
+  "special_attack": 60,
+  "special_defense": 60,
+  "speed": 60
+ },
+ "abilities": [
+  "own-tempo",
+  "tangled-feet",
+  "contrary"
+ ],
+ "base_experience": 126,
+ "growth_rate": "fast",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "uproar",
+    "level": 5
+   },
+   {
+    "move": "copycat",
+    "level": 10
+   },
+   {
+    "move": "feint-attack",
+    "level": 14
+   },
+   {
+    "move": "psybeam",
+    "level": 19
+   },
+   {
+    "move": "hypnosis",
+    "level": 23
+   },
+   {
+    "move": "dizzy-punch",
+    "level": 28
+   },
+   {
+    "move": "sucker-punch",
+    "level": 32
+   },
+   {
+    "move": "teeter-dance",
+    "level": 37
+   },
+   {
+    "move": "psych-up",
+    "level": 41
+   },
+   {
+    "move": "double-edge",
+    "level": 46
+   },
+   {
+    "move": "flail",
+    "level": 50
+   },
+   {
+    "move": "thrash",
+    "level": 55
+   }
+  ],
+  "egg": [
+   "disable",
+   "icy-wind",
+   "baton-pass",
+   "encore",
+   "rapid-spin",
+   "fake-out",
+   "smelling-salts",
+   "trick",
+   "role-play",
+   "wish",
+   "assist",
+   "fake-tears",
+   "water-pulse",
+   "psycho-cut"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "helping-hand",
+   "trick",
+   "role-play",
+   "recycle",
+   "skill-swap",
+   "snatch",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "drain-punch",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "strength",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "calm-mind",
+   "fling",
+   "trick-room",
+   "round",
+   "retaliate",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

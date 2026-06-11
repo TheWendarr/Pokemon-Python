@@ -1,0 +1,140 @@
+{
+ "id": "frillish-male",
+ "name": "Frillish Male",
+ "dex": 592,
+ "types": [
+  "water",
+  "ghost"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 40,
+  "defense": 50,
+  "special_attack": 65,
+  "special_defense": 85,
+  "speed": 40
+ },
+ "abilities": [
+  "water-absorb",
+  "cursed-body",
+  "damp"
+ ],
+ "base_experience": 67,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "water-sport",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 5
+   },
+   {
+    "move": "night-shade",
+    "level": 9
+   },
+   {
+    "move": "bubble-beam",
+    "level": 13
+   },
+   {
+    "move": "recover",
+    "level": 17
+   },
+   {
+    "move": "water-pulse",
+    "level": 22
+   },
+   {
+    "move": "ominous-wind",
+    "level": 27
+   },
+   {
+    "move": "brine",
+    "level": 32
+   },
+   {
+    "move": "rain-dance",
+    "level": 37
+   },
+   {
+    "move": "hex",
+    "level": 43
+   },
+   {
+    "move": "hydro-pump",
+    "level": 49
+   },
+   {
+    "move": "wring-out",
+    "level": 55
+   },
+   {
+    "move": "water-spout",
+    "level": 61
+   }
+  ],
+  "egg": [
+   "mist",
+   "recover",
+   "confuse-ray",
+   "constrict",
+   "acid-armor",
+   "pain-split"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "spite",
+   "icy-wind",
+   "giga-drain",
+   "sleep-talk",
+   "pain-split",
+   "trick",
+   "magic-coat",
+   "dark-pulse"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "psychic",
+   "double-team",
+   "waterfall",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "hail",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "dive",
+   "energy-ball",
+   "trick-room",
+   "sludge-wave",
+   "round",
+   "scald"
+  ]
+ }
+}

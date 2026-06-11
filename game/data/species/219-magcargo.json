@@ -1,0 +1,147 @@
+{
+ "id": "magcargo",
+ "name": "Magcargo",
+ "dex": 219,
+ "types": [
+  "fire",
+  "rock"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 50,
+  "defense": 120,
+  "special_attack": 90,
+  "special_defense": 80,
+  "speed": 30
+ },
+ "abilities": [
+  "magma-armor",
+  "flame-body",
+  "weak-armor"
+ ],
+ "base_experience": 151,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "yawn",
+    "level": 1
+   },
+   {
+    "move": "smog",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "rock-throw",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 5
+   },
+   {
+    "move": "rock-throw",
+    "level": 10
+   },
+   {
+    "move": "harden",
+    "level": 14
+   },
+   {
+    "move": "recover",
+    "level": 19
+   },
+   {
+    "move": "flame-burst",
+    "level": 23
+   },
+   {
+    "move": "ancient-power",
+    "level": 28
+   },
+   {
+    "move": "amnesia",
+    "level": 32
+   },
+   {
+    "move": "lava-plume",
+    "level": 37
+   },
+   {
+    "move": "shell-smash",
+    "level": 38
+   },
+   {
+    "move": "rock-slide",
+    "level": 44
+   },
+   {
+    "move": "body-slam",
+    "level": 52
+   },
+   {
+    "move": "flamethrower",
+    "level": 59
+   },
+   {
+    "move": "earth-power",
+    "level": 67
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "pain-split",
+   "heat-wave",
+   "iron-defense",
+   "earth-power",
+   "stealth-rock",
+   "after-you"
+  ],
+  "machine": [
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "fire-blast",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "overheat",
+   "rock-tomb",
+   "gyro-ball",
+   "rock-polish",
+   "giga-impact",
+   "stone-edge",
+   "smack-down",
+   "flame-charge",
+   "round",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

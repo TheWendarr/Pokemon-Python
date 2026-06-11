@@ -1,0 +1,129 @@
+{
+ "id": "seaking",
+ "name": "Seaking",
+ "dex": 119,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 92,
+  "defense": 65,
+  "special_attack": 65,
+  "special_defense": 80,
+  "speed": 68
+ },
+ "abilities": [
+  "swift-swim",
+  "water-veil",
+  "lightning-rod"
+ ],
+ "base_experience": 158,
+ "growth_rate": "medium",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "poison-jab",
+    "level": 1
+   },
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "water-sport",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 7
+   },
+   {
+    "move": "horn-attack",
+    "level": 11
+   },
+   {
+    "move": "water-pulse",
+    "level": 17
+   },
+   {
+    "move": "flail",
+    "level": 21
+   },
+   {
+    "move": "aqua-ring",
+    "level": 27
+   },
+   {
+    "move": "fury-attack",
+    "level": 31
+   },
+   {
+    "move": "waterfall",
+    "level": 40
+   },
+   {
+    "move": "horn-drill",
+    "level": 47
+   },
+   {
+    "move": "agility",
+    "level": 56
+   },
+   {
+    "move": "soak",
+    "level": 63
+   },
+   {
+    "move": "megahorn",
+    "level": 72
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "knock-off",
+   "signal-beam",
+   "bounce",
+   "aqua-tail",
+   "drill-run"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "dive",
+   "poison-jab",
+   "giga-impact",
+   "round",
+   "scald"
+  ]
+ }
+}

@@ -1,0 +1,143 @@
+{
+ "id": "golett",
+ "name": "Golett",
+ "dex": 622,
+ "types": [
+  "ground",
+  "ghost"
+ ],
+ "base_stats": {
+  "hp": 59,
+  "attack": 74,
+  "defense": 50,
+  "special_attack": 35,
+  "special_defense": 50,
+  "speed": 35
+ },
+ "abilities": [
+  "iron-fist",
+  "klutz",
+  "no-guard"
+ ],
+ "base_experience": 61,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 5
+   },
+   {
+    "move": "rollout",
+    "level": 9
+   },
+   {
+    "move": "shadow-punch",
+    "level": 13
+   },
+   {
+    "move": "iron-defense",
+    "level": 17
+   },
+   {
+    "move": "mega-punch",
+    "level": 21
+   },
+   {
+    "move": "magnitude",
+    "level": 25
+   },
+   {
+    "move": "dynamic-punch",
+    "level": 30
+   },
+   {
+    "move": "night-shade",
+    "level": 35
+   },
+   {
+    "move": "curse",
+    "level": 40
+   },
+   {
+    "move": "earthquake",
+    "level": 45
+   },
+   {
+    "move": "hammer-arm",
+    "level": 50
+   },
+   {
+    "move": "focus-punch",
+    "level": 55
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "superpower",
+   "magic-coat",
+   "signal-beam",
+   "iron-defense",
+   "block",
+   "gravity",
+   "drain-punch",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "ice-beam",
+   "strength",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "gyro-ball",
+   "fling",
+   "rock-polish",
+   "focus-blast",
+   "grass-knot",
+   "telekinesis",
+   "low-sweep",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

@@ -1,0 +1,132 @@
+{
+ "id": "zapdos",
+ "name": "Zapdos",
+ "dex": 145,
+ "types": [
+  "electric",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 90,
+  "defense": 85,
+  "special_attack": 125,
+  "special_defense": 90,
+  "speed": 100
+ },
+ "abilities": [
+  "pressure",
+  "static"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "thunder-shock",
+    "level": 1
+   },
+   {
+    "move": "thunder-wave",
+    "level": 8
+   },
+   {
+    "move": "detect",
+    "level": 15
+   },
+   {
+    "move": "pluck",
+    "level": 22
+   },
+   {
+    "move": "ancient-power",
+    "level": 29
+   },
+   {
+    "move": "charge",
+    "level": 36
+   },
+   {
+    "move": "agility",
+    "level": 43
+   },
+   {
+    "move": "discharge",
+    "level": 50
+   },
+   {
+    "move": "roost",
+    "level": 57
+   },
+   {
+    "move": "light-screen",
+    "level": 64
+   },
+   {
+    "move": "drill-peck",
+    "level": 71
+   },
+   {
+    "move": "thunder",
+    "level": 78
+   },
+   {
+    "move": "rain-dance",
+    "level": 85
+   },
+   {
+    "move": "zap-cannon",
+    "level": 92
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "sleep-talk",
+   "heat-wave",
+   "signal-beam",
+   "roost",
+   "tailwind"
+  ],
+  "machine": [
+   "fly",
+   "roar",
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "giga-impact",
+   "charge-beam",
+   "round",
+   "sky-drop",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

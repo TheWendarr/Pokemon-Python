@@ -1,0 +1,157 @@
+{
+ "id": "stantler",
+ "name": "Stantler",
+ "dex": 234,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 73,
+  "attack": 95,
+  "defense": 62,
+  "special_attack": 85,
+  "special_defense": 65,
+  "speed": 85
+ },
+ "abilities": [
+  "intimidate",
+  "frisk",
+  "sap-sipper"
+ ],
+ "base_experience": 163,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 3
+   },
+   {
+    "move": "astonish",
+    "level": 7
+   },
+   {
+    "move": "hypnosis",
+    "level": 10
+   },
+   {
+    "move": "stomp",
+    "level": 13
+   },
+   {
+    "move": "sand-attack",
+    "level": 16
+   },
+   {
+    "move": "take-down",
+    "level": 21
+   },
+   {
+    "move": "confuse-ray",
+    "level": 23
+   },
+   {
+    "move": "calm-mind",
+    "level": 27
+   },
+   {
+    "move": "role-play",
+    "level": 33
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 38
+   },
+   {
+    "move": "jump-kick",
+    "level": 43
+   },
+   {
+    "move": "imprison",
+    "level": 49
+   },
+   {
+    "move": "captivate",
+    "level": 53
+   },
+   {
+    "move": "me-first",
+    "level": 55
+   }
+  ],
+  "egg": [
+   "double-kick",
+   "thrash",
+   "bite",
+   "disable",
+   "rage",
+   "spite",
+   "megahorn",
+   "mud-sport",
+   "extrasensory",
+   "me-first",
+   "zen-headbutt"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "role-play",
+   "skill-swap",
+   "signal-beam",
+   "bounce",
+   "gravity",
+   "last-resort",
+   "zen-headbutt",
+   "magic-room"
+  ],
+  "machine": [
+   "roar",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "calm-mind",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "charge-beam",
+   "psyshock",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

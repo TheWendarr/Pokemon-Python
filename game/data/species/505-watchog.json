@@ -1,0 +1,164 @@
+{
+ "id": "watchog",
+ "name": "Watchog",
+ "dex": 505,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 85,
+  "defense": 69,
+  "special_attack": 60,
+  "special_defense": 69,
+  "speed": 77
+ },
+ "abilities": [
+  "illuminate",
+  "keen-eye",
+  "analytic"
+ ],
+ "base_experience": 147,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "low-kick",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 3
+   },
+   {
+    "move": "bite",
+    "level": 6
+   },
+   {
+    "move": "bide",
+    "level": 8
+   },
+   {
+    "move": "detect",
+    "level": 11
+   },
+   {
+    "move": "sand-attack",
+    "level": 13
+   },
+   {
+    "move": "crunch",
+    "level": 16
+   },
+   {
+    "move": "hypnosis",
+    "level": 18
+   },
+   {
+    "move": "confuse-ray",
+    "level": 20
+   },
+   {
+    "move": "super-fang",
+    "level": 22
+   },
+   {
+    "move": "after-you",
+    "level": 25
+   },
+   {
+    "move": "psych-up",
+    "level": 29
+   },
+   {
+    "move": "hyper-fang",
+    "level": 32
+   },
+   {
+    "move": "mean-look",
+    "level": 36
+   },
+   {
+    "move": "baton-pass",
+    "level": 39
+   },
+   {
+    "move": "slam",
+    "level": 43
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "super-fang",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "knock-off",
+   "endeavor",
+   "signal-beam",
+   "covet",
+   "last-resort",
+   "aqua-tail",
+   "seed-bomb",
+   "zen-headbutt",
+   "gunk-shot",
+   "after-you"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "grass-knot",
+   "round",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

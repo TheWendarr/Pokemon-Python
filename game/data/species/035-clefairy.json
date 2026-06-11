@@ -1,0 +1,189 @@
+{
+ "id": "clefairy",
+ "name": "Clefairy",
+ "dex": 35,
+ "types": [
+  "fairy"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 45,
+  "defense": 48,
+  "special_attack": 60,
+  "special_defense": 65,
+  "speed": 35
+ },
+ "abilities": [
+  "cute-charm",
+  "magic-guard",
+  "friend-guard"
+ ],
+ "base_experience": 113,
+ "growth_rate": "fast",
+ "catch_rate": 150,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "encore",
+    "level": 4
+   },
+   {
+    "move": "sing",
+    "level": 7
+   },
+   {
+    "move": "double-slap",
+    "level": 10
+   },
+   {
+    "move": "defense-curl",
+    "level": 13
+   },
+   {
+    "move": "follow-me",
+    "level": 16
+   },
+   {
+    "move": "bestow",
+    "level": 19
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 22
+   },
+   {
+    "move": "minimize",
+    "level": 25
+   },
+   {
+    "move": "stored-power",
+    "level": 28
+   },
+   {
+    "move": "metronome",
+    "level": 31
+   },
+   {
+    "move": "cosmic-power",
+    "level": 34
+   },
+   {
+    "move": "lucky-chant",
+    "level": 37
+   },
+   {
+    "move": "body-slam",
+    "level": 40
+   },
+   {
+    "move": "moonlight",
+    "level": 43
+   },
+   {
+    "move": "light-screen",
+    "level": 46
+   },
+   {
+    "move": "gravity",
+    "level": 49
+   },
+   {
+    "move": "meteor-mash",
+    "level": 52
+   },
+   {
+    "move": "healing-wish",
+    "level": 55
+   },
+   {
+    "move": "after-you",
+    "level": 58
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "helping-hand",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "knock-off",
+   "endeavor",
+   "snatch",
+   "hyper-voice",
+   "signal-beam",
+   "bounce",
+   "covet",
+   "gravity",
+   "last-resort",
+   "drain-punch",
+   "zen-headbutt",
+   "stealth-rock",
+   "wonder-room",
+   "after-you"
+  ],
+  "machine": [
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "calm-mind",
+   "fling",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

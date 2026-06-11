@@ -1,0 +1,147 @@
+{
+ "id": "stunfisk",
+ "name": "Stunfisk",
+ "dex": 618,
+ "types": [
+  "ground",
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 109,
+  "attack": 66,
+  "defense": 84,
+  "special_attack": 81,
+  "special_defense": 99,
+  "speed": 32
+ },
+ "abilities": [
+  "static",
+  "limber",
+  "sand-veil"
+ ],
+ "base_experience": 165,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "mud-slap",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 1
+   },
+   {
+    "move": "bide",
+    "level": 5
+   },
+   {
+    "move": "thunder-shock",
+    "level": 9
+   },
+   {
+    "move": "mud-shot",
+    "level": 13
+   },
+   {
+    "move": "camouflage",
+    "level": 17
+   },
+   {
+    "move": "mud-bomb",
+    "level": 21
+   },
+   {
+    "move": "discharge",
+    "level": 25
+   },
+   {
+    "move": "endure",
+    "level": 30
+   },
+   {
+    "move": "bounce",
+    "level": 35
+   },
+   {
+    "move": "muddy-water",
+    "level": 40
+   },
+   {
+    "move": "thunderbolt",
+    "level": 45
+   },
+   {
+    "move": "revenge",
+    "level": 50
+   },
+   {
+    "move": "flail",
+    "level": 55
+   },
+   {
+    "move": "fissure",
+    "level": 61
+   }
+  ],
+  "egg": [
+   "curse",
+   "spite",
+   "spark",
+   "sleep-talk",
+   "pain-split",
+   "yawn",
+   "astonish",
+   "shock-wave",
+   "earth-power"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "sleep-talk",
+   "pain-split",
+   "uproar",
+   "endeavor",
+   "bounce",
+   "magnet-rise",
+   "aqua-tail",
+   "earth-power",
+   "stealth-rock",
+   "foul-play",
+   "electroweb"
+  ],
+  "machine": [
+   "surf",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "facade",
+   "rock-tomb",
+   "payback",
+   "stone-edge",
+   "sludge-wave",
+   "round",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

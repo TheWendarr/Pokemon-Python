@@ -1,0 +1,148 @@
+{
+ "id": "swampert",
+ "name": "Swampert",
+ "dex": 260,
+ "types": [
+  "water",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 100,
+  "attack": 110,
+  "defense": 90,
+  "special_attack": 85,
+  "special_defense": 90,
+  "speed": 60
+ },
+ "abilities": [
+  "torrent",
+  "damp"
+ ],
+ "base_experience": 241,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 6
+   },
+   {
+    "move": "water-gun",
+    "level": 10
+   },
+   {
+    "move": "bide",
+    "level": 15
+   },
+   {
+    "move": "mud-shot",
+    "level": 16
+   },
+   {
+    "move": "foresight",
+    "level": 20
+   },
+   {
+    "move": "mud-bomb",
+    "level": 25
+   },
+   {
+    "move": "take-down",
+    "level": 31
+   },
+   {
+    "move": "muddy-water",
+    "level": 39
+   },
+   {
+    "move": "protect",
+    "level": 46
+   },
+   {
+    "move": "earthquake",
+    "level": 52
+   },
+   {
+    "move": "endeavor",
+    "level": 61
+   },
+   {
+    "move": "hammer-arm",
+    "level": 69
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "superpower",
+   "endeavor",
+   "hydro-cannon",
+   "aqua-tail",
+   "earth-power",
+   "stealth-rock",
+   "water-pledge"
+  ],
+  "machine": [
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "sludge-wave",
+   "round",
+   "echoed-voice",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

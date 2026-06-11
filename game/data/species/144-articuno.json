@@ -1,0 +1,129 @@
+{
+ "id": "articuno",
+ "name": "Articuno",
+ "dex": 144,
+ "types": [
+  "ice",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 85,
+  "defense": 100,
+  "special_attack": 95,
+  "special_defense": 125,
+  "speed": 85
+ },
+ "abilities": [
+  "pressure",
+  "snow-cloak"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "gust",
+    "level": 1
+   },
+   {
+    "move": "powder-snow",
+    "level": 1
+   },
+   {
+    "move": "mist",
+    "level": 8
+   },
+   {
+    "move": "ice-shard",
+    "level": 15
+   },
+   {
+    "move": "mind-reader",
+    "level": 22
+   },
+   {
+    "move": "ancient-power",
+    "level": 29
+   },
+   {
+    "move": "agility",
+    "level": 36
+   },
+   {
+    "move": "ice-beam",
+    "level": 43
+   },
+   {
+    "move": "reflect",
+    "level": 50
+   },
+   {
+    "move": "roost",
+    "level": 57
+   },
+   {
+    "move": "tailwind",
+    "level": 64
+   },
+   {
+    "move": "blizzard",
+    "level": 71
+   },
+   {
+    "move": "sheer-cold",
+    "level": 78
+   },
+   {
+    "move": "hail",
+    "level": 85
+   },
+   {
+    "move": "hurricane",
+    "level": 92
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "signal-beam",
+   "roost",
+   "tailwind"
+  ],
+  "machine": [
+   "fly",
+   "roar",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "toxic",
+   "double-team",
+   "reflect",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "hail",
+   "facade",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "giga-impact",
+   "round",
+   "sky-drop",
+   "frost-breath"
+  ]
+ }
+}

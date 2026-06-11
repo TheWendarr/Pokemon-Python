@@ -1,0 +1,162 @@
+{
+ "id": "persian",
+ "name": "Persian",
+ "dex": 53,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 70,
+  "defense": 60,
+  "special_attack": 65,
+  "special_defense": 65,
+  "speed": 115
+ },
+ "abilities": [
+  "limber",
+  "technician",
+  "unnerve"
+ ],
+ "base_experience": 154,
+ "growth_rate": "medium",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "switcheroo",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "fake-out",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 6
+   },
+   {
+    "move": "fake-out",
+    "level": 9
+   },
+   {
+    "move": "fury-swipes",
+    "level": 14
+   },
+   {
+    "move": "screech",
+    "level": 17
+   },
+   {
+    "move": "feint-attack",
+    "level": 22
+   },
+   {
+    "move": "taunt",
+    "level": 25
+   },
+   {
+    "move": "swift",
+    "level": 28
+   },
+   {
+    "move": "power-gem",
+    "level": 32
+   },
+   {
+    "move": "slash",
+    "level": 37
+   },
+   {
+    "move": "nasty-plot",
+    "level": 44
+   },
+   {
+    "move": "assurance",
+    "level": 49
+   },
+   {
+    "move": "captivate",
+    "level": 56
+   },
+   {
+    "move": "night-slash",
+    "level": 61
+   },
+   {
+    "move": "feint",
+    "level": 68
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "knock-off",
+   "snatch",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "dark-pulse",
+   "seed-bomb",
+   "gunk-shot",
+   "foul-play"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "hyper-beam",
+   "thunderbolt",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "u-turn",
+   "payback",
+   "embargo",
+   "giga-impact",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

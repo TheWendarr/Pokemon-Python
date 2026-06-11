@@ -1,0 +1,160 @@
+{
+ "id": "hariyama",
+ "name": "Hariyama",
+ "dex": 297,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 144,
+  "attack": 120,
+  "defense": 60,
+  "special_attack": 40,
+  "special_defense": 60,
+  "speed": 50
+ },
+ "abilities": [
+  "thick-fat",
+  "guts",
+  "sheer-force"
+ ],
+ "base_experience": 166,
+ "growth_rate": "fast-then-very-slow",
+ "catch_rate": 200,
+ "gender_rate": 2,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "brine",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 1
+   },
+   {
+    "move": "arm-thrust",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 4
+   },
+   {
+    "move": "arm-thrust",
+    "level": 7
+   },
+   {
+    "move": "vital-throw",
+    "level": 10
+   },
+   {
+    "move": "fake-out",
+    "level": 13
+   },
+   {
+    "move": "whirlwind",
+    "level": 16
+   },
+   {
+    "move": "knock-off",
+    "level": 19
+   },
+   {
+    "move": "smelling-salts",
+    "level": 22
+   },
+   {
+    "move": "belly-drum",
+    "level": 27
+   },
+   {
+    "move": "force-palm",
+    "level": 32
+   },
+   {
+    "move": "seismic-toss",
+    "level": 37
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 42
+   },
+   {
+    "move": "endure",
+    "level": 47
+   },
+   {
+    "move": "close-combat",
+    "level": 52
+   },
+   {
+    "move": "reversal",
+    "level": 57
+   },
+   {
+    "move": "heavy-slam",
+    "level": 62
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "helping-hand",
+   "role-play",
+   "superpower",
+   "knock-off",
+   "iron-head"
+  ],
+  "machine": [
+   "surf",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "smack-down",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

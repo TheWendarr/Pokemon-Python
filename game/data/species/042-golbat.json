@@ -1,0 +1,136 @@
+{
+ "id": "golbat",
+ "name": "Golbat",
+ "dex": 42,
+ "types": [
+  "poison",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 80,
+  "defense": 70,
+  "special_attack": 65,
+  "special_defense": 75,
+  "speed": 90
+ },
+ "abilities": [
+  "inner-focus",
+  "infiltrator"
+ ],
+ "base_experience": 159,
+ "growth_rate": "medium",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "screech",
+    "level": 1
+   },
+   {
+    "move": "leech-life",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 4
+   },
+   {
+    "move": "astonish",
+    "level": 8
+   },
+   {
+    "move": "bite",
+    "level": 12
+   },
+   {
+    "move": "wing-attack",
+    "level": 15
+   },
+   {
+    "move": "confuse-ray",
+    "level": 19
+   },
+   {
+    "move": "swift",
+    "level": 24
+   },
+   {
+    "move": "air-cutter",
+    "level": 28
+   },
+   {
+    "move": "acrobatics",
+    "level": 33
+   },
+   {
+    "move": "mean-look",
+    "level": 38
+   },
+   {
+    "move": "poison-fang",
+    "level": 42
+   },
+   {
+    "move": "haze",
+    "level": 47
+   },
+   {
+    "move": "air-slash",
+    "level": 52
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "uproar",
+   "heat-wave",
+   "snatch",
+   "roost",
+   "tailwind",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "fly",
+   "hyper-beam",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "payback",
+   "giga-impact",
+   "venoshock",
+   "round",
+   "acrobatics"
+  ]
+ }
+}

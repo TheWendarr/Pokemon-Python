@@ -1,0 +1,132 @@
+{
+ "id": "umbreon",
+ "name": "Umbreon",
+ "dex": 197,
+ "types": [
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 95,
+  "attack": 65,
+  "defense": 110,
+  "special_attack": 60,
+  "special_defense": 130,
+  "speed": 65
+ },
+ "abilities": [
+  "synchronize",
+  "inner-focus"
+ ],
+ "base_experience": 184,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "helping-hand",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 5
+   },
+   {
+    "move": "pursuit",
+    "level": 9
+   },
+   {
+    "move": "quick-attack",
+    "level": 13
+   },
+   {
+    "move": "confuse-ray",
+    "level": 17
+   },
+   {
+    "move": "feint-attack",
+    "level": 21
+   },
+   {
+    "move": "assurance",
+    "level": 25
+   },
+   {
+    "move": "screech",
+    "level": 29
+   },
+   {
+    "move": "moonlight",
+    "level": 33
+   },
+   {
+    "move": "mean-look",
+    "level": 37
+   },
+   {
+    "move": "last-resort",
+    "level": 41
+   },
+   {
+    "move": "guard-swap",
+    "level": 45
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "helping-hand",
+   "snatch",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "dark-pulse",
+   "wonder-room",
+   "foul-play"
+  ],
+  "machine": [
+   "cut",
+   "hyper-beam",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "payback",
+   "giga-impact",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up",
+   "snarl"
+  ]
+ }
+}

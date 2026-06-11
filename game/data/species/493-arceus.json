@@ -1,0 +1,184 @@
+{
+ "id": "arceus",
+ "name": "Arceus",
+ "dex": 493,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 120,
+  "attack": 120,
+  "defense": 120,
+  "special_attack": 120,
+  "special_defense": 120,
+  "speed": 120
+ },
+ "abilities": [
+  "multitype"
+ ],
+ "base_experience": 324,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "seismic-toss",
+    "level": 1
+   },
+   {
+    "move": "cosmic-power",
+    "level": 1
+   },
+   {
+    "move": "natural-gift",
+    "level": 1
+   },
+   {
+    "move": "punishment",
+    "level": 1
+   },
+   {
+    "move": "gravity",
+    "level": 10
+   },
+   {
+    "move": "earth-power",
+    "level": 20
+   },
+   {
+    "move": "hyper-voice",
+    "level": 30
+   },
+   {
+    "move": "extreme-speed",
+    "level": 40
+   },
+   {
+    "move": "refresh",
+    "level": 50
+   },
+   {
+    "move": "future-sight",
+    "level": 60
+   },
+   {
+    "move": "recover",
+    "level": 70
+   },
+   {
+    "move": "hyper-beam",
+    "level": 80
+   },
+   {
+    "move": "perish-song",
+    "level": 90
+   },
+   {
+    "move": "judgment",
+    "level": 100
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "outrage",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "heat-wave",
+   "trick",
+   "magic-coat",
+   "recycle",
+   "hyper-voice",
+   "signal-beam",
+   "iron-defense",
+   "gravity",
+   "tailwind",
+   "last-resort",
+   "dark-pulse",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "zen-headbutt",
+   "draco-meteor",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "fly",
+   "roar",
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "fire-blast",
+   "waterfall",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "hail",
+   "will-o-wisp",
+   "facade",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "calm-mind",
+   "payback",
+   "poison-jab",
+   "x-scissor",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "shadow-claw",
+   "flash-cannon",
+   "trick-room",
+   "stone-edge",
+   "grass-knot",
+   "charge-beam",
+   "hone-claws",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "quash",
+   "retaliate",
+   "bulldoze",
+   "work-up",
+   "snarl"
+  ]
+ }
+}

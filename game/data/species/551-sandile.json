@@ -1,0 +1,156 @@
+{
+ "id": "sandile",
+ "name": "Sandile",
+ "dex": 551,
+ "types": [
+  "ground",
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 72,
+  "defense": 35,
+  "special_attack": 35,
+  "special_defense": 35,
+  "speed": 65
+ },
+ "abilities": [
+  "intimidate",
+  "moxie",
+  "anger-point"
+ ],
+ "base_experience": 58,
+ "growth_rate": "medium-slow",
+ "catch_rate": 180,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "rage",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 4
+   },
+   {
+    "move": "sand-attack",
+    "level": 7
+   },
+   {
+    "move": "torment",
+    "level": 10
+   },
+   {
+    "move": "sand-tomb",
+    "level": 13
+   },
+   {
+    "move": "assurance",
+    "level": 16
+   },
+   {
+    "move": "mud-slap",
+    "level": 19
+   },
+   {
+    "move": "embargo",
+    "level": 22
+   },
+   {
+    "move": "swagger",
+    "level": 25
+   },
+   {
+    "move": "crunch",
+    "level": 28
+   },
+   {
+    "move": "dig",
+    "level": 31
+   },
+   {
+    "move": "scary-face",
+    "level": 34
+   },
+   {
+    "move": "foul-play",
+    "level": 37
+   },
+   {
+    "move": "sandstorm",
+    "level": 40
+   },
+   {
+    "move": "earthquake",
+    "level": 43
+   },
+   {
+    "move": "thrash",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "double-edge",
+   "counter",
+   "focus-energy",
+   "mean-look",
+   "pursuit",
+   "beat-up",
+   "uproar",
+   "thunder-fang",
+   "fire-fang",
+   "rock-climb"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "snatch",
+   "dark-pulse",
+   "aqua-tail",
+   "earth-power",
+   "stealth-rock",
+   "foul-play"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "torment",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "payback",
+   "embargo",
+   "stone-edge",
+   "hone-claws",
+   "round",
+   "incinerate",
+   "retaliate",
+   "bulldoze",
+   "snarl"
+  ]
+ }
+}

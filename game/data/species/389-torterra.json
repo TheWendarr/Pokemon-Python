@@ -1,0 +1,151 @@
+{
+ "id": "torterra",
+ "name": "Torterra",
+ "dex": 389,
+ "types": [
+  "grass",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 95,
+  "attack": 109,
+  "defense": 105,
+  "special_attack": 75,
+  "special_defense": 85,
+  "speed": 56
+ },
+ "abilities": [
+  "overgrow",
+  "shell-armor"
+ ],
+ "base_experience": 236,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "wood-hammer",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "withdraw",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 1
+   },
+   {
+    "move": "razor-leaf",
+    "level": 1
+   },
+   {
+    "move": "withdraw",
+    "level": 5
+   },
+   {
+    "move": "absorb",
+    "level": 9
+   },
+   {
+    "move": "razor-leaf",
+    "level": 13
+   },
+   {
+    "move": "curse",
+    "level": 17
+   },
+   {
+    "move": "bite",
+    "level": 22
+   },
+   {
+    "move": "mega-drain",
+    "level": 27
+   },
+   {
+    "move": "earthquake",
+    "level": 32
+   },
+   {
+    "move": "leech-seed",
+    "level": 33
+   },
+   {
+    "move": "synthesis",
+    "level": 39
+   },
+   {
+    "move": "crunch",
+    "level": 45
+   },
+   {
+    "move": "giga-drain",
+    "level": 51
+   },
+   {
+    "move": "leaf-storm",
+    "level": 57
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "outrage",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "synthesis",
+   "superpower",
+   "block",
+   "frenzy-plant",
+   "worry-seed",
+   "seed-bomb",
+   "earth-power",
+   "iron-head",
+   "stealth-rock",
+   "grass-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "rock-polish",
+   "energy-ball",
+   "giga-impact",
+   "stone-edge",
+   "grass-knot",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

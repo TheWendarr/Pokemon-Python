@@ -1,0 +1,133 @@
+{
+ "id": "mareep",
+ "name": "Mareep",
+ "dex": 179,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 40,
+  "defense": 40,
+  "special_attack": 65,
+  "special_defense": 45,
+  "speed": 35
+ },
+ "abilities": [
+  "static",
+  "plus"
+ ],
+ "base_experience": 56,
+ "growth_rate": "medium-slow",
+ "catch_rate": 235,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "thunder-wave",
+    "level": 4
+   },
+   {
+    "move": "thunder-shock",
+    "level": 8
+   },
+   {
+    "move": "cotton-spore",
+    "level": 11
+   },
+   {
+    "move": "charge",
+    "level": 15
+   },
+   {
+    "move": "take-down",
+    "level": 18
+   },
+   {
+    "move": "electro-ball",
+    "level": 22
+   },
+   {
+    "move": "confuse-ray",
+    "level": 25
+   },
+   {
+    "move": "power-gem",
+    "level": 29
+   },
+   {
+    "move": "discharge",
+    "level": 32
+   },
+   {
+    "move": "cotton-guard",
+    "level": 36
+   },
+   {
+    "move": "signal-beam",
+    "level": 39
+   },
+   {
+    "move": "light-screen",
+    "level": 43
+   },
+   {
+    "move": "thunder",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "sand-attack",
+   "body-slam",
+   "take-down",
+   "agility",
+   "screech",
+   "iron-tail",
+   "flatter",
+   "charge",
+   "odor-sleuth",
+   "after-you"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "signal-beam",
+   "magnet-rise",
+   "after-you"
+  ],
+  "machine": [
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "facade",
+   "charge-beam",
+   "round",
+   "echoed-voice",
+   "wild-charge"
+  ]
+ }
+}

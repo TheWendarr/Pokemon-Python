@@ -1,0 +1,136 @@
+{
+ "id": "chikorita",
+ "name": "Chikorita",
+ "dex": 152,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 49,
+  "defense": 65,
+  "special_attack": 49,
+  "special_defense": 65,
+  "speed": 45
+ },
+ "abilities": [
+  "overgrow",
+  "leaf-guard"
+ ],
+ "base_experience": 64,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "razor-leaf",
+    "level": 6
+   },
+   {
+    "move": "poison-powder",
+    "level": 9
+   },
+   {
+    "move": "synthesis",
+    "level": 12
+   },
+   {
+    "move": "reflect",
+    "level": 17
+   },
+   {
+    "move": "magical-leaf",
+    "level": 20
+   },
+   {
+    "move": "natural-gift",
+    "level": 23
+   },
+   {
+    "move": "sweet-scent",
+    "level": 28
+   },
+   {
+    "move": "light-screen",
+    "level": 31
+   },
+   {
+    "move": "body-slam",
+    "level": 34
+   },
+   {
+    "move": "safeguard",
+    "level": 39
+   },
+   {
+    "move": "aromatherapy",
+    "level": 42
+   },
+   {
+    "move": "solar-beam",
+    "level": 45
+   }
+  ],
+  "egg": [
+   "vine-whip",
+   "body-slam",
+   "counter",
+   "leech-seed",
+   "flail",
+   "ancient-power",
+   "nature-power",
+   "ingrain",
+   "refresh",
+   "aromatherapy",
+   "grass-whistle",
+   "wring-out",
+   "leaf-storm",
+   "heal-pulse"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "synthesis",
+   "magic-coat",
+   "worry-seed",
+   "seed-bomb",
+   "grass-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "energy-ball",
+   "grass-knot",
+   "round",
+   "echoed-voice"
+  ]
+ }
+}

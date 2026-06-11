@@ -1,0 +1,141 @@
+{
+ "id": "registeel",
+ "name": "Registeel",
+ "dex": 379,
+ "types": [
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 75,
+  "defense": 150,
+  "special_attack": 75,
+  "special_defense": 150,
+  "speed": 50
+ },
+ "abilities": [
+  "clear-body",
+  "light-metal"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "explosion",
+    "level": 1
+   },
+   {
+    "move": "stomp",
+    "level": 1
+   },
+   {
+    "move": "metal-claw",
+    "level": 9
+   },
+   {
+    "move": "curse",
+    "level": 17
+   },
+   {
+    "move": "superpower",
+    "level": 25
+   },
+   {
+    "move": "ancient-power",
+    "level": 33
+   },
+   {
+    "move": "iron-defense",
+    "level": 41
+   },
+   {
+    "move": "amnesia",
+    "level": 41
+   },
+   {
+    "move": "charge-beam",
+    "level": 49
+   },
+   {
+    "move": "lock-on",
+    "level": 57
+   },
+   {
+    "move": "zap-cannon",
+    "level": 65
+   },
+   {
+    "move": "iron-head",
+    "level": 73
+   },
+   {
+    "move": "flash-cannon",
+    "level": 73
+   },
+   {
+    "move": "hammer-arm",
+    "level": 81
+   },
+   {
+    "move": "hyper-beam",
+    "level": 89
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "superpower",
+   "iron-defense",
+   "block",
+   "gravity",
+   "magnet-rise",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "fling",
+   "rock-polish",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "flash-cannon",
+   "charge-beam",
+   "hone-claws",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

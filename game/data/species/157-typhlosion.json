@@ -1,0 +1,152 @@
+{
+ "id": "typhlosion",
+ "name": "Typhlosion",
+ "dex": 157,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 78,
+  "attack": 84,
+  "defense": 78,
+  "special_attack": 109,
+  "special_defense": 85,
+  "speed": 100
+ },
+ "abilities": [
+  "blaze",
+  "flash-fire"
+ ],
+ "base_experience": 240,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "gyro-ball",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "smokescreen",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "smokescreen",
+    "level": 6
+   },
+   {
+    "move": "ember",
+    "level": 10
+   },
+   {
+    "move": "quick-attack",
+    "level": 13
+   },
+   {
+    "move": "flame-wheel",
+    "level": 20
+   },
+   {
+    "move": "defense-curl",
+    "level": 24
+   },
+   {
+    "move": "swift",
+    "level": 31
+   },
+   {
+    "move": "flame-charge",
+    "level": 35
+   },
+   {
+    "move": "lava-plume",
+    "level": 43
+   },
+   {
+    "move": "flamethrower",
+    "level": 48
+   },
+   {
+    "move": "inferno",
+    "level": 56
+   },
+   {
+    "move": "rollout",
+    "level": 61
+   },
+   {
+    "move": "double-edge",
+    "level": 69
+   },
+   {
+    "move": "eruption",
+    "level": 74
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "heat-wave",
+   "blast-burn",
+   "covet",
+   "fire-pledge"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "aerial-ace",
+   "gyro-ball",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "flame-charge",
+   "round",
+   "incinerate",
+   "bulldoze",
+   "wild-charge"
+  ]
+ }
+}

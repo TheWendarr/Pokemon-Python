@@ -1,0 +1,156 @@
+{
+ "id": "metagross",
+ "name": "Metagross",
+ "dex": 376,
+ "types": [
+  "steel",
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 135,
+  "defense": 130,
+  "special_attack": 95,
+  "special_defense": 90,
+  "speed": 70
+ },
+ "abilities": [
+  "clear-body",
+  "light-metal"
+ ],
+ "base_experience": 270,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "magnet-rise",
+    "level": 1
+   },
+   {
+    "move": "take-down",
+    "level": 1
+   },
+   {
+    "move": "metal-claw",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 20
+   },
+   {
+    "move": "metal-claw",
+    "level": 20
+   },
+   {
+    "move": "pursuit",
+    "level": 23
+   },
+   {
+    "move": "miracle-eye",
+    "level": 26
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 29
+   },
+   {
+    "move": "bullet-punch",
+    "level": 32
+   },
+   {
+    "move": "scary-face",
+    "level": 35
+   },
+   {
+    "move": "agility",
+    "level": 38
+   },
+   {
+    "move": "psychic",
+    "level": 41
+   },
+   {
+    "move": "meteor-mash",
+    "level": 44
+   },
+   {
+    "move": "hammer-arm",
+    "level": 45
+   },
+   {
+    "move": "iron-defense",
+    "level": 53
+   },
+   {
+    "move": "hyper-beam",
+    "level": 62
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "trick",
+   "signal-beam",
+   "iron-defense",
+   "block",
+   "gravity",
+   "magnet-rise",
+   "zen-headbutt",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "cut",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "flash",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "gyro-ball",
+   "rock-polish",
+   "giga-impact",
+   "flash-cannon",
+   "grass-knot",
+   "hone-claws",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

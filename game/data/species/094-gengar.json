@@ -1,0 +1,161 @@
+{
+ "id": "gengar",
+ "name": "Gengar",
+ "dex": 94,
+ "types": [
+  "ghost",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 65,
+  "defense": 60,
+  "special_attack": 130,
+  "special_defense": 75,
+  "speed": 110
+ },
+ "abilities": [
+  "cursed-body"
+ ],
+ "base_experience": 225,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "hypnosis",
+    "level": 1
+   },
+   {
+    "move": "lick",
+    "level": 1
+   },
+   {
+    "move": "spite",
+    "level": 1
+   },
+   {
+    "move": "spite",
+    "level": 5
+   },
+   {
+    "move": "mean-look",
+    "level": 8
+   },
+   {
+    "move": "curse",
+    "level": 12
+   },
+   {
+    "move": "night-shade",
+    "level": 15
+   },
+   {
+    "move": "confuse-ray",
+    "level": 19
+   },
+   {
+    "move": "sucker-punch",
+    "level": 22
+   },
+   {
+    "move": "shadow-punch",
+    "level": 25
+   },
+   {
+    "move": "payback",
+    "level": 28
+   },
+   {
+    "move": "shadow-ball",
+    "level": 33
+   },
+   {
+    "move": "dream-eater",
+    "level": 39
+   },
+   {
+    "move": "dark-pulse",
+    "level": 44
+   },
+   {
+    "move": "destiny-bond",
+    "level": 50
+   },
+   {
+    "move": "hex",
+    "level": 55
+   },
+   {
+    "move": "nightmare",
+    "level": 61
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "spite",
+   "icy-wind",
+   "giga-drain",
+   "sleep-talk",
+   "pain-split",
+   "uproar",
+   "trick",
+   "role-play",
+   "knock-off",
+   "skill-swap",
+   "snatch",
+   "dark-pulse",
+   "drain-punch",
+   "wonder-room",
+   "foul-play"
+  ],
+  "machine": [
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "explosion",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "brick-break",
+   "payback",
+   "embargo",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "shadow-claw",
+   "trick-room",
+   "venoshock",
+   "telekinesis",
+   "round"
+  ]
+ }
+}

@@ -1,0 +1,160 @@
+{
+ "id": "samurott",
+ "name": "Samurott",
+ "dex": 503,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 95,
+  "attack": 100,
+  "defense": 85,
+  "special_attack": 108,
+  "special_defense": 70,
+  "speed": 70
+ },
+ "abilities": [
+  "torrent",
+  "shell-armor"
+ ],
+ "base_experience": 238,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "megahorn",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "water-sport",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 5
+   },
+   {
+    "move": "water-gun",
+    "level": 7
+   },
+   {
+    "move": "water-sport",
+    "level": 11
+   },
+   {
+    "move": "focus-energy",
+    "level": 13
+   },
+   {
+    "move": "razor-shell",
+    "level": 17
+   },
+   {
+    "move": "fury-cutter",
+    "level": 20
+   },
+   {
+    "move": "water-pulse",
+    "level": 25
+   },
+   {
+    "move": "revenge",
+    "level": 28
+   },
+   {
+    "move": "aqua-jet",
+    "level": 33
+   },
+   {
+    "move": "slash",
+    "level": 36
+   },
+   {
+    "move": "encore",
+    "level": 38
+   },
+   {
+    "move": "aqua-tail",
+    "level": 45
+   },
+   {
+    "move": "retaliate",
+    "level": 50
+   },
+   {
+    "move": "swords-dance",
+    "level": 57
+   },
+   {
+    "move": "hydro-pump",
+    "level": 62
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "superpower",
+   "knock-off",
+   "hydro-cannon",
+   "block",
+   "covet",
+   "aqua-tail",
+   "water-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "taunt",
+   "dive",
+   "aerial-ace",
+   "fling",
+   "x-scissor",
+   "giga-impact",
+   "grass-knot",
+   "round",
+   "scald",
+   "retaliate",
+   "dragon-tail"
+  ]
+ }
+}

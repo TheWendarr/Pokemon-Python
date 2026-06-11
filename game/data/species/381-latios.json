@@ -1,0 +1,168 @@
+{
+ "id": "latios",
+ "name": "Latios",
+ "dex": 381,
+ "types": [
+  "dragon",
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 90,
+  "defense": 80,
+  "special_attack": 130,
+  "special_defense": 110,
+  "speed": 110
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 270,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "psywave",
+    "level": 1
+   },
+   {
+    "move": "heal-block",
+    "level": 5
+   },
+   {
+    "move": "helping-hand",
+    "level": 10
+   },
+   {
+    "move": "safeguard",
+    "level": 15
+   },
+   {
+    "move": "dragon-breath",
+    "level": 20
+   },
+   {
+    "move": "protect",
+    "level": 25
+   },
+   {
+    "move": "refresh",
+    "level": 30
+   },
+   {
+    "move": "luster-purge",
+    "level": 35
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 40
+   },
+   {
+    "move": "recover",
+    "level": 45
+   },
+   {
+    "move": "psycho-shift",
+    "level": 50
+   },
+   {
+    "move": "dragon-dance",
+    "level": 55
+   },
+   {
+    "move": "psychic",
+    "level": 60
+   },
+   {
+    "move": "heal-pulse",
+    "level": 65
+   },
+   {
+    "move": "telekinesis",
+    "level": 70
+   },
+   {
+    "move": "power-split",
+    "level": 75
+   },
+   {
+    "move": "dragon-pulse",
+    "level": 80
+   },
+   {
+    "move": "memento",
+    "level": 85
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "helping-hand",
+   "trick",
+   "magic-coat",
+   "roost",
+   "tailwind",
+   "last-resort",
+   "dragon-pulse",
+   "zen-headbutt",
+   "draco-meteor",
+   "wonder-room"
+  ],
+  "machine": [
+   "cut",
+   "fly",
+   "roar",
+   "surf",
+   "ice-beam",
+   "hyper-beam",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "waterfall",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "dive",
+   "aerial-ace",
+   "dragon-claw",
+   "calm-mind",
+   "energy-ball",
+   "giga-impact",
+   "shadow-claw",
+   "grass-knot",
+   "charge-beam",
+   "hone-claws",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "retaliate",
+   "bulldoze"
+  ]
+ }
+}

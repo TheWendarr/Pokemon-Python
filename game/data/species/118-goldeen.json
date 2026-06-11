@@ -1,0 +1,131 @@
+{
+ "id": "goldeen",
+ "name": "Goldeen",
+ "dex": 118,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 67,
+  "defense": 60,
+  "special_attack": 35,
+  "special_defense": 50,
+  "speed": 63
+ },
+ "abilities": [
+  "swift-swim",
+  "water-veil",
+  "lightning-rod"
+ ],
+ "base_experience": 64,
+ "growth_rate": "medium",
+ "catch_rate": 225,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "water-sport",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 7
+   },
+   {
+    "move": "horn-attack",
+    "level": 11
+   },
+   {
+    "move": "water-pulse",
+    "level": 17
+   },
+   {
+    "move": "flail",
+    "level": 21
+   },
+   {
+    "move": "aqua-ring",
+    "level": 27
+   },
+   {
+    "move": "fury-attack",
+    "level": 31
+   },
+   {
+    "move": "waterfall",
+    "level": 37
+   },
+   {
+    "move": "horn-drill",
+    "level": 41
+   },
+   {
+    "move": "agility",
+    "level": 47
+   },
+   {
+    "move": "soak",
+    "level": 51
+   },
+   {
+    "move": "megahorn",
+    "level": 57
+   }
+  ],
+  "egg": [
+   "body-slam",
+   "hydro-pump",
+   "psybeam",
+   "haze",
+   "skull-bash",
+   "mud-slap",
+   "sleep-talk",
+   "mud-sport",
+   "signal-beam",
+   "mud-shot",
+   "aqua-tail"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "knock-off",
+   "signal-beam",
+   "bounce",
+   "aqua-tail",
+   "drill-run"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "dive",
+   "poison-jab",
+   "round",
+   "scald"
+  ]
+ }
+}

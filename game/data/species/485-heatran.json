@@ -1,0 +1,133 @@
+{
+ "id": "heatran",
+ "name": "Heatran",
+ "dex": 485,
+ "types": [
+  "fire",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 91,
+  "attack": 90,
+  "defense": 106,
+  "special_attack": 130,
+  "special_defense": 106,
+  "speed": 77
+ },
+ "abilities": [
+  "flash-fire",
+  "flame-body"
+ ],
+ "base_experience": 270,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ancient-power",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 9
+   },
+   {
+    "move": "fire-fang",
+    "level": 17
+   },
+   {
+    "move": "metal-sound",
+    "level": 25
+   },
+   {
+    "move": "crunch",
+    "level": 33
+   },
+   {
+    "move": "scary-face",
+    "level": 41
+   },
+   {
+    "move": "lava-plume",
+    "level": 49
+   },
+   {
+    "move": "fire-spin",
+    "level": 57
+   },
+   {
+    "move": "iron-head",
+    "level": 65
+   },
+   {
+    "move": "earth-power",
+    "level": 73
+   },
+   {
+    "move": "heat-wave",
+    "level": 81
+   },
+   {
+    "move": "stone-edge",
+    "level": 88
+   },
+   {
+    "move": "magma-storm",
+    "level": 96
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "heat-wave",
+   "iron-defense",
+   "dark-pulse",
+   "dragon-pulse",
+   "earth-power",
+   "iron-head",
+   "stealth-rock",
+   "bug-bite"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "overheat",
+   "rock-tomb",
+   "payback",
+   "giga-impact",
+   "flash-cannon",
+   "stone-edge",
+   "flame-charge",
+   "round",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

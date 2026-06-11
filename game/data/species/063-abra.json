@@ -1,0 +1,105 @@
+{
+ "id": "abra",
+ "name": "Abra",
+ "dex": 63,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 25,
+  "attack": 20,
+  "defense": 15,
+  "special_attack": 105,
+  "special_defense": 55,
+  "speed": 90
+ },
+ "abilities": [
+  "synchronize",
+  "inner-focus",
+  "magic-guard"
+ ],
+ "base_experience": 62,
+ "growth_rate": "medium-slow",
+ "catch_rate": 200,
+ "gender_rate": 2,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "teleport",
+    "level": 1
+   }
+  ],
+  "egg": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "barrier",
+   "encore",
+   "knock-off",
+   "skill-swap",
+   "power-trick",
+   "guard-swap",
+   "guard-split"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "knock-off",
+   "skill-swap",
+   "snatch",
+   "signal-beam",
+   "gravity",
+   "drain-punch",
+   "zen-headbutt",
+   "wonder-room",
+   "magic-room",
+   "foul-play"
+  ],
+  "machine": [
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "calm-mind",
+   "embargo",
+   "fling",
+   "energy-ball",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "ally-switch"
+  ]
+ }
+}

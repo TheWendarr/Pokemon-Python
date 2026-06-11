@@ -1,0 +1,131 @@
+{
+ "id": "herdier",
+ "name": "Herdier",
+ "dex": 507,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 80,
+  "defense": 65,
+  "special_attack": 35,
+  "special_defense": 65,
+  "speed": 60
+ },
+ "abilities": [
+  "intimidate",
+  "sand-rush",
+  "scrappy"
+ ],
+ "base_experience": 130,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 5
+   },
+   {
+    "move": "bite",
+    "level": 8
+   },
+   {
+    "move": "helping-hand",
+    "level": 12
+   },
+   {
+    "move": "take-down",
+    "level": 15
+   },
+   {
+    "move": "work-up",
+    "level": 20
+   },
+   {
+    "move": "crunch",
+    "level": 24
+   },
+   {
+    "move": "roar",
+    "level": 29
+   },
+   {
+    "move": "retaliate",
+    "level": 33
+   },
+   {
+    "move": "reversal",
+    "level": 38
+   },
+   {
+    "move": "last-resort",
+    "level": 42
+   },
+   {
+    "move": "giga-impact",
+    "level": 47
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "helping-hand",
+   "hyper-voice",
+   "covet",
+   "last-resort"
+  ],
+  "machine": [
+   "roar",
+   "surf",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "aerial-ace",
+   "payback",
+   "giga-impact",
+   "round",
+   "retaliate",
+   "work-up",
+   "wild-charge",
+   "snarl"
+  ]
+ }
+}

@@ -1,0 +1,133 @@
+{
+ "id": "glalie",
+ "name": "Glalie",
+ "dex": 362,
+ "types": [
+  "ice"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 80,
+  "defense": 80,
+  "special_attack": 80,
+  "special_defense": 80,
+  "speed": 80
+ },
+ "abilities": [
+  "inner-focus",
+  "ice-body",
+  "moody"
+ ],
+ "base_experience": 168,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "powder-snow",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "double-team",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "double-team",
+    "level": 4
+   },
+   {
+    "move": "bite",
+    "level": 10
+   },
+   {
+    "move": "icy-wind",
+    "level": 13
+   },
+   {
+    "move": "headbutt",
+    "level": 19
+   },
+   {
+    "move": "protect",
+    "level": 22
+   },
+   {
+    "move": "ice-fang",
+    "level": 28
+   },
+   {
+    "move": "crunch",
+    "level": 31
+   },
+   {
+    "move": "ice-beam",
+    "level": 37
+   },
+   {
+    "move": "hail",
+    "level": 40
+   },
+   {
+    "move": "blizzard",
+    "level": 51
+   },
+   {
+    "move": "sheer-cold",
+    "level": 59
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "signal-beam",
+   "block",
+   "dark-pulse",
+   "iron-head"
+  ],
+  "machine": [
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "explosion",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "shadow-ball",
+   "hail",
+   "torment",
+   "facade",
+   "taunt",
+   "gyro-ball",
+   "payback",
+   "giga-impact",
+   "round",
+   "bulldoze",
+   "frost-breath"
+  ]
+ }
+}

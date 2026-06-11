@@ -1,0 +1,137 @@
+{
+ "id": "butterfree",
+ "name": "Butterfree",
+ "dex": 12,
+ "types": [
+  "bug",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 45,
+  "defense": 50,
+  "special_attack": 90,
+  "special_defense": 80,
+  "speed": 70
+ },
+ "abilities": [
+  "compound-eyes",
+  "tinted-lens"
+ ],
+ "base_experience": 178,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 10
+   },
+   {
+    "move": "poison-powder",
+    "level": 12
+   },
+   {
+    "move": "stun-spore",
+    "level": 12
+   },
+   {
+    "move": "sleep-powder",
+    "level": 12
+   },
+   {
+    "move": "gust",
+    "level": 16
+   },
+   {
+    "move": "supersonic",
+    "level": 18
+   },
+   {
+    "move": "whirlwind",
+    "level": 22
+   },
+   {
+    "move": "psybeam",
+    "level": 24
+   },
+   {
+    "move": "silver-wind",
+    "level": 28
+   },
+   {
+    "move": "tailwind",
+    "level": 30
+   },
+   {
+    "move": "rage-powder",
+    "level": 34
+   },
+   {
+    "move": "safeguard",
+    "level": 36
+   },
+   {
+    "move": "captivate",
+    "level": 40
+   },
+   {
+    "move": "bug-buzz",
+    "level": 42
+   },
+   {
+    "move": "quiver-dance",
+    "level": 46
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "skill-swap",
+   "signal-beam",
+   "roost",
+   "tailwind",
+   "bug-bite",
+   "electroweb"
+  ],
+  "machine": [
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "aerial-ace",
+   "u-turn",
+   "energy-ball",
+   "giga-impact",
+   "venoshock",
+   "round",
+   "acrobatics",
+   "struggle-bug"
+  ]
+ }
+}

@@ -1,0 +1,139 @@
+{
+ "id": "dratini",
+ "name": "Dratini",
+ "dex": 147,
+ "types": [
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 41,
+  "attack": 64,
+  "defense": 45,
+  "special_attack": 50,
+  "special_defense": 50,
+  "speed": 50
+ },
+ "abilities": [
+  "shed-skin",
+  "marvel-scale"
+ ],
+ "base_experience": 60,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "wrap",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "thunder-wave",
+    "level": 5
+   },
+   {
+    "move": "twister",
+    "level": 11
+   },
+   {
+    "move": "dragon-rage",
+    "level": 15
+   },
+   {
+    "move": "slam",
+    "level": 21
+   },
+   {
+    "move": "agility",
+    "level": 25
+   },
+   {
+    "move": "dragon-tail",
+    "level": 31
+   },
+   {
+    "move": "aqua-tail",
+    "level": 35
+   },
+   {
+    "move": "dragon-rush",
+    "level": 41
+   },
+   {
+    "move": "safeguard",
+    "level": 45
+   },
+   {
+    "move": "dragon-dance",
+    "level": 51
+   },
+   {
+    "move": "outrage",
+    "level": 55
+   },
+   {
+    "move": "hyper-beam",
+    "level": 61
+   }
+  ],
+  "egg": [
+   "supersonic",
+   "mist",
+   "haze",
+   "dragon-breath",
+   "iron-tail",
+   "extreme-speed",
+   "dragon-dance",
+   "water-pulse",
+   "dragon-pulse",
+   "dragon-rush",
+   "aqua-jet"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "aqua-tail",
+   "dragon-pulse",
+   "draco-meteor"
+  ],
+  "machine": [
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "fire-blast",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "hail",
+   "facade",
+   "round",
+   "incinerate",
+   "dragon-tail"
+  ]
+ }
+}

@@ -1,0 +1,150 @@
+{
+ "id": "skiploom",
+ "name": "Skiploom",
+ "dex": 188,
+ "types": [
+  "grass",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 45,
+  "defense": 50,
+  "special_attack": 45,
+  "special_defense": 65,
+  "speed": 80
+ },
+ "abilities": [
+  "chlorophyll",
+  "leaf-guard",
+  "infiltrator"
+ ],
+ "base_experience": 119,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "splash",
+    "level": 1
+   },
+   {
+    "move": "synthesis",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "synthesis",
+    "level": 4
+   },
+   {
+    "move": "tail-whip",
+    "level": 7
+   },
+   {
+    "move": "tackle",
+    "level": 10
+   },
+   {
+    "move": "poison-powder",
+    "level": 12
+   },
+   {
+    "move": "stun-spore",
+    "level": 14
+   },
+   {
+    "move": "sleep-powder",
+    "level": 16
+   },
+   {
+    "move": "bullet-seed",
+    "level": 20
+   },
+   {
+    "move": "leech-seed",
+    "level": 24
+   },
+   {
+    "move": "mega-drain",
+    "level": 28
+   },
+   {
+    "move": "acrobatics",
+    "level": 32
+   },
+   {
+    "move": "rage-powder",
+    "level": 36
+   },
+   {
+    "move": "cotton-spore",
+    "level": 40
+   },
+   {
+    "move": "u-turn",
+    "level": 44
+   },
+   {
+    "move": "worry-seed",
+    "level": 48
+   },
+   {
+    "move": "giga-drain",
+    "level": 52
+   },
+   {
+    "move": "bounce",
+    "level": 56
+   },
+   {
+    "move": "memento",
+    "level": 60
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "helping-hand",
+   "bounce",
+   "worry-seed",
+   "seed-bomb"
+  ],
+  "machine": [
+   "swords-dance",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "reflect",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "facade",
+   "aerial-ace",
+   "u-turn",
+   "energy-ball",
+   "grass-knot",
+   "round",
+   "acrobatics"
+  ]
+ }
+}

@@ -1,0 +1,136 @@
+{
+ "id": "nidoking",
+ "name": "Nidoking",
+ "dex": 34,
+ "types": [
+  "poison",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 81,
+  "attack": 102,
+  "defense": 77,
+  "special_attack": 85,
+  "special_defense": 75,
+  "speed": 85
+ },
+ "abilities": [
+  "poison-point",
+  "rivalry",
+  "sheer-force"
+ ],
+ "base_experience": 227,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "double-kick",
+    "level": 1
+   },
+   {
+    "move": "poison-sting",
+    "level": 1
+   },
+   {
+    "move": "chip-away",
+    "level": 23
+   },
+   {
+    "move": "thrash",
+    "level": 35
+   },
+   {
+    "move": "earth-power",
+    "level": 43
+   },
+   {
+    "move": "megahorn",
+    "level": 58
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "super-fang",
+   "snore",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "superpower",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "stealth-rock",
+   "drill-run"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "stone-edge",
+   "hone-claws",
+   "venoshock",
+   "smack-down",
+   "sludge-wave",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "quash",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

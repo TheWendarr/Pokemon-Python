@@ -1,0 +1,126 @@
+{
+ "id": "roggenrola",
+ "name": "Roggenrola",
+ "dex": 524,
+ "types": [
+  "rock"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 75,
+  "defense": 85,
+  "special_attack": 25,
+  "special_defense": 25,
+  "speed": 15
+ },
+ "abilities": [
+  "sturdy",
+  "weak-armor",
+  "sand-force"
+ ],
+ "base_experience": 56,
+ "growth_rate": "medium-slow",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 4
+   },
+   {
+    "move": "sand-attack",
+    "level": 7
+   },
+   {
+    "move": "headbutt",
+    "level": 10
+   },
+   {
+    "move": "rock-blast",
+    "level": 14
+   },
+   {
+    "move": "mud-slap",
+    "level": 17
+   },
+   {
+    "move": "iron-defense",
+    "level": 20
+   },
+   {
+    "move": "smack-down",
+    "level": 23
+   },
+   {
+    "move": "rock-slide",
+    "level": 27
+   },
+   {
+    "move": "stealth-rock",
+    "level": 30
+   },
+   {
+    "move": "sandstorm",
+    "level": 33
+   },
+   {
+    "move": "stone-edge",
+    "level": 36
+   },
+   {
+    "move": "explosion",
+    "level": 40
+   }
+  ],
+  "egg": [
+   "take-down",
+   "curse",
+   "lock-on",
+   "magnitude",
+   "rock-tomb",
+   "gravity",
+   "autotomize",
+   "heavy-slam"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-defense",
+   "block",
+   "gravity",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "strength",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "rock-polish",
+   "flash-cannon",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

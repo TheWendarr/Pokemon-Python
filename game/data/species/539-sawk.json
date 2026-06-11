@@ -1,0 +1,140 @@
+{
+ "id": "sawk",
+ "name": "Sawk",
+ "dex": 539,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 125,
+  "defense": 75,
+  "special_attack": 30,
+  "special_defense": 75,
+  "speed": 85
+ },
+ "abilities": [
+  "sturdy",
+  "inner-focus",
+  "mold-breaker"
+ ],
+ "base_experience": 163,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "rock-smash",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "bide",
+    "level": 5
+   },
+   {
+    "move": "focus-energy",
+    "level": 9
+   },
+   {
+    "move": "double-kick",
+    "level": 13
+   },
+   {
+    "move": "low-sweep",
+    "level": 17
+   },
+   {
+    "move": "counter",
+    "level": 21
+   },
+   {
+    "move": "karate-chop",
+    "level": 25
+   },
+   {
+    "move": "brick-break",
+    "level": 29
+   },
+   {
+    "move": "bulk-up",
+    "level": 33
+   },
+   {
+    "move": "retaliate",
+    "level": 37
+   },
+   {
+    "move": "endure",
+    "level": 41
+   },
+   {
+    "move": "quick-guard",
+    "level": 45
+   },
+   {
+    "move": "close-combat",
+    "level": 49
+   },
+   {
+    "move": "reversal",
+    "level": 53
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "pain-split",
+   "helping-hand",
+   "superpower",
+   "knock-off",
+   "block",
+   "dual-chop"
+  ],
+  "machine": [
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "grass-knot",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

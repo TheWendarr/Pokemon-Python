@@ -1,0 +1,155 @@
+{
+ "id": "jigglypuff",
+ "name": "Jigglypuff",
+ "dex": 39,
+ "types": [
+  "normal",
+  "fairy"
+ ],
+ "base_stats": {
+  "hp": 115,
+  "attack": 45,
+  "defense": 20,
+  "special_attack": 45,
+  "special_defense": 25,
+  "speed": 20
+ },
+ "abilities": [
+  "cute-charm",
+  "competitive",
+  "friend-guard"
+ ],
+ "base_experience": 95,
+ "growth_rate": "fast",
+ "catch_rate": 170,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "sing",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 5
+   },
+   {
+    "move": "pound",
+    "level": 9
+   },
+   {
+    "move": "disable",
+    "level": 13
+   },
+   {
+    "move": "round",
+    "level": 17
+   },
+   {
+    "move": "rollout",
+    "level": 21
+   },
+   {
+    "move": "double-slap",
+    "level": 25
+   },
+   {
+    "move": "rest",
+    "level": 29
+   },
+   {
+    "move": "body-slam",
+    "level": 33
+   },
+   {
+    "move": "gyro-ball",
+    "level": 37
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 41
+   },
+   {
+    "move": "mimic",
+    "level": 45
+   },
+   {
+    "move": "hyper-voice",
+    "level": 49
+   },
+   {
+    "move": "double-edge",
+    "level": 53
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "pain-split",
+   "helping-hand",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "knock-off",
+   "endeavor",
+   "snatch",
+   "hyper-voice",
+   "bounce",
+   "covet",
+   "gravity",
+   "last-resort",
+   "drain-punch",
+   "stealth-rock"
+  ],
+  "machine": [
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "brick-break",
+   "gyro-ball",
+   "fling",
+   "grass-knot",
+   "charge-beam",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "retaliate",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "id": "grovyle",
+ "name": "Grovyle",
+ "dex": 253,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 65,
+  "defense": 45,
+  "special_attack": 85,
+  "special_defense": 65,
+  "speed": 95
+ },
+ "abilities": [
+  "overgrow",
+  "unburden"
+ ],
+ "base_experience": 142,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 6
+   },
+   {
+    "move": "quick-attack",
+    "level": 11
+   },
+   {
+    "move": "fury-cutter",
+    "level": 16
+   },
+   {
+    "move": "pursuit",
+    "level": 17
+   },
+   {
+    "move": "screech",
+    "level": 23
+   },
+   {
+    "move": "leaf-blade",
+    "level": 29
+   },
+   {
+    "move": "agility",
+    "level": 35
+   },
+   {
+    "move": "slam",
+    "level": 41
+   },
+   {
+    "move": "detect",
+    "level": 47
+   },
+   {
+    "move": "false-swipe",
+    "level": 53
+   },
+   {
+    "move": "leaf-storm",
+    "level": 59
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "synthesis",
+   "endeavor",
+   "worry-seed",
+   "seed-bomb",
+   "drain-punch",
+   "grass-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "strength",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "fling",
+   "x-scissor",
+   "energy-ball",
+   "grass-knot",
+   "low-sweep",
+   "round",
+   "acrobatics"
+  ]
+ }
+}

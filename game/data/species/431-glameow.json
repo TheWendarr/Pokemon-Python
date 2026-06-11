@@ -1,0 +1,140 @@
+{
+ "id": "glameow",
+ "name": "Glameow",
+ "dex": 431,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 49,
+  "attack": 55,
+  "defense": 42,
+  "special_attack": 42,
+  "special_defense": 37,
+  "speed": 85
+ },
+ "abilities": [
+  "limber",
+  "own-tempo",
+  "keen-eye"
+ ],
+ "base_experience": 62,
+ "growth_rate": "fast",
+ "catch_rate": 190,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fake-out",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 5
+   },
+   {
+    "move": "growl",
+    "level": 8
+   },
+   {
+    "move": "hypnosis",
+    "level": 13
+   },
+   {
+    "move": "feint-attack",
+    "level": 17
+   },
+   {
+    "move": "fury-swipes",
+    "level": 20
+   },
+   {
+    "move": "charm",
+    "level": 25
+   },
+   {
+    "move": "assist",
+    "level": 29
+   },
+   {
+    "move": "captivate",
+    "level": 32
+   },
+   {
+    "move": "slash",
+    "level": 37
+   },
+   {
+    "move": "sucker-punch",
+    "level": 41
+   },
+   {
+    "move": "attract",
+    "level": 44
+   },
+   {
+    "move": "hone-claws",
+    "level": 48
+   }
+  ],
+  "egg": [
+   "sand-attack",
+   "tail-whip",
+   "bite",
+   "quick-attack",
+   "flail",
+   "snatch",
+   "fake-tears",
+   "wake-up-slap",
+   "assurance",
+   "last-resort"
+  ],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "knock-off",
+   "snatch",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "foul-play"
+  ],
+  "machine": [
+   "cut",
+   "thunderbolt",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "u-turn",
+   "payback",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,155 @@
+{
+ "id": "tangela",
+ "name": "Tangela",
+ "dex": 114,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 55,
+  "defense": 115,
+  "special_attack": 100,
+  "special_defense": 40,
+  "speed": 60
+ },
+ "abilities": [
+  "chlorophyll",
+  "leaf-guard",
+  "regenerator"
+ ],
+ "base_experience": 87,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ingrain",
+    "level": 1
+   },
+   {
+    "move": "constrict",
+    "level": 1
+   },
+   {
+    "move": "sleep-powder",
+    "level": 4
+   },
+   {
+    "move": "vine-whip",
+    "level": 7
+   },
+   {
+    "move": "absorb",
+    "level": 10
+   },
+   {
+    "move": "poison-powder",
+    "level": 14
+   },
+   {
+    "move": "bind",
+    "level": 17
+   },
+   {
+    "move": "growth",
+    "level": 20
+   },
+   {
+    "move": "mega-drain",
+    "level": 23
+   },
+   {
+    "move": "knock-off",
+    "level": 27
+   },
+   {
+    "move": "stun-spore",
+    "level": 30
+   },
+   {
+    "move": "natural-gift",
+    "level": 33
+   },
+   {
+    "move": "giga-drain",
+    "level": 36
+   },
+   {
+    "move": "ancient-power",
+    "level": 40
+   },
+   {
+    "move": "slam",
+    "level": 43
+   },
+   {
+    "move": "tickle",
+    "level": 46
+   },
+   {
+    "move": "wring-out",
+    "level": 49
+   },
+   {
+    "move": "power-whip",
+    "level": 53
+   }
+  ],
+  "egg": [
+   "mega-drain",
+   "leech-seed",
+   "confusion",
+   "amnesia",
+   "flail",
+   "giga-drain",
+   "nature-power",
+   "endeavor",
+   "natural-gift",
+   "power-swap",
+   "leaf-storm",
+   "rage-powder"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "pain-split",
+   "synthesis",
+   "knock-off",
+   "endeavor",
+   "worry-seed",
+   "seed-bomb"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "reflect",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "rock-smash",
+   "facade",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "round"
+  ]
+ }
+}

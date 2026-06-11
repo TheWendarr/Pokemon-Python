@@ -1,0 +1,105 @@
+{
+ "id": "simipour",
+ "name": "Simipour",
+ "dex": 516,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 98,
+  "defense": 63,
+  "special_attack": 98,
+  "special_defense": 63,
+  "speed": 101
+ },
+ "abilities": [
+  "gluttony",
+  "torrent"
+ ],
+ "base_experience": 174,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "lick",
+    "level": 1
+   },
+   {
+    "move": "fury-swipes",
+    "level": 1
+   },
+   {
+    "move": "scald",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "role-play",
+   "superpower",
+   "recycle",
+   "knock-off",
+   "endeavor",
+   "covet",
+   "aqua-tail",
+   "gunk-shot"
+  ],
+  "machine": [
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "payback",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "grass-knot",
+   "hone-claws",
+   "low-sweep",
+   "round",
+   "scald",
+   "acrobatics",
+   "work-up"
+  ]
+ }
+}

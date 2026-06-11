@@ -1,0 +1,194 @@
+{
+ "id": "gallade",
+ "name": "Gallade",
+ "dex": 475,
+ "types": [
+  "psychic",
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 68,
+  "attack": 125,
+  "defense": 65,
+  "special_attack": 65,
+  "special_defense": 115,
+  "speed": 80
+ },
+ "abilities": [
+  "steadfast",
+  "sharpness",
+  "justified"
+ ],
+ "base_experience": 233,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leaf-blade",
+    "level": 1
+   },
+   {
+    "move": "night-slash",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "double-team",
+    "level": 1
+   },
+   {
+    "move": "teleport",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 6
+   },
+   {
+    "move": "double-team",
+    "level": 10
+   },
+   {
+    "move": "teleport",
+    "level": 12
+   },
+   {
+    "move": "fury-cutter",
+    "level": 17
+   },
+   {
+    "move": "slash",
+    "level": 22
+   },
+   {
+    "move": "heal-pulse",
+    "level": 25
+   },
+   {
+    "move": "swords-dance",
+    "level": 31
+   },
+   {
+    "move": "psycho-cut",
+    "level": 36
+   },
+   {
+    "move": "helping-hand",
+    "level": 39
+   },
+   {
+    "move": "feint",
+    "level": 45
+   },
+   {
+    "move": "false-swipe",
+    "level": 50
+   },
+   {
+    "move": "protect",
+    "level": 53
+   },
+   {
+    "move": "close-combat",
+    "level": 59
+   },
+   {
+    "move": "stored-power",
+    "level": 64
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "pain-split",
+   "helping-hand",
+   "trick",
+   "magic-coat",
+   "recycle",
+   "knock-off",
+   "skill-swap",
+   "snatch",
+   "hyper-voice",
+   "signal-beam",
+   "drain-punch",
+   "zen-headbutt",
+   "wonder-room",
+   "magic-room",
+   "dual-chop"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "bulk-up",
+   "calm-mind",
+   "fling",
+   "poison-jab",
+   "x-scissor",
+   "focus-blast",
+   "giga-impact",
+   "trick-room",
+   "stone-edge",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "low-sweep",
+   "round",
+   "echoed-voice",
+   "ally-switch",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

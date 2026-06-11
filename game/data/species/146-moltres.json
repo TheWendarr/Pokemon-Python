@@ -1,0 +1,131 @@
+{
+ "id": "moltres",
+ "name": "Moltres",
+ "dex": 146,
+ "types": [
+  "fire",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 100,
+  "defense": 90,
+  "special_attack": 125,
+  "special_defense": 85,
+  "speed": 90
+ },
+ "abilities": [
+  "pressure",
+  "flame-body"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "wing-attack",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "fire-spin",
+    "level": 8
+   },
+   {
+    "move": "agility",
+    "level": 15
+   },
+   {
+    "move": "endure",
+    "level": 22
+   },
+   {
+    "move": "ancient-power",
+    "level": 29
+   },
+   {
+    "move": "flamethrower",
+    "level": 36
+   },
+   {
+    "move": "safeguard",
+    "level": 43
+   },
+   {
+    "move": "air-slash",
+    "level": 50
+   },
+   {
+    "move": "roost",
+    "level": 57
+   },
+   {
+    "move": "heat-wave",
+    "level": 64
+   },
+   {
+    "move": "solar-beam",
+    "level": 71
+   },
+   {
+    "move": "sky-attack",
+    "level": 78
+   },
+   {
+    "move": "sunny-day",
+    "level": 85
+   },
+   {
+    "move": "hurricane",
+    "level": 92
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "sleep-talk",
+   "heat-wave",
+   "roost",
+   "tailwind"
+  ],
+  "machine": [
+   "fly",
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "overheat",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "giga-impact",
+   "flame-charge",
+   "round",
+   "sky-drop",
+   "incinerate"
+  ]
+ }
+}

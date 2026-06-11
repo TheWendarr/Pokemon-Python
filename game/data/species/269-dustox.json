@@ -1,0 +1,118 @@
+{
+ "id": "dustox",
+ "name": "Dustox",
+ "dex": 269,
+ "types": [
+  "bug",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 50,
+  "defense": 70,
+  "special_attack": 50,
+  "special_defense": 90,
+  "speed": 65
+ },
+ "abilities": [
+  "shield-dust",
+  "compound-eyes"
+ ],
+ "base_experience": 173,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 10
+   },
+   {
+    "move": "gust",
+    "level": 13
+   },
+   {
+    "move": "protect",
+    "level": 17
+   },
+   {
+    "move": "moonlight",
+    "level": 20
+   },
+   {
+    "move": "psybeam",
+    "level": 24
+   },
+   {
+    "move": "whirlwind",
+    "level": 27
+   },
+   {
+    "move": "light-screen",
+    "level": 31
+   },
+   {
+    "move": "silver-wind",
+    "level": 34
+   },
+   {
+    "move": "toxic",
+    "level": 38
+   },
+   {
+    "move": "bug-buzz",
+    "level": 41
+   },
+   {
+    "move": "quiver-dance",
+    "level": 45
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "signal-beam",
+   "roost",
+   "tailwind",
+   "bug-bite",
+   "electroweb"
+  ],
+  "machine": [
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "shadow-ball",
+   "facade",
+   "aerial-ace",
+   "u-turn",
+   "energy-ball",
+   "giga-impact",
+   "venoshock",
+   "round",
+   "acrobatics",
+   "struggle-bug"
+  ]
+ }
+}

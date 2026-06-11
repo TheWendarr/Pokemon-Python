@@ -1,0 +1,91 @@
+{
+ "id": "vileplume",
+ "name": "Vileplume",
+ "dex": 45,
+ "types": [
+  "grass",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 80,
+  "defense": 85,
+  "special_attack": 110,
+  "special_defense": 90,
+  "speed": 50
+ },
+ "abilities": [
+  "chlorophyll",
+  "effect-spore"
+ ],
+ "base_experience": 221,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "mega-drain",
+    "level": 1
+   },
+   {
+    "move": "aromatherapy",
+    "level": 1
+   },
+   {
+    "move": "stun-spore",
+    "level": 1
+   },
+   {
+    "move": "poison-powder",
+    "level": 1
+   },
+   {
+    "move": "petal-dance",
+    "level": 53
+   },
+   {
+    "move": "solar-beam",
+    "level": 65
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "gastro-acid",
+   "worry-seed",
+   "seed-bomb",
+   "drain-punch",
+   "after-you"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "fling",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "venoshock",
+   "round"
+  ]
+ }
+}

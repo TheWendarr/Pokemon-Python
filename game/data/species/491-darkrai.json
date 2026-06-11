@@ -1,0 +1,142 @@
+{
+ "id": "darkrai",
+ "name": "Darkrai",
+ "dex": 491,
+ "types": [
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 90,
+  "defense": 90,
+  "special_attack": 135,
+  "special_defense": 90,
+  "speed": 125
+ },
+ "abilities": [
+  "bad-dreams"
+ ],
+ "base_experience": 270,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ominous-wind",
+    "level": 1
+   },
+   {
+    "move": "disable",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 11
+   },
+   {
+    "move": "hypnosis",
+    "level": 20
+   },
+   {
+    "move": "feint-attack",
+    "level": 29
+   },
+   {
+    "move": "nightmare",
+    "level": 38
+   },
+   {
+    "move": "double-team",
+    "level": 47
+   },
+   {
+    "move": "haze",
+    "level": 57
+   },
+   {
+    "move": "dark-void",
+    "level": 66
+   },
+   {
+    "move": "nasty-plot",
+    "level": 75
+   },
+   {
+    "move": "dream-eater",
+    "level": 84
+   },
+   {
+    "move": "dark-pulse",
+    "level": 93
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "trick",
+   "knock-off",
+   "snatch",
+   "last-resort",
+   "dark-pulse",
+   "drain-punch",
+   "wonder-room",
+   "foul-play"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "calm-mind",
+   "payback",
+   "embargo",
+   "fling",
+   "poison-jab",
+   "x-scissor",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "charge-beam",
+   "round",
+   "incinerate",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

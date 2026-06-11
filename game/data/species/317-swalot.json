@@ -1,0 +1,150 @@
+{
+ "id": "swalot",
+ "name": "Swalot",
+ "dex": 317,
+ "types": [
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 100,
+  "attack": 73,
+  "defense": 83,
+  "special_attack": 73,
+  "special_defense": 83,
+  "speed": 55
+ },
+ "abilities": [
+  "liquid-ooze",
+  "sticky-hold",
+  "gluttony"
+ ],
+ "base_experience": 163,
+ "growth_rate": "fast-then-very-slow",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "yawn",
+    "level": 1
+   },
+   {
+    "move": "poison-gas",
+    "level": 1
+   },
+   {
+    "move": "sludge",
+    "level": 1
+   },
+   {
+    "move": "yawn",
+    "level": 6
+   },
+   {
+    "move": "poison-gas",
+    "level": 9
+   },
+   {
+    "move": "sludge",
+    "level": 14
+   },
+   {
+    "move": "amnesia",
+    "level": 17
+   },
+   {
+    "move": "encore",
+    "level": 23
+   },
+   {
+    "move": "body-slam",
+    "level": 26
+   },
+   {
+    "move": "toxic",
+    "level": 30
+   },
+   {
+    "move": "acid-spray",
+    "level": 38
+   },
+   {
+    "move": "stockpile",
+    "level": 45
+   },
+   {
+    "move": "spit-up",
+    "level": 45
+   },
+   {
+    "move": "swallow",
+    "level": 45
+   },
+   {
+    "move": "sludge-bomb",
+    "level": 52
+   },
+   {
+    "move": "gastro-acid",
+    "level": 59
+   },
+   {
+    "move": "wring-out",
+    "level": 66
+   },
+   {
+    "move": "gunk-shot",
+    "level": 73
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "pain-split",
+   "snatch",
+   "block",
+   "gastro-acid",
+   "seed-bomb",
+   "gunk-shot"
+  ],
+  "machine": [
+   "ice-beam",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "dream-eater",
+   "explosion",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "giga-impact",
+   "venoshock",
+   "sludge-wave",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

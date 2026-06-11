@@ -1,0 +1,145 @@
+{
+ "id": "hitmonchan",
+ "name": "Hitmonchan",
+ "dex": 107,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 105,
+  "defense": 79,
+  "special_attack": 35,
+  "special_defense": 110,
+  "speed": 76
+ },
+ "abilities": [
+  "keen-eye",
+  "iron-fist",
+  "inner-focus"
+ ],
+ "base_experience": 159,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "revenge",
+    "level": 1
+   },
+   {
+    "move": "comet-punch",
+    "level": 1
+   },
+   {
+    "move": "agility",
+    "level": 6
+   },
+   {
+    "move": "pursuit",
+    "level": 11
+   },
+   {
+    "move": "mach-punch",
+    "level": 16
+   },
+   {
+    "move": "bullet-punch",
+    "level": 16
+   },
+   {
+    "move": "feint",
+    "level": 21
+   },
+   {
+    "move": "vacuum-wave",
+    "level": 26
+   },
+   {
+    "move": "quick-guard",
+    "level": 31
+   },
+   {
+    "move": "thunder-punch",
+    "level": 36
+   },
+   {
+    "move": "ice-punch",
+    "level": 36
+   },
+   {
+    "move": "fire-punch",
+    "level": 36
+   },
+   {
+    "move": "sky-uppercut",
+    "level": 41
+   },
+   {
+    "move": "mega-punch",
+    "level": 46
+   },
+   {
+    "move": "detect",
+    "level": 51
+   },
+   {
+    "move": "focus-punch",
+    "level": 56
+   },
+   {
+    "move": "counter",
+    "level": 61
+   },
+   {
+    "move": "close-combat",
+    "level": 66
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "helping-hand",
+   "role-play",
+   "covet",
+   "drain-punch"
+  ],
+  "machine": [
+   "strength",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "fling",
+   "focus-blast",
+   "stone-edge",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

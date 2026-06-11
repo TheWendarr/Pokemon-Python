@@ -1,0 +1,154 @@
+{
+ "id": "totodile",
+ "name": "Totodile",
+ "dex": 158,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 65,
+  "defense": 64,
+  "special_attack": 44,
+  "special_defense": 48,
+  "speed": 43
+ },
+ "abilities": [
+  "torrent",
+  "sheer-force"
+ ],
+ "base_experience": 63,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 6
+   },
+   {
+    "move": "rage",
+    "level": 8
+   },
+   {
+    "move": "bite",
+    "level": 13
+   },
+   {
+    "move": "scary-face",
+    "level": 15
+   },
+   {
+    "move": "ice-fang",
+    "level": 20
+   },
+   {
+    "move": "flail",
+    "level": 22
+   },
+   {
+    "move": "crunch",
+    "level": 27
+   },
+   {
+    "move": "chip-away",
+    "level": 29
+   },
+   {
+    "move": "slash",
+    "level": 34
+   },
+   {
+    "move": "screech",
+    "level": 36
+   },
+   {
+    "move": "thrash",
+    "level": 41
+   },
+   {
+    "move": "aqua-tail",
+    "level": 43
+   },
+   {
+    "move": "superpower",
+    "level": 48
+   },
+   {
+    "move": "hydro-pump",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "ice-punch",
+   "thrash",
+   "hydro-pump",
+   "metal-claw",
+   "crunch",
+   "ancient-power",
+   "mud-sport",
+   "fake-tears",
+   "block",
+   "water-sport",
+   "dragon-dance",
+   "water-pulse",
+   "aqua-jet"
+  ],
+  "tutor": [
+   "ice-punch",
+   "low-kick",
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "superpower",
+   "block",
+   "aqua-tail",
+   "water-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "fling",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "scald"
+  ]
+ }
+}

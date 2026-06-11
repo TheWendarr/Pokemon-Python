@@ -1,0 +1,182 @@
+{
+ "id": "kecleon",
+ "name": "Kecleon",
+ "dex": 352,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 90,
+  "defense": 70,
+  "special_attack": 60,
+  "special_defense": 120,
+  "speed": 40
+ },
+ "abilities": [
+  "color-change",
+  "protean"
+ ],
+ "base_experience": 154,
+ "growth_rate": "medium-slow",
+ "catch_rate": 200,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "thief",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "lick",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "bind",
+    "level": 4
+   },
+   {
+    "move": "feint-attack",
+    "level": 7
+   },
+   {
+    "move": "fury-swipes",
+    "level": 10
+   },
+   {
+    "move": "feint",
+    "level": 14
+   },
+   {
+    "move": "psybeam",
+    "level": 18
+   },
+   {
+    "move": "shadow-sneak",
+    "level": 22
+   },
+   {
+    "move": "slash",
+    "level": 27
+   },
+   {
+    "move": "screech",
+    "level": 32
+   },
+   {
+    "move": "substitute",
+    "level": 37
+   },
+   {
+    "move": "sucker-punch",
+    "level": 43
+   },
+   {
+    "move": "shadow-claw",
+    "level": 49
+   },
+   {
+    "move": "ancient-power",
+    "level": 55
+   },
+   {
+    "move": "synchronoise",
+    "level": 58
+   }
+  ],
+  "egg": [
+   "disable",
+   "recover",
+   "dizzy-punch",
+   "fake-out",
+   "trick",
+   "magic-coat",
+   "skill-swap",
+   "snatch",
+   "nasty-plot",
+   "foul-play"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "bind",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "knock-off",
+   "skill-swap",
+   "snatch",
+   "last-resort",
+   "aqua-tail",
+   "drain-punch",
+   "stealth-rock",
+   "wonder-room",
+   "foul-play",
+   "after-you"
+  ],
+  "machine": [
+   "cut",
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "fling",
+   "shadow-claw",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "hone-claws",
+   "round",
+   "incinerate",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

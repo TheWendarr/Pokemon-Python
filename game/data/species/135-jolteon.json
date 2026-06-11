@@ -1,0 +1,131 @@
+{
+ "id": "jolteon",
+ "name": "Jolteon",
+ "dex": 135,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 65,
+  "defense": 60,
+  "special_attack": 110,
+  "special_defense": 95,
+  "speed": 130
+ },
+ "abilities": [
+  "volt-absorb",
+  "quick-feet"
+ ],
+ "base_experience": 184,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "helping-hand",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 5
+   },
+   {
+    "move": "thunder-shock",
+    "level": 9
+   },
+   {
+    "move": "quick-attack",
+    "level": 13
+   },
+   {
+    "move": "double-kick",
+    "level": 17
+   },
+   {
+    "move": "thunder-fang",
+    "level": 21
+   },
+   {
+    "move": "pin-missile",
+    "level": 25
+   },
+   {
+    "move": "agility",
+    "level": 29
+   },
+   {
+    "move": "thunder-wave",
+    "level": 33
+   },
+   {
+    "move": "discharge",
+    "level": 37
+   },
+   {
+    "move": "last-resort",
+    "level": 41
+   },
+   {
+    "move": "thunder",
+    "level": 45
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "helping-hand",
+   "hyper-voice",
+   "signal-beam",
+   "covet",
+   "last-resort",
+   "magnet-rise"
+  ],
+  "machine": [
+   "roar",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "giga-impact",
+   "charge-beam",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "volt-switch",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

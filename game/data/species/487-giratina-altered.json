@@ -1,0 +1,144 @@
+{
+ "id": "giratina-altered",
+ "name": "Giratina Altered",
+ "dex": 487,
+ "types": [
+  "ghost",
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 150,
+  "attack": 100,
+  "defense": 120,
+  "special_attack": 100,
+  "special_defense": 120,
+  "speed": 90
+ },
+ "abilities": [
+  "pressure",
+  "telepathy"
+ ],
+ "base_experience": 306,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "dragon-breath",
+    "level": 1
+   },
+   {
+    "move": "scary-face",
+    "level": 1
+   },
+   {
+    "move": "ominous-wind",
+    "level": 6
+   },
+   {
+    "move": "ancient-power",
+    "level": 10
+   },
+   {
+    "move": "slash",
+    "level": 15
+   },
+   {
+    "move": "shadow-sneak",
+    "level": 19
+   },
+   {
+    "move": "destiny-bond",
+    "level": 24
+   },
+   {
+    "move": "dragon-claw",
+    "level": 28
+   },
+   {
+    "move": "earth-power",
+    "level": 33
+   },
+   {
+    "move": "aura-sphere",
+    "level": 37
+   },
+   {
+    "move": "shadow-claw",
+    "level": 42
+   },
+   {
+    "move": "shadow-force",
+    "level": 46
+   },
+   {
+    "move": "hex",
+    "level": 50
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "pain-split",
+   "iron-tail",
+   "hyper-voice",
+   "gravity",
+   "dark-pulse",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "draco-meteor",
+   "iron-head"
+  ],
+  "machine": [
+   "cut",
+   "fly",
+   "roar",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "aerial-ace",
+   "dragon-claw",
+   "calm-mind",
+   "payback",
+   "energy-ball",
+   "giga-impact",
+   "shadow-claw",
+   "stone-edge",
+   "charge-beam",
+   "hone-claws",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

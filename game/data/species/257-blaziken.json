@@ -1,0 +1,166 @@
+{
+ "id": "blaziken",
+ "name": "Blaziken",
+ "dex": 257,
+ "types": [
+  "fire",
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 120,
+  "defense": 70,
+  "special_attack": 110,
+  "special_defense": 70,
+  "speed": 80
+ },
+ "abilities": [
+  "blaze",
+  "speed-boost"
+ ],
+ "base_experience": 239,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fire-punch",
+    "level": 1
+   },
+   {
+    "move": "high-jump-kick",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 7
+   },
+   {
+    "move": "ember",
+    "level": 13
+   },
+   {
+    "move": "double-kick",
+    "level": 16
+   },
+   {
+    "move": "peck",
+    "level": 17
+   },
+   {
+    "move": "sand-attack",
+    "level": 21
+   },
+   {
+    "move": "bulk-up",
+    "level": 28
+   },
+   {
+    "move": "quick-attack",
+    "level": 32
+   },
+   {
+    "move": "blaze-kick",
+    "level": 36
+   },
+   {
+    "move": "slash",
+    "level": 42
+   },
+   {
+    "move": "brave-bird",
+    "level": 49
+   },
+   {
+    "move": "sky-uppercut",
+    "level": 59
+   },
+   {
+    "move": "flare-blitz",
+    "level": 66
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "heat-wave",
+   "helping-hand",
+   "role-play",
+   "superpower",
+   "knock-off",
+   "blast-burn",
+   "bounce",
+   "last-resort",
+   "fire-pledge",
+   "dual-chop"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "aerial-ace",
+   "bulk-up",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "stone-edge",
+   "hone-claws",
+   "flame-charge",
+   "low-sweep",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "acrobatics",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "id": "heatmor",
+ "name": "Heatmor",
+ "dex": 631,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 85,
+  "attack": 97,
+  "defense": 66,
+  "special_attack": 105,
+  "special_defense": 66,
+  "speed": 65
+ },
+ "abilities": [
+  "gluttony",
+  "flash-fire",
+  "white-smoke"
+ ],
+ "base_experience": 169,
+ "growth_rate": "medium",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "incinerate",
+    "level": 1
+   },
+   {
+    "move": "lick",
+    "level": 1
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 6
+   },
+   {
+    "move": "bind",
+    "level": 11
+   },
+   {
+    "move": "fire-spin",
+    "level": 16
+   },
+   {
+    "move": "fury-swipes",
+    "level": 21
+   },
+   {
+    "move": "snatch",
+    "level": 26
+   },
+   {
+    "move": "flame-burst",
+    "level": 31
+   },
+   {
+    "move": "bug-bite",
+    "level": 36
+   },
+   {
+    "move": "slash",
+    "level": 41
+   },
+   {
+    "move": "amnesia",
+    "level": 46
+   },
+   {
+    "move": "flamethrower",
+    "level": 51
+   },
+   {
+    "move": "stockpile",
+    "level": 56
+   },
+   {
+    "move": "spit-up",
+    "level": 56
+   },
+   {
+    "move": "swallow",
+    "level": 56
+   },
+   {
+    "move": "inferno",
+    "level": 61
+   }
+  ],
+  "egg": [
+   "body-slam",
+   "wrap",
+   "curse",
+   "feint-attack",
+   "sleep-talk",
+   "pursuit",
+   "heat-wave",
+   "tickle",
+   "sucker-punch",
+   "night-slash"
+  ],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "bind",
+   "low-kick",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "heat-wave",
+   "superpower",
+   "recycle",
+   "knock-off",
+   "snatch",
+   "gastro-acid",
+   "bug-bite"
+  ],
+  "machine": [
+   "cut",
+   "flamethrower",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "aerial-ace",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "incinerate"
+  ]
+ }
+}

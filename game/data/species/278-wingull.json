@@ -1,0 +1,131 @@
+{
+ "id": "wingull",
+ "name": "Wingull",
+ "dex": 278,
+ "types": [
+  "water",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 30,
+  "defense": 30,
+  "special_attack": 55,
+  "special_defense": 30,
+  "speed": 85
+ },
+ "abilities": [
+  "keen-eye",
+  "hydration",
+  "rain-dish"
+ ],
+ "base_experience": 54,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 6
+   },
+   {
+    "move": "wing-attack",
+    "level": 9
+   },
+   {
+    "move": "mist",
+    "level": 14
+   },
+   {
+    "move": "water-pulse",
+    "level": 17
+   },
+   {
+    "move": "quick-attack",
+    "level": 22
+   },
+   {
+    "move": "roost",
+    "level": 26
+   },
+   {
+    "move": "pursuit",
+    "level": 30
+   },
+   {
+    "move": "air-cutter",
+    "level": 33
+   },
+   {
+    "move": "agility",
+    "level": 38
+   },
+   {
+    "move": "aerial-ace",
+    "level": 42
+   },
+   {
+    "move": "air-slash",
+    "level": 46
+   },
+   {
+    "move": "hurricane",
+    "level": 49
+   }
+  ],
+  "egg": [
+   "gust",
+   "mist",
+   "agility",
+   "twister",
+   "knock-off",
+   "water-sport",
+   "roost",
+   "brine",
+   "aqua-ring"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "knock-off",
+   "roost",
+   "tailwind"
+  ],
+  "machine": [
+   "fly",
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "round",
+   "echoed-voice",
+   "scald"
+  ]
+ }
+}

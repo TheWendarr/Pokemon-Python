@@ -1,0 +1,121 @@
+{
+ "id": "honchkrow",
+ "name": "Honchkrow",
+ "dex": 430,
+ "types": [
+  "dark",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 100,
+  "attack": 125,
+  "defense": 52,
+  "special_attack": 105,
+  "special_defense": 52,
+  "speed": 71
+ },
+ "abilities": [
+  "insomnia",
+  "super-luck",
+  "moxie"
+ ],
+ "base_experience": 177,
+ "growth_rate": "medium-slow",
+ "catch_rate": 30,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "pursuit",
+    "level": 1
+   },
+   {
+    "move": "haze",
+    "level": 1
+   },
+   {
+    "move": "wing-attack",
+    "level": 1
+   },
+   {
+    "move": "swagger",
+    "level": 25
+   },
+   {
+    "move": "nasty-plot",
+    "level": 35
+   },
+   {
+    "move": "foul-play",
+    "level": 45
+   },
+   {
+    "move": "night-slash",
+    "level": 55
+   },
+   {
+    "move": "quash",
+    "level": 65
+   },
+   {
+    "move": "dark-pulse",
+    "level": 75
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "heat-wave",
+   "superpower",
+   "snatch",
+   "roost",
+   "tailwind",
+   "dark-pulse",
+   "foul-play"
+  ],
+  "machine": [
+   "fly",
+   "hyper-beam",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "calm-mind",
+   "pluck",
+   "payback",
+   "embargo",
+   "giga-impact",
+   "round",
+   "incinerate",
+   "quash",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "id": "stealth-rock",
+ "name": "Stealth Rock",
+ "type": "rock",
+ "category": "status",
+ "power": null,
+ "accuracy": null,
+ "pp": 20,
+ "priority": 0,
+ "target": "opponents-field",
+ "crit_stage": 0,
+ "flags": [
+  "reflectable"
+ ],
+ "effect": {
+  "kind": "field-effect",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

@@ -1,0 +1,143 @@
+{
+ "id": "bastiodon",
+ "name": "Bastiodon",
+ "dex": 411,
+ "types": [
+  "rock",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 52,
+  "defense": 168,
+  "special_attack": 47,
+  "special_defense": 138,
+  "speed": 30
+ },
+ "abilities": [
+  "sturdy",
+  "soundproof"
+ ],
+ "base_experience": 173,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "protect",
+    "level": 1
+   },
+   {
+    "move": "taunt",
+    "level": 1
+   },
+   {
+    "move": "metal-sound",
+    "level": 1
+   },
+   {
+    "move": "taunt",
+    "level": 6
+   },
+   {
+    "move": "metal-sound",
+    "level": 10
+   },
+   {
+    "move": "take-down",
+    "level": 15
+   },
+   {
+    "move": "iron-defense",
+    "level": 19
+   },
+   {
+    "move": "swagger",
+    "level": 24
+   },
+   {
+    "move": "ancient-power",
+    "level": 28
+   },
+   {
+    "move": "block",
+    "level": 30
+   },
+   {
+    "move": "endure",
+    "level": 36
+   },
+   {
+    "move": "metal-burst",
+    "level": 43
+   },
+   {
+    "move": "iron-head",
+    "level": 51
+   },
+   {
+    "move": "heavy-slam",
+    "level": 58
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "magic-coat",
+   "iron-defense",
+   "block",
+   "magnet-rise",
+   "earth-power",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "rock-polish",
+   "giga-impact",
+   "flash-cannon",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

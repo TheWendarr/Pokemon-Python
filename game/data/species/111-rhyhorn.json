@@ -1,0 +1,154 @@
+{
+ "id": "rhyhorn",
+ "name": "Rhyhorn",
+ "dex": 111,
+ "types": [
+  "ground",
+  "rock"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 85,
+  "defense": 95,
+  "special_attack": 30,
+  "special_defense": 30,
+  "speed": 25
+ },
+ "abilities": [
+  "lightning-rod",
+  "rock-head",
+  "reckless"
+ ],
+ "base_experience": 69,
+ "growth_rate": "slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "horn-attack",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "stomp",
+    "level": 8
+   },
+   {
+    "move": "fury-attack",
+    "level": 12
+   },
+   {
+    "move": "scary-face",
+    "level": 19
+   },
+   {
+    "move": "rock-blast",
+    "level": 23
+   },
+   {
+    "move": "bulldoze",
+    "level": 30
+   },
+   {
+    "move": "chip-away",
+    "level": 34
+   },
+   {
+    "move": "take-down",
+    "level": 41
+   },
+   {
+    "move": "drill-run",
+    "level": 45
+   },
+   {
+    "move": "stone-edge",
+    "level": 52
+   },
+   {
+    "move": "earthquake",
+    "level": 56
+   },
+   {
+    "move": "horn-drill",
+    "level": 63
+   },
+   {
+    "move": "megahorn",
+    "level": 67
+   }
+  ],
+  "egg": [
+   "counter",
+   "skull-bash",
+   "curse",
+   "reversal",
+   "magnitude",
+   "iron-tail",
+   "crunch",
+   "crush-claw",
+   "dragon-rush",
+   "thunder-fang",
+   "ice-fang",
+   "fire-fang",
+   "rock-climb"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "superpower",
+   "endeavor",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "stealth-rock",
+   "drill-run"
+  ],
+  "machine": [
+   "swords-dance",
+   "roar",
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "thunderbolt",
+   "thunder",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "payback",
+   "rock-polish",
+   "poison-jab",
+   "stone-edge",
+   "round",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

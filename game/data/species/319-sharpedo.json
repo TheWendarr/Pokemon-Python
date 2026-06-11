@@ -1,0 +1,154 @@
+{
+ "id": "sharpedo",
+ "name": "Sharpedo",
+ "dex": 319,
+ "types": [
+  "water",
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 120,
+  "defense": 40,
+  "special_attack": 95,
+  "special_defense": 40,
+  "speed": 95
+ },
+ "abilities": [
+  "rough-skin",
+  "speed-boost"
+ ],
+ "base_experience": 161,
+ "growth_rate": "slow",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "feint",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "rage",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "rage",
+    "level": 6
+   },
+   {
+    "move": "focus-energy",
+    "level": 8
+   },
+   {
+    "move": "scary-face",
+    "level": 11
+   },
+   {
+    "move": "ice-fang",
+    "level": 16
+   },
+   {
+    "move": "screech",
+    "level": 18
+   },
+   {
+    "move": "swagger",
+    "level": 21
+   },
+   {
+    "move": "assurance",
+    "level": 26
+   },
+   {
+    "move": "crunch",
+    "level": 28
+   },
+   {
+    "move": "slash",
+    "level": 30
+   },
+   {
+    "move": "aqua-jet",
+    "level": 34
+   },
+   {
+    "move": "taunt",
+    "level": 40
+   },
+   {
+    "move": "agility",
+    "level": 45
+   },
+   {
+    "move": "skull-bash",
+    "level": 50
+   },
+   {
+    "move": "night-slash",
+    "level": 56
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "bounce",
+   "dark-pulse",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "torment",
+   "facade",
+   "taunt",
+   "dive",
+   "rock-tomb",
+   "payback",
+   "poison-jab",
+   "giga-impact",
+   "round",
+   "scald",
+   "retaliate",
+   "bulldoze",
+   "snarl"
+  ]
+ }
+}

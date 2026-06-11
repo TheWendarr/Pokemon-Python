@@ -1,0 +1,138 @@
+{
+ "id": "vespiquen",
+ "name": "Vespiquen",
+ "dex": 416,
+ "types": [
+  "bug",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 80,
+  "defense": 102,
+  "special_attack": 80,
+  "special_defense": 102,
+  "speed": 40
+ },
+ "abilities": [
+  "pressure",
+  "unnerve"
+ ],
+ "base_experience": 166,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 8,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "sweet-scent",
+    "level": 1
+   },
+   {
+    "move": "gust",
+    "level": 1
+   },
+   {
+    "move": "poison-sting",
+    "level": 1
+   },
+   {
+    "move": "confuse-ray",
+    "level": 1
+   },
+   {
+    "move": "fury-cutter",
+    "level": 5
+   },
+   {
+    "move": "pursuit",
+    "level": 9
+   },
+   {
+    "move": "fury-swipes",
+    "level": 13
+   },
+   {
+    "move": "defend-order",
+    "level": 17
+   },
+   {
+    "move": "slash",
+    "level": 21
+   },
+   {
+    "move": "power-gem",
+    "level": 25
+   },
+   {
+    "move": "heal-order",
+    "level": 29
+   },
+   {
+    "move": "toxic",
+    "level": 33
+   },
+   {
+    "move": "air-slash",
+    "level": 37
+   },
+   {
+    "move": "captivate",
+    "level": 41
+   },
+   {
+    "move": "attack-order",
+    "level": 45
+   },
+   {
+    "move": "swagger",
+    "level": 49
+   },
+   {
+    "move": "destiny-bond",
+    "level": 53
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "endeavor",
+   "signal-beam",
+   "roost",
+   "tailwind",
+   "bug-bite"
+  ],
+  "machine": [
+   "cut",
+   "hyper-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "facade",
+   "aerial-ace",
+   "u-turn",
+   "fling",
+   "x-scissor",
+   "giga-impact",
+   "hone-claws",
+   "venoshock",
+   "round",
+   "quash",
+   "acrobatics",
+   "struggle-bug"
+  ]
+ }
+}

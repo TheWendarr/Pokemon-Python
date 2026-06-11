@@ -1,0 +1,161 @@
+{
+ "id": "farfetchd",
+ "name": "Farfetchd",
+ "dex": 83,
+ "types": [
+  "normal",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 52,
+  "attack": 90,
+  "defense": 55,
+  "special_attack": 58,
+  "special_defense": 62,
+  "speed": 60
+ },
+ "abilities": [
+  "keen-eye",
+  "inner-focus",
+  "defiant"
+ ],
+ "base_experience": 132,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "poison-jab",
+    "level": 1
+   },
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "fury-cutter",
+    "level": 1
+   },
+   {
+    "move": "fury-attack",
+    "level": 7
+   },
+   {
+    "move": "knock-off",
+    "level": 9
+   },
+   {
+    "move": "aerial-ace",
+    "level": 13
+   },
+   {
+    "move": "slash",
+    "level": 19
+   },
+   {
+    "move": "air-cutter",
+    "level": 21
+   },
+   {
+    "move": "swords-dance",
+    "level": 25
+   },
+   {
+    "move": "agility",
+    "level": 31
+   },
+   {
+    "move": "night-slash",
+    "level": 33
+   },
+   {
+    "move": "acrobatics",
+    "level": 37
+   },
+   {
+    "move": "feint",
+    "level": 43
+   },
+   {
+    "move": "false-swipe",
+    "level": 45
+   },
+   {
+    "move": "air-slash",
+    "level": 49
+   },
+   {
+    "move": "brave-bird",
+    "level": 55
+   }
+  ],
+  "egg": [
+   "gust",
+   "quick-attack",
+   "mirror-move",
+   "curse",
+   "flail",
+   "mud-slap",
+   "foresight",
+   "steel-wing",
+   "revenge",
+   "feather-dance",
+   "covet",
+   "leaf-blade",
+   "roost",
+   "trump-card",
+   "night-slash"
+  ],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "heat-wave",
+   "helping-hand",
+   "knock-off",
+   "covet",
+   "roost",
+   "tailwind",
+   "last-resort"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "fly",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "facade",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "poison-jab",
+   "round",
+   "acrobatics",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,126 @@
+{
+ "id": "anorith",
+ "name": "Anorith",
+ "dex": 347,
+ "types": [
+  "rock",
+  "bug"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 95,
+  "defense": 50,
+  "special_attack": 40,
+  "special_defense": 50,
+  "speed": 75
+ },
+ "abilities": [
+  "battle-armor",
+  "swift-swim"
+ ],
+ "base_experience": 71,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 7
+   },
+   {
+    "move": "water-gun",
+    "level": 13
+   },
+   {
+    "move": "metal-claw",
+    "level": 19
+   },
+   {
+    "move": "protect",
+    "level": 25
+   },
+   {
+    "move": "ancient-power",
+    "level": 31
+   },
+   {
+    "move": "fury-cutter",
+    "level": 37
+   },
+   {
+    "move": "slash",
+    "level": 43
+   },
+   {
+    "move": "rock-blast",
+    "level": 49
+   },
+   {
+    "move": "crush-claw",
+    "level": 55
+   },
+   {
+    "move": "x-scissor",
+    "level": 61
+   }
+  ],
+  "egg": [
+   "sand-attack",
+   "screech",
+   "curse",
+   "rapid-spin",
+   "knock-off",
+   "iron-defense",
+   "water-pulse",
+   "cross-poison"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "knock-off",
+   "iron-defense",
+   "earth-power",
+   "stealth-rock",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "rock-polish",
+   "x-scissor",
+   "hone-claws",
+   "smack-down",
+   "round",
+   "struggle-bug"
+  ]
+ }
+}

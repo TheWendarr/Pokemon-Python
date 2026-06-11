@@ -1,0 +1,145 @@
+{
+ "id": "celebi",
+ "name": "Celebi",
+ "dex": 251,
+ "types": [
+  "psychic",
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 100,
+  "attack": 100,
+  "defense": 100,
+  "special_attack": 100,
+  "special_defense": 100,
+  "speed": 100
+ },
+ "abilities": [
+  "natural-cure"
+ ],
+ "base_experience": 270,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leech-seed",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "recover",
+    "level": 1
+   },
+   {
+    "move": "heal-bell",
+    "level": 1
+   },
+   {
+    "move": "safeguard",
+    "level": 10
+   },
+   {
+    "move": "magical-leaf",
+    "level": 19
+   },
+   {
+    "move": "ancient-power",
+    "level": 28
+   },
+   {
+    "move": "baton-pass",
+    "level": 37
+   },
+   {
+    "move": "natural-gift",
+    "level": 46
+   },
+   {
+    "move": "heal-block",
+    "level": 55
+   },
+   {
+    "move": "future-sight",
+    "level": 64
+   },
+   {
+    "move": "healing-wish",
+    "level": 73
+   },
+   {
+    "move": "leaf-storm",
+    "level": 82
+   },
+   {
+    "move": "perish-song",
+    "level": 91
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "heal-bell",
+   "synthesis",
+   "uproar",
+   "helping-hand",
+   "trick",
+   "magic-coat",
+   "skill-swap",
+   "signal-beam",
+   "last-resort",
+   "worry-seed",
+   "seed-bomb",
+   "earth-power",
+   "zen-headbutt",
+   "stealth-rock",
+   "wonder-room",
+   "magic-room"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "solar-beam",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "aerial-ace",
+   "calm-mind",
+   "u-turn",
+   "fling",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "round",
+   "echoed-voice"
+  ]
+ }
+}

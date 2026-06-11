@@ -1,0 +1,124 @@
+{
+ "id": "shroomish",
+ "name": "Shroomish",
+ "dex": 285,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 40,
+  "defense": 60,
+  "special_attack": 40,
+  "special_defense": 60,
+  "speed": 35
+ },
+ "abilities": [
+  "effect-spore",
+  "poison-heal",
+  "quick-feet"
+ ],
+ "base_experience": 59,
+ "growth_rate": "fast-then-very-slow",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "absorb",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 5
+   },
+   {
+    "move": "stun-spore",
+    "level": 9
+   },
+   {
+    "move": "leech-seed",
+    "level": 13
+   },
+   {
+    "move": "mega-drain",
+    "level": 17
+   },
+   {
+    "move": "headbutt",
+    "level": 21
+   },
+   {
+    "move": "poison-powder",
+    "level": 25
+   },
+   {
+    "move": "worry-seed",
+    "level": 29
+   },
+   {
+    "move": "growth",
+    "level": 33
+   },
+   {
+    "move": "giga-drain",
+    "level": 37
+   },
+   {
+    "move": "seed-bomb",
+    "level": 41
+   },
+   {
+    "move": "spore",
+    "level": 45
+   }
+  ],
+  "egg": [
+   "charm",
+   "focus-punch",
+   "helping-hand",
+   "fake-tears",
+   "bullet-seed",
+   "wake-up-slap",
+   "natural-gift",
+   "worry-seed",
+   "seed-bomb",
+   "drain-punch"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "helping-hand",
+   "snatch",
+   "worry-seed",
+   "seed-bomb",
+   "drain-punch"
+  ],
+  "machine": [
+   "swords-dance",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "energy-ball",
+   "grass-knot",
+   "venoshock",
+   "round"
+  ]
+ }
+}

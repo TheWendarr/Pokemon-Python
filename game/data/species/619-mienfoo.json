@@ -1,0 +1,154 @@
+{
+ "id": "mienfoo",
+ "name": "Mienfoo",
+ "dex": 619,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 85,
+  "defense": 50,
+  "special_attack": 55,
+  "special_defense": 50,
+  "speed": 65
+ },
+ "abilities": [
+  "inner-focus",
+  "regenerator",
+  "reckless"
+ ],
+ "base_experience": 70,
+ "growth_rate": "medium-slow",
+ "catch_rate": 180,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "meditate",
+    "level": 5
+   },
+   {
+    "move": "detect",
+    "level": 9
+   },
+   {
+    "move": "fake-out",
+    "level": 13
+   },
+   {
+    "move": "double-slap",
+    "level": 17
+   },
+   {
+    "move": "swift",
+    "level": 21
+   },
+   {
+    "move": "calm-mind",
+    "level": 25
+   },
+   {
+    "move": "force-palm",
+    "level": 29
+   },
+   {
+    "move": "drain-punch",
+    "level": 33
+   },
+   {
+    "move": "jump-kick",
+    "level": 37
+   },
+   {
+    "move": "u-turn",
+    "level": 41
+   },
+   {
+    "move": "quick-guard",
+    "level": 45
+   },
+   {
+    "move": "bounce",
+    "level": 49
+   },
+   {
+    "move": "high-jump-kick",
+    "level": 53
+   },
+   {
+    "move": "reversal",
+    "level": 57
+   },
+   {
+    "move": "aura-sphere",
+    "level": 61
+   }
+  ],
+  "egg": [
+   "low-kick",
+   "endure",
+   "baton-pass",
+   "vital-throw",
+   "smelling-salts",
+   "knock-off",
+   "feint",
+   "me-first"
+  ],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "helping-hand",
+   "role-play",
+   "knock-off",
+   "bounce",
+   "drain-punch",
+   "dual-chop"
+  ],
+  "machine": [
+   "swords-dance",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "reflect",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "bulk-up",
+   "calm-mind",
+   "u-turn",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "stone-edge",
+   "grass-knot",
+   "low-sweep",
+   "round",
+   "acrobatics",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

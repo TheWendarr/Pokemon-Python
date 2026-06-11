@@ -1,0 +1,114 @@
+{
+ "id": "staravia",
+ "name": "Staravia",
+ "dex": 397,
+ "types": [
+  "normal",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 75,
+  "defense": 50,
+  "special_attack": 40,
+  "special_defense": 40,
+  "speed": 80
+ },
+ "abilities": [
+  "intimidate",
+  "reckless"
+ ],
+ "base_experience": 119,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 5
+   },
+   {
+    "move": "wing-attack",
+    "level": 9
+   },
+   {
+    "move": "double-team",
+    "level": 13
+   },
+   {
+    "move": "endeavor",
+    "level": 18
+   },
+   {
+    "move": "whirlwind",
+    "level": 23
+   },
+   {
+    "move": "aerial-ace",
+    "level": 28
+   },
+   {
+    "move": "take-down",
+    "level": 33
+   },
+   {
+    "move": "agility",
+    "level": 38
+   },
+   {
+    "move": "brave-bird",
+    "level": 43
+   },
+   {
+    "move": "final-gambit",
+    "level": 48
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heat-wave",
+   "endeavor",
+   "roost",
+   "tailwind"
+  ],
+  "machine": [
+   "fly",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "facade",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

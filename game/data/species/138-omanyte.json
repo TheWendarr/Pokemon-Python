@@ -1,0 +1,141 @@
+{
+ "id": "omanyte",
+ "name": "Omanyte",
+ "dex": 138,
+ "types": [
+  "rock",
+  "water"
+ ],
+ "base_stats": {
+  "hp": 35,
+  "attack": 40,
+  "defense": 100,
+  "special_attack": 90,
+  "special_defense": 55,
+  "speed": 35
+ },
+ "abilities": [
+  "swift-swim",
+  "shell-armor",
+  "weak-armor"
+ ],
+ "base_experience": 71,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "constrict",
+    "level": 1
+   },
+   {
+    "move": "withdraw",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 7
+   },
+   {
+    "move": "water-gun",
+    "level": 10
+   },
+   {
+    "move": "rollout",
+    "level": 16
+   },
+   {
+    "move": "leer",
+    "level": 19
+   },
+   {
+    "move": "mud-shot",
+    "level": 25
+   },
+   {
+    "move": "brine",
+    "level": 28
+   },
+   {
+    "move": "protect",
+    "level": 34
+   },
+   {
+    "move": "ancient-power",
+    "level": 37
+   },
+   {
+    "move": "tickle",
+    "level": 43
+   },
+   {
+    "move": "rock-blast",
+    "level": 46
+   },
+   {
+    "move": "shell-smash",
+    "level": 52
+   },
+   {
+    "move": "hydro-pump",
+    "level": 55
+   }
+  ],
+  "egg": [
+   "slam",
+   "supersonic",
+   "bubble-beam",
+   "aurora-beam",
+   "haze",
+   "bide",
+   "spikes",
+   "whirlpool",
+   "knock-off",
+   "muddy-water",
+   "water-pulse",
+   "wring-out",
+   "toxic-spikes"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "knock-off",
+   "iron-defense",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "dive",
+   "rock-tomb",
+   "gyro-ball",
+   "rock-polish",
+   "smack-down",
+   "round",
+   "scald"
+  ]
+ }
+}

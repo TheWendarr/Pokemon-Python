@@ -1,0 +1,102 @@
+{
+ "hardy": {
+  "up": null,
+  "down": null
+ },
+ "bold": {
+  "up": "defense",
+  "down": "attack"
+ },
+ "modest": {
+  "up": "special_attack",
+  "down": "attack"
+ },
+ "calm": {
+  "up": "special_defense",
+  "down": "attack"
+ },
+ "timid": {
+  "up": "speed",
+  "down": "attack"
+ },
+ "lonely": {
+  "up": "attack",
+  "down": "defense"
+ },
+ "docile": {
+  "up": null,
+  "down": null
+ },
+ "mild": {
+  "up": "special_attack",
+  "down": "defense"
+ },
+ "gentle": {
+  "up": "special_defense",
+  "down": "defense"
+ },
+ "hasty": {
+  "up": "speed",
+  "down": "defense"
+ },
+ "adamant": {
+  "up": "attack",
+  "down": "special_attack"
+ },
+ "impish": {
+  "up": "defense",
+  "down": "special_attack"
+ },
+ "bashful": {
+  "up": null,
+  "down": null
+ },
+ "careful": {
+  "up": "special_defense",
+  "down": "special_attack"
+ },
+ "rash": {
+  "up": "special_attack",
+  "down": "special_defense"
+ },
+ "jolly": {
+  "up": "speed",
+  "down": "special_attack"
+ },
+ "naughty": {
+  "up": "attack",
+  "down": "special_defense"
+ },
+ "lax": {
+  "up": "defense",
+  "down": "special_defense"
+ },
+ "quirky": {
+  "up": null,
+  "down": null
+ },
+ "naive": {
+  "up": "speed",
+  "down": "special_defense"
+ },
+ "brave": {
+  "up": "attack",
+  "down": "speed"
+ },
+ "relaxed": {
+  "up": "defense",
+  "down": "speed"
+ },
+ "quiet": {
+  "up": "special_attack",
+  "down": "speed"
+ },
+ "sassy": {
+  "up": "special_defense",
+  "down": "speed"
+ },
+ "serious": {
+  "up": null,
+  "down": null
+ }
+}

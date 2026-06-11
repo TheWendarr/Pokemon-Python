@@ -1,0 +1,162 @@
+{
+ "id": "kirlia",
+ "name": "Kirlia",
+ "dex": 281,
+ "types": [
+  "psychic",
+  "fairy"
+ ],
+ "base_stats": {
+  "hp": 38,
+  "attack": 35,
+  "defense": 35,
+  "special_attack": 65,
+  "special_defense": 55,
+  "speed": 50
+ },
+ "abilities": [
+  "synchronize",
+  "trace",
+  "telepathy"
+ ],
+ "base_experience": 97,
+ "growth_rate": "slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "double-team",
+    "level": 1
+   },
+   {
+    "move": "teleport",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 6
+   },
+   {
+    "move": "double-team",
+    "level": 10
+   },
+   {
+    "move": "teleport",
+    "level": 12
+   },
+   {
+    "move": "lucky-chant",
+    "level": 17
+   },
+   {
+    "move": "magical-leaf",
+    "level": 22
+   },
+   {
+    "move": "heal-pulse",
+    "level": 25
+   },
+   {
+    "move": "calm-mind",
+    "level": 31
+   },
+   {
+    "move": "psychic",
+    "level": 36
+   },
+   {
+    "move": "imprison",
+    "level": 39
+   },
+   {
+    "move": "future-sight",
+    "level": 45
+   },
+   {
+    "move": "charm",
+    "level": 50
+   },
+   {
+    "move": "hypnosis",
+    "level": 53
+   },
+   {
+    "move": "dream-eater",
+    "level": 59
+   },
+   {
+    "move": "stored-power",
+    "level": 64
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "pain-split",
+   "helping-hand",
+   "trick",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "snatch",
+   "hyper-voice",
+   "signal-beam",
+   "zen-headbutt",
+   "wonder-room",
+   "magic-room"
+  ],
+  "machine": [
+   "thunderbolt",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "calm-mind",
+   "fling",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "ally-switch"
+  ]
+ }
+}

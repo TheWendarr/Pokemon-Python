@@ -1,0 +1,155 @@
+{
+ "id": "qwilfish",
+ "name": "Qwilfish",
+ "dex": 211,
+ "types": [
+  "water",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 95,
+  "defense": 85,
+  "special_attack": 55,
+  "special_defense": 55,
+  "speed": 85
+ },
+ "abilities": [
+  "poison-point",
+  "swift-swim",
+  "intimidate"
+ ],
+ "base_experience": 88,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "spikes",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "poison-sting",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 9
+   },
+   {
+    "move": "minimize",
+    "level": 9
+   },
+   {
+    "move": "water-gun",
+    "level": 13
+   },
+   {
+    "move": "rollout",
+    "level": 17
+   },
+   {
+    "move": "toxic-spikes",
+    "level": 21
+   },
+   {
+    "move": "stockpile",
+    "level": 25
+   },
+   {
+    "move": "spit-up",
+    "level": 25
+   },
+   {
+    "move": "revenge",
+    "level": 29
+   },
+   {
+    "move": "brine",
+    "level": 33
+   },
+   {
+    "move": "pin-missile",
+    "level": 37
+   },
+   {
+    "move": "take-down",
+    "level": 41
+   },
+   {
+    "move": "aqua-tail",
+    "level": 45
+   },
+   {
+    "move": "poison-jab",
+    "level": 49
+   },
+   {
+    "move": "destiny-bond",
+    "level": 53
+   },
+   {
+    "move": "hydro-pump",
+    "level": 57
+   }
+  ],
+  "egg": [
+   "supersonic",
+   "bubble-beam",
+   "haze",
+   "flail",
+   "astonish",
+   "signal-beam",
+   "water-pulse",
+   "brine",
+   "aqua-jet",
+   "acid-spray"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "pain-split",
+   "signal-beam",
+   "bounce",
+   "aqua-tail"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "thunder-wave",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "explosion",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "shadow-ball",
+   "hail",
+   "facade",
+   "taunt",
+   "dive",
+   "gyro-ball",
+   "payback",
+   "poison-jab",
+   "venoshock",
+   "sludge-wave",
+   "round",
+   "scald"
+  ]
+ }
+}

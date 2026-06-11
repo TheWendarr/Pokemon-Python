@@ -1,0 +1,138 @@
+{
+ "id": "gigalith",
+ "name": "Gigalith",
+ "dex": 526,
+ "types": [
+  "rock"
+ ],
+ "base_stats": {
+  "hp": 85,
+  "attack": 135,
+  "defense": 130,
+  "special_attack": 60,
+  "special_defense": 80,
+  "speed": 25
+ },
+ "abilities": [
+  "sturdy",
+  "sand-stream",
+  "sand-force"
+ ],
+ "base_experience": 232,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 1
+   },
+   {
+    "move": "headbutt",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 4
+   },
+   {
+    "move": "sand-attack",
+    "level": 7
+   },
+   {
+    "move": "headbutt",
+    "level": 10
+   },
+   {
+    "move": "rock-blast",
+    "level": 14
+   },
+   {
+    "move": "mud-slap",
+    "level": 17
+   },
+   {
+    "move": "iron-defense",
+    "level": 20
+   },
+   {
+    "move": "smack-down",
+    "level": 23
+   },
+   {
+    "move": "power-gem",
+    "level": 25
+   },
+   {
+    "move": "rock-slide",
+    "level": 30
+   },
+   {
+    "move": "stealth-rock",
+    "level": 36
+   },
+   {
+    "move": "sandstorm",
+    "level": 42
+   },
+   {
+    "move": "stone-edge",
+    "level": 48
+   },
+   {
+    "move": "explosion",
+    "level": 55
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "superpower",
+   "iron-defense",
+   "block",
+   "gravity",
+   "earth-power",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "rock-polish",
+   "giga-impact",
+   "flash-cannon",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

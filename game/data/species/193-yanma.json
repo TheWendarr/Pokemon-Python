@@ -1,0 +1,139 @@
+{
+ "id": "yanma",
+ "name": "Yanma",
+ "dex": 193,
+ "types": [
+  "bug",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 65,
+  "defense": 45,
+  "special_attack": 75,
+  "special_defense": 45,
+  "speed": 95
+ },
+ "abilities": [
+  "speed-boost",
+  "compound-eyes",
+  "frisk"
+ ],
+ "base_experience": 78,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "foresight",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 6
+   },
+   {
+    "move": "double-team",
+    "level": 11
+   },
+   {
+    "move": "sonic-boom",
+    "level": 14
+   },
+   {
+    "move": "detect",
+    "level": 17
+   },
+   {
+    "move": "supersonic",
+    "level": 22
+   },
+   {
+    "move": "uproar",
+    "level": 27
+   },
+   {
+    "move": "pursuit",
+    "level": 30
+   },
+   {
+    "move": "ancient-power",
+    "level": 33
+   },
+   {
+    "move": "hypnosis",
+    "level": 38
+   },
+   {
+    "move": "wing-attack",
+    "level": 43
+   },
+   {
+    "move": "screech",
+    "level": 46
+   },
+   {
+    "move": "u-turn",
+    "level": 49
+   },
+   {
+    "move": "air-slash",
+    "level": 54
+   },
+   {
+    "move": "bug-buzz",
+    "level": 57
+   }
+  ],
+  "egg": [
+   "whirlwind",
+   "double-edge",
+   "leech-life",
+   "reversal",
+   "feint-attack",
+   "pursuit",
+   "secret-power",
+   "silver-wind",
+   "signal-beam",
+   "feint"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "uproar",
+   "signal-beam",
+   "roost",
+   "tailwind",
+   "bug-bite"
+  ],
+  "machine": [
+   "solar-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "shadow-ball",
+   "facade",
+   "aerial-ace",
+   "u-turn",
+   "round"
+  ]
+ }
+}

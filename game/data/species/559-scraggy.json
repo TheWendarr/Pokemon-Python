@@ -1,0 +1,169 @@
+{
+ "id": "scraggy",
+ "name": "Scraggy",
+ "dex": 559,
+ "types": [
+  "dark",
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 75,
+  "defense": 70,
+  "special_attack": 35,
+  "special_defense": 70,
+  "speed": 48
+ },
+ "abilities": [
+  "shed-skin",
+  "moxie",
+  "intimidate"
+ ],
+ "base_experience": 70,
+ "growth_rate": "medium",
+ "catch_rate": 180,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "low-kick",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 5
+   },
+   {
+    "move": "feint-attack",
+    "level": 9
+   },
+   {
+    "move": "headbutt",
+    "level": 12
+   },
+   {
+    "move": "swagger",
+    "level": 16
+   },
+   {
+    "move": "brick-break",
+    "level": 20
+   },
+   {
+    "move": "payback",
+    "level": 23
+   },
+   {
+    "move": "chip-away",
+    "level": 27
+   },
+   {
+    "move": "high-jump-kick",
+    "level": 31
+   },
+   {
+    "move": "scary-face",
+    "level": 34
+   },
+   {
+    "move": "crunch",
+    "level": 38
+   },
+   {
+    "move": "facade",
+    "level": 42
+   },
+   {
+    "move": "rock-climb",
+    "level": 45
+   },
+   {
+    "move": "focus-punch",
+    "level": 49
+   },
+   {
+    "move": "head-smash",
+    "level": 53
+   }
+  ],
+  "egg": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "counter",
+   "amnesia",
+   "feint-attack",
+   "detect",
+   "fake-out",
+   "dragon-dance",
+   "drain-punch",
+   "zen-headbutt"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "super-fang",
+   "snore",
+   "spite",
+   "sleep-talk",
+   "iron-tail",
+   "knock-off",
+   "snatch",
+   "iron-defense",
+   "dark-pulse",
+   "dragon-pulse",
+   "drain-punch",
+   "zen-headbutt",
+   "iron-head",
+   "foul-play",
+   "dual-chop"
+  ],
+  "machine": [
+   "roar",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "dragon-claw",
+   "bulk-up",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "stone-edge",
+   "grass-knot",
+   "smack-down",
+   "low-sweep",
+   "round",
+   "incinerate",
+   "retaliate",
+   "dragon-tail",
+   "work-up",
+   "snarl"
+  ]
+ }
+}

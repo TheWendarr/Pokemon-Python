@@ -1,0 +1,30 @@
+{
+ "id": "sky-attack",
+ "name": "Sky Attack",
+ "type": "flying",
+ "category": "physical",
+ "power": 140,
+ "accuracy": 90,
+ "pp": 5,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 1,
+ "flags": [
+  "charge",
+  "distance",
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 30,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

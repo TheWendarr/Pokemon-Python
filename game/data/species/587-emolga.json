@@ -1,0 +1,141 @@
+{
+ "id": "emolga",
+ "name": "Emolga",
+ "dex": 587,
+ "types": [
+  "electric",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 75,
+  "defense": 60,
+  "special_attack": 75,
+  "special_defense": 60,
+  "speed": 103
+ },
+ "abilities": [
+  "static",
+  "motor-drive"
+ ],
+ "base_experience": 150,
+ "growth_rate": "medium",
+ "catch_rate": 200,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "thunder-shock",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 4
+   },
+   {
+    "move": "tail-whip",
+    "level": 7
+   },
+   {
+    "move": "charge",
+    "level": 10
+   },
+   {
+    "move": "spark",
+    "level": 13
+   },
+   {
+    "move": "pursuit",
+    "level": 16
+   },
+   {
+    "move": "double-team",
+    "level": 19
+   },
+   {
+    "move": "shock-wave",
+    "level": 22
+   },
+   {
+    "move": "electro-ball",
+    "level": 26
+   },
+   {
+    "move": "acrobatics",
+    "level": 30
+   },
+   {
+    "move": "light-screen",
+    "level": 34
+   },
+   {
+    "move": "encore",
+    "level": 38
+   },
+   {
+    "move": "volt-switch",
+    "level": 42
+   },
+   {
+    "move": "agility",
+    "level": 46
+   },
+   {
+    "move": "discharge",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "charm",
+   "baton-pass",
+   "iron-tail",
+   "astonish",
+   "tickle",
+   "covet",
+   "shock-wave",
+   "roost",
+   "air-slash"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "knock-off",
+   "signal-beam",
+   "covet",
+   "roost",
+   "tailwind",
+   "last-resort"
+  ],
+  "machine": [
+   "cut",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "u-turn",
+   "fling",
+   "charge-beam",
+   "round",
+   "acrobatics",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

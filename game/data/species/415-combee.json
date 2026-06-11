@@ -1,0 +1,53 @@
+{
+ "id": "combee",
+ "name": "Combee",
+ "dex": 415,
+ "types": [
+  "bug",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 30,
+  "attack": 30,
+  "defense": 42,
+  "special_attack": 30,
+  "special_defense": 42,
+  "speed": 70
+ },
+ "abilities": [
+  "honey-gather",
+  "hustle"
+ ],
+ "base_experience": 49,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "sweet-scent",
+    "level": 1
+   },
+   {
+    "move": "gust",
+    "level": 1
+   },
+   {
+    "move": "bug-bite",
+    "level": 13
+   },
+   {
+    "move": "bug-buzz",
+    "level": 29
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "endeavor",
+   "tailwind",
+   "bug-bite"
+  ],
+  "machine": []
+ }
+}

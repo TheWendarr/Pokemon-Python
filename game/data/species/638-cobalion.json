@@ -1,0 +1,137 @@
+{
+ "id": "cobalion",
+ "name": "Cobalion",
+ "dex": 638,
+ "types": [
+  "steel",
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 91,
+  "attack": 90,
+  "defense": 129,
+  "special_attack": 90,
+  "special_defense": 72,
+  "speed": 108
+ },
+ "abilities": [
+  "justified"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "double-kick",
+    "level": 7
+   },
+   {
+    "move": "metal-claw",
+    "level": 13
+   },
+   {
+    "move": "take-down",
+    "level": 19
+   },
+   {
+    "move": "helping-hand",
+    "level": 25
+   },
+   {
+    "move": "retaliate",
+    "level": 31
+   },
+   {
+    "move": "iron-head",
+    "level": 37
+   },
+   {
+    "move": "sacred-sword",
+    "level": 42
+   },
+   {
+    "move": "swords-dance",
+    "level": 49
+   },
+   {
+    "move": "quick-guard",
+    "level": 55
+   },
+   {
+    "move": "work-up",
+    "level": 61
+   },
+   {
+    "move": "metal-burst",
+    "level": 67
+   },
+   {
+    "move": "close-combat",
+    "level": 73
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "helping-hand",
+   "superpower",
+   "iron-defense",
+   "block",
+   "bounce",
+   "magnet-rise",
+   "zen-headbutt",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "hyper-beam",
+   "strength",
+   "thunder-wave",
+   "toxic",
+   "double-team",
+   "reflect",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "false-swipe",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "psych-up",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "calm-mind",
+   "rock-polish",
+   "poison-jab",
+   "x-scissor",
+   "focus-blast",
+   "giga-impact",
+   "flash-cannon",
+   "stone-edge",
+   "hone-claws",
+   "round",
+   "retaliate",
+   "volt-switch",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,160 @@
+{
+ "id": "archen",
+ "name": "Archen",
+ "dex": 566,
+ "types": [
+  "rock",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 112,
+  "defense": 45,
+  "special_attack": 74,
+  "special_defense": 45,
+  "speed": 70
+ },
+ "abilities": [
+  "defeatist"
+ ],
+ "base_experience": 71,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "wing-attack",
+    "level": 1
+   },
+   {
+    "move": "rock-throw",
+    "level": 5
+   },
+   {
+    "move": "double-team",
+    "level": 8
+   },
+   {
+    "move": "scary-face",
+    "level": 11
+   },
+   {
+    "move": "pluck",
+    "level": 15
+   },
+   {
+    "move": "ancient-power",
+    "level": 18
+   },
+   {
+    "move": "agility",
+    "level": 21
+   },
+   {
+    "move": "quick-guard",
+    "level": 25
+   },
+   {
+    "move": "acrobatics",
+    "level": 28
+   },
+   {
+    "move": "dragon-breath",
+    "level": 31
+   },
+   {
+    "move": "crunch",
+    "level": 35
+   },
+   {
+    "move": "endeavor",
+    "level": 38
+   },
+   {
+    "move": "u-turn",
+    "level": 41
+   },
+   {
+    "move": "rock-slide",
+    "level": 45
+   },
+   {
+    "move": "dragon-claw",
+    "level": 48
+   },
+   {
+    "move": "thrash",
+    "level": 51
+   }
+  ],
+  "egg": [
+   "bite",
+   "steel-wing",
+   "knock-off",
+   "dragon-pulse",
+   "earth-power",
+   "defog",
+   "head-smash"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "heat-wave",
+   "endeavor",
+   "iron-defense",
+   "bounce",
+   "roost",
+   "tailwind",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "pluck",
+   "u-turn",
+   "rock-polish",
+   "shadow-claw",
+   "stone-edge",
+   "hone-claws",
+   "smack-down",
+   "round",
+   "acrobatics",
+   "bulldoze"
+  ]
+ }
+}

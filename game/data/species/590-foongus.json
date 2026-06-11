@@ -1,0 +1,133 @@
+{
+ "id": "foongus",
+ "name": "Foongus",
+ "dex": 590,
+ "types": [
+  "grass",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 69,
+  "attack": 55,
+  "defense": 45,
+  "special_attack": 55,
+  "special_defense": 55,
+  "speed": 15
+ },
+ "abilities": [
+  "effect-spore",
+  "regenerator"
+ ],
+ "base_experience": 59,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "absorb",
+    "level": 1
+   },
+   {
+    "move": "growth",
+    "level": 6
+   },
+   {
+    "move": "astonish",
+    "level": 8
+   },
+   {
+    "move": "bide",
+    "level": 12
+   },
+   {
+    "move": "mega-drain",
+    "level": 15
+   },
+   {
+    "move": "ingrain",
+    "level": 18
+   },
+   {
+    "move": "feint-attack",
+    "level": 20
+   },
+   {
+    "move": "sweet-scent",
+    "level": 24
+   },
+   {
+    "move": "giga-drain",
+    "level": 28
+   },
+   {
+    "move": "toxic",
+    "level": 32
+   },
+   {
+    "move": "synthesis",
+    "level": 35
+   },
+   {
+    "move": "clear-smog",
+    "level": 39
+   },
+   {
+    "move": "solar-beam",
+    "level": 43
+   },
+   {
+    "move": "rage-powder",
+    "level": 45
+   },
+   {
+    "move": "spore",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "body-slam",
+   "growth",
+   "poison-powder",
+   "stun-spore",
+   "defense-curl",
+   "endure",
+   "rollout",
+   "gastro-acid"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "gastro-acid",
+   "worry-seed",
+   "seed-bomb",
+   "foul-play",
+   "after-you"
+  ],
+  "machine": [
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "facade",
+   "payback",
+   "energy-ball",
+   "grass-knot",
+   "venoshock",
+   "round"
+  ]
+ }
+}

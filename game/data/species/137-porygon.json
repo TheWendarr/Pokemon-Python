@@ -1,0 +1,141 @@
+{
+ "id": "porygon",
+ "name": "Porygon",
+ "dex": 137,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 60,
+  "defense": 70,
+  "special_attack": 85,
+  "special_defense": 75,
+  "speed": 40
+ },
+ "abilities": [
+  "trace",
+  "download",
+  "analytic"
+ ],
+ "base_experience": 79,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "conversion-2",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "conversion",
+    "level": 1
+   },
+   {
+    "move": "sharpen",
+    "level": 1
+   },
+   {
+    "move": "psybeam",
+    "level": 7
+   },
+   {
+    "move": "agility",
+    "level": 12
+   },
+   {
+    "move": "recover",
+    "level": 18
+   },
+   {
+    "move": "magnet-rise",
+    "level": 23
+   },
+   {
+    "move": "signal-beam",
+    "level": 29
+   },
+   {
+    "move": "recycle",
+    "level": 34
+   },
+   {
+    "move": "discharge",
+    "level": 40
+   },
+   {
+    "move": "lock-on",
+    "level": 45
+   },
+   {
+    "move": "tri-attack",
+    "level": 51
+   },
+   {
+    "move": "magic-coat",
+    "level": 56
+   },
+   {
+    "move": "zap-cannon",
+    "level": 62
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "pain-split",
+   "iron-tail",
+   "trick",
+   "magic-coat",
+   "recycle",
+   "signal-beam",
+   "gravity",
+   "last-resort",
+   "magnet-rise",
+   "zen-headbutt",
+   "wonder-room",
+   "foul-play",
+   "electroweb"
+  ],
+  "machine": [
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "aerial-ace",
+   "giga-impact",
+   "trick-room",
+   "charge-beam",
+   "psyshock",
+   "round"
+  ]
+ }
+}

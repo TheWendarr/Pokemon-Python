@@ -1,0 +1,155 @@
+{
+ "id": "skorupi",
+ "name": "Skorupi",
+ "dex": 451,
+ "types": [
+  "poison",
+  "bug"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 50,
+  "defense": 90,
+  "special_attack": 30,
+  "special_defense": 55,
+  "speed": 65
+ },
+ "abilities": [
+  "battle-armor",
+  "sniper",
+  "keen-eye"
+ ],
+ "base_experience": 66,
+ "growth_rate": "slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "poison-sting",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "knock-off",
+    "level": 5
+   },
+   {
+    "move": "pin-missile",
+    "level": 9
+   },
+   {
+    "move": "acupressure",
+    "level": 13
+   },
+   {
+    "move": "pursuit",
+    "level": 16
+   },
+   {
+    "move": "bug-bite",
+    "level": 20
+   },
+   {
+    "move": "poison-fang",
+    "level": 23
+   },
+   {
+    "move": "venoshock",
+    "level": 27
+   },
+   {
+    "move": "hone-claws",
+    "level": 30
+   },
+   {
+    "move": "toxic-spikes",
+    "level": 34
+   },
+   {
+    "move": "night-slash",
+    "level": 38
+   },
+   {
+    "move": "scary-face",
+    "level": 41
+   },
+   {
+    "move": "crunch",
+    "level": 45
+   },
+   {
+    "move": "cross-poison",
+    "level": 49
+   }
+  ],
+  "egg": [
+   "whirlwind",
+   "sand-attack",
+   "twineedle",
+   "agility",
+   "screech",
+   "confuse-ray",
+   "slash",
+   "feint-attack",
+   "pursuit",
+   "iron-tail",
+   "poison-tail",
+   "night-slash"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "knock-off",
+   "dark-pulse",
+   "aqua-tail",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "payback",
+   "fling",
+   "poison-jab",
+   "x-scissor",
+   "hone-claws",
+   "venoshock",
+   "round",
+   "struggle-bug"
+  ]
+ }
+}

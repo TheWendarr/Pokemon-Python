@@ -1,0 +1,150 @@
+{
+ "id": "camerupt",
+ "name": "Camerupt",
+ "dex": 323,
+ "types": [
+  "fire",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 100,
+  "defense": 70,
+  "special_attack": 105,
+  "special_defense": 75,
+  "speed": 40
+ },
+ "abilities": [
+  "magma-armor",
+  "solid-rock",
+  "anger-point"
+ ],
+ "base_experience": 161,
+ "growth_rate": "medium",
+ "catch_rate": 150,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "magnitude",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 5
+   },
+   {
+    "move": "magnitude",
+    "level": 8
+   },
+   {
+    "move": "focus-energy",
+    "level": 12
+   },
+   {
+    "move": "flame-burst",
+    "level": 15
+   },
+   {
+    "move": "amnesia",
+    "level": 19
+   },
+   {
+    "move": "lava-plume",
+    "level": 22
+   },
+   {
+    "move": "earth-power",
+    "level": 26
+   },
+   {
+    "move": "curse",
+    "level": 29
+   },
+   {
+    "move": "take-down",
+    "level": 31
+   },
+   {
+    "move": "rock-slide",
+    "level": 33
+   },
+   {
+    "move": "yawn",
+    "level": 39
+   },
+   {
+    "move": "earthquake",
+    "level": 46
+   },
+   {
+    "move": "eruption",
+    "level": 52
+   },
+   {
+    "move": "fissure",
+    "level": 59
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heat-wave",
+   "earth-power",
+   "iron-head",
+   "stealth-rock",
+   "after-you"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "overheat",
+   "rock-tomb",
+   "rock-polish",
+   "giga-impact",
+   "flash-cannon",
+   "stone-edge",
+   "flame-charge",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

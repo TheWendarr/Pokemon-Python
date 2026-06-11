@@ -1,0 +1,127 @@
+{
+ "id": "kyogre",
+ "name": "Kyogre",
+ "dex": 382,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 100,
+  "attack": 100,
+  "defense": 90,
+  "special_attack": 150,
+  "special_defense": 140,
+  "speed": 90
+ },
+ "abilities": [
+  "drizzle"
+ ],
+ "base_experience": 302,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "water-pulse",
+    "level": 1
+   },
+   {
+    "move": "scary-face",
+    "level": 5
+   },
+   {
+    "move": "body-slam",
+    "level": 15
+   },
+   {
+    "move": "muddy-water",
+    "level": 20
+   },
+   {
+    "move": "aqua-ring",
+    "level": 30
+   },
+   {
+    "move": "ice-beam",
+    "level": 35
+   },
+   {
+    "move": "ancient-power",
+    "level": 45
+   },
+   {
+    "move": "water-spout",
+    "level": 50
+   },
+   {
+    "move": "calm-mind",
+    "level": 60
+   },
+   {
+    "move": "aqua-tail",
+    "level": 65
+   },
+   {
+    "move": "sheer-cold",
+    "level": 75
+   },
+   {
+    "move": "double-edge",
+    "level": 80
+   },
+   {
+    "move": "hydro-pump",
+    "level": 90
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "signal-beam",
+   "block",
+   "aqua-tail",
+   "iron-head"
+  ],
+  "machine": [
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "calm-mind",
+   "giga-impact",
+   "round",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

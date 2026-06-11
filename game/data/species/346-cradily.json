@@ -1,0 +1,138 @@
+{
+ "id": "cradily",
+ "name": "Cradily",
+ "dex": 346,
+ "types": [
+  "rock",
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 86,
+  "attack": 81,
+  "defense": 97,
+  "special_attack": 81,
+  "special_defense": 107,
+  "speed": 43
+ },
+ "abilities": [
+  "suction-cups",
+  "storm-drain"
+ ],
+ "base_experience": 173,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "constrict",
+    "level": 1
+   },
+   {
+    "move": "acid",
+    "level": 1
+   },
+   {
+    "move": "ingrain",
+    "level": 1
+   },
+   {
+    "move": "acid",
+    "level": 8
+   },
+   {
+    "move": "ingrain",
+    "level": 15
+   },
+   {
+    "move": "confuse-ray",
+    "level": 22
+   },
+   {
+    "move": "amnesia",
+    "level": 29
+   },
+   {
+    "move": "ancient-power",
+    "level": 36
+   },
+   {
+    "move": "gastro-acid",
+    "level": 46
+   },
+   {
+    "move": "energy-ball",
+    "level": 56
+   },
+   {
+    "move": "stockpile",
+    "level": 66
+   },
+   {
+    "move": "spit-up",
+    "level": 66
+   },
+   {
+    "move": "swallow",
+    "level": 66
+   },
+   {
+    "move": "wring-out",
+    "level": 76
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "pain-split",
+   "synthesis",
+   "block",
+   "gastro-acid",
+   "worry-seed",
+   "seed-bomb",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "swords-dance",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "rock-polish",
+   "energy-ball",
+   "giga-impact",
+   "stone-edge",
+   "grass-knot",
+   "smack-down",
+   "sludge-wave",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

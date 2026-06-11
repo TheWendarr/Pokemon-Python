@@ -1,0 +1,129 @@
+{
+ "id": "snover",
+ "name": "Snover",
+ "dex": 459,
+ "types": [
+  "grass",
+  "ice"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 62,
+  "defense": 50,
+  "special_attack": 62,
+  "special_defense": 60,
+  "speed": 40
+ },
+ "abilities": [
+  "snow-warning",
+  "soundproof"
+ ],
+ "base_experience": 67,
+ "growth_rate": "slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "powder-snow",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "razor-leaf",
+    "level": 5
+   },
+   {
+    "move": "icy-wind",
+    "level": 9
+   },
+   {
+    "move": "grass-whistle",
+    "level": 13
+   },
+   {
+    "move": "swagger",
+    "level": 17
+   },
+   {
+    "move": "mist",
+    "level": 21
+   },
+   {
+    "move": "ice-shard",
+    "level": 26
+   },
+   {
+    "move": "ingrain",
+    "level": 31
+   },
+   {
+    "move": "wood-hammer",
+    "level": 36
+   },
+   {
+    "move": "blizzard",
+    "level": 41
+   },
+   {
+    "move": "sheer-cold",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "stomp",
+   "double-edge",
+   "mist",
+   "leech-seed",
+   "growth",
+   "skull-bash",
+   "bullet-seed",
+   "magical-leaf",
+   "natural-gift",
+   "seed-bomb",
+   "avalanche"
+  ],
+  "tutor": [
+   "ice-punch",
+   "snore",
+   "icy-wind",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "synthesis",
+   "role-play",
+   "worry-seed",
+   "seed-bomb"
+  ],
+  "machine": [
+   "swords-dance",
+   "ice-beam",
+   "blizzard",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "shadow-ball",
+   "hail",
+   "facade",
+   "energy-ball",
+   "grass-knot",
+   "round",
+   "frost-breath"
+  ]
+ }
+}

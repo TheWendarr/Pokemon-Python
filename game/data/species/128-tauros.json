@@ -1,0 +1,139 @@
+{
+ "id": "tauros",
+ "name": "Tauros",
+ "dex": 128,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 100,
+  "defense": 95,
+  "special_attack": 40,
+  "special_defense": 70,
+  "speed": 110
+ },
+ "abilities": [
+  "intimidate",
+  "anger-point",
+  "sheer-force"
+ ],
+ "base_experience": 172,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 3
+   },
+   {
+    "move": "rage",
+    "level": 5
+   },
+   {
+    "move": "horn-attack",
+    "level": 8
+   },
+   {
+    "move": "scary-face",
+    "level": 11
+   },
+   {
+    "move": "pursuit",
+    "level": 15
+   },
+   {
+    "move": "rest",
+    "level": 19
+   },
+   {
+    "move": "payback",
+    "level": 24
+   },
+   {
+    "move": "work-up",
+    "level": 29
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 35
+   },
+   {
+    "move": "take-down",
+    "level": 41
+   },
+   {
+    "move": "swagger",
+    "level": 48
+   },
+   {
+    "move": "thrash",
+    "level": 55
+   },
+   {
+    "move": "giga-impact",
+    "level": 63
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "role-play",
+   "endeavor",
+   "zen-headbutt",
+   "iron-head"
+  ],
+  "machine": [
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "payback",
+   "giga-impact",
+   "stone-edge",
+   "round",
+   "incinerate",
+   "retaliate",
+   "bulldoze",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

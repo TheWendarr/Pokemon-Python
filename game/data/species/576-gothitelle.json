@@ -1,0 +1,169 @@
+{
+ "id": "gothitelle",
+ "name": "Gothitelle",
+ "dex": 576,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 55,
+  "defense": 95,
+  "special_attack": 95,
+  "special_defense": 110,
+  "speed": 65
+ },
+ "abilities": [
+  "frisk",
+  "competitive",
+  "shadow-tag"
+ ],
+ "base_experience": 221,
+ "growth_rate": "medium-slow",
+ "catch_rate": 50,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "tickle",
+    "level": 1
+   },
+   {
+    "move": "fake-tears",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 3
+   },
+   {
+    "move": "tickle",
+    "level": 7
+   },
+   {
+    "move": "fake-tears",
+    "level": 10
+   },
+   {
+    "move": "double-slap",
+    "level": 14
+   },
+   {
+    "move": "psybeam",
+    "level": 16
+   },
+   {
+    "move": "embargo",
+    "level": 19
+   },
+   {
+    "move": "feint-attack",
+    "level": 24
+   },
+   {
+    "move": "psyshock",
+    "level": 25
+   },
+   {
+    "move": "flatter",
+    "level": 28
+   },
+   {
+    "move": "future-sight",
+    "level": 31
+   },
+   {
+    "move": "heal-block",
+    "level": 34
+   },
+   {
+    "move": "psychic",
+    "level": 39
+   },
+   {
+    "move": "telekinesis",
+    "level": 45
+   },
+   {
+    "move": "charm",
+    "level": 54
+   },
+   {
+    "move": "magic-room",
+    "level": 59
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heal-bell",
+   "uproar",
+   "helping-hand",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "snatch",
+   "signal-beam",
+   "covet",
+   "gravity",
+   "zen-headbutt",
+   "magic-room",
+   "foul-play"
+  ],
+  "machine": [
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "calm-mind",
+   "payback",
+   "embargo",
+   "fling",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "low-sweep",
+   "round"
+  ]
+ }
+}

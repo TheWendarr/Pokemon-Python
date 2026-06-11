@@ -1,0 +1,140 @@
+{
+ "id": "durant",
+ "name": "Durant",
+ "dex": 632,
+ "types": [
+  "bug",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 58,
+  "attack": 109,
+  "defense": 112,
+  "special_attack": 48,
+  "special_defense": 48,
+  "speed": 109
+ },
+ "abilities": [
+  "swarm",
+  "hustle",
+  "truant"
+ ],
+ "base_experience": 169,
+ "growth_rate": "medium",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "vice-grip",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 1
+   },
+   {
+    "move": "fury-cutter",
+    "level": 6
+   },
+   {
+    "move": "bite",
+    "level": 11
+   },
+   {
+    "move": "agility",
+    "level": 16
+   },
+   {
+    "move": "metal-claw",
+    "level": 21
+   },
+   {
+    "move": "bug-bite",
+    "level": 26
+   },
+   {
+    "move": "crunch",
+    "level": 31
+   },
+   {
+    "move": "iron-head",
+    "level": 36
+   },
+   {
+    "move": "dig",
+    "level": 41
+   },
+   {
+    "move": "entrainment",
+    "level": 46
+   },
+   {
+    "move": "x-scissor",
+    "level": 51
+   },
+   {
+    "move": "iron-defense",
+    "level": 56
+   },
+   {
+    "move": "guillotine",
+    "level": 61
+   },
+   {
+    "move": "metal-sound",
+    "level": 66
+   }
+  ],
+  "egg": [
+   "screech",
+   "feint-attack",
+   "endure",
+   "baton-pass",
+   "thunder-fang",
+   "rock-climb"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "superpower",
+   "endeavor",
+   "iron-defense",
+   "iron-head",
+   "bug-bite"
+  ],
+  "machine": [
+   "cut",
+   "strength",
+   "thunder-wave",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "aerial-ace",
+   "rock-polish",
+   "x-scissor",
+   "energy-ball",
+   "giga-impact",
+   "shadow-claw",
+   "flash-cannon",
+   "stone-edge",
+   "hone-claws",
+   "round",
+   "retaliate",
+   "struggle-bug"
+  ]
+ }
+}

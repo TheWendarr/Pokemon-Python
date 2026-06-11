@@ -1,0 +1,132 @@
+{
+ "id": "lumineon",
+ "name": "Lumineon",
+ "dex": 457,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 69,
+  "attack": 69,
+  "defense": 76,
+  "special_attack": 69,
+  "special_defense": 86,
+  "speed": 91
+ },
+ "abilities": [
+  "swift-swim",
+  "storm-drain",
+  "water-veil"
+ ],
+ "base_experience": 161,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "attract",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 6
+   },
+   {
+    "move": "attract",
+    "level": 10
+   },
+   {
+    "move": "rain-dance",
+    "level": 13
+   },
+   {
+    "move": "gust",
+    "level": 17
+   },
+   {
+    "move": "water-pulse",
+    "level": 22
+   },
+   {
+    "move": "captivate",
+    "level": 26
+   },
+   {
+    "move": "safeguard",
+    "level": 29
+   },
+   {
+    "move": "aqua-ring",
+    "level": 35
+   },
+   {
+    "move": "whirlpool",
+    "level": 42
+   },
+   {
+    "move": "u-turn",
+    "level": 48
+   },
+   {
+    "move": "bounce",
+    "level": 53
+   },
+   {
+    "move": "silver-wind",
+    "level": 59
+   },
+   {
+    "move": "soak",
+    "level": 66
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "signal-beam",
+   "bounce",
+   "tailwind",
+   "aqua-tail"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "hail",
+   "facade",
+   "dive",
+   "u-turn",
+   "payback",
+   "giga-impact",
+   "round",
+   "scald"
+  ]
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "id": "gible",
+ "name": "Gible",
+ "dex": 443,
+ "types": [
+  "dragon",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 58,
+  "attack": 70,
+  "defense": 45,
+  "special_attack": 40,
+  "special_defense": 45,
+  "speed": 42
+ },
+ "abilities": [
+  "sand-veil",
+  "rough-skin"
+ ],
+ "base_experience": 60,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 3
+   },
+   {
+    "move": "dragon-rage",
+    "level": 7
+   },
+   {
+    "move": "sandstorm",
+    "level": 13
+   },
+   {
+    "move": "take-down",
+    "level": 15
+   },
+   {
+    "move": "sand-tomb",
+    "level": 19
+   },
+   {
+    "move": "slash",
+    "level": 25
+   },
+   {
+    "move": "dragon-claw",
+    "level": 27
+   },
+   {
+    "move": "dig",
+    "level": 31
+   },
+   {
+    "move": "dragon-rush",
+    "level": 37
+   }
+  ],
+  "egg": [
+   "body-slam",
+   "thrash",
+   "double-edge",
+   "scary-face",
+   "outrage",
+   "dragon-breath",
+   "iron-tail",
+   "metal-claw",
+   "twister",
+   "sand-tomb",
+   "mud-shot",
+   "rock-climb",
+   "iron-head"
+  ],
+  "tutor": [
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "dragon-pulse",
+   "earth-power",
+   "draco-meteor",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "flamethrower",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "shadow-claw",
+   "stone-edge",
+   "hone-claws",
+   "round",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

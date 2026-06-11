@@ -1,0 +1,158 @@
+{
+ "id": "houndoom",
+ "name": "Houndoom",
+ "dex": 229,
+ "types": [
+  "dark",
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 90,
+  "defense": 50,
+  "special_attack": 110,
+  "special_defense": 80,
+  "speed": 95
+ },
+ "abilities": [
+  "early-bird",
+  "flash-fire",
+  "unnerve"
+ ],
+ "base_experience": 175,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "thunder-fang",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "howl",
+    "level": 1
+   },
+   {
+    "move": "smog",
+    "level": 1
+   },
+   {
+    "move": "howl",
+    "level": 4
+   },
+   {
+    "move": "smog",
+    "level": 8
+   },
+   {
+    "move": "roar",
+    "level": 13
+   },
+   {
+    "move": "bite",
+    "level": 16
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 20
+   },
+   {
+    "move": "beat-up",
+    "level": 26
+   },
+   {
+    "move": "fire-fang",
+    "level": 30
+   },
+   {
+    "move": "feint-attack",
+    "level": 35
+   },
+   {
+    "move": "embargo",
+    "level": 41
+   },
+   {
+    "move": "foul-play",
+    "level": 45
+   },
+   {
+    "move": "flamethrower",
+    "level": 50
+   },
+   {
+    "move": "crunch",
+    "level": 56
+   },
+   {
+    "move": "nasty-plot",
+    "level": 60
+   },
+   {
+    "move": "inferno",
+    "level": 65
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "spite",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "heat-wave",
+   "role-play",
+   "snatch",
+   "hyper-voice",
+   "dark-pulse",
+   "foul-play"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "dream-eater",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "overheat",
+   "payback",
+   "embargo",
+   "giga-impact",
+   "flame-charge",
+   "round",
+   "incinerate",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

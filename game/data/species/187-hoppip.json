@@ -1,0 +1,149 @@
+{
+ "id": "hoppip",
+ "name": "Hoppip",
+ "dex": 187,
+ "types": [
+  "grass",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 35,
+  "attack": 35,
+  "defense": 40,
+  "special_attack": 35,
+  "special_defense": 55,
+  "speed": 50
+ },
+ "abilities": [
+  "chlorophyll",
+  "leaf-guard",
+  "infiltrator"
+ ],
+ "base_experience": 50,
+ "growth_rate": "medium-slow",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "splash",
+    "level": 1
+   },
+   {
+    "move": "synthesis",
+    "level": 4
+   },
+   {
+    "move": "tail-whip",
+    "level": 7
+   },
+   {
+    "move": "tackle",
+    "level": 10
+   },
+   {
+    "move": "poison-powder",
+    "level": 12
+   },
+   {
+    "move": "stun-spore",
+    "level": 14
+   },
+   {
+    "move": "sleep-powder",
+    "level": 16
+   },
+   {
+    "move": "bullet-seed",
+    "level": 19
+   },
+   {
+    "move": "leech-seed",
+    "level": 22
+   },
+   {
+    "move": "mega-drain",
+    "level": 25
+   },
+   {
+    "move": "acrobatics",
+    "level": 28
+   },
+   {
+    "move": "rage-powder",
+    "level": 31
+   },
+   {
+    "move": "cotton-spore",
+    "level": 34
+   },
+   {
+    "move": "u-turn",
+    "level": 37
+   },
+   {
+    "move": "worry-seed",
+    "level": 40
+   },
+   {
+    "move": "giga-drain",
+    "level": 43
+   },
+   {
+    "move": "bounce",
+    "level": 46
+   },
+   {
+    "move": "memento",
+    "level": 49
+   }
+  ],
+  "egg": [
+   "double-edge",
+   "confusion",
+   "amnesia",
+   "endure",
+   "encore",
+   "helping-hand",
+   "aromatherapy",
+   "worry-seed",
+   "seed-bomb",
+   "cotton-guard"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "helping-hand",
+   "bounce",
+   "worry-seed",
+   "seed-bomb"
+  ],
+  "machine": [
+   "swords-dance",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "reflect",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "facade",
+   "aerial-ace",
+   "u-turn",
+   "energy-ball",
+   "grass-knot",
+   "round",
+   "acrobatics"
+  ]
+ }
+}

@@ -1,0 +1,143 @@
+{
+ "id": "alomomola",
+ "name": "Alomomola",
+ "dex": 594,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 165,
+  "attack": 75,
+  "defense": 80,
+  "special_attack": 40,
+  "special_defense": 45,
+  "speed": 65
+ },
+ "abilities": [
+  "healer",
+  "hydration",
+  "regenerator"
+ ],
+ "base_experience": 165,
+ "growth_rate": "fast",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "water-sport",
+    "level": 1
+   },
+   {
+    "move": "aqua-ring",
+    "level": 5
+   },
+   {
+    "move": "aqua-jet",
+    "level": 9
+   },
+   {
+    "move": "double-slap",
+    "level": 13
+   },
+   {
+    "move": "heal-pulse",
+    "level": 17
+   },
+   {
+    "move": "protect",
+    "level": 21
+   },
+   {
+    "move": "water-pulse",
+    "level": 25
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 29
+   },
+   {
+    "move": "soak",
+    "level": 33
+   },
+   {
+    "move": "wish",
+    "level": 37
+   },
+   {
+    "move": "brine",
+    "level": 41
+   },
+   {
+    "move": "safeguard",
+    "level": 45
+   },
+   {
+    "move": "helping-hand",
+    "level": 49
+   },
+   {
+    "move": "wide-guard",
+    "level": 53
+   },
+   {
+    "move": "healing-wish",
+    "level": 57
+   },
+   {
+    "move": "hydro-pump",
+    "level": 61
+   }
+  ],
+  "egg": [
+   "mist",
+   "endure",
+   "pain-split",
+   "mirror-coat",
+   "refresh",
+   "tickle"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "pain-split",
+   "helping-hand",
+   "magic-coat",
+   "knock-off",
+   "bounce"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "hail",
+   "facade",
+   "dive",
+   "calm-mind",
+   "round",
+   "scald"
+  ]
+ }
+}

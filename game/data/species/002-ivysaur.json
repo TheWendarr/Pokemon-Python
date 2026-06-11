@@ -1,0 +1,133 @@
+{
+ "id": "ivysaur",
+ "name": "Ivysaur",
+ "dex": 2,
+ "types": [
+  "grass",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 62,
+  "defense": 63,
+  "special_attack": 80,
+  "special_defense": 80,
+  "speed": 60
+ },
+ "abilities": [
+  "overgrow",
+  "chlorophyll"
+ ],
+ "base_experience": 142,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "leech-seed",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 3
+   },
+   {
+    "move": "leech-seed",
+    "level": 7
+   },
+   {
+    "move": "vine-whip",
+    "level": 9
+   },
+   {
+    "move": "poison-powder",
+    "level": 13
+   },
+   {
+    "move": "sleep-powder",
+    "level": 13
+   },
+   {
+    "move": "take-down",
+    "level": 15
+   },
+   {
+    "move": "razor-leaf",
+    "level": 20
+   },
+   {
+    "move": "sweet-scent",
+    "level": 23
+   },
+   {
+    "move": "growth",
+    "level": 28
+   },
+   {
+    "move": "double-edge",
+    "level": 31
+   },
+   {
+    "move": "worry-seed",
+    "level": 36
+   },
+   {
+    "move": "synthesis",
+    "level": 39
+   },
+   {
+    "move": "solar-beam",
+    "level": 44
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "knock-off",
+   "worry-seed",
+   "seed-bomb",
+   "grass-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "energy-ball",
+   "grass-knot",
+   "venoshock",
+   "round",
+   "echoed-voice"
+  ]
+ }
+}

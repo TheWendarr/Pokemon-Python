@@ -1,0 +1,138 @@
+{
+ "id": "magnemite",
+ "name": "Magnemite",
+ "dex": 81,
+ "types": [
+  "electric",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 25,
+  "attack": 35,
+  "defense": 70,
+  "special_attack": 95,
+  "special_defense": 55,
+  "speed": 45
+ },
+ "abilities": [
+  "magnet-pull",
+  "sturdy",
+  "analytic"
+ ],
+ "base_experience": 65,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 4
+   },
+   {
+    "move": "thunder-shock",
+    "level": 7
+   },
+   {
+    "move": "sonic-boom",
+    "level": 11
+   },
+   {
+    "move": "thunder-wave",
+    "level": 15
+   },
+   {
+    "move": "magnet-bomb",
+    "level": 18
+   },
+   {
+    "move": "spark",
+    "level": 21
+   },
+   {
+    "move": "mirror-shot",
+    "level": 25
+   },
+   {
+    "move": "metal-sound",
+    "level": 29
+   },
+   {
+    "move": "electro-ball",
+    "level": 32
+   },
+   {
+    "move": "flash-cannon",
+    "level": 35
+   },
+   {
+    "move": "screech",
+    "level": 39
+   },
+   {
+    "move": "discharge",
+    "level": 43
+   },
+   {
+    "move": "lock-on",
+    "level": 46
+   },
+   {
+    "move": "magnet-rise",
+    "level": 49
+   },
+   {
+    "move": "gyro-ball",
+    "level": 53
+   },
+   {
+    "move": "zap-cannon",
+    "level": 57
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "magic-coat",
+   "recycle",
+   "signal-beam",
+   "iron-defense",
+   "gravity",
+   "magnet-rise",
+   "electroweb"
+  ],
+  "machine": [
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "flash",
+   "explosion",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "facade",
+   "gyro-ball",
+   "flash-cannon",
+   "charge-beam",
+   "round",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

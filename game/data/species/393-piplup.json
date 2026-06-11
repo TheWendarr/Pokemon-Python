@@ -1,0 +1,136 @@
+{
+ "id": "piplup",
+ "name": "Piplup",
+ "dex": 393,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 53,
+  "attack": 51,
+  "defense": 53,
+  "special_attack": 61,
+  "special_defense": 56,
+  "speed": 40
+ },
+ "abilities": [
+  "torrent",
+  "competitive"
+ ],
+ "base_experience": 63,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 4
+   },
+   {
+    "move": "bubble",
+    "level": 8
+   },
+   {
+    "move": "water-sport",
+    "level": 11
+   },
+   {
+    "move": "peck",
+    "level": 15
+   },
+   {
+    "move": "bubble-beam",
+    "level": 18
+   },
+   {
+    "move": "bide",
+    "level": 22
+   },
+   {
+    "move": "fury-attack",
+    "level": 25
+   },
+   {
+    "move": "brine",
+    "level": 29
+   },
+   {
+    "move": "whirlpool",
+    "level": 32
+   },
+   {
+    "move": "mist",
+    "level": 36
+   },
+   {
+    "move": "drill-peck",
+    "level": 39
+   },
+   {
+    "move": "hydro-pump",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "supersonic",
+   "hydro-pump",
+   "agility",
+   "bide",
+   "snore",
+   "flail",
+   "mud-slap",
+   "icy-wind",
+   "yawn",
+   "feather-dance",
+   "mud-sport",
+   "aqua-ring",
+   "double-hit"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "signal-beam",
+   "covet",
+   "stealth-rock",
+   "water-pledge"
+  ],
+  "machine": [
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "aerial-ace",
+   "pluck",
+   "fling",
+   "grass-knot",
+   "round",
+   "echoed-voice",
+   "scald",
+   "quash"
+  ]
+ }
+}

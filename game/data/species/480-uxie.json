@@ -1,0 +1,139 @@
+{
+ "id": "uxie",
+ "name": "Uxie",
+ "dex": 480,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 75,
+  "defense": 130,
+  "special_attack": 75,
+  "special_defense": 130,
+  "speed": 95
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "rest",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "imprison",
+    "level": 6
+   },
+   {
+    "move": "endure",
+    "level": 16
+   },
+   {
+    "move": "swift",
+    "level": 21
+   },
+   {
+    "move": "yawn",
+    "level": 31
+   },
+   {
+    "move": "future-sight",
+    "level": 36
+   },
+   {
+    "move": "amnesia",
+    "level": 46
+   },
+   {
+    "move": "extrasensory",
+    "level": 51
+   },
+   {
+    "move": "flail",
+    "level": 61
+   },
+   {
+    "move": "natural-gift",
+    "level": 66
+   },
+   {
+    "move": "memento",
+    "level": 76
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "helping-hand",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "knock-off",
+   "skill-swap",
+   "signal-beam",
+   "zen-headbutt",
+   "stealth-rock",
+   "wonder-room",
+   "magic-room",
+   "foul-play"
+  ],
+  "machine": [
+   "hyper-beam",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "calm-mind",
+   "u-turn",
+   "fling",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "acrobatics"
+  ]
+ }
+}

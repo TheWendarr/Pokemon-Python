@@ -1,0 +1,30 @@
+{
+ "id": "body-slam",
+ "name": "Body Slam",
+ "type": "normal",
+ "category": "physical",
+ "power": 85,
+ "accuracy": 100,
+ "pp": 15,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "contact",
+  "mirror",
+  "non-sky-battle",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-ailment",
+  "ailment": "paralysis",
+  "ailment_chance": 30,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

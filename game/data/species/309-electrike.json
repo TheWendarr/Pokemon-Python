@@ -1,0 +1,136 @@
+{
+ "id": "electrike",
+ "name": "Electrike",
+ "dex": 309,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 45,
+  "defense": 40,
+  "special_attack": 65,
+  "special_defense": 40,
+  "speed": 65
+ },
+ "abilities": [
+  "static",
+  "lightning-rod",
+  "minus"
+ ],
+ "base_experience": 59,
+ "growth_rate": "slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "thunder-wave",
+    "level": 4
+   },
+   {
+    "move": "leer",
+    "level": 9
+   },
+   {
+    "move": "howl",
+    "level": 12
+   },
+   {
+    "move": "quick-attack",
+    "level": 17
+   },
+   {
+    "move": "spark",
+    "level": 20
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 25
+   },
+   {
+    "move": "bite",
+    "level": 28
+   },
+   {
+    "move": "thunder-fang",
+    "level": 33
+   },
+   {
+    "move": "roar",
+    "level": 36
+   },
+   {
+    "move": "discharge",
+    "level": 41
+   },
+   {
+    "move": "charge",
+    "level": 44
+   },
+   {
+    "move": "wild-charge",
+    "level": 49
+   },
+   {
+    "move": "thunder",
+    "level": 52
+   }
+  ],
+  "egg": [
+   "headbutt",
+   "swift",
+   "curse",
+   "crunch",
+   "uproar",
+   "shock-wave",
+   "switcheroo",
+   "thunder-fang",
+   "ice-fang",
+   "fire-fang",
+   "discharge",
+   "flame-burst",
+   "electro-ball"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "signal-beam",
+   "magnet-rise"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "facade",
+   "charge-beam",
+   "round",
+   "volt-switch",
+   "wild-charge",
+   "snarl"
+  ]
+ }
+}

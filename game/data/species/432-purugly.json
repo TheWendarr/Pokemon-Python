@@ -1,0 +1,145 @@
+{
+ "id": "purugly",
+ "name": "Purugly",
+ "dex": 432,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 71,
+  "attack": 82,
+  "defense": 64,
+  "special_attack": 64,
+  "special_defense": 59,
+  "speed": 112
+ },
+ "abilities": [
+  "thick-fat",
+  "own-tempo",
+  "defiant"
+ ],
+ "base_experience": 158,
+ "growth_rate": "fast",
+ "catch_rate": 75,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fake-out",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 5
+   },
+   {
+    "move": "growl",
+    "level": 8
+   },
+   {
+    "move": "hypnosis",
+    "level": 13
+   },
+   {
+    "move": "feint-attack",
+    "level": 17
+   },
+   {
+    "move": "fury-swipes",
+    "level": 20
+   },
+   {
+    "move": "charm",
+    "level": 25
+   },
+   {
+    "move": "assist",
+    "level": 29
+   },
+   {
+    "move": "captivate",
+    "level": 32
+   },
+   {
+    "move": "slash",
+    "level": 37
+   },
+   {
+    "move": "swagger",
+    "level": 38
+   },
+   {
+    "move": "body-slam",
+    "level": 45
+   },
+   {
+    "move": "attract",
+    "level": 52
+   },
+   {
+    "move": "hone-claws",
+    "level": 60
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "knock-off",
+   "snatch",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "foul-play"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "hyper-beam",
+   "thunderbolt",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "u-turn",
+   "payback",
+   "giga-impact",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "id": "counter",
+ "name": "Counter",
+ "type": "fighting",
+ "category": "physical",
+ "power": null,
+ "accuracy": 100,
+ "pp": 20,
+ "priority": -5,
+ "target": "specific-move",
+ "crit_stage": 0,
+ "flags": [
+  "contact",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

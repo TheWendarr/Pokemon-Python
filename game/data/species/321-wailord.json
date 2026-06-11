@@ -1,0 +1,147 @@
+{
+ "id": "wailord",
+ "name": "Wailord",
+ "dex": 321,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 170,
+  "attack": 90,
+  "defense": 45,
+  "special_attack": 90,
+  "special_defense": 45,
+  "speed": 60
+ },
+ "abilities": [
+  "water-veil",
+  "oblivious",
+  "pressure"
+ ],
+ "base_experience": 175,
+ "growth_rate": "fast-then-very-slow",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "splash",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "rollout",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 4
+   },
+   {
+    "move": "water-gun",
+    "level": 7
+   },
+   {
+    "move": "rollout",
+    "level": 11
+   },
+   {
+    "move": "whirlpool",
+    "level": 14
+   },
+   {
+    "move": "astonish",
+    "level": 17
+   },
+   {
+    "move": "water-pulse",
+    "level": 21
+   },
+   {
+    "move": "mist",
+    "level": 24
+   },
+   {
+    "move": "rest",
+    "level": 27
+   },
+   {
+    "move": "brine",
+    "level": 31
+   },
+   {
+    "move": "water-spout",
+    "level": 34
+   },
+   {
+    "move": "amnesia",
+    "level": 37
+   },
+   {
+    "move": "dive",
+    "level": 46
+   },
+   {
+    "move": "bounce",
+    "level": 54
+   },
+   {
+    "move": "hydro-pump",
+    "level": 62
+   },
+   {
+    "move": "heavy-slam",
+    "level": 70
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "hyper-voice",
+   "block",
+   "bounce",
+   "zen-headbutt",
+   "iron-head"
+  ],
+  "machine": [
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "dive",
+   "rock-tomb",
+   "giga-impact",
+   "round",
+   "echoed-voice",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

@@ -1,0 +1,142 @@
+{
+ "id": "tepig",
+ "name": "Tepig",
+ "dex": 498,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 63,
+  "defense": 45,
+  "special_attack": 45,
+  "special_defense": 45,
+  "speed": 45
+ },
+ "abilities": [
+  "blaze",
+  "thick-fat"
+ ],
+ "base_experience": 62,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 3
+   },
+   {
+    "move": "ember",
+    "level": 7
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 9
+   },
+   {
+    "move": "defense-curl",
+    "level": 13
+   },
+   {
+    "move": "flame-charge",
+    "level": 15
+   },
+   {
+    "move": "smog",
+    "level": 19
+   },
+   {
+    "move": "rollout",
+    "level": 21
+   },
+   {
+    "move": "take-down",
+    "level": 25
+   },
+   {
+    "move": "heat-crash",
+    "level": 27
+   },
+   {
+    "move": "assurance",
+    "level": 31
+   },
+   {
+    "move": "flamethrower",
+    "level": 33
+   },
+   {
+    "move": "head-smash",
+    "level": 37
+   },
+   {
+    "move": "roar",
+    "level": 39
+   },
+   {
+    "move": "flare-blitz",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "body-slam",
+   "thrash",
+   "curse",
+   "sleep-talk",
+   "magnitude",
+   "superpower",
+   "yawn",
+   "endeavor",
+   "covet",
+   "heavy-slam"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "heat-wave",
+   "helping-hand",
+   "superpower",
+   "endeavor",
+   "covet",
+   "fire-pledge"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "overheat",
+   "rock-tomb",
+   "gyro-ball",
+   "grass-knot",
+   "flame-charge",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "wild-charge"
+  ]
+ }
+}

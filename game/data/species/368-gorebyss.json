@@ -1,0 +1,114 @@
+{
+ "id": "gorebyss",
+ "name": "Gorebyss",
+ "dex": 368,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 84,
+  "defense": 105,
+  "special_attack": 114,
+  "special_defense": 75,
+  "speed": 52
+ },
+ "abilities": [
+  "swift-swim",
+  "hydration"
+ ],
+ "base_experience": 170,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "whirlpool",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 6
+   },
+   {
+    "move": "agility",
+    "level": 10
+   },
+   {
+    "move": "water-pulse",
+    "level": 15
+   },
+   {
+    "move": "amnesia",
+    "level": 19
+   },
+   {
+    "move": "aqua-ring",
+    "level": 24
+   },
+   {
+    "move": "captivate",
+    "level": 28
+   },
+   {
+    "move": "baton-pass",
+    "level": 33
+   },
+   {
+    "move": "dive",
+    "level": 37
+   },
+   {
+    "move": "psychic",
+    "level": 42
+   },
+   {
+    "move": "aqua-tail",
+    "level": 46
+   },
+   {
+    "move": "hydro-pump",
+    "level": 51
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "signal-beam",
+   "bounce",
+   "aqua-tail"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "hail",
+   "facade",
+   "dive",
+   "giga-impact",
+   "round",
+   "scald"
+  ]
+ }
+}

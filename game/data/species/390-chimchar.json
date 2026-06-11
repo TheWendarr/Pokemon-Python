@@ -1,0 +1,151 @@
+{
+ "id": "chimchar",
+ "name": "Chimchar",
+ "dex": 390,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 44,
+  "attack": 58,
+  "defense": 44,
+  "special_attack": 58,
+  "special_defense": 44,
+  "speed": 61
+ },
+ "abilities": [
+  "blaze",
+  "iron-fist"
+ ],
+ "base_experience": 62,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 7
+   },
+   {
+    "move": "taunt",
+    "level": 9
+   },
+   {
+    "move": "fury-swipes",
+    "level": 15
+   },
+   {
+    "move": "flame-wheel",
+    "level": 17
+   },
+   {
+    "move": "nasty-plot",
+    "level": 23
+   },
+   {
+    "move": "torment",
+    "level": 25
+   },
+   {
+    "move": "facade",
+    "level": 31
+   },
+   {
+    "move": "fire-spin",
+    "level": 33
+   },
+   {
+    "move": "acrobatics",
+    "level": 39
+   },
+   {
+    "move": "slack-off",
+    "level": 41
+   },
+   {
+    "move": "flamethrower",
+    "level": 47
+   }
+  ],
+  "egg": [
+   "fire-punch",
+   "thunder-punch",
+   "double-kick",
+   "submission",
+   "counter",
+   "focus-energy",
+   "encore",
+   "fake-out",
+   "heat-wave",
+   "focus-punch",
+   "helping-hand",
+   "assist",
+   "blaze-kick",
+   "quick-guard"
+  ],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "heat-wave",
+   "helping-hand",
+   "role-play",
+   "endeavor",
+   "covet",
+   "gunk-shot",
+   "stealth-rock",
+   "fire-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "flamethrower",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "brick-break",
+   "overheat",
+   "aerial-ace",
+   "bulk-up",
+   "u-turn",
+   "fling",
+   "shadow-claw",
+   "grass-knot",
+   "hone-claws",
+   "flame-charge",
+   "low-sweep",
+   "round",
+   "incinerate",
+   "acrobatics"
+  ]
+ }
+}

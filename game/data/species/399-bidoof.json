@@ -1,0 +1,136 @@
+{
+ "id": "bidoof",
+ "name": "Bidoof",
+ "dex": 399,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 59,
+  "attack": 45,
+  "defense": 40,
+  "special_attack": 35,
+  "special_defense": 40,
+  "speed": 31
+ },
+ "abilities": [
+  "simple",
+  "unaware",
+  "moody"
+ ],
+ "base_experience": 50,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 5
+   },
+   {
+    "move": "defense-curl",
+    "level": 9
+   },
+   {
+    "move": "rollout",
+    "level": 13
+   },
+   {
+    "move": "headbutt",
+    "level": 17
+   },
+   {
+    "move": "hyper-fang",
+    "level": 21
+   },
+   {
+    "move": "yawn",
+    "level": 25
+   },
+   {
+    "move": "amnesia",
+    "level": 29
+   },
+   {
+    "move": "take-down",
+    "level": 33
+   },
+   {
+    "move": "super-fang",
+    "level": 37
+   },
+   {
+    "move": "superpower",
+    "level": 41
+   },
+   {
+    "move": "curse",
+    "level": 45
+   }
+  ],
+  "egg": [
+   "double-edge",
+   "quick-attack",
+   "defense-curl",
+   "skull-bash",
+   "fury-swipes",
+   "endure",
+   "rollout",
+   "sleep-talk",
+   "odor-sleuth",
+   "water-sport",
+   "aqua-tail",
+   "rock-climb"
+  ],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "superpower",
+   "covet",
+   "last-resort",
+   "aqua-tail",
+   "stealth-rock"
+  ],
+  "machine": [
+   "cut",
+   "ice-beam",
+   "blizzard",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "pluck",
+   "grass-knot",
+   "charge-beam",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

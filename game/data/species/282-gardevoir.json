@@ -1,0 +1,171 @@
+{
+ "id": "gardevoir",
+ "name": "Gardevoir",
+ "dex": 282,
+ "types": [
+  "psychic",
+  "fairy"
+ ],
+ "base_stats": {
+  "hp": 68,
+  "attack": 65,
+  "defense": 65,
+  "special_attack": 125,
+  "special_defense": 115,
+  "speed": 80
+ },
+ "abilities": [
+  "synchronize",
+  "trace",
+  "telepathy"
+ ],
+ "base_experience": 233,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "healing-wish",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "double-team",
+    "level": 1
+   },
+   {
+    "move": "teleport",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 6
+   },
+   {
+    "move": "double-team",
+    "level": 10
+   },
+   {
+    "move": "teleport",
+    "level": 12
+   },
+   {
+    "move": "wish",
+    "level": 17
+   },
+   {
+    "move": "magical-leaf",
+    "level": 22
+   },
+   {
+    "move": "heal-pulse",
+    "level": 25
+   },
+   {
+    "move": "calm-mind",
+    "level": 33
+   },
+   {
+    "move": "psychic",
+    "level": 40
+   },
+   {
+    "move": "imprison",
+    "level": 45
+   },
+   {
+    "move": "future-sight",
+    "level": 53
+   },
+   {
+    "move": "captivate",
+    "level": 60
+   },
+   {
+    "move": "hypnosis",
+    "level": 65
+   },
+   {
+    "move": "dream-eater",
+    "level": 73
+   },
+   {
+    "move": "stored-power",
+    "level": 80
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "pain-split",
+   "helping-hand",
+   "trick",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "snatch",
+   "hyper-voice",
+   "signal-beam",
+   "zen-headbutt",
+   "wonder-room",
+   "magic-room"
+  ],
+  "machine": [
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "calm-mind",
+   "fling",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "ally-switch"
+  ]
+ }
+}

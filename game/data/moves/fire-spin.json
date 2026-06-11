@@ -1,0 +1,28 @@
+{
+ "id": "fire-spin",
+ "name": "Fire Spin",
+ "type": "fire",
+ "category": "special",
+ "power": 35,
+ "accuracy": 85,
+ "pp": 15,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-ailment",
+  "ailment": "trap",
+  "ailment_chance": 100,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

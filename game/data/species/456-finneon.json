@@ -1,0 +1,134 @@
+{
+ "id": "finneon",
+ "name": "Finneon",
+ "dex": 456,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 49,
+  "attack": 49,
+  "defense": 56,
+  "special_attack": 49,
+  "special_defense": 61,
+  "speed": 66
+ },
+ "abilities": [
+  "swift-swim",
+  "storm-drain",
+  "water-veil"
+ ],
+ "base_experience": 66,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 6
+   },
+   {
+    "move": "attract",
+    "level": 10
+   },
+   {
+    "move": "rain-dance",
+    "level": 13
+   },
+   {
+    "move": "gust",
+    "level": 17
+   },
+   {
+    "move": "water-pulse",
+    "level": 22
+   },
+   {
+    "move": "captivate",
+    "level": 26
+   },
+   {
+    "move": "safeguard",
+    "level": 29
+   },
+   {
+    "move": "aqua-ring",
+    "level": 33
+   },
+   {
+    "move": "whirlpool",
+    "level": 38
+   },
+   {
+    "move": "u-turn",
+    "level": 42
+   },
+   {
+    "move": "bounce",
+    "level": 45
+   },
+   {
+    "move": "silver-wind",
+    "level": 49
+   },
+   {
+    "move": "soak",
+    "level": 54
+   }
+  ],
+  "egg": [
+   "psybeam",
+   "aurora-beam",
+   "agility",
+   "splash",
+   "flail",
+   "sweet-kiss",
+   "charm",
+   "tickle",
+   "signal-beam",
+   "brine",
+   "aqua-tail"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "signal-beam",
+   "bounce",
+   "tailwind",
+   "aqua-tail"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "hail",
+   "facade",
+   "dive",
+   "u-turn",
+   "payback",
+   "round",
+   "scald"
+  ]
+ }
+}

@@ -1,0 +1,160 @@
+{
+ "id": "pignite",
+ "name": "Pignite",
+ "dex": 499,
+ "types": [
+  "fire",
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 93,
+  "defense": 55,
+  "special_attack": 70,
+  "special_defense": 55,
+  "speed": 55
+ },
+ "abilities": [
+  "blaze",
+  "thick-fat"
+ ],
+ "base_experience": 146,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 3
+   },
+   {
+    "move": "ember",
+    "level": 7
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 9
+   },
+   {
+    "move": "defense-curl",
+    "level": 13
+   },
+   {
+    "move": "flame-charge",
+    "level": 15
+   },
+   {
+    "move": "arm-thrust",
+    "level": 17
+   },
+   {
+    "move": "smog",
+    "level": 20
+   },
+   {
+    "move": "rollout",
+    "level": 23
+   },
+   {
+    "move": "take-down",
+    "level": 28
+   },
+   {
+    "move": "heat-crash",
+    "level": 31
+   },
+   {
+    "move": "assurance",
+    "level": 36
+   },
+   {
+    "move": "flamethrower",
+    "level": 39
+   },
+   {
+    "move": "head-smash",
+    "level": 44
+   },
+   {
+    "move": "roar",
+    "level": 47
+   },
+   {
+    "move": "flare-blitz",
+    "level": 52
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "heat-wave",
+   "helping-hand",
+   "superpower",
+   "endeavor",
+   "covet",
+   "fire-pledge"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "gyro-ball",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "stone-edge",
+   "grass-knot",
+   "flame-charge",
+   "low-sweep",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "bulldoze",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

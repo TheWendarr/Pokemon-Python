@@ -1,0 +1,156 @@
+{
+ "id": "meowth",
+ "name": "Meowth",
+ "dex": 52,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 45,
+  "defense": 35,
+  "special_attack": 40,
+  "special_defense": 40,
+  "speed": 90
+ },
+ "abilities": [
+  "pickup",
+  "technician",
+  "unnerve"
+ ],
+ "base_experience": 58,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 6
+   },
+   {
+    "move": "fake-out",
+    "level": 9
+   },
+   {
+    "move": "fury-swipes",
+    "level": 14
+   },
+   {
+    "move": "screech",
+    "level": 17
+   },
+   {
+    "move": "feint-attack",
+    "level": 22
+   },
+   {
+    "move": "taunt",
+    "level": 25
+   },
+   {
+    "move": "pay-day",
+    "level": 30
+   },
+   {
+    "move": "slash",
+    "level": 33
+   },
+   {
+    "move": "nasty-plot",
+    "level": 38
+   },
+   {
+    "move": "assurance",
+    "level": 41
+   },
+   {
+    "move": "captivate",
+    "level": 46
+   },
+   {
+    "move": "night-slash",
+    "level": 49
+   },
+   {
+    "move": "feint",
+    "level": 54
+   }
+  ],
+  "egg": [
+   "tail-whip",
+   "hypnosis",
+   "amnesia",
+   "flail",
+   "spite",
+   "charm",
+   "iron-tail",
+   "assist",
+   "snatch",
+   "odor-sleuth",
+   "punishment",
+   "last-resort",
+   "foul-play"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "knock-off",
+   "snatch",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "dark-pulse",
+   "seed-bomb",
+   "gunk-shot",
+   "foul-play"
+  ],
+  "machine": [
+   "cut",
+   "thunderbolt",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "u-turn",
+   "payback",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

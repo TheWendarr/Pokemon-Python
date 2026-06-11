@@ -1,0 +1,147 @@
+{
+ "id": "pinsir",
+ "name": "Pinsir",
+ "dex": 127,
+ "types": [
+  "bug"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 125,
+  "defense": 100,
+  "special_attack": 55,
+  "special_defense": 70,
+  "speed": 85
+ },
+ "abilities": [
+  "hyper-cutter",
+  "mold-breaker",
+  "moxie"
+ ],
+ "base_experience": 175,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "vice-grip",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "bind",
+    "level": 4
+   },
+   {
+    "move": "seismic-toss",
+    "level": 8
+   },
+   {
+    "move": "harden",
+    "level": 11
+   },
+   {
+    "move": "revenge",
+    "level": 15
+   },
+   {
+    "move": "brick-break",
+    "level": 18
+   },
+   {
+    "move": "vital-throw",
+    "level": 22
+   },
+   {
+    "move": "submission",
+    "level": 26
+   },
+   {
+    "move": "x-scissor",
+    "level": 29
+   },
+   {
+    "move": "storm-throw",
+    "level": 33
+   },
+   {
+    "move": "thrash",
+    "level": 36
+   },
+   {
+    "move": "swords-dance",
+    "level": 40
+   },
+   {
+    "move": "superpower",
+    "level": 43
+   },
+   {
+    "move": "guillotine",
+    "level": 47
+   }
+  ],
+  "egg": [
+   "fury-attack",
+   "quick-attack",
+   "flail",
+   "feint-attack",
+   "superpower",
+   "feint",
+   "close-combat",
+   "me-first",
+   "bug-bite"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "sleep-talk",
+   "superpower",
+   "knock-off",
+   "iron-defense",
+   "stealth-rock",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "fling",
+   "x-scissor",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "struggle-bug",
+   "bulldoze"
+  ]
+ }
+}

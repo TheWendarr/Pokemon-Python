@@ -1,0 +1,164 @@
+{
+ "id": "feraligatr",
+ "name": "Feraligatr",
+ "dex": 160,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 85,
+  "attack": 105,
+  "defense": 100,
+  "special_attack": 79,
+  "special_defense": 83,
+  "speed": 78
+ },
+ "abilities": [
+  "torrent",
+  "sheer-force"
+ ],
+ "base_experience": 239,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "rage",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 6
+   },
+   {
+    "move": "rage",
+    "level": 8
+   },
+   {
+    "move": "bite",
+    "level": 13
+   },
+   {
+    "move": "scary-face",
+    "level": 15
+   },
+   {
+    "move": "ice-fang",
+    "level": 21
+   },
+   {
+    "move": "flail",
+    "level": 24
+   },
+   {
+    "move": "agility",
+    "level": 30
+   },
+   {
+    "move": "crunch",
+    "level": 32
+   },
+   {
+    "move": "chip-away",
+    "level": 37
+   },
+   {
+    "move": "slash",
+    "level": 45
+   },
+   {
+    "move": "screech",
+    "level": 50
+   },
+   {
+    "move": "thrash",
+    "level": 58
+   },
+   {
+    "move": "aqua-tail",
+    "level": 63
+   },
+   {
+    "move": "superpower",
+    "level": 71
+   },
+   {
+    "move": "hydro-pump",
+    "level": 76
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "low-kick",
+   "snore",
+   "spite",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "superpower",
+   "hydro-cannon",
+   "block",
+   "aqua-tail",
+   "dragon-pulse",
+   "water-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "scald",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

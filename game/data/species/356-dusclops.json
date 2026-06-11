@@ -1,0 +1,173 @@
+{
+ "id": "dusclops",
+ "name": "Dusclops",
+ "dex": 356,
+ "types": [
+  "ghost"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 70,
+  "defense": 130,
+  "special_attack": 60,
+  "special_defense": 130,
+  "speed": 25
+ },
+ "abilities": [
+  "pressure",
+  "frisk"
+ ],
+ "base_experience": 159,
+ "growth_rate": "fast",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fire-punch",
+    "level": 1
+   },
+   {
+    "move": "ice-punch",
+    "level": 1
+   },
+   {
+    "move": "thunder-punch",
+    "level": 1
+   },
+   {
+    "move": "gravity",
+    "level": 1
+   },
+   {
+    "move": "bind",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "night-shade",
+    "level": 1
+   },
+   {
+    "move": "disable",
+    "level": 1
+   },
+   {
+    "move": "disable",
+    "level": 6
+   },
+   {
+    "move": "foresight",
+    "level": 9
+   },
+   {
+    "move": "astonish",
+    "level": 14
+   },
+   {
+    "move": "confuse-ray",
+    "level": 17
+   },
+   {
+    "move": "shadow-sneak",
+    "level": 22
+   },
+   {
+    "move": "pursuit",
+    "level": 25
+   },
+   {
+    "move": "curse",
+    "level": 30
+   },
+   {
+    "move": "will-o-wisp",
+    "level": 33
+   },
+   {
+    "move": "shadow-punch",
+    "level": 37
+   },
+   {
+    "move": "hex",
+    "level": 42
+   },
+   {
+    "move": "mean-look",
+    "level": 49
+   },
+   {
+    "move": "payback",
+    "level": 58
+   },
+   {
+    "move": "future-sight",
+    "level": 61
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "bind",
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "pain-split",
+   "trick",
+   "skill-swap",
+   "snatch",
+   "gravity",
+   "dark-pulse",
+   "wonder-room"
+  ],
+  "machine": [
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "calm-mind",
+   "payback",
+   "embargo",
+   "fling",
+   "giga-impact",
+   "trick-room",
+   "charge-beam",
+   "telekinesis",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

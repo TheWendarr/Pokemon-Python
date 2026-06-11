@@ -1,0 +1,152 @@
+{
+ "id": "smoochum",
+ "name": "Smoochum",
+ "dex": 238,
+ "types": [
+  "ice",
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 30,
+  "defense": 15,
+  "special_attack": 85,
+  "special_defense": 65,
+  "speed": 65
+ },
+ "abilities": [
+  "oblivious",
+  "forewarn",
+  "hydration"
+ ],
+ "base_experience": 61,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 8,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "lick",
+    "level": 5
+   },
+   {
+    "move": "sweet-kiss",
+    "level": 8
+   },
+   {
+    "move": "powder-snow",
+    "level": 11
+   },
+   {
+    "move": "confusion",
+    "level": 15
+   },
+   {
+    "move": "sing",
+    "level": 18
+   },
+   {
+    "move": "heart-stamp",
+    "level": 21
+   },
+   {
+    "move": "mean-look",
+    "level": 25
+   },
+   {
+    "move": "fake-tears",
+    "level": 28
+   },
+   {
+    "move": "lucky-chant",
+    "level": 31
+   },
+   {
+    "move": "avalanche",
+    "level": 35
+   },
+   {
+    "move": "psychic",
+    "level": 38
+   },
+   {
+    "move": "copycat",
+    "level": 41
+   },
+   {
+    "move": "perish-song",
+    "level": 45
+   },
+   {
+    "move": "blizzard",
+    "level": 48
+   }
+  ],
+  "egg": [
+   "ice-punch",
+   "meditate",
+   "fake-out",
+   "wish",
+   "miracle-eye",
+   "wake-up-slap",
+   "nasty-plot",
+   "captivate"
+  ],
+  "tutor": [
+   "ice-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "uproar",
+   "helping-hand",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "signal-beam",
+   "covet",
+   "zen-headbutt",
+   "magic-room"
+  ],
+  "machine": [
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "hail",
+   "facade",
+   "calm-mind",
+   "payback",
+   "fling",
+   "trick-room",
+   "grass-knot",
+   "psyshock",
+   "round",
+   "echoed-voice",
+   "frost-breath"
+  ]
+ }
+}

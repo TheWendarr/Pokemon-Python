@@ -1,0 +1,137 @@
+{
+ "id": "flaaffy",
+ "name": "Flaaffy",
+ "dex": 180,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 55,
+  "defense": 55,
+  "special_attack": 80,
+  "special_defense": 60,
+  "speed": 45
+ },
+ "abilities": [
+  "static",
+  "plus"
+ ],
+ "base_experience": 128,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "thunder-wave",
+    "level": 1
+   },
+   {
+    "move": "thunder-shock",
+    "level": 1
+   },
+   {
+    "move": "thunder-wave",
+    "level": 4
+   },
+   {
+    "move": "thunder-shock",
+    "level": 8
+   },
+   {
+    "move": "cotton-spore",
+    "level": 11
+   },
+   {
+    "move": "charge",
+    "level": 16
+   },
+   {
+    "move": "take-down",
+    "level": 20
+   },
+   {
+    "move": "electro-ball",
+    "level": 25
+   },
+   {
+    "move": "confuse-ray",
+    "level": 29
+   },
+   {
+    "move": "power-gem",
+    "level": 34
+   },
+   {
+    "move": "discharge",
+    "level": 38
+   },
+   {
+    "move": "cotton-guard",
+    "level": 43
+   },
+   {
+    "move": "signal-beam",
+    "level": 47
+   },
+   {
+    "move": "light-screen",
+    "level": 52
+   },
+   {
+    "move": "thunder",
+    "level": 56
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "signal-beam",
+   "magnet-rise",
+   "after-you"
+  ],
+  "machine": [
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "fling",
+   "charge-beam",
+   "round",
+   "echoed-voice",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

@@ -1,0 +1,140 @@
+{
+ "id": "poochyena",
+ "name": "Poochyena",
+ "dex": 261,
+ "types": [
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 35,
+  "attack": 55,
+  "defense": 35,
+  "special_attack": 30,
+  "special_defense": 30,
+  "speed": 35
+ },
+ "abilities": [
+  "run-away",
+  "quick-feet",
+  "rattled"
+ ],
+ "base_experience": 56,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "howl",
+    "level": 5
+   },
+   {
+    "move": "sand-attack",
+    "level": 9
+   },
+   {
+    "move": "bite",
+    "level": 13
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 17
+   },
+   {
+    "move": "roar",
+    "level": 21
+   },
+   {
+    "move": "swagger",
+    "level": 25
+   },
+   {
+    "move": "assurance",
+    "level": 29
+   },
+   {
+    "move": "scary-face",
+    "level": 33
+   },
+   {
+    "move": "taunt",
+    "level": 37
+   },
+   {
+    "move": "embargo",
+    "level": 41
+   },
+   {
+    "move": "take-down",
+    "level": 45
+   },
+   {
+    "move": "sucker-punch",
+    "level": 49
+   },
+   {
+    "move": "crunch",
+    "level": 53
+   }
+  ],
+  "egg": [
+   "leer",
+   "sleep-talk",
+   "yawn",
+   "snatch",
+   "poison-fang",
+   "astonish",
+   "covet",
+   "me-first",
+   "sucker-punch",
+   "thunder-fang",
+   "ice-fang",
+   "fire-fang"
+  ],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "spite",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "snatch",
+   "hyper-voice",
+   "covet",
+   "dark-pulse",
+   "foul-play"
+  ],
+  "machine": [
+   "roar",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "payback",
+   "embargo",
+   "round",
+   "incinerate",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

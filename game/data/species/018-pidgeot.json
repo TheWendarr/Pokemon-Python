@@ -1,0 +1,132 @@
+{
+ "id": "pidgeot",
+ "name": "Pidgeot",
+ "dex": 18,
+ "types": [
+  "normal",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 83,
+  "attack": 80,
+  "defense": 75,
+  "special_attack": 70,
+  "special_defense": 70,
+  "speed": 101
+ },
+ "abilities": [
+  "keen-eye",
+  "tangled-feet",
+  "big-pecks"
+ ],
+ "base_experience": 216,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 1
+   },
+   {
+    "move": "gust",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 5
+   },
+   {
+    "move": "gust",
+    "level": 9
+   },
+   {
+    "move": "quick-attack",
+    "level": 13
+   },
+   {
+    "move": "whirlwind",
+    "level": 17
+   },
+   {
+    "move": "twister",
+    "level": 22
+   },
+   {
+    "move": "feather-dance",
+    "level": 27
+   },
+   {
+    "move": "agility",
+    "level": 32
+   },
+   {
+    "move": "wing-attack",
+    "level": 38
+   },
+   {
+    "move": "roost",
+    "level": 44
+   },
+   {
+    "move": "tailwind",
+    "level": 50
+   },
+   {
+    "move": "mirror-move",
+    "level": 56
+   },
+   {
+    "move": "air-slash",
+    "level": 62
+   },
+   {
+    "move": "hurricane",
+    "level": 68
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "heat-wave",
+   "roost",
+   "tailwind"
+  ],
+  "machine": [
+   "fly",
+   "hyper-beam",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "facade",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "giga-impact",
+   "round",
+   "work-up"
+  ]
+ }
+}

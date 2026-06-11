@@ -1,0 +1,159 @@
+{
+ "id": "deoxys-normal",
+ "name": "Deoxys Normal",
+ "dex": 386,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 150,
+  "defense": 50,
+  "special_attack": 150,
+  "special_defense": 50,
+  "speed": 150
+ },
+ "abilities": [
+  "pressure"
+ ],
+ "base_experience": 270,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "wrap",
+    "level": 1
+   },
+   {
+    "move": "night-shade",
+    "level": 9
+   },
+   {
+    "move": "teleport",
+    "level": 17
+   },
+   {
+    "move": "knock-off",
+    "level": 25
+   },
+   {
+    "move": "pursuit",
+    "level": 33
+   },
+   {
+    "move": "psychic",
+    "level": 41
+   },
+   {
+    "move": "snatch",
+    "level": 49
+   },
+   {
+    "move": "psycho-shift",
+    "level": 57
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 65
+   },
+   {
+    "move": "cosmic-power",
+    "level": 73
+   },
+   {
+    "move": "recover",
+    "level": 81
+   },
+   {
+    "move": "psycho-boost",
+    "level": 89
+   },
+   {
+    "move": "hyper-beam",
+    "level": 97
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "bind",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "knock-off",
+   "skill-swap",
+   "snatch",
+   "signal-beam",
+   "gravity",
+   "drain-punch",
+   "zen-headbutt",
+   "stealth-rock",
+   "wonder-room"
+  ],
+  "machine": [
+   "cut",
+   "ice-beam",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "calm-mind",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "flash-cannon",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "low-sweep",
+   "round",
+   "ally-switch"
+  ]
+ }
+}

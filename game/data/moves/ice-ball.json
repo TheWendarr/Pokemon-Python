@@ -1,0 +1,30 @@
+{
+ "id": "ice-ball",
+ "name": "Ice Ball",
+ "type": "ice",
+ "category": "physical",
+ "power": 30,
+ "accuracy": 90,
+ "pp": 20,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "ballistics",
+  "contact",
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

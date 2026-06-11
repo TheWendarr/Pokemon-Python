@@ -1,0 +1,30 @@
+{
+ "id": "dizzy-punch",
+ "name": "Dizzy Punch",
+ "type": "normal",
+ "category": "physical",
+ "power": 70,
+ "accuracy": 100,
+ "pp": 10,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "contact",
+  "mirror",
+  "protect",
+  "punch"
+ ],
+ "effect": {
+  "kind": "damage-ailment",
+  "ailment": "confusion",
+  "ailment_chance": 20,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

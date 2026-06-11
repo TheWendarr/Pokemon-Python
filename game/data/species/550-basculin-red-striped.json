@@ -1,0 +1,138 @@
+{
+ "id": "basculin-red-striped",
+ "name": "Basculin Red Striped",
+ "dex": 550,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 92,
+  "defense": 65,
+  "special_attack": 80,
+  "special_defense": 55,
+  "speed": 98
+ },
+ "abilities": [
+  "reckless",
+  "adaptability",
+  "mold-breaker"
+ ],
+ "base_experience": 161,
+ "growth_rate": "medium",
+ "catch_rate": 25,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "uproar",
+    "level": 4
+   },
+   {
+    "move": "headbutt",
+    "level": 7
+   },
+   {
+    "move": "bite",
+    "level": 10
+   },
+   {
+    "move": "aqua-jet",
+    "level": 13
+   },
+   {
+    "move": "chip-away",
+    "level": 16
+   },
+   {
+    "move": "take-down",
+    "level": 20
+   },
+   {
+    "move": "crunch",
+    "level": 24
+   },
+   {
+    "move": "aqua-tail",
+    "level": 28
+   },
+   {
+    "move": "soak",
+    "level": 32
+   },
+   {
+    "move": "double-edge",
+    "level": 36
+   },
+   {
+    "move": "scary-face",
+    "level": 41
+   },
+   {
+    "move": "flail",
+    "level": 46
+   },
+   {
+    "move": "final-gambit",
+    "level": 51
+   },
+   {
+    "move": "thrash",
+    "level": 56
+   }
+  ],
+  "egg": [
+   "bubble-beam",
+   "agility",
+   "rage",
+   "swift",
+   "whirlpool",
+   "revenge",
+   "muddy-water",
+   "mud-shot",
+   "brine"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "superpower",
+   "endeavor",
+   "bounce",
+   "aqua-tail",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "cut",
+   "surf",
+   "ice-beam",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "taunt",
+   "dive",
+   "round",
+   "scald"
+  ]
+ }
+}

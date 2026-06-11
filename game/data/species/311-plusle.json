@@ -1,0 +1,144 @@
+{
+ "id": "plusle",
+ "name": "Plusle",
+ "dex": 311,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 50,
+  "defense": 40,
+  "special_attack": 85,
+  "special_defense": 75,
+  "speed": 95
+ },
+ "abilities": [
+  "plus",
+  "lightning-rod"
+ ],
+ "base_experience": 142,
+ "growth_rate": "medium",
+ "catch_rate": 200,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "thunder-wave",
+    "level": 3
+   },
+   {
+    "move": "quick-attack",
+    "level": 7
+   },
+   {
+    "move": "helping-hand",
+    "level": 10
+   },
+   {
+    "move": "spark",
+    "level": 15
+   },
+   {
+    "move": "encore",
+    "level": 17
+   },
+   {
+    "move": "fake-tears",
+    "level": 21
+   },
+   {
+    "move": "copycat",
+    "level": 24
+   },
+   {
+    "move": "electro-ball",
+    "level": 29
+   },
+   {
+    "move": "swift",
+    "level": 31
+   },
+   {
+    "move": "fake-tears",
+    "level": 35
+   },
+   {
+    "move": "charge",
+    "level": 38
+   },
+   {
+    "move": "thunder",
+    "level": 42
+   },
+   {
+    "move": "baton-pass",
+    "level": 44
+   },
+   {
+    "move": "agility",
+    "level": 48
+   },
+   {
+    "move": "last-resort",
+    "level": 51
+   },
+   {
+    "move": "nasty-plot",
+    "level": 56
+   },
+   {
+    "move": "entrainment",
+    "level": 63
+   }
+  ],
+  "egg": [
+   "sing",
+   "sweet-kiss",
+   "wish",
+   "lucky-chant",
+   "discharge"
+  ],
+  "tutor": [
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "signal-beam",
+   "last-resort",
+   "magnet-rise"
+  ],
+  "machine": [
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "facade",
+   "fling",
+   "grass-knot",
+   "charge-beam",
+   "round",
+   "echoed-voice",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

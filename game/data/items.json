@@ -1,0 +1,88 @@
+{
+ "potion": {
+  "name": "Potion",
+  "category": "medicine",
+  "heal": 20
+ },
+ "super-potion": {
+  "name": "Super Potion",
+  "category": "medicine",
+  "heal": 50
+ },
+ "hyper-potion": {
+  "name": "Hyper Potion",
+  "category": "medicine",
+  "heal": 200
+ },
+ "max-potion": {
+  "name": "Max Potion",
+  "category": "medicine",
+  "heal": "full"
+ },
+ "full-restore": {
+  "name": "Full Restore",
+  "category": "medicine",
+  "heal": "full",
+  "cures": [
+   "all"
+  ]
+ },
+ "antidote": {
+  "name": "Antidote",
+  "category": "medicine",
+  "cures": [
+   "poison",
+   "toxic"
+  ]
+ },
+ "burn-heal": {
+  "name": "Burn Heal",
+  "category": "medicine",
+  "cures": [
+   "burn"
+  ]
+ },
+ "ice-heal": {
+  "name": "Ice Heal",
+  "category": "medicine",
+  "cures": [
+   "freeze"
+  ]
+ },
+ "awakening": {
+  "name": "Awakening",
+  "category": "medicine",
+  "cures": [
+   "sleep"
+  ]
+ },
+ "paralyze-heal": {
+  "name": "Paralyze Heal",
+  "category": "medicine",
+  "cures": [
+   "paralysis"
+  ]
+ },
+ "full-heal": {
+  "name": "Full Heal",
+  "category": "medicine",
+  "cures": [
+   "all"
+  ]
+ },
+ "poke-ball": {
+  "name": "Poke Ball",
+  "category": "ball",
+  "ball_rate": 1.0
+ },
+ "great-ball": {
+  "name": "Great Ball",
+  "category": "ball",
+  "ball_rate": 1.5
+ },
+ "ultra-ball": {
+  "name": "Ultra Ball",
+  "category": "ball",
+  "ball_rate": 2.0
+ }
+}

@@ -1,0 +1,138 @@
+{
+ "id": "stunky",
+ "name": "Stunky",
+ "dex": 434,
+ "types": [
+  "poison",
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 63,
+  "attack": 63,
+  "defense": 47,
+  "special_attack": 41,
+  "special_defense": 41,
+  "speed": 74
+ },
+ "abilities": [
+  "stench",
+  "aftermath",
+  "keen-eye"
+ ],
+ "base_experience": 66,
+ "growth_rate": "medium",
+ "catch_rate": 225,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "poison-gas",
+    "level": 4
+   },
+   {
+    "move": "screech",
+    "level": 7
+   },
+   {
+    "move": "fury-swipes",
+    "level": 10
+   },
+   {
+    "move": "smokescreen",
+    "level": 14
+   },
+   {
+    "move": "feint",
+    "level": 18
+   },
+   {
+    "move": "slash",
+    "level": 22
+   },
+   {
+    "move": "toxic",
+    "level": 27
+   },
+   {
+    "move": "acid-spray",
+    "level": 32
+   },
+   {
+    "move": "night-slash",
+    "level": 37
+   },
+   {
+    "move": "memento",
+    "level": 43
+   },
+   {
+    "move": "explosion",
+    "level": 49
+   }
+  ],
+  "egg": [
+   "double-edge",
+   "leer",
+   "haze",
+   "smog",
+   "scary-face",
+   "pursuit",
+   "iron-tail",
+   "crunch",
+   "astonish",
+   "punishment",
+   "flame-burst",
+   "foul-play"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "snatch",
+   "dark-pulse",
+   "foul-play"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "flamethrower",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "explosion",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "payback",
+   "shadow-claw",
+   "hone-claws",
+   "venoshock",
+   "round",
+   "incinerate",
+   "snarl"
+  ]
+ }
+}

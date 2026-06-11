@@ -1,0 +1,136 @@
+{
+ "id": "volbeat",
+ "name": "Volbeat",
+ "dex": 313,
+ "types": [
+  "bug"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 73,
+  "defense": 75,
+  "special_attack": 47,
+  "special_defense": 85,
+  "speed": 85
+ },
+ "abilities": [
+  "illuminate",
+  "swarm",
+  "prankster"
+ ],
+ "base_experience": 151,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 150,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "flash",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "double-team",
+    "level": 5
+   },
+   {
+    "move": "confuse-ray",
+    "level": 9
+   },
+   {
+    "move": "moonlight",
+    "level": 13
+   },
+   {
+    "move": "quick-attack",
+    "level": 17
+   },
+   {
+    "move": "tail-glow",
+    "level": 21
+   },
+   {
+    "move": "signal-beam",
+    "level": 25
+   },
+   {
+    "move": "protect",
+    "level": 29
+   },
+   {
+    "move": "helping-hand",
+    "level": 33
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 37
+   },
+   {
+    "move": "bug-buzz",
+    "level": 41
+   },
+   {
+    "move": "double-edge",
+    "level": 45
+   }
+  ],
+  "egg": [
+   "seismic-toss",
+   "dizzy-punch",
+   "baton-pass",
+   "encore",
+   "trick",
+   "silver-wind",
+   "bug-buzz"
+  ],
+  "tutor": [
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "helping-hand",
+   "trick",
+   "signal-beam",
+   "roost",
+   "tailwind",
+   "zen-headbutt",
+   "bug-bite"
+  ],
+  "machine": [
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "brick-break",
+   "aerial-ace",
+   "u-turn",
+   "fling",
+   "charge-beam",
+   "round",
+   "acrobatics",
+   "struggle-bug"
+  ]
+ }
+}

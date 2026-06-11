@@ -1,0 +1,149 @@
+{
+ "id": "venusaur",
+ "name": "Venusaur",
+ "dex": 3,
+ "types": [
+  "grass",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 82,
+  "defense": 83,
+  "special_attack": 100,
+  "special_defense": 100,
+  "speed": 80
+ },
+ "abilities": [
+  "overgrow",
+  "chlorophyll"
+ ],
+ "base_experience": 236,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "leech-seed",
+    "level": 1
+   },
+   {
+    "move": "vine-whip",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 3
+   },
+   {
+    "move": "leech-seed",
+    "level": 7
+   },
+   {
+    "move": "vine-whip",
+    "level": 9
+   },
+   {
+    "move": "poison-powder",
+    "level": 13
+   },
+   {
+    "move": "sleep-powder",
+    "level": 13
+   },
+   {
+    "move": "take-down",
+    "level": 15
+   },
+   {
+    "move": "razor-leaf",
+    "level": 20
+   },
+   {
+    "move": "sweet-scent",
+    "level": 23
+   },
+   {
+    "move": "growth",
+    "level": 28
+   },
+   {
+    "move": "double-edge",
+    "level": 31
+   },
+   {
+    "move": "petal-dance",
+    "level": 32
+   },
+   {
+    "move": "worry-seed",
+    "level": 39
+   },
+   {
+    "move": "synthesis",
+    "level": 45
+   },
+   {
+    "move": "solar-beam",
+    "level": 53
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "outrage",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "knock-off",
+   "block",
+   "frenzy-plant",
+   "worry-seed",
+   "seed-bomb",
+   "grass-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "venoshock",
+   "round",
+   "echoed-voice",
+   "bulldoze"
+  ]
+ }
+}

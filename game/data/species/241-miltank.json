@@ -1,0 +1,153 @@
+{
+ "id": "miltank",
+ "name": "Miltank",
+ "dex": 241,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 95,
+  "attack": 80,
+  "defense": 105,
+  "special_attack": 40,
+  "special_defense": 70,
+  "speed": 100
+ },
+ "abilities": [
+  "thick-fat",
+  "scrappy",
+  "sap-sipper"
+ ],
+ "base_experience": 172,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 8,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 3
+   },
+   {
+    "move": "defense-curl",
+    "level": 5
+   },
+   {
+    "move": "stomp",
+    "level": 8
+   },
+   {
+    "move": "milk-drink",
+    "level": 11
+   },
+   {
+    "move": "bide",
+    "level": 15
+   },
+   {
+    "move": "rollout",
+    "level": 19
+   },
+   {
+    "move": "body-slam",
+    "level": 24
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 29
+   },
+   {
+    "move": "captivate",
+    "level": 35
+   },
+   {
+    "move": "gyro-ball",
+    "level": 41
+   },
+   {
+    "move": "heal-bell",
+    "level": 48
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 55
+   }
+  ],
+  "egg": [
+   "double-edge",
+   "seismic-toss",
+   "dizzy-punch",
+   "curse",
+   "reversal",
+   "endure",
+   "sleep-talk",
+   "present",
+   "helping-hand",
+   "hammer-arm",
+   "natural-gift",
+   "punishment",
+   "heart-stamp"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "helping-hand",
+   "block",
+   "zen-headbutt",
+   "iron-head",
+   "stealth-rock",
+   "after-you"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "gyro-ball",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

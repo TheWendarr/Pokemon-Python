@@ -1,0 +1,167 @@
+{
+ "id": "lucario",
+ "name": "Lucario",
+ "dex": 448,
+ "types": [
+  "fighting",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 110,
+  "defense": 70,
+  "special_attack": 115,
+  "special_defense": 70,
+  "speed": 90
+ },
+ "abilities": [
+  "steadfast",
+  "inner-focus",
+  "justified"
+ ],
+ "base_experience": 184,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "dark-pulse",
+    "level": 1
+   },
+   {
+    "move": "foresight",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "detect",
+    "level": 1
+   },
+   {
+    "move": "metal-claw",
+    "level": 1
+   },
+   {
+    "move": "counter",
+    "level": 6
+   },
+   {
+    "move": "feint",
+    "level": 11
+   },
+   {
+    "move": "force-palm",
+    "level": 15
+   },
+   {
+    "move": "me-first",
+    "level": 19
+   },
+   {
+    "move": "metal-sound",
+    "level": 24
+   },
+   {
+    "move": "bone-rush",
+    "level": 29
+   },
+   {
+    "move": "quick-guard",
+    "level": 33
+   },
+   {
+    "move": "swords-dance",
+    "level": 37
+   },
+   {
+    "move": "heal-pulse",
+    "level": 42
+   },
+   {
+    "move": "calm-mind",
+    "level": 47
+   },
+   {
+    "move": "aura-sphere",
+    "level": 51
+   },
+   {
+    "move": "close-combat",
+    "level": 55
+   },
+   {
+    "move": "dragon-pulse",
+    "level": 60
+   },
+   {
+    "move": "extreme-speed",
+    "level": 65
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "role-play",
+   "iron-defense",
+   "magnet-rise",
+   "dark-pulse",
+   "dragon-pulse",
+   "drain-punch",
+   "zen-headbutt",
+   "dual-chop"
+  ],
+  "machine": [
+   "swords-dance",
+   "roar",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "calm-mind",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "flash-cannon",
+   "stone-edge",
+   "hone-claws",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

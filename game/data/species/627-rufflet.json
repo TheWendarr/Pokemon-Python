@@ -1,0 +1,134 @@
+{
+ "id": "rufflet",
+ "name": "Rufflet",
+ "dex": 627,
+ "types": [
+  "normal",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 83,
+  "defense": 50,
+  "special_attack": 37,
+  "special_defense": 50,
+  "speed": 60
+ },
+ "abilities": [
+  "keen-eye",
+  "sheer-force",
+  "hustle"
+ ],
+ "base_experience": 70,
+ "growth_rate": "slow",
+ "catch_rate": 190,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "fury-attack",
+    "level": 5
+   },
+   {
+    "move": "wing-attack",
+    "level": 10
+   },
+   {
+    "move": "hone-claws",
+    "level": 14
+   },
+   {
+    "move": "scary-face",
+    "level": 19
+   },
+   {
+    "move": "aerial-ace",
+    "level": 23
+   },
+   {
+    "move": "slash",
+    "level": 28
+   },
+   {
+    "move": "defog",
+    "level": 32
+   },
+   {
+    "move": "tailwind",
+    "level": 37
+   },
+   {
+    "move": "air-slash",
+    "level": 41
+   },
+   {
+    "move": "crush-claw",
+    "level": 46
+   },
+   {
+    "move": "sky-drop",
+    "level": 50
+   },
+   {
+    "move": "whirlwind",
+    "level": 55
+   },
+   {
+    "move": "brave-bird",
+    "level": 59
+   },
+   {
+    "move": "thrash",
+    "level": 64
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heat-wave",
+   "superpower",
+   "roost",
+   "tailwind"
+  ],
+  "machine": [
+   "cut",
+   "fly",
+   "strength",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "aerial-ace",
+   "bulk-up",
+   "pluck",
+   "u-turn",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "sky-drop",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

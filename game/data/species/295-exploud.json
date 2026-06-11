@@ -1,0 +1,170 @@
+{
+ "id": "exploud",
+ "name": "Exploud",
+ "dex": 295,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 104,
+  "attack": 91,
+  "defense": 63,
+  "special_attack": 91,
+  "special_defense": 73,
+  "speed": 68
+ },
+ "abilities": [
+  "soundproof",
+  "scrappy"
+ ],
+ "base_experience": 221,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ice-fang",
+    "level": 1
+   },
+   {
+    "move": "fire-fang",
+    "level": 1
+   },
+   {
+    "move": "thunder-fang",
+    "level": 1
+   },
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "uproar",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "howl",
+    "level": 1
+   },
+   {
+    "move": "uproar",
+    "level": 5
+   },
+   {
+    "move": "astonish",
+    "level": 11
+   },
+   {
+    "move": "howl",
+    "level": 15
+   },
+   {
+    "move": "bite",
+    "level": 20
+   },
+   {
+    "move": "supersonic",
+    "level": 23
+   },
+   {
+    "move": "stomp",
+    "level": 29
+   },
+   {
+    "move": "screech",
+    "level": 37
+   },
+   {
+    "move": "crunch",
+    "level": 40
+   },
+   {
+    "move": "roar",
+    "level": 45
+   },
+   {
+    "move": "synchronoise",
+    "level": 55
+   },
+   {
+    "move": "rest",
+    "level": 55
+   },
+   {
+    "move": "sleep-talk",
+    "level": 63
+   },
+   {
+    "move": "hyper-voice",
+    "level": 71
+   },
+   {
+    "move": "hyper-beam",
+    "level": 79
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "uproar",
+   "endeavor",
+   "hyper-voice",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "smack-down",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,128 @@
+{
+ "id": "eelektrik",
+ "name": "Eelektrik",
+ "dex": 603,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 85,
+  "defense": 70,
+  "special_attack": 75,
+  "special_defense": 70,
+  "speed": 40
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 142,
+ "growth_rate": "slow",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "headbutt",
+    "level": 1
+   },
+   {
+    "move": "thunder-wave",
+    "level": 1
+   },
+   {
+    "move": "spark",
+    "level": 1
+   },
+   {
+    "move": "charge-beam",
+    "level": 1
+   },
+   {
+    "move": "bind",
+    "level": 9
+   },
+   {
+    "move": "acid",
+    "level": 19
+   },
+   {
+    "move": "discharge",
+    "level": 29
+   },
+   {
+    "move": "crunch",
+    "level": 39
+   },
+   {
+    "move": "thunderbolt",
+    "level": 44
+   },
+   {
+    "move": "acid-spray",
+    "level": 49
+   },
+   {
+    "move": "coil",
+    "level": 54
+   },
+   {
+    "move": "wild-charge",
+    "level": 59
+   },
+   {
+    "move": "gastro-acid",
+    "level": 64
+   },
+   {
+    "move": "zap-cannon",
+    "level": 69
+   },
+   {
+    "move": "thrash",
+    "level": 74
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "super-fang",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "knock-off",
+   "signal-beam",
+   "bounce",
+   "gastro-acid",
+   "magnet-rise",
+   "aqua-tail"
+  ],
+  "machine": [
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "facade",
+   "u-turn",
+   "flash-cannon",
+   "charge-beam",
+   "round",
+   "acrobatics",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

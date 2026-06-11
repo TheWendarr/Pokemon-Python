@@ -1,0 +1,158 @@
+{
+ "id": "tangrowth",
+ "name": "Tangrowth",
+ "dex": 465,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 100,
+  "attack": 100,
+  "defense": 125,
+  "special_attack": 110,
+  "special_defense": 50,
+  "speed": 50
+ },
+ "abilities": [
+  "chlorophyll",
+  "leaf-guard",
+  "regenerator"
+ ],
+ "base_experience": 187,
+ "growth_rate": "medium",
+ "catch_rate": 30,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ingrain",
+    "level": 1
+   },
+   {
+    "move": "constrict",
+    "level": 1
+   },
+   {
+    "move": "sleep-powder",
+    "level": 4
+   },
+   {
+    "move": "vine-whip",
+    "level": 7
+   },
+   {
+    "move": "absorb",
+    "level": 10
+   },
+   {
+    "move": "poison-powder",
+    "level": 14
+   },
+   {
+    "move": "bind",
+    "level": 17
+   },
+   {
+    "move": "growth",
+    "level": 20
+   },
+   {
+    "move": "mega-drain",
+    "level": 23
+   },
+   {
+    "move": "knock-off",
+    "level": 27
+   },
+   {
+    "move": "stun-spore",
+    "level": 30
+   },
+   {
+    "move": "natural-gift",
+    "level": 33
+   },
+   {
+    "move": "giga-drain",
+    "level": 36
+   },
+   {
+    "move": "ancient-power",
+    "level": 40
+   },
+   {
+    "move": "slam",
+    "level": 43
+   },
+   {
+    "move": "tickle",
+    "level": 46
+   },
+   {
+    "move": "wring-out",
+    "level": 49
+   },
+   {
+    "move": "power-whip",
+    "level": 53
+   },
+   {
+    "move": "block",
+    "level": 56
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "pain-split",
+   "synthesis",
+   "knock-off",
+   "endeavor",
+   "block",
+   "worry-seed",
+   "seed-bomb"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "reflect",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

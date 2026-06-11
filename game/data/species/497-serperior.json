@@ -1,0 +1,152 @@
+{
+ "id": "serperior",
+ "name": "Serperior",
+ "dex": 497,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 75,
+  "defense": 95,
+  "special_attack": 75,
+  "special_defense": 95,
+  "speed": 113
+ },
+ "abilities": [
+  "overgrow",
+  "contrary"
+ ],
+ "base_experience": 238,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "vine-whip",
+    "level": 1
+   },
+   {
+    "move": "wrap",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 4
+   },
+   {
+    "move": "vine-whip",
+    "level": 7
+   },
+   {
+    "move": "wrap",
+    "level": 10
+   },
+   {
+    "move": "growth",
+    "level": 13
+   },
+   {
+    "move": "leaf-tornado",
+    "level": 16
+   },
+   {
+    "move": "leech-seed",
+    "level": 20
+   },
+   {
+    "move": "mega-drain",
+    "level": 24
+   },
+   {
+    "move": "slam",
+    "level": 28
+   },
+   {
+    "move": "leaf-blade",
+    "level": 32
+   },
+   {
+    "move": "coil",
+    "level": 38
+   },
+   {
+    "move": "giga-drain",
+    "level": 44
+   },
+   {
+    "move": "wring-out",
+    "level": 50
+   },
+   {
+    "move": "gastro-acid",
+    "level": 56
+   },
+   {
+    "move": "leaf-storm",
+    "level": 62
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "outrage",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "synthesis",
+   "knock-off",
+   "snatch",
+   "frenzy-plant",
+   "gastro-acid",
+   "worry-seed",
+   "aqua-tail",
+   "seed-bomb",
+   "dragon-pulse",
+   "grass-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "calm-mind",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "round",
+   "dragon-tail"
+  ]
+ }
+}

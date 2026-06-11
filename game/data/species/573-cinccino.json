@@ -1,0 +1,102 @@
+{
+ "id": "cinccino",
+ "name": "Cinccino",
+ "dex": 573,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 95,
+  "defense": 60,
+  "special_attack": 65,
+  "special_defense": 60,
+  "speed": 115
+ },
+ "abilities": [
+  "cute-charm",
+  "technician",
+  "skill-link"
+ ],
+ "base_experience": 165,
+ "growth_rate": "fast",
+ "catch_rate": 60,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bullet-seed",
+    "level": 1
+   },
+   {
+    "move": "rock-blast",
+    "level": 1
+   },
+   {
+    "move": "helping-hand",
+    "level": 1
+   },
+   {
+    "move": "tickle",
+    "level": 1
+   },
+   {
+    "move": "sing",
+    "level": 1
+   },
+   {
+    "move": "tail-slap",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "knock-off",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "aqua-tail",
+   "seed-bomb",
+   "gunk-shot",
+   "after-you"
+  ],
+  "machine": [
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "facade",
+   "calm-mind",
+   "u-turn",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "grass-knot",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

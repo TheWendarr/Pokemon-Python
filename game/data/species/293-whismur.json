@@ -1,0 +1,127 @@
+{
+ "id": "whismur",
+ "name": "Whismur",
+ "dex": 293,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 64,
+  "attack": 51,
+  "defense": 23,
+  "special_attack": 51,
+  "special_defense": 23,
+  "speed": 28
+ },
+ "abilities": [
+  "soundproof",
+  "rattled"
+ ],
+ "base_experience": 48,
+ "growth_rate": "medium-slow",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "uproar",
+    "level": 5
+   },
+   {
+    "move": "astonish",
+    "level": 11
+   },
+   {
+    "move": "howl",
+    "level": 15
+   },
+   {
+    "move": "supersonic",
+    "level": 21
+   },
+   {
+    "move": "stomp",
+    "level": 25
+   },
+   {
+    "move": "screech",
+    "level": 31
+   },
+   {
+    "move": "roar",
+    "level": 35
+   },
+   {
+    "move": "synchronoise",
+    "level": 41
+   },
+   {
+    "move": "rest",
+    "level": 45
+   },
+   {
+    "move": "sleep-talk",
+    "level": 45
+   },
+   {
+    "move": "hyper-voice",
+    "level": 51
+   }
+  ],
+  "egg": [
+   "take-down",
+   "smokescreen",
+   "snore",
+   "smelling-salts",
+   "endeavor",
+   "fake-tears",
+   "extrasensory",
+   "hammer-arm",
+   "circle-throw"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "endeavor",
+   "hyper-voice",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "facade",
+   "fling",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,146 @@
+{
+ "id": "deino",
+ "name": "Deino",
+ "dex": 633,
+ "types": [
+  "dark",
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 52,
+  "attack": 65,
+  "defense": 50,
+  "special_attack": 45,
+  "special_defense": 50,
+  "speed": 38
+ },
+ "abilities": [
+  "hustle"
+ ],
+ "base_experience": 60,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "dragon-rage",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 4
+   },
+   {
+    "move": "bite",
+    "level": 9
+   },
+   {
+    "move": "headbutt",
+    "level": 12
+   },
+   {
+    "move": "dragon-breath",
+    "level": 17
+   },
+   {
+    "move": "roar",
+    "level": 20
+   },
+   {
+    "move": "crunch",
+    "level": 25
+   },
+   {
+    "move": "slam",
+    "level": 28
+   },
+   {
+    "move": "dragon-pulse",
+    "level": 32
+   },
+   {
+    "move": "work-up",
+    "level": 38
+   },
+   {
+    "move": "dragon-rush",
+    "level": 42
+   },
+   {
+    "move": "body-slam",
+    "level": 48
+   },
+   {
+    "move": "scary-face",
+    "level": 52
+   },
+   {
+    "move": "hyper-voice",
+    "level": 58
+   },
+   {
+    "move": "outrage",
+    "level": 62
+   }
+  ],
+  "egg": [
+   "screech",
+   "astonish",
+   "assurance",
+   "dark-pulse",
+   "earth-power",
+   "thunder-fang",
+   "ice-fang",
+   "fire-fang",
+   "head-smash",
+   "double-hit"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "outrage",
+   "sleep-talk",
+   "uproar",
+   "superpower",
+   "hyper-voice",
+   "dark-pulse",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "zen-headbutt",
+   "draco-meteor"
+  ],
+  "machine": [
+   "roar",
+   "strength",
+   "thunder-wave",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "round",
+   "incinerate",
+   "dragon-tail",
+   "work-up"
+  ]
+ }
+}

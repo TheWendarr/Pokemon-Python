@@ -1,0 +1,139 @@
+{
+ "id": "wooper",
+ "name": "Wooper",
+ "dex": 194,
+ "types": [
+  "water",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 45,
+  "defense": 45,
+  "special_attack": 25,
+  "special_defense": 25,
+  "speed": 15
+ },
+ "abilities": [
+  "damp",
+  "water-absorb",
+  "unaware"
+ ],
+ "base_experience": 42,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 5
+   },
+   {
+    "move": "mud-shot",
+    "level": 9
+   },
+   {
+    "move": "slam",
+    "level": 15
+   },
+   {
+    "move": "mud-bomb",
+    "level": 19
+   },
+   {
+    "move": "amnesia",
+    "level": 23
+   },
+   {
+    "move": "yawn",
+    "level": 29
+   },
+   {
+    "move": "earthquake",
+    "level": 33
+   },
+   {
+    "move": "rain-dance",
+    "level": 37
+   },
+   {
+    "move": "mist",
+    "level": 43
+   },
+   {
+    "move": "haze",
+    "level": 43
+   },
+   {
+    "move": "muddy-water",
+    "level": 47
+   }
+  ],
+  "egg": [
+   "double-kick",
+   "body-slam",
+   "counter",
+   "recover",
+   "curse",
+   "sleep-talk",
+   "encore",
+   "ancient-power",
+   "stockpile",
+   "spit-up",
+   "swallow",
+   "mud-sport",
+   "acid-spray",
+   "after-you"
+  ],
+  "tutor": [
+   "ice-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "aqua-tail",
+   "earth-power",
+   "after-you"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "dive",
+   "sludge-wave",
+   "round",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

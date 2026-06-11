@@ -1,0 +1,148 @@
+{
+ "id": "vullaby",
+ "name": "Vullaby",
+ "dex": 629,
+ "types": [
+  "dark",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 55,
+  "defense": 75,
+  "special_attack": 45,
+  "special_defense": 65,
+  "speed": 60
+ },
+ "abilities": [
+  "big-pecks",
+  "overcoat",
+  "weak-armor"
+ ],
+ "base_experience": 74,
+ "growth_rate": "slow",
+ "catch_rate": 190,
+ "gender_rate": 8,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "gust",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "fury-attack",
+    "level": 5
+   },
+   {
+    "move": "pluck",
+    "level": 10
+   },
+   {
+    "move": "nasty-plot",
+    "level": 14
+   },
+   {
+    "move": "flatter",
+    "level": 19
+   },
+   {
+    "move": "feint-attack",
+    "level": 23
+   },
+   {
+    "move": "punishment",
+    "level": 28
+   },
+   {
+    "move": "defog",
+    "level": 32
+   },
+   {
+    "move": "tailwind",
+    "level": 37
+   },
+   {
+    "move": "air-slash",
+    "level": 41
+   },
+   {
+    "move": "dark-pulse",
+    "level": 46
+   },
+   {
+    "move": "embargo",
+    "level": 50
+   },
+   {
+    "move": "whirlwind",
+    "level": 55
+   },
+   {
+    "move": "brave-bird",
+    "level": 59
+   },
+   {
+    "move": "mirror-move",
+    "level": 64
+   }
+  ],
+  "egg": [
+   "scary-face",
+   "steel-wing",
+   "mean-look",
+   "knock-off",
+   "fake-tears",
+   "roost"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heat-wave",
+   "knock-off",
+   "snatch",
+   "iron-defense",
+   "block",
+   "roost",
+   "tailwind",
+   "dark-pulse",
+   "foul-play"
+  ],
+  "machine": [
+   "cut",
+   "fly",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "payback",
+   "embargo",
+   "round",
+   "incinerate",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

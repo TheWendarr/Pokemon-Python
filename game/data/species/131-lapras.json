@@ -1,0 +1,155 @@
+{
+ "id": "lapras",
+ "name": "Lapras",
+ "dex": 131,
+ "types": [
+  "water",
+  "ice"
+ ],
+ "base_stats": {
+  "hp": 130,
+  "attack": 85,
+  "defense": 80,
+  "special_attack": 85,
+  "special_defense": 95,
+  "speed": 60
+ },
+ "abilities": [
+  "water-absorb",
+  "shell-armor",
+  "hydration"
+ ],
+ "base_experience": 187,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "sing",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "mist",
+    "level": 4
+   },
+   {
+    "move": "confuse-ray",
+    "level": 7
+   },
+   {
+    "move": "ice-shard",
+    "level": 10
+   },
+   {
+    "move": "water-pulse",
+    "level": 14
+   },
+   {
+    "move": "body-slam",
+    "level": 18
+   },
+   {
+    "move": "rain-dance",
+    "level": 22
+   },
+   {
+    "move": "perish-song",
+    "level": 27
+   },
+   {
+    "move": "ice-beam",
+    "level": 32
+   },
+   {
+    "move": "brine",
+    "level": 37
+   },
+   {
+    "move": "safeguard",
+    "level": 43
+   },
+   {
+    "move": "hydro-pump",
+    "level": 49
+   },
+   {
+    "move": "sheer-cold",
+    "level": 55
+   }
+  ],
+  "egg": [
+   "horn-drill",
+   "fissure",
+   "curse",
+   "foresight",
+   "sleep-talk",
+   "ancient-power",
+   "future-sight",
+   "whirlpool",
+   "refresh",
+   "tickle",
+   "dragon-dance",
+   "dragon-pulse",
+   "avalanche"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "hyper-voice",
+   "signal-beam",
+   "block",
+   "aqua-tail",
+   "dragon-pulse",
+   "zen-headbutt",
+   "iron-head",
+   "drill-run"
+  ],
+  "machine": [
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "waterfall",
+   "dream-eater",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "dive",
+   "giga-impact",
+   "round",
+   "echoed-voice",
+   "bulldoze",
+   "frost-breath"
+  ]
+ }
+}

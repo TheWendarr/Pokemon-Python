@@ -1,0 +1,171 @@
+{
+ "id": "hypno",
+ "name": "Hypno",
+ "dex": 97,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 85,
+  "attack": 73,
+  "defense": 70,
+  "special_attack": 73,
+  "special_defense": 115,
+  "speed": 67
+ },
+ "abilities": [
+  "insomnia",
+  "forewarn",
+  "inner-focus"
+ ],
+ "base_experience": 169,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "nightmare",
+    "level": 1
+   },
+   {
+    "move": "switcheroo",
+    "level": 1
+   },
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "hypnosis",
+    "level": 1
+   },
+   {
+    "move": "disable",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "disable",
+    "level": 5
+   },
+   {
+    "move": "confusion",
+    "level": 9
+   },
+   {
+    "move": "headbutt",
+    "level": 13
+   },
+   {
+    "move": "poison-gas",
+    "level": 17
+   },
+   {
+    "move": "meditate",
+    "level": 21
+   },
+   {
+    "move": "psybeam",
+    "level": 25
+   },
+   {
+    "move": "headbutt",
+    "level": 29
+   },
+   {
+    "move": "psych-up",
+    "level": 33
+   },
+   {
+    "move": "synchronoise",
+    "level": 37
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 41
+   },
+   {
+    "move": "swagger",
+    "level": 45
+   },
+   {
+    "move": "psychic",
+    "level": 49
+   },
+   {
+    "move": "nasty-plot",
+    "level": 53
+   },
+   {
+    "move": "psyshock",
+    "level": 57
+   },
+   {
+    "move": "future-sight",
+    "level": 61
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "sleep-talk",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "snatch",
+   "signal-beam",
+   "drain-punch",
+   "zen-headbutt",
+   "magic-room",
+   "foul-play"
+  ],
+  "machine": [
+   "hyper-beam",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "calm-mind",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "trick-room",
+   "grass-knot",
+   "psyshock",
+   "telekinesis",
+   "low-sweep",
+   "round"
+  ]
+ }
+}

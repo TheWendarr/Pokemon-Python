@@ -1,0 +1,138 @@
+{
+ "id": "ninjask",
+ "name": "Ninjask",
+ "dex": 291,
+ "types": [
+  "bug",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 61,
+  "attack": 90,
+  "defense": 45,
+  "special_attack": 50,
+  "special_defense": 50,
+  "speed": 160
+ },
+ "abilities": [
+  "speed-boost",
+  "infiltrator"
+ ],
+ "base_experience": 160,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bug-bite",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "leech-life",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 1
+   },
+   {
+    "move": "leech-life",
+    "level": 5
+   },
+   {
+    "move": "sand-attack",
+    "level": 9
+   },
+   {
+    "move": "fury-swipes",
+    "level": 14
+   },
+   {
+    "move": "mind-reader",
+    "level": 19
+   },
+   {
+    "move": "double-team",
+    "level": 20
+   },
+   {
+    "move": "fury-cutter",
+    "level": 20
+   },
+   {
+    "move": "screech",
+    "level": 20
+   },
+   {
+    "move": "swords-dance",
+    "level": 25
+   },
+   {
+    "move": "slash",
+    "level": 31
+   },
+   {
+    "move": "agility",
+    "level": 38
+   },
+   {
+    "move": "baton-pass",
+    "level": 45
+   },
+   {
+    "move": "x-scissor",
+    "level": 52
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "giga-drain",
+   "sleep-talk",
+   "uproar",
+   "roost",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "shadow-ball",
+   "facade",
+   "aerial-ace",
+   "u-turn",
+   "x-scissor",
+   "giga-impact",
+   "hone-claws",
+   "round",
+   "struggle-bug"
+  ]
+ }
+}

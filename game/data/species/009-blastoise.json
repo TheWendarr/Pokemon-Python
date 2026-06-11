@@ -1,0 +1,154 @@
+{
+ "id": "blastoise",
+ "name": "Blastoise",
+ "dex": 9,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 79,
+  "attack": 83,
+  "defense": 100,
+  "special_attack": 85,
+  "special_defense": 105,
+  "speed": 78
+ },
+ "abilities": [
+  "torrent",
+  "rain-dish"
+ ],
+ "base_experience": 239,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "flash-cannon",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "withdraw",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 4
+   },
+   {
+    "move": "bubble",
+    "level": 7
+   },
+   {
+    "move": "withdraw",
+    "level": 10
+   },
+   {
+    "move": "water-gun",
+    "level": 13
+   },
+   {
+    "move": "bite",
+    "level": 16
+   },
+   {
+    "move": "rapid-spin",
+    "level": 20
+   },
+   {
+    "move": "protect",
+    "level": 24
+   },
+   {
+    "move": "water-pulse",
+    "level": 28
+   },
+   {
+    "move": "aqua-tail",
+    "level": 32
+   },
+   {
+    "move": "skull-bash",
+    "level": 39
+   },
+   {
+    "move": "iron-defense",
+    "level": 46
+   },
+   {
+    "move": "rain-dance",
+    "level": 53
+   },
+   {
+    "move": "hydro-pump",
+    "level": 60
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "snore",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "hydro-cannon",
+   "signal-beam",
+   "iron-defense",
+   "aqua-tail",
+   "zen-headbutt",
+   "water-pledge"
+  ],
+  "machine": [
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "gyro-ball",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "flash-cannon",
+   "smack-down",
+   "round",
+   "scald",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

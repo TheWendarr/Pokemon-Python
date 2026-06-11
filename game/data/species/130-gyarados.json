@@ -1,0 +1,129 @@
+{
+ "id": "gyarados",
+ "name": "Gyarados",
+ "dex": 130,
+ "types": [
+  "water",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 95,
+  "attack": 125,
+  "defense": 79,
+  "special_attack": 60,
+  "special_defense": 100,
+  "speed": 81
+ },
+ "abilities": [
+  "intimidate",
+  "moxie"
+ ],
+ "base_experience": 189,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "thrash",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 20
+   },
+   {
+    "move": "dragon-rage",
+    "level": 23
+   },
+   {
+    "move": "leer",
+    "level": 26
+   },
+   {
+    "move": "twister",
+    "level": 29
+   },
+   {
+    "move": "ice-fang",
+    "level": 32
+   },
+   {
+    "move": "aqua-tail",
+    "level": 35
+   },
+   {
+    "move": "rain-dance",
+    "level": 38
+   },
+   {
+    "move": "hydro-pump",
+    "level": 41
+   },
+   {
+    "move": "dragon-dance",
+    "level": 44
+   },
+   {
+    "move": "hyper-beam",
+    "level": 47
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "bounce",
+   "dark-pulse",
+   "aqua-tail",
+   "dragon-pulse",
+   "iron-head"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "torment",
+   "facade",
+   "taunt",
+   "dive",
+   "payback",
+   "giga-impact",
+   "stone-edge",
+   "round",
+   "scald",
+   "incinerate",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

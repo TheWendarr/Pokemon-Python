@@ -1,0 +1,131 @@
+{
+ "id": "entei",
+ "name": "Entei",
+ "dex": 244,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 115,
+  "attack": 115,
+  "defense": 85,
+  "special_attack": 90,
+  "special_defense": 75,
+  "speed": 100
+ },
+ "abilities": [
+  "pressure",
+  "inner-focus"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 8
+   },
+   {
+    "move": "roar",
+    "level": 15
+   },
+   {
+    "move": "fire-spin",
+    "level": 22
+   },
+   {
+    "move": "stomp",
+    "level": 29
+   },
+   {
+    "move": "flamethrower",
+    "level": 36
+   },
+   {
+    "move": "swagger",
+    "level": 43
+   },
+   {
+    "move": "fire-fang",
+    "level": 50
+   },
+   {
+    "move": "lava-plume",
+    "level": 57
+   },
+   {
+    "move": "extrasensory",
+    "level": 64
+   },
+   {
+    "move": "fire-blast",
+    "level": 71
+   },
+   {
+    "move": "calm-mind",
+    "level": 78
+   },
+   {
+    "move": "eruption",
+    "level": 85
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "heat-wave",
+   "iron-head"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "reflect",
+   "fire-blast",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "overheat",
+   "calm-mind",
+   "giga-impact",
+   "stone-edge",
+   "flame-charge",
+   "round",
+   "incinerate",
+   "quash",
+   "bulldoze",
+   "snarl"
+  ]
+ }
+}

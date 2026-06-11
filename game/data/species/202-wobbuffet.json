@@ -1,0 +1,47 @@
+{
+ "id": "wobbuffet",
+ "name": "Wobbuffet",
+ "dex": 202,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 190,
+  "attack": 33,
+  "defense": 58,
+  "special_attack": 33,
+  "special_defense": 58,
+  "speed": 33
+ },
+ "abilities": [
+  "shadow-tag",
+  "telepathy"
+ ],
+ "base_experience": 142,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "counter",
+    "level": 1
+   },
+   {
+    "move": "mirror-coat",
+    "level": 1
+   },
+   {
+    "move": "safeguard",
+    "level": 1
+   },
+   {
+    "move": "destiny-bond",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [],
+  "machine": []
+ }
+}

@@ -1,0 +1,109 @@
+{
+ "id": "surskit",
+ "name": "Surskit",
+ "dex": 283,
+ "types": [
+  "bug",
+  "water"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 30,
+  "defense": 32,
+  "special_attack": 50,
+  "special_defense": 52,
+  "speed": 65
+ },
+ "abilities": [
+  "swift-swim",
+  "rain-dish"
+ ],
+ "base_experience": 54,
+ "growth_rate": "medium",
+ "catch_rate": 200,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 7
+   },
+   {
+    "move": "sweet-scent",
+    "level": 13
+   },
+   {
+    "move": "water-sport",
+    "level": 19
+   },
+   {
+    "move": "bubble-beam",
+    "level": 25
+   },
+   {
+    "move": "agility",
+    "level": 31
+   },
+   {
+    "move": "mist",
+    "level": 37
+   },
+   {
+    "move": "haze",
+    "level": 37
+   },
+   {
+    "move": "baton-pass",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "hydro-pump",
+   "psybeam",
+   "mind-reader",
+   "foresight",
+   "endure",
+   "signal-beam",
+   "mud-shot",
+   "bug-bite",
+   "aqua-jet"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "giga-drain",
+   "sleep-talk",
+   "signal-beam",
+   "bug-bite"
+  ],
+  "machine": [
+   "ice-beam",
+   "blizzard",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "round",
+   "scald",
+   "struggle-bug"
+  ]
+ }
+}

@@ -1,0 +1,160 @@
+{
+ "id": "golurk",
+ "name": "Golurk",
+ "dex": 623,
+ "types": [
+  "ground",
+  "ghost"
+ ],
+ "base_stats": {
+  "hp": 89,
+  "attack": 124,
+  "defense": 80,
+  "special_attack": 55,
+  "special_defense": 80,
+  "speed": 55
+ },
+ "abilities": [
+  "iron-fist",
+  "klutz",
+  "no-guard"
+ ],
+ "base_experience": 169,
+ "growth_rate": "medium",
+ "catch_rate": 90,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 5
+   },
+   {
+    "move": "rollout",
+    "level": 9
+   },
+   {
+    "move": "shadow-punch",
+    "level": 13
+   },
+   {
+    "move": "iron-defense",
+    "level": 17
+   },
+   {
+    "move": "mega-punch",
+    "level": 21
+   },
+   {
+    "move": "magnitude",
+    "level": 25
+   },
+   {
+    "move": "dynamic-punch",
+    "level": 30
+   },
+   {
+    "move": "night-shade",
+    "level": 35
+   },
+   {
+    "move": "curse",
+    "level": 40
+   },
+   {
+    "move": "heavy-slam",
+    "level": 43
+   },
+   {
+    "move": "earthquake",
+    "level": 50
+   },
+   {
+    "move": "hammer-arm",
+    "level": 60
+   },
+   {
+    "move": "focus-punch",
+    "level": 70
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "superpower",
+   "magic-coat",
+   "signal-beam",
+   "iron-defense",
+   "block",
+   "gravity",
+   "drain-punch",
+   "earth-power",
+   "zen-headbutt",
+   "stealth-rock"
+  ],
+  "machine": [
+   "fly",
+   "ice-beam",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "gyro-ball",
+   "fling",
+   "rock-polish",
+   "focus-blast",
+   "giga-impact",
+   "flash-cannon",
+   "stone-edge",
+   "grass-knot",
+   "charge-beam",
+   "telekinesis",
+   "low-sweep",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

@@ -1,0 +1,151 @@
+{
+ "id": "tropius",
+ "name": "Tropius",
+ "dex": 357,
+ "types": [
+  "grass",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 99,
+  "attack": 68,
+  "defense": 83,
+  "special_attack": 72,
+  "special_defense": 87,
+  "speed": 51
+ },
+ "abilities": [
+  "chlorophyll",
+  "solar-power",
+  "harvest"
+ ],
+ "base_experience": 161,
+ "growth_rate": "slow",
+ "catch_rate": 200,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "gust",
+    "level": 1
+   },
+   {
+    "move": "growth",
+    "level": 7
+   },
+   {
+    "move": "razor-leaf",
+    "level": 11
+   },
+   {
+    "move": "stomp",
+    "level": 17
+   },
+   {
+    "move": "sweet-scent",
+    "level": 21
+   },
+   {
+    "move": "whirlwind",
+    "level": 27
+   },
+   {
+    "move": "magical-leaf",
+    "level": 31
+   },
+   {
+    "move": "body-slam",
+    "level": 37
+   },
+   {
+    "move": "synthesis",
+    "level": 41
+   },
+   {
+    "move": "leaf-tornado",
+    "level": 47
+   },
+   {
+    "move": "air-slash",
+    "level": 51
+   },
+   {
+    "move": "bestow",
+    "level": 57
+   },
+   {
+    "move": "solar-beam",
+    "level": 61
+   },
+   {
+    "move": "natural-gift",
+    "level": 67
+   },
+   {
+    "move": "leaf-storm",
+    "level": 71
+   }
+  ],
+  "egg": [
+   "razor-wind",
+   "slam",
+   "headbutt",
+   "leech-seed",
+   "curse",
+   "synthesis",
+   "nature-power",
+   "bullet-seed",
+   "leaf-blade",
+   "dragon-dance",
+   "natural-gift",
+   "leaf-storm"
+  ],
+  "tutor": [
+   "snore",
+   "outrage",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "roost",
+   "tailwind",
+   "worry-seed",
+   "seed-bomb",
+   "dragon-pulse"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "fly",
+   "roar",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "aerial-ace",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

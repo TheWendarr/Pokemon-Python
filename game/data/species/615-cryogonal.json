@@ -1,0 +1,137 @@
+{
+ "id": "cryogonal",
+ "name": "Cryogonal",
+ "dex": 615,
+ "types": [
+  "ice"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 50,
+  "defense": 50,
+  "special_attack": 95,
+  "special_defense": 135,
+  "speed": 105
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 180,
+ "growth_rate": "medium",
+ "catch_rate": 25,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bind",
+    "level": 1
+   },
+   {
+    "move": "ice-shard",
+    "level": 5
+   },
+   {
+    "move": "sharpen",
+    "level": 9
+   },
+   {
+    "move": "rapid-spin",
+    "level": 13
+   },
+   {
+    "move": "icy-wind",
+    "level": 17
+   },
+   {
+    "move": "mist",
+    "level": 21
+   },
+   {
+    "move": "haze",
+    "level": 21
+   },
+   {
+    "move": "aurora-beam",
+    "level": 25
+   },
+   {
+    "move": "acid-armor",
+    "level": 29
+   },
+   {
+    "move": "ice-beam",
+    "level": 33
+   },
+   {
+    "move": "light-screen",
+    "level": 37
+   },
+   {
+    "move": "reflect",
+    "level": 37
+   },
+   {
+    "move": "slash",
+    "level": 41
+   },
+   {
+    "move": "confuse-ray",
+    "level": 45
+   },
+   {
+    "move": "recover",
+    "level": 49
+   },
+   {
+    "move": "solar-beam",
+    "level": 53
+   },
+   {
+    "move": "night-slash",
+    "level": 57
+   },
+   {
+    "move": "sheer-cold",
+    "level": 61
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "magic-coat",
+   "knock-off",
+   "signal-beam",
+   "iron-defense"
+  ],
+  "machine": [
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "explosion",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "poison-jab",
+   "flash-cannon",
+   "round",
+   "acrobatics",
+   "frost-breath"
+  ]
+ }
+}

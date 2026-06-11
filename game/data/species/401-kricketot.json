@@ -1,0 +1,52 @@
+{
+ "id": "kricketot",
+ "name": "Kricketot",
+ "dex": 401,
+ "types": [
+  "bug"
+ ],
+ "base_stats": {
+  "hp": 37,
+  "attack": 25,
+  "defense": 41,
+  "special_attack": 25,
+  "special_defense": 41,
+  "speed": 25
+ },
+ "abilities": [
+  "shed-skin",
+  "run-away"
+ ],
+ "base_experience": 39,
+ "growth_rate": "medium-slow",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "bide",
+    "level": 1
+   },
+   {
+    "move": "struggle-bug",
+    "level": 6
+   },
+   {
+    "move": "bug-bite",
+    "level": 16
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "uproar",
+   "endeavor",
+   "bug-bite"
+  ],
+  "machine": []
+ }
+}

@@ -1,0 +1,150 @@
+{
+ "id": "tornadus-incarnate",
+ "name": "Tornadus Incarnate",
+ "dex": 641,
+ "types": [
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 79,
+  "attack": 115,
+  "defense": 70,
+  "special_attack": 125,
+  "special_defense": 80,
+  "speed": 111
+ },
+ "abilities": [
+  "prankster",
+  "defiant"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "uproar",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "gust",
+    "level": 1
+   },
+   {
+    "move": "swagger",
+    "level": 7
+   },
+   {
+    "move": "bite",
+    "level": 13
+   },
+   {
+    "move": "revenge",
+    "level": 19
+   },
+   {
+    "move": "air-cutter",
+    "level": 25
+   },
+   {
+    "move": "extrasensory",
+    "level": 31
+   },
+   {
+    "move": "agility",
+    "level": 37
+   },
+   {
+    "move": "air-slash",
+    "level": 43
+   },
+   {
+    "move": "crunch",
+    "level": 49
+   },
+   {
+    "move": "tailwind",
+    "level": 55
+   },
+   {
+    "move": "rain-dance",
+    "level": 61
+   },
+   {
+    "move": "hurricane",
+    "level": 67
+   },
+   {
+    "move": "dark-pulse",
+    "level": 73
+   },
+   {
+    "move": "hammer-arm",
+    "level": 79
+   },
+   {
+    "move": "thrash",
+    "level": 85
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "heat-wave",
+   "role-play",
+   "superpower",
+   "knock-off",
+   "tailwind",
+   "dark-pulse",
+   "foul-play"
+  ],
+  "machine": [
+   "fly",
+   "hyper-beam",
+   "strength",
+   "toxic",
+   "psychic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "aerial-ace",
+   "bulk-up",
+   "u-turn",
+   "payback",
+   "embargo",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "grass-knot",
+   "smack-down",
+   "sludge-wave",
+   "round",
+   "sky-drop",
+   "incinerate",
+   "acrobatics"
+  ]
+ }
+}

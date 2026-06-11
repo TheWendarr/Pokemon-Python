@@ -1,0 +1,94 @@
+{
+ "id": "swadloon",
+ "name": "Swadloon",
+ "dex": 541,
+ "types": [
+  "bug",
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 63,
+  "defense": 90,
+  "special_attack": 50,
+  "special_defense": 80,
+  "speed": 42
+ },
+ "abilities": [
+  "leaf-guard",
+  "chlorophyll",
+  "overcoat"
+ ],
+ "base_experience": 133,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "grass-whistle",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "string-shot",
+    "level": 1
+   },
+   {
+    "move": "bug-bite",
+    "level": 1
+   },
+   {
+    "move": "razor-leaf",
+    "level": 1
+   },
+   {
+    "move": "protect",
+    "level": 20
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "magic-coat",
+   "signal-beam",
+   "iron-defense",
+   "worry-seed",
+   "seed-bomb",
+   "bug-bite",
+   "electroweb"
+  ],
+  "machine": [
+   "cut",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "calm-mind",
+   "payback",
+   "energy-ball",
+   "grass-knot",
+   "round",
+   "struggle-bug"
+  ]
+ }
+}

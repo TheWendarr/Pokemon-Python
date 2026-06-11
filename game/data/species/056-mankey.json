@@ -1,0 +1,166 @@
+{
+ "id": "mankey",
+ "name": "Mankey",
+ "dex": 56,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 80,
+  "defense": 35,
+  "special_attack": 35,
+  "special_defense": 45,
+  "speed": 70
+ },
+ "abilities": [
+  "vital-spirit",
+  "anger-point",
+  "defiant"
+ ],
+ "base_experience": 61,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "covet",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "low-kick",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "fury-swipes",
+    "level": 9
+   },
+   {
+    "move": "karate-chop",
+    "level": 13
+   },
+   {
+    "move": "seismic-toss",
+    "level": 17
+   },
+   {
+    "move": "screech",
+    "level": 21
+   },
+   {
+    "move": "assurance",
+    "level": 25
+   },
+   {
+    "move": "swagger",
+    "level": 33
+   },
+   {
+    "move": "cross-chop",
+    "level": 37
+   },
+   {
+    "move": "thrash",
+    "level": 41
+   },
+   {
+    "move": "punishment",
+    "level": 45
+   },
+   {
+    "move": "close-combat",
+    "level": 49
+   },
+   {
+    "move": "final-gambit",
+    "level": 53
+   }
+  ],
+  "egg": [
+   "counter",
+   "meditate",
+   "reversal",
+   "foresight",
+   "sleep-talk",
+   "encore",
+   "beat-up",
+   "focus-punch",
+   "smelling-salts",
+   "revenge",
+   "close-combat"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "spite",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "role-play",
+   "endeavor",
+   "covet",
+   "seed-bomb",
+   "gunk-shot",
+   "dual-chop"
+  ],
+  "machine": [
+   "strength",
+   "thunderbolt",
+   "thunder",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "aerial-ace",
+   "bulk-up",
+   "u-turn",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "hone-claws",
+   "smack-down",
+   "low-sweep",
+   "round",
+   "acrobatics",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

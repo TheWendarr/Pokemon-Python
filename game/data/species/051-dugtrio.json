@@ -1,0 +1,142 @@
+{
+ "id": "dugtrio",
+ "name": "Dugtrio",
+ "dex": 51,
+ "types": [
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 35,
+  "attack": 100,
+  "defense": 50,
+  "special_attack": 50,
+  "special_defense": 70,
+  "speed": 120
+ },
+ "abilities": [
+  "sand-veil",
+  "arena-trap",
+  "sand-force"
+ ],
+ "base_experience": 149,
+ "growth_rate": "medium",
+ "catch_rate": 50,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "night-slash",
+    "level": 1
+   },
+   {
+    "move": "tri-attack",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 4
+   },
+   {
+    "move": "astonish",
+    "level": 7
+   },
+   {
+    "move": "mud-slap",
+    "level": 12
+   },
+   {
+    "move": "magnitude",
+    "level": 15
+   },
+   {
+    "move": "bulldoze",
+    "level": 18
+   },
+   {
+    "move": "sucker-punch",
+    "level": 23
+   },
+   {
+    "move": "sand-tomb",
+    "level": 26
+   },
+   {
+    "move": "mud-bomb",
+    "level": 28
+   },
+   {
+    "move": "earth-power",
+    "level": 33
+   },
+   {
+    "move": "dig",
+    "level": 40
+   },
+   {
+    "move": "slash",
+    "level": 45
+   },
+   {
+    "move": "earthquake",
+    "level": 50
+   },
+   {
+    "move": "fissure",
+    "level": 57
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "cut",
+   "hyper-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "aerial-ace",
+   "giga-impact",
+   "shadow-claw",
+   "stone-edge",
+   "hone-claws",
+   "sludge-wave",
+   "round",
+   "echoed-voice",
+   "bulldoze"
+  ]
+ }
+}

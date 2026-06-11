@@ -1,0 +1,33 @@
+{
+ "id": "night-daze",
+ "name": "Night Daze",
+ "type": "dark",
+ "category": "special",
+ "power": 85,
+ "accuracy": 95,
+ "pp": 10,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-lower",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [
+   {
+    "stat": "accuracy",
+    "change": -1
+   }
+  ],
+  "stat_chance": 40,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

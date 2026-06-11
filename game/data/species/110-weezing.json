@@ -1,0 +1,136 @@
+{
+ "id": "weezing",
+ "name": "Weezing",
+ "dex": 110,
+ "types": [
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 90,
+  "defense": 120,
+  "special_attack": 85,
+  "special_defense": 70,
+  "speed": 60
+ },
+ "abilities": [
+  "levitate",
+  "neutralizing-gas",
+  "stench"
+ ],
+ "base_experience": 172,
+ "growth_rate": "medium",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "poison-gas",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "smog",
+    "level": 1
+   },
+   {
+    "move": "smokescreen",
+    "level": 1
+   },
+   {
+    "move": "smog",
+    "level": 4
+   },
+   {
+    "move": "smokescreen",
+    "level": 7
+   },
+   {
+    "move": "assurance",
+    "level": 12
+   },
+   {
+    "move": "clear-smog",
+    "level": 15
+   },
+   {
+    "move": "sludge",
+    "level": 18
+   },
+   {
+    "move": "self-destruct",
+    "level": 23
+   },
+   {
+    "move": "haze",
+    "level": 26
+   },
+   {
+    "move": "double-hit",
+    "level": 29
+   },
+   {
+    "move": "sludge-bomb",
+    "level": 34
+   },
+   {
+    "move": "explosion",
+    "level": 40
+   },
+   {
+    "move": "destiny-bond",
+    "level": 46
+   },
+   {
+    "move": "memento",
+    "level": 54
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "sleep-talk",
+   "pain-split",
+   "uproar",
+   "dark-pulse"
+  ],
+  "machine": [
+   "flamethrower",
+   "hyper-beam",
+   "thunderbolt",
+   "thunder",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "flash",
+   "explosion",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "gyro-ball",
+   "payback",
+   "giga-impact",
+   "venoshock",
+   "round",
+   "incinerate"
+  ]
+ }
+}

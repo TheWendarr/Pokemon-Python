@@ -1,0 +1,152 @@
+{
+ "id": "rayquaza",
+ "name": "Rayquaza",
+ "dex": 384,
+ "types": [
+  "dragon",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 105,
+  "attack": 150,
+  "defense": 90,
+  "special_attack": 150,
+  "special_defense": 90,
+  "speed": 95
+ },
+ "abilities": [
+  "air-lock"
+ ],
+ "base_experience": 306,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "twister",
+    "level": 1
+   },
+   {
+    "move": "scary-face",
+    "level": 5
+   },
+   {
+    "move": "crunch",
+    "level": 15
+   },
+   {
+    "move": "hyper-voice",
+    "level": 20
+   },
+   {
+    "move": "rest",
+    "level": 30
+   },
+   {
+    "move": "air-slash",
+    "level": 35
+   },
+   {
+    "move": "ancient-power",
+    "level": 45
+   },
+   {
+    "move": "outrage",
+    "level": 50
+   },
+   {
+    "move": "dragon-dance",
+    "level": 60
+   },
+   {
+    "move": "fly",
+    "level": 65
+   },
+   {
+    "move": "extreme-speed",
+    "level": 75
+   },
+   {
+    "move": "hyper-beam",
+    "level": 80
+   },
+   {
+    "move": "dragon-pulse",
+    "level": 90
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "hyper-voice",
+   "tailwind",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "draco-meteor",
+   "iron-head"
+  ],
+  "machine": [
+   "swords-dance",
+   "fly",
+   "roar",
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "dive",
+   "overheat",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "bulk-up",
+   "gyro-ball",
+   "fling",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "shadow-claw",
+   "stone-edge",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "sky-drop",
+   "incinerate",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "id": "hippowdon",
+ "name": "Hippowdon",
+ "dex": 450,
+ "types": [
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 108,
+  "attack": 112,
+  "defense": 118,
+  "special_attack": 68,
+  "special_defense": 72,
+  "speed": 47
+ },
+ "abilities": [
+  "sand-stream",
+  "sand-force"
+ ],
+ "base_experience": 184,
+ "growth_rate": "slow",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ice-fang",
+    "level": 1
+   },
+   {
+    "move": "fire-fang",
+    "level": 1
+   },
+   {
+    "move": "thunder-fang",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "yawn",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 7
+   },
+   {
+    "move": "yawn",
+    "level": 13
+   },
+   {
+    "move": "take-down",
+    "level": 19
+   },
+   {
+    "move": "dig",
+    "level": 19
+   },
+   {
+    "move": "sand-tomb",
+    "level": 25
+   },
+   {
+    "move": "crunch",
+    "level": 31
+   },
+   {
+    "move": "earthquake",
+    "level": 40
+   },
+   {
+    "move": "double-edge",
+    "level": 50
+   },
+   {
+    "move": "fissure",
+    "level": 60
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "superpower",
+   "earth-power",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "roar",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "giga-impact",
+   "stone-edge",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

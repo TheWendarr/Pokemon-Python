@@ -1,0 +1,174 @@
+{
+ "id": "krookodile",
+ "name": "Krookodile",
+ "dex": 553,
+ "types": [
+  "ground",
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 95,
+  "attack": 117,
+  "defense": 80,
+  "special_attack": 65,
+  "special_defense": 70,
+  "speed": 92
+ },
+ "abilities": [
+  "intimidate",
+  "moxie",
+  "anger-point"
+ ],
+ "base_experience": 234,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "rage",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 4
+   },
+   {
+    "move": "sand-attack",
+    "level": 7
+   },
+   {
+    "move": "torment",
+    "level": 10
+   },
+   {
+    "move": "sand-tomb",
+    "level": 13
+   },
+   {
+    "move": "assurance",
+    "level": 16
+   },
+   {
+    "move": "mud-slap",
+    "level": 19
+   },
+   {
+    "move": "embargo",
+    "level": 22
+   },
+   {
+    "move": "swagger",
+    "level": 25
+   },
+   {
+    "move": "crunch",
+    "level": 28
+   },
+   {
+    "move": "dig",
+    "level": 32
+   },
+   {
+    "move": "scary-face",
+    "level": 36
+   },
+   {
+    "move": "foul-play",
+    "level": 42
+   },
+   {
+    "move": "sandstorm",
+    "level": 48
+   },
+   {
+    "move": "earthquake",
+    "level": 54
+   },
+   {
+    "move": "outrage",
+    "level": 60
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "spite",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "superpower",
+   "knock-off",
+   "snatch",
+   "block",
+   "dark-pulse",
+   "aqua-tail",
+   "dragon-pulse",
+   "earth-power",
+   "stealth-rock",
+   "foul-play"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "bulk-up",
+   "payback",
+   "embargo",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "stone-edge",
+   "grass-knot",
+   "hone-claws",
+   "smack-down",
+   "low-sweep",
+   "round",
+   "incinerate",
+   "retaliate",
+   "bulldoze",
+   "dragon-tail",
+   "snarl"
+  ]
+ }
+}

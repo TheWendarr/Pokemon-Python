@@ -1,0 +1,33 @@
+{
+ "id": "overheat",
+ "name": "Overheat",
+ "type": "fire",
+ "category": "special",
+ "power": 140,
+ "accuracy": 90,
+ "pp": 5,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-raise",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [
+   {
+    "stat": "special_attack",
+    "change": -2
+   }
+  ],
+  "stat_chance": 100,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

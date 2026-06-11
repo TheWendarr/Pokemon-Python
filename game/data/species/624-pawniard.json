@@ -1,0 +1,159 @@
+{
+ "id": "pawniard",
+ "name": "Pawniard",
+ "dex": 624,
+ "types": [
+  "dark",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 85,
+  "defense": 70,
+  "special_attack": 40,
+  "special_defense": 40,
+  "speed": 60
+ },
+ "abilities": [
+  "defiant",
+  "inner-focus",
+  "pressure"
+ ],
+ "base_experience": 68,
+ "growth_rate": "medium",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 6
+   },
+   {
+    "move": "fury-cutter",
+    "level": 9
+   },
+   {
+    "move": "torment",
+    "level": 14
+   },
+   {
+    "move": "feint-attack",
+    "level": 17
+   },
+   {
+    "move": "scary-face",
+    "level": 22
+   },
+   {
+    "move": "metal-claw",
+    "level": 25
+   },
+   {
+    "move": "slash",
+    "level": 30
+   },
+   {
+    "move": "assurance",
+    "level": 33
+   },
+   {
+    "move": "metal-sound",
+    "level": 38
+   },
+   {
+    "move": "embargo",
+    "level": 41
+   },
+   {
+    "move": "iron-defense",
+    "level": 46
+   },
+   {
+    "move": "night-slash",
+    "level": 49
+   },
+   {
+    "move": "iron-head",
+    "level": 54
+   },
+   {
+    "move": "swords-dance",
+    "level": 57
+   },
+   {
+    "move": "guillotine",
+    "level": 62
+   }
+  ],
+  "egg": [
+   "headbutt",
+   "mean-look",
+   "pursuit",
+   "revenge",
+   "sucker-punch",
+   "psycho-cut",
+   "stealth-rock"
+  ],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "spite",
+   "sleep-talk",
+   "role-play",
+   "knock-off",
+   "snatch",
+   "iron-defense",
+   "magnet-rise",
+   "dark-pulse",
+   "iron-head",
+   "stealth-rock",
+   "foul-play",
+   "dual-chop"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "thunder-wave",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "payback",
+   "embargo",
+   "fling",
+   "rock-polish",
+   "poison-jab",
+   "x-scissor",
+   "shadow-claw",
+   "grass-knot",
+   "hone-claws",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

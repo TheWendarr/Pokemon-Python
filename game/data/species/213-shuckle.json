@@ -1,0 +1,158 @@
+{
+ "id": "shuckle",
+ "name": "Shuckle",
+ "dex": 213,
+ "types": [
+  "bug",
+  "rock"
+ ],
+ "base_stats": {
+  "hp": 20,
+  "attack": 10,
+  "defense": 230,
+  "special_attack": 10,
+  "special_defense": 230,
+  "speed": 5
+ },
+ "abilities": [
+  "sturdy",
+  "gluttony",
+  "contrary"
+ ],
+ "base_experience": 177,
+ "growth_rate": "medium-slow",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "withdraw",
+    "level": 1
+   },
+   {
+    "move": "constrict",
+    "level": 1
+   },
+   {
+    "move": "bide",
+    "level": 1
+   },
+   {
+    "move": "rollout",
+    "level": 1
+   },
+   {
+    "move": "encore",
+    "level": 5
+   },
+   {
+    "move": "wrap",
+    "level": 9
+   },
+   {
+    "move": "struggle-bug",
+    "level": 12
+   },
+   {
+    "move": "safeguard",
+    "level": 16
+   },
+   {
+    "move": "rest",
+    "level": 20
+   },
+   {
+    "move": "rock-throw",
+    "level": 23
+   },
+   {
+    "move": "gastro-acid",
+    "level": 27
+   },
+   {
+    "move": "power-trick",
+    "level": 31
+   },
+   {
+    "move": "shell-smash",
+    "level": 34
+   },
+   {
+    "move": "rock-slide",
+    "level": 38
+   },
+   {
+    "move": "bug-bite",
+    "level": 42
+   },
+   {
+    "move": "power-split",
+    "level": 45
+   },
+   {
+    "move": "guard-split",
+    "level": 45
+   },
+   {
+    "move": "stone-edge",
+    "level": 49
+   }
+  ],
+  "egg": [
+   "acid",
+   "mud-slap",
+   "sweet-scent",
+   "helping-hand",
+   "knock-off",
+   "sand-tomb",
+   "rock-blast",
+   "acupressure",
+   "final-gambit"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "sleep-talk",
+   "helping-hand",
+   "knock-off",
+   "gastro-acid",
+   "earth-power",
+   "stealth-rock",
+   "bug-bite",
+   "after-you"
+  ],
+  "machine": [
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "gyro-ball",
+   "rock-polish",
+   "stone-edge",
+   "venoshock",
+   "smack-down",
+   "sludge-wave",
+   "round",
+   "struggle-bug",
+   "bulldoze"
+  ]
+ }
+}

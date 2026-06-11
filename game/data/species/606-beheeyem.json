@@ -1,0 +1,171 @@
+{
+ "id": "beheeyem",
+ "name": "Beheeyem",
+ "dex": 606,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 75,
+  "defense": 75,
+  "special_attack": 125,
+  "special_defense": 95,
+  "speed": 40
+ },
+ "abilities": [
+  "telepathy",
+  "synchronize",
+  "analytic"
+ ],
+ "base_experience": 170,
+ "growth_rate": "medium",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "heal-block",
+    "level": 1
+   },
+   {
+    "move": "miracle-eye",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 4
+   },
+   {
+    "move": "heal-block",
+    "level": 8
+   },
+   {
+    "move": "miracle-eye",
+    "level": 11
+   },
+   {
+    "move": "psybeam",
+    "level": 15
+   },
+   {
+    "move": "headbutt",
+    "level": 18
+   },
+   {
+    "move": "hidden-power",
+    "level": 22
+   },
+   {
+    "move": "imprison",
+    "level": 25
+   },
+   {
+    "move": "simple-beam",
+    "level": 29
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 32
+   },
+   {
+    "move": "psych-up",
+    "level": 36
+   },
+   {
+    "move": "psychic",
+    "level": 39
+   },
+   {
+    "move": "calm-mind",
+    "level": 45
+   },
+   {
+    "move": "recover",
+    "level": 50
+   },
+   {
+    "move": "guard-split",
+    "level": 56
+   },
+   {
+    "move": "power-split",
+    "level": 58
+   },
+   {
+    "move": "synchronoise",
+    "level": 63
+   },
+   {
+    "move": "wonder-room",
+    "level": 68
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "pain-split",
+   "uproar",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "snatch",
+   "signal-beam",
+   "gravity",
+   "dark-pulse",
+   "zen-headbutt",
+   "wonder-room",
+   "after-you"
+  ],
+  "machine": [
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "rock-tomb",
+   "calm-mind",
+   "embargo",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "ally-switch"
+  ]
+ }
+}

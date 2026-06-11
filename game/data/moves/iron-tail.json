@@ -1,0 +1,34 @@
+{
+ "id": "iron-tail",
+ "name": "Iron Tail",
+ "type": "steel",
+ "category": "physical",
+ "power": 100,
+ "accuracy": 75,
+ "pp": 15,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "contact",
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-lower",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [
+   {
+    "stat": "defense",
+    "change": -1
+   }
+  ],
+  "stat_chance": 30,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

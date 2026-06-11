@@ -1,0 +1,107 @@
+{
+ "id": "seedot",
+ "name": "Seedot",
+ "dex": 273,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 40,
+  "defense": 50,
+  "special_attack": 30,
+  "special_defense": 30,
+  "speed": 30
+ },
+ "abilities": [
+  "chlorophyll",
+  "early-bird",
+  "pickpocket"
+ ],
+ "base_experience": 44,
+ "growth_rate": "medium-slow",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bide",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 3
+   },
+   {
+    "move": "growth",
+    "level": 7
+   },
+   {
+    "move": "nature-power",
+    "level": 13
+   },
+   {
+    "move": "synthesis",
+    "level": 21
+   },
+   {
+    "move": "sunny-day",
+    "level": 31
+   },
+   {
+    "move": "explosion",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "razor-wind",
+   "take-down",
+   "leech-seed",
+   "quick-attack",
+   "amnesia",
+   "beat-up",
+   "bullet-seed",
+   "power-swap",
+   "worry-seed",
+   "nasty-plot",
+   "defog",
+   "foul-play"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "worry-seed",
+   "seed-bomb",
+   "foul-play"
+  ],
+  "machine": [
+   "swords-dance",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "flash",
+   "explosion",
+   "rest",
+   "substitute",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "energy-ball",
+   "grass-knot",
+   "round",
+   "retaliate"
+  ]
+ }
+}

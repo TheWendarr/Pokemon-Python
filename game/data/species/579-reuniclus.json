@@ -1,0 +1,176 @@
+{
+ "id": "reuniclus",
+ "name": "Reuniclus",
+ "dex": 579,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 110,
+  "attack": 65,
+  "defense": 75,
+  "special_attack": 125,
+  "special_defense": 85,
+  "speed": 30
+ },
+ "abilities": [
+  "overcoat",
+  "magic-guard",
+  "regenerator"
+ ],
+ "base_experience": 221,
+ "growth_rate": "medium-slow",
+ "catch_rate": 50,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "psywave",
+    "level": 1
+   },
+   {
+    "move": "reflect",
+    "level": 1
+   },
+   {
+    "move": "rollout",
+    "level": 1
+   },
+   {
+    "move": "snatch",
+    "level": 1
+   },
+   {
+    "move": "reflect",
+    "level": 3
+   },
+   {
+    "move": "rollout",
+    "level": 7
+   },
+   {
+    "move": "snatch",
+    "level": 10
+   },
+   {
+    "move": "hidden-power",
+    "level": 14
+   },
+   {
+    "move": "light-screen",
+    "level": 16
+   },
+   {
+    "move": "charm",
+    "level": 19
+   },
+   {
+    "move": "recover",
+    "level": 24
+   },
+   {
+    "move": "psyshock",
+    "level": 25
+   },
+   {
+    "move": "endeavor",
+    "level": 28
+   },
+   {
+    "move": "future-sight",
+    "level": 31
+   },
+   {
+    "move": "pain-split",
+    "level": 34
+   },
+   {
+    "move": "psychic",
+    "level": 39
+   },
+   {
+    "move": "dizzy-punch",
+    "level": 41
+   },
+   {
+    "move": "skill-swap",
+    "level": 45
+   },
+   {
+    "move": "heal-block",
+    "level": 54
+   },
+   {
+    "move": "wonder-room",
+    "level": 59
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "pain-split",
+   "helping-hand",
+   "trick",
+   "role-play",
+   "superpower",
+   "magic-coat",
+   "knock-off",
+   "endeavor",
+   "skill-swap",
+   "snatch",
+   "signal-beam",
+   "gravity",
+   "drain-punch",
+   "zen-headbutt",
+   "wonder-room",
+   "after-you"
+  ],
+  "machine": [
+   "hyper-beam",
+   "strength",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "calm-mind",
+   "gyro-ball",
+   "embargo",
+   "fling",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "flash-cannon",
+   "trick-room",
+   "grass-knot",
+   "psyshock",
+   "telekinesis",
+   "round"
+  ]
+ }
+}

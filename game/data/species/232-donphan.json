@@ -1,0 +1,140 @@
+{
+ "id": "donphan",
+ "name": "Donphan",
+ "dex": 232,
+ "types": [
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 120,
+  "defense": 120,
+  "special_attack": 60,
+  "special_defense": 60,
+  "speed": 50
+ },
+ "abilities": [
+  "sturdy",
+  "sand-veil"
+ ],
+ "base_experience": 175,
+ "growth_rate": "medium",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fire-fang",
+    "level": 1
+   },
+   {
+    "move": "thunder-fang",
+    "level": 1
+   },
+   {
+    "move": "horn-attack",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 1
+   },
+   {
+    "move": "bulldoze",
+    "level": 1
+   },
+   {
+    "move": "rapid-spin",
+    "level": 6
+   },
+   {
+    "move": "knock-off",
+    "level": 10
+   },
+   {
+    "move": "rollout",
+    "level": 15
+   },
+   {
+    "move": "magnitude",
+    "level": 19
+   },
+   {
+    "move": "slam",
+    "level": 24
+   },
+   {
+    "move": "fury-attack",
+    "level": 25
+   },
+   {
+    "move": "assurance",
+    "level": 31
+   },
+   {
+    "move": "scary-face",
+    "level": 39
+   },
+   {
+    "move": "earthquake",
+    "level": 46
+   },
+   {
+    "move": "giga-impact",
+    "level": 54
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "superpower",
+   "knock-off",
+   "endeavor",
+   "hyper-voice",
+   "iron-defense",
+   "block",
+   "bounce",
+   "last-resort",
+   "seed-bomb",
+   "earth-power",
+   "gunk-shot",
+   "stealth-rock"
+  ],
+  "machine": [
+   "roar",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "gyro-ball",
+   "rock-polish",
+   "poison-jab",
+   "giga-impact",
+   "stone-edge",
+   "round",
+   "echoed-voice",
+   "bulldoze"
+  ]
+ }
+}

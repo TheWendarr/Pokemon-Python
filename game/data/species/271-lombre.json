@@ -1,0 +1,125 @@
+{
+ "id": "lombre",
+ "name": "Lombre",
+ "dex": 271,
+ "types": [
+  "water",
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 50,
+  "defense": 50,
+  "special_attack": 60,
+  "special_defense": 70,
+  "speed": 50
+ },
+ "abilities": [
+  "swift-swim",
+  "rain-dish",
+  "own-tempo"
+ ],
+ "base_experience": 119,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 3
+   },
+   {
+    "move": "absorb",
+    "level": 5
+   },
+   {
+    "move": "nature-power",
+    "level": 7
+   },
+   {
+    "move": "fake-out",
+    "level": 11
+   },
+   {
+    "move": "fury-swipes",
+    "level": 15
+   },
+   {
+    "move": "water-sport",
+    "level": 19
+   },
+   {
+    "move": "bubble-beam",
+    "level": 25
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 31
+   },
+   {
+    "move": "uproar",
+    "level": 37
+   },
+   {
+    "move": "hydro-pump",
+    "level": 45
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "uproar",
+   "hyper-voice",
+   "seed-bomb",
+   "drain-punch",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "swords-dance",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "fling",
+   "energy-ball",
+   "grass-knot",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "scald"
+  ]
+ }
+}

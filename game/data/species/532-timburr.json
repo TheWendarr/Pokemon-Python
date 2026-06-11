@@ -1,0 +1,153 @@
+{
+ "id": "timburr",
+ "name": "Timburr",
+ "dex": 532,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 80,
+  "defense": 55,
+  "special_attack": 25,
+  "special_defense": 35,
+  "speed": 35
+ },
+ "abilities": [
+  "guts",
+  "sheer-force",
+  "iron-fist"
+ ],
+ "base_experience": 61,
+ "growth_rate": "medium-slow",
+ "catch_rate": 180,
+ "gender_rate": 2,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 4
+   },
+   {
+    "move": "bide",
+    "level": 8
+   },
+   {
+    "move": "low-kick",
+    "level": 12
+   },
+   {
+    "move": "rock-throw",
+    "level": 16
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 20
+   },
+   {
+    "move": "chip-away",
+    "level": 24
+   },
+   {
+    "move": "bulk-up",
+    "level": 28
+   },
+   {
+    "move": "rock-slide",
+    "level": 31
+   },
+   {
+    "move": "dynamic-punch",
+    "level": 34
+   },
+   {
+    "move": "scary-face",
+    "level": 37
+   },
+   {
+    "move": "hammer-arm",
+    "level": 40
+   },
+   {
+    "move": "stone-edge",
+    "level": 43
+   },
+   {
+    "move": "focus-punch",
+    "level": 46
+   },
+   {
+    "move": "superpower",
+    "level": 49
+   }
+  ],
+  "egg": [
+   "comet-punch",
+   "counter",
+   "reversal",
+   "mach-punch",
+   "foresight",
+   "detect",
+   "endure",
+   "smelling-salts",
+   "force-palm",
+   "drain-punch",
+   "wide-guard"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "helping-hand",
+   "superpower",
+   "knock-off",
+   "block",
+   "drain-punch"
+  ],
+  "machine": [
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "bulk-up",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "stone-edge",
+   "grass-knot",
+   "smack-down",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

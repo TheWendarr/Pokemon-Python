@@ -1,0 +1,28 @@
+{
+ "id": "swallow",
+ "name": "Swallow",
+ "type": "normal",
+ "category": "status",
+ "power": null,
+ "accuracy": null,
+ "pp": 10,
+ "priority": 0,
+ "target": "user",
+ "crit_stage": 0,
+ "flags": [
+  "heal",
+  "snatch"
+ ],
+ "effect": {
+  "kind": "heal",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 25,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

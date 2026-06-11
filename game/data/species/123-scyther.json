@@ -1,0 +1,152 @@
+{
+ "id": "scyther",
+ "name": "Scyther",
+ "dex": 123,
+ "types": [
+  "bug",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 110,
+  "defense": 80,
+  "special_attack": 55,
+  "special_defense": 80,
+  "speed": 105
+ },
+ "abilities": [
+  "swarm",
+  "technician",
+  "steadfast"
+ ],
+ "base_experience": 100,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "vacuum-wave",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 5
+   },
+   {
+    "move": "pursuit",
+    "level": 9
+   },
+   {
+    "move": "false-swipe",
+    "level": 13
+   },
+   {
+    "move": "agility",
+    "level": 17
+   },
+   {
+    "move": "wing-attack",
+    "level": 21
+   },
+   {
+    "move": "fury-cutter",
+    "level": 25
+   },
+   {
+    "move": "slash",
+    "level": 29
+   },
+   {
+    "move": "razor-wind",
+    "level": 33
+   },
+   {
+    "move": "double-team",
+    "level": 37
+   },
+   {
+    "move": "x-scissor",
+    "level": 41
+   },
+   {
+    "move": "night-slash",
+    "level": 45
+   },
+   {
+    "move": "double-hit",
+    "level": 49
+   },
+   {
+    "move": "air-slash",
+    "level": 53
+   },
+   {
+    "move": "swords-dance",
+    "level": 57
+   },
+   {
+    "move": "feint",
+    "level": 61
+   }
+  ],
+  "egg": [
+   "razor-wind",
+   "counter",
+   "reversal",
+   "endure",
+   "steel-wing",
+   "baton-pass",
+   "silver-wind",
+   "night-slash",
+   "bug-buzz",
+   "defog"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "knock-off",
+   "roost",
+   "tailwind",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "aerial-ace",
+   "u-turn",
+   "x-scissor",
+   "giga-impact",
+   "round",
+   "struggle-bug"
+  ]
+ }
+}

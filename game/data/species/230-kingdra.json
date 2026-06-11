@@ -1,0 +1,132 @@
+{
+ "id": "kingdra",
+ "name": "Kingdra",
+ "dex": 230,
+ "types": [
+  "water",
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 95,
+  "defense": 95,
+  "special_attack": 95,
+  "special_defense": 95,
+  "speed": 85
+ },
+ "abilities": [
+  "swift-swim",
+  "sniper",
+  "damp"
+ ],
+ "base_experience": 243,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "yawn",
+    "level": 1
+   },
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "smokescreen",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "smokescreen",
+    "level": 4
+   },
+   {
+    "move": "leer",
+    "level": 8
+   },
+   {
+    "move": "water-gun",
+    "level": 11
+   },
+   {
+    "move": "focus-energy",
+    "level": 14
+   },
+   {
+    "move": "bubble-beam",
+    "level": 18
+   },
+   {
+    "move": "agility",
+    "level": 23
+   },
+   {
+    "move": "twister",
+    "level": 26
+   },
+   {
+    "move": "brine",
+    "level": 30
+   },
+   {
+    "move": "hydro-pump",
+    "level": 40
+   },
+   {
+    "move": "dragon-dance",
+    "level": 48
+   },
+   {
+    "move": "dragon-pulse",
+    "level": 57
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "signal-beam",
+   "bounce",
+   "dragon-pulse",
+   "draco-meteor",
+   "iron-head"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "dive",
+   "giga-impact",
+   "flash-cannon",
+   "round",
+   "scald",
+   "quash"
+  ]
+ }
+}

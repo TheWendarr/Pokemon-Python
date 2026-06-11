@@ -1,0 +1,136 @@
+{
+ "id": "terrakion",
+ "name": "Terrakion",
+ "dex": 639,
+ "types": [
+  "rock",
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 91,
+  "attack": 129,
+  "defense": 90,
+  "special_attack": 72,
+  "special_defense": 90,
+  "speed": 108
+ },
+ "abilities": [
+  "justified"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "double-kick",
+    "level": 7
+   },
+   {
+    "move": "smack-down",
+    "level": 13
+   },
+   {
+    "move": "take-down",
+    "level": 19
+   },
+   {
+    "move": "helping-hand",
+    "level": 25
+   },
+   {
+    "move": "retaliate",
+    "level": 31
+   },
+   {
+    "move": "rock-slide",
+    "level": 37
+   },
+   {
+    "move": "sacred-sword",
+    "level": 42
+   },
+   {
+    "move": "swords-dance",
+    "level": 49
+   },
+   {
+    "move": "quick-guard",
+    "level": 55
+   },
+   {
+    "move": "work-up",
+    "level": 61
+   },
+   {
+    "move": "stone-edge",
+    "level": 67
+   },
+   {
+    "move": "close-combat",
+    "level": 73
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "helping-hand",
+   "superpower",
+   "block",
+   "earth-power",
+   "zen-headbutt",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "reflect",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "false-swipe",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "psych-up",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "aerial-ace",
+   "calm-mind",
+   "rock-polish",
+   "poison-jab",
+   "x-scissor",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

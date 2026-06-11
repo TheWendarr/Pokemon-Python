@@ -1,0 +1,158 @@
+{
+ "id": "ferrothorn",
+ "name": "Ferrothorn",
+ "dex": 598,
+ "types": [
+  "grass",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 74,
+  "attack": 94,
+  "defense": 131,
+  "special_attack": 54,
+  "special_defense": 116,
+  "speed": 20
+ },
+ "abilities": [
+  "iron-barbs",
+  "anticipation"
+ ],
+ "base_experience": 171,
+ "growth_rate": "medium",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "rock-climb",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "rollout",
+    "level": 1
+   },
+   {
+    "move": "curse",
+    "level": 1
+   },
+   {
+    "move": "rollout",
+    "level": 6
+   },
+   {
+    "move": "curse",
+    "level": 9
+   },
+   {
+    "move": "metal-claw",
+    "level": 14
+   },
+   {
+    "move": "pin-missile",
+    "level": 18
+   },
+   {
+    "move": "gyro-ball",
+    "level": 21
+   },
+   {
+    "move": "iron-defense",
+    "level": 26
+   },
+   {
+    "move": "mirror-shot",
+    "level": 30
+   },
+   {
+    "move": "ingrain",
+    "level": 35
+   },
+   {
+    "move": "self-destruct",
+    "level": 38
+   },
+   {
+    "move": "power-whip",
+    "level": 40
+   },
+   {
+    "move": "iron-head",
+    "level": 46
+   },
+   {
+    "move": "payback",
+    "level": 53
+   },
+   {
+    "move": "flash-cannon",
+    "level": 61
+   },
+   {
+    "move": "explosion",
+    "level": 67
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "knock-off",
+   "endeavor",
+   "iron-defense",
+   "gravity",
+   "worry-seed",
+   "magnet-rise",
+   "seed-bomb",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "flash",
+   "explosion",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "aerial-ace",
+   "gyro-ball",
+   "payback",
+   "rock-polish",
+   "poison-jab",
+   "energy-ball",
+   "giga-impact",
+   "shadow-claw",
+   "flash-cannon",
+   "grass-knot",
+   "hone-claws",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

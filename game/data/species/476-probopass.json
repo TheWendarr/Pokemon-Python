@@ -1,0 +1,166 @@
+{
+ "id": "probopass",
+ "name": "Probopass",
+ "dex": 476,
+ "types": [
+  "rock",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 55,
+  "defense": 145,
+  "special_attack": 75,
+  "special_defense": 150,
+  "speed": 40
+ },
+ "abilities": [
+  "sturdy",
+  "magnet-pull",
+  "sand-force"
+ ],
+ "base_experience": 184,
+ "growth_rate": "medium",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "magnet-rise",
+    "level": 1
+   },
+   {
+    "move": "gravity",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "iron-defense",
+    "level": 1
+   },
+   {
+    "move": "block",
+    "level": 1
+   },
+   {
+    "move": "magnet-bomb",
+    "level": 1
+   },
+   {
+    "move": "iron-defense",
+    "level": 4
+   },
+   {
+    "move": "block",
+    "level": 8
+   },
+   {
+    "move": "magnet-bomb",
+    "level": 11
+   },
+   {
+    "move": "thunder-wave",
+    "level": 15
+   },
+   {
+    "move": "rock-blast",
+    "level": 18
+   },
+   {
+    "move": "rest",
+    "level": 22
+   },
+   {
+    "move": "spark",
+    "level": 25
+   },
+   {
+    "move": "rock-slide",
+    "level": 29
+   },
+   {
+    "move": "power-gem",
+    "level": 32
+   },
+   {
+    "move": "sandstorm",
+    "level": 36
+   },
+   {
+    "move": "discharge",
+    "level": 39
+   },
+   {
+    "move": "earth-power",
+    "level": 43
+   },
+   {
+    "move": "stone-edge",
+    "level": 46
+   },
+   {
+    "move": "lock-on",
+    "level": 50
+   },
+   {
+    "move": "zap-cannon",
+    "level": 50
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "pain-split",
+   "magic-coat",
+   "iron-defense",
+   "block",
+   "gravity",
+   "magnet-rise",
+   "earth-power",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "rock-polish",
+   "giga-impact",
+   "flash-cannon",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "volt-switch",
+   "bulldoze"
+  ]
+ }
+}

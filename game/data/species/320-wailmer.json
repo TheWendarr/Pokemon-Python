@@ -1,0 +1,144 @@
+{
+ "id": "wailmer",
+ "name": "Wailmer",
+ "dex": 320,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 130,
+  "attack": 70,
+  "defense": 35,
+  "special_attack": 70,
+  "special_defense": 35,
+  "speed": 60
+ },
+ "abilities": [
+  "water-veil",
+  "oblivious",
+  "pressure"
+ ],
+ "base_experience": 80,
+ "growth_rate": "fast-then-very-slow",
+ "catch_rate": 125,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "splash",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 4
+   },
+   {
+    "move": "water-gun",
+    "level": 7
+   },
+   {
+    "move": "rollout",
+    "level": 11
+   },
+   {
+    "move": "whirlpool",
+    "level": 14
+   },
+   {
+    "move": "astonish",
+    "level": 17
+   },
+   {
+    "move": "water-pulse",
+    "level": 21
+   },
+   {
+    "move": "mist",
+    "level": 24
+   },
+   {
+    "move": "rest",
+    "level": 27
+   },
+   {
+    "move": "brine",
+    "level": 31
+   },
+   {
+    "move": "water-spout",
+    "level": 34
+   },
+   {
+    "move": "amnesia",
+    "level": 37
+   },
+   {
+    "move": "dive",
+    "level": 41
+   },
+   {
+    "move": "bounce",
+    "level": 44
+   },
+   {
+    "move": "hydro-pump",
+    "level": 47
+   },
+   {
+    "move": "heavy-slam",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "body-slam",
+   "thrash",
+   "double-edge",
+   "fissure",
+   "defense-curl",
+   "snore",
+   "curse",
+   "sleep-talk",
+   "tickle",
+   "aqua-ring",
+   "zen-headbutt",
+   "soak"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "hyper-voice",
+   "bounce",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "dive",
+   "rock-tomb",
+   "round",
+   "echoed-voice",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

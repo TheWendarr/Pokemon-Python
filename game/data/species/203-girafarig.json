@@ -1,0 +1,165 @@
+{
+ "id": "girafarig",
+ "name": "Girafarig",
+ "dex": 203,
+ "types": [
+  "normal",
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 80,
+  "defense": 65,
+  "special_attack": 90,
+  "special_defense": 65,
+  "speed": 85
+ },
+ "abilities": [
+  "inner-focus",
+  "early-bird",
+  "sap-sipper"
+ ],
+ "base_experience": 159,
+ "growth_rate": "medium",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "power-swap",
+    "level": 1
+   },
+   {
+    "move": "guard-swap",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 5
+   },
+   {
+    "move": "stomp",
+    "level": 10
+   },
+   {
+    "move": "agility",
+    "level": 14
+   },
+   {
+    "move": "psybeam",
+    "level": 19
+   },
+   {
+    "move": "baton-pass",
+    "level": 23
+   },
+   {
+    "move": "assurance",
+    "level": 28
+   },
+   {
+    "move": "double-hit",
+    "level": 32
+   },
+   {
+    "move": "psychic",
+    "level": 37
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 41
+   },
+   {
+    "move": "crunch",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "razor-wind",
+   "double-kick",
+   "take-down",
+   "amnesia",
+   "foresight",
+   "mean-look",
+   "mirror-coat",
+   "future-sight",
+   "beat-up",
+   "wish",
+   "magic-coat",
+   "skill-swap",
+   "secret-power"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "trick",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "hyper-voice",
+   "signal-beam",
+   "gravity",
+   "zen-headbutt",
+   "foul-play"
+  ],
+  "machine": [
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "calm-mind",
+   "energy-ball",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,151 @@
+{
+ "id": "aron",
+ "name": "Aron",
+ "dex": 304,
+ "types": [
+  "steel",
+  "rock"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 70,
+  "defense": 100,
+  "special_attack": 40,
+  "special_defense": 40,
+  "speed": 30
+ },
+ "abilities": [
+  "sturdy",
+  "rock-head",
+  "heavy-metal"
+ ],
+ "base_experience": 66,
+ "growth_rate": "slow",
+ "catch_rate": 180,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 4
+   },
+   {
+    "move": "headbutt",
+    "level": 8
+   },
+   {
+    "move": "metal-claw",
+    "level": 11
+   },
+   {
+    "move": "iron-defense",
+    "level": 15
+   },
+   {
+    "move": "roar",
+    "level": 18
+   },
+   {
+    "move": "take-down",
+    "level": 22
+   },
+   {
+    "move": "iron-head",
+    "level": 25
+   },
+   {
+    "move": "protect",
+    "level": 29
+   },
+   {
+    "move": "metal-sound",
+    "level": 32
+   },
+   {
+    "move": "iron-tail",
+    "level": 36
+   },
+   {
+    "move": "autotomize",
+    "level": 39
+   },
+   {
+    "move": "heavy-slam",
+    "level": 43
+   },
+   {
+    "move": "double-edge",
+    "level": 46
+   },
+   {
+    "move": "metal-burst",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "stomp",
+   "body-slam",
+   "screech",
+   "curse",
+   "smelling-salts",
+   "superpower",
+   "endeavor",
+   "dragon-rush",
+   "iron-head",
+   "stealth-rock",
+   "head-smash"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "superpower",
+   "endeavor",
+   "iron-defense",
+   "magnet-rise",
+   "earth-power",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "aerial-ace",
+   "rock-polish",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

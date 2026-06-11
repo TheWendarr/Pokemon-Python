@@ -1,0 +1,163 @@
+{
+ "id": "snubbull",
+ "name": "Snubbull",
+ "dex": 209,
+ "types": [
+  "fairy"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 80,
+  "defense": 50,
+  "special_attack": 40,
+  "special_defense": 40,
+  "speed": 30
+ },
+ "abilities": [
+  "intimidate",
+  "run-away",
+  "rattled"
+ ],
+ "base_experience": 60,
+ "growth_rate": "fast",
+ "catch_rate": 190,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ice-fang",
+    "level": 1
+   },
+   {
+    "move": "fire-fang",
+    "level": 1
+   },
+   {
+    "move": "thunder-fang",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "scary-face",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "charm",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 7
+   },
+   {
+    "move": "lick",
+    "level": 13
+   },
+   {
+    "move": "headbutt",
+    "level": 19
+   },
+   {
+    "move": "roar",
+    "level": 25
+   },
+   {
+    "move": "rage",
+    "level": 31
+   },
+   {
+    "move": "take-down",
+    "level": 37
+   },
+   {
+    "move": "payback",
+    "level": 43
+   },
+   {
+    "move": "crunch",
+    "level": 49
+   }
+  ],
+  "egg": [
+   "double-edge",
+   "mimic",
+   "metronome",
+   "snore",
+   "feint-attack",
+   "heal-bell",
+   "present",
+   "crunch",
+   "focus-punch",
+   "smelling-salts",
+   "close-combat",
+   "thunder-fang",
+   "ice-fang",
+   "fire-fang"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "super-fang",
+   "snore",
+   "sleep-talk",
+   "heal-bell",
+   "superpower",
+   "hyper-voice",
+   "covet",
+   "last-resort"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "reflect",
+   "fire-blast",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "overheat",
+   "bulk-up",
+   "payback",
+   "fling",
+   "round",
+   "incinerate",
+   "retaliate",
+   "bulldoze",
+   "work-up",
+   "wild-charge",
+   "snarl"
+  ]
+ }
+}

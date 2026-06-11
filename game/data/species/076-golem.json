@@ -1,0 +1,156 @@
+{
+ "id": "golem",
+ "name": "Golem",
+ "dex": 76,
+ "types": [
+  "rock",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 120,
+  "defense": 130,
+  "special_attack": 55,
+  "special_defense": 65,
+  "speed": 45
+ },
+ "abilities": [
+  "rock-head",
+  "sturdy",
+  "sand-veil"
+ ],
+ "base_experience": 223,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 1
+   },
+   {
+    "move": "rock-polish",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 4
+   },
+   {
+    "move": "rock-polish",
+    "level": 8
+   },
+   {
+    "move": "rock-throw",
+    "level": 11
+   },
+   {
+    "move": "magnitude",
+    "level": 15
+   },
+   {
+    "move": "steamroller",
+    "level": 18
+   },
+   {
+    "move": "rock-blast",
+    "level": 22
+   },
+   {
+    "move": "smack-down",
+    "level": 27
+   },
+   {
+    "move": "self-destruct",
+    "level": 31
+   },
+   {
+    "move": "bulldoze",
+    "level": 36
+   },
+   {
+    "move": "stealth-rock",
+    "level": 42
+   },
+   {
+    "move": "earthquake",
+    "level": 47
+   },
+   {
+    "move": "explosion",
+    "level": 53
+   },
+   {
+    "move": "double-edge",
+    "level": 58
+   },
+   {
+    "move": "stone-edge",
+    "level": 64
+   },
+   {
+    "move": "heavy-slam",
+    "level": 69
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "superpower",
+   "iron-defense",
+   "block",
+   "earth-power",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "gyro-ball",
+   "fling",
+   "rock-polish",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

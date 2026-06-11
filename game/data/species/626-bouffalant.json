@@ -1,0 +1,139 @@
+{
+ "id": "bouffalant",
+ "name": "Bouffalant",
+ "dex": 626,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 95,
+  "attack": 110,
+  "defense": 95,
+  "special_attack": 40,
+  "special_defense": 95,
+  "speed": 55
+ },
+ "abilities": [
+  "reckless",
+  "sap-sipper",
+  "soundproof"
+ ],
+ "base_experience": 172,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pursuit",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "rage",
+    "level": 6
+   },
+   {
+    "move": "fury-attack",
+    "level": 11
+   },
+   {
+    "move": "horn-attack",
+    "level": 16
+   },
+   {
+    "move": "scary-face",
+    "level": 21
+   },
+   {
+    "move": "revenge",
+    "level": 26
+   },
+   {
+    "move": "head-charge",
+    "level": 31
+   },
+   {
+    "move": "focus-energy",
+    "level": 36
+   },
+   {
+    "move": "megahorn",
+    "level": 41
+   },
+   {
+    "move": "reversal",
+    "level": 46
+   },
+   {
+    "move": "thrash",
+    "level": 51
+   },
+   {
+    "move": "swords-dance",
+    "level": 56
+   },
+   {
+    "move": "giga-impact",
+    "level": 61
+   }
+  ],
+  "egg": [
+   "stomp",
+   "headbutt",
+   "skull-bash",
+   "amnesia",
+   "mud-slap",
+   "mud-shot",
+   "rock-climb",
+   "iron-head"
+  ],
+  "tutor": [
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "uproar",
+   "superpower",
+   "endeavor",
+   "zen-headbutt",
+   "iron-head"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "surf",
+   "strength",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "aerial-ace",
+   "payback",
+   "poison-jab",
+   "giga-impact",
+   "stone-edge",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

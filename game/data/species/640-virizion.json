@@ -1,0 +1,136 @@
+{
+ "id": "virizion",
+ "name": "Virizion",
+ "dex": 640,
+ "types": [
+  "grass",
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 91,
+  "attack": 90,
+  "defense": 72,
+  "special_attack": 90,
+  "special_defense": 129,
+  "speed": 108
+ },
+ "abilities": [
+  "justified"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "double-kick",
+    "level": 7
+   },
+   {
+    "move": "magical-leaf",
+    "level": 13
+   },
+   {
+    "move": "take-down",
+    "level": 19
+   },
+   {
+    "move": "helping-hand",
+    "level": 25
+   },
+   {
+    "move": "retaliate",
+    "level": 31
+   },
+   {
+    "move": "giga-drain",
+    "level": 37
+   },
+   {
+    "move": "sacred-sword",
+    "level": 42
+   },
+   {
+    "move": "swords-dance",
+    "level": 49
+   },
+   {
+    "move": "quick-guard",
+    "level": 55
+   },
+   {
+    "move": "work-up",
+    "level": 61
+   },
+   {
+    "move": "leaf-blade",
+    "level": 67
+   },
+   {
+    "move": "close-combat",
+    "level": 73
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "helping-hand",
+   "superpower",
+   "block",
+   "bounce",
+   "worry-seed",
+   "seed-bomb",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "calm-mind",
+   "x-scissor",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "stone-edge",
+   "grass-knot",
+   "round",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

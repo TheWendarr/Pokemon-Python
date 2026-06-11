@@ -1,0 +1,147 @@
+{
+ "id": "skarmory",
+ "name": "Skarmory",
+ "dex": 227,
+ "types": [
+  "steel",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 80,
+  "defense": 140,
+  "special_attack": 40,
+  "special_defense": 70,
+  "speed": 70
+ },
+ "abilities": [
+  "keen-eye",
+  "sturdy",
+  "weak-armor"
+ ],
+ "base_experience": 163,
+ "growth_rate": "slow",
+ "catch_rate": 25,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 6
+   },
+   {
+    "move": "swift",
+    "level": 9
+   },
+   {
+    "move": "agility",
+    "level": 12
+   },
+   {
+    "move": "fury-attack",
+    "level": 17
+   },
+   {
+    "move": "feint",
+    "level": 20
+   },
+   {
+    "move": "air-cutter",
+    "level": 23
+   },
+   {
+    "move": "spikes",
+    "level": 28
+   },
+   {
+    "move": "metal-sound",
+    "level": 31
+   },
+   {
+    "move": "steel-wing",
+    "level": 34
+   },
+   {
+    "move": "autotomize",
+    "level": 39
+   },
+   {
+    "move": "air-slash",
+    "level": 42
+   },
+   {
+    "move": "slash",
+    "level": 45
+   },
+   {
+    "move": "night-slash",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "whirlwind",
+   "drill-peck",
+   "sky-attack",
+   "curse",
+   "endure",
+   "pursuit",
+   "assurance",
+   "guard-swap",
+   "brave-bird",
+   "stealth-rock"
+  ],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-defense",
+   "roost",
+   "tailwind",
+   "dark-pulse",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "fly",
+   "roar",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "aerial-ace",
+   "pluck",
+   "payback",
+   "x-scissor",
+   "flash-cannon",
+   "round",
+   "sky-drop"
+  ]
+ }
+}

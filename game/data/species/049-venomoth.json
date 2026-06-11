@@ -1,0 +1,146 @@
+{
+ "id": "venomoth",
+ "name": "Venomoth",
+ "dex": 49,
+ "types": [
+  "bug",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 65,
+  "defense": 60,
+  "special_attack": 90,
+  "special_defense": 75,
+  "speed": 90
+ },
+ "abilities": [
+  "shield-dust",
+  "tinted-lens",
+  "wonder-skin"
+ ],
+ "base_experience": 158,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "silver-wind",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "disable",
+    "level": 1
+   },
+   {
+    "move": "foresight",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 5
+   },
+   {
+    "move": "confusion",
+    "level": 11
+   },
+   {
+    "move": "poison-powder",
+    "level": 13
+   },
+   {
+    "move": "leech-life",
+    "level": 17
+   },
+   {
+    "move": "stun-spore",
+    "level": 23
+   },
+   {
+    "move": "psybeam",
+    "level": 25
+   },
+   {
+    "move": "sleep-powder",
+    "level": 29
+   },
+   {
+    "move": "gust",
+    "level": 31
+   },
+   {
+    "move": "signal-beam",
+    "level": 37
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 41
+   },
+   {
+    "move": "poison-fang",
+    "level": 47
+   },
+   {
+    "move": "psychic",
+    "level": 55
+   },
+   {
+    "move": "bug-buzz",
+    "level": 59
+   },
+   {
+    "move": "quiver-dance",
+    "level": 63
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "skill-swap",
+   "signal-beam",
+   "roost",
+   "tailwind",
+   "zen-headbutt",
+   "bug-bite"
+  ],
+  "machine": [
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "aerial-ace",
+   "u-turn",
+   "energy-ball",
+   "giga-impact",
+   "venoshock",
+   "round",
+   "acrobatics",
+   "struggle-bug"
+  ]
+ }
+}

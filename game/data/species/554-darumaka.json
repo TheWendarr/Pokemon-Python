@@ -1,0 +1,149 @@
+{
+ "id": "darumaka",
+ "name": "Darumaka",
+ "dex": 554,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 90,
+  "defense": 45,
+  "special_attack": 15,
+  "special_defense": 45,
+  "speed": 50
+ },
+ "abilities": [
+  "hustle",
+  "inner-focus"
+ ],
+ "base_experience": 63,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "rollout",
+    "level": 3
+   },
+   {
+    "move": "incinerate",
+    "level": 6
+   },
+   {
+    "move": "rage",
+    "level": 9
+   },
+   {
+    "move": "fire-fang",
+    "level": 11
+   },
+   {
+    "move": "headbutt",
+    "level": 14
+   },
+   {
+    "move": "uproar",
+    "level": 17
+   },
+   {
+    "move": "facade",
+    "level": 19
+   },
+   {
+    "move": "fire-punch",
+    "level": 22
+   },
+   {
+    "move": "work-up",
+    "level": 25
+   },
+   {
+    "move": "thrash",
+    "level": 27
+   },
+   {
+    "move": "belly-drum",
+    "level": 30
+   },
+   {
+    "move": "flare-blitz",
+    "level": 33
+   },
+   {
+    "move": "taunt",
+    "level": 35
+   },
+   {
+    "move": "superpower",
+    "level": 39
+   },
+   {
+    "move": "overheat",
+    "level": 42
+   }
+  ],
+  "egg": [
+   "take-down",
+   "focus-energy",
+   "flame-wheel",
+   "endure",
+   "sleep-talk",
+   "encore",
+   "focus-punch",
+   "yawn",
+   "hammer-arm"
+  ],
+  "tutor": [
+   "fire-punch",
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "heat-wave",
+   "superpower",
+   "endeavor",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "strength",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "gyro-ball",
+   "u-turn",
+   "fling",
+   "grass-knot",
+   "flame-charge",
+   "round",
+   "incinerate",
+   "work-up"
+  ]
+ }
+}

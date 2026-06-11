@@ -1,0 +1,104 @@
+{
+ "id": "simisear",
+ "name": "Simisear",
+ "dex": 514,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 98,
+  "defense": 63,
+  "special_attack": 98,
+  "special_defense": 63,
+  "speed": 101
+ },
+ "abilities": [
+  "gluttony",
+  "blaze"
+ ],
+ "base_experience": 174,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "lick",
+    "level": 1
+   },
+   {
+    "move": "fury-swipes",
+    "level": 1
+   },
+   {
+    "move": "flame-burst",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "heat-wave",
+   "helping-hand",
+   "role-play",
+   "superpower",
+   "recycle",
+   "knock-off",
+   "endeavor",
+   "covet",
+   "gunk-shot"
+  ],
+  "machine": [
+   "cut",
+   "flamethrower",
+   "hyper-beam",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "payback",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "grass-knot",
+   "hone-claws",
+   "flame-charge",
+   "low-sweep",
+   "round",
+   "incinerate",
+   "acrobatics",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "id": "ditto",
+ "name": "Ditto",
+ "dex": 132,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 48,
+  "attack": 48,
+  "defense": 48,
+  "special_attack": 48,
+  "special_defense": 48,
+  "speed": 48
+ },
+ "abilities": [
+  "limber",
+  "imposter"
+ ],
+ "base_experience": 101,
+ "growth_rate": "medium",
+ "catch_rate": 35,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "transform",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [],
+  "machine": []
+ }
+}

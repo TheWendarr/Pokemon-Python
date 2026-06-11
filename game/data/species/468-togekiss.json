@@ -1,0 +1,108 @@
+{
+ "id": "togekiss",
+ "name": "Togekiss",
+ "dex": 468,
+ "types": [
+  "fairy",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 85,
+  "attack": 50,
+  "defense": 95,
+  "special_attack": 120,
+  "special_defense": 115,
+  "speed": 80
+ },
+ "abilities": [
+  "hustle",
+  "serene-grace",
+  "super-luck"
+ ],
+ "base_experience": 245,
+ "growth_rate": "fast",
+ "catch_rate": 30,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "sky-attack",
+    "level": 1
+   },
+   {
+    "move": "extreme-speed",
+    "level": 1
+   },
+   {
+    "move": "aura-sphere",
+    "level": 1
+   },
+   {
+    "move": "air-slash",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "sleep-talk",
+   "heal-bell",
+   "heat-wave",
+   "trick",
+   "magic-coat",
+   "endeavor",
+   "hyper-voice",
+   "signal-beam",
+   "covet",
+   "roost",
+   "tailwind",
+   "last-resort",
+   "drain-punch",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "fly",
+   "flamethrower",
+   "hyper-beam",
+   "solar-beam",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "aerial-ace",
+   "pluck",
+   "fling",
+   "giga-impact",
+   "grass-knot",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

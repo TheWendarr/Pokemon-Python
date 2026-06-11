@@ -1,0 +1,144 @@
+{
+ "id": "zigzagoon",
+ "name": "Zigzagoon",
+ "dex": 263,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 38,
+  "attack": 30,
+  "defense": 41,
+  "special_attack": 30,
+  "special_defense": 41,
+  "speed": 60
+ },
+ "abilities": [
+  "pickup",
+  "gluttony",
+  "quick-feet"
+ ],
+ "base_experience": 56,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 5
+   },
+   {
+    "move": "headbutt",
+    "level": 9
+   },
+   {
+    "move": "sand-attack",
+    "level": 13
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 17
+   },
+   {
+    "move": "mud-sport",
+    "level": 21
+   },
+   {
+    "move": "pin-missile",
+    "level": 25
+   },
+   {
+    "move": "covet",
+    "level": 29
+   },
+   {
+    "move": "bestow",
+    "level": 33
+   },
+   {
+    "move": "flail",
+    "level": 37
+   },
+   {
+    "move": "rest",
+    "level": 41
+   },
+   {
+    "move": "belly-drum",
+    "level": 45
+   },
+   {
+    "move": "fling",
+    "level": 49
+   }
+  ],
+  "egg": [
+   "mud-slap",
+   "charm",
+   "sleep-talk",
+   "pursuit",
+   "helping-hand",
+   "trick",
+   "tickle",
+   "rock-climb",
+   "simple-beam"
+  ],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand",
+   "trick",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "seed-bomb",
+   "gunk-shot"
+  ],
+  "machine": [
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "fling",
+   "grass-knot",
+   "charge-beam",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

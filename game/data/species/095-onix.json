@@ -1,0 +1,170 @@
+{
+ "id": "onix",
+ "name": "Onix",
+ "dex": 95,
+ "types": [
+  "rock",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 35,
+  "attack": 45,
+  "defense": 160,
+  "special_attack": 30,
+  "special_defense": 45,
+  "speed": 70
+ },
+ "abilities": [
+  "rock-head",
+  "sturdy",
+  "weak-armor"
+ ],
+ "base_experience": 77,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "mud-sport",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "bind",
+    "level": 1
+   },
+   {
+    "move": "curse",
+    "level": 4
+   },
+   {
+    "move": "rock-throw",
+    "level": 7
+   },
+   {
+    "move": "rage",
+    "level": 10
+   },
+   {
+    "move": "rock-tomb",
+    "level": 13
+   },
+   {
+    "move": "stealth-rock",
+    "level": 16
+   },
+   {
+    "move": "rock-polish",
+    "level": 19
+   },
+   {
+    "move": "smack-down",
+    "level": 22
+   },
+   {
+    "move": "dragon-breath",
+    "level": 25
+   },
+   {
+    "move": "slam",
+    "level": 28
+   },
+   {
+    "move": "screech",
+    "level": 31
+   },
+   {
+    "move": "rock-slide",
+    "level": 34
+   },
+   {
+    "move": "sand-tomb",
+    "level": 37
+   },
+   {
+    "move": "iron-tail",
+    "level": 40
+   },
+   {
+    "move": "dig",
+    "level": 43
+   },
+   {
+    "move": "stone-edge",
+    "level": 46
+   },
+   {
+    "move": "double-edge",
+    "level": 49
+   },
+   {
+    "move": "sandstorm",
+    "level": 52
+   }
+  ],
+  "egg": [
+   "defense-curl",
+   "flail",
+   "rollout",
+   "block",
+   "rock-blast",
+   "rock-climb",
+   "stealth-rock",
+   "heavy-slam"
+  ],
+  "tutor": [
+   "bind",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "block",
+   "dragon-pulse",
+   "earth-power",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "roar",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "gyro-ball",
+   "payback",
+   "rock-polish",
+   "flash-cannon",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

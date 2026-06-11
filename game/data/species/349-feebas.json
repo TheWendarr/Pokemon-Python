@@ -1,0 +1,85 @@
+{
+ "id": "feebas",
+ "name": "Feebas",
+ "dex": 349,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 20,
+  "attack": 15,
+  "defense": 20,
+  "special_attack": 10,
+  "special_defense": 55,
+  "speed": 80
+ },
+ "abilities": [
+  "swift-swim",
+  "oblivious",
+  "adaptability"
+ ],
+ "base_experience": 40,
+ "growth_rate": "slow-then-very-fast",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "splash",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 15
+   },
+   {
+    "move": "flail",
+    "level": 30
+   }
+  ],
+  "egg": [
+   "mist",
+   "hypnosis",
+   "confuse-ray",
+   "haze",
+   "dragon-breath",
+   "iron-tail",
+   "mirror-coat",
+   "mud-sport",
+   "tickle",
+   "brine",
+   "dragon-pulse",
+   "captivate"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "dragon-pulse"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "dive",
+   "round",
+   "scald"
+  ]
+ }
+}

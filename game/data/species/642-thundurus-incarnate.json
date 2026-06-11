@@ -1,0 +1,154 @@
+{
+ "id": "thundurus-incarnate",
+ "name": "Thundurus Incarnate",
+ "dex": 642,
+ "types": [
+  "electric",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 79,
+  "attack": 115,
+  "defense": 70,
+  "special_attack": 125,
+  "special_defense": 80,
+  "speed": 111
+ },
+ "abilities": [
+  "prankster",
+  "defiant"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "uproar",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "thunder-shock",
+    "level": 1
+   },
+   {
+    "move": "swagger",
+    "level": 7
+   },
+   {
+    "move": "bite",
+    "level": 13
+   },
+   {
+    "move": "revenge",
+    "level": 19
+   },
+   {
+    "move": "shock-wave",
+    "level": 25
+   },
+   {
+    "move": "heal-block",
+    "level": 31
+   },
+   {
+    "move": "agility",
+    "level": 37
+   },
+   {
+    "move": "discharge",
+    "level": 43
+   },
+   {
+    "move": "crunch",
+    "level": 49
+   },
+   {
+    "move": "charge",
+    "level": 55
+   },
+   {
+    "move": "nasty-plot",
+    "level": 61
+   },
+   {
+    "move": "thunder",
+    "level": 67
+   },
+   {
+    "move": "dark-pulse",
+    "level": 73
+   },
+   {
+    "move": "hammer-arm",
+    "level": 79
+   },
+   {
+    "move": "thrash",
+    "level": 85
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "role-play",
+   "superpower",
+   "knock-off",
+   "dark-pulse",
+   "foul-play"
+  ],
+  "machine": [
+   "fly",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "bulk-up",
+   "u-turn",
+   "payback",
+   "embargo",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "flash-cannon",
+   "grass-knot",
+   "charge-beam",
+   "smack-down",
+   "sludge-wave",
+   "round",
+   "sky-drop",
+   "incinerate",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

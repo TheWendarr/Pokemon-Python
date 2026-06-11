@@ -1,0 +1,156 @@
+{
+ "id": "cacturne",
+ "name": "Cacturne",
+ "dex": 332,
+ "types": [
+  "grass",
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 115,
+  "defense": 60,
+  "special_attack": 115,
+  "special_defense": 60,
+  "speed": 55
+ },
+ "abilities": [
+  "sand-veil",
+  "water-absorb"
+ ],
+ "base_experience": 166,
+ "growth_rate": "medium-slow",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "revenge",
+    "level": 1
+   },
+   {
+    "move": "poison-sting",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 1
+   },
+   {
+    "move": "growth",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 5
+   },
+   {
+    "move": "growth",
+    "level": 9
+   },
+   {
+    "move": "leech-seed",
+    "level": 13
+   },
+   {
+    "move": "sand-attack",
+    "level": 17
+   },
+   {
+    "move": "pin-missile",
+    "level": 21
+   },
+   {
+    "move": "ingrain",
+    "level": 25
+   },
+   {
+    "move": "feint-attack",
+    "level": 29
+   },
+   {
+    "move": "spikes",
+    "level": 35
+   },
+   {
+    "move": "sucker-punch",
+    "level": 41
+   },
+   {
+    "move": "payback",
+    "level": 47
+   },
+   {
+    "move": "needle-arm",
+    "level": 53
+   },
+   {
+    "move": "cotton-spore",
+    "level": 59
+   },
+   {
+    "move": "sandstorm",
+    "level": 65
+   },
+   {
+    "move": "destiny-bond",
+    "level": 71
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "spite",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "role-play",
+   "superpower",
+   "block",
+   "worry-seed",
+   "dark-pulse",
+   "seed-bomb",
+   "drain-punch",
+   "foul-play"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "brick-break",
+   "payback",
+   "embargo",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "venoshock",
+   "round",
+   "retaliate"
+  ]
+ }
+}

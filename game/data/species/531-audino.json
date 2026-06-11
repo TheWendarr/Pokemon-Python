@@ -1,0 +1,171 @@
+{
+ "id": "audino",
+ "name": "Audino",
+ "dex": 531,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 103,
+  "attack": 60,
+  "defense": 86,
+  "special_attack": 60,
+  "special_defense": 86,
+  "speed": 50
+ },
+ "abilities": [
+  "healer",
+  "regenerator",
+  "klutz"
+ ],
+ "base_experience": 390,
+ "growth_rate": "fast",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "helping-hand",
+    "level": 1
+   },
+   {
+    "move": "refresh",
+    "level": 5
+   },
+   {
+    "move": "double-slap",
+    "level": 10
+   },
+   {
+    "move": "attract",
+    "level": 15
+   },
+   {
+    "move": "secret-power",
+    "level": 20
+   },
+   {
+    "move": "entrainment",
+    "level": 25
+   },
+   {
+    "move": "take-down",
+    "level": 30
+   },
+   {
+    "move": "heal-pulse",
+    "level": 35
+   },
+   {
+    "move": "after-you",
+    "level": 40
+   },
+   {
+    "move": "simple-beam",
+    "level": 45
+   },
+   {
+    "move": "double-edge",
+    "level": 50
+   },
+   {
+    "move": "last-resort",
+    "level": 55
+   }
+  ],
+  "egg": [
+   "amnesia",
+   "sweet-kiss",
+   "sleep-talk",
+   "heal-bell",
+   "encore",
+   "wish",
+   "yawn",
+   "healing-wish",
+   "lucky-chant",
+   "bestow"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "pain-split",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "role-play",
+   "magic-coat",
+   "knock-off",
+   "skill-swap",
+   "snatch",
+   "hyper-voice",
+   "signal-beam",
+   "covet",
+   "gravity",
+   "last-resort",
+   "drain-punch",
+   "zen-headbutt",
+   "after-you"
+  ],
+  "machine": [
+   "flamethrower",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "calm-mind",
+   "fling",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "retaliate",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

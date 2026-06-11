@@ -1,0 +1,47 @@
+{
+ "id": "caterpie",
+ "name": "Caterpie",
+ "dex": 10,
+ "types": [
+  "bug"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 30,
+  "defense": 35,
+  "special_attack": 20,
+  "special_defense": 20,
+  "speed": 45
+ },
+ "abilities": [
+  "shield-dust",
+  "run-away"
+ ],
+ "base_experience": 39,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "string-shot",
+    "level": 1
+   },
+   {
+    "move": "bug-bite",
+    "level": 15
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "bug-bite",
+   "electroweb"
+  ],
+  "machine": []
+ }
+}

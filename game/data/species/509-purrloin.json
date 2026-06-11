@@ -1,0 +1,152 @@
+{
+ "id": "purrloin",
+ "name": "Purrloin",
+ "dex": 509,
+ "types": [
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 41,
+  "attack": 50,
+  "defense": 37,
+  "special_attack": 50,
+  "special_defense": 37,
+  "speed": 66
+ },
+ "abilities": [
+  "limber",
+  "unburden",
+  "prankster"
+ ],
+ "base_experience": 56,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 3
+   },
+   {
+    "move": "assist",
+    "level": 6
+   },
+   {
+    "move": "sand-attack",
+    "level": 10
+   },
+   {
+    "move": "fury-swipes",
+    "level": 12
+   },
+   {
+    "move": "pursuit",
+    "level": 15
+   },
+   {
+    "move": "torment",
+    "level": 19
+   },
+   {
+    "move": "fake-out",
+    "level": 21
+   },
+   {
+    "move": "hone-claws",
+    "level": 24
+   },
+   {
+    "move": "assurance",
+    "level": 28
+   },
+   {
+    "move": "slash",
+    "level": 30
+   },
+   {
+    "move": "captivate",
+    "level": 33
+   },
+   {
+    "move": "night-slash",
+    "level": 37
+   },
+   {
+    "move": "snatch",
+    "level": 39
+   },
+   {
+    "move": "nasty-plot",
+    "level": 42
+   },
+   {
+    "move": "sucker-punch",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "pay-day",
+   "feint-attack",
+   "charm",
+   "encore",
+   "yawn",
+   "fake-tears",
+   "covet",
+   "foul-play"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "sleep-talk",
+   "iron-tail",
+   "trick",
+   "role-play",
+   "knock-off",
+   "snatch",
+   "hyper-voice",
+   "covet",
+   "dark-pulse",
+   "seed-bomb",
+   "gunk-shot",
+   "foul-play"
+  ],
+  "machine": [
+   "cut",
+   "thunder-wave",
+   "toxic",
+   "double-team",
+   "dream-eater",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "u-turn",
+   "payback",
+   "embargo",
+   "shadow-claw",
+   "grass-knot",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "snarl"
+  ]
+ }
+}

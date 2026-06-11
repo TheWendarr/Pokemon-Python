@@ -1,0 +1,149 @@
+{
+ "id": "hoothoot",
+ "name": "Hoothoot",
+ "dex": 163,
+ "types": [
+  "normal",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 30,
+  "defense": 30,
+  "special_attack": 36,
+  "special_defense": 56,
+  "speed": 50
+ },
+ "abilities": [
+  "insomnia",
+  "keen-eye",
+  "tinted-lens"
+ ],
+ "base_experience": 52,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "foresight",
+    "level": 1
+   },
+   {
+    "move": "hypnosis",
+    "level": 5
+   },
+   {
+    "move": "peck",
+    "level": 9
+   },
+   {
+    "move": "uproar",
+    "level": 13
+   },
+   {
+    "move": "reflect",
+    "level": 17
+   },
+   {
+    "move": "confusion",
+    "level": 21
+   },
+   {
+    "move": "echoed-voice",
+    "level": 25
+   },
+   {
+    "move": "take-down",
+    "level": 29
+   },
+   {
+    "move": "air-slash",
+    "level": 33
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 37
+   },
+   {
+    "move": "synchronoise",
+    "level": 41
+   },
+   {
+    "move": "extrasensory",
+    "level": 45
+   },
+   {
+    "move": "psycho-shift",
+    "level": 49
+   },
+   {
+    "move": "roost",
+    "level": 53
+   },
+   {
+    "move": "dream-eater",
+    "level": 57
+   }
+  ],
+  "egg": [
+   "wing-attack",
+   "whirlwind",
+   "supersonic",
+   "agility",
+   "night-shade",
+   "mirror-move",
+   "sky-attack",
+   "feint-attack",
+   "feather-dance",
+   "defog"
+  ],
+  "tutor": [
+   "sky-attack",
+   "sleep-talk",
+   "uproar",
+   "heat-wave",
+   "magic-coat",
+   "recycle",
+   "hyper-voice",
+   "roost",
+   "tailwind",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "fly",
+   "toxic",
+   "psychic",
+   "double-team",
+   "reflect",
+   "dream-eater",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "aerial-ace",
+   "pluck",
+   "round",
+   "echoed-voice",
+   "work-up"
+  ]
+ }
+}

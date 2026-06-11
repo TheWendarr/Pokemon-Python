@@ -1,0 +1,169 @@
+{
+ "id": "charizard",
+ "name": "Charizard",
+ "dex": 6,
+ "types": [
+  "fire",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 78,
+  "attack": 84,
+  "defense": 78,
+  "special_attack": 109,
+  "special_defense": 85,
+  "speed": 100
+ },
+ "abilities": [
+  "blaze",
+  "solar-power"
+ ],
+ "base_experience": 240,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "dragon-claw",
+    "level": 1
+   },
+   {
+    "move": "shadow-claw",
+    "level": 1
+   },
+   {
+    "move": "air-slash",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "smokescreen",
+    "level": 1
+   },
+   {
+    "move": "ember",
+    "level": 7
+   },
+   {
+    "move": "smokescreen",
+    "level": 10
+   },
+   {
+    "move": "dragon-rage",
+    "level": 17
+   },
+   {
+    "move": "scary-face",
+    "level": 21
+   },
+   {
+    "move": "fire-fang",
+    "level": 28
+   },
+   {
+    "move": "flame-burst",
+    "level": 32
+   },
+   {
+    "move": "wing-attack",
+    "level": 36
+   },
+   {
+    "move": "slash",
+    "level": 41
+   },
+   {
+    "move": "flamethrower",
+    "level": 47
+   },
+   {
+    "move": "fire-spin",
+    "level": 56
+   },
+   {
+    "move": "inferno",
+    "level": 62
+   },
+   {
+    "move": "heat-wave",
+    "level": 71
+   },
+   {
+    "move": "flare-blitz",
+    "level": 77
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "heat-wave",
+   "blast-burn",
+   "roost",
+   "tailwind",
+   "dragon-pulse",
+   "fire-pledge"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "fly",
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "hone-claws",
+   "flame-charge",
+   "round",
+   "echoed-voice",
+   "sky-drop",
+   "incinerate",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

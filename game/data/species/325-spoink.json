@@ -1,0 +1,152 @@
+{
+ "id": "spoink",
+ "name": "Spoink",
+ "dex": 325,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 25,
+  "defense": 35,
+  "special_attack": 70,
+  "special_defense": 80,
+  "speed": 60
+ },
+ "abilities": [
+  "thick-fat",
+  "own-tempo",
+  "gluttony"
+ ],
+ "base_experience": 66,
+ "growth_rate": "fast",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "splash",
+    "level": 1
+   },
+   {
+    "move": "psywave",
+    "level": 7
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 10
+   },
+   {
+    "move": "psybeam",
+    "level": 14
+   },
+   {
+    "move": "psych-up",
+    "level": 15
+   },
+   {
+    "move": "confuse-ray",
+    "level": 18
+   },
+   {
+    "move": "magic-coat",
+    "level": 21
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 26
+   },
+   {
+    "move": "rest",
+    "level": 29
+   },
+   {
+    "move": "snore",
+    "level": 29
+   },
+   {
+    "move": "power-gem",
+    "level": 33
+   },
+   {
+    "move": "psyshock",
+    "level": 38
+   },
+   {
+    "move": "payback",
+    "level": 40
+   },
+   {
+    "move": "psychic",
+    "level": 44
+   },
+   {
+    "move": "bounce",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "whirlwind",
+   "amnesia",
+   "endure",
+   "mirror-coat",
+   "future-sight",
+   "trick",
+   "skill-swap",
+   "extrasensory",
+   "lucky-chant",
+   "zen-headbutt"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "snatch",
+   "signal-beam",
+   "bounce",
+   "covet",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "calm-mind",
+   "payback",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round"
+  ]
+ }
+}

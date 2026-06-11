@@ -1,0 +1,118 @@
+{
+ "id": "snorunt",
+ "name": "Snorunt",
+ "dex": 361,
+ "types": [
+  "ice"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 50,
+  "defense": 50,
+  "special_attack": 50,
+  "special_defense": 50,
+  "speed": 50
+ },
+ "abilities": [
+  "inner-focus",
+  "ice-body",
+  "moody"
+ ],
+ "base_experience": 60,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "powder-snow",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "double-team",
+    "level": 4
+   },
+   {
+    "move": "bite",
+    "level": 10
+   },
+   {
+    "move": "icy-wind",
+    "level": 13
+   },
+   {
+    "move": "headbutt",
+    "level": 19
+   },
+   {
+    "move": "protect",
+    "level": 22
+   },
+   {
+    "move": "ice-fang",
+    "level": 28
+   },
+   {
+    "move": "crunch",
+    "level": 31
+   },
+   {
+    "move": "ice-shard",
+    "level": 37
+   },
+   {
+    "move": "hail",
+    "level": 40
+   },
+   {
+    "move": "blizzard",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "disable",
+   "bide",
+   "spikes",
+   "rollout",
+   "weather-ball",
+   "fake-tears",
+   "block",
+   "avalanche",
+   "hex"
+  ],
+  "tutor": [
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "block"
+  ],
+  "machine": [
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "shadow-ball",
+   "hail",
+   "facade",
+   "round",
+   "frost-breath"
+  ]
+ }
+}

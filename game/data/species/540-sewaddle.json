@@ -1,0 +1,112 @@
+{
+ "id": "sewaddle",
+ "name": "Sewaddle",
+ "dex": 540,
+ "types": [
+  "bug",
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 45,
+  "attack": 53,
+  "defense": 70,
+  "special_attack": 40,
+  "special_defense": 60,
+  "speed": 42
+ },
+ "abilities": [
+  "swarm",
+  "chlorophyll",
+  "overcoat"
+ ],
+ "base_experience": 62,
+ "growth_rate": "medium-slow",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "string-shot",
+    "level": 1
+   },
+   {
+    "move": "bug-bite",
+    "level": 8
+   },
+   {
+    "move": "razor-leaf",
+    "level": 15
+   },
+   {
+    "move": "struggle-bug",
+    "level": 22
+   },
+   {
+    "move": "endure",
+    "level": 29
+   },
+   {
+    "move": "bug-buzz",
+    "level": 36
+   },
+   {
+    "move": "flail",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "razor-wind",
+   "agility",
+   "screech",
+   "mind-reader",
+   "baton-pass",
+   "camouflage",
+   "silver-wind",
+   "me-first",
+   "air-slash"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "magic-coat",
+   "signal-beam",
+   "iron-defense",
+   "worry-seed",
+   "seed-bomb",
+   "bug-bite",
+   "electroweb"
+  ],
+  "machine": [
+   "cut",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "calm-mind",
+   "payback",
+   "energy-ball",
+   "grass-knot",
+   "round",
+   "struggle-bug"
+  ]
+ }
+}

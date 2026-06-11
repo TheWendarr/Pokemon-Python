@@ -1,0 +1,28 @@
+{
+ "id": "ice-beam",
+ "name": "Ice Beam",
+ "type": "ice",
+ "category": "special",
+ "power": 95,
+ "accuracy": 100,
+ "pp": 10,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-ailment",
+  "ailment": "freeze",
+  "ailment_chance": 10,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

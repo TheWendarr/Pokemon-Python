@@ -1,0 +1,152 @@
+{
+ "id": "murkrow",
+ "name": "Murkrow",
+ "dex": 198,
+ "types": [
+  "dark",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 85,
+  "defense": 42,
+  "special_attack": 85,
+  "special_defense": 42,
+  "speed": 91
+ },
+ "abilities": [
+  "insomnia",
+  "super-luck",
+  "prankster"
+ ],
+ "base_experience": 81,
+ "growth_rate": "medium-slow",
+ "catch_rate": 30,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "pursuit",
+    "level": 5
+   },
+   {
+    "move": "haze",
+    "level": 11
+   },
+   {
+    "move": "wing-attack",
+    "level": 15
+   },
+   {
+    "move": "night-shade",
+    "level": 21
+   },
+   {
+    "move": "assurance",
+    "level": 25
+   },
+   {
+    "move": "taunt",
+    "level": 31
+   },
+   {
+    "move": "feint-attack",
+    "level": 35
+   },
+   {
+    "move": "mean-look",
+    "level": 41
+   },
+   {
+    "move": "foul-play",
+    "level": 45
+   },
+   {
+    "move": "tailwind",
+    "level": 51
+   },
+   {
+    "move": "sucker-punch",
+    "level": 55
+   },
+   {
+    "move": "torment",
+    "level": 61
+   },
+   {
+    "move": "quash",
+    "level": 65
+   }
+  ],
+  "egg": [
+   "wing-attack",
+   "whirlwind",
+   "drill-peck",
+   "screech",
+   "confuse-ray",
+   "mirror-move",
+   "sky-attack",
+   "feint-attack",
+   "perish-song",
+   "feather-dance",
+   "roost",
+   "assurance",
+   "psycho-shift",
+   "brave-bird"
+  ],
+  "tutor": [
+   "sky-attack",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "heat-wave",
+   "snatch",
+   "roost",
+   "tailwind",
+   "dark-pulse",
+   "foul-play"
+  ],
+  "machine": [
+   "fly",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "aerial-ace",
+   "calm-mind",
+   "pluck",
+   "payback",
+   "embargo",
+   "round",
+   "quash",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

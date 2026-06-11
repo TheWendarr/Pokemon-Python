@@ -1,0 +1,153 @@
+{
+ "id": "slaking",
+ "name": "Slaking",
+ "dex": 289,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 150,
+  "attack": 160,
+  "defense": 100,
+  "special_attack": 95,
+  "special_defense": 65,
+  "speed": 100
+ },
+ "abilities": [
+  "truant"
+ ],
+ "base_experience": 252,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "yawn",
+    "level": 1
+   },
+   {
+    "move": "encore",
+    "level": 1
+   },
+   {
+    "move": "slack-off",
+    "level": 1
+   },
+   {
+    "move": "encore",
+    "level": 7
+   },
+   {
+    "move": "slack-off",
+    "level": 13
+   },
+   {
+    "move": "feint-attack",
+    "level": 19
+   },
+   {
+    "move": "amnesia",
+    "level": 25
+   },
+   {
+    "move": "covet",
+    "level": 31
+   },
+   {
+    "move": "swagger",
+    "level": 36
+   },
+   {
+    "move": "chip-away",
+    "level": 37
+   },
+   {
+    "move": "counter",
+    "level": 43
+   },
+   {
+    "move": "flail",
+    "level": 49
+   },
+   {
+    "move": "fling",
+    "level": 55
+   },
+   {
+    "move": "punishment",
+    "level": 61
+   },
+   {
+    "move": "hammer-arm",
+    "level": 67
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "block",
+   "covet",
+   "gunk-shot",
+   "after-you"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "bulk-up",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "hone-claws",
+   "smack-down",
+   "low-sweep",
+   "round",
+   "incinerate",
+   "quash",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

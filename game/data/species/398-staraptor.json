@@ -1,0 +1,125 @@
+{
+ "id": "staraptor",
+ "name": "Staraptor",
+ "dex": 398,
+ "types": [
+  "normal",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 85,
+  "attack": 120,
+  "defense": 70,
+  "special_attack": 50,
+  "special_defense": 60,
+  "speed": 100
+ },
+ "abilities": [
+  "intimidate",
+  "reckless"
+ ],
+ "base_experience": 218,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 1
+   },
+   {
+    "move": "wing-attack",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 5
+   },
+   {
+    "move": "wing-attack",
+    "level": 9
+   },
+   {
+    "move": "double-team",
+    "level": 13
+   },
+   {
+    "move": "endeavor",
+    "level": 18
+   },
+   {
+    "move": "whirlwind",
+    "level": 23
+   },
+   {
+    "move": "aerial-ace",
+    "level": 28
+   },
+   {
+    "move": "take-down",
+    "level": 33
+   },
+   {
+    "move": "close-combat",
+    "level": 34
+   },
+   {
+    "move": "agility",
+    "level": 41
+   },
+   {
+    "move": "brave-bird",
+    "level": 49
+   },
+   {
+    "move": "final-gambit",
+    "level": 57
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "sleep-talk",
+   "heat-wave",
+   "endeavor",
+   "roost",
+   "tailwind"
+  ],
+  "machine": [
+   "fly",
+   "hyper-beam",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "facade",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "giga-impact",
+   "round",
+   "echoed-voice",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

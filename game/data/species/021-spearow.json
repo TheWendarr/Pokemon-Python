@@ -1,0 +1,120 @@
+{
+ "id": "spearow",
+ "name": "Spearow",
+ "dex": 21,
+ "types": [
+  "normal",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 60,
+  "defense": 30,
+  "special_attack": 31,
+  "special_defense": 31,
+  "speed": 70
+ },
+ "abilities": [
+  "keen-eye",
+  "sniper"
+ ],
+ "base_experience": 52,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 5
+   },
+   {
+    "move": "fury-attack",
+    "level": 9
+   },
+   {
+    "move": "pursuit",
+    "level": 13
+   },
+   {
+    "move": "aerial-ace",
+    "level": 17
+   },
+   {
+    "move": "mirror-move",
+    "level": 21
+   },
+   {
+    "move": "agility",
+    "level": 25
+   },
+   {
+    "move": "assurance",
+    "level": 29
+   },
+   {
+    "move": "roost",
+    "level": 33
+   },
+   {
+    "move": "drill-peck",
+    "level": 37
+   }
+  ],
+  "egg": [
+   "razor-wind",
+   "whirlwind",
+   "quick-attack",
+   "sky-attack",
+   "tri-attack",
+   "scary-face",
+   "feint-attack",
+   "steel-wing",
+   "uproar",
+   "feather-dance",
+   "astonish"
+  ],
+  "tutor": [
+   "sky-attack",
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "heat-wave",
+   "roost",
+   "tailwind",
+   "drill-run"
+  ],
+  "machine": [
+   "fly",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "facade",
+   "aerial-ace",
+   "pluck",
+   "u-turn",
+   "round",
+   "echoed-voice",
+   "work-up"
+  ]
+ }
+}

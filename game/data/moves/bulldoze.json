@@ -1,0 +1,34 @@
+{
+ "id": "bulldoze",
+ "name": "Bulldoze",
+ "type": "ground",
+ "category": "physical",
+ "power": 60,
+ "accuracy": 100,
+ "pp": 20,
+ "priority": 0,
+ "target": "all-other-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "mirror",
+  "non-sky-battle",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-lower",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [
+   {
+    "stat": "speed",
+    "change": -1
+   }
+  ],
+  "stat_chance": 100,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

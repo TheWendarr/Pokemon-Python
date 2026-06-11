@@ -1,0 +1,126 @@
+{
+ "id": "rotom",
+ "name": "Rotom",
+ "dex": 479,
+ "types": [
+  "electric",
+  "ghost"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 50,
+  "defense": 77,
+  "special_attack": 95,
+  "special_defense": 77,
+  "speed": 91
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 154,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "trick",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "thunder-wave",
+    "level": 1
+   },
+   {
+    "move": "thunder-shock",
+    "level": 1
+   },
+   {
+    "move": "confuse-ray",
+    "level": 1
+   },
+   {
+    "move": "uproar",
+    "level": 8
+   },
+   {
+    "move": "double-team",
+    "level": 15
+   },
+   {
+    "move": "shock-wave",
+    "level": 22
+   },
+   {
+    "move": "ominous-wind",
+    "level": 29
+   },
+   {
+    "move": "substitute",
+    "level": 36
+   },
+   {
+    "move": "electro-ball",
+    "level": 43
+   },
+   {
+    "move": "hex",
+    "level": 50
+   },
+   {
+    "move": "charge",
+    "level": 57
+   },
+   {
+    "move": "discharge",
+    "level": 64
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "sleep-talk",
+   "pain-split",
+   "uproar",
+   "trick",
+   "snatch",
+   "signal-beam",
+   "dark-pulse",
+   "electroweb"
+  ],
+  "machine": [
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "will-o-wisp",
+   "facade",
+   "charge-beam",
+   "telekinesis",
+   "round",
+   "volt-switch"
+  ]
+ }
+}

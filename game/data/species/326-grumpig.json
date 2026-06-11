@@ -1,0 +1,164 @@
+{
+ "id": "grumpig",
+ "name": "Grumpig",
+ "dex": 326,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 45,
+  "defense": 65,
+  "special_attack": 90,
+  "special_defense": 110,
+  "speed": 80
+ },
+ "abilities": [
+  "thick-fat",
+  "own-tempo",
+  "gluttony"
+ ],
+ "base_experience": 165,
+ "growth_rate": "fast",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "splash",
+    "level": 1
+   },
+   {
+    "move": "psywave",
+    "level": 1
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 1
+   },
+   {
+    "move": "psybeam",
+    "level": 1
+   },
+   {
+    "move": "psywave",
+    "level": 7
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 10
+   },
+   {
+    "move": "psybeam",
+    "level": 14
+   },
+   {
+    "move": "psych-up",
+    "level": 15
+   },
+   {
+    "move": "confuse-ray",
+    "level": 18
+   },
+   {
+    "move": "magic-coat",
+    "level": 21
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 26
+   },
+   {
+    "move": "rest",
+    "level": 29
+   },
+   {
+    "move": "snore",
+    "level": 29
+   },
+   {
+    "move": "power-gem",
+    "level": 35
+   },
+   {
+    "move": "psyshock",
+    "level": 42
+   },
+   {
+    "move": "payback",
+    "level": 46
+   },
+   {
+    "move": "psychic",
+    "level": 52
+   },
+   {
+    "move": "bounce",
+    "level": 60
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "snatch",
+   "signal-beam",
+   "bounce",
+   "covet",
+   "drain-punch",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "hyper-beam",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "calm-mind",
+   "payback",
+   "fling",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

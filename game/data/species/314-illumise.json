@@ -1,0 +1,132 @@
+{
+ "id": "illumise",
+ "name": "Illumise",
+ "dex": 314,
+ "types": [
+  "bug"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 47,
+  "defense": 75,
+  "special_attack": 73,
+  "special_defense": 85,
+  "speed": 85
+ },
+ "abilities": [
+  "oblivious",
+  "tinted-lens",
+  "prankster"
+ ],
+ "base_experience": 151,
+ "growth_rate": "fast-then-very-slow",
+ "catch_rate": 150,
+ "gender_rate": 8,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "sweet-scent",
+    "level": 5
+   },
+   {
+    "move": "charm",
+    "level": 9
+   },
+   {
+    "move": "moonlight",
+    "level": 13
+   },
+   {
+    "move": "quick-attack",
+    "level": 17
+   },
+   {
+    "move": "wish",
+    "level": 21
+   },
+   {
+    "move": "encore",
+    "level": 25
+   },
+   {
+    "move": "flatter",
+    "level": 29
+   },
+   {
+    "move": "helping-hand",
+    "level": 33
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 37
+   },
+   {
+    "move": "bug-buzz",
+    "level": 41
+   },
+   {
+    "move": "covet",
+    "level": 45
+   }
+  ],
+  "egg": [
+   "growth",
+   "confuse-ray",
+   "baton-pass",
+   "encore",
+   "fake-tears",
+   "silver-wind",
+   "bug-buzz",
+   "captivate"
+  ],
+  "tutor": [
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "helping-hand",
+   "covet",
+   "roost",
+   "tailwind",
+   "zen-headbutt",
+   "bug-bite"
+  ],
+  "machine": [
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "brick-break",
+   "aerial-ace",
+   "u-turn",
+   "fling",
+   "charge-beam",
+   "round",
+   "acrobatics",
+   "struggle-bug"
+  ]
+ }
+}

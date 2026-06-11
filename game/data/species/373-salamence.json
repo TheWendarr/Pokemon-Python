@@ -1,0 +1,161 @@
+{
+ "id": "salamence",
+ "name": "Salamence",
+ "dex": 373,
+ "types": [
+  "dragon",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 95,
+  "attack": 135,
+  "defense": 80,
+  "special_attack": 110,
+  "special_defense": 80,
+  "speed": 100
+ },
+ "abilities": [
+  "intimidate",
+  "moxie"
+ ],
+ "base_experience": 270,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fire-fang",
+    "level": 1
+   },
+   {
+    "move": "thunder-fang",
+    "level": 1
+   },
+   {
+    "move": "rage",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "headbutt",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 5
+   },
+   {
+    "move": "leer",
+    "level": 10
+   },
+   {
+    "move": "headbutt",
+    "level": 16
+   },
+   {
+    "move": "focus-energy",
+    "level": 20
+   },
+   {
+    "move": "ember",
+    "level": 25
+   },
+   {
+    "move": "protect",
+    "level": 30
+   },
+   {
+    "move": "dragon-breath",
+    "level": 32
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 37
+   },
+   {
+    "move": "scary-face",
+    "level": 43
+   },
+   {
+    "move": "fly",
+    "level": 50
+   },
+   {
+    "move": "crunch",
+    "level": 53
+   },
+   {
+    "move": "dragon-claw",
+    "level": 61
+   },
+   {
+    "move": "double-edge",
+    "level": 70
+   },
+   {
+    "move": "dragon-tail",
+    "level": 80
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "iron-tail",
+   "heat-wave",
+   "hyper-voice",
+   "roost",
+   "tailwind",
+   "aqua-tail",
+   "dragon-pulse",
+   "zen-headbutt",
+   "draco-meteor"
+  ],
+  "machine": [
+   "cut",
+   "fly",
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "giga-impact",
+   "shadow-claw",
+   "stone-edge",
+   "hone-claws",
+   "round",
+   "incinerate",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

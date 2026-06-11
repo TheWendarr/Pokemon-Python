@@ -1,0 +1,137 @@
+{
+ "id": "marshtomp",
+ "name": "Marshtomp",
+ "dex": 259,
+ "types": [
+  "water",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 85,
+  "defense": 70,
+  "special_attack": 60,
+  "special_defense": 70,
+  "speed": 50
+ },
+ "abilities": [
+  "torrent",
+  "damp"
+ ],
+ "base_experience": 142,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 6
+   },
+   {
+    "move": "water-gun",
+    "level": 10
+   },
+   {
+    "move": "bide",
+    "level": 15
+   },
+   {
+    "move": "mud-shot",
+    "level": 16
+   },
+   {
+    "move": "foresight",
+    "level": 20
+   },
+   {
+    "move": "mud-bomb",
+    "level": 25
+   },
+   {
+    "move": "take-down",
+    "level": 31
+   },
+   {
+    "move": "muddy-water",
+    "level": 37
+   },
+   {
+    "move": "protect",
+    "level": 42
+   },
+   {
+    "move": "earthquake",
+    "level": 46
+   },
+   {
+    "move": "endeavor",
+    "level": 53
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "superpower",
+   "endeavor",
+   "aqua-tail",
+   "earth-power",
+   "stealth-rock",
+   "water-pledge"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "fling",
+   "sludge-wave",
+   "round",
+   "echoed-voice",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

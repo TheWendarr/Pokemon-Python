@@ -1,0 +1,158 @@
+{
+ "id": "psyduck",
+ "name": "Psyduck",
+ "dex": 54,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 52,
+  "defense": 48,
+  "special_attack": 65,
+  "special_defense": 50,
+  "speed": 55
+ },
+ "abilities": [
+  "damp",
+  "cloud-nine",
+  "swift-swim"
+ ],
+ "base_experience": 64,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "water-sport",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 4
+   },
+   {
+    "move": "water-gun",
+    "level": 8
+   },
+   {
+    "move": "disable",
+    "level": 11
+   },
+   {
+    "move": "confusion",
+    "level": 15
+   },
+   {
+    "move": "water-pulse",
+    "level": 18
+   },
+   {
+    "move": "fury-swipes",
+    "level": 22
+   },
+   {
+    "move": "screech",
+    "level": 25
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 29
+   },
+   {
+    "move": "aqua-tail",
+    "level": 32
+   },
+   {
+    "move": "soak",
+    "level": 36
+   },
+   {
+    "move": "psych-up",
+    "level": 39
+   },
+   {
+    "move": "amnesia",
+    "level": 43
+   },
+   {
+    "move": "hydro-pump",
+    "level": 46
+   },
+   {
+    "move": "wonder-room",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "psybeam",
+   "hypnosis",
+   "confuse-ray",
+   "foresight",
+   "sleep-talk",
+   "encore",
+   "cross-chop",
+   "future-sight",
+   "yawn",
+   "refresh",
+   "secret-power",
+   "mud-bomb",
+   "synchronoise"
+  ],
+  "tutor": [
+   "ice-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "role-play",
+   "signal-beam",
+   "worry-seed",
+   "aqua-tail",
+   "zen-headbutt",
+   "wonder-room"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "waterfall",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "aerial-ace",
+   "calm-mind",
+   "fling",
+   "shadow-claw",
+   "hone-claws",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "scald"
+  ]
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "id": "will-o-wisp",
+ "name": "Will O Wisp",
+ "type": "fire",
+ "category": "status",
+ "power": null,
+ "accuracy": 75,
+ "pp": 15,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "mirror",
+  "protect",
+  "reflectable"
+ ],
+ "effect": {
+  "kind": "ailment",
+  "ailment": "burn",
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

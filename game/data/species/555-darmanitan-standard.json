@@ -1,0 +1,166 @@
+{
+ "id": "darmanitan-standard",
+ "name": "Darmanitan Standard",
+ "dex": 555,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 105,
+  "attack": 140,
+  "defense": 55,
+  "special_attack": 30,
+  "special_defense": 55,
+  "speed": 95
+ },
+ "abilities": [
+  "sheer-force",
+  "zen-mode"
+ ],
+ "base_experience": 168,
+ "growth_rate": "medium-slow",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "rollout",
+    "level": 1
+   },
+   {
+    "move": "incinerate",
+    "level": 1
+   },
+   {
+    "move": "rage",
+    "level": 1
+   },
+   {
+    "move": "rollout",
+    "level": 3
+   },
+   {
+    "move": "incinerate",
+    "level": 6
+   },
+   {
+    "move": "rage",
+    "level": 9
+   },
+   {
+    "move": "fire-fang",
+    "level": 11
+   },
+   {
+    "move": "headbutt",
+    "level": 14
+   },
+   {
+    "move": "swagger",
+    "level": 17
+   },
+   {
+    "move": "facade",
+    "level": 19
+   },
+   {
+    "move": "fire-punch",
+    "level": 22
+   },
+   {
+    "move": "work-up",
+    "level": 25
+   },
+   {
+    "move": "thrash",
+    "level": 27
+   },
+   {
+    "move": "belly-drum",
+    "level": 30
+   },
+   {
+    "move": "flare-blitz",
+    "level": 33
+   },
+   {
+    "move": "hammer-arm",
+    "level": 35
+   },
+   {
+    "move": "taunt",
+    "level": 39
+   },
+   {
+    "move": "superpower",
+    "level": 47
+   },
+   {
+    "move": "overheat",
+    "level": 54
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "snore",
+   "sleep-talk",
+   "uproar",
+   "heat-wave",
+   "superpower",
+   "endeavor",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "bulk-up",
+   "gyro-ball",
+   "u-turn",
+   "payback",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "grass-knot",
+   "smack-down",
+   "flame-charge",
+   "round",
+   "incinerate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

@@ -1,0 +1,151 @@
+{
+ "id": "muk",
+ "name": "Muk",
+ "dex": 89,
+ "types": [
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 105,
+  "attack": 105,
+  "defense": 75,
+  "special_attack": 65,
+  "special_defense": 100,
+  "speed": 50
+ },
+ "abilities": [
+  "stench",
+  "sticky-hold",
+  "poison-touch"
+ ],
+ "base_experience": 175,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "poison-gas",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "mud-slap",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 4
+   },
+   {
+    "move": "mud-slap",
+    "level": 7
+   },
+   {
+    "move": "disable",
+    "level": 12
+   },
+   {
+    "move": "sludge",
+    "level": 15
+   },
+   {
+    "move": "minimize",
+    "level": 18
+   },
+   {
+    "move": "mud-bomb",
+    "level": 21
+   },
+   {
+    "move": "sludge-bomb",
+    "level": 26
+   },
+   {
+    "move": "fling",
+    "level": 29
+   },
+   {
+    "move": "screech",
+    "level": 32
+   },
+   {
+    "move": "sludge-wave",
+    "level": 37
+   },
+   {
+    "move": "acid-armor",
+    "level": 43
+   },
+   {
+    "move": "gunk-shot",
+    "level": 49
+   },
+   {
+    "move": "memento",
+    "level": 57
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "pain-split",
+   "block",
+   "dark-pulse",
+   "gunk-shot"
+  ],
+  "machine": [
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "payback",
+   "fling",
+   "poison-jab",
+   "focus-blast",
+   "giga-impact",
+   "venoshock",
+   "sludge-wave",
+   "round",
+   "incinerate"
+  ]
+ }
+}

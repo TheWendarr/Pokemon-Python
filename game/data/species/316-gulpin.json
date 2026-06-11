@@ -1,0 +1,137 @@
+{
+ "id": "gulpin",
+ "name": "Gulpin",
+ "dex": 316,
+ "types": [
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 43,
+  "defense": 53,
+  "special_attack": 43,
+  "special_defense": 53,
+  "speed": 40
+ },
+ "abilities": [
+  "liquid-ooze",
+  "sticky-hold",
+  "gluttony"
+ ],
+ "base_experience": 60,
+ "growth_rate": "fast-then-very-slow",
+ "catch_rate": 225,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "yawn",
+    "level": 6
+   },
+   {
+    "move": "poison-gas",
+    "level": 9
+   },
+   {
+    "move": "sludge",
+    "level": 14
+   },
+   {
+    "move": "amnesia",
+    "level": 17
+   },
+   {
+    "move": "encore",
+    "level": 23
+   },
+   {
+    "move": "toxic",
+    "level": 28
+   },
+   {
+    "move": "acid-spray",
+    "level": 34
+   },
+   {
+    "move": "stockpile",
+    "level": 39
+   },
+   {
+    "move": "spit-up",
+    "level": 39
+   },
+   {
+    "move": "swallow",
+    "level": 39
+   },
+   {
+    "move": "sludge-bomb",
+    "level": 44
+   },
+   {
+    "move": "gastro-acid",
+    "level": 49
+   },
+   {
+    "move": "wring-out",
+    "level": 54
+   },
+   {
+    "move": "gunk-shot",
+    "level": 59
+   }
+  ],
+  "egg": [
+   "smog",
+   "acid-armor",
+   "curse",
+   "mud-slap",
+   "destiny-bond",
+   "pain-split",
+   "gunk-shot"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "pain-split",
+   "snatch",
+   "gastro-acid",
+   "seed-bomb",
+   "gunk-shot"
+  ],
+  "machine": [
+   "ice-beam",
+   "strength",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "dream-eater",
+   "explosion",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "venoshock",
+   "sludge-wave",
+   "round"
+  ]
+ }
+}

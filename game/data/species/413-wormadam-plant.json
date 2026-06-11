@@ -1,0 +1,126 @@
+{
+ "id": "wormadam-plant",
+ "name": "Wormadam Plant",
+ "dex": 413,
+ "types": [
+  "bug",
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 59,
+  "defense": 85,
+  "special_attack": 79,
+  "special_defense": 105,
+  "speed": 36
+ },
+ "abilities": [
+  "anticipation",
+  "overcoat"
+ ],
+ "base_experience": 148,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 8,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "protect",
+    "level": 10
+   },
+   {
+    "move": "bug-bite",
+    "level": 15
+   },
+   {
+    "move": "hidden-power",
+    "level": 20
+   },
+   {
+    "move": "confusion",
+    "level": 23
+   },
+   {
+    "move": "razor-leaf",
+    "level": 26
+   },
+   {
+    "move": "growth",
+    "level": 29
+   },
+   {
+    "move": "psybeam",
+    "level": 32
+   },
+   {
+    "move": "captivate",
+    "level": 35
+   },
+   {
+    "move": "flail",
+    "level": 38
+   },
+   {
+    "move": "attract",
+    "level": 41
+   },
+   {
+    "move": "psychic",
+    "level": 44
+   },
+   {
+    "move": "leaf-storm",
+    "level": 47
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "uproar",
+   "endeavor",
+   "skill-swap",
+   "signal-beam",
+   "worry-seed",
+   "seed-bomb",
+   "bug-bite",
+   "electroweb"
+  ],
+  "machine": [
+   "hyper-beam",
+   "solar-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "energy-ball",
+   "giga-impact",
+   "grass-knot",
+   "venoshock",
+   "round",
+   "struggle-bug"
+  ]
+ }
+}

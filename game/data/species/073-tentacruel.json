@@ -1,0 +1,145 @@
+{
+ "id": "tentacruel",
+ "name": "Tentacruel",
+ "dex": 73,
+ "types": [
+  "water",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 80,
+  "attack": 70,
+  "defense": 65,
+  "special_attack": 80,
+  "special_defense": 120,
+  "speed": 100
+ },
+ "abilities": [
+  "clear-body",
+  "liquid-ooze",
+  "rain-dish"
+ ],
+ "base_experience": 180,
+ "growth_rate": "slow",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "poison-sting",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 1
+   },
+   {
+    "move": "constrict",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 5
+   },
+   {
+    "move": "constrict",
+    "level": 8
+   },
+   {
+    "move": "acid",
+    "level": 12
+   },
+   {
+    "move": "toxic-spikes",
+    "level": 15
+   },
+   {
+    "move": "bubble-beam",
+    "level": 19
+   },
+   {
+    "move": "wrap",
+    "level": 22
+   },
+   {
+    "move": "acid-spray",
+    "level": 26
+   },
+   {
+    "move": "barrier",
+    "level": 29
+   },
+   {
+    "move": "water-pulse",
+    "level": 34
+   },
+   {
+    "move": "poison-jab",
+    "level": 38
+   },
+   {
+    "move": "screech",
+    "level": 43
+   },
+   {
+    "move": "hex",
+    "level": 47
+   },
+   {
+    "move": "hydro-pump",
+    "level": 52
+   },
+   {
+    "move": "sludge-wave",
+    "level": 56
+   },
+   {
+    "move": "wring-out",
+    "level": 61
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "bind",
+   "snore",
+   "icy-wind",
+   "giga-drain",
+   "sleep-talk",
+   "magic-coat",
+   "knock-off"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "dive",
+   "payback",
+   "poison-jab",
+   "giga-impact",
+   "venoshock",
+   "sludge-wave",
+   "round",
+   "scald"
+  ]
+ }
+}

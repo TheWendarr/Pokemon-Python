@@ -1,0 +1,147 @@
+{
+ "id": "kingler",
+ "name": "Kingler",
+ "dex": 99,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 130,
+  "defense": 115,
+  "special_attack": 50,
+  "special_defense": 50,
+  "speed": 75
+ },
+ "abilities": [
+  "hyper-cutter",
+  "shell-armor",
+  "sheer-force"
+ ],
+ "base_experience": 166,
+ "growth_rate": "medium",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "wide-guard",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 1
+   },
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "vice-grip",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "vice-grip",
+    "level": 5
+   },
+   {
+    "move": "leer",
+    "level": 9
+   },
+   {
+    "move": "harden",
+    "level": 11
+   },
+   {
+    "move": "bubble-beam",
+    "level": 15
+   },
+   {
+    "move": "mud-shot",
+    "level": 19
+   },
+   {
+    "move": "metal-claw",
+    "level": 21
+   },
+   {
+    "move": "stomp",
+    "level": 25
+   },
+   {
+    "move": "protect",
+    "level": 32
+   },
+   {
+    "move": "guillotine",
+    "level": 37
+   },
+   {
+    "move": "slam",
+    "level": 44
+   },
+   {
+    "move": "brine",
+    "level": 51
+   },
+   {
+    "move": "crabhammer",
+    "level": 56
+   },
+   {
+    "move": "flail",
+    "level": 63
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "superpower",
+   "knock-off",
+   "iron-defense"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "fling",
+   "x-scissor",
+   "giga-impact",
+   "hone-claws",
+   "round",
+   "scald",
+   "quash"
+  ]
+ }
+}

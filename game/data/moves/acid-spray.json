@@ -1,0 +1,34 @@
+{
+ "id": "acid-spray",
+ "name": "Acid Spray",
+ "type": "poison",
+ "category": "special",
+ "power": 40,
+ "accuracy": 100,
+ "pp": 20,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "ballistics",
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-lower",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [
+   {
+    "stat": "special_defense",
+    "change": -2
+   }
+  ],
+  "stat_chance": 100,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

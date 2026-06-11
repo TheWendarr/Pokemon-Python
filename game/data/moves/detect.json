@@ -1,0 +1,25 @@
+{
+ "id": "detect",
+ "name": "Detect",
+ "type": "fighting",
+ "category": "status",
+ "power": null,
+ "accuracy": null,
+ "pp": 5,
+ "priority": 4,
+ "target": "user",
+ "crit_stage": 0,
+ "flags": [],
+ "effect": {
+  "kind": "unique",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

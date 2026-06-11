@@ -1,0 +1,151 @@
+{
+ "id": "pansage",
+ "name": "Pansage",
+ "dex": 511,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 53,
+  "defense": 48,
+  "special_attack": 53,
+  "special_defense": 48,
+  "speed": 64
+ },
+ "abilities": [
+  "gluttony",
+  "overgrow"
+ ],
+ "base_experience": 63,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 4
+   },
+   {
+    "move": "lick",
+    "level": 7
+   },
+   {
+    "move": "vine-whip",
+    "level": 10
+   },
+   {
+    "move": "fury-swipes",
+    "level": 13
+   },
+   {
+    "move": "leech-seed",
+    "level": 16
+   },
+   {
+    "move": "bite",
+    "level": 19
+   },
+   {
+    "move": "seed-bomb",
+    "level": 22
+   },
+   {
+    "move": "torment",
+    "level": 25
+   },
+   {
+    "move": "fling",
+    "level": 28
+   },
+   {
+    "move": "acrobatics",
+    "level": 31
+   },
+   {
+    "move": "grass-knot",
+    "level": 34
+   },
+   {
+    "move": "recycle",
+    "level": 37
+   },
+   {
+    "move": "natural-gift",
+    "level": 40
+   },
+   {
+    "move": "crunch",
+    "level": 43
+   }
+  ],
+  "egg": [
+   "low-kick",
+   "role-play",
+   "astonish",
+   "grass-whistle",
+   "tickle",
+   "bullet-seed",
+   "covet",
+   "magical-leaf",
+   "nasty-plot",
+   "leaf-storm"
+  ],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "synthesis",
+   "uproar",
+   "helping-hand",
+   "role-play",
+   "recycle",
+   "knock-off",
+   "endeavor",
+   "covet",
+   "worry-seed",
+   "seed-bomb",
+   "gunk-shot"
+  ],
+  "machine": [
+   "cut",
+   "solar-beam",
+   "dig",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "rock-tomb",
+   "payback",
+   "fling",
+   "energy-ball",
+   "shadow-claw",
+   "grass-knot",
+   "hone-claws",
+   "low-sweep",
+   "round",
+   "acrobatics",
+   "work-up"
+  ]
+ }
+}

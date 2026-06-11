@@ -1,0 +1,166 @@
+{
+ "id": "beartic",
+ "name": "Beartic",
+ "dex": 614,
+ "types": [
+  "ice"
+ ],
+ "base_stats": {
+  "hp": 95,
+  "attack": 130,
+  "defense": 80,
+  "special_attack": 70,
+  "special_defense": 80,
+  "speed": 50
+ },
+ "abilities": [
+  "snow-cloak",
+  "slush-rush",
+  "swift-swim"
+ ],
+ "base_experience": 177,
+ "growth_rate": "medium",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "superpower",
+    "level": 1
+   },
+   {
+    "move": "aqua-jet",
+    "level": 1
+   },
+   {
+    "move": "powder-snow",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "bide",
+    "level": 1
+   },
+   {
+    "move": "icy-wind",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 5
+   },
+   {
+    "move": "bide",
+    "level": 9
+   },
+   {
+    "move": "icy-wind",
+    "level": 13
+   },
+   {
+    "move": "fury-swipes",
+    "level": 17
+   },
+   {
+    "move": "brine",
+    "level": 21
+   },
+   {
+    "move": "endure",
+    "level": 25
+   },
+   {
+    "move": "swagger",
+    "level": 29
+   },
+   {
+    "move": "slash",
+    "level": 33
+   },
+   {
+    "move": "flail",
+    "level": 36
+   },
+   {
+    "move": "icicle-crash",
+    "level": 37
+   },
+   {
+    "move": "rest",
+    "level": 41
+   },
+   {
+    "move": "blizzard",
+    "level": 45
+   },
+   {
+    "move": "hail",
+    "level": 53
+   },
+   {
+    "move": "thrash",
+    "level": 59
+   },
+   {
+    "move": "sheer-cold",
+    "level": 66
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "superpower",
+   "covet"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "taunt",
+   "brick-break",
+   "dive",
+   "rock-tomb",
+   "aerial-ace",
+   "bulk-up",
+   "fling",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "stone-edge",
+   "grass-knot",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "bulldoze",
+   "frost-breath"
+  ]
+ }
+}

@@ -1,0 +1,150 @@
+{
+ "id": "cacnea",
+ "name": "Cacnea",
+ "dex": 331,
+ "types": [
+  "grass"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 85,
+  "defense": 40,
+  "special_attack": 85,
+  "special_defense": 40,
+  "speed": 35
+ },
+ "abilities": [
+  "sand-veil",
+  "water-absorb"
+ ],
+ "base_experience": 67,
+ "growth_rate": "medium-slow",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "poison-sting",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "absorb",
+    "level": 5
+   },
+   {
+    "move": "growth",
+    "level": 9
+   },
+   {
+    "move": "leech-seed",
+    "level": 13
+   },
+   {
+    "move": "sand-attack",
+    "level": 17
+   },
+   {
+    "move": "pin-missile",
+    "level": 21
+   },
+   {
+    "move": "ingrain",
+    "level": 25
+   },
+   {
+    "move": "feint-attack",
+    "level": 29
+   },
+   {
+    "move": "spikes",
+    "level": 33
+   },
+   {
+    "move": "sucker-punch",
+    "level": 37
+   },
+   {
+    "move": "payback",
+    "level": 41
+   },
+   {
+    "move": "needle-arm",
+    "level": 45
+   },
+   {
+    "move": "cotton-spore",
+    "level": 49
+   },
+   {
+    "move": "sandstorm",
+    "level": 53
+   },
+   {
+    "move": "destiny-bond",
+    "level": 57
+   }
+  ],
+  "egg": [
+   "disable",
+   "acid",
+   "low-kick",
+   "counter",
+   "dynamic-punch",
+   "smelling-salts",
+   "teeter-dance",
+   "grass-whistle",
+   "block",
+   "magical-leaf",
+   "worry-seed",
+   "seed-bomb",
+   "switcheroo",
+   "nasty-plot"
+  ],
+  "tutor": [
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "spite",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "role-play",
+   "block",
+   "worry-seed",
+   "dark-pulse",
+   "seed-bomb",
+   "drain-punch"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "facade",
+   "brick-break",
+   "payback",
+   "fling",
+   "poison-jab",
+   "energy-ball",
+   "grass-knot",
+   "venoshock",
+   "round"
+  ]
+ }
+}

@@ -1,0 +1,152 @@
+{
+ "id": "teddiursa",
+ "name": "Teddiursa",
+ "dex": 216,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 80,
+  "defense": 50,
+  "special_attack": 50,
+  "special_defense": 50,
+  "speed": 40
+ },
+ "abilities": [
+  "pickup",
+  "quick-feet",
+  "honey-gather"
+ ],
+ "base_experience": 66,
+ "growth_rate": "medium",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "covet",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "lick",
+    "level": 1
+   },
+   {
+    "move": "fake-tears",
+    "level": 1
+   },
+   {
+    "move": "fury-swipes",
+    "level": 8
+   },
+   {
+    "move": "feint-attack",
+    "level": 15
+   },
+   {
+    "move": "sweet-scent",
+    "level": 22
+   },
+   {
+    "move": "slash",
+    "level": 29
+   },
+   {
+    "move": "charm",
+    "level": 36
+   },
+   {
+    "move": "rest",
+    "level": 43
+   },
+   {
+    "move": "snore",
+    "level": 43
+   },
+   {
+    "move": "thrash",
+    "level": 50
+   },
+   {
+    "move": "fling",
+    "level": 57
+   }
+  ],
+  "egg": [
+   "take-down",
+   "double-edge",
+   "counter",
+   "seismic-toss",
+   "belly-drum",
+   "sleep-talk",
+   "metal-claw",
+   "cross-chop",
+   "crunch",
+   "yawn",
+   "fake-tears",
+   "close-combat",
+   "night-slash",
+   "chip-away"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "superpower",
+   "hyper-voice",
+   "covet",
+   "last-resort",
+   "seed-bomb",
+   "gunk-shot"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "bulk-up",
+   "payback",
+   "fling",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

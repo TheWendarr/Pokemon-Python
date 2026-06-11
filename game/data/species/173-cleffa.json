@@ -1,0 +1,128 @@
+{
+ "id": "cleffa",
+ "name": "Cleffa",
+ "dex": 173,
+ "types": [
+  "fairy"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 25,
+  "defense": 28,
+  "special_attack": 45,
+  "special_defense": 55,
+  "speed": 15
+ },
+ "abilities": [
+  "cute-charm",
+  "magic-guard",
+  "friend-guard"
+ ],
+ "base_experience": 44,
+ "growth_rate": "fast",
+ "catch_rate": 150,
+ "gender_rate": 6,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "charm",
+    "level": 1
+   },
+   {
+    "move": "encore",
+    "level": 4
+   },
+   {
+    "move": "sing",
+    "level": 7
+   },
+   {
+    "move": "sweet-kiss",
+    "level": 10
+   },
+   {
+    "move": "copycat",
+    "level": 13
+   },
+   {
+    "move": "magical-leaf",
+    "level": 16
+   }
+  ],
+  "egg": [
+   "mimic",
+   "metronome",
+   "amnesia",
+   "splash",
+   "belly-drum",
+   "present",
+   "wish",
+   "aromatherapy",
+   "fake-tears",
+   "tickle",
+   "covet",
+   "stored-power"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "helping-hand",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "endeavor",
+   "hyper-voice",
+   "signal-beam",
+   "covet",
+   "gravity",
+   "last-resort",
+   "zen-headbutt",
+   "wonder-room",
+   "after-you"
+  ],
+  "machine": [
+   "flamethrower",
+   "solar-beam",
+   "thunder-wave",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "fling",
+   "grass-knot",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "work-up"
+  ]
+ }
+}

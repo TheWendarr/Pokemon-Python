@@ -1,0 +1,126 @@
+{
+ "id": "cresselia",
+ "name": "Cresselia",
+ "dex": 488,
+ "types": [
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 120,
+  "attack": 70,
+  "defense": 110,
+  "special_attack": 75,
+  "special_defense": 120,
+  "speed": 85
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 270,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": 8,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "double-team",
+    "level": 1
+   },
+   {
+    "move": "safeguard",
+    "level": 11
+   },
+   {
+    "move": "mist",
+    "level": 20
+   },
+   {
+    "move": "aurora-beam",
+    "level": 29
+   },
+   {
+    "move": "future-sight",
+    "level": 38
+   },
+   {
+    "move": "slash",
+    "level": 47
+   },
+   {
+    "move": "moonlight",
+    "level": 57
+   },
+   {
+    "move": "psycho-cut",
+    "level": 66
+   },
+   {
+    "move": "psycho-shift",
+    "level": 75
+   },
+   {
+    "move": "lunar-dance",
+    "level": 84
+   },
+   {
+    "move": "psychic",
+    "level": 93
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "helping-hand",
+   "trick",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "signal-beam",
+   "gravity",
+   "zen-headbutt",
+   "magic-room"
+  ],
+  "machine": [
+   "ice-beam",
+   "hyper-beam",
+   "solar-beam",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "calm-mind",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round"
+  ]
+ }
+}

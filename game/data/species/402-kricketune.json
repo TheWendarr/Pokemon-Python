@@ -1,0 +1,122 @@
+{
+ "id": "kricketune",
+ "name": "Kricketune",
+ "dex": 402,
+ "types": [
+  "bug"
+ ],
+ "base_stats": {
+  "hp": 77,
+  "attack": 85,
+  "defense": 51,
+  "special_attack": 55,
+  "special_defense": 51,
+  "speed": 65
+ },
+ "abilities": [
+  "swarm",
+  "technician"
+ ],
+ "base_experience": 134,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "bide",
+    "level": 1
+   },
+   {
+    "move": "fury-cutter",
+    "level": 10
+   },
+   {
+    "move": "leech-life",
+    "level": 14
+   },
+   {
+    "move": "sing",
+    "level": 18
+   },
+   {
+    "move": "focus-energy",
+    "level": 22
+   },
+   {
+    "move": "slash",
+    "level": 26
+   },
+   {
+    "move": "x-scissor",
+    "level": 30
+   },
+   {
+    "move": "screech",
+    "level": 34
+   },
+   {
+    "move": "taunt",
+    "level": 38
+   },
+   {
+    "move": "night-slash",
+    "level": 42
+   },
+   {
+    "move": "bug-buzz",
+    "level": 46
+   },
+   {
+    "move": "perish-song",
+    "level": 50
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "heal-bell",
+   "uproar",
+   "knock-off",
+   "endeavor",
+   "hyper-voice",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "strength",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "brick-break",
+   "aerial-ace",
+   "x-scissor",
+   "giga-impact",
+   "hone-claws",
+   "round",
+   "echoed-voice",
+   "struggle-bug"
+  ]
+ }
+}

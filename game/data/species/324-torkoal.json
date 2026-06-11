@@ -1,0 +1,151 @@
+{
+ "id": "torkoal",
+ "name": "Torkoal",
+ "dex": 324,
+ "types": [
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 85,
+  "defense": 140,
+  "special_attack": 85,
+  "special_defense": 70,
+  "speed": 20
+ },
+ "abilities": [
+  "white-smoke",
+  "drought",
+  "shell-armor"
+ ],
+ "base_experience": 165,
+ "growth_rate": "medium",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "smog",
+    "level": 4
+   },
+   {
+    "move": "withdraw",
+    "level": 7
+   },
+   {
+    "move": "curse",
+    "level": 12
+   },
+   {
+    "move": "fire-spin",
+    "level": 17
+   },
+   {
+    "move": "smokescreen",
+    "level": 20
+   },
+   {
+    "move": "rapid-spin",
+    "level": 23
+   },
+   {
+    "move": "flamethrower",
+    "level": 28
+   },
+   {
+    "move": "body-slam",
+    "level": 33
+   },
+   {
+    "move": "protect",
+    "level": 36
+   },
+   {
+    "move": "lava-plume",
+    "level": 39
+   },
+   {
+    "move": "iron-defense",
+    "level": 44
+   },
+   {
+    "move": "amnesia",
+    "level": 49
+   },
+   {
+    "move": "flail",
+    "level": 52
+   },
+   {
+    "move": "heat-wave",
+    "level": 55
+   },
+   {
+    "move": "inferno",
+    "level": 60
+   },
+   {
+    "move": "shell-smash",
+    "level": 65
+   }
+  ],
+  "egg": [
+   "fissure",
+   "skull-bash",
+   "endure",
+   "sleep-talk",
+   "yawn",
+   "eruption",
+   "flame-burst",
+   "clear-smog"
+  ],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "heat-wave",
+   "iron-defense",
+   "earth-power",
+   "stealth-rock",
+   "after-you"
+  ],
+  "machine": [
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "will-o-wisp",
+   "facade",
+   "overheat",
+   "rock-tomb",
+   "gyro-ball",
+   "giga-impact",
+   "stone-edge",
+   "flame-charge",
+   "round",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

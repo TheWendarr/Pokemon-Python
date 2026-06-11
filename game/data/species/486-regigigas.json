@@ -1,0 +1,135 @@
+{
+ "id": "regigigas",
+ "name": "Regigigas",
+ "dex": 486,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 110,
+  "attack": 160,
+  "defense": 110,
+  "special_attack": 80,
+  "special_defense": 110,
+  "speed": 100
+ },
+ "abilities": [
+  "slow-start"
+ ],
+ "base_experience": 302,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "fire-punch",
+    "level": 1
+   },
+   {
+    "move": "ice-punch",
+    "level": 1
+   },
+   {
+    "move": "thunder-punch",
+    "level": 1
+   },
+   {
+    "move": "dizzy-punch",
+    "level": 1
+   },
+   {
+    "move": "knock-off",
+    "level": 1
+   },
+   {
+    "move": "confuse-ray",
+    "level": 1
+   },
+   {
+    "move": "foresight",
+    "level": 1
+   },
+   {
+    "move": "revenge",
+    "level": 25
+   },
+   {
+    "move": "wide-guard",
+    "level": 40
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 50
+   },
+   {
+    "move": "payback",
+    "level": 65
+   },
+   {
+    "move": "crush-grip",
+    "level": 75
+   },
+   {
+    "move": "heavy-slam",
+    "level": 90
+   },
+   {
+    "move": "giga-impact",
+    "level": 100
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "superpower",
+   "knock-off",
+   "block",
+   "gravity",
+   "drain-punch",
+   "earth-power",
+   "zen-headbutt",
+   "iron-head"
+  ],
+  "machine": [
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "rock-slide",
+   "substitute",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "payback",
+   "fling",
+   "rock-polish",
+   "focus-blast",
+   "giga-impact",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "retaliate",
+   "bulldoze"
+  ]
+ }
+}

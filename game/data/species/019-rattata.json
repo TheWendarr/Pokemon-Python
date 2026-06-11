@@ -1,0 +1,140 @@
+{
+ "id": "rattata",
+ "name": "Rattata",
+ "dex": 19,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 30,
+  "attack": 56,
+  "defense": 35,
+  "special_attack": 25,
+  "special_defense": 35,
+  "speed": 72
+ },
+ "abilities": [
+  "run-away",
+  "guts",
+  "hustle"
+ ],
+ "base_experience": 51,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "quick-attack",
+    "level": 4
+   },
+   {
+    "move": "focus-energy",
+    "level": 7
+   },
+   {
+    "move": "bite",
+    "level": 10
+   },
+   {
+    "move": "pursuit",
+    "level": 13
+   },
+   {
+    "move": "hyper-fang",
+    "level": 16
+   },
+   {
+    "move": "sucker-punch",
+    "level": 19
+   },
+   {
+    "move": "crunch",
+    "level": 22
+   },
+   {
+    "move": "assurance",
+    "level": 25
+   },
+   {
+    "move": "super-fang",
+    "level": 28
+   },
+   {
+    "move": "double-edge",
+    "level": 31
+   },
+   {
+    "move": "endeavor",
+    "level": 34
+   }
+  ],
+  "egg": [
+   "bite",
+   "counter",
+   "screech",
+   "fury-swipes",
+   "flame-wheel",
+   "reversal",
+   "uproar",
+   "revenge",
+   "me-first",
+   "last-resort",
+   "final-gambit"
+  ],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "endeavor",
+   "covet",
+   "last-resort",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "cut",
+   "ice-beam",
+   "blizzard",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "taunt",
+   "pluck",
+   "u-turn",
+   "grass-knot",
+   "charge-beam",
+   "round",
+   "retaliate",
+   "work-up",
+   "wild-charge"
+  ]
+ }
+}

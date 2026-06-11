@@ -1,0 +1,137 @@
+{
+ "id": "skuntank",
+ "name": "Skuntank",
+ "dex": 435,
+ "types": [
+  "poison",
+  "dark"
+ ],
+ "base_stats": {
+  "hp": 103,
+  "attack": 93,
+  "defense": 67,
+  "special_attack": 71,
+  "special_defense": 61,
+  "speed": 84
+ },
+ "abilities": [
+  "stench",
+  "aftermath",
+  "keen-eye"
+ ],
+ "base_experience": 168,
+ "growth_rate": "medium",
+ "catch_rate": 60,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 1
+   },
+   {
+    "move": "poison-gas",
+    "level": 1
+   },
+   {
+    "move": "poison-gas",
+    "level": 4
+   },
+   {
+    "move": "screech",
+    "level": 7
+   },
+   {
+    "move": "fury-swipes",
+    "level": 10
+   },
+   {
+    "move": "smokescreen",
+    "level": 14
+   },
+   {
+    "move": "feint",
+    "level": 18
+   },
+   {
+    "move": "slash",
+    "level": 22
+   },
+   {
+    "move": "toxic",
+    "level": 27
+   },
+   {
+    "move": "acid-spray",
+    "level": 32
+   },
+   {
+    "move": "flamethrower",
+    "level": 34
+   },
+   {
+    "move": "night-slash",
+    "level": 41
+   },
+   {
+    "move": "memento",
+    "level": 51
+   },
+   {
+    "move": "explosion",
+    "level": 61
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "snatch",
+   "dark-pulse",
+   "foul-play"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "explosion",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "payback",
+   "poison-jab",
+   "giga-impact",
+   "shadow-claw",
+   "hone-claws",
+   "venoshock",
+   "round",
+   "incinerate",
+   "snarl"
+  ]
+ }
+}

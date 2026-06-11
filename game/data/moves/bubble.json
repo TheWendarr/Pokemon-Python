@@ -1,0 +1,33 @@
+{
+ "id": "bubble",
+ "name": "Bubble",
+ "type": "water",
+ "category": "special",
+ "power": 20,
+ "accuracy": 100,
+ "pp": 30,
+ "priority": 0,
+ "target": "all-opponents",
+ "crit_stage": 0,
+ "flags": [
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage-lower",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [
+   {
+    "stat": "speed",
+    "change": -1
+   }
+  ],
+  "stat_chance": 10,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": null,
+  "max_hits": null
+ }
+}

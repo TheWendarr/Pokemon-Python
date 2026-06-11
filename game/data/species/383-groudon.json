@@ -1,0 +1,142 @@
+{
+ "id": "groudon",
+ "name": "Groudon",
+ "dex": 383,
+ "types": [
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 100,
+  "attack": 150,
+  "defense": 140,
+  "special_attack": 100,
+  "special_defense": 90,
+  "speed": 90
+ },
+ "abilities": [
+  "drought"
+ ],
+ "base_experience": 302,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "mud-shot",
+    "level": 1
+   },
+   {
+    "move": "scary-face",
+    "level": 5
+   },
+   {
+    "move": "lava-plume",
+    "level": 15
+   },
+   {
+    "move": "hammer-arm",
+    "level": 20
+   },
+   {
+    "move": "rest",
+    "level": 30
+   },
+   {
+    "move": "earthquake",
+    "level": 35
+   },
+   {
+    "move": "ancient-power",
+    "level": 45
+   },
+   {
+    "move": "eruption",
+    "level": 50
+   },
+   {
+    "move": "bulk-up",
+    "level": 60
+   },
+   {
+    "move": "earth-power",
+    "level": 65
+   },
+   {
+    "move": "fissure",
+    "level": 75
+   },
+   {
+    "move": "solar-beam",
+    "level": 80
+   },
+   {
+    "move": "fire-blast",
+    "level": 90
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "uproar",
+   "block",
+   "dragon-pulse",
+   "earth-power",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "bulk-up",
+   "fling",
+   "rock-polish",
+   "focus-blast",
+   "giga-impact",
+   "shadow-claw",
+   "stone-edge",
+   "hone-claws",
+   "smack-down",
+   "round",
+   "incinerate",
+   "bulldoze",
+   "dragon-tail"
+  ]
+ }
+}

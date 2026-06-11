@@ -1,0 +1,133 @@
+{
+ "id": "shelgon",
+ "name": "Shelgon",
+ "dex": 372,
+ "types": [
+  "dragon"
+ ],
+ "base_stats": {
+  "hp": 65,
+  "attack": 95,
+  "defense": 100,
+  "special_attack": 60,
+  "special_defense": 50,
+  "speed": 50
+ },
+ "abilities": [
+  "rock-head",
+  "overcoat"
+ ],
+ "base_experience": 147,
+ "growth_rate": "slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "rage",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "headbutt",
+    "level": 1
+   },
+   {
+    "move": "bite",
+    "level": 5
+   },
+   {
+    "move": "leer",
+    "level": 10
+   },
+   {
+    "move": "headbutt",
+    "level": 16
+   },
+   {
+    "move": "focus-energy",
+    "level": 20
+   },
+   {
+    "move": "ember",
+    "level": 25
+   },
+   {
+    "move": "protect",
+    "level": 30
+   },
+   {
+    "move": "dragon-breath",
+    "level": 32
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 37
+   },
+   {
+    "move": "scary-face",
+    "level": 43
+   },
+   {
+    "move": "crunch",
+    "level": 50
+   },
+   {
+    "move": "dragon-claw",
+    "level": 55
+   },
+   {
+    "move": "double-edge",
+    "level": 61
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "outrage",
+   "sleep-talk",
+   "hyper-voice",
+   "iron-defense",
+   "dragon-pulse",
+   "zen-headbutt",
+   "draco-meteor"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "flamethrower",
+   "strength",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "dragon-claw",
+   "shadow-claw",
+   "hone-claws",
+   "round",
+   "incinerate"
+  ]
+ }
+}

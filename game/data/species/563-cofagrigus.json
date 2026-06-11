@@ -1,0 +1,149 @@
+{
+ "id": "cofagrigus",
+ "name": "Cofagrigus",
+ "dex": 563,
+ "types": [
+  "ghost"
+ ],
+ "base_stats": {
+  "hp": 58,
+  "attack": 50,
+  "defense": 145,
+  "special_attack": 95,
+  "special_defense": 105,
+  "speed": 30
+ },
+ "abilities": [
+  "mummy"
+ ],
+ "base_experience": 169,
+ "growth_rate": "medium",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "protect",
+    "level": 1
+   },
+   {
+    "move": "disable",
+    "level": 1
+   },
+   {
+    "move": "haze",
+    "level": 1
+   },
+   {
+    "move": "disable",
+    "level": 5
+   },
+   {
+    "move": "haze",
+    "level": 9
+   },
+   {
+    "move": "night-shade",
+    "level": 13
+   },
+   {
+    "move": "hex",
+    "level": 17
+   },
+   {
+    "move": "will-o-wisp",
+    "level": 21
+   },
+   {
+    "move": "ominous-wind",
+    "level": 25
+   },
+   {
+    "move": "curse",
+    "level": 29
+   },
+   {
+    "move": "power-split",
+    "level": 33
+   },
+   {
+    "move": "guard-split",
+    "level": 33
+   },
+   {
+    "move": "scary-face",
+    "level": 34
+   },
+   {
+    "move": "shadow-ball",
+    "level": 39
+   },
+   {
+    "move": "grudge",
+    "level": 45
+   },
+   {
+    "move": "mean-look",
+    "level": 51
+   },
+   {
+    "move": "destiny-bond",
+    "level": 57
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "sleep-talk",
+   "pain-split",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "knock-off",
+   "skill-swap",
+   "snatch",
+   "iron-defense",
+   "block",
+   "dark-pulse",
+   "wonder-room",
+   "after-you"
+  ],
+  "machine": [
+   "hyper-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "will-o-wisp",
+   "facade",
+   "calm-mind",
+   "payback",
+   "embargo",
+   "energy-ball",
+   "giga-impact",
+   "trick-room",
+   "grass-knot",
+   "telekinesis",
+   "round"
+  ]
+ }
+}

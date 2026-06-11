@@ -1,0 +1,136 @@
+{
+ "id": "hitmontop",
+ "name": "Hitmontop",
+ "dex": 237,
+ "types": [
+  "fighting"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 95,
+  "defense": 95,
+  "special_attack": 35,
+  "special_defense": 110,
+  "speed": 70
+ },
+ "abilities": [
+  "intimidate",
+  "technician",
+  "steadfast"
+ ],
+ "base_experience": 159,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 0,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "revenge",
+    "level": 1
+   },
+   {
+    "move": "rolling-kick",
+    "level": 1
+   },
+   {
+    "move": "focus-energy",
+    "level": 6
+   },
+   {
+    "move": "pursuit",
+    "level": 10
+   },
+   {
+    "move": "quick-attack",
+    "level": 15
+   },
+   {
+    "move": "triple-kick",
+    "level": 19
+   },
+   {
+    "move": "rapid-spin",
+    "level": 24
+   },
+   {
+    "move": "counter",
+    "level": 28
+   },
+   {
+    "move": "feint",
+    "level": 33
+   },
+   {
+    "move": "agility",
+    "level": 37
+   },
+   {
+    "move": "gyro-ball",
+    "level": 42
+   },
+   {
+    "move": "wide-guard",
+    "level": 46
+   },
+   {
+    "move": "quick-guard",
+    "level": 46
+   },
+   {
+    "move": "detect",
+    "level": 51
+   },
+   {
+    "move": "close-combat",
+    "level": 55
+   },
+   {
+    "move": "endeavor",
+    "level": 60
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "low-kick",
+   "snore",
+   "sleep-talk",
+   "helping-hand",
+   "role-play",
+   "endeavor",
+   "covet",
+   "drill-run"
+  ],
+  "machine": [
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "thief",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "aerial-ace",
+   "bulk-up",
+   "gyro-ball",
+   "stone-edge",
+   "low-sweep",
+   "round",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

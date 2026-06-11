@@ -1,0 +1,126 @@
+{
+ "id": "tympole",
+ "name": "Tympole",
+ "dex": 535,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 50,
+  "defense": 40,
+  "special_attack": 50,
+  "special_defense": 40,
+  "speed": 64
+ },
+ "abilities": [
+  "swift-swim",
+  "hydration",
+  "water-absorb"
+ ],
+ "base_experience": 59,
+ "growth_rate": "medium-slow",
+ "catch_rate": 255,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 5
+   },
+   {
+    "move": "round",
+    "level": 9
+   },
+   {
+    "move": "bubble-beam",
+    "level": 12
+   },
+   {
+    "move": "mud-shot",
+    "level": 16
+   },
+   {
+    "move": "aqua-ring",
+    "level": 20
+   },
+   {
+    "move": "uproar",
+    "level": 23
+   },
+   {
+    "move": "muddy-water",
+    "level": 27
+   },
+   {
+    "move": "rain-dance",
+    "level": 31
+   },
+   {
+    "move": "flail",
+    "level": 34
+   },
+   {
+    "move": "echoed-voice",
+    "level": 38
+   },
+   {
+    "move": "hydro-pump",
+    "level": 42
+   },
+   {
+    "move": "hyper-voice",
+    "level": 45
+   }
+  ],
+  "egg": [
+   "mist",
+   "snore",
+   "sleep-talk",
+   "refresh",
+   "mud-sport",
+   "water-pulse",
+   "earth-power",
+   "mud-bomb"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "endeavor",
+   "hyper-voice",
+   "bounce",
+   "earth-power"
+  ],
+  "machine": [
+   "surf",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "sludge-wave",
+   "round",
+   "echoed-voice",
+   "scald"
+  ]
+ }
+}

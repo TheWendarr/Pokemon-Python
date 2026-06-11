@@ -1,0 +1,147 @@
+{
+ "id": "graveler",
+ "name": "Graveler",
+ "dex": 75,
+ "types": [
+  "rock",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 55,
+  "attack": 95,
+  "defense": 115,
+  "special_attack": 45,
+  "special_defense": 45,
+  "speed": 35
+ },
+ "abilities": [
+  "rock-head",
+  "sturdy",
+  "sand-veil"
+ ],
+ "base_experience": 137,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "defense-curl",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 1
+   },
+   {
+    "move": "rock-polish",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 4
+   },
+   {
+    "move": "rock-polish",
+    "level": 8
+   },
+   {
+    "move": "rock-throw",
+    "level": 11
+   },
+   {
+    "move": "magnitude",
+    "level": 15
+   },
+   {
+    "move": "rollout",
+    "level": 18
+   },
+   {
+    "move": "rock-blast",
+    "level": 22
+   },
+   {
+    "move": "smack-down",
+    "level": 27
+   },
+   {
+    "move": "self-destruct",
+    "level": 31
+   },
+   {
+    "move": "bulldoze",
+    "level": 36
+   },
+   {
+    "move": "stealth-rock",
+    "level": 42
+   },
+   {
+    "move": "earthquake",
+    "level": 47
+   },
+   {
+    "move": "explosion",
+    "level": 53
+   },
+   {
+    "move": "double-edge",
+    "level": 58
+   },
+   {
+    "move": "stone-edge",
+    "level": 64
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "snore",
+   "sleep-talk",
+   "superpower",
+   "iron-defense",
+   "block",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "flamethrower",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "gyro-ball",
+   "fling",
+   "rock-polish",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "incinerate",
+   "bulldoze"
+  ]
+ }
+}

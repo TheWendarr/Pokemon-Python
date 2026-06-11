@@ -1,0 +1,106 @@
+{
+ "id": "eelektross",
+ "name": "Eelektross",
+ "dex": 604,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 85,
+  "attack": 115,
+  "defense": 80,
+  "special_attack": 105,
+  "special_defense": 80,
+  "speed": 50
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 232,
+ "growth_rate": "slow",
+ "catch_rate": 30,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "crush-claw",
+    "level": 1
+   },
+   {
+    "move": "headbutt",
+    "level": 1
+   },
+   {
+    "move": "acid",
+    "level": 1
+   },
+   {
+    "move": "discharge",
+    "level": 1
+   },
+   {
+    "move": "crunch",
+    "level": 1
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "thunder-punch",
+   "bind",
+   "super-fang",
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "iron-tail",
+   "superpower",
+   "knock-off",
+   "signal-beam",
+   "bounce",
+   "gastro-acid",
+   "magnet-rise",
+   "aqua-tail",
+   "drain-punch"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "flamethrower",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "facade",
+   "brick-break",
+   "rock-tomb",
+   "dragon-claw",
+   "u-turn",
+   "giga-impact",
+   "flash-cannon",
+   "grass-knot",
+   "charge-beam",
+   "hone-claws",
+   "round",
+   "acrobatics",
+   "volt-switch",
+   "dragon-tail",
+   "wild-charge"
+  ]
+ }
+}

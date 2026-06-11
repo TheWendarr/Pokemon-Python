@@ -1,0 +1,131 @@
+{
+ "id": "raikou",
+ "name": "Raikou",
+ "dex": 243,
+ "types": [
+  "electric"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 85,
+  "defense": 75,
+  "special_attack": 115,
+  "special_defense": 100,
+  "speed": 115
+ },
+ "abilities": [
+  "pressure",
+  "inner-focus"
+ ],
+ "base_experience": 261,
+ "growth_rate": "slow",
+ "catch_rate": 3,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bite",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "thunder-shock",
+    "level": 8
+   },
+   {
+    "move": "roar",
+    "level": 15
+   },
+   {
+    "move": "quick-attack",
+    "level": 22
+   },
+   {
+    "move": "spark",
+    "level": 29
+   },
+   {
+    "move": "reflect",
+    "level": 36
+   },
+   {
+    "move": "crunch",
+    "level": 43
+   },
+   {
+    "move": "thunder-fang",
+    "level": 50
+   },
+   {
+    "move": "discharge",
+    "level": 57
+   },
+   {
+    "move": "extrasensory",
+    "level": 64
+   },
+   {
+    "move": "rain-dance",
+    "level": 71
+   },
+   {
+    "move": "calm-mind",
+    "level": 78
+   },
+   {
+    "move": "thunder",
+    "level": 85
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "signal-beam",
+   "magnet-rise",
+   "iron-head"
+  ],
+  "machine": [
+   "cut",
+   "roar",
+   "hyper-beam",
+   "strength",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "facade",
+   "calm-mind",
+   "giga-impact",
+   "charge-beam",
+   "round",
+   "quash",
+   "volt-switch",
+   "bulldoze",
+   "wild-charge",
+   "snarl"
+  ]
+ }
+}

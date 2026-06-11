@@ -1,0 +1,144 @@
+{
+ "id": "roselia",
+ "name": "Roselia",
+ "dex": 315,
+ "types": [
+  "grass",
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 60,
+  "defense": 45,
+  "special_attack": 100,
+  "special_defense": 80,
+  "speed": 65
+ },
+ "abilities": [
+  "natural-cure",
+  "poison-point",
+  "leaf-guard"
+ ],
+ "base_experience": 140,
+ "growth_rate": "medium-slow",
+ "catch_rate": 150,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "absorb",
+    "level": 1
+   },
+   {
+    "move": "growth",
+    "level": 4
+   },
+   {
+    "move": "poison-sting",
+    "level": 7
+   },
+   {
+    "move": "stun-spore",
+    "level": 10
+   },
+   {
+    "move": "mega-drain",
+    "level": 13
+   },
+   {
+    "move": "leech-seed",
+    "level": 16
+   },
+   {
+    "move": "magical-leaf",
+    "level": 19
+   },
+   {
+    "move": "grass-whistle",
+    "level": 22
+   },
+   {
+    "move": "giga-drain",
+    "level": 25
+   },
+   {
+    "move": "toxic-spikes",
+    "level": 28
+   },
+   {
+    "move": "sweet-scent",
+    "level": 31
+   },
+   {
+    "move": "ingrain",
+    "level": 34
+   },
+   {
+    "move": "petal-dance",
+    "level": 37
+   },
+   {
+    "move": "toxic",
+    "level": 40
+   },
+   {
+    "move": "aromatherapy",
+    "level": 43
+   },
+   {
+    "move": "synthesis",
+    "level": 46
+   }
+  ],
+  "egg": [
+   "pin-missile",
+   "razor-leaf",
+   "sleep-powder",
+   "mind-reader",
+   "cotton-spore",
+   "spikes",
+   "giga-drain",
+   "synthesis",
+   "grass-whistle",
+   "natural-gift",
+   "seed-bomb",
+   "leaf-storm"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "synthesis",
+   "covet",
+   "worry-seed",
+   "seed-bomb"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "solar-beam",
+   "toxic",
+   "double-team",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "poison-jab",
+   "energy-ball",
+   "grass-knot",
+   "venoshock",
+   "round"
+  ]
+ }
+}

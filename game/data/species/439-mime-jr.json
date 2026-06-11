@@ -1,0 +1,175 @@
+{
+ "id": "mime-jr",
+ "name": "Mime Jr",
+ "dex": 439,
+ "types": [
+  "psychic",
+  "fairy"
+ ],
+ "base_stats": {
+  "hp": 20,
+  "attack": 25,
+  "defense": 45,
+  "special_attack": 70,
+  "special_defense": 90,
+  "speed": 60
+ },
+ "abilities": [
+  "soundproof",
+  "filter",
+  "technician"
+ ],
+ "base_experience": 62,
+ "growth_rate": "medium",
+ "catch_rate": 145,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tickle",
+    "level": 1
+   },
+   {
+    "move": "barrier",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "copycat",
+    "level": 4
+   },
+   {
+    "move": "meditate",
+    "level": 8
+   },
+   {
+    "move": "double-slap",
+    "level": 11
+   },
+   {
+    "move": "mimic",
+    "level": 15
+   },
+   {
+    "move": "encore",
+    "level": 18
+   },
+   {
+    "move": "light-screen",
+    "level": 22
+   },
+   {
+    "move": "reflect",
+    "level": 22
+   },
+   {
+    "move": "psybeam",
+    "level": 25
+   },
+   {
+    "move": "substitute",
+    "level": 29
+   },
+   {
+    "move": "recycle",
+    "level": 32
+   },
+   {
+    "move": "trick",
+    "level": 36
+   },
+   {
+    "move": "psychic",
+    "level": 39
+   },
+   {
+    "move": "role-play",
+    "level": 43
+   },
+   {
+    "move": "baton-pass",
+    "level": 46
+   },
+   {
+    "move": "safeguard",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "hypnosis",
+   "mimic",
+   "confuse-ray",
+   "icy-wind",
+   "charm",
+   "future-sight",
+   "fake-out",
+   "trick",
+   "teeter-dance",
+   "wake-up-slap",
+   "healing-wish",
+   "nasty-plot",
+   "power-split",
+   "magic-room"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "helping-hand",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "snatch",
+   "signal-beam",
+   "covet",
+   "drain-punch",
+   "wonder-room",
+   "magic-room"
+  ],
+  "machine": [
+   "solar-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "calm-mind",
+   "fling",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round"
+  ]
+ }
+}

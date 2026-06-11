@@ -1,0 +1,151 @@
+{
+ "id": "mamoswine",
+ "name": "Mamoswine",
+ "dex": 473,
+ "types": [
+  "ice",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 110,
+  "attack": 130,
+  "defense": 80,
+  "special_attack": 70,
+  "special_defense": 60,
+  "speed": 80
+ },
+ "abilities": [
+  "oblivious",
+  "snow-cloak",
+  "thick-fat"
+ ],
+ "base_experience": 239,
+ "growth_rate": "slow",
+ "catch_rate": 50,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ancient-power",
+    "level": 1
+   },
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "odor-sleuth",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 1
+   },
+   {
+    "move": "powder-snow",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 5
+   },
+   {
+    "move": "powder-snow",
+    "level": 8
+   },
+   {
+    "move": "mud-slap",
+    "level": 11
+   },
+   {
+    "move": "endure",
+    "level": 14
+   },
+   {
+    "move": "mud-bomb",
+    "level": 18
+   },
+   {
+    "move": "hail",
+    "level": 21
+   },
+   {
+    "move": "ice-fang",
+    "level": 24
+   },
+   {
+    "move": "take-down",
+    "level": 28
+   },
+   {
+    "move": "double-hit",
+    "level": 33
+   },
+   {
+    "move": "mist",
+    "level": 37
+   },
+   {
+    "move": "thrash",
+    "level": 41
+   },
+   {
+    "move": "earthquake",
+    "level": 46
+   },
+   {
+    "move": "blizzard",
+    "level": 52
+   },
+   {
+    "move": "scary-face",
+    "level": 58
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "superpower",
+   "knock-off",
+   "endeavor",
+   "block",
+   "earth-power",
+   "iron-head",
+   "stealth-rock"
+  ],
+  "machine": [
+   "roar",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "rock-tomb",
+   "giga-impact",
+   "stone-edge",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

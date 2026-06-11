@@ -1,0 +1,121 @@
+{
+ "id": "nidorina",
+ "name": "Nidorina",
+ "dex": 30,
+ "types": [
+  "poison"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 62,
+  "defense": 67,
+  "special_attack": 55,
+  "special_defense": 55,
+  "speed": 56
+ },
+ "abilities": [
+  "poison-point",
+  "rivalry",
+  "hustle"
+ ],
+ "base_experience": 128,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 8,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "growl",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 7
+   },
+   {
+    "move": "double-kick",
+    "level": 9
+   },
+   {
+    "move": "poison-sting",
+    "level": 13
+   },
+   {
+    "move": "fury-swipes",
+    "level": 20
+   },
+   {
+    "move": "bite",
+    "level": 23
+   },
+   {
+    "move": "helping-hand",
+    "level": 28
+   },
+   {
+    "move": "toxic-spikes",
+    "level": 35
+   },
+   {
+    "move": "flatter",
+    "level": 38
+   },
+   {
+    "move": "crunch",
+    "level": 43
+   },
+   {
+    "move": "captivate",
+    "level": 50
+   },
+   {
+    "move": "poison-fang",
+    "level": 58
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "super-fang",
+   "snore",
+   "sleep-talk",
+   "iron-tail",
+   "helping-hand"
+  ],
+  "machine": [
+   "cut",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "thunderbolt",
+   "thunder",
+   "dig",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "aerial-ace",
+   "poison-jab",
+   "shadow-claw",
+   "hone-claws",
+   "venoshock",
+   "round",
+   "echoed-voice"
+  ]
+ }
+}

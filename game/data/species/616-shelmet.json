@@ -1,0 +1,128 @@
+{
+ "id": "shelmet",
+ "name": "Shelmet",
+ "dex": 616,
+ "types": [
+  "bug"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 40,
+  "defense": 85,
+  "special_attack": 40,
+  "special_defense": 65,
+  "speed": 25
+ },
+ "abilities": [
+  "hydration",
+  "shell-armor",
+  "overcoat"
+ ],
+ "base_experience": 61,
+ "growth_rate": "medium",
+ "catch_rate": 200,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leech-life",
+    "level": 1
+   },
+   {
+    "move": "acid",
+    "level": 4
+   },
+   {
+    "move": "bide",
+    "level": 8
+   },
+   {
+    "move": "curse",
+    "level": 13
+   },
+   {
+    "move": "struggle-bug",
+    "level": 16
+   },
+   {
+    "move": "mega-drain",
+    "level": 20
+   },
+   {
+    "move": "yawn",
+    "level": 25
+   },
+   {
+    "move": "protect",
+    "level": 28
+   },
+   {
+    "move": "acid-armor",
+    "level": 32
+   },
+   {
+    "move": "giga-drain",
+    "level": 37
+   },
+   {
+    "move": "body-slam",
+    "level": 40
+   },
+   {
+    "move": "bug-buzz",
+    "level": 44
+   },
+   {
+    "move": "recover",
+    "level": 49
+   },
+   {
+    "move": "guard-swap",
+    "level": 52
+   },
+   {
+    "move": "final-gambit",
+    "level": 56
+   }
+  ],
+  "egg": [
+   "double-edge",
+   "mind-reader",
+   "mud-slap",
+   "spikes",
+   "endure",
+   "baton-pass",
+   "encore",
+   "pursuit",
+   "feint",
+   "guard-split"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "signal-beam",
+   "gastro-acid",
+   "bug-bite"
+  ],
+  "machine": [
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "facade",
+   "energy-ball",
+   "venoshock",
+   "round",
+   "struggle-bug"
+  ]
+ }
+}

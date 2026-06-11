@@ -1,0 +1,156 @@
+{
+ "id": "magneton",
+ "name": "Magneton",
+ "dex": 82,
+ "types": [
+  "electric",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 60,
+  "defense": 95,
+  "special_attack": 120,
+  "special_defense": 70,
+  "speed": 70
+ },
+ "abilities": [
+  "magnet-pull",
+  "sturdy",
+  "analytic"
+ ],
+ "base_experience": 163,
+ "growth_rate": "medium",
+ "catch_rate": 60,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tri-attack",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 1
+   },
+   {
+    "move": "thunder-shock",
+    "level": 1
+   },
+   {
+    "move": "sonic-boom",
+    "level": 1
+   },
+   {
+    "move": "supersonic",
+    "level": 4
+   },
+   {
+    "move": "thunder-shock",
+    "level": 7
+   },
+   {
+    "move": "sonic-boom",
+    "level": 11
+   },
+   {
+    "move": "thunder-wave",
+    "level": 15
+   },
+   {
+    "move": "magnet-bomb",
+    "level": 18
+   },
+   {
+    "move": "spark",
+    "level": 21
+   },
+   {
+    "move": "mirror-shot",
+    "level": 25
+   },
+   {
+    "move": "metal-sound",
+    "level": 29
+   },
+   {
+    "move": "electro-ball",
+    "level": 34
+   },
+   {
+    "move": "flash-cannon",
+    "level": 39
+   },
+   {
+    "move": "screech",
+    "level": 45
+   },
+   {
+    "move": "discharge",
+    "level": 51
+   },
+   {
+    "move": "lock-on",
+    "level": 56
+   },
+   {
+    "move": "magnet-rise",
+    "level": 62
+   },
+   {
+    "move": "gyro-ball",
+    "level": 67
+   },
+   {
+    "move": "zap-cannon",
+    "level": 73
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "magic-coat",
+   "recycle",
+   "signal-beam",
+   "iron-defense",
+   "gravity",
+   "magnet-rise",
+   "electroweb"
+  ],
+  "machine": [
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "flash",
+   "explosion",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "facade",
+   "gyro-ball",
+   "giga-impact",
+   "flash-cannon",
+   "charge-beam",
+   "round",
+   "volt-switch",
+   "wild-charge"
+  ]
+ }
+}

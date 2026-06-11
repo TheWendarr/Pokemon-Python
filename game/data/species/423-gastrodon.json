@@ -1,0 +1,127 @@
+{
+ "id": "gastrodon",
+ "name": "Gastrodon",
+ "dex": 423,
+ "types": [
+  "water",
+  "ground"
+ ],
+ "base_stats": {
+  "hp": 111,
+  "attack": 83,
+  "defense": 68,
+  "special_attack": 92,
+  "special_defense": 82,
+  "speed": 39
+ },
+ "abilities": [
+  "sticky-hold",
+  "storm-drain",
+  "sand-force"
+ ],
+ "base_experience": 166,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "mud-slap",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "water-pulse",
+    "level": 1
+   },
+   {
+    "move": "mud-sport",
+    "level": 2
+   },
+   {
+    "move": "harden",
+    "level": 4
+   },
+   {
+    "move": "water-pulse",
+    "level": 7
+   },
+   {
+    "move": "mud-bomb",
+    "level": 11
+   },
+   {
+    "move": "hidden-power",
+    "level": 16
+   },
+   {
+    "move": "rain-dance",
+    "level": 22
+   },
+   {
+    "move": "body-slam",
+    "level": 29
+   },
+   {
+    "move": "muddy-water",
+    "level": 41
+   },
+   {
+    "move": "recover",
+    "level": 54
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "pain-split",
+   "block",
+   "earth-power"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sludge-bomb",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "hail",
+   "facade",
+   "dive",
+   "rock-tomb",
+   "giga-impact",
+   "stone-edge",
+   "sludge-wave",
+   "round",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

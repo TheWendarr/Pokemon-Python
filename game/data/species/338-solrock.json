@@ -1,0 +1,159 @@
+{
+ "id": "solrock",
+ "name": "Solrock",
+ "dex": 338,
+ "types": [
+  "rock",
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 90,
+  "attack": 95,
+  "defense": 85,
+  "special_attack": 55,
+  "special_defense": 65,
+  "speed": 70
+ },
+ "abilities": [
+  "levitate"
+ ],
+ "base_experience": 161,
+ "growth_rate": "fast",
+ "catch_rate": 45,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "harden",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "rock-throw",
+    "level": 5
+   },
+   {
+    "move": "fire-spin",
+    "level": 9
+   },
+   {
+    "move": "rock-polish",
+    "level": 13
+   },
+   {
+    "move": "psywave",
+    "level": 17
+   },
+   {
+    "move": "embargo",
+    "level": 21
+   },
+   {
+    "move": "rock-slide",
+    "level": 25
+   },
+   {
+    "move": "cosmic-power",
+    "level": 29
+   },
+   {
+    "move": "psychic",
+    "level": 33
+   },
+   {
+    "move": "heal-block",
+    "level": 37
+   },
+   {
+    "move": "stone-edge",
+    "level": 41
+   },
+   {
+    "move": "solar-beam",
+    "level": 45
+   },
+   {
+    "move": "explosion",
+    "level": 49
+   },
+   {
+    "move": "wonder-room",
+    "level": 53
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "pain-split",
+   "heat-wave",
+   "helping-hand",
+   "magic-coat",
+   "recycle",
+   "skill-swap",
+   "signal-beam",
+   "iron-defense",
+   "gravity",
+   "earth-power",
+   "zen-headbutt",
+   "iron-head",
+   "stealth-rock",
+   "wonder-room"
+  ],
+  "machine": [
+   "flamethrower",
+   "hyper-beam",
+   "solar-beam",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "will-o-wisp",
+   "facade",
+   "overheat",
+   "rock-tomb",
+   "calm-mind",
+   "gyro-ball",
+   "embargo",
+   "rock-polish",
+   "giga-impact",
+   "trick-room",
+   "stone-edge",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "smack-down",
+   "round",
+   "incinerate",
+   "acrobatics",
+   "bulldoze"
+  ]
+ }
+}

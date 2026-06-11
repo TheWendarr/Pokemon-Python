@@ -1,0 +1,139 @@
+{
+ "id": "froslass",
+ "name": "Froslass",
+ "dex": 478,
+ "types": [
+  "ice",
+  "ghost"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 80,
+  "defense": 70,
+  "special_attack": 80,
+  "special_defense": 70,
+  "speed": 110
+ },
+ "abilities": [
+  "snow-cloak",
+  "cursed-body"
+ ],
+ "base_experience": 168,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 8,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "powder-snow",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "double-team",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "double-team",
+    "level": 4
+   },
+   {
+    "move": "astonish",
+    "level": 10
+   },
+   {
+    "move": "icy-wind",
+    "level": 13
+   },
+   {
+    "move": "confuse-ray",
+    "level": 19
+   },
+   {
+    "move": "ominous-wind",
+    "level": 22
+   },
+   {
+    "move": "wake-up-slap",
+    "level": 28
+   },
+   {
+    "move": "captivate",
+    "level": 31
+   },
+   {
+    "move": "ice-shard",
+    "level": 37
+   },
+   {
+    "move": "hail",
+    "level": 40
+   },
+   {
+    "move": "blizzard",
+    "level": 51
+   },
+   {
+    "move": "destiny-bond",
+    "level": 59
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "ice-punch",
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "pain-split",
+   "trick",
+   "snatch",
+   "signal-beam",
+   "block"
+  ],
+  "machine": [
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "thunderbolt",
+   "thunder-wave",
+   "thunder",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "psych-up",
+   "shadow-ball",
+   "hail",
+   "torment",
+   "facade",
+   "taunt",
+   "payback",
+   "embargo",
+   "fling",
+   "giga-impact",
+   "telekinesis",
+   "round",
+   "frost-breath"
+  ]
+ }
+}

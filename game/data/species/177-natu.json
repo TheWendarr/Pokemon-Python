@@ -1,0 +1,158 @@
+{
+ "id": "natu",
+ "name": "Natu",
+ "dex": 177,
+ "types": [
+  "psychic",
+  "flying"
+ ],
+ "base_stats": {
+  "hp": 40,
+  "attack": 50,
+  "defense": 45,
+  "special_attack": 70,
+  "special_defense": 45,
+  "speed": 70
+ },
+ "abilities": [
+  "synchronize",
+  "early-bird",
+  "magic-bounce"
+ ],
+ "base_experience": 64,
+ "growth_rate": "medium",
+ "catch_rate": 190,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "night-shade",
+    "level": 6
+   },
+   {
+    "move": "teleport",
+    "level": 9
+   },
+   {
+    "move": "lucky-chant",
+    "level": 12
+   },
+   {
+    "move": "miracle-eye",
+    "level": 17
+   },
+   {
+    "move": "me-first",
+    "level": 20
+   },
+   {
+    "move": "confuse-ray",
+    "level": 23
+   },
+   {
+    "move": "wish",
+    "level": 28
+   },
+   {
+    "move": "psycho-shift",
+    "level": 33
+   },
+   {
+    "move": "future-sight",
+    "level": 36
+   },
+   {
+    "move": "stored-power",
+    "level": 39
+   },
+   {
+    "move": "ominous-wind",
+    "level": 44
+   },
+   {
+    "move": "power-swap",
+    "level": 47
+   },
+   {
+    "move": "guard-swap",
+    "level": 47
+   },
+   {
+    "move": "psychic",
+    "level": 50
+   }
+  ],
+  "egg": [
+   "drill-peck",
+   "quick-attack",
+   "haze",
+   "feint-attack",
+   "steel-wing",
+   "skill-swap",
+   "refresh",
+   "feather-dance",
+   "roost",
+   "sucker-punch",
+   "zen-headbutt",
+   "synchronoise"
+  ],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "pain-split",
+   "heat-wave",
+   "trick",
+   "magic-coat",
+   "skill-swap",
+   "signal-beam",
+   "roost",
+   "tailwind",
+   "zen-headbutt",
+   "magic-room"
+  ],
+  "machine": [
+   "solar-beam",
+   "thunder-wave",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "aerial-ace",
+   "calm-mind",
+   "pluck",
+   "u-turn",
+   "trick-room",
+   "grass-knot",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "ally-switch"
+  ]
+ }
+}

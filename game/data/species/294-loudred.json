@@ -1,0 +1,145 @@
+{
+ "id": "loudred",
+ "name": "Loudred",
+ "dex": 294,
+ "types": [
+  "normal"
+ ],
+ "base_stats": {
+  "hp": 84,
+  "attack": 71,
+  "defense": 43,
+  "special_attack": 71,
+  "special_defense": 43,
+  "speed": 48
+ },
+ "abilities": [
+  "soundproof",
+  "scrappy"
+ ],
+ "base_experience": 126,
+ "growth_rate": "medium-slow",
+ "catch_rate": 120,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "pound",
+    "level": 1
+   },
+   {
+    "move": "uproar",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "howl",
+    "level": 1
+   },
+   {
+    "move": "uproar",
+    "level": 5
+   },
+   {
+    "move": "astonish",
+    "level": 11
+   },
+   {
+    "move": "howl",
+    "level": 15
+   },
+   {
+    "move": "bite",
+    "level": 20
+   },
+   {
+    "move": "supersonic",
+    "level": 23
+   },
+   {
+    "move": "stomp",
+    "level": 29
+   },
+   {
+    "move": "screech",
+    "level": 37
+   },
+   {
+    "move": "roar",
+    "level": 43
+   },
+   {
+    "move": "synchronoise",
+    "level": 51
+   },
+   {
+    "move": "rest",
+    "level": 57
+   },
+   {
+    "move": "sleep-talk",
+    "level": 57
+   },
+   {
+    "move": "hyper-voice",
+    "level": 65
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "uproar",
+   "endeavor",
+   "hyper-voice",
+   "zen-headbutt"
+  ],
+  "machine": [
+   "roar",
+   "flamethrower",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "toxic",
+   "double-team",
+   "fire-blast",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "facade",
+   "taunt",
+   "brick-break",
+   "overheat",
+   "rock-tomb",
+   "fling",
+   "smack-down",
+   "round",
+   "echoed-voice",
+   "incinerate",
+   "retaliate",
+   "bulldoze",
+   "work-up"
+  ]
+ }
+}

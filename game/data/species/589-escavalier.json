@@ -1,0 +1,139 @@
+{
+ "id": "escavalier",
+ "name": "Escavalier",
+ "dex": 589,
+ "types": [
+  "bug",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 70,
+  "attack": 135,
+  "defense": 105,
+  "special_attack": 60,
+  "special_defense": 105,
+  "speed": 20
+ },
+ "abilities": [
+  "swarm",
+  "shell-armor",
+  "overcoat"
+ ],
+ "base_experience": 173,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "peck",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "quick-guard",
+    "level": 1
+   },
+   {
+    "move": "twineedle",
+    "level": 1
+   },
+   {
+    "move": "leer",
+    "level": 4
+   },
+   {
+    "move": "quick-guard",
+    "level": 8
+   },
+   {
+    "move": "twineedle",
+    "level": 13
+   },
+   {
+    "move": "fury-attack",
+    "level": 16
+   },
+   {
+    "move": "headbutt",
+    "level": 20
+   },
+   {
+    "move": "false-swipe",
+    "level": 25
+   },
+   {
+    "move": "bug-buzz",
+    "level": 28
+   },
+   {
+    "move": "slash",
+    "level": 32
+   },
+   {
+    "move": "iron-head",
+    "level": 37
+   },
+   {
+    "move": "iron-defense",
+    "level": 40
+   },
+   {
+    "move": "x-scissor",
+    "level": 44
+   },
+   {
+    "move": "reversal",
+    "level": 49
+   },
+   {
+    "move": "swords-dance",
+    "level": 52
+   },
+   {
+    "move": "giga-impact",
+    "level": 56
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "knock-off",
+   "iron-defense",
+   "iron-head",
+   "bug-bite"
+  ],
+  "machine": [
+   "swords-dance",
+   "cut",
+   "hyper-beam",
+   "toxic",
+   "double-team",
+   "rest",
+   "substitute",
+   "protect",
+   "false-swipe",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "facade",
+   "aerial-ace",
+   "poison-jab",
+   "x-scissor",
+   "focus-blast",
+   "energy-ball",
+   "giga-impact",
+   "round",
+   "struggle-bug"
+  ]
+ }
+}

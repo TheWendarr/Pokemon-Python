@@ -1,0 +1,29 @@
+{
+ "id": "tail-slap",
+ "name": "Tail Slap",
+ "type": "normal",
+ "category": "physical",
+ "power": 25,
+ "accuracy": 85,
+ "pp": 10,
+ "priority": 0,
+ "target": "selected-pokemon",
+ "crit_stage": 0,
+ "flags": [
+  "contact",
+  "mirror",
+  "protect"
+ ],
+ "effect": {
+  "kind": "damage",
+  "ailment": null,
+  "ailment_chance": 0,
+  "stat_changes": [],
+  "stat_chance": 0,
+  "flinch_chance": 0,
+  "drain": 0,
+  "healing": 0,
+  "min_hits": 2,
+  "max_hits": 5
+ }
+}

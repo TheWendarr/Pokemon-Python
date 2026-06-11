@@ -1,0 +1,168 @@
+{
+ "id": "forretress",
+ "name": "Forretress",
+ "dex": 205,
+ "types": [
+  "bug",
+  "steel"
+ ],
+ "base_stats": {
+  "hp": 75,
+  "attack": 90,
+  "defense": 140,
+  "special_attack": 60,
+  "special_defense": 60,
+  "speed": 40
+ },
+ "abilities": [
+  "sturdy",
+  "overcoat"
+ ],
+ "base_experience": 163,
+ "growth_rate": "medium",
+ "catch_rate": 75,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "toxic-spikes",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "protect",
+    "level": 1
+   },
+   {
+    "move": "self-destruct",
+    "level": 1
+   },
+   {
+    "move": "bug-bite",
+    "level": 1
+   },
+   {
+    "move": "self-destruct",
+    "level": 6
+   },
+   {
+    "move": "bug-bite",
+    "level": 9
+   },
+   {
+    "move": "take-down",
+    "level": 12
+   },
+   {
+    "move": "rapid-spin",
+    "level": 17
+   },
+   {
+    "move": "bide",
+    "level": 20
+   },
+   {
+    "move": "natural-gift",
+    "level": 23
+   },
+   {
+    "move": "spikes",
+    "level": 28
+   },
+   {
+    "move": "mirror-shot",
+    "level": 31
+   },
+   {
+    "move": "autotomize",
+    "level": 32
+   },
+   {
+    "move": "payback",
+    "level": 36
+   },
+   {
+    "move": "explosion",
+    "level": 42
+   },
+   {
+    "move": "iron-defense",
+    "level": 46
+   },
+   {
+    "move": "gyro-ball",
+    "level": 50
+   },
+   {
+    "move": "double-edge",
+    "level": 56
+   },
+   {
+    "move": "magnet-rise",
+    "level": 60
+   },
+   {
+    "move": "zap-cannon",
+    "level": 64
+   },
+   {
+    "move": "heavy-slam",
+    "level": 70
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "giga-drain",
+   "sleep-talk",
+   "pain-split",
+   "signal-beam",
+   "iron-defense",
+   "block",
+   "gravity",
+   "magnet-rise",
+   "stealth-rock",
+   "bug-bite",
+   "drill-run"
+  ],
+  "machine": [
+   "hyper-beam",
+   "strength",
+   "solar-beam",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "explosion",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "sunny-day",
+   "rock-smash",
+   "facade",
+   "rock-tomb",
+   "gyro-ball",
+   "payback",
+   "rock-polish",
+   "giga-impact",
+   "flash-cannon",
+   "venoshock",
+   "round",
+   "volt-switch",
+   "struggle-bug",
+   "bulldoze"
+  ]
+ }
+}

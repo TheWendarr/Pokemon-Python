@@ -1,0 +1,124 @@
+{
+ "id": "horsea",
+ "name": "Horsea",
+ "dex": 116,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 30,
+  "attack": 40,
+  "defense": 70,
+  "special_attack": 70,
+  "special_defense": 25,
+  "speed": 60
+ },
+ "abilities": [
+  "swift-swim",
+  "sniper",
+  "damp"
+ ],
+ "base_experience": 59,
+ "growth_rate": "medium",
+ "catch_rate": 225,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bubble",
+    "level": 1
+   },
+   {
+    "move": "smokescreen",
+    "level": 4
+   },
+   {
+    "move": "leer",
+    "level": 8
+   },
+   {
+    "move": "water-gun",
+    "level": 11
+   },
+   {
+    "move": "focus-energy",
+    "level": 14
+   },
+   {
+    "move": "bubble-beam",
+    "level": 18
+   },
+   {
+    "move": "agility",
+    "level": 23
+   },
+   {
+    "move": "twister",
+    "level": 26
+   },
+   {
+    "move": "brine",
+    "level": 30
+   },
+   {
+    "move": "hydro-pump",
+    "level": 35
+   },
+   {
+    "move": "dragon-dance",
+    "level": 38
+   },
+   {
+    "move": "dragon-pulse",
+    "level": 42
+   }
+  ],
+  "egg": [
+   "razor-wind",
+   "disable",
+   "aurora-beam",
+   "dragon-rage",
+   "splash",
+   "flail",
+   "octazooka",
+   "outrage",
+   "dragon-breath",
+   "signal-beam",
+   "muddy-water",
+   "water-pulse",
+   "clear-smog"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "outrage",
+   "sleep-talk",
+   "signal-beam",
+   "bounce",
+   "dragon-pulse"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "hail",
+   "facade",
+   "dive",
+   "flash-cannon",
+   "round",
+   "scald"
+  ]
+ }
+}

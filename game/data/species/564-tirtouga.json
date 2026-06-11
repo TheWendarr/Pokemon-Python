@@ -1,0 +1,156 @@
+{
+ "id": "tirtouga",
+ "name": "Tirtouga",
+ "dex": 564,
+ "types": [
+  "water",
+  "rock"
+ ],
+ "base_stats": {
+  "hp": 54,
+  "attack": 78,
+  "defense": 103,
+  "special_attack": 53,
+  "special_defense": 45,
+  "speed": 22
+ },
+ "abilities": [
+  "solid-rock",
+  "sturdy",
+  "swift-swim"
+ ],
+ "base_experience": 71,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "bide",
+    "level": 1
+   },
+   {
+    "move": "withdraw",
+    "level": 1
+   },
+   {
+    "move": "water-gun",
+    "level": 1
+   },
+   {
+    "move": "rollout",
+    "level": 5
+   },
+   {
+    "move": "bite",
+    "level": 8
+   },
+   {
+    "move": "protect",
+    "level": 11
+   },
+   {
+    "move": "aqua-jet",
+    "level": 15
+   },
+   {
+    "move": "ancient-power",
+    "level": 18
+   },
+   {
+    "move": "crunch",
+    "level": 21
+   },
+   {
+    "move": "wide-guard",
+    "level": 25
+   },
+   {
+    "move": "brine",
+    "level": 28
+   },
+   {
+    "move": "smack-down",
+    "level": 31
+   },
+   {
+    "move": "curse",
+    "level": 35
+   },
+   {
+    "move": "shell-smash",
+    "level": 38
+   },
+   {
+    "move": "aqua-tail",
+    "level": 41
+   },
+   {
+    "move": "rock-slide",
+    "level": 45
+   },
+   {
+    "move": "rain-dance",
+    "level": 48
+   },
+   {
+    "move": "hydro-pump",
+    "level": 51
+   }
+  ],
+  "egg": [
+   "slam",
+   "body-slam",
+   "rock-throw",
+   "bide",
+   "flail",
+   "whirlpool",
+   "knock-off",
+   "iron-defense",
+   "water-pulse"
+  ],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "iron-tail",
+   "iron-defense",
+   "block",
+   "aqua-tail",
+   "earth-power",
+   "stealth-rock"
+  ],
+  "machine": [
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "strength",
+   "earthquake",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "rock-smash",
+   "facade",
+   "dive",
+   "rock-tomb",
+   "rock-polish",
+   "stone-edge",
+   "smack-down",
+   "round",
+   "scald",
+   "bulldoze"
+  ]
+ }
+}

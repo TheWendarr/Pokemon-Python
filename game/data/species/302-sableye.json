@@ -1,0 +1,182 @@
+{
+ "id": "sableye",
+ "name": "Sableye",
+ "dex": 302,
+ "types": [
+  "dark",
+  "ghost"
+ ],
+ "base_stats": {
+  "hp": 50,
+  "attack": 75,
+  "defense": 75,
+  "special_attack": 65,
+  "special_defense": 65,
+  "speed": 50
+ },
+ "abilities": [
+  "keen-eye",
+  "stall",
+  "prankster"
+ ],
+ "base_experience": 133,
+ "growth_rate": "medium-slow",
+ "catch_rate": 45,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "leer",
+    "level": 1
+   },
+   {
+    "move": "scratch",
+    "level": 1
+   },
+   {
+    "move": "foresight",
+    "level": 4
+   },
+   {
+    "move": "night-shade",
+    "level": 8
+   },
+   {
+    "move": "astonish",
+    "level": 11
+   },
+   {
+    "move": "fury-swipes",
+    "level": 15
+   },
+   {
+    "move": "fake-out",
+    "level": 18
+   },
+   {
+    "move": "detect",
+    "level": 22
+   },
+   {
+    "move": "shadow-sneak",
+    "level": 25
+   },
+   {
+    "move": "knock-off",
+    "level": 29
+   },
+   {
+    "move": "feint-attack",
+    "level": 32
+   },
+   {
+    "move": "punishment",
+    "level": 36
+   },
+   {
+    "move": "shadow-claw",
+    "level": 39
+   },
+   {
+    "move": "power-gem",
+    "level": 43
+   },
+   {
+    "move": "confuse-ray",
+    "level": 46
+   },
+   {
+    "move": "foul-play",
+    "level": 50
+   },
+   {
+    "move": "zen-headbutt",
+    "level": 53
+   },
+   {
+    "move": "shadow-ball",
+    "level": 57
+   },
+   {
+    "move": "mean-look",
+    "level": 60
+   }
+  ],
+  "egg": [
+   "recover",
+   "mean-look",
+   "moonlight",
+   "flatter",
+   "trick",
+   "feint",
+   "metal-burst",
+   "sucker-punch",
+   "nasty-plot",
+   "captivate"
+  ],
+  "tutor": [
+   "fire-punch",
+   "ice-punch",
+   "thunder-punch",
+   "low-kick",
+   "snore",
+   "spite",
+   "icy-wind",
+   "sleep-talk",
+   "trick",
+   "role-play",
+   "magic-coat",
+   "knock-off",
+   "snatch",
+   "signal-beam",
+   "gravity",
+   "dark-pulse",
+   "zen-headbutt",
+   "wonder-room",
+   "foul-play"
+  ],
+  "machine": [
+   "cut",
+   "dig",
+   "toxic",
+   "psychic",
+   "double-team",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "rock-smash",
+   "torment",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "brick-break",
+   "rock-tomb",
+   "aerial-ace",
+   "calm-mind",
+   "payback",
+   "embargo",
+   "fling",
+   "poison-jab",
+   "shadow-claw",
+   "hone-claws",
+   "telekinesis",
+   "low-sweep",
+   "round",
+   "incinerate",
+   "retaliate",
+   "snarl"
+  ]
+ }
+}

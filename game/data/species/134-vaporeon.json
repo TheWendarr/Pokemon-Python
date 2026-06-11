@@ -1,0 +1,131 @@
+{
+ "id": "vaporeon",
+ "name": "Vaporeon",
+ "dex": 134,
+ "types": [
+  "water"
+ ],
+ "base_stats": {
+  "hp": 130,
+  "attack": 65,
+  "defense": 60,
+  "special_attack": 110,
+  "special_defense": 95,
+  "speed": 65
+ },
+ "abilities": [
+  "water-absorb",
+  "hydration"
+ ],
+ "base_experience": 184,
+ "growth_rate": "medium",
+ "catch_rate": 45,
+ "gender_rate": 1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "helping-hand",
+    "level": 1
+   },
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "tail-whip",
+    "level": 1
+   },
+   {
+    "move": "sand-attack",
+    "level": 5
+   },
+   {
+    "move": "water-gun",
+    "level": 9
+   },
+   {
+    "move": "quick-attack",
+    "level": 13
+   },
+   {
+    "move": "water-pulse",
+    "level": 17
+   },
+   {
+    "move": "aurora-beam",
+    "level": 21
+   },
+   {
+    "move": "aqua-ring",
+    "level": 25
+   },
+   {
+    "move": "acid-armor",
+    "level": 29
+   },
+   {
+    "move": "haze",
+    "level": 33
+   },
+   {
+    "move": "muddy-water",
+    "level": 37
+   },
+   {
+    "move": "last-resort",
+    "level": 41
+   },
+   {
+    "move": "hydro-pump",
+    "level": 45
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "icy-wind",
+   "sleep-talk",
+   "heal-bell",
+   "iron-tail",
+   "helping-hand",
+   "hyper-voice",
+   "signal-beam",
+   "covet",
+   "last-resort",
+   "aqua-tail"
+  ],
+  "machine": [
+   "roar",
+   "surf",
+   "ice-beam",
+   "blizzard",
+   "hyper-beam",
+   "strength",
+   "dig",
+   "toxic",
+   "double-team",
+   "waterfall",
+   "rest",
+   "substitute",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "shadow-ball",
+   "rock-smash",
+   "hail",
+   "facade",
+   "dive",
+   "giga-impact",
+   "round",
+   "echoed-voice",
+   "scald",
+   "retaliate",
+   "work-up"
+  ]
+ }
+}

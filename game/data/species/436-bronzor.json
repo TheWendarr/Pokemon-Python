@@ -1,0 +1,146 @@
+{
+ "id": "bronzor",
+ "name": "Bronzor",
+ "dex": 436,
+ "types": [
+  "steel",
+  "psychic"
+ ],
+ "base_stats": {
+  "hp": 57,
+  "attack": 24,
+  "defense": 86,
+  "special_attack": 24,
+  "special_defense": 86,
+  "speed": 23
+ },
+ "abilities": [
+  "levitate",
+  "heatproof",
+  "heavy-metal"
+ ],
+ "base_experience": 60,
+ "growth_rate": "medium",
+ "catch_rate": 255,
+ "gender_rate": -1,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "tackle",
+    "level": 1
+   },
+   {
+    "move": "confusion",
+    "level": 1
+   },
+   {
+    "move": "hypnosis",
+    "level": 5
+   },
+   {
+    "move": "imprison",
+    "level": 9
+   },
+   {
+    "move": "confuse-ray",
+    "level": 11
+   },
+   {
+    "move": "psywave",
+    "level": 15
+   },
+   {
+    "move": "iron-defense",
+    "level": 19
+   },
+   {
+    "move": "feint-attack",
+    "level": 21
+   },
+   {
+    "move": "safeguard",
+    "level": 25
+   },
+   {
+    "move": "future-sight",
+    "level": 29
+   },
+   {
+    "move": "metal-sound",
+    "level": 31
+   },
+   {
+    "move": "gyro-ball",
+    "level": 35
+   },
+   {
+    "move": "extrasensory",
+    "level": 39
+   },
+   {
+    "move": "payback",
+    "level": 41
+   },
+   {
+    "move": "heal-block",
+    "level": 45
+   },
+   {
+    "move": "heavy-slam",
+    "level": 49
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "sleep-talk",
+   "trick",
+   "recycle",
+   "skill-swap",
+   "signal-beam",
+   "iron-defense",
+   "gravity",
+   "stealth-rock",
+   "wonder-room"
+  ],
+  "machine": [
+   "solar-beam",
+   "earthquake",
+   "toxic",
+   "psychic",
+   "double-team",
+   "light-screen",
+   "reflect",
+   "dream-eater",
+   "flash",
+   "rest",
+   "rock-slide",
+   "substitute",
+   "protect",
+   "sandstorm",
+   "swagger",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "rain-dance",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "facade",
+   "rock-tomb",
+   "calm-mind",
+   "gyro-ball",
+   "payback",
+   "rock-polish",
+   "flash-cannon",
+   "trick-room",
+   "grass-knot",
+   "charge-beam",
+   "psyshock",
+   "telekinesis",
+   "round",
+   "bulldoze"
+  ]
+ }
+}

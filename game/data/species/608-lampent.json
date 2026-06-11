@@ -1,0 +1,152 @@
+{
+ "id": "lampent",
+ "name": "Lampent",
+ "dex": 608,
+ "types": [
+  "ghost",
+  "fire"
+ ],
+ "base_stats": {
+  "hp": 60,
+  "attack": 40,
+  "defense": 60,
+  "special_attack": 95,
+  "special_defense": 60,
+  "speed": 55
+ },
+ "abilities": [
+  "flash-fire",
+  "flame-body",
+  "infiltrator"
+ ],
+ "base_experience": 130,
+ "growth_rate": "medium-slow",
+ "catch_rate": 90,
+ "gender_rate": 4,
+ "learnset": {
+  "level_up": [
+   {
+    "move": "ember",
+    "level": 1
+   },
+   {
+    "move": "astonish",
+    "level": 1
+   },
+   {
+    "move": "minimize",
+    "level": 1
+   },
+   {
+    "move": "smog",
+    "level": 1
+   },
+   {
+    "move": "minimize",
+    "level": 3
+   },
+   {
+    "move": "smog",
+    "level": 5
+   },
+   {
+    "move": "fire-spin",
+    "level": 7
+   },
+   {
+    "move": "confuse-ray",
+    "level": 10
+   },
+   {
+    "move": "night-shade",
+    "level": 13
+   },
+   {
+    "move": "will-o-wisp",
+    "level": 16
+   },
+   {
+    "move": "flame-burst",
+    "level": 20
+   },
+   {
+    "move": "imprison",
+    "level": 24
+   },
+   {
+    "move": "hex",
+    "level": 28
+   },
+   {
+    "move": "memento",
+    "level": 33
+   },
+   {
+    "move": "inferno",
+    "level": 38
+   },
+   {
+    "move": "curse",
+    "level": 45
+   },
+   {
+    "move": "shadow-ball",
+    "level": 53
+   },
+   {
+    "move": "pain-split",
+    "level": 61
+   },
+   {
+    "move": "overheat",
+    "level": 69
+   }
+  ],
+  "egg": [],
+  "tutor": [
+   "snore",
+   "spite",
+   "sleep-talk",
+   "pain-split",
+   "heat-wave",
+   "trick",
+   "dark-pulse"
+  ],
+  "machine": [
+   "flamethrower",
+   "solar-beam",
+   "toxic",
+   "psychic",
+   "double-team",
+   "fire-blast",
+   "dream-eater",
+   "flash",
+   "rest",
+   "substitute",
+   "thief",
+   "protect",
+   "swagger",
+   "attract",
+   "return",
+   "frustration",
+   "safeguard",
+   "hidden-power",
+   "sunny-day",
+   "psych-up",
+   "shadow-ball",
+   "will-o-wisp",
+   "facade",
+   "taunt",
+   "overheat",
+   "calm-mind",
+   "payback",
+   "embargo",
+   "energy-ball",
+   "trick-room",
+   "telekinesis",
+   "flame-charge",
+   "round",
+   "incinerate"
+  ]
+ }
+}
