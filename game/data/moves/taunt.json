@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "For the next few turns, the target can only use damaging moves.",
  "flags": [
   "authentic",
   "mental",

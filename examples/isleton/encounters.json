@@ -1,0 +1,22 @@
+{
+ "cove": [
+  {
+   "species": "krabby",
+   "min": 5,
+   "max": 7,
+   "weight": 50
+  },
+  {
+   "species": "wingull",
+   "min": 5,
+   "max": 7,
+   "weight": 35
+  },
+  {
+   "species": "slowpoke",
+   "min": 6,
+   "max": 8,
+   "weight": 15
+  }
+ ]
+}

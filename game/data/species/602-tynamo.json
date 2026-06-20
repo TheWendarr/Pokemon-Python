@@ -44,5 +44,13 @@
    "magnet-rise"
   ],
   "machine": []
- }
+ },
+ "evolves_to": [
+  {
+   "species": "eelektrik",
+   "trigger": "level-up",
+   "level": 39,
+   "item": null
+  }
+ ]
 }

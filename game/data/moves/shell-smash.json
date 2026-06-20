@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "Raises user\u2019s Attack, Special Attack, and Speed by two stages.  Lower user\u2019s Defense and Special Defense by one stage.",
  "flags": [
   "snatch"
  ],

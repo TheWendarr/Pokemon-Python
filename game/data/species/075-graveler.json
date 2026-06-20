@@ -143,5 +143,13 @@
    "incinerate",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "golem",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Inflicts damage equal to the user\u2019s level.",
  "flags": [
   "mirror",
   "protect"

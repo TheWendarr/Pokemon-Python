@@ -1,0 +1,34 @@
+{
+ "isle_heal": [
+  {
+   "say": "Mira: Sea air rough on the team?"
+  },
+  {
+   "heal": true
+  },
+  {
+   "say": "Mira: Good as new. Mind the sailor up north!"
+  }
+ ],
+ "isle_goal": [
+  {
+   "if_flag": "beat_brom",
+   "then": [
+    {
+     "say": "You touch the shell shrine.|A salty breeze crowns you Champion of Isleton!"
+    },
+    {
+     "set_flag": "finished_isleton"
+    },
+    {
+     "give_money": 1000
+    }
+   ],
+   "else": [
+    {
+     "say": "A shell shrine. Something tells you to prove yourself first."
+    }
+   ]
+  }
+ ]
+}

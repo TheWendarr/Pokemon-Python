@@ -140,5 +140,13 @@
    "venoshock",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "roserade",
+   "trigger": "use-item",
+   "level": null,
+   "item": "shiny-stone"
+  }
+ ]
 }

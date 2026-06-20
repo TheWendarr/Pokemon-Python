@@ -123,5 +123,13 @@
    "round",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "pidgeotto",
+   "trigger": "level-up",
+   "level": 18,
+   "item": null
+  }
+ ]
 }

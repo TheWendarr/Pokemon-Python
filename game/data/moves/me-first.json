@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon-me-first",
  "crit_stage": 0,
+ "short_effect": "Uses the target\u2019s move against it before it attacks, with power increased by half.",
  "flags": [
   "authentic",
   "protect"

@@ -154,5 +154,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "golduck",
+   "trigger": "level-up",
+   "level": 33,
+   "item": null
+  }
+ ]
 }

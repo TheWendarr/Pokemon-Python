@@ -162,5 +162,13 @@
    "echoed-voice",
    "ally-switch"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "beheeyem",
+   "trigger": "level-up",
+   "level": 42,
+   "item": null
+  }
+ ]
 }

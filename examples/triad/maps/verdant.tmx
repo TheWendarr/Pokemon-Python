@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="22" height="14" tilewidth="16" tileheight="16" infinite="0" nextobjectid="99">
+ <tileset firstgid="1" source="../tiles.tsx"/>
+ <layer id="1" name="ground" width="22" height="14">
+  <data encoding="csv">
+5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,3,5,5,5,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,3,1,1,1,5,
+5,1,1,13,13,13,13,1,1,13,13,13,13,1,1,1,3,3,1,1,1,5,
+5,1,1,12,12,12,12,1,1,12,12,12,12,1,1,1,3,3,1,10,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,3,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,3,1,1,1,5,
+5,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1,1,5,
+5,1,1,1,1,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,10,1,3,3,1,1,1,1,1,11,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,3,3,1,10,1,1,1,1,10,1,1,1,1,1,1,1,5,
+5,1,1,1,1,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,5,5,5,5,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+</data>
+ </layer>
+ <objectgroup id="2" name="objects">
+  <object id="1" name="spawn" x="176" y="128" width="16" height="16"><properties></properties></object>
+  <object id="2" name="warp" x="256" y="0" width="16" height="16"><properties><property name="to_map" value="route_canopy"/><property name="to_x" type="int" value="2"/><property name="to_y" type="int" value="13"/><property name="facing" value="up"/></properties></object>
+  <object id="3" name="warp" x="272" y="0" width="16" height="16"><properties><property name="to_map" value="route_canopy"/><property name="to_x" type="int" value="3"/><property name="to_y" type="int" value="13"/><property name="facing" value="up"/></properties></object>
+  <object id="4" name="warp" x="80" y="208" width="16" height="16"><properties><property name="to_map" value="route_mirage"/><property name="to_x" type="int" value="3"/><property name="to_y" type="int" value="1"/><property name="facing" value="down"/></properties></object>
+  <object id="5" name="warp" x="96" y="208" width="16" height="16"><properties><property name="to_map" value="route_mirage"/><property name="to_x" type="int" value="4"/><property name="to_y" type="int" value="1"/><property name="facing" value="down"/></properties></object>
+  <object id="6" name="npc" x="64" y="80" width="16" height="16"><properties><property name="display" value="Nurse Ivy"/><property name="facing" value="down"/><property name="script" value="heal_verdant"/></properties></object>
+  <object id="7" name="npc" x="160" y="80" width="16" height="16"><properties><property name="display" value="Clerk Pip"/><property name="facing" value="down"/><property name="script" value="shop_verdant"/></properties></object>
+  <object id="8" name="npc" x="224" y="128" width="16" height="16"><properties><property name="display" value="Elder Rowan"/><property name="facing" value="down"/><property name="script" value="rowan_hints"/></properties></object>
+  <object id="9" name="sign" x="192" y="144" width="16" height="16"><properties><property name="dialog" value="VERDANT CITY - Where the canopy sings.|NE: Canopy Path. S: Mirage Crossing."/></properties></object>
+  <object id="10" name="trainer" x="288" y="64" width="16" height="16"><properties><property name="display" value="Warden Fern"/><property name="facing" value="left"/><property name="sight" type="int" value="3"/><property name="party" value="sewaddle:9|petilil:9@oran-berry"/><property name="prize" type="int" value="400"/><property name="flag" value="beat_fern"/><property name="before" value="Fern: The forest tests every traveler. En garde!"/><property name="after" value="Fern: The canopy bows to you."/></properties></object>
+ </objectgroup>
+</map>

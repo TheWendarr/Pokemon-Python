@@ -41,5 +41,13 @@
    "bounce"
   ],
   "machine": []
- }
+ },
+ "evolves_to": [
+  {
+   "species": "gyarados",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  }
+ ]
 }

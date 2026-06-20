@@ -15,7 +15,6 @@
  },
  "abilities": [
   "levitate",
-  "neutralizing-gas",
   "stench"
  ],
  "base_experience": 172,
@@ -132,5 +131,6 @@
    "round",
    "incinerate"
   ]
- }
+ },
+ "evolves_to": []
 }

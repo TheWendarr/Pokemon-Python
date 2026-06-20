@@ -129,5 +129,13 @@
    "echoed-voice",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "flaaffy",
+   "trigger": "level-up",
+   "level": 15,
+   "item": null
+  }
+ ]
 }

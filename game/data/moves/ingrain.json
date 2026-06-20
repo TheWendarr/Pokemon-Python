@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "Prevents the user from leaving battle.  User regains 1/16 of its max HP every turn.",
  "flags": [
   "non-sky-battle",
   "snatch"

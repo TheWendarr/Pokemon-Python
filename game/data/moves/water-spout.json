@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "all-opponents",
  "crit_stage": 0,
+ "short_effect": "Inflicts more damage when the user has more HP remaining, with a maximum of 150 power.",
  "flags": [
   "mirror",
   "protect"

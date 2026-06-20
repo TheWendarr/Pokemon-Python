@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Has a chance to lower the target\u2019s accuracy by one stage.",
  "flags": [
   "mirror",
   "protect"

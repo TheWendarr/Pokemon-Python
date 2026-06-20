@@ -130,5 +130,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "braviary",
+   "trigger": "level-up",
+   "level": 54,
+   "item": null
+  }
+ ]
 }

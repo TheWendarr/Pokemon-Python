@@ -162,5 +162,13 @@
    "bulldoze",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "primeape",
+   "trigger": "level-up",
+   "level": 28,
+   "item": null
+  }
+ ]
 }

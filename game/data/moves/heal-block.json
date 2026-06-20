@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "all-opponents",
  "crit_stage": 0,
+ "short_effect": "Prevents target from restoring its HP for five turns.",
  "flags": [
   "mental",
   "mirror",

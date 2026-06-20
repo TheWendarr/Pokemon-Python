@@ -114,5 +114,19 @@
    "round",
    "frost-breath"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "glalie",
+   "trigger": "level-up",
+   "level": 42,
+   "item": null
+  },
+  {
+   "species": "froslass",
+   "trigger": "use-item",
+   "level": null,
+   "item": "dawn-stone"
+  }
+ ]
 }

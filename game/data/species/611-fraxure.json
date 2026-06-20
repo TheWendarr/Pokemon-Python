@@ -151,5 +151,13 @@
    "incinerate",
    "dragon-tail"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "haxorus",
+   "trigger": "level-up",
+   "level": 48,
+   "item": null
+  }
+ ]
 }

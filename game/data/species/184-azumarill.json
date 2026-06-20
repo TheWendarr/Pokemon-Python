@@ -3,8 +3,7 @@
  "name": "Azumarill",
  "dex": 184,
  "types": [
-  "water",
-  "fairy"
+  "water"
  ],
  "base_stats": {
   "hp": 100,
@@ -143,5 +142,6 @@
    "bulldoze",
    "work-up"
   ]
- }
+ },
+ "evolves_to": []
 }

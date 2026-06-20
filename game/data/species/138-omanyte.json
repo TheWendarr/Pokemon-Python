@@ -137,5 +137,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "omastar",
+   "trigger": "level-up",
+   "level": 40,
+   "item": null
+  }
+ ]
 }

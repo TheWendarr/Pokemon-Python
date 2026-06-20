@@ -3,8 +3,7 @@
  "name": "Mime Jr",
  "dex": 439,
  "types": [
-  "psychic",
-  "fairy"
+  "psychic"
  ],
  "base_stats": {
   "hp": 20,
@@ -171,5 +170,13 @@
    "telekinesis",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "mr-mime",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

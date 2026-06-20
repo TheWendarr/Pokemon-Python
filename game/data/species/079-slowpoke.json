@@ -161,5 +161,19 @@
    "incinerate",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "slowbro",
+   "trigger": "use-item",
+   "level": null,
+   "item": "galarica-cuff"
+  },
+  {
+   "species": "slowking",
+   "trigger": "use-item",
+   "level": null,
+   "item": "galarica-wreath"
+  }
+ ]
 }

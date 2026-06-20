@@ -140,5 +140,13 @@
    "grass-knot",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "sunflora",
+   "trigger": "use-item",
+   "level": null,
+   "item": "sun-stone"
+  }
+ ]
 }

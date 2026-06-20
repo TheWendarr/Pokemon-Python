@@ -1,0 +1,17 @@
+{
+ "engine_version": 1,
+ "name": "Hexton (reference region)",
+ "start": {
+  "map": "town",
+  "facing": "down"
+ },
+ "starter": {
+  "species": "oshawott",
+  "level": 12
+ },
+ "bag": {
+  "potion": 5,
+  "poke-ball": 10
+ },
+ "money": 1500
+}

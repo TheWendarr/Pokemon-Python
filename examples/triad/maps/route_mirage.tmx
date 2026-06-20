@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="26" height="16" tilewidth="16" tileheight="16" infinite="0" nextobjectid="99">
+ <properties><property name="weather" value="sandstorm"/><property name="encounter_chance" type="int" value="6"/></properties>
+ <tileset firstgid="1" source="../tiles.tsx"/>
+ <layer id="1" name="ground" width="26" height="16">
+  <data encoding="csv">
+6,6,6,3,3,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
+6,8,8,3,3,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,6,
+6,8,8,3,3,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,6,
+6,8,8,3,3,8,8,2,2,2,2,8,8,8,7,8,8,8,8,8,8,8,8,8,8,6,
+6,8,8,3,3,8,8,2,2,2,2,8,8,8,8,8,8,14,8,8,8,8,8,8,8,6,
+6,8,8,3,3,3,3,3,3,3,3,3,3,8,8,8,8,8,8,8,8,8,8,8,8,6,
+6,8,8,3,3,3,3,3,3,3,3,3,3,8,8,8,8,8,7,8,8,8,8,8,8,6,
+6,8,8,8,8,8,8,8,8,8,8,3,3,8,8,7,8,8,8,8,8,8,8,8,8,6,
+6,8,8,8,8,8,8,8,7,8,8,3,3,11,8,8,8,8,8,8,8,8,8,8,8,6,
+6,8,8,8,8,8,8,8,8,8,8,3,3,3,3,3,3,3,3,3,3,3,3,3,8,6,
+6,8,8,8,8,8,8,8,8,8,8,3,3,3,3,3,3,3,3,3,3,3,3,3,8,6,
+6,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,3,3,8,6,
+6,8,8,8,8,8,7,8,8,8,14,8,8,8,8,2,2,2,2,2,7,8,3,3,8,6,
+6,8,8,8,8,8,8,8,8,8,8,8,8,8,8,2,2,2,2,2,8,8,3,3,8,6,
+6,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,3,3,8,6,
+6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,3,3,6,6
+</data>
+ </layer>
+ <objectgroup id="2" name="objects">
+  <object id="1" name="warp" x="48" y="0" width="16" height="16"><properties><property name="to_map" value="verdant"/><property name="to_x" type="int" value="5"/><property name="to_y" type="int" value="12"/><property name="facing" value="up"/></properties></object>
+  <object id="2" name="warp" x="64" y="0" width="16" height="16"><properties><property name="to_map" value="verdant"/><property name="to_x" type="int" value="6"/><property name="to_y" type="int" value="12"/><property name="facing" value="up"/></properties></object>
+  <object id="3" name="warp" x="352" y="240" width="16" height="16"><properties><property name="to_map" value="duston"/><property name="to_x" type="int" value="3"/><property name="to_y" type="int" value="1"/><property name="facing" value="down"/></properties></object>
+  <object id="4" name="warp" x="368" y="240" width="16" height="16"><properties><property name="to_map" value="duston"/><property name="to_x" type="int" value="4"/><property name="to_y" type="int" value="1"/><property name="facing" value="down"/></properties></object>
+  <object id="5" name="spawn" x="48" y="32" width="16" height="16"><properties></properties></object>
+  <object id="6" name="sign" x="208" y="112" width="16" height="16"><properties><property name="dialog" value="MIRAGE CROSSING - If you can read this, it's not a mirage."/></properties></object>
+  <object id="7" name="npc" x="48" y="80" width="16" height="16"><properties><property name="display" value="Ranger Dune"/><property name="facing" value="up"/><property name="visible_unless" value="beat_fern"/><property name="dialog" value="Ranger Dune: Storm's too fierce for rookies.|Prove yourself to Warden Fern first."/></properties></object>
+  <object id="8" name="trainer" x="192" y="128" width="16" height="16"><properties><property name="display" value="Hiker Bram"/><property name="facing" value="down"/><property name="sight" type="int" value="2"/><property name="party" value="roggenrola:11@oran-berry|drilbur:11"/><property name="prize" type="int" value="320"/><property name="flag" value="beat_bram"/><property name="before" value="Bram: These rocks LOVE a sandstorm!"/><property name="after" value="Bram: Solid as a... well, you know."/></properties></object>
+  <object id="9" name="trainer" x="320" y="160" width="16" height="16"><properties><property name="display" value="Backpacker Sage"/><property name="facing" value="left"/><property name="sight" type="int" value="3"/><property name="party" value="sandile:12"/><property name="prize" type="int" value="300"/><property name="flag" value="beat_sage"/><property name="before" value="Sage: I crossed three deserts for this!"/><property name="after" value="Sage: Four deserts next time."/></properties></object>
+ </objectgroup>
+</map>

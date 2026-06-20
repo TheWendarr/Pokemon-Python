@@ -129,5 +129,13 @@
    "round",
    "echoed-voice"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "venusaur",
+   "trigger": "level-up",
+   "level": 32,
+   "item": null
+  }
+ ]
 }

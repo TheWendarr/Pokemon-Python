@@ -90,5 +90,13 @@
    "round",
    "struggle-bug"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "leavanny",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

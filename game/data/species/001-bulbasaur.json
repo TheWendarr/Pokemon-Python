@@ -136,5 +136,13 @@
    "round",
    "echoed-voice"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "ivysaur",
+   "trigger": "level-up",
+   "level": 16,
+   "item": null
+  }
+ ]
 }

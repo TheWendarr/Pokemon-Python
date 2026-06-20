@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "random-opponent",
  "crit_stage": 0,
+ "short_effect": "User takes 1/4 its max HP in recoil.",
  "flags": [
   "contact",
   "protect"

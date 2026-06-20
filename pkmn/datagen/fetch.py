@@ -35,6 +35,9 @@ import time
 import urllib.error
 import urllib.request
 
+from .mechanics import (ability_record_from_rest,  # noqa: E402
+                        item_record_from_rest, mechanics_for)
+
 REST_BASE = "https://pokeapi.co/api/v2"
 CSV_BASE = "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/v2/csv"
 SPRITE_BASE = ("https://raw.githubusercontent.com/PokeAPI/sprites/master/"
@@ -59,37 +62,6 @@ STAT_ID_TO_KEY = {1: "hp", 2: "attack", 3: "defense", 4: "special_attack",
                   5: "special_defense", 6: "speed", 7: "accuracy", 8: "evasion"}
 DAMAGE_CLASS = {1: "status", 2: "physical", 3: "special"}
 
-CURATED_ITEMS = {
-    "potion":        {"name": "Potion", "category": "medicine", "heal": 20},
-    "super-potion":  {"name": "Super Potion", "category": "medicine", "heal": 50},
-    "hyper-potion":  {"name": "Hyper Potion", "category": "medicine", "heal": 200},
-    "max-potion":    {"name": "Max Potion", "category": "medicine", "heal": "full"},
-    "full-restore":  {"name": "Full Restore", "category": "medicine",
-                      "heal": "full", "cures": ["all"]},
-    "antidote":      {"name": "Antidote", "category": "medicine",
-                      "cures": ["poison", "toxic"]},
-    "burn-heal":     {"name": "Burn Heal", "category": "medicine", "cures": ["burn"]},
-    "ice-heal":      {"name": "Ice Heal", "category": "medicine", "cures": ["freeze"]},
-    "awakening":     {"name": "Awakening", "category": "medicine", "cures": ["sleep"]},
-    "paralyze-heal": {"name": "Paralyze Heal", "category": "medicine",
-                      "cures": ["paralysis"]},
-    "full-heal":     {"name": "Full Heal", "category": "medicine", "cures": ["all"]},
-    "poke-ball":     {"name": "Poke Ball", "category": "ball", "ball_rate": 1.0},
-    "great-ball":    {"name": "Great Ball", "category": "ball", "ball_rate": 1.5},
-    "ultra-ball":    {"name": "Ultra Ball", "category": "ball", "ball_rate": 2.0},
-    # ── held items (battle effects implemented in pkmn/battle/passives.py) ──
-    "leftovers":     {"name": "Leftovers", "category": "held"},
-    "oran-berry":    {"name": "Oran Berry", "category": "held"},
-    "sitrus-berry":  {"name": "Sitrus Berry", "category": "held"},
-    "lum-berry":     {"name": "Lum Berry", "category": "held"},
-    "choice-band":   {"name": "Choice Band", "category": "held"},
-    "choice-specs":  {"name": "Choice Specs", "category": "held"},
-    "choice-scarf":  {"name": "Choice Scarf", "category": "held"},
-    "life-orb":      {"name": "Life Orb", "category": "held"},
-    "focus-sash":    {"name": "Focus Sash", "category": "held"},
-    "scope-lens":    {"name": "Scope Lens", "category": "held"},
-    "razor-claw":    {"name": "Razor Claw", "category": "held"},
-}
 
 
 # ── plumbing ─────────────────────────────────────────────────────────
@@ -176,8 +148,8 @@ def build_from_csv(out: str, cache: str, *, log=print) -> None:
     _write(os.path.join(out, "natures.json"), natures)
     log(f"  natures.json written ({len(natures)} natures)")
 
-    _write(os.path.join(out, "items.json"), CURATED_ITEMS)
-    log("  items.json written (curated starter set)")
+    _build_abilities_csv(out, cache, log)
+    _build_items_csv(out, cache, log)
 
     # moves
     targets = {int(r["id"]): r["identifier"] for r in _csv_rows("move_targets.csv", cache)}
@@ -190,6 +162,9 @@ def build_from_csv(out: str, cache: str, *, log=print) -> None:
     for r in _csv_rows("move_flag_map.csv", cache):
         flag_map.setdefault(int(r["move_id"]), []).append(flags[int(r["move_flag_id"])])
     meta = {int(r["move_id"]): r for r in _csv_rows("move_meta.csv", cache)}
+    effect_prose = {int(r["move_effect_id"]): r["short_effect"]
+                    for r in _csv_rows("move_effect_prose.csv", cache)
+                    if r["local_language_id"] == "9"}
     stat_changes: dict[int, list] = {}
     for r in _csv_rows("move_meta_stat_changes.csv", cache):
         stat_changes.setdefault(int(r["move_id"]), []).append(
@@ -235,6 +210,8 @@ def build_from_csv(out: str, cache: str, *, log=print) -> None:
             continue
         m = meta.get(mid, {})
         ailment_id = int(m.get("meta_ailment_id") or 0)
+        short = effect_prose.get(int(r.get("effect_id") or 0), "")
+        short = short.replace("$effect_chance", str(r.get("effect_chance") or ""))
         move = {
             "id": r["identifier"],
             "name": r["identifier"].replace("-", " ").title(),
@@ -246,6 +223,7 @@ def build_from_csv(out: str, cache: str, *, log=print) -> None:
             "priority": vals["priority"],
             "target": targets.get(int(r["target_id"]), "selected-pokemon"),
             "crit_stage": int(m.get("crit_rate") or 0),
+            "short_effect": short,
             "flags": sorted(flag_map.get(mid, [])),
             "effect": {
                 "kind": categories.get(int(m.get("meta_category_id") or 0), "damage"),
@@ -302,6 +280,26 @@ def build_from_csv(out: str, cache: str, *, log=print) -> None:
         learn[pid] = sets
 
     species_rows = {int(r["id"]): r for r in _csv_rows("pokemon_species.csv", cache)}
+    triggers = {int(r["id"]): r["identifier"]
+                for r in _csv_rows("evolution_triggers.csv", cache)}
+    item_ident = {int(r["id"]): r["identifier"]
+                  for r in _csv_rows("items.csv", cache)}
+    evolves_to: dict[int, list] = {}
+    evo_rows = {int(r["evolved_species_id"]): r
+                for r in _csv_rows("pokemon_evolution.csv", cache)}
+    for sid, sp in species_rows.items():
+        parent = sp.get("evolves_from_species_id")
+        if not parent or sid > MAX_DEX or int(parent) > MAX_DEX:
+            continue
+        er = evo_rows.get(sid, {})
+        evolves_to.setdefault(int(parent), []).append({
+            "species": sp["identifier"],
+            "trigger": triggers.get(int(er.get("evolution_trigger_id") or 1),
+                                    "level-up"),
+            "level": int(er["minimum_level"]) if er.get("minimum_level") else None,
+            "item": (item_ident.get(int(er["trigger_item_id"]))
+                     if er.get("trigger_item_id") else None),
+        })
     growth = {int(r["id"]): r["identifier"] for r in _csv_rows("growth_rates.csv", cache)}
     stats_by_pkmn: dict[int, dict] = {}
     for r in _csv_rows("pokemon_stats.csv", cache):
@@ -315,13 +313,33 @@ def build_from_csv(out: str, cache: str, *, log=print) -> None:
         if pid <= MAX_DEX:
             types_by_pkmn.setdefault(pid, []).append(
                 (int(r["slot"]), type_by_id[int(r["type_id"])]))
-    abil_ident = {int(r["id"]): r["identifier"] for r in _csv_rows("abilities.csv", cache)}
+    # pokemon_types_past: generation_id is the LAST gen that typing was
+    # used. Pick the smallest entry >= our gen -> the typing as of Gen 5
+    # (restores pre-Fairy Normal types for Jigglypuff, Marill, etc.).
+    past_types: dict[int, dict[int, list]] = {}
+    try:
+        for r in _csv_rows("pokemon_types_past.csv", cache):
+            pid, g = int(r["pokemon_id"]), int(r["generation_id"])
+            if pid <= MAX_DEX and g >= GEN:
+                past_types.setdefault(pid, {}).setdefault(g, []).append(
+                    (int(r["slot"]), type_by_id[int(r["type_id"])]))
+        for pid, by_gen in past_types.items():
+            types_by_pkmn[pid] = by_gen[min(by_gen)]
+        log(f"  pokemon_types_past applied ({len(past_types)} retypes)")
+    except Exception:
+        log("  WARNING: pokemon_types_past.csv unavailable; post-Gen-5 "
+            "retypes (Fairy) will leak into the dataset.")
+    abil_ident = {}
+    abil_gen = {}
+    for r in _csv_rows("abilities.csv", cache):
+        abil_ident[int(r["id"])] = r["identifier"]
+        abil_gen[int(r["id"])] = int(r["generation_id"])
     abil_by_pkmn: dict[int, list] = {}
     for r in _csv_rows("pokemon_abilities.csv", cache):
-        pid = int(r["pokemon_id"])
-        if pid <= MAX_DEX:
+        pid, aid = int(r["pokemon_id"]), int(r["ability_id"])
+        if pid <= MAX_DEX and abil_gen.get(aid, 99) <= GEN:
             abil_by_pkmn.setdefault(pid, []).append(
-                (int(r["is_hidden"]), int(r["slot"]), abil_ident[int(r["ability_id"])]))
+                (int(r["is_hidden"]), int(r["slot"]), abil_ident[aid]))
 
     n_species = 0
     for r in _csv_rows("pokemon.csv", cache):
@@ -341,6 +359,7 @@ def build_from_csv(out: str, cache: str, *, log=print) -> None:
             "catch_rate": int(sp["capture_rate"]),
             "gender_rate": int(sp["gender_rate"]),
             "learnset": learn.get(pid, {}),
+            "evolves_to": evolves_to.get(int(r["species_id"]), []),
         }
         _write(os.path.join(out, "species", f"{pid:03d}-{r['identifier']}.json"), species)
         n_species += 1
@@ -348,6 +367,39 @@ def build_from_csv(out: str, cache: str, *, log=print) -> None:
 
 
 # ── REST source ──────────────────────────────────────────────────────
+
+def _evolutions_from_chain(chain_json: dict) -> dict:
+    """evolution-chain payload -> {species: [evolves_to records]}."""
+    out: dict = {}
+
+    def walk(node):
+        edges = []
+        for child in node.get("evolves_to", []):
+            d = (child.get("evolution_details") or [{}])[0]
+            edges.append({
+                "species": child["species"]["name"],
+                "trigger": (d.get("trigger") or {}).get("name", "level-up"),
+                "level": d.get("min_level"),
+                "item": (d.get("item") or {}).get("name") if d.get("item") else None,
+            })
+            walk(child)
+        out[node["species"]["name"]] = edges
+    walk(chain_json["chain"])
+    return out
+
+
+def _gen5_types_rest(pk: dict) -> list:
+    """Typing as of Gen 5: smallest past_types entry whose generation
+    is >= 5, else current types."""
+    from .mechanics import GEN_NAMES
+    best = None
+    for entry in pk.get("past_types", []):
+        g = GEN_NAMES.get(entry.get("generation", {}).get("name", ""), 0)
+        if g >= GEN and (best is None or g < best[0]):
+            best = (g, entry["types"])
+    rows = best[1] if best else pk["types"]
+    return [t["type"]["name"] for t in sorted(rows, key=lambda t: t["slot"])]
+
 
 def _gen5_move_values(mv: dict) -> dict:
     """Apply past_values back to B2W2: latest-first, each change strictly
@@ -405,8 +457,9 @@ def build_from_rest(out: str, cache: str, *, delay: float = 0.0, log=print) -> N
             "down": (nd["decreased_stat"]["name"].replace("-", "_")
                      if nd["decreased_stat"] else None)}
     _write(os.path.join(out, "natures.json"), natures)
-    _write(os.path.join(out, "items.json"), CURATED_ITEMS)
-    log(f"  natures.json ({len(natures)}) + items.json written")
+    log(f"  natures.json written ({len(natures)} natures)")
+    _build_abilities_rest(out, cache, delay=delay, log=log)
+    _build_items_rest(out, cache, delay=delay, log=log)
 
     # moves
     n_moves = 0
@@ -435,6 +488,11 @@ def build_from_rest(out: str, cache: str, *, delay: float = 0.0, log=print) -> N
             "priority": mv["priority"],
             "target": mv["target"]["name"],
             "crit_stage": meta.get("crit_rate") or 0,
+            "short_effect": next(
+                (e.get("short_effect", "").replace(
+                    "$effect_chance", str(mv.get("effect_chance") or ""))
+                 for e in mv.get("effect_entries", [])
+                 if e.get("language", {}).get("name") == "en"), ""),
             "flags": [],
             "effect": {
                 "kind": (meta.get("category") or {}).get("name", "damage"),
@@ -459,6 +517,9 @@ def build_from_rest(out: str, cache: str, *, delay: float = 0.0, log=print) -> N
     log(f"  {n_moves} moves written")
 
     # species
+    _chain_cache: dict = {}
+    gen5_abilities = set(json.load(
+        open(os.path.join(out, "abilities.json"), encoding="utf-8")))
     n_species = 0
     for dex in range(1, MAX_DEX + 1):
         pk = _rest(f"pokemon/{dex}", cache)
@@ -489,17 +550,23 @@ def build_from_rest(out: str, cache: str, *, delay: float = 0.0, log=print) -> N
             "name": next((n["name"] for n in sp["names"]
                           if n["language"]["name"] == "en"), pk["name"].title()),
             "dex": dex,
-            "types": [t["type"]["name"] for t in sorted(pk["types"],
-                                                        key=lambda t: t["slot"])],
+            "types": _gen5_types_rest(pk),
             "base_stats": {s["stat"]["name"].replace("-", "_"): s["base_stat"]
                            for s in pk["stats"]},
             "abilities": [a["ability"]["name"] for a in sorted(
-                pk["abilities"], key=lambda a: (a["is_hidden"], a["slot"]))],
+                pk["abilities"], key=lambda a: (a["is_hidden"], a["slot"]))
+                if a["ability"]["name"] in gen5_abilities],
             "base_experience": pk.get("base_experience") or 0,
             "growth_rate": sp["growth_rate"]["name"],
             "catch_rate": sp["capture_rate"],
             "gender_rate": sp["gender_rate"],
             "learnset": learn,
+            "evolves_to": _chain_cache.setdefault(
+                sp["evolution_chain"]["url"],
+                _evolutions_from_chain(_rest(
+                    "evolution-chain/" + sp["evolution_chain"]["url"]
+                    .rstrip("/").rsplit("/", 1)[-1], cache))
+            ).get(pk["name"], []),
         }
         _write(os.path.join(out, "species", f"{dex:03d}-{pk['name']}.json"), species)
         n_species += 1
@@ -508,6 +575,108 @@ def build_from_rest(out: str, cache: str, *, delay: float = 0.0, log=print) -> N
         if delay:
             time.sleep(delay)
     log(f"  {n_species} species written")
+
+
+# ── full-catalog builders (CSV source) ───────────────────────────────
+
+def _build_abilities_csv(out: str, cache: str, log) -> None:
+    prose = {int(r["ability_id"]): r["short_effect"]
+             for r in _csv_rows("ability_prose.csv", cache)
+             if r["local_language_id"] == "9"}
+    abilities = {}
+    for r in _csv_rows("abilities.csv", cache):
+        aid = int(r["id"])
+        if aid >= 10000 or int(r["generation_id"]) > GEN \
+                or r.get("is_main_series") == "0":
+            continue
+        abilities[r["identifier"]] = {
+            "name": r["identifier"].replace("-", " ").title(),
+            "generation": int(r["generation_id"]),
+            "short_effect": prose.get(aid, ""),
+        }
+    _write(os.path.join(out, "abilities.json"), abilities)
+    log(f"  abilities.json written ({len(abilities)} abilities)")
+
+
+def _build_items_csv(out: str, cache: str, log) -> None:
+    pockets = {int(r["id"]): r["identifier"]
+               for r in _csv_rows("item_pockets.csv", cache)}
+    cats = {int(r["id"]): (r["identifier"], pockets.get(int(r["pocket_id"]), "misc"))
+            for r in _csv_rows("item_categories.csv", cache)}
+    prose = {int(r["item_id"]): r["short_effect"]
+             for r in _csv_rows("item_prose.csv", cache)
+             if r["local_language_id"] == "9"}
+    flags = {int(r["id"]): r["identifier"]
+             for r in _csv_rows("item_flags.csv", cache)}
+    flag_map: dict[int, set] = {}
+    for r in _csv_rows("item_flag_map.csv", cache):
+        flag_map.setdefault(int(r["item_id"]), set()).add(
+            flags[int(r["item_flag_id"])])
+    gen_of: dict[int, int] = {}
+    for r in _csv_rows("item_game_indices.csv", cache):
+        iid = int(r["item_id"])
+        g = int(r["generation_id"])
+        gen_of[iid] = min(gen_of.get(iid, 99), g)
+
+    items = {}
+    for r in _csv_rows("items.csv", cache):
+        iid = int(r["id"])
+        if gen_of.get(iid, 99) > GEN:
+            continue  # doesn't exist in any Gen 1-5 game
+        ident = r["identifier"]
+        category, pocket = cats.get(int(r["category_id"]), ("unknown", "misc"))
+        fl = flag_map.get(iid, set())
+        rec = {
+            "name": ident.replace("-", " ").title(),
+            "category": category,
+            "pocket": pocket,
+            "cost": int(r["cost"] or 0),
+            "fling_power": int(r["fling_power"] or 0),
+            "holdable": bool(fl & {"holdable", "holdable-passive",
+                                   "holdable-active"}),
+            "battle_usable": "usable-in-battle" in fl,
+            "short_effect": prose.get(iid, ""),
+        }
+        rec.update(mechanics_for(ident))
+        items[ident] = rec
+    _write(os.path.join(out, "items.json"), items)
+    log(f"  items.json written ({len(items)} items, full Gen 1-5 catalog)")
+
+
+# ── full-catalog builders (REST source) ──────────────────────────────
+
+def _build_abilities_rest(out: str, cache: str, *, delay: float, log) -> None:
+    abilities = {}
+    listing = _rest("ability?limit=400", cache)["results"]
+    for entry in listing:
+        rec = ability_record_from_rest(_rest(f"ability/{entry['name']}", cache))
+        if rec:
+            abilities[rec[0]] = rec[1]
+        if delay:
+            time.sleep(delay)
+    _write(os.path.join(out, "abilities.json"), abilities)
+    log(f"  abilities.json written ({len(abilities)} abilities)")
+
+
+def _build_items_rest(out: str, cache: str, *, delay: float, log) -> None:
+    pocket_of: dict[str, str] = {}
+    for cat in _rest("item-category?limit=100", cache)["results"]:
+        cd = _rest(f"item-category/{cat['name']}", cache)
+        pocket_of[cat["name"]] = cd.get("pocket", {}).get("name", "misc")
+    items = {}
+    listing = _rest("item?limit=2200", cache)["results"]
+    for i, entry in enumerate(listing):
+        d = _rest(f"item/{entry['name']}", cache)
+        pocket = pocket_of.get(d.get("category", {}).get("name", ""), "misc")
+        rec = item_record_from_rest(d, pocket)
+        if rec:
+            items[rec[0]] = rec[1]
+        if delay:
+            time.sleep(delay)
+        if (i + 1) % 250 == 0:
+            log(f"  ...{i + 1}/{len(listing)} items")
+    _write(os.path.join(out, "items.json"), items)
+    log(f"  items.json written ({len(items)} items, full Gen 1-5 catalog)")
 
 
 def fetch_sprites(out: str, cache: str, *, log=print) -> None:

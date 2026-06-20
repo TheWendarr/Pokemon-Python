@@ -128,5 +128,13 @@
    "scald",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "whiscash",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

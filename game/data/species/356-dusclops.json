@@ -169,5 +169,13 @@
    "round",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "dusknoir",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

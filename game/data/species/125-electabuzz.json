@@ -133,5 +133,13 @@
    "volt-switch",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "electivire",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

@@ -137,5 +137,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "crawdaunt",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

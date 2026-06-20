@@ -150,5 +150,13 @@
    "telekinesis",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "haunter",
+   "trigger": "level-up",
+   "level": 25,
+   "item": null
+  }
+ ]
 }

@@ -9,7 +9,11 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
- "flags": [],
+ "short_effect": "Heals the user by half its max HP.  Affected by weather.",
+ "flags": [
+  "heal",
+  "snatch"
+ ],
  "effect": {
   "kind": "heal",
   "ailment": null,

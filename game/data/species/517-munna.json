@@ -154,5 +154,13 @@
    "telekinesis",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "musharna",
+   "trigger": "use-item",
+   "level": null,
+   "item": "moon-stone"
+  }
+ ]
 }

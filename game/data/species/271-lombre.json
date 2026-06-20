@@ -121,5 +121,13 @@
    "echoed-voice",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "ludicolo",
+   "trigger": "use-item",
+   "level": null,
+   "item": "water-stone"
+  }
+ ]
 }

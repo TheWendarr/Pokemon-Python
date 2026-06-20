@@ -3,8 +3,7 @@
  "name": "Cottonee",
  "dex": 546,
  "types": [
-  "grass",
-  "fairy"
+  "grass"
  ],
  "base_stats": {
   "hp": 40,
@@ -135,5 +134,13 @@
    "grass-knot",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "whimsicott",
+   "trigger": "use-item",
+   "level": null,
+   "item": "sun-stone"
+  }
+ ]
 }

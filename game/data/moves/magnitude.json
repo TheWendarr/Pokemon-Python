@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "all-other-pokemon",
  "crit_stage": 0,
+ "short_effect": "Power varies randomly from 10 to 150.",
  "flags": [
   "mirror",
   "non-sky-battle",

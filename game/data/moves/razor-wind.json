@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "all-opponents",
  "crit_stage": 1,
+ "short_effect": "Requires a turn to charge before attacking.",
  "flags": [
   "charge",
   "mirror",

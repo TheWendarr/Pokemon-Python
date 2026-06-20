@@ -136,5 +136,13 @@
    "struggle-bug",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "flygon",
+   "trigger": "level-up",
+   "level": 45,
+   "item": null
+  }
+ ]
 }

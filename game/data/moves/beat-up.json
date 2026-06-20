@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Hits once for every conscious Pok\u00e9mon the trainer has.",
  "flags": [
   "mirror",
   "protect"

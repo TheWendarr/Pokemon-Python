@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "Heals the user by half its max HP.",
  "flags": [
   "heal",
   "snatch"

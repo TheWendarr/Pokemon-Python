@@ -167,5 +167,6 @@
    "echoed-voice",
    "ally-switch"
   ]
- }
+ },
+ "evolves_to": []
 }

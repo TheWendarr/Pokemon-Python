@@ -129,5 +129,13 @@
    "round",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "gigalith",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

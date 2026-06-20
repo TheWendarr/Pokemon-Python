@@ -135,5 +135,13 @@
    "u-turn",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "yanmega",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

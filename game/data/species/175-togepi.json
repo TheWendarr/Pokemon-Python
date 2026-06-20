@@ -3,7 +3,7 @@
  "name": "Togepi",
  "dex": 175,
  "types": [
-  "fairy"
+  "normal"
  ],
  "base_stats": {
   "hp": 35,
@@ -150,5 +150,13 @@
    "incinerate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "togetic",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

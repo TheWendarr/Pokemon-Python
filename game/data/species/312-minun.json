@@ -140,5 +140,6 @@
    "volt-switch",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": []
 }

@@ -133,5 +133,13 @@
    "acrobatics",
    "struggle-bug"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "ledian",
+   "trigger": "level-up",
+   "level": 18,
+   "item": null
+  }
+ ]
 }

@@ -152,5 +152,13 @@
    "volt-switch",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "magnezone",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

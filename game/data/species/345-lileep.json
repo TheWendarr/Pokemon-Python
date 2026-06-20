@@ -127,5 +127,13 @@
    "smack-down",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "cradily",
+   "trigger": "level-up",
+   "level": 40,
+   "item": null
+  }
+ ]
 }

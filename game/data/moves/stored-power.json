@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Power is higher the more the user\u2019s stats have been raised, to a maximum of 31\u00d7.",
  "flags": [
   "mirror",
   "protect"

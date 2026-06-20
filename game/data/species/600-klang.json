@@ -133,5 +133,13 @@
    "volt-switch",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "klinklang",
+   "trigger": "level-up",
+   "level": 49,
+   "item": null
+  }
+ ]
 }

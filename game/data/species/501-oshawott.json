@@ -137,5 +137,13 @@
    "scald",
    "retaliate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "dewott",
+   "trigger": "level-up",
+   "level": 17,
+   "item": null
+  }
+ ]
 }

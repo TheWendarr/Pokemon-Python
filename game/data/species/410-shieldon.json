@@ -135,5 +135,13 @@
    "incinerate",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "bastiodon",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

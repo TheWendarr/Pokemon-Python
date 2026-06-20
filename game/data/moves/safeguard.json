@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "users-field",
  "crit_stage": 0,
+ "short_effect": "Protects the user\u2019s field from major status ailments and confusion for five turns.",
  "flags": [
   "snatch"
  ],

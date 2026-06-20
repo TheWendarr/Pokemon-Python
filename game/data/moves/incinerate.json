@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "all-opponents",
  "crit_stage": 0,
+ "short_effect": "Destroys the target\u2019s held berry.",
  "flags": [
   "mirror",
   "protect"

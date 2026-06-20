@@ -159,5 +159,13 @@
    "struggle-bug",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "gliscor",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

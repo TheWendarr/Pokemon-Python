@@ -154,5 +154,13 @@
    "round",
    "ally-switch"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "xatu",
+   "trigger": "level-up",
+   "level": 25,
+   "item": null
+  }
+ ]
 }

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "entire-field",
  "crit_stage": 0,
+ "short_effect": "Disables moves and immunities that involve flying or levitating for five turns.",
  "flags": [
   "non-sky-battle"
  ],

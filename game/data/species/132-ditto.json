@@ -31,5 +31,6 @@
   "egg": [],
   "tutor": [],
   "machine": []
- }
+ },
+ "evolves_to": []
 }

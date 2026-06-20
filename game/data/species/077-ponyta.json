@@ -126,5 +126,13 @@
    "incinerate",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "rapidash",
+   "trigger": "level-up",
+   "level": 40,
+   "item": null
+  }
+ ]
 }

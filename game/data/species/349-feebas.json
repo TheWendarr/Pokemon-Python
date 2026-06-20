@@ -81,5 +81,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "milotic",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

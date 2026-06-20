@@ -103,5 +103,13 @@
    "round",
    "retaliate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "nuzleaf",
+   "trigger": "level-up",
+   "level": 14,
+   "item": null
+  }
+ ]
 }

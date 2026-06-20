@@ -15,7 +15,6 @@
  },
  "abilities": [
   "snow-cloak",
-  "slush-rush",
   "rattled"
  ],
  "base_experience": 61,
@@ -135,5 +134,13 @@
    "echoed-voice",
    "frost-breath"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "beartic",
+   "trigger": "level-up",
+   "level": 37,
+   "item": null
+  }
+ ]
 }

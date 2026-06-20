@@ -148,5 +148,13 @@
    "round",
    "incinerate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "chandelure",
+   "trigger": "use-item",
+   "level": null,
+   "item": "dusk-stone"
+  }
+ ]
 }

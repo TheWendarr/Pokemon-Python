@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "User pays half its max HP to max out its Attack.",
  "flags": [
   "snatch"
  ],

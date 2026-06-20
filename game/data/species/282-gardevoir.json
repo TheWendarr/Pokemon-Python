@@ -3,8 +3,7 @@
  "name": "Gardevoir",
  "dex": 282,
  "types": [
-  "psychic",
-  "fairy"
+  "psychic"
  ],
  "base_stats": {
   "hp": 68,
@@ -167,5 +166,6 @@
    "echoed-voice",
    "ally-switch"
   ]
- }
+ },
+ "evolves_to": []
 }

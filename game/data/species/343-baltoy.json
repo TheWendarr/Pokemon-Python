@@ -150,5 +150,13 @@
    "ally-switch",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "claydol",
+   "trigger": "level-up",
+   "level": 36,
+   "item": null
+  }
+ ]
 }

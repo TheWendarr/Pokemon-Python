@@ -140,5 +140,13 @@
    "scald",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "wailord",
+   "trigger": "level-up",
+   "level": 40,
+   "item": null
+  }
+ ]
 }

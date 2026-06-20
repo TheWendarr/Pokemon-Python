@@ -128,5 +128,13 @@
    "round",
    "frost-breath"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "vanillish",
+   "trigger": "level-up",
+   "level": 35,
+   "item": null
+  }
+ ]
 }

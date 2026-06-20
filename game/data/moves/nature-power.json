@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Uses a move which depends upon the terrain.",
  "flags": [],
  "effect": {
   "kind": "unique",

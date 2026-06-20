@@ -122,5 +122,13 @@
    "round",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "boldore",
+   "trigger": "level-up",
+   "level": 25,
+   "item": null
+  }
+ ]
 }

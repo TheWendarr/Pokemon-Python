@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "users-field",
  "crit_stage": 0,
+ "short_effect": "Protects the user\u2019s stats from being changed by enemy moves.",
  "flags": [
   "snatch"
  ],

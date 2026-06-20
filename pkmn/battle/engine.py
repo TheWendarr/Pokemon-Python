@@ -40,7 +40,8 @@ class BattleError(Exception):
 
 class BattleEngine:
     def __init__(self, data: GameData, party1: list, party2: list, *,
-                 wild: bool = False, rng: Optional[random.Random] = None):
+                 wild: bool = False, rng: Optional[random.Random] = None,
+                 dex_caught: int = 0):
         if not party1 or not party2:
             raise BattleError("Both sides need at least one Pokemon")
         self.data = data
@@ -57,6 +58,7 @@ class BattleEngine:
         self.turn = 0
         self.run_attempts = 0
         self.caught_pokemon: Optional[PokemonState] = None
+        self.dex_caught = dex_caught         # species owned -> critical-capture rate
         self.weather: Optional[str] = None  # 'rain'|'sun'|'sandstorm'|'hail'
         self.weather_turns = 0              # -1 == ability weather (no expiry)
         self.sides = {P1: SideState(), P2: SideState()}
@@ -446,14 +448,51 @@ class BattleEngine:
             events.append(Event(E.ITEM_FAILED, side, {"item": action.item_id,
                                                       "reason": "unknown_item"}))
             return
-        if item.category == "ball":
+        if item.is_ball:
             self._do_catch(side, CatchAction(item.id), events)
             return
         idx = action.target_index if action.target_index >= 0 else self.active_idx[side]
         target = self.parties[side][idx]
+        if item.revive:
+            # default to the first fainted party member when untargeted
+            if not target.fainted:
+                target = next((bp for bp in self.parties[side] if bp.fainted),
+                              target)
+            if not target.fainted:
+                events.append(Event(E.ITEM_FAILED, side,
+                                    {"item": item.name, "reason": "no_effect"}))
+                return
+            events.append(Event(E.ITEM_USED, side, {"item": item.name,
+                                                    "pokemon": target.name}))
+            target.state.current_hp = max(1, int(target.max_hp * item.revive))
+            target.status = None
+            target._faint_announced = False
+            events.append(Event(E.HEAL, side, {"pokemon": target.name,
+                                               "amount": target.current_hp,
+                                               "remaining_hp": target.current_hp}))
+            return
         events.append(Event(E.ITEM_USED, side, {"item": item.name,
                                                 "pokemon": target.name}))
         did = False
+        active = self.active(side)
+        for stat, change in item.stages:
+            applied = active.modify_stage(stat, change)
+            if applied:
+                events.append(Event(E.STAT_CHANGE, side,
+                                    {"pokemon": active.name, "stat": stat,
+                                     "change": applied,
+                                     "stage": active.stages[stat]}))
+                did = True
+        if item.crit and active.vol.crit_bonus < item.crit:
+            active.vol.crit_bonus = item.crit
+            events.append(Event(E.STAT_CHANGE, side,
+                                {"pokemon": active.name, "stat": "crit_rate",
+                                 "change": item.crit, "stage": item.crit}))
+            did = True
+        if item.guard and self.sides[side].mist <= 0:
+            self.sides[side].mist = 5
+            events.append(Event(E.SCREEN_START, side, {"screen": "mist"}))
+            did = True
         if item.heal and not target.fainted:
             amount = target.max_hp if item.heal == -1 else item.heal
             healed = target.heal(amount)
@@ -506,21 +545,31 @@ class BattleEngine:
                         "burn": 1.5, "poison": 1.5, "toxic": 1.5}.get(target.status, 1.0)
         a = ((3 * m - 2 * h) * target.species.catch_rate * ball_rate) / (3 * m)
         a *= status_bonus
+        # Gen 5 critical capture: likelier the more species you've caught.
+        c_mult = (0.0 if self.dex_caught <= 30 else 0.5 if self.dex_caught <= 150
+                  else 1.0 if self.dex_caught <= 300 else 1.5 if self.dex_caught <= 450
+                  else 2.0 if self.dex_caught <= 600 else 2.5)
+        critical = False
         if a >= 255:
-            caught = True
-            shakes = 3
+            caught, shakes = True, 3
         else:
             b = int(65536 / ((255 / max(a, 1e-9)) ** 0.1875))
-            shakes = 0
-            caught = True
-            for _ in range(4):
-                if self.rng.randint(0, 65535) < b:
-                    shakes += 1
-                else:
-                    caught = False
-                    break
+            crit_chance = min(255, int(a * c_mult) // 6)
+            critical = self.rng.randint(0, 255) < crit_chance
+            if critical:                       # one decisive shake, then resolve
+                caught = self.rng.randint(0, 65535) < b
+                shakes = 1
+            else:
+                shakes, caught = 0, True
+                for _ in range(4):
+                    if self.rng.randint(0, 65535) < b:
+                        shakes += 1
+                    else:
+                        caught = False
+                        break
         for s in range(min(shakes, 3)):
-            events.append(Event(E.CATCH_SHAKE, side, {"shake": s + 1}))
+            events.append(Event(E.CATCH_SHAKE, side,
+                                {"shake": s + 1, "critical": critical}))
         if caught:
             events.append(Event(E.CATCH_SUCCESS, side, {"pokemon": target.name}))
             self.caught_pokemon = target.state

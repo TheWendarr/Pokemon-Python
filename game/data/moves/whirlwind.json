@@ -9,6 +9,7 @@
  "priority": -6,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Immediately ends wild battles.  Forces trainers to switch Pok\u00e9mon.",
  "flags": [
   "authentic",
   "mirror",

@@ -132,5 +132,13 @@
    "round",
    "incinerate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "magmar",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

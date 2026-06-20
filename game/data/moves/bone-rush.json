@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Hits 2-5 times in one turn.",
  "flags": [
   "mirror",
   "protect"

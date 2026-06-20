@@ -13,67 +13,49 @@ import os
 import random
 
 os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
+import sys
+
 import pygame  # noqa: E402
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import art  # noqa: E402
 
 OUT = "game/assets"
 T = 16
 
 # tile ids (0-based in tsx; GID = id+1 in tmx)
-GRASS, TALL, PATH, WATER, TREE, WALL, ROOF, DOOR, FLOWER, FENCE, SIGN, SAND = range(12)
-BLOCKED = {WATER, TREE, WALL, ROOF, FENCE, SIGN}
+(GRASS, TALL, PATH, WATER, TREE, WALL, ROOF, DOOR, FLOWER, FENCE, SIGN,
+ SAND, FLOOR, WALL_INT, RUG, COUNTER) = range(16)
+BLOCKED = {WATER, TREE, WALL, ROOF, FENCE, SIGN, WALL_INT, COUNTER}
 
 
 def make_tiles() -> None:
-    rng = random.Random(7)
-    sheet = pygame.Surface((12 * T, T))
+    sheet = pygame.Surface((16 * T, T))
 
-    def tile(i):
+    def cell(i):
         return sheet.subsurface((i * T, 0, T, T))
 
-    def speckle(s, color, n=10):
-        for _ in range(n):
-            s.set_at((rng.randrange(T), rng.randrange(T)), color)
-
-    g = tile(GRASS); g.fill((124, 188, 92)); speckle(g, (108, 172, 80), 14)
-    tg = tile(TALL); tg.fill((84, 152, 68))
-    for x in range(2, T, 5):
-        pygame.draw.lines(tg, (56, 118, 48), False,
-                          [(x, 13), (x + 1, 6), (x + 2, 13)])
-    p = tile(PATH); p.fill((216, 196, 144)); speckle(p, (200, 180, 128), 12)
-    w = tile(WATER); w.fill((84, 140, 216))
-    for y in (4, 10):
-        pygame.draw.line(w, (140, 188, 240), (2, y), (7, y))
-        pygame.draw.line(w, (140, 188, 240), (9, y + 3), (14, y + 3))
-    tr = tile(TREE); tr.fill((124, 188, 92))
-    pygame.draw.rect(tr, (110, 80, 48), (6, 10, 4, 6))
-    pygame.draw.circle(tr, (44, 108, 52), (8, 7), 7)
-    pygame.draw.circle(tr, (60, 132, 64), (6, 5), 4)
-    wl = tile(WALL); wl.fill((196, 196, 200))
-    for y in (5, 11):
-        pygame.draw.line(wl, (150, 150, 158), (0, y), (15, y))
-    for x in (4, 9, 13):
-        pygame.draw.line(wl, (150, 150, 158), (x, 0), (x, 5))
-        pygame.draw.line(wl, (150, 150, 158), ((x + 3) % 16, 6), ((x + 3) % 16, 11))
-    rf = tile(ROOF); rf.fill((196, 84, 76))
-    for y in (4, 9, 14):
-        pygame.draw.line(rf, (160, 60, 56), (0, y), (15, y))
-    d = tile(DOOR); d.fill((196, 196, 200))
-    pygame.draw.rect(d, (124, 84, 52), (3, 2, 10, 14))
-    pygame.draw.rect(d, (92, 60, 36), (3, 2, 10, 14), 1)
-    d.set_at((11, 9), (232, 208, 96))
-    fl = tile(FLOWER); fl.fill((124, 188, 92))
-    for cx, cy, col in ((4, 4, (232, 120, 152)), (11, 8, (240, 220, 110)),
-                        (5, 12, (232, 120, 152))):
-        pygame.draw.circle(fl, col, (cx, cy), 2)
-    fn = tile(FENCE); fn.fill((124, 188, 92))
-    pygame.draw.rect(fn, (148, 110, 70), (1, 6, 14, 3))
-    for x in (2, 7, 12):
-        pygame.draw.rect(fn, (124, 90, 56), (x, 4, 2, 9))
-    sg = tile(SIGN); sg.fill((124, 188, 92))
-    pygame.draw.rect(sg, (124, 90, 56), (7, 8, 2, 7))
-    pygame.draw.rect(sg, (172, 132, 84), (3, 2, 10, 7))
-    pygame.draw.rect(sg, (120, 88, 52), (3, 2, 10, 7), 1)
-    sd = tile(SAND); sd.fill((232, 216, 168)); speckle(sd, (214, 196, 148), 10)
+    GR = (116, 180, 96)
+    art.grass(cell(GRASS), GR, seed=GRASS)
+    art.tall_grass(cell(TALL), GR, seed=TALL)
+    art.path(cell(PATH), (210, 190, 140), seed=PATH)
+    art.water(cell(WATER), (72, 132, 206), seed=WATER)
+    art.tree(cell(TREE), GR, seed=TREE)
+    art.brick_wall(cell(WALL))
+    art.roof(cell(ROOF))
+    door = cell(DOOR)
+    art.brick_wall(door)
+    pygame.draw.rect(door, (60, 40, 28), (5, 4, 6, 12))
+    pygame.draw.rect(door, (94, 64, 44), (6, 5, 4, 11))
+    pygame.draw.circle(door, (232, 200, 90), (9, 10), 1)
+    art.flower(cell(FLOWER), GR, seed=FLOWER)
+    art.fence(cell(FENCE), GR, seed=FENCE)
+    art.sign(cell(SIGN), GR, seed=SIGN)
+    art.sand(cell(SAND), (226, 204, 150), seed=SAND)
+    art.floor(cell(FLOOR))
+    art.brick_wall(cell(WALL_INT), base=(176, 154, 132))
+    art.rug(cell(RUG))
+    art.counter(cell(COUNTER))
 
     pygame.image.save(sheet, f"{OUT}/tiles.png")
 
@@ -87,33 +69,19 @@ def make_tiles() -> None:
                  f'</properties></tile>')
     tsx = (f'<?xml version="1.0" encoding="UTF-8"?>\n'
            f'<tileset version="1.10" name="tiles" tilewidth="{T}" '
-           f'tileheight="{T}" tilecount="12" columns="12">\n'
-           f' <image source="tiles.png" width="{12*T}" height="{T}"/>\n'
+           f'tileheight="{T}" tilecount="16" columns="16">\n'
+           f' <image source="tiles.png" width="{16*T}" height="{T}"/>\n'
            + "\n".join(props) + "\n</tileset>\n")
     open(f"{OUT}/tiles.tsx", "w").write(tsx)
 
 
 def make_sprites() -> None:
-    def strip(shirt, hair):
-        s = pygame.Surface((4 * T, T), pygame.SRCALPHA)
-        for i, facing in enumerate(("down", "up", "left", "right")):
-            x0 = i * T
-            pygame.draw.rect(s, shirt, (x0 + 4, 8, 8, 6))           # body
-            pygame.draw.rect(s, (44, 48, 64), (x0 + 4, 14, 3, 2))   # feet
-            pygame.draw.rect(s, (44, 48, 64), (x0 + 9, 14, 3, 2))
-            pygame.draw.circle(s, (244, 212, 176), (x0 + 8, 5), 4)  # head
-            pygame.draw.rect(s, hair, (x0 + 4, 1, 9, 3))            # hair
-            eye = (32, 32, 40)
-            if facing == "down":
-                s.set_at((x0 + 6, 5), eye); s.set_at((x0 + 10, 5), eye)
-            elif facing == "left":
-                s.set_at((x0 + 5, 5), eye)
-            elif facing == "right":
-                s.set_at((x0 + 11, 5), eye)
-        return s
-
-    pygame.image.save(strip((200, 60, 60), (60, 40, 32)), f"{OUT}/player.png")
-    pygame.image.save(strip((70, 110, 200), (96, 72, 48)), f"{OUT}/npc.png")
+    pygame.image.save(art.character_sheet(
+        skin=(240, 206, 168), hair=(70, 50, 44),
+        shirt=(196, 72, 72), pants=(60, 72, 110)), f"{OUT}/player.png")
+    pygame.image.save(art.character_sheet(
+        skin=(228, 186, 150), hair=(96, 72, 48),
+        shirt=(70, 110, 200), pants=(70, 74, 86)), f"{OUT}/npc.png")
 
 
 # ── maps ─────────────────────────────────────────────────────────────
@@ -182,10 +150,8 @@ def make_town() -> None:
         ("npc", 8, 12, {"display": "Maple", "facing": "down",
                         "dialog": "Welcome to Hexton!|Tall grass north of "
                                   "town is full of wild Pokemon."}),
-        ("npc", 7, 7, {"display": "Nurse Hazel", "facing": "down",
-                       "heal": True,
-                       "dialog": "Your Pokemon look tired.|There. "
-                                 "They're fighting fit again!"}),
+        ("warp", 6, 6, {"to_map": "house", "to_x": 4, "to_y": 4,
+                        "facing": "up"}),
         ("sign", 9, 8, {"dialog": "HEXTON - Where small things add up."}),
     ]
     tmx("town", g, objects)
@@ -215,8 +181,84 @@ def make_route1() -> None:
         ("warp", 12, 17, {"to_map": "town", "to_x": 12, "to_y": 1,
                           "facing": "down"}),
         ("sign", 11, 2, {"dialog": "ROUTE 1 - Hexton lies to the south."}),
+        ("npc", 13, 5, {"display": "Hugh", "facing": "left",
+                        "script": "rival_after"}),
+        ("trigger", 11, 5, {"script": "rival_battle",
+                            "unless_flag": "beat_rival"}),
+        ("trigger", 12, 5, {"script": "rival_battle",
+                            "unless_flag": "beat_rival"}),
+        ("trainer", 18, 9, {"display": "Youngster Cole", "facing": "down",
+                            "sight": 3, "party": "patrat:5|lillipup:5",
+                            "prize": 300, "flag": "beat_cole",
+                            "before": "Cole: My Pokemon and I never lose"
+                                      " in the grass!",
+                            "after": "Cole: I need to train more..."}),
     ]
     tmx("route1", g, objects)
+
+
+def make_house() -> None:
+    w, h = 9, 8
+    g = [[FLOOR] * w for _ in range(h)]
+    for x in range(w):
+        g[0][x] = g[1][x] = WALL_INT
+        g[h - 1][x] = WALL_INT
+    for y in range(h):
+        g[y][0] = g[y][w - 1] = WALL_INT
+    for x in range(2, 7):
+        g[3][x] = COUNTER
+    g[6][4] = RUG                                    # exit mat
+    objects = [
+        ("spawn", 4, 4, {}),
+        ("warp", 4, 6, {"to_map": "town", "to_x": 6, "to_y": 7,
+                        "facing": "down"}),
+        ("npc", 4, 2, {"display": "Nurse Hazel", "facing": "down",
+                       "script": "nurse_heal"}),
+        ("sign", 3, 3, {"dialog": "Hexton free clinic. All Pokemon welcome."}),
+        ("sign", 6, 3, {"script": "pc_access"}),
+    ]
+    tmx("house", g, objects)
+
+
+def make_scripts() -> None:
+    json.dump({
+        "nurse_heal": [
+            {"say": "Nurse Hazel: Welcome!|Shall I heal your Pokemon?"},
+            {"heal": True},
+            {"say": "Nurse Hazel: There you go!|They're fighting fit again."},
+        ],
+        "rival_battle": [
+            {"face_npc": {"name": "Hugh", "facing": "left"}},
+            {"say": "Hugh: Hey! Hold up!|You got a Pokemon from the lab"
+                    " too, right?|Let's see what it can do!"},
+            {"battle": {"trainer": "Rival Hugh", "party": "snivy:8",
+                        "prize": 500, "flag": "beat_rival"}},
+            {"say": "Hugh: Hmph. Not bad at all.|Take care of that"
+                    " partner of yours."},
+            {"give_item": {"item": "potion", "qty": 2}},
+            {"say": "Hugh handed over two Potions!"},
+        ],
+        "pc_access": [
+            {"say": "Booting up the storage PC..."},
+            {"pc": True},
+        ],
+        "rival_after": [
+            {"if_flag": "beat_rival",
+             "then": [{"say": "Hugh: I'm off to train.|Next time will be"
+                              " different."}],
+             "else": [{"say": "Hugh: ..."}]},
+        ],
+    }, open(f"{OUT}/scripts.json", "w"), indent=1)
+
+
+def make_manifest() -> None:
+    json.dump({
+        "name": "Hexton (reference region)",
+        "start": {"map": "town", "facing": "down"},
+        "starter": {"species": "oshawott", "level": 12},
+        "bag": {"potion": 5, "poke-ball": 10},
+        "money": 1500,
+    }, open(f"{OUT}/game.json", "w"), indent=1)
 
 
 def make_encounters() -> None:
@@ -238,6 +280,9 @@ def main() -> None:
     make_sprites()
     make_town()
     make_route1()
+    make_house()
+    make_scripts()
+    make_manifest()
     make_encounters()
     print("assets written to", OUT)
 

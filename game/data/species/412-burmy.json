@@ -47,5 +47,19 @@
    "electroweb"
   ],
   "machine": []
- }
+ },
+ "evolves_to": [
+  {
+   "species": "wormadam",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  },
+  {
+   "species": "mothim",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  }
+ ]
 }

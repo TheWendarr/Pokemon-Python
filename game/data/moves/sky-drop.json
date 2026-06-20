@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Carries the target high into the air, dodging all attacks against either, and drops it next turn.",
  "flags": [
   "charge",
   "contact",

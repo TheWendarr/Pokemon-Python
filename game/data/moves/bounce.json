@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "User bounces high into the air, dodging all attacks, and hits next turn.",
  "flags": [
   "charge",
   "contact",

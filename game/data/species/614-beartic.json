@@ -15,7 +15,6 @@
  },
  "abilities": [
   "snow-cloak",
-  "slush-rush",
   "swift-swim"
  ],
  "base_experience": 177,
@@ -162,5 +161,6 @@
    "bulldoze",
    "frost-breath"
   ]
- }
+ },
+ "evolves_to": []
 }

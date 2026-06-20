@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Causes a one-hit KO.",
  "flags": [
   "mirror",
   "non-sky-battle",

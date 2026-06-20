@@ -152,5 +152,13 @@
    "bulldoze",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "krokorok",
+   "trigger": "level-up",
+   "level": 29,
+   "item": null
+  }
+ ]
 }

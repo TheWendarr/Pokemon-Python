@@ -128,5 +128,13 @@
    "venoshock",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "weepinbell",
+   "trigger": "level-up",
+   "level": 21,
+   "item": null
+  }
+ ]
 }

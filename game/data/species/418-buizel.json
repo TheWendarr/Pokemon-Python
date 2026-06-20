@@ -132,5 +132,13 @@
    "echoed-voice",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "floatzel",
+   "trigger": "level-up",
+   "level": 26,
+   "item": null
+  }
+ ]
 }

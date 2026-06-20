@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Scatters money on the ground worth five times the user\u2019s level.",
  "flags": [
   "mirror",
   "protect"

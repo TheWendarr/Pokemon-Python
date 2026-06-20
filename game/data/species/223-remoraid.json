@@ -132,5 +132,13 @@
    "scald",
    "incinerate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "octillery",
+   "trigger": "level-up",
+   "level": 25,
+   "item": null
+  }
+ ]
 }

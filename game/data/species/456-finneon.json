@@ -130,5 +130,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "lumineon",
+   "trigger": "level-up",
+   "level": 31,
+   "item": null
+  }
+ ]
 }

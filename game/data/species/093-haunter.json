@@ -148,5 +148,13 @@
    "telekinesis",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "gengar",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

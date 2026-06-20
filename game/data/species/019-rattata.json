@@ -136,5 +136,13 @@
    "work-up",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "raticate",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  }
+ ]
 }

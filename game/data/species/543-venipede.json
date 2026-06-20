@@ -120,5 +120,13 @@
    "round",
    "struggle-bug"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "whirlipede",
+   "trigger": "level-up",
+   "level": 22,
+   "item": null
+  }
+ ]
 }

@@ -166,5 +166,13 @@
    "bulldoze",
    "dragon-tail"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "steelix",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

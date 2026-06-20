@@ -115,5 +115,13 @@
    "round",
    "echoed-voice"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "chimecho",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

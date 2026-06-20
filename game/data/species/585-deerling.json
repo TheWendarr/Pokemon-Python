@@ -135,5 +135,13 @@
    "work-up",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "sawsbuck",
+   "trigger": "level-up",
+   "level": 34,
+   "item": null
+  }
+ ]
 }

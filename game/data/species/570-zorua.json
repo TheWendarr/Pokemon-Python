@@ -147,5 +147,13 @@
    "retaliate",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "zoroark",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

@@ -110,5 +110,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "staraptor",
+   "trigger": "level-up",
+   "level": 34,
+   "item": null
+  }
+ ]
 }

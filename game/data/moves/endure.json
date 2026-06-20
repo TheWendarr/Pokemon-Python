@@ -9,6 +9,7 @@
  "priority": 4,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "Prevents the user\u2019s HP from lowering below 1 this turn.",
  "flags": [],
  "effect": {
   "kind": "unique",

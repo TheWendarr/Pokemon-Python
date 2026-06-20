@@ -146,5 +146,13 @@
    "venoshock",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "cacturne",
+   "trigger": "level-up",
+   "level": 32,
+   "item": null
+  }
+ ]
 }

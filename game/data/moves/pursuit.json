@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Has double power against, and can hit, Pok\u00e9mon attempting to switch out.",
  "flags": [
   "contact",
   "mirror",

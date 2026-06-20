@@ -147,5 +147,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "infernape",
+   "trigger": "level-up",
+   "level": 36,
+   "item": null
+  }
+ ]
 }

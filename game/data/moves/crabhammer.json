@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 1,
+ "short_effect": "Has an increased chance for a critical hit.",
  "flags": [
   "contact",
   "mirror",

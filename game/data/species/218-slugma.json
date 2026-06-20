@@ -129,5 +129,13 @@
    "round",
    "incinerate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "magcargo",
+   "trigger": "level-up",
+   "level": 38,
+   "item": null
+  }
+ ]
 }

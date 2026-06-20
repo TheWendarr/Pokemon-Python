@@ -50,6 +50,10 @@ class PokemonState:
     status: Optional[str] = None
     nickname: Optional[str] = None
     held_item: Optional[str] = None
+    exp: int = -1                    # -1 -> set to curve total on bind
+    gender: str = "genderless"       # 'male' | 'female' | 'genderless'
+    shiny: bool = False
+    friendship: int = 70
 
     # Derived (filled by bind()):
     stats: dict = field(default_factory=dict, repr=False)
@@ -68,13 +72,17 @@ class PokemonState:
         if self.current_hp < 0:
             self.current_hp = self.max_hp
         self.current_hp = min(self.current_hp, self.max_hp)
+        if self.exp < 0:
+            from .experience import exp_total
+            self.exp = exp_total(self.species.growth_rate, self.level)
         return self
 
     @staticmethod
     def generate(data: GameData, species_id, level: int, *,
                  ivs: Optional[dict] = None, evs: Optional[dict] = None,
                  nature: Optional[str] = None, ability: Optional[str] = None,
-                 moves: Optional[list] = None,
+                 moves: Optional[list] = None, gender: Optional[str] = None,
+                 shiny: Optional[bool] = None, friendship: Optional[int] = None,
                  rng: Optional[random.Random] = None) -> "PokemonState":
         """Build a Pokemon the way the games do: random IVs, zero EVs,
         random nature/ability, last four level-up moves."""
@@ -85,6 +93,14 @@ class PokemonState:
         evs = {s: (evs or {}).get(s, 0) for s in STAT_KEYS}
         nature = nature or rng.choice(sorted(data.natures.keys()))
         ability = ability or (rng.choice(species.abilities) if species.abilities else "")
+        gr = species.gender_rate                         # eighths female; -1 none
+        if gender is None:
+            gender = ("genderless" if gr < 0 else
+                      "female" if rng.randint(1, 8) <= gr else "male")
+        if shiny is None:
+            shiny = (rng.randint(1, 4096) == 1)          # modern shiny odds
+        if friendship is None:
+            friendship = 70
         if moves is None:
             moves = species.level_up_moves(level)[-4:]  # last four learned
         slots = []
@@ -96,7 +112,8 @@ class PokemonState:
         if not slots:
             slots.append(MoveSlot("tackle", 35, 35))
         ps = PokemonState(species_id=species.id, level=level, ivs=ivs, evs=evs,
-                          nature=nature, ability=ability, moves=slots)
+                          nature=nature, ability=ability, moves=slots,
+                          gender=gender, shiny=shiny, friendship=friendship)
         return ps.bind(data)
 
     # ── accessors ────────────────────────────────────────────────────
@@ -147,6 +164,10 @@ class PokemonState:
             "status": self.status,
             "nickname": self.nickname,
             "held_item": self.held_item,
+            "exp": self.exp,
+            "gender": self.gender,
+            "shiny": self.shiny,
+            "friendship": self.friendship,
         }
 
     @staticmethod
@@ -170,9 +191,62 @@ class PokemonState:
             status=d.get("status"),
             nickname=d.get("nickname"),
             held_item=d.get("held_item"),
+            exp=int(d.get("exp", -1)),
+            gender=d.get("gender", "genderless"),
+            shiny=bool(d.get("shiny", False)),
+            friendship=int(d.get("friendship", 70)),
         )
         # Fill missing IV/EV keys so partial save data can't KeyError.
         from ..data.models import norm_stat
         ps.ivs = {s: int(ps.ivs.get(s, ps.ivs.get(norm_stat(s), 0))) for s in STAT_KEYS}
         ps.evs = {s: int(ps.evs.get(s, 0)) for s in STAT_KEYS}
         return ps.bind(data)
+
+
+# ── growth (Phase 5) ─────────────────────────────────────────────────
+
+def _grow(state: "PokemonState", data) -> dict:
+    """Process pending level-ups after an exp change. Returns
+    {'levels': [...], 'moves': [...], 'evolution': species_id|None}."""
+    from .experience import exp_total
+    out = {"levels": [], "moves": [], "full_moves": [], "evolution": None}
+    sp = state.species
+    while state.level < 100 and state.exp >= exp_total(sp.growth_rate,
+                                                       state.level + 1):
+        state.level += 1
+        out["levels"].append(state.level)
+        for e in sp.learnset.get("level_up", []):
+            if e.level != state.level or not data.has_move(e.move) \
+                    or state.move_slot(e.move) is not None:
+                continue
+            if len(state.moves) < 4:
+                md = data.move(e.move)
+                state.moves.append(MoveSlot(md.id, md.pp, md.pp))
+                out["moves"].append(md.id)
+            else:
+                out["full_moves"].append(e.move)  # needs a replacement prompt
+    if out["levels"]:
+        old_max = state.max_hp
+        state.bind(data)                       # recalc stats at new level
+        state.current_hp = min(state.max_hp,
+                               state.current_hp + state.max_hp - old_max)
+        for evo in sp.evolves_to:
+            if evo.get("trigger") == "level-up" and evo.get("level") \
+                    and state.level >= evo["level"]:
+                out["evolution"] = evo["species"]
+    return out
+
+
+def gain_exp(state: "PokemonState", data, amount: int) -> dict:
+    if state.level >= 100:
+        return {"levels": [], "moves": [], "full_moves": [], "evolution": None}
+    state.exp += max(0, int(amount))
+    return _grow(state, data)
+
+
+def evolve(state: "PokemonState", data, target_species: str) -> None:
+    old_max = state.max_hp
+    state.species_id = target_species
+    state.bind(data)
+    state.current_hp = min(state.max_hp,
+                           state.current_hp + state.max_hp - old_max)

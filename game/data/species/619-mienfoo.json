@@ -150,5 +150,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "mienshao",
+   "trigger": "level-up",
+   "level": 50,
+   "item": null
+  }
+ ]
 }

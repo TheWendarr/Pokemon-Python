@@ -1,0 +1,28 @@
+{
+ "engine_version": 1,
+ "name": "Isleton (example region)",
+ "start": {
+  "map": "isle_town",
+  "facing": "down"
+ },
+ "starter": {
+  "species": "totodile",
+  "level": 14
+ },
+ "bag": {
+  "potion": 3,
+  "poke-ball": 5
+ },
+ "money": 800,
+ "dex": [
+  "totodile",
+  "croconaw",
+  "feraligatr",
+  "krabby",
+  "kingler",
+  "wingull",
+  "pelipper",
+  "slowpoke",
+  "slowbro"
+ ]
+}

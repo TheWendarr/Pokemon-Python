@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "all-other-pokemon",
  "crit_stage": 0,
+ "short_effect": "Inflicts regular damage and can hit Dig users.",
  "flags": [
   "mirror",
   "non-sky-battle",

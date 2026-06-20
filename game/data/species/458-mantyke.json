@@ -134,5 +134,13 @@
    "acrobatics",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "mantine",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

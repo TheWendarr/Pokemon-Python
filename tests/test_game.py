@@ -66,8 +66,9 @@ def test_map_loads_with_queries_and_objects(game):
     assert game.state.tile == (11, 13)          # spawn object honored
     assert ow.map.blocked(0, 0)                 # border tree
     assert not ow.map.blocked(11, 12)           # path
-    assert len(ow.map.npcs) == 2
+    assert len(ow.map.npcs) == 1                # Maple (nurse is indoors)
     assert (11, 0) in ow.map.warps
+    assert (6, 6) in ow.map.warps               # house door
 
 
 def test_collision_blocks_movement(game):
@@ -85,6 +86,7 @@ def test_warp_transitions_between_maps(game):
 
 def test_grass_encounter_pushes_battle(game):
     ow = game.top
+    game.state.flags.add("beat_rival")   # don't ambush this walk (Phase 4)
     assert ow.map.id == "town"
     walk(game, UP, 14)
     walk(game, UP, 11)                          # row ~3-5, beside tall grass
@@ -156,28 +158,49 @@ def test_whiteout_heals_and_returns_home(game):
             break
         press(game, A)
     assert b.eng.winner == "p2"
-    assert game.state.map_id == "town"
+    assert game.state.map_id == game.manifest["start"]["map"]  # not hardcoded
     assert starter.current_hp == starter.max_hp  # healed on whiteout
+
+
+def test_whiteout_destination_is_manifest_driven():
+    # The engine never hardcodes a return map. With no 'whiteout' in the
+    # manifest it falls back to the start location; an explicit 'whiteout'
+    # overrides. (The old code sent every region to a literal "town",
+    # which isn't even a map in Triad.)
+    g = Game(headless=True, seed=1, game_dir="examples/triad")
+    assert g.whiteout_location()[0] == "verdant"           # == start map
+    g.manifest["whiteout"] = {"map": "duston", "facing": "up"}
+    assert g.whiteout_location() == ("duston", None, "up")
+    import pygame
+    pygame.quit()
+
+
+def test_manifest_without_starter_begins_with_empty_party():
+    from pkmn.game.state import GameState
+    g = Game(headless=True, seed=1, game_dir="examples/triad")
+    st = GameState.new_game(g.data, manifest={"start": {"map": "verdant"}},
+                            seed=1)
+    assert st.party == []                                  # no invented species
+    import pygame
+    pygame.quit()
 
 
 # ── dialog / NPCs ────────────────────────────────────────────────────
 
-def test_npc_dialog_and_nurse_heal(game):
+def test_npc_dialog_turns_to_face_player(game):
     ow = game.top
-    game.state.party[0].current_hp = 3
-    nurse = next(n for n in ow.npcs if n.heal)
-    game.state.tile = (nurse.tile[0], nurse.tile[1] + 1)
+    maple = ow.npcs[0]
+    game.state.tile = (maple.tile[0], maple.tile[1] + 1)
     game.state.facing = "up"
     press(game, A)
     assert isinstance(game.top, DialogScene)
-    assert nurse.facing == "down"                # turned to face the player
+    assert maple.facing == "down"                # turned to face the player
     for _ in range(10):
         if not isinstance(game.top, DialogScene):
             break
         press(game, A)
         game.draw()
     assert isinstance(game.top, OverworldScene)
-    assert game.state.party[0].current_hp == game.state.party[0].max_hp
 
 
 def test_sign_reads(game):

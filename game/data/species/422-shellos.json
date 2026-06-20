@@ -110,5 +110,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "gastrodon",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

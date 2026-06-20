@@ -9,6 +9,7 @@
  "priority": -5,
  "target": "specific-move",
  "crit_stage": 0,
+ "short_effect": "Inflicts twice the damage the user received from the last special hit it took.",
  "flags": [
   "protect"
  ],

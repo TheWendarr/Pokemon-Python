@@ -134,5 +134,13 @@
    "grass-knot",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "lilligant",
+   "trigger": "use-item",
+   "level": null,
+   "item": "sun-stone"
+  }
+ ]
 }

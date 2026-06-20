@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "Cleanses the user of a burn, paralysis, or poison.",
  "flags": [
   "snatch"
  ],

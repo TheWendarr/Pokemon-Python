@@ -127,5 +127,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "swanna",
+   "trigger": "level-up",
+   "level": 35,
+   "item": null
+  }
+ ]
 }

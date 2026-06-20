@@ -3,8 +3,7 @@
  "name": "Marill",
  "dex": 183,
  "types": [
-  "water",
-  "fairy"
+  "water"
  ],
  "base_stats": {
   "hp": 70,
@@ -144,5 +143,13 @@
    "scald",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "azumarill",
+   "trigger": "level-up",
+   "level": 18,
+   "item": null
+  }
+ ]
 }

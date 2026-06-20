@@ -9,6 +9,7 @@
  "priority": 2,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "User switches places with the friendly Pok\u00e9mon opposite it.",
  "flags": [],
  "effect": {
   "kind": "unique",

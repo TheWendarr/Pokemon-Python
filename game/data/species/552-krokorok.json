@@ -158,5 +158,13 @@
    "bulldoze",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "krookodile",
+   "trigger": "level-up",
+   "level": 40,
+   "item": null
+  }
+ ]
 }

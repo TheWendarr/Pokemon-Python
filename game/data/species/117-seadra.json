@@ -120,5 +120,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "kingdra",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

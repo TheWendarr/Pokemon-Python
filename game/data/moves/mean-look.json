@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Prevents the target from leaving battle.",
  "flags": [
   "mirror",
   "reflectable"

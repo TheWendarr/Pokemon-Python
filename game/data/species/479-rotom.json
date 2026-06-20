@@ -122,5 +122,6 @@
    "round",
    "volt-switch"
   ]
- }
+ },
+ "evolves_to": []
 }

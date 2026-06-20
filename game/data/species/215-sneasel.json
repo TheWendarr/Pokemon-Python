@@ -165,5 +165,13 @@
    "retaliate",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "weavile",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

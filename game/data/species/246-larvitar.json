@@ -142,5 +142,13 @@
    "bulldoze",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "pupitar",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

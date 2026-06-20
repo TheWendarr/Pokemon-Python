@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Drains half the damage inflicted to heal the user.",
  "flags": [
   "contact",
   "heal",

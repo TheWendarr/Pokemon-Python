@@ -145,5 +145,13 @@
    "incinerate",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "graveler",
+   "trigger": "level-up",
+   "level": 25,
+   "item": null
+  }
+ ]
 }

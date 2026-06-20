@@ -142,5 +142,13 @@
    "dragon-tail",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "zweilous",
+   "trigger": "level-up",
+   "level": 50,
+   "item": null
+  }
+ ]
 }

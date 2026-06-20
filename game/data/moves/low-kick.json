@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Inflicts more damage to heavier targets, with a maximum of 120 power.",
  "flags": [
   "contact",
   "mirror",

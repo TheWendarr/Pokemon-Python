@@ -36,5 +36,13 @@
    "iron-head"
   ],
   "machine": []
- }
+ },
+ "evolves_to": [
+  {
+   "species": "metang",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  }
+ ]
 }

@@ -9,6 +9,7 @@
  "priority": 4,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "Prevents any moves from hitting the user this turn.",
  "flags": [],
  "effect": {
   "kind": "unique",

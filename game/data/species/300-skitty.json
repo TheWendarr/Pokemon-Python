@@ -157,5 +157,13 @@
    "work-up",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "delcatty",
+   "trigger": "use-item",
+   "level": null,
+   "item": "moon-stone"
+  }
+ ]
 }

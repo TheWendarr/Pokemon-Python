@@ -140,5 +140,13 @@
    "scald",
    "retaliate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "samurott",
+   "trigger": "level-up",
+   "level": 36,
+   "item": null
+  }
+ ]
 }

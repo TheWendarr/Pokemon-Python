@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Inflicts more damage when the user has less HP remaining, with a maximum of 200 power.",
  "flags": [
   "contact",
   "mirror",

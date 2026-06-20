@@ -47,5 +47,19 @@
    "electroweb"
   ],
   "machine": []
- }
+ },
+ "evolves_to": [
+  {
+   "species": "silcoon",
+   "trigger": "level-up",
+   "level": 7,
+   "item": null
+  },
+  {
+   "species": "cascoon",
+   "trigger": "level-up",
+   "level": 7,
+   "item": null
+  }
+ ]
 }

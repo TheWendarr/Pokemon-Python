@@ -136,5 +136,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "jellicent",
+   "trigger": "level-up",
+   "level": 40,
+   "item": null
+  }
+ ]
 }

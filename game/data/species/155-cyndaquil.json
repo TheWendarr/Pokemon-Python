@@ -132,5 +132,13 @@
    "incinerate",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "quilava",
+   "trigger": "level-up",
+   "level": 17,
+   "item": null
+  }
+ ]
 }

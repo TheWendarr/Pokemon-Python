@@ -125,5 +125,13 @@
    "round",
    "frost-breath"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "abomasnow",
+   "trigger": "level-up",
+   "level": 40,
+   "item": null
+  }
+ ]
 }

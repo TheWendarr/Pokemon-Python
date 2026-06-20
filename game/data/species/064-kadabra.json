@@ -150,5 +150,13 @@
    "round",
    "ally-switch"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "alakazam",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

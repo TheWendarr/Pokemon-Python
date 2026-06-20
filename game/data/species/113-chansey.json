@@ -178,5 +178,13 @@
    "work-up",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "blissey",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

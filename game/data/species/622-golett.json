@@ -139,5 +139,13 @@
    "round",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "golurk",
+   "trigger": "level-up",
+   "level": 43,
+   "item": null
+  }
+ ]
 }

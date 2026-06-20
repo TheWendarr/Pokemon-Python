@@ -143,5 +143,6 @@
    "scald",
    "quash"
   ]
- }
+ },
+ "evolves_to": []
 }

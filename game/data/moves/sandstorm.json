@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "entire-field",
  "crit_stage": 0,
+ "short_effect": "Changes the weather to a sandstorm for five turns.",
  "flags": [],
  "effect": {
   "kind": "whole-field-effect",

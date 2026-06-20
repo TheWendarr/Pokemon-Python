@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "User vanishes, dodging all attacks, and hits next turn.  Hits through Protect and Detect.",
  "flags": [
   "charge",
   "contact",

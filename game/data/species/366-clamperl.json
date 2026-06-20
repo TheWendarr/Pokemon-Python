@@ -85,5 +85,19 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "huntail",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  },
+  {
+   "species": "gorebyss",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

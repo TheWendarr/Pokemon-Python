@@ -148,5 +148,13 @@
    "echoed-voice",
    "frost-breath"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "jynx",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

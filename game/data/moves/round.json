@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Has double power if it\u2019s used more than once per turn.",
  "flags": [
   "authentic",
   "mirror",

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Prevents the target from using the same move twice in a row.",
  "flags": [
   "authentic",
   "mental",

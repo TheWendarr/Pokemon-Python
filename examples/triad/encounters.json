@@ -1,0 +1,74 @@
+{
+ "route_canopy": [
+  {
+   "species": "sewaddle",
+   "min": 7,
+   "max": 9,
+   "weight": 35
+  },
+  {
+   "species": "venipede",
+   "min": 7,
+   "max": 9,
+   "weight": 25
+  },
+  {
+   "species": "petilil",
+   "min": 8,
+   "max": 10,
+   "weight": 20
+  },
+  {
+   "species": "pidove",
+   "min": 7,
+   "max": 10,
+   "weight": 20
+  }
+ ],
+ "route_shoreline": [
+  {
+   "species": "tympole",
+   "min": 9,
+   "max": 11,
+   "weight": 45
+  },
+  {
+   "species": "basculin",
+   "min": 10,
+   "max": 12,
+   "weight": 30
+  },
+  {
+   "species": "ducklett",
+   "min": 9,
+   "max": 11,
+   "weight": 25
+  }
+ ],
+ "route_mirage": [
+  {
+   "species": "sandile",
+   "min": 10,
+   "max": 12,
+   "weight": 30
+  },
+  {
+   "species": "dwebble",
+   "min": 10,
+   "max": 12,
+   "weight": 30
+  },
+  {
+   "species": "trapinch",
+   "min": 10,
+   "max": 12,
+   "weight": 25
+  },
+  {
+   "species": "maractus",
+   "min": 11,
+   "max": 13,
+   "weight": 15
+  }
+ ]
+}

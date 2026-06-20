@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "With Grass Pledge, halves opposing Pok\u00e9mon\u2019s Speed for four turns.",
  "flags": [
   "mirror",
   "non-sky-battle",

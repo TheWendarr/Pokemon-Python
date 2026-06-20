@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user-and-allies",
  "crit_stage": 0,
+ "short_effect": "Cures the entire party of major status effects.",
  "flags": [
   "authentic",
   "distance",

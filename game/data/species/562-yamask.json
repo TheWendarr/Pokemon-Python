@@ -139,5 +139,13 @@
    "telekinesis",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "cofagrigus",
+   "trigger": "level-up",
+   "level": 34,
+   "item": null
+  }
+ ]
 }

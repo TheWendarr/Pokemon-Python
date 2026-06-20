@@ -138,5 +138,13 @@
    "telekinesis",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "dusclops",
+   "trigger": "level-up",
+   "level": 37,
+   "item": null
+  }
+ ]
 }

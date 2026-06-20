@@ -15,7 +15,6 @@
  },
  "abilities": [
   "frisk",
-  "competitive",
   "shadow-tag"
  ],
  "base_experience": 137,
@@ -161,5 +160,13 @@
    "telekinesis",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "gothitelle",
+   "trigger": "level-up",
+   "level": 41,
+   "item": null
+  }
+ ]
 }

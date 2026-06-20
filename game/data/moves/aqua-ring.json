@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "Restores 1/16 of the user\u2019s max HP each turn.",
  "flags": [
   "snatch"
  ],

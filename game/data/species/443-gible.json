@@ -125,5 +125,13 @@
    "incinerate",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "gabite",
+   "trigger": "level-up",
+   "level": 24,
+   "item": null
+  }
+ ]
 }

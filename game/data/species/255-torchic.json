@@ -126,5 +126,13 @@
    "echoed-voice",
    "incinerate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "combusken",
+   "trigger": "level-up",
+   "level": 16,
+   "item": null
+  }
+ ]
 }

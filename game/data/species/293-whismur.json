@@ -123,5 +123,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "loudred",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  }
+ ]
 }

@@ -146,5 +146,13 @@
    "telekinesis",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "banette",
+   "trigger": "level-up",
+   "level": 37,
+   "item": null
+  }
+ ]
 }

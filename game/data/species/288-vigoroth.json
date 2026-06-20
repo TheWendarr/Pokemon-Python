@@ -132,5 +132,13 @@
    "bulldoze",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "slaking",
+   "trigger": "level-up",
+   "level": 36,
+   "item": null
+  }
+ ]
 }

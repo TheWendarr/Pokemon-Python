@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "User foregoes its next turn to recharge.",
  "flags": [
   "ballistics",
   "mirror",

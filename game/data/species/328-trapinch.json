@@ -140,5 +140,13 @@
    "struggle-bug",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "vibrava",
+   "trigger": "level-up",
+   "level": 35,
+   "item": null
+  }
+ ]
 }

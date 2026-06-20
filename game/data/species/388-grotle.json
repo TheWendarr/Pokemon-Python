@@ -116,5 +116,13 @@
    "grass-knot",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "torterra",
+   "trigger": "level-up",
+   "level": 32,
+   "item": null
+  }
+ ]
 }

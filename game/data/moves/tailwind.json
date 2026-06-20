@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "users-field",
  "crit_stage": 0,
+ "short_effect": "For three turns, friendly Pok\u00e9mon have doubled Speed.",
  "flags": [
   "snatch"
  ],

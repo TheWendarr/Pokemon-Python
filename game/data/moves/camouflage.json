@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "User\u2019s type changes to match the terrain.",
  "flags": [
   "snatch"
  ],

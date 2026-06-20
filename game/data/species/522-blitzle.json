@@ -119,5 +119,13 @@
    "volt-switch",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "zebstrika",
+   "trigger": "level-up",
+   "level": 27,
+   "item": null
+  }
+ ]
 }

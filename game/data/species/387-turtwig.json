@@ -128,5 +128,13 @@
    "grass-knot",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "grotle",
+   "trigger": "level-up",
+   "level": 18,
+   "item": null
+  }
+ ]
 }

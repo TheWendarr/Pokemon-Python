@@ -18,11 +18,22 @@ from . import passives
 TYPELESS = "typeless"  # Struggle / confusion self-hit
 
 
+def _variable_power(attacker, move) -> int:
+    """Power for moves whose base power is computed from battle state.
+    Return scales up with friendship; Frustration scales up as it drops."""
+    fr = getattr(getattr(attacker, "state", None), "friendship", 70)
+    if move.id == "return":
+        return max(1, fr * 2 // 5)             # up to 102 at max friendship
+    if move.id == "frustration":
+        return max(1, (255 - fr) * 2 // 5)     # up to 102 at min friendship
+    return move.power or 0
+
+
 def calc_damage(data, attacker, defender, move, *, rng, crit: bool = False,
                 weather: str | None = None, screened: bool = False,
                 power_mult: float = 1.0) -> tuple[int, dict]:
     """Returns (damage, detail). Assumes immunity was checked by caller."""
-    power = move.power or 0
+    power = _variable_power(attacker, move)
     if power <= 0:
         return 0, {"effectiveness": 1.0, "crit": False}
     power = max(1, int(power * power_mult

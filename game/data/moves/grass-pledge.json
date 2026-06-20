@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "With Fire Pledge, damages opposing Pok\u00e9mon for 1/8 their max HP every turn for four turns.",
  "flags": [
   "mirror",
   "non-sky-battle",

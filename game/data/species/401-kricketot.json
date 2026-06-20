@@ -48,5 +48,13 @@
    "bug-bite"
   ],
   "machine": []
- }
+ },
+ "evolves_to": [
+  {
+   "species": "kricketune",
+   "trigger": "level-up",
+   "level": 10,
+   "item": null
+  }
+ ]
 }

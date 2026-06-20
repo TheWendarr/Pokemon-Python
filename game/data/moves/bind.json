@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Prevents the target from fleeing and inflicts damage for 2-5 turns.",
  "flags": [
   "contact",
   "mirror",

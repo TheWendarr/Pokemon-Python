@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Target falls in love if it has the opposite gender, and has a 50% chance to refuse attacking the user.",
  "flags": [
   "authentic",
   "mental",

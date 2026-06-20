@@ -3,8 +3,7 @@
  "name": "Wigglytuff",
  "dex": 40,
  "types": [
-  "normal",
-  "fairy"
+  "normal"
  ],
  "base_stats": {
   "hp": 140,
@@ -16,7 +15,6 @@
  },
  "abilities": [
   "cute-charm",
-  "competitive",
   "frisk"
  ],
  "base_experience": 196,
@@ -115,5 +113,6 @@
    "work-up",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": []
 }

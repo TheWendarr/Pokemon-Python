@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "Transfers 1/4 of the user\u2019s max HP into a doll, protecting the user from further damage or status changes until it breaks.",
  "flags": [
   "non-sky-battle",
   "snatch"

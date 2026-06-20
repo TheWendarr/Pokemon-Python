@@ -139,5 +139,13 @@
    "dragon-tail",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "hydreigon",
+   "trigger": "level-up",
+   "level": 64,
+   "item": null
+  }
+ ]
 }

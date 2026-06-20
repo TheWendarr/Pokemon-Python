@@ -128,5 +128,13 @@
    "round",
    "incinerate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "magmortar",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

@@ -55,5 +55,13 @@
   "egg": [],
   "tutor": [],
   "machine": []
- }
+ },
+ "evolves_to": [
+  {
+   "species": "wobbuffet",
+   "trigger": "level-up",
+   "level": 15,
+   "item": null
+  }
+ ]
 }

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Power increases against targets with more raised stats, up to a maximum of 200.",
  "flags": [
   "contact",
   "mirror",

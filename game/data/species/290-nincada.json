@@ -107,5 +107,19 @@
    "round",
    "struggle-bug"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "ninjask",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  },
+  {
+   "species": "shedinja",
+   "trigger": "shed",
+   "level": null,
+   "item": null
+  }
+ ]
 }

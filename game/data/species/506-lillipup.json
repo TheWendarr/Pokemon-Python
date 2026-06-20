@@ -128,5 +128,13 @@
    "wild-charge",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "herdier",
+   "trigger": "level-up",
+   "level": 16,
+   "item": null
+  }
+ ]
 }

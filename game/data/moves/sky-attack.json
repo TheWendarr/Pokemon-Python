@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 1,
+ "short_effect": "User charges for one turn before attacking.  Has a chance to make the target flinch.",
  "flags": [
   "charge",
   "distance",

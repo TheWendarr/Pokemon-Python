@@ -127,5 +127,13 @@
    "wild-charge",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "stoutland",
+   "trigger": "level-up",
+   "level": 32,
+   "item": null
+  }
+ ]
 }

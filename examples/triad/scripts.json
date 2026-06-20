@@ -1,0 +1,209 @@
+{
+ "heal_verdant": [
+  {
+   "say": "Nurse Ivy: Let's get that team rested."
+  },
+  {
+   "heal": true
+  },
+  {
+   "say": "Nurse Ivy: Green and growing again!"
+  }
+ ],
+ "heal_mistral": [
+  {
+   "say": "Nurse Brooke: Let's get that team rested."
+  },
+  {
+   "heal": true
+  },
+  {
+   "say": "Nurse Brooke: Fresh as lake mist!"
+  }
+ ],
+ "heal_duston": [
+  {
+   "say": "Nurse Opal: Let's get that team rested."
+  },
+  {
+   "heal": true
+  },
+  {
+   "say": "Nurse Opal: Tough as desert glass!"
+  }
+ ],
+ "shop_verdant": [
+  {
+   "say": "Pip: Basics for the canopy, cheap and cheerful."
+  },
+  {
+   "shop": {
+    "items": [
+     "potion",
+     "poke-ball",
+     "antidote"
+    ]
+   }
+  }
+ ],
+ "shop_mistral": [
+  {
+   "say": "Moa: Imports! Only the good stuff."
+  },
+  {
+   "shop": {
+    "items": [
+     "super-potion",
+     "great-ball",
+     "awakening"
+    ],
+    "prices": {
+     "great-ball": 500
+    }
+   }
+  }
+ ],
+ "shop_duston": [
+  {
+   "say": "Rye: Storm gear and stronger medicine."
+  },
+  {
+   "shop": {
+    "items": [
+     "super-potion",
+     "great-ball",
+     "revive",
+     "paralyze-heal"
+    ]
+   }
+  }
+ ],
+ "rowan_hints": [
+  {
+   "if_flag": "finished_triad",
+   "then": [
+    {
+     "say": "Rowan: Champion of the Triad! The three roads remember you."
+    }
+   ],
+   "else": [
+    {
+     "say": "Rowan: Three cities, three roads, three wardens.|Beat Fern and Gale, then face the Sheriff in Duston."
+    }
+   ]
+  }
+ ],
+ "canopy_item": [
+  {
+   "say": "There's a Super Potion tucked in the roots!"
+  },
+  {
+   "give_item": {
+    "item": "super-potion",
+    "qty": 1
+   }
+  },
+  {
+   "set_flag": "got_canopy_potion"
+  }
+ ],
+ "frillish_gift": [
+  {
+   "if_flag": "took_frillish",
+   "then": [
+    {
+     "say": "Old Salt: How fares the little drifter?"
+    }
+   ],
+   "else": [
+    {
+     "say": "Old Salt: This Frillish followed my boat home."
+    },
+    {
+     "choice": {
+      "prompt": "Take the Frillish?",
+      "options": [
+       {
+        "label": "Yes",
+        "then": [
+         {
+          "give_pokemon": {
+           "species": "frillish",
+           "level": 10
+          }
+         },
+         {
+          "set_flag": "took_frillish"
+         },
+         {
+          "say": "You received a Frillish!"
+         }
+        ]
+       },
+       {
+        "label": "No",
+        "then": [
+         {
+          "say": "Old Salt: Suit yourself. It'll keep drifting."
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sheriff_cinder": [
+  {
+   "if_flag": "finished_triad",
+   "then": [
+    {
+     "say": "Cinder: This town's in good hands, Champion."
+    }
+   ],
+   "else": [
+    {
+     "if_flag": "beat_fern",
+     "then": [
+      {
+       "if_flag": "beat_gale",
+       "then": [
+        {
+         "say": "Cinder: Fern's woods. Gale's waters.|Now face Duston's fire!"
+        },
+        {
+         "battle": {
+          "trainer": "Sheriff Cinder",
+          "party": "sandile:13@focus-sash|dwebble:13|darumaka:13@oran-berry",
+          "prize": 1500,
+          "flag": "beat_cinder"
+         }
+        },
+        {
+         "say": "Cinder: The Triad has a new Champion!"
+        },
+        {
+         "give_money": 1000
+        },
+        {
+         "set_flag": "finished_triad"
+        }
+       ],
+       "else": [
+        {
+         "say": "Cinder: Gale still rules the lake. Come back stronger."
+        }
+       ]
+      }
+     ],
+     "else": [
+      {
+       "say": "Cinder: Start with Warden Fern in Verdant. Then we'll talk."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

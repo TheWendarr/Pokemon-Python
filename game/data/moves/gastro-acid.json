@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Nullifies target\u2019s ability until it leaves battle.",
  "flags": [
   "mirror",
   "protect",

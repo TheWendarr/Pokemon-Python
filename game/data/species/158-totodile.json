@@ -150,5 +150,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "croconaw",
+   "trigger": "level-up",
+   "level": 18,
+   "item": null
+  }
+ ]
 }

@@ -137,5 +137,13 @@
    "psyshock",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "porygon2",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

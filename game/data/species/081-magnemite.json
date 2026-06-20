@@ -134,5 +134,13 @@
    "volt-switch",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "magneton",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

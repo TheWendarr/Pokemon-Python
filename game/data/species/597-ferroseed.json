@@ -134,5 +134,13 @@
    "hone-claws",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "ferrothorn",
+   "trigger": "level-up",
+   "level": 40,
+   "item": null
+  }
+ ]
 }

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Inflicts regular damage and can hit Pok\u00e9mon in the air.",
  "flags": [
   "distance",
   "mirror",

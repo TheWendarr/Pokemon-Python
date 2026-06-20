@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="22" height="14" tilewidth="16" tileheight="16" infinite="0" nextobjectid="99">
+ <tileset firstgid="1" source="../tiles.tsx"/>
+ <layer id="1" name="ground" width="22" height="14">
+  <data encoding="csv">
+6,6,6,3,3,6,6,6,6,6,6,6,6,6,6,6,6,3,3,6,6,6,
+6,8,8,3,3,8,8,8,8,8,8,8,8,8,8,8,8,3,3,8,8,6,
+6,8,8,3,3,8,8,8,8,8,8,8,8,8,8,8,8,3,3,8,8,6,
+6,8,8,3,3,8,8,13,13,13,13,8,8,13,13,13,13,3,3,8,8,6,
+6,8,8,3,3,8,8,12,12,12,12,8,8,12,12,12,12,3,3,8,8,6,
+6,8,8,3,3,8,8,8,8,8,8,8,8,8,8,8,8,3,3,8,8,6,
+6,8,8,3,3,8,8,8,8,8,8,8,8,8,8,8,8,3,3,8,8,6,
+6,8,8,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,8,8,6,
+6,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,6,
+6,8,8,8,8,8,8,8,8,11,8,8,8,8,8,8,8,8,8,8,8,6,
+6,8,8,8,8,8,14,8,8,8,8,16,8,8,8,14,8,8,8,8,8,6,
+6,8,8,8,8,8,8,8,8,8,14,8,8,8,8,8,8,8,8,8,8,6,
+6,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,6,
+6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+</data>
+ </layer>
+ <objectgroup id="2" name="objects">
+  <object id="1" name="warp" x="48" y="0" width="16" height="16"><properties><property name="to_map" value="route_mirage"/><property name="to_x" type="int" value="22"/><property name="to_y" type="int" value="14"/><property name="facing" value="up"/></properties></object>
+  <object id="2" name="warp" x="64" y="0" width="16" height="16"><properties><property name="to_map" value="route_mirage"/><property name="to_x" type="int" value="23"/><property name="to_y" type="int" value="14"/><property name="facing" value="up"/></properties></object>
+  <object id="3" name="warp" x="272" y="0" width="16" height="16"><properties><property name="to_map" value="route_shoreline"/><property name="to_x" type="int" value="13"/><property name="to_y" type="int" value="16"/><property name="facing" value="up"/></properties></object>
+  <object id="4" name="warp" x="288" y="0" width="16" height="16"><properties><property name="to_map" value="route_shoreline"/><property name="to_x" type="int" value="14"/><property name="to_y" type="int" value="16"/><property name="facing" value="up"/></properties></object>
+  <object id="5" name="spawn" x="176" y="128" width="16" height="16"><properties></properties></object>
+  <object id="6" name="npc" x="128" y="80" width="16" height="16"><properties><property name="display" value="Nurse Opal"/><property name="facing" value="down"/><property name="script" value="heal_duston"/></properties></object>
+  <object id="7" name="npc" x="224" y="80" width="16" height="16"><properties><property name="display" value="Clerk Rye"/><property name="facing" value="down"/><property name="script" value="shop_duston"/></properties></object>
+  <object id="8" name="npc" x="176" y="144" width="16" height="16"><properties><property name="display" value="Sheriff Cinder"/><property name="facing" value="down"/><property name="script" value="sheriff_cinder"/></properties></object>
+  <object id="9" name="sign" x="144" y="144" width="16" height="16"><properties><property name="dialog" value="DUSTON CITY - Last law before the badlands.|NW: Mirage Crossing. NE: Shoreline Run."/></properties></object>
+ </objectgroup>
+</map>

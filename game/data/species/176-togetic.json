@@ -3,7 +3,7 @@
  "name": "Togetic",
  "dex": 176,
  "types": [
-  "fairy",
+  "normal",
   "flying"
  ],
  "base_stats": {
@@ -159,5 +159,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "togekiss",
+   "trigger": "use-item",
+   "level": null,
+   "item": "shiny-stone"
+  }
+ ]
 }

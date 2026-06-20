@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "User becomes a copy of the target until it leaves battle.",
  "flags": [],
  "effect": {
   "kind": "unique",

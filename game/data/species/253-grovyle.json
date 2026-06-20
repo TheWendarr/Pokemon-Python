@@ -133,5 +133,13 @@
    "round",
    "acrobatics"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "sceptile",
+   "trigger": "level-up",
+   "level": 36,
+   "item": null
+  }
+ ]
 }

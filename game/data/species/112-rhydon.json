@@ -163,5 +163,13 @@
    "bulldoze",
    "dragon-tail"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "rhyperior",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "User swaps Defense and Special Defense changes with the target.",
  "flags": [
   "authentic",
   "mirror",

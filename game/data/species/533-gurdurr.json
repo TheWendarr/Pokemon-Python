@@ -145,5 +145,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "conkeldurr",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

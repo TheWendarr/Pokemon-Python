@@ -149,5 +149,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "gurdurr",
+   "trigger": "level-up",
+   "level": 25,
+   "item": null
+  }
+ ]
 }

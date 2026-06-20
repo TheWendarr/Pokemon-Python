@@ -15,7 +15,6 @@
  },
  "abilities": [
   "frisk",
-  "competitive",
   "shadow-tag"
  ],
  "base_experience": 221,
@@ -165,5 +164,6 @@
    "low-sweep",
    "round"
   ]
- }
+ },
+ "evolves_to": []
 }

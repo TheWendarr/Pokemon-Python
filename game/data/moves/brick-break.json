@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Destroys Reflect and Light Screen.",
  "flags": [
   "contact",
   "mirror",

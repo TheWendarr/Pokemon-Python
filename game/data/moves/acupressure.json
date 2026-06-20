@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user-or-ally",
  "crit_stage": 0,
+ "short_effect": "Raises one of a friendly Pok\u00e9mon\u2019s stats at random by two stages.",
  "flags": [],
  "effect": {
   "kind": "unique",

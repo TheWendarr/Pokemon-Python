@@ -124,5 +124,13 @@
    "retaliate",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "sharpedo",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

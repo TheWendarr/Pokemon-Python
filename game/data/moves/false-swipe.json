@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Cannot lower the target\u2019s HP below 1.",
  "flags": [
   "contact",
   "mirror",

@@ -154,5 +154,13 @@
    "telekinesis",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "reuniclus",
+   "trigger": "level-up",
+   "level": 41,
+   "item": null
+  }
+ ]
 }

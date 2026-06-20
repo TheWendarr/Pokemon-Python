@@ -1,0 +1,44 @@
+{
+ "meadow": [
+  {
+   "species": "sentret",
+   "min": 3,
+   "max": 5,
+   "weight": 60
+  },
+  {
+   "species": "hoothoot",
+   "min": 3,
+   "max": 5,
+   "weight": 40
+  }
+ ],
+ "glade": [
+  {
+   "species": "hoppip",
+   "min": 4,
+   "max": 6,
+   "weight": 50
+  },
+  {
+   "species": "sunkern",
+   "min": 4,
+   "max": 6,
+   "weight": 50
+  }
+ ],
+ "dell": [
+  {
+   "species": "pidgey",
+   "min": 4,
+   "max": 6,
+   "weight": 55
+  },
+  {
+   "species": "caterpie",
+   "min": 3,
+   "max": 5,
+   "weight": 45
+  }
+ ]
+}

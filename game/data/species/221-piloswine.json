@@ -144,5 +144,13 @@
    "round",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "mamoswine",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

@@ -3,8 +3,7 @@
  "name": "Ralts",
  "dex": 280,
  "types": [
-  "psychic",
-  "fairy"
+  "psychic"
  ],
  "base_stats": {
   "hp": 28,
@@ -157,5 +156,13 @@
    "echoed-voice",
    "ally-switch"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "kirlia",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  }
+ ]
 }

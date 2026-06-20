@@ -15,7 +15,6 @@
  },
  "abilities": [
   "levitate",
-  "neutralizing-gas",
   "stench"
  ],
  "base_experience": 68,
@@ -134,5 +133,13 @@
    "round",
    "incinerate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "weezing",
+   "trigger": "level-up",
+   "level": 35,
+   "item": null
+  }
+ ]
 }

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "Allows the trainer to switch out the user and pass effects along to its replacement.",
  "flags": [],
  "effect": {
   "kind": "unique",

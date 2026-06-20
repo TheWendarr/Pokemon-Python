@@ -3,8 +3,7 @@
  "name": "Igglybuff",
  "dex": 174,
  "types": [
-  "normal",
-  "fairy"
+  "normal"
  ],
  "base_stats": {
   "hp": 90,
@@ -16,7 +15,6 @@
  },
  "abilities": [
   "cute-charm",
-  "competitive",
   "friend-guard"
  ],
  "base_experience": 42,
@@ -116,5 +114,13 @@
    "work-up",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "jigglypuff",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

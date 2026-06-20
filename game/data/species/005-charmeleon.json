@@ -122,5 +122,13 @@
    "echoed-voice",
    "incinerate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "charizard",
+   "trigger": "level-up",
+   "level": 36,
+   "item": null
+  }
+ ]
 }

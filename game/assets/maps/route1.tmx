@@ -28,5 +28,9 @@
   <object id="2" name="warp" x="176" y="272" width="16" height="16"><properties><property name="to_map" value="town"/><property name="to_x" type="int" value="11"/><property name="to_y" type="int" value="1"/><property name="facing" value="down"/></properties></object>
   <object id="3" name="warp" x="192" y="272" width="16" height="16"><properties><property name="to_map" value="town"/><property name="to_x" type="int" value="12"/><property name="to_y" type="int" value="1"/><property name="facing" value="down"/></properties></object>
   <object id="4" name="sign" x="176" y="32" width="16" height="16"><properties><property name="dialog" value="ROUTE 1 - Hexton lies to the south."/></properties></object>
+  <object id="5" name="npc" x="208" y="80" width="16" height="16"><properties><property name="display" value="Hugh"/><property name="facing" value="left"/><property name="script" value="rival_after"/></properties></object>
+  <object id="6" name="trigger" x="176" y="80" width="16" height="16"><properties><property name="script" value="rival_battle"/><property name="unless_flag" value="beat_rival"/></properties></object>
+  <object id="7" name="trigger" x="192" y="80" width="16" height="16"><properties><property name="script" value="rival_battle"/><property name="unless_flag" value="beat_rival"/></properties></object>
+  <object id="8" name="trainer" x="288" y="144" width="16" height="16"><properties><property name="display" value="Youngster Cole"/><property name="facing" value="down"/><property name="sight" type="int" value="3"/><property name="party" value="patrat:5|lillipup:5"/><property name="prize" type="int" value="300"/><property name="flag" value="beat_cole"/><property name="before" value="Cole: My Pokemon and I never lose in the grass!"/><property name="after" value="Cole: I need to train more..."/></properties></object>
  </objectgroup>
 </map>

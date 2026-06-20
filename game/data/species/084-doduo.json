@@ -119,5 +119,13 @@
    "echoed-voice",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "dodrio",
+   "trigger": "level-up",
+   "level": 31,
+   "item": null
+  }
+ ]
 }

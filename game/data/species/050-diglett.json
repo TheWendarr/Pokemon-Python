@@ -132,5 +132,13 @@
    "echoed-voice",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "dugtrio",
+   "trigger": "level-up",
+   "level": 26,
+   "item": null
+  }
+ ]
 }

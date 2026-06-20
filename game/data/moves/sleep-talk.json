@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "Randomly uses one of the user\u2019s other three moves.  Only works if the user is sleeping.",
  "flags": [],
  "effect": {
   "kind": "unique",

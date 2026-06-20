@@ -140,5 +140,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "linoone",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  }
+ ]
 }

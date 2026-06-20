@@ -127,5 +127,13 @@
    "echoed-voice",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "pelipper",
+   "trigger": "level-up",
+   "level": 25,
+   "item": null
+  }
+ ]
 }

@@ -142,5 +142,13 @@
    "round",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "bronzong",
+   "trigger": "level-up",
+   "level": 33,
+   "item": null
+  }
+ ]
 }

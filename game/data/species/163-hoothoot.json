@@ -145,5 +145,13 @@
    "echoed-voice",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "noctowl",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  }
+ ]
 }

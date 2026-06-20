@@ -133,5 +133,6 @@
    "volt-switch",
    "work-up"
   ]
- }
+ },
+ "evolves_to": []
 }

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "all-opponents",
  "crit_stage": 0,
+ "short_effect": "Lowers the target\u2019s Special Attack by two stages if it\u2019s the opposite gender.",
  "flags": [
   "mirror",
   "protect",

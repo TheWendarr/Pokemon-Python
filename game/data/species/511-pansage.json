@@ -147,5 +147,13 @@
    "acrobatics",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "simisage",
+   "trigger": "use-item",
+   "level": null,
+   "item": "leaf-stone"
+  }
+ ]
 }

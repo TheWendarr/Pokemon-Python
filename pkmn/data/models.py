@@ -148,6 +148,7 @@ class SpeciesData:
     abilities: tuple = ()              # identifiers, hidden last
     base_experience: int = 0
     growth_rate: str = "medium"
+    evolves_to: tuple = ()
     catch_rate: int = 45
     gender_rate: int = 4               # PokeAPI eighths female; -1 genderless
     learnset: dict = field(default_factory=dict)
@@ -181,6 +182,7 @@ class SpeciesData:
             abilities=tuple(d.get("abilities", [])),
             base_experience=int(d.get("base_experience") or 0),
             growth_rate=d.get("growth_rate", "medium"),
+            evolves_to=tuple(d.get("evolves_to", [])),
             catch_rate=int(d.get("catch_rate") or 45),
             gender_rate=int(d.get("gender_rate", 4)),
             learnset=learnset,
@@ -193,10 +195,25 @@ class SpeciesData:
 class ItemData:
     id: str
     name: str
-    category: str                      # 'medicine' | 'ball'
+    category: str                      # PokeAPI category identifier
+    pocket: str = "misc"               # medicine|pokeballs|berries|battle|...
     heal: int = 0                      # flat HP restored ('full' -> -1)
     cures: tuple = ()                  # statuses cured; ('all',) for Full Heal
     ball_rate: float = 0.0             # ball multiplier (Poke Ball == 1.0)
+    revive: float = 0.0                # fraction of max HP restored on revive
+    stages: tuple = ()                 # ((stat, change), ...) X items
+    crit: int = 0                      # Dire Hit crit-stage bonus
+    guard: bool = False                # Guard Spec. (Mist)
+    holdable: bool = False
+    battle_usable: bool = False
+    cost: int = 0
+    fling_power: int = 0
+    short_effect: str = ""
+
+    @property
+    def is_ball(self) -> bool:
+        return (self.ball_rate > 0 or self.pocket == "pokeballs"
+                or self.category == "ball")
 
     @staticmethod
     def from_dict(d: dict) -> "ItemData":
@@ -205,7 +222,17 @@ class ItemData:
             id=d["id"],
             name=d.get("name") or d["id"].replace("-", " ").title(),
             category=d.get("category", "medicine"),
+            pocket=d.get("pocket", "misc"),
             heal=-1 if heal == "full" else int(heal or 0),
             cures=tuple(d.get("cures", [])),
             ball_rate=float(d.get("ball_rate") or 0.0),
+            revive=float(d.get("revive") or 0.0),
+            stages=tuple((k, v) for k, v in (d.get("stages") or {}).items()),
+            crit=int(d.get("crit") or 0),
+            guard=bool(d.get("guard", False)),
+            holdable=bool(d.get("holdable", False)),
+            battle_usable=bool(d.get("battle_usable", False)),
+            cost=int(d.get("cost") or 0),
+            fling_power=int(d.get("fling_power") or 0),
+            short_effect=d.get("short_effect", ""),
         )

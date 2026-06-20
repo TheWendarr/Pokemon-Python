@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "User swaps Attack and Special Attack changes with the target.",
  "flags": [
   "authentic",
   "mirror",

@@ -125,5 +125,13 @@
    "incinerate",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "typhlosion",
+   "trigger": "level-up",
+   "level": 36,
+   "item": null
+  }
+ ]
 }

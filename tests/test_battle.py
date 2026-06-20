@@ -350,3 +350,63 @@ def test_self_debuff_moves_hit_user_not_target(data, make_mon, maxroll):
     eng2.submit_turn(MoveAction("iron-tail"), MoveAction("recover"))
     assert eng2.active(P2).stages["defense"] == -1
     assert eng2.active(P1).stages["defense"] == 0
+
+
+# ── Gen 5 polish: friendship moves + critical capture ────────────────
+
+def test_return_frustration_scale_with_friendship():
+    from pkmn.battle.damage import _variable_power
+
+    class S:
+        pass
+
+    def atk(fr):
+        a = S(); a.state = S(); a.state.friendship = fr
+        return a
+
+    def mv(mid, power=None):
+        m = S(); m.id = mid; m.power = power
+        return m
+
+    assert _variable_power(atk(255), mv("return")) == 102      # max friendship
+    assert _variable_power(atk(0), mv("return")) == 1          # min friendship
+    assert _variable_power(atk(0), mv("frustration")) == 102   # mirror image
+    assert _variable_power(atk(255), mv("frustration")) == 1
+    assert _variable_power(atk(70), mv("tackle", 40)) == 40    # normal moves pass
+
+
+def test_critical_capture_one_shake(data, make_mon):
+    class Rng:                       # forces the crit roll and the catch check
+        def randint(self, lo, hi): return 0
+        def random(self): return 0.0
+        def choice(self, seq): return seq[0]
+        def choices(self, seq, weights=None, k=1): return list(seq[:k]) or [seq[0]]
+        def randrange(self, *a): return a[0] if a else 0
+        def getrandbits(self, n): return 0
+        def shuffle(self, x): pass
+
+    eng = BattleEngine(data, [make_mon("pikachu")], [make_mon("geodude")],
+                       wild=True, rng=Rng(), dex_caught=700)
+    ev = eng.submit_turn(CatchAction("poke-ball"), MoveAction("tackle"))
+    shakes = [e for e in ev if e.type == E.CATCH_SHAKE]
+    assert len(shakes) == 1                       # critical capture: a single shake
+    assert shakes[0].data.get("critical") is True
+    assert any(e.type == E.CATCH_SUCCESS for e in ev)
+    assert eng.winner == "caught"
+
+
+def test_no_critical_capture_with_empty_dex(data, make_mon):
+    class Rng:
+        def randint(self, lo, hi): return 0
+        def random(self): return 0.0
+        def choice(self, seq): return seq[0]
+        def choices(self, seq, weights=None, k=1): return list(seq[:k]) or [seq[0]]
+        def randrange(self, *a): return a[0] if a else 0
+        def getrandbits(self, n): return 0
+        def shuffle(self, x): pass
+
+    eng = BattleEngine(data, [make_mon("pikachu")], [make_mon("geodude")],
+                       wild=True, rng=Rng(), dex_caught=0)   # mult 0 -> never crit
+    ev = eng.submit_turn(CatchAction("poke-ball"), MoveAction("tackle"))
+    shakes = [e for e in ev if e.type == E.CATCH_SHAKE]
+    assert not any(e.data.get("critical") for e in shakes)

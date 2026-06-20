@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Calculates damage with the target\u2019s attacking stat.",
  "flags": [
   "contact",
   "mirror",

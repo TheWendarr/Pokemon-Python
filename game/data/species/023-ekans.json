@@ -146,5 +146,13 @@
    "round",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "arbok",
+   "trigger": "level-up",
+   "level": 22,
+   "item": null
+  }
+ ]
 }

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "If there be weather, this move has doubled power and the weather\u2019s type.",
  "flags": [
   "ballistics",
   "mirror",

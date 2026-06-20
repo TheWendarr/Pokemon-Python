@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "specific-move",
  "crit_stage": 0,
+ "short_effect": "Ghosts pay half their max HP to hurt the target every turn.  Others decrease Speed but raise Attack and Defense.",
  "flags": [
   "authentic"
  ],

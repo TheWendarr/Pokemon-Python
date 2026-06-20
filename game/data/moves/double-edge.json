@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "User receives 1/3 the damage inflicted in recoil.",
  "flags": [
   "contact",
   "mirror",

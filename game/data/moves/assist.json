@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "Randomly selects and uses one of the trainer\u2019s other Pok\u00e9mon\u2019s moves.",
  "flags": [],
  "effect": {
   "kind": "unique",

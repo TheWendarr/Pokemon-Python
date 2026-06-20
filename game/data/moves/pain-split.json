@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Sets the user\u2019s and targets\u2019s HP to the average of their current HP.",
  "flags": [
   "mirror",
   "protect"

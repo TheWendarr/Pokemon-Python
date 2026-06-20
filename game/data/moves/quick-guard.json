@@ -9,6 +9,7 @@
  "priority": 3,
  "target": "users-field",
  "crit_stage": 0,
+ "short_effect": "Prevents any priority moves from hitting friendly Pok\u00e9mon this turn.",
  "flags": [
   "snatch"
  ],

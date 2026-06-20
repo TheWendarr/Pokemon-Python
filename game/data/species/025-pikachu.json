@@ -122,5 +122,13 @@
    "volt-switch",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "raichu",
+   "trigger": "use-item",
+   "level": null,
+   "item": "thunder-stone"
+  }
+ ]
 }

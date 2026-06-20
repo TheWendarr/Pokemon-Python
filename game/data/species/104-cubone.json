@@ -150,5 +150,13 @@
    "retaliate",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "marowak",
+   "trigger": "level-up",
+   "level": 28,
+   "item": null
+  }
+ ]
 }

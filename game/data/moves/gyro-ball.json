@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Power raises when the user has lower Speed, up to a maximum of 150.",
  "flags": [
   "ballistics",
   "contact",

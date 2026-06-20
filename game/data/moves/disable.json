@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Disables the target\u2019s last used move for 1-8 turns.",
  "flags": [
   "authentic",
   "mental",

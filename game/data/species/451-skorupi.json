@@ -151,5 +151,13 @@
    "round",
    "struggle-bug"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "drapion",
+   "trigger": "level-up",
+   "level": 40,
+   "item": null
+  }
+ ]
 }

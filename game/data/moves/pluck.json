@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "If target has a berry, inflicts double damage and uses the berry.",
  "flags": [
   "contact",
   "distance",

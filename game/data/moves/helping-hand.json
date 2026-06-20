@@ -9,6 +9,7 @@
  "priority": 5,
  "target": "ally",
  "crit_stage": 0,
+ "short_effect": "Ally\u2019s next move inflicts half more damage.",
  "flags": [
   "authentic"
  ],

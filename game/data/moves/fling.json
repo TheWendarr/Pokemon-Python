@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Throws held item at the target; power depends on the item.",
  "flags": [
   "mirror",
   "protect"

@@ -3,8 +3,7 @@
  "name": "Jigglypuff",
  "dex": 39,
  "types": [
-  "normal",
-  "fairy"
+  "normal"
  ],
  "base_stats": {
   "hp": 115,
@@ -16,7 +15,6 @@
  },
  "abilities": [
   "cute-charm",
-  "competitive",
   "friend-guard"
  ],
  "base_experience": 95,
@@ -151,5 +149,13 @@
    "work-up",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "wigglytuff",
+   "trigger": "use-item",
+   "level": null,
+   "item": "moon-stone"
+  }
+ ]
 }

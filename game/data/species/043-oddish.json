@@ -118,5 +118,13 @@
    "venoshock",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "gloom",
+   "trigger": "level-up",
+   "level": 21,
+   "item": null
+  }
+ ]
 }

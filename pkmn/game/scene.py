@@ -13,8 +13,12 @@ import pygame
 
 from ..data.repository import GameData
 from .assets import Assets
+from . import contract
+import math
+
 from .config import (A, B, DATA_DIR, DOWN, FPS, LEFT, LOGICAL_H, LOGICAL_W,
-                     RIGHT, SCALE, UP)
+                     RIGHT, START, UP, WINDOW_H, WINDOW_W)
+from .save import load_game
 from .state import GameState
 
 KEYMAP = {
@@ -22,8 +26,9 @@ KEYMAP = {
     pygame.K_DOWN: DOWN, pygame.K_s: DOWN,
     pygame.K_LEFT: LEFT, pygame.K_a: LEFT,
     pygame.K_RIGHT: RIGHT, pygame.K_d: RIGHT,
-    pygame.K_z: A, pygame.K_RETURN: A, pygame.K_SPACE: A,
+    pygame.K_z: A, pygame.K_SPACE: A,
     pygame.K_x: B, pygame.K_BACKSPACE: B, pygame.K_ESCAPE: B,
+    pygame.K_RETURN: START,
 }
 
 
@@ -61,23 +66,65 @@ class Game:
     """Owns the scene stack, game data, assets, and session state."""
 
     def __init__(self, *, headless: bool = False, seed: int | None = None,
-                 data_dir: str = DATA_DIR):
+                 data_dir: str | None = None, save_path: str | None = None,
+                 game_dir: str = "game/assets", fullscreen: bool = False,
+                 fill: bool = False):
+        self.headless = headless
         if headless:
             os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
             os.environ.setdefault("SDL_AUDIODRIVER", "dummy")
         pygame.init()
-        flags = 0 if headless else pygame.SCALED
-        size = ((LOGICAL_W, LOGICAL_H) if headless
-                else (LOGICAL_W * SCALE, LOGICAL_H * SCALE))
-        self.window = pygame.display.set_mode(size, flags)
-        pygame.display.set_caption("pkmn")
+        self.fullscreen = False
+        self.fill = fill                       # fill screen vs pixel-perfect
+        if headless:
+            self.window = pygame.display.set_mode((LOGICAL_W, LOGICAL_H))
+        else:
+            self._open_window(fullscreen)
+        self.game_dir = game_dir
+        self.manifest = self._load_manifest(game_dir)
+        ev = self.manifest.get("engine_version", contract.ENGINE_VERSION)
+        if not contract.compatible(ev):
+            raise ValueError(
+                f"region {self.manifest.get('name', game_dir)!r} targets "
+                f"engine v{ev}, but this engine is v{contract.ENGINE_VERSION}; "
+                f"update the engine or lower 'engine_version' in game.json")
+        pygame.display.set_caption(self.manifest.get("name", "pkmn"))
         self.canvas = pygame.Surface((LOGICAL_W, LOGICAL_H))
-        self.data = GameData(data_dir)
-        self.assets = Assets()
-        self.state = GameState.new_game(self.data, seed=seed)
+        self.data = GameData(data_dir or self.manifest.get("data_dir")
+                             or DATA_DIR)
+        self.assets = Assets(game_dir)
+        self.save_path = save_path
+        loaded = load_game(self.data, save_path) if save_path else None
+        self.state = loaded or GameState.new_game(
+            self.data, manifest=self.manifest, seed=seed)
         self.scenes: list[Scene] = []
+        self.pending_warp = None        # (map, tile, facing) -> overworld warps
         self.input = Input()
+        self.last_battle = None    # winner of the most recent battle
         self.running = True
+
+    def feature(self, name: str, default: bool = True) -> bool:
+        """Designer toggle: manifest["features"][name]; default ON."""
+        return bool(self.manifest.get("features", {}).get(name, default))
+
+    def setting(self, name: str, default):
+        return self.manifest.get("settings", {}).get(name, default)
+
+    def whiteout_location(self):
+        """Where the player reappears after whiting out: the manifest's
+        'whiteout' location, else the start location. Tile None -> spawn."""
+        w = self.manifest.get("whiteout") or self.manifest.get("start", {})
+        tile = tuple(w["tile"]) if w.get("tile") else None
+        return w.get("map") or self.state.map_id, tile, w.get("facing", "down")
+
+    @staticmethod
+    def _load_manifest(game_dir: str) -> dict:
+        import json
+        path = os.path.join(game_dir, "game.json")
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as f:
+                return json.load(f)
+        return {}
 
     # ── scene stack ──────────────────────────────────────────────────
     def push(self, scene: Scene) -> None:
@@ -104,6 +151,50 @@ class Game:
             self.top.update()
         self.input.clear_frame()
 
+    def _open_window(self, fullscreen: bool) -> None:
+        """(Re)create the output window. Default (pixel-perfect) opens at
+        the largest integer multiple of the 256x192 canvas that fits the
+        desktop, so every pixel is uniform and crisp. Fill mode opens a
+        1080p window (clamped to the desktop). Fullscreen uses the native
+        resolution. Presentation adapts to the live window size (_fit)."""
+        self.fullscreen = fullscreen
+        if fullscreen:
+            self.window = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+            return
+        info = pygame.display.Info()
+        dw, dh = info.current_w or WINDOW_W, info.current_h or WINDOW_H
+        if self.fill:
+            size = (min(WINDOW_W, dw), min(WINDOW_H, dh))
+        else:
+            scale = max(1, min(dw // LOGICAL_W, (dh - 80) // LOGICAL_H))
+            size = (LOGICAL_W * scale, LOGICAL_H * scale)
+        self.window = pygame.display.set_mode(size, pygame.RESIZABLE)
+
+    @staticmethod
+    def _fit(win_w: int, win_h: int) -> tuple:
+        """Largest *integer* aspect-correct (4:3) placement of the logical
+        canvas in the window: (dst_w, dst_h, offset_x, offset_y). Integer
+        scaling keeps pixels uniform and crisp; the remainder letterboxes."""
+        scale = max(1, min(win_w // LOGICAL_W, win_h // LOGICAL_H))
+        dst_w, dst_h = LOGICAL_W * scale, LOGICAL_H * scale
+        return dst_w, dst_h, (win_w - dst_w) // 2, (win_h - dst_h) // 2
+
+    def _present(self, win_w, win_h):
+        """Scale the canvas to the window. Pixel-perfect by default
+        (integer nearest); fill mode uses sharp-bilinear (integer
+        pre-scale then a gentle high-quality fit) to fill the screen
+        cleanly without the uneven pixels of raw non-integer nearest."""
+        if not self.fill:
+            dw, dh, ox, oy = self._fit(win_w, win_h)
+            return pygame.transform.scale(self.canvas, (dw, dh)), ox, oy
+        scale = min(win_w / LOGICAL_W, win_h / LOGICAL_H)
+        dw, dh = round(LOGICAL_W * scale), round(LOGICAL_H * scale)
+        factor = max(1, math.ceil(scale))
+        pre = pygame.transform.scale(
+            self.canvas, (LOGICAL_W * factor, LOGICAL_H * factor))
+        return (pygame.transform.smoothscale(pre, (dw, dh)),
+                (win_w - dw) // 2, (win_h - dh) // 2)
+
     def draw(self) -> None:
         self.canvas.fill((16, 16, 24))
         start = len(self.scenes) - 1
@@ -111,8 +202,10 @@ class Game:
             start -= 1
         for sc in self.scenes[start:]:
             sc.draw(self.canvas)
-        self.window.blit(pygame.transform.scale(
-            self.canvas, self.window.get_size()), (0, 0))
+        win_w, win_h = self.window.get_size()
+        scaled, ox, oy = self._present(win_w, win_h)
+        self.window.fill((0, 0, 0))                  # letterbox bars
+        self.window.blit(scaled, (ox, oy))
         pygame.display.flip()
 
     # ── interactive loop ─────────────────────────────────────────────
@@ -122,10 +215,15 @@ class Game:
             for ev in pygame.event.get():
                 if ev.type == pygame.QUIT:
                     self.running = False
+                elif ev.type == pygame.KEYDOWN and ev.key == pygame.K_F11:
+                    self._open_window(not self.fullscreen)
                 elif ev.type == pygame.KEYDOWN and ev.key in KEYMAP:
                     self.input.press(KEYMAP[ev.key])
                 elif ev.type == pygame.KEYUP and ev.key in KEYMAP:
                     self.input.release(KEYMAP[ev.key])
+                elif ev.type == pygame.VIDEORESIZE and not self.fullscreen:
+                    self.window = pygame.display.set_mode(
+                        (ev.w, ev.h), pygame.RESIZABLE)
             self.tick()
             self.draw()
             clock.tick(FPS)

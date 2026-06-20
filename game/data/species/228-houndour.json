@@ -153,5 +153,13 @@
    "retaliate",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "houndoom",
+   "trigger": "level-up",
+   "level": 24,
+   "item": null
+  }
+ ]
 }

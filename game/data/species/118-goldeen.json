@@ -127,5 +127,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "seaking",
+   "trigger": "level-up",
+   "level": 33,
+   "item": null
+  }
+ ]
 }

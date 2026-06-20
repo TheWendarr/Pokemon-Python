@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Forces the target to repeat its last used move every turn for 2 to 6 turns.",
  "flags": [
   "authentic",
   "mental",

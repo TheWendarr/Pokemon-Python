@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Inflicts double damage if the target is Poisoned.",
  "flags": [
   "mirror",
   "protect"

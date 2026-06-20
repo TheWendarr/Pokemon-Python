@@ -150,5 +150,13 @@
    "telekinesis",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "duosion",
+   "trigger": "level-up",
+   "level": 32,
+   "item": null
+  }
+ ]
 }

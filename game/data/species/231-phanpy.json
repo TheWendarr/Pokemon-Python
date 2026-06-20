@@ -127,5 +127,13 @@
    "echoed-voice",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "donphan",
+   "trigger": "level-up",
+   "level": 25,
+   "item": null
+  }
+ ]
 }

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Inflicts 40 points of damage.",
  "flags": [
   "mirror",
   "protect"

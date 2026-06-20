@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Power is doubled if the target has already moved this turn.",
  "flags": [
   "contact",
   "mirror",

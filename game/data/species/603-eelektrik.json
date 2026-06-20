@@ -124,5 +124,13 @@
    "volt-switch",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "eelektross",
+   "trigger": "use-item",
+   "level": null,
+   "item": "thunder-stone"
+  }
+ ]
 }

@@ -162,5 +162,6 @@
    "volt-switch",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": []
 }

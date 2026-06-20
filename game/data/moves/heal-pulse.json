@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Heals the target for half its max HP.",
  "flags": [
   "distance",
   "heal",

@@ -3,7 +3,7 @@
  "name": "Clefairy",
  "dex": 35,
  "types": [
-  "fairy"
+  "normal"
  ],
  "base_stats": {
   "hp": 70,
@@ -185,5 +185,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "clefable",
+   "trigger": "use-item",
+   "level": null,
+   "item": "moon-stone"
+  }
+ ]
 }

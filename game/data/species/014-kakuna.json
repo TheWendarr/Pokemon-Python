@@ -39,5 +39,13 @@
    "electroweb"
   ],
   "machine": []
- }
+ },
+ "evolves_to": [
+  {
+   "species": "beedrill",
+   "trigger": "level-up",
+   "level": 10,
+   "item": null
+  }
+ ]
 }

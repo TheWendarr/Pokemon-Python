@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Has double power against Pok\u00e9mon that have less than half their max HP remaining.",
  "flags": [
   "mirror",
   "protect"

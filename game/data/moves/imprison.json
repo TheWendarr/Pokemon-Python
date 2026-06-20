@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "Prevents the target from using any moves that the user also knows.",
  "flags": [
   "authentic",
   "snatch"

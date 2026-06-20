@@ -118,5 +118,13 @@
    "echoed-voice",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "staravia",
+   "trigger": "level-up",
+   "level": 14,
+   "item": null
+  }
+ ]
 }

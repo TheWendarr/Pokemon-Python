@@ -130,5 +130,13 @@
    "bulldoze",
    "frost-breath"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "sealeo",
+   "trigger": "level-up",
+   "level": 32,
+   "item": null
+  }
+ ]
 }

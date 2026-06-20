@@ -9,6 +9,7 @@
  "priority": -7,
  "target": "entire-field",
  "crit_stage": 0,
+ "short_effect": "All Pok\u00e9mon\u2019s Defense and Special Defense are swapped for 5 turns.",
  "flags": [
   "mirror"
  ],

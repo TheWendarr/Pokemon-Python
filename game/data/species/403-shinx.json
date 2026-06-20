@@ -121,5 +121,13 @@
    "wild-charge",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "luxio",
+   "trigger": "level-up",
+   "level": 15,
+   "item": null
+  }
+ ]
 }

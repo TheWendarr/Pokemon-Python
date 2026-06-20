@@ -112,5 +112,13 @@
    "round",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "hippowdon",
+   "trigger": "level-up",
+   "level": 34,
+   "item": null
+  }
+ ]
 }

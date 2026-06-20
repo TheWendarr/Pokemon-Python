@@ -68,6 +68,13 @@ class GameData:
             return self._species_cache[key]
         path = self._index.get(key)
         if path is None:
+            # form alias: 'basculin' -> 'basculin-red-striped',
+            # 'frillish' -> 'frillish-male' (the default form wins)
+            matches = sorted(k for k in self._index
+                             if isinstance(k, str) and k.startswith(key + "-"))
+            if matches:
+                path = self._index[matches[0]]
+        if path is None:
             raise GameDataError(f"Species not found: {identifier!r}")
         with open(path, encoding="utf-8") as f:
             sp = SpeciesData.from_dict(json.load(f))
@@ -134,3 +141,38 @@ class GameData:
         if d is None:
             return None
         return ItemData.from_dict({"id": item_id, **d})
+
+    def all_item_ids(self) -> list:
+        return sorted(self._table("items.json"))
+
+    def ability(self, ability_id: str) -> Optional[dict]:
+        """{name, generation, short_effect} or None. abilities.json is
+        optional so minimal fixture datasets keep working."""
+        return self._abilities_table().get(ability_id)
+
+    def all_ability_ids(self) -> list:
+        return sorted(self._abilities_table())
+
+    def _abilities_table(self) -> dict:
+        try:
+            return self._table("abilities.json")
+        except Exception:
+            return {}
+
+    def validate(self) -> list:
+        """Cross-reference the dataset; returns a list of problems."""
+        problems = []
+        chart = set(self.type_chart)
+        abilities = self._abilities_table()
+        for sid in self.all_species_ids():
+            sp = self.species(sid)
+            for t in sp.types:
+                if t not in chart:
+                    problems.append(f"{sid}: unknown type {t!r}")
+            for a in sp.abilities:
+                if abilities and a not in abilities:
+                    problems.append(f"{sid}: unknown ability {a!r}")
+            for entry in sp.learnset.get("level_up", []):
+                if not self.has_move(entry.move):
+                    problems.append(f"{sid}: unknown move {entry.move!r}")
+        return problems

@@ -43,5 +43,13 @@
    "electroweb"
   ],
   "machine": []
- }
+ },
+ "evolves_to": [
+  {
+   "species": "kakuna",
+   "trigger": "level-up",
+   "level": 7,
+   "item": null
+  }
+ ]
 }

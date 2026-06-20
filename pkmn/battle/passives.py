@@ -21,6 +21,27 @@ WEATHER_SPEED = {"swift-swim": "rain", "chlorophyll": "sun",
                  "sand-rush": "sandstorm"}
 SAND_IMMUNE_ABILITIES = ("sand-rush", "sand-veil", "sand-force")
 
+# Every ability id the battle hooks below act on. The audit CLI compares
+# this against the full abilities.json catalog; anything not listed is
+# inert in battle (data-only) until a hook is added.
+IMPLEMENTED_ABILITIES = frozenset({
+    "huge-power", "pure-power", "guts", "technician", "blaze", "torrent",
+    "overgrow", "swarm", "thick-fat", "super-luck", "limber", "immunity",
+    "insomnia", "vital-spirit", "water-veil", "magma-armor", "own-tempo",
+    "levitate", "volt-absorb", "water-absorb", "shield-dust",
+    "serene-grace", "sturdy", "rough-skin", "iron-barbs", "static",
+    "poison-point", "flame-body", "intimidate", "drizzle", "drought",
+    "sand-stream", "snow-warning", "swift-swim", "chlorophyll",
+    "sand-rush", "sand-veil", "sand-force", "natural-cure", "speed-boost",
+})
+
+# Held items with battle behavior in this module / deal_damage.
+IMPLEMENTED_HELD = frozenset({
+    "choice-band", "choice-specs", "choice-scarf", "leftovers",
+    "oran-berry", "sitrus-berry", "lum-berry", "life-orb", "focus-sash",
+    "scope-lens", "razor-claw",
+})
+
 
 def abil(bp) -> str:
     v = getattr(bp, "vol", None)

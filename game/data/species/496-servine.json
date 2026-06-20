@@ -140,5 +140,13 @@
    "grass-knot",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "serperior",
+   "trigger": "level-up",
+   "level": 36,
+   "item": null
+  }
+ ]
 }

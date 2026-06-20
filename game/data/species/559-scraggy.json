@@ -165,5 +165,13 @@
    "work-up",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "scrafty",
+   "trigger": "level-up",
+   "level": 39,
+   "item": null
+  }
+ ]
 }

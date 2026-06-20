@@ -123,5 +123,13 @@
    "venoshock",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "victreebel",
+   "trigger": "use-item",
+   "level": null,
+   "item": "leaf-stone"
+  }
+ ]
 }

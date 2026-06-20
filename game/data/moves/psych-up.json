@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Discards the user\u2019s stat changes and copies the target\u2019s.",
  "flags": [
   "authentic"
  ],

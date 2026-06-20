@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "all-opponents",
  "crit_stage": 0,
+ "short_effect": "Has a chance to put the target to sleep.",
  "flags": [
   "authentic",
   "mirror",

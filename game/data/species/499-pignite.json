@@ -156,5 +156,13 @@
    "work-up",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "emboar",
+   "trigger": "level-up",
+   "level": 36,
+   "item": null
+  }
+ ]
 }

@@ -15,19 +15,48 @@ class GameState:
     data: GameData
     party: list = field(default_factory=list)
     bag: dict = field(default_factory=dict)
-    map_id: str = "town"
+    map_id: str = ""           # set from the region manifest / save
     tile: tuple = None  # None -> use the map's spawn object
     facing: str = "down"
     rng: random.Random = field(default_factory=random.Random)
+    flags: set = field(default_factory=set)   # event/progress flags
+    money: int = 1500
+    pc: list = field(default_factory=list)    # PC box (PokemonState)
+    seen: set = field(default_factory=set)    # Pokedex: species encountered
+    caught: set = field(default_factory=set)  # Pokedex: species owned
+    regiondex: list = field(default_factory=list)  # region roster (dex order)
+    repel_steps: int = 0                      # remaining steps of repel
 
     @classmethod
-    def new_game(cls, data: GameData, *, starter: str = "oshawott",
+    def new_game(cls, data: GameData, *, manifest: dict | None = None,
                  seed: int | None = None) -> "GameState":
+        m = manifest or {}
         rng = random.Random(seed)
         st = cls(data=data, rng=rng)
-        st.party.append(PokemonState.generate(data, starter, 12, rng=rng))
-        st.bag = {"potion": 5, "poke-ball": 10}
+        starter = m.get("starter")
+        if starter:  # absent or null -> begin with an empty party
+            st.party.append(PokemonState.generate(
+                data, starter["species"], int(starter.get("level", 10)),
+                rng=rng, moves=starter.get("moves")))
+        st.bag = dict(m.get("bag", {"potion": 5, "poke-ball": 10}))
+        st.money = int(m.get("money", 1500))
+        start = m.get("start", {})
+        st.map_id = start.get("map", "")
+        st.tile = tuple(start["tile"]) if start.get("tile") else None
+        st.facing = start.get("facing", "down")
+        st.flags = set(m.get("flags", []))
+        st.regiondex = list(m.get("dex", []))    # roster for the Pokedex view
+        for p in st.party:                        # you own your starter
+            st.register_caught(p.species_id)
         return st
+
+    # ── Pokedex ──────────────────────────────────────────────────────
+    def register_seen(self, species_id: str) -> None:
+        self.seen.add(species_id)
+
+    def register_caught(self, species_id: str) -> None:
+        self.caught.add(species_id)
+        self.seen.add(species_id)
 
     def heal_party(self) -> None:
         for p in self.party:
@@ -42,3 +71,43 @@ class GameState:
             if p.current_hp > 0:
                 return p
         return None
+
+    # field-move capabilities, granted like HMs via flags
+    @property
+    def can_surf(self) -> bool:
+        return "can_surf" in self.flags
+
+    @property
+    def can_cut(self) -> bool:
+        return "can_cut" in self.flags
+
+    # ── persistence ──────────────────────────────────────────────────
+    def to_dict(self) -> dict:
+        return {"version": 1,
+                "party": [p.to_dict() for p in self.party],
+                "pc": [p.to_dict() for p in self.pc],
+                "bag": dict(self.bag), "money": self.money,
+                "flags": sorted(self.flags),
+                "map_id": self.map_id, "tile": list(self.tile or (0, 0)),
+                "facing": self.facing,
+                "seen": sorted(self.seen), "caught": sorted(self.caught),
+                "regiondex": list(self.regiondex),
+                "repel_steps": self.repel_steps}
+
+    @classmethod
+    def from_dict(cls, data: GameData, d: dict,
+                  rng: random.Random | None = None) -> "GameState":
+        st = cls(data=data, rng=rng or random.Random())
+        st.party = [PokemonState.from_dict(p, data).bind(data) for p in d["party"]]
+        st.pc = [PokemonState.from_dict(p, data).bind(data) for p in d.get("pc", [])]
+        st.bag = dict(d.get("bag", {}))
+        st.money = int(d.get("money", 0))
+        st.flags = set(d.get("flags", []))
+        st.map_id = d.get("map_id", "")
+        st.tile = tuple(d.get("tile") or (0, 0))
+        st.facing = d.get("facing", "down")
+        st.seen = set(d.get("seen", []))
+        st.caught = set(d.get("caught", []))
+        st.regiondex = list(d.get("regiondex", []))
+        st.repel_steps = int(d.get("repel_steps", 0))
+        return st

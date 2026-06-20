@@ -136,5 +136,13 @@
    "volt-switch",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "electabuzz",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

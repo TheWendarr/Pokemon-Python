@@ -90,5 +90,25 @@
    "bulldoze",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "hitmonlee",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  },
+  {
+   "species": "hitmonchan",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  },
+  {
+   "species": "hitmontop",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  }
+ ]
 }

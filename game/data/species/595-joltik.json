@@ -138,5 +138,13 @@
    "struggle-bug",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "galvantula",
+   "trigger": "level-up",
+   "level": 36,
+   "item": null
+  }
+ ]
 }

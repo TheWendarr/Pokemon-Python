@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Power is higher when the user weighs more than the target, up to a maximum of 120.",
  "flags": [
   "contact",
   "mirror",

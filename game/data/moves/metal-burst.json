@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "specific-move",
  "crit_stage": 0,
+ "short_effect": "Strikes back at the last Pok\u00e9mon to hit the user this turn with 1.5\u00d7 the damage.",
  "flags": [
   "mirror",
   "protect"

@@ -127,5 +127,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "kabutops",
+   "trigger": "level-up",
+   "level": 40,
+   "item": null
+  }
+ ]
 }

@@ -147,5 +147,13 @@
    "round",
    "incinerate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "fraxure",
+   "trigger": "level-up",
+   "level": 38,
+   "item": null
+  }
+ ]
 }

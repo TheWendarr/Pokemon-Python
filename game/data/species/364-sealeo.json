@@ -122,5 +122,13 @@
    "bulldoze",
    "frost-breath"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "walrein",
+   "trigger": "level-up",
+   "level": 44,
+   "item": null
+  }
+ ]
 }

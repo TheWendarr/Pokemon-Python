@@ -146,5 +146,13 @@
    "round",
    "acrobatics"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "jumpluff",
+   "trigger": "level-up",
+   "level": 27,
+   "item": null
+  }
+ ]
 }

@@ -15,7 +15,6 @@
  },
  "abilities": [
   "frisk",
-  "competitive",
   "shadow-tag"
  ],
  "base_experience": 58,
@@ -156,5 +155,13 @@
    "telekinesis",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "gothorita",
+   "trigger": "level-up",
+   "level": 32,
+   "item": null
+  }
+ ]
 }

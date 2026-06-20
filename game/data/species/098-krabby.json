@@ -140,5 +140,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "kingler",
+   "trigger": "level-up",
+   "level": 28,
+   "item": null
+  }
+ ]
 }

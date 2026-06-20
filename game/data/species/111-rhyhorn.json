@@ -150,5 +150,13 @@
    "incinerate",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "rhydon",
+   "trigger": "level-up",
+   "level": 42,
+   "item": null
+  }
+ ]
 }

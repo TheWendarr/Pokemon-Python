@@ -141,5 +141,13 @@
    "bulldoze",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "exploud",
+   "trigger": "level-up",
+   "level": 40,
+   "item": null
+  }
+ ]
 }

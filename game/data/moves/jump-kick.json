@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "If the user misses, it takes half the damage it would have inflicted in recoil.",
  "flags": [
   "contact",
   "gravity",

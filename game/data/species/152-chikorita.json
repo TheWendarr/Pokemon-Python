@@ -132,5 +132,13 @@
    "round",
    "echoed-voice"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "bayleef",
+   "trigger": "level-up",
+   "level": 16,
+   "item": null
+  }
+ ]
 }

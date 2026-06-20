@@ -132,5 +132,13 @@
    "round",
    "acrobatics"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "crobat",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

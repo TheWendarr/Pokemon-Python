@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "random-opponent",
  "crit_stage": 0,
+ "short_effect": "Hits every turn for 2-3 turns, then confuses the user.",
  "flags": [
   "contact",
   "dance",

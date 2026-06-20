@@ -105,5 +105,13 @@
    "scald",
    "struggle-bug"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "masquerain",
+   "trigger": "level-up",
+   "level": 22,
+   "item": null
+  }
+ ]
 }

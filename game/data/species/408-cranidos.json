@@ -140,5 +140,13 @@
    "incinerate",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "rampardos",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

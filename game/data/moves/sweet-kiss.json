@@ -9,8 +9,11 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Confuses the target.",
  "flags": [
-  "protect"
+  "mirror",
+  "protect",
+  "reflectable"
  ],
  "effect": {
   "kind": "ailment",

@@ -147,5 +147,13 @@
    "incinerate",
    "acrobatics"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "monferno",
+   "trigger": "level-up",
+   "level": 14,
+   "item": null
+  }
+ ]
 }

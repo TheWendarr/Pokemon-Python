@@ -139,5 +139,13 @@
    "struggle-bug",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "crustle",
+   "trigger": "level-up",
+   "level": 34,
+   "item": null
+  }
+ ]
 }

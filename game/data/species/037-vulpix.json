@@ -155,5 +155,13 @@
    "round",
    "incinerate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "ninetales",
+   "trigger": "use-item",
+   "level": null,
+   "item": "ice-stone"
+  }
+ ]
 }

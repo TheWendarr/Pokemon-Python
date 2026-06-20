@@ -150,5 +150,13 @@
    "acrobatics",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "simipour",
+   "trigger": "use-item",
+   "level": null,
+   "item": "water-stone"
+  }
+ ]
 }

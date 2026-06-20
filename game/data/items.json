@@ -1,35 +1,200 @@
 {
+ "master-ball": {
+  "name": "Master Ball",
+  "category": "standard-balls",
+  "pocket": "pokeballs",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Catches a wild Pok\u00e9mon every time.",
+  "ball_rate": 255.0
+ },
+ "ultra-ball": {
+  "name": "Ultra Ball",
+  "category": "standard-balls",
+  "pocket": "pokeballs",
+  "cost": 800,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon.  Success rate is 2\u00d7.",
+  "ball_rate": 2.0
+ },
+ "great-ball": {
+  "name": "Great Ball",
+  "category": "standard-balls",
+  "pocket": "pokeballs",
+  "cost": 600,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon.  Success rate is 1.5\u00d7.",
+  "ball_rate": 1.5
+ },
+ "poke-ball": {
+  "name": "Poke Ball",
+  "category": "standard-balls",
+  "pocket": "pokeballs",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon.",
+  "ball_rate": 1.0
+ },
+ "safari-ball": {
+  "name": "Safari Ball",
+  "category": "standard-balls",
+  "pocket": "pokeballs",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon in the Great Marsh or Safari Zone.  Success rate is 1.5\u00d7.",
+  "ball_rate": 1.5
+ },
+ "net-ball": {
+  "name": "Net Ball",
+  "category": "special-balls",
+  "pocket": "pokeballs",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon.  Success rate is 3\u00d7 for water and bug Pok\u00e9mon.",
+  "ball_rate": 3.0
+ },
+ "dive-ball": {
+  "name": "Dive Ball",
+  "category": "special-balls",
+  "pocket": "pokeballs",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon. Success rate is 3.5\u00d7 when underwater, fishing, or surfing.",
+  "ball_rate": 3.5
+ },
+ "nest-ball": {
+  "name": "Nest Ball",
+  "category": "special-balls",
+  "pocket": "pokeballs",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon.  Success rate is 3.9\u00d7 for level 1 Pok\u00e9mon, and drops steadily to 1\u00d7 at level 30.",
+  "ball_rate": 2.0
+ },
+ "repeat-ball": {
+  "name": "Repeat Ball",
+  "category": "special-balls",
+  "pocket": "pokeballs",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon.  Success rate is 3\u00d7 for previously-caught Pok\u00e9mon.",
+  "ball_rate": 3.0
+ },
+ "timer-ball": {
+  "name": "Timer Ball",
+  "category": "special-balls",
+  "pocket": "pokeballs",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon. Success rate increases by 0.1\u00d7 (Gen V: 0.3\u00d7) every turn, to a max of 4\u00d7.",
+  "ball_rate": 3.0
+ },
+ "luxury-ball": {
+  "name": "Luxury Ball",
+  "category": "special-balls",
+  "pocket": "pokeballs",
+  "cost": 3000,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon.  Caught Pok\u00e9mon start with 200 happiness.",
+  "ball_rate": 1.0
+ },
+ "premier-ball": {
+  "name": "Premier Ball",
+  "category": "special-balls",
+  "pocket": "pokeballs",
+  "cost": 20,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon.",
+  "ball_rate": 1.0
+ },
+ "dusk-ball": {
+  "name": "Dusk Ball",
+  "category": "special-balls",
+  "pocket": "pokeballs",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon.  Success rate is 3.5\u00d7 at night and in caves.",
+  "ball_rate": 3.5
+ },
+ "heal-ball": {
+  "name": "Heal Ball",
+  "category": "special-balls",
+  "pocket": "pokeballs",
+  "cost": 300,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon.  Caught Pok\u00e9mon are immediately healed.",
+  "ball_rate": 1.0
+ },
+ "quick-ball": {
+  "name": "Quick Ball",
+  "category": "special-balls",
+  "pocket": "pokeballs",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon. Success rate is 4\u00d7 (Gen V: 5\u00d7), but only on the first turn.",
+  "ball_rate": 5.0
+ },
+ "cherish-ball": {
+  "name": "Cherish Ball",
+  "category": "special-balls",
+  "pocket": "pokeballs",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Tries to catch a wild Pok\u00e9mon.",
+  "ball_rate": 1.0
+ },
  "potion": {
   "name": "Potion",
-  "category": "medicine",
+  "category": "healing",
+  "pocket": "medicine",
+  "cost": 200,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores 20 HP.",
   "heal": 20
- },
- "super-potion": {
-  "name": "Super Potion",
-  "category": "medicine",
-  "heal": 50
- },
- "hyper-potion": {
-  "name": "Hyper Potion",
-  "category": "medicine",
-  "heal": 200
- },
- "max-potion": {
-  "name": "Max Potion",
-  "category": "medicine",
-  "heal": "full"
- },
- "full-restore": {
-  "name": "Full Restore",
-  "category": "medicine",
-  "heal": "full",
-  "cures": [
-   "all"
-  ]
  },
  "antidote": {
   "name": "Antidote",
-  "category": "medicine",
+  "category": "status-cures",
+  "pocket": "medicine",
+  "cost": 200,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Cures poison.",
   "cures": [
    "poison",
    "toxic"
@@ -37,96 +202,6697 @@
  },
  "burn-heal": {
   "name": "Burn Heal",
-  "category": "medicine",
+  "category": "status-cures",
+  "pocket": "medicine",
+  "cost": 200,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Cures a burn.",
   "cures": [
    "burn"
   ]
  },
  "ice-heal": {
   "name": "Ice Heal",
-  "category": "medicine",
+  "category": "status-cures",
+  "pocket": "medicine",
+  "cost": 200,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Cures freezing.",
   "cures": [
    "freeze"
   ]
  },
  "awakening": {
   "name": "Awakening",
-  "category": "medicine",
+  "category": "status-cures",
+  "pocket": "medicine",
+  "cost": 200,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Cures sleep.",
   "cures": [
    "sleep"
   ]
  },
  "paralyze-heal": {
   "name": "Paralyze Heal",
-  "category": "medicine",
+  "category": "status-cures",
+  "pocket": "medicine",
+  "cost": 200,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Cures paralysis.",
   "cures": [
    "paralysis"
   ]
  },
- "full-heal": {
-  "name": "Full Heal",
-  "category": "medicine",
+ "full-restore": {
+  "name": "Full Restore",
+  "category": "healing",
+  "pocket": "medicine",
+  "cost": 3000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores HP to full and cures any status ailment and confusion.",
+  "heal": "full",
   "cures": [
    "all"
   ]
  },
- "poke-ball": {
-  "name": "Poke Ball",
-  "category": "ball",
-  "ball_rate": 1.0
+ "max-potion": {
+  "name": "Max Potion",
+  "category": "healing",
+  "pocket": "medicine",
+  "cost": 2500,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores HP to full.",
+  "heal": "full"
  },
- "great-ball": {
-  "name": "Great Ball",
-  "category": "ball",
-  "ball_rate": 1.5
+ "hyper-potion": {
+  "name": "Hyper Potion",
+  "category": "healing",
+  "pocket": "medicine",
+  "cost": 1500,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores 200 HP.",
+  "heal": 200
  },
- "ultra-ball": {
-  "name": "Ultra Ball",
-  "category": "ball",
-  "ball_rate": 2.0
+ "super-potion": {
+  "name": "Super Potion",
+  "category": "healing",
+  "pocket": "medicine",
+  "cost": 700,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores 50 HP.",
+  "heal": 50
  },
- "leftovers": {
-  "name": "Leftovers",
-  "category": "held"
+ "full-heal": {
+  "name": "Full Heal",
+  "category": "status-cures",
+  "pocket": "medicine",
+  "cost": 400,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Cures any status ailment and confusion.",
+  "cures": [
+   "all"
+  ]
+ },
+ "revive": {
+  "name": "Revive",
+  "category": "revival",
+  "pocket": "medicine",
+  "cost": 2000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Revives with half HP.",
+  "revive": 0.5
+ },
+ "max-revive": {
+  "name": "Max Revive",
+  "category": "revival",
+  "pocket": "medicine",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Revives with full HP.",
+  "revive": 1.0
+ },
+ "fresh-water": {
+  "name": "Fresh Water",
+  "category": "healing",
+  "pocket": "medicine",
+  "cost": 200,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores 50 HP.",
+  "heal": 50
+ },
+ "soda-pop": {
+  "name": "Soda Pop",
+  "category": "healing",
+  "pocket": "medicine",
+  "cost": 300,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores 60 HP.",
+  "heal": 60
+ },
+ "lemonade": {
+  "name": "Lemonade",
+  "category": "healing",
+  "pocket": "medicine",
+  "cost": 400,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores 80 HP.",
+  "heal": 80
+ },
+ "moomoo-milk": {
+  "name": "Moomoo Milk",
+  "category": "healing",
+  "pocket": "medicine",
+  "cost": 600,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores 100 HP.",
+  "heal": 100
+ },
+ "energy-powder": {
+  "name": "Energy Powder",
+  "category": "healing",
+  "pocket": "medicine",
+  "cost": 500,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores 50 HP, but lowers happiness.",
+  "heal": 50
+ },
+ "energy-root": {
+  "name": "Energy Root",
+  "category": "healing",
+  "pocket": "medicine",
+  "cost": 1200,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores 200 HP, but lowers happiness.",
+  "heal": 200
+ },
+ "heal-powder": {
+  "name": "Heal Powder",
+  "category": "status-cures",
+  "pocket": "medicine",
+  "cost": 300,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Cures any status ailment, but lowers happiness.",
+  "cures": [
+   "all"
+  ]
+ },
+ "revival-herb": {
+  "name": "Revival Herb",
+  "category": "revival",
+  "pocket": "medicine",
+  "cost": 2800,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Revives with full HP, but lowers happiness.",
+  "revive": 1.0
+ },
+ "ether": {
+  "name": "Ether",
+  "category": "pp-recovery",
+  "pocket": "medicine",
+  "cost": 1200,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores 10 PP for one move."
+ },
+ "max-ether": {
+  "name": "Max Ether",
+  "category": "pp-recovery",
+  "pocket": "medicine",
+  "cost": 2000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores PP to full for one move."
+ },
+ "elixir": {
+  "name": "Elixir",
+  "category": "pp-recovery",
+  "pocket": "medicine",
+  "cost": 3000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores 10 PP for each move."
+ },
+ "max-elixir": {
+  "name": "Max Elixir",
+  "category": "pp-recovery",
+  "pocket": "medicine",
+  "cost": 4500,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores PP to full for each move."
+ },
+ "lava-cookie": {
+  "name": "Lava Cookie",
+  "category": "status-cures",
+  "pocket": "medicine",
+  "cost": 350,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Cures any status ailment and confusion.",
+  "cures": [
+   "all"
+  ]
+ },
+ "berry-juice": {
+  "name": "Berry Juice",
+  "category": "healing",
+  "pocket": "medicine",
+  "cost": 200,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Restores 20 HP.",
+  "heal": 20
+ },
+ "sacred-ash": {
+  "name": "Sacred Ash",
+  "category": "revival",
+  "pocket": "medicine",
+  "cost": 50000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Revives all fainted Pok\u00e9mon with full HP.",
+  "revive": 1.0
+ },
+ "hp-up": {
+  "name": "Hp Up",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 10000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Raises HP effort and happiness."
+ },
+ "protein": {
+  "name": "Protein",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 10000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Raises Attack effort and happiness."
+ },
+ "iron": {
+  "name": "Iron",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 10000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Raises Defense effort and happiness."
+ },
+ "carbos": {
+  "name": "Carbos",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 10000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Raises Speed effort and happiness."
+ },
+ "calcium": {
+  "name": "Calcium",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 10000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Raises Special Attack effort and happiness."
+ },
+ "rare-candy": {
+  "name": "Rare Candy",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 10000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Causes a level-up and raises happiness."
+ },
+ "pp-up": {
+  "name": "Pp Up",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 10000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Raises a move\u2019s max PP by 20%."
+ },
+ "zinc": {
+  "name": "Zinc",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 10000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Raises Special Defense and happiness."
+ },
+ "pp-max": {
+  "name": "Pp Max",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 10000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Raises a move\u2019s max PP by 60%."
+ },
+ "old-gateau": {
+  "name": "Old Gateau",
+  "category": "status-cures",
+  "pocket": "medicine",
+  "cost": 350,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Cures any status ailment and confusion.",
+  "cures": [
+   "all"
+  ]
+ },
+ "guard-spec": {
+  "name": "Guard Spec",
+  "category": "stat-boosts",
+  "pocket": "battle",
+  "cost": 1500,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Prevents stat changes in battle for five turns in battle.  Raises happiness.",
+  "guard": true
+ },
+ "dire-hit": {
+  "name": "Dire Hit",
+  "category": "stat-boosts",
+  "pocket": "battle",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Increases the chance of a critical hit in battle.  Raises happiness.",
+  "crit": 2
+ },
+ "x-attack": {
+  "name": "X Attack",
+  "category": "stat-boosts",
+  "pocket": "battle",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Raises Attack by one stage in battle.  Raises happiness.",
+  "stages": {
+   "attack": 1
+  }
+ },
+ "x-defense": {
+  "name": "X Defense",
+  "category": "stat-boosts",
+  "pocket": "battle",
+  "cost": 2000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Raises Defense by one stage in battle.  Raises happiness.",
+  "stages": {
+   "defense": 1
+  }
+ },
+ "x-speed": {
+  "name": "X Speed",
+  "category": "stat-boosts",
+  "pocket": "battle",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Raises Speed by one stage in battle.  Raises happiness.",
+  "stages": {
+   "speed": 1
+  }
+ },
+ "x-accuracy": {
+  "name": "X Accuracy",
+  "category": "stat-boosts",
+  "pocket": "battle",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Raises accuracy by one stage in battle.  Raises happiness.",
+  "stages": {
+   "accuracy": 1
+  }
+ },
+ "x-sp-atk": {
+  "name": "X Sp Atk",
+  "category": "stat-boosts",
+  "pocket": "battle",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Raises Special Attack by one stage in battle.  Raises happiness.",
+  "stages": {
+   "special_attack": 1
+  }
+ },
+ "x-sp-def": {
+  "name": "X Sp Def",
+  "category": "stat-boosts",
+  "pocket": "battle",
+  "cost": 2000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Raises Special Defense by one stage in battle.  Raises happiness.",
+  "stages": {
+   "special_defense": 1
+  }
+ },
+ "poke-doll": {
+  "name": "Poke Doll",
+  "category": "spelunking",
+  "pocket": "misc",
+  "cost": 300,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Ends a wild battle."
+ },
+ "fluffy-tail": {
+  "name": "Fluffy Tail",
+  "category": "spelunking",
+  "pocket": "misc",
+  "cost": 100,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Ends a wild battle."
+ },
+ "blue-flute": {
+  "name": "Blue Flute",
+  "category": "flutes",
+  "pocket": "battle",
+  "cost": 20,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Cures sleep."
+ },
+ "yellow-flute": {
+  "name": "Yellow Flute",
+  "category": "flutes",
+  "pocket": "battle",
+  "cost": 20,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Cures confusion."
+ },
+ "red-flute": {
+  "name": "Red Flute",
+  "category": "flutes",
+  "pocket": "battle",
+  "cost": 20,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": true,
+  "short_effect": "Cures attraction."
+ },
+ "black-flute": {
+  "name": "Black Flute",
+  "category": "spelunking",
+  "pocket": "misc",
+  "cost": 20,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Halves the wild Pok\u00e9mon encounter rate."
+ },
+ "white-flute": {
+  "name": "White Flute",
+  "category": "spelunking",
+  "pocket": "misc",
+  "cost": 20,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Doubles the wild Pok\u00e9mon encounter rate."
+ },
+ "shoal-salt": {
+  "name": "Shoal Salt",
+  "category": "collectibles",
+  "pocket": "misc",
+  "cost": 20,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "No effect. Gen III: Trade four and four Shoal Shells for a Shell Bell."
+ },
+ "shoal-shell": {
+  "name": "Shoal Shell",
+  "category": "collectibles",
+  "pocket": "misc",
+  "cost": 20,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "No effect. Gen III: Trade four and four Shoal Salts for a Shell Bell."
+ },
+ "red-shard": {
+  "name": "Red Shard",
+  "category": "collectibles",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "No effect. Can be traded for items or moves."
+ },
+ "blue-shard": {
+  "name": "Blue Shard",
+  "category": "collectibles",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "No effect. Can be traded for items or moves."
+ },
+ "yellow-shard": {
+  "name": "Yellow Shard",
+  "category": "collectibles",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "No effect. Can be traded for items or moves."
+ },
+ "green-shard": {
+  "name": "Green Shard",
+  "category": "collectibles",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "No effect. Can be traded for items or moves."
+ },
+ "super-repel": {
+  "name": "Super Repel",
+  "category": "spelunking",
+  "pocket": "misc",
+  "cost": 700,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "For 200 steps, prevents wild encounters of level lower than your party\u2019s lead Pok\u00e9mon."
+ },
+ "max-repel": {
+  "name": "Max Repel",
+  "category": "spelunking",
+  "pocket": "misc",
+  "cost": 900,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "For 250 steps, prevents wild encounters of level lower than your party\u2019s lead Pok\u00e9mon."
+ },
+ "escape-rope": {
+  "name": "Escape Rope",
+  "category": "spelunking",
+  "pocket": "misc",
+  "cost": 300,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Transports user to the outside entrance of a cave."
+ },
+ "repel": {
+  "name": "Repel",
+  "category": "spelunking",
+  "pocket": "misc",
+  "cost": 400,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "For 100 steps, prevents wild encounters of level lower than your party\u2019s lead Pok\u00e9mon."
+ },
+ "sun-stone": {
+  "name": "Sun Stone",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Evolves a Cottonee into Whimsicott, a Gloom into Bellossom, a Petilil into Lilligant, or a Sunkern into Sunflora."
+ },
+ "moon-stone": {
+  "name": "Moon Stone",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Evolves a Clefairy into Clefable, a Jigglypuff into Wigglytuff, a Munna into Musharna, a Nidorina into Nidoqueen, a Nidorino into Nidoking, or a Skitty into Delcatty."
+ },
+ "fire-stone": {
+  "name": "Fire Stone",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Evolves an Eevee into Flareon, a Growlithe into Arcanine, a Pansear into Simisear, or a Vulpix into Ninetales."
+ },
+ "thunder-stone": {
+  "name": "Thunder Stone",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Evolves an Eelektrik into Eelektross, an Eevee into Jolteon, or a Pikachu into Raichu."
+ },
+ "water-stone": {
+  "name": "Water Stone",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Evolves an Eevee into Vaporeon, a Lombre into Ludicolo, a Panpour into Simipour, a Poliwhirl into Poliwrath, a Shellder into Cloyster, or a Staryu into Starmie."
+ },
+ "leaf-stone": {
+  "name": "Leaf Stone",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Evolves an Exeggcute into Exeggutor, a Gloom into Vileplume, a Nuzleaf into Shiftry, a Pansage into Simisage, or a Weepinbell into Victreebel."
+ },
+ "tiny-mushroom": {
+  "name": "Tiny Mushroom",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 500,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Fire Red and Leaf Green: Trade two for prior Level-up moves. Sell for 250 Pok\u00e9dollars, or to Hungry Maid for 500 Pok\u00e9dollars."
+ },
+ "big-mushroom": {
+  "name": "Big Mushroom",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 5000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Fire Red and Leaf Green: Trade for prior Level-up moves. Sell for 2500 Pok\u00e9dollars, or to Hungry Maid for 5000 Pok\u00e9dollars."
+ },
+ "pearl": {
+  "name": "Pearl",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell for 700 Pok\u00e9dollars, or to Ore Collector for 1400 Pok\u00e9dollars."
+ },
+ "big-pearl": {
+  "name": "Big Pearl",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 8000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell for 3750 Pok\u00e9dollars, or to Ore Collector for 7500 Pok\u00e9dollars."
+ },
+ "stardust": {
+  "name": "Stardust",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell for 1000 Pok\u00e9dollars, or to Ore Collector for 2000 Pok\u00e9dollars."
+ },
+ "star-piece": {
+  "name": "Star Piece",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 12000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Platinum: Trade for one of each color Shard. Black and White: Trade for PP Up. Sell for 4900 Pok\u00e9dollars, or to Ore Collector for 9800 Pok\u00e9dollars."
+ },
+ "nugget": {
+  "name": "Nugget",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 10000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell for 5000 Pok\u00e9dollars, or to Ore Collector for 10000 Pok\u00e9dollars."
+ },
+ "heart-scale": {
+  "name": "Heart Scale",
+  "category": "collectibles",
+  "pocket": "misc",
+  "cost": 100,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "No effect. Can be traded for prior Level-up moves."
+ },
+ "honey": {
+  "name": "Honey",
+  "category": "dex-completion",
+  "pocket": "misc",
+  "cost": 900,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": ""
+ },
+ "growth-mulch": {
+  "name": "Growth Mulch",
+  "category": "mulch",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Growing time of berries is reduced, but the soil dries out faster."
+ },
+ "damp-mulch": {
+  "name": "Damp Mulch",
+  "category": "mulch",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Growing time of berries is increased, but the soil dries out slower."
+ },
+ "stable-mulch": {
+  "name": "Stable Mulch",
+  "category": "mulch",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Berries stay on the plant for longer than their usual time."
+ },
+ "gooey-mulch": {
+  "name": "Gooey Mulch",
+  "category": "mulch",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Berries regrow from dead plants an increased number of times."
+ },
+ "root-fossil": {
+  "name": "Root Fossil",
+  "category": "dex-completion",
+  "pocket": "misc",
+  "cost": 7000,
+  "fling_power": 100,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Can be revived into a Lileep."
+ },
+ "claw-fossil": {
+  "name": "Claw Fossil",
+  "category": "dex-completion",
+  "pocket": "misc",
+  "cost": 7000,
+  "fling_power": 100,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Can be revived into an Anorith."
+ },
+ "helix-fossil": {
+  "name": "Helix Fossil",
+  "category": "dex-completion",
+  "pocket": "misc",
+  "cost": 7000,
+  "fling_power": 100,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Can be revived into an Omanyte."
+ },
+ "dome-fossil": {
+  "name": "Dome Fossil",
+  "category": "dex-completion",
+  "pocket": "misc",
+  "cost": 7000,
+  "fling_power": 100,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Can be revived into a Kabuto."
+ },
+ "old-amber": {
+  "name": "Old Amber",
+  "category": "dex-completion",
+  "pocket": "misc",
+  "cost": 10000,
+  "fling_power": 100,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Can be revived into an Aerodactyl."
+ },
+ "armor-fossil": {
+  "name": "Armor Fossil",
+  "category": "dex-completion",
+  "pocket": "misc",
+  "cost": 7000,
+  "fling_power": 100,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Can be revived into a Shieldon."
+ },
+ "skull-fossil": {
+  "name": "Skull Fossil",
+  "category": "dex-completion",
+  "pocket": "misc",
+  "cost": 7000,
+  "fling_power": 100,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Can be revived into a Cranidos."
+ },
+ "rare-bone": {
+  "name": "Rare Bone",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 5000,
+  "fling_power": 100,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell for 5000 Pok\u00e9dollars, or to Bone Man for 10000 Pok\u00e9dollars."
+ },
+ "shiny-stone": {
+  "name": "Shiny Stone",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 80,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Evolves a Minccino into Cinccino, a Roselia into Roserade, or a Togetic into Togekiss."
+ },
+ "dusk-stone": {
+  "name": "Dusk Stone",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 80,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Evolves a Lampent into Chandelure, a Misdreavus into Mismagius, or a Murkrow into Honchkrow."
+ },
+ "dawn-stone": {
+  "name": "Dawn Stone",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 80,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Evolves a male Kirlia into Gallade or a female Snorunt into Froslass."
+ },
+ "oval-stone": {
+  "name": "Oval Stone",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 80,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Level-up during Day on a Happiny: Holder evolves into Chansey."
+ },
+ "odd-keystone": {
+  "name": "Odd Keystone",
+  "category": "dex-completion",
+  "pocket": "misc",
+  "cost": 2100,
+  "fling_power": 80,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Use on the tower on Route 209 to encounter Spiritomb if you have at least 32 Underground greetings."
+ },
+ "adamant-orb": {
+  "name": "Adamant Orb",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 60,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Boosts the damage from Dialga\u2019s Dragon-type and Steel-type moves by 20%."
+ },
+ "lustrous-orb": {
+  "name": "Lustrous Orb",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 60,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Boosts the damage from Palkia\u2019s Dragon-type and Water-type moves by 20%."
+ },
+ "grass-mail": {
+  "name": "Grass Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "flame-mail": {
+  "name": "Flame Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "bubble-mail": {
+  "name": "Bubble Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "bloom-mail": {
+  "name": "Bloom Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "tunnel-mail": {
+  "name": "Tunnel Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "steel-mail": {
+  "name": "Steel Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "heart-mail": {
+  "name": "Heart Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "snow-mail": {
+  "name": "Snow Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "space-mail": {
+  "name": "Space Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "air-mail": {
+  "name": "Air Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "mosaic-mail": {
+  "name": "Mosaic Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "brick-mail": {
+  "name": "Brick Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "cheri-berry": {
+  "name": "Cheri Berry",
+  "category": "medicine",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when paralyzed to cure paralysis.",
+  "cures": [
+   "paralysis"
+  ]
+ },
+ "chesto-berry": {
+  "name": "Chesto Berry",
+  "category": "medicine",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when asleep to cure sleep.",
+  "cures": [
+   "sleep"
+  ]
+ },
+ "pecha-berry": {
+  "name": "Pecha Berry",
+  "category": "medicine",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when poisoned to cure poison.",
+  "cures": [
+   "poison",
+   "toxic"
+  ]
+ },
+ "rawst-berry": {
+  "name": "Rawst Berry",
+  "category": "medicine",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when burned to cure a burn.",
+  "cures": [
+   "burn"
+  ]
+ },
+ "aspear-berry": {
+  "name": "Aspear Berry",
+  "category": "medicine",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when frozen to cure frozen.",
+  "cures": [
+   "freeze"
+  ]
+ },
+ "leppa-berry": {
+  "name": "Leppa Berry",
+  "category": "medicine",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when a move runs out of PP to restore its PP by 10."
  },
  "oran-berry": {
   "name": "Oran Berry",
-  "category": "held"
+  "category": "medicine",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/2 max HP to recover 10 HP.",
+  "heal": 10
  },
- "sitrus-berry": {
-  "name": "Sitrus Berry",
-  "category": "held"
+ "persim-berry": {
+  "name": "Persim Berry",
+  "category": "medicine",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when confused to cure confusion."
  },
  "lum-berry": {
   "name": "Lum Berry",
-  "category": "held"
+  "category": "medicine",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed to cure any status condition or confusion.",
+  "cures": [
+   "all"
+  ]
+ },
+ "sitrus-berry": {
+  "name": "Sitrus Berry",
+  "category": "medicine",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/2 max HP to recover 1/4 max HP."
+ },
+ "figy-berry": {
+  "name": "Figy Berry",
+  "category": "picky-healing",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/2 max HP to restore 1/8 max HP. Confuses Pok\u00e9mon that dislike spicy flavor."
+ },
+ "wiki-berry": {
+  "name": "Wiki Berry",
+  "category": "picky-healing",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/2 max HP to restore 1/8 max HP. Confuses Pok\u00e9mon that dislike dry flavor."
+ },
+ "mago-berry": {
+  "name": "Mago Berry",
+  "category": "picky-healing",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/2 max HP to restore 1/8 max HP. Confuses Pok\u00e9mon that dislike sweet flavor."
+ },
+ "aguav-berry": {
+  "name": "Aguav Berry",
+  "category": "picky-healing",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/2 max HP to restore 1/8 max HP. Confuses Pok\u00e9mon that dislike bitter flavor."
+ },
+ "iapapa-berry": {
+  "name": "Iapapa Berry",
+  "category": "picky-healing",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/2 max HP to restore 1/8 max HP. Confuses Pok\u00e9mon that dislike sour flavor."
+ },
+ "razz-berry": {
+  "name": "Razz Berry",
+  "category": "baking-only",
+  "pocket": "berries",
+  "cost": 200,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used for creating Pok\u00e9Blocks and Poffins."
+ },
+ "bluk-berry": {
+  "name": "Bluk Berry",
+  "category": "baking-only",
+  "pocket": "berries",
+  "cost": 20,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used for creating Pok\u00e9Blocks and Poffins."
+ },
+ "nanab-berry": {
+  "name": "Nanab Berry",
+  "category": "baking-only",
+  "pocket": "berries",
+  "cost": 200,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used for creating Pok\u00e9Blocks and Poffins."
+ },
+ "wepear-berry": {
+  "name": "Wepear Berry",
+  "category": "baking-only",
+  "pocket": "berries",
+  "cost": 20,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used for creating Pok\u00e9Blocks and Poffins."
+ },
+ "pinap-berry": {
+  "name": "Pinap Berry",
+  "category": "baking-only",
+  "pocket": "berries",
+  "cost": 200,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used for creating Pok\u00e9Blocks and Poffins."
+ },
+ "pomeg-berry": {
+  "name": "Pomeg Berry",
+  "category": "effort-drop",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Drops HP Effort Values by 10 and raises happiness."
+ },
+ "kelpsy-berry": {
+  "name": "Kelpsy Berry",
+  "category": "effort-drop",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Drops Attack Effort Values by 10 and raises happiness."
+ },
+ "qualot-berry": {
+  "name": "Qualot Berry",
+  "category": "effort-drop",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Drops Defense Effort Values by 10 and raises happiness."
+ },
+ "hondew-berry": {
+  "name": "Hondew Berry",
+  "category": "effort-drop",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Drops Special Attack Effort Values by 10 and raises happiness."
+ },
+ "grepa-berry": {
+  "name": "Grepa Berry",
+  "category": "effort-drop",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Drops Special Defense Effort Values by 10 and raises happiness."
+ },
+ "tamato-berry": {
+  "name": "Tamato Berry",
+  "category": "effort-drop",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Drops Speed Effort Values by 10 and raises happiness."
+ },
+ "cornn-berry": {
+  "name": "Cornn Berry",
+  "category": "baking-only",
+  "pocket": "berries",
+  "cost": 20,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used for creating Pok\u00e9Blocks and Poffins."
+ },
+ "magost-berry": {
+  "name": "Magost Berry",
+  "category": "baking-only",
+  "pocket": "berries",
+  "cost": 20,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used for creating Pok\u00e9Blocks and Poffins."
+ },
+ "rabuta-berry": {
+  "name": "Rabuta Berry",
+  "category": "baking-only",
+  "pocket": "berries",
+  "cost": 20,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used for creating Pok\u00e9Blocks and Poffins."
+ },
+ "nomel-berry": {
+  "name": "Nomel Berry",
+  "category": "baking-only",
+  "pocket": "berries",
+  "cost": 20,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used for creating Pok\u00e9Blocks and Poffins."
+ },
+ "spelon-berry": {
+  "name": "Spelon Berry",
+  "category": "baking-only",
+  "pocket": "berries",
+  "cost": 20,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used for creating Pok\u00e9Blocks and Poffins."
+ },
+ "pamtre-berry": {
+  "name": "Pamtre Berry",
+  "category": "baking-only",
+  "pocket": "berries",
+  "cost": 20,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used for creating Pok\u00e9Blocks and Poffins."
+ },
+ "watmel-berry": {
+  "name": "Watmel Berry",
+  "category": "baking-only",
+  "pocket": "berries",
+  "cost": 20,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used for creating Pok\u00e9Blocks and Poffins."
+ },
+ "durin-berry": {
+  "name": "Durin Berry",
+  "category": "baking-only",
+  "pocket": "berries",
+  "cost": 20,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used for creating Pok\u00e9Blocks and Poffins."
+ },
+ "belue-berry": {
+  "name": "Belue Berry",
+  "category": "baking-only",
+  "pocket": "berries",
+  "cost": 20,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used for creating Pok\u00e9Blocks and Poffins."
+ },
+ "occa-berry": {
+  "name": "Occa Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Fire-type attack to halve the damage."
+ },
+ "passho-berry": {
+  "name": "Passho Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Water-type attack to halve the damage."
+ },
+ "wacan-berry": {
+  "name": "Wacan Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Electric-type attack to halve the damage."
+ },
+ "rindo-berry": {
+  "name": "Rindo Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Grass-type attack to halve the damage."
+ },
+ "yache-berry": {
+  "name": "Yache Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Ice-type attack to halve the damage."
+ },
+ "chople-berry": {
+  "name": "Chople Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Fighting-type attack to halve the damage."
+ },
+ "kebia-berry": {
+  "name": "Kebia Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Poison-type attack to halve the damage."
+ },
+ "shuca-berry": {
+  "name": "Shuca Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Ground-type attack to halve the damage."
+ },
+ "coba-berry": {
+  "name": "Coba Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Flying-type attack to halve the damage."
+ },
+ "payapa-berry": {
+  "name": "Payapa Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Psychic-type attack to halve the damage."
+ },
+ "tanga-berry": {
+  "name": "Tanga Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Bug-type attack to halve the damage."
+ },
+ "charti-berry": {
+  "name": "Charti Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Rock-type attack to halve the damage."
+ },
+ "kasib-berry": {
+  "name": "Kasib Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Ghost-type attack to halve the damage."
+ },
+ "haban-berry": {
+  "name": "Haban Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Dragon-type attack to halve the damage."
+ },
+ "colbur-berry": {
+  "name": "Colbur Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Dark-type attack to halve the damage."
+ },
+ "babiri-berry": {
+  "name": "Babiri Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective Steel-type attack to halve the damage."
+ },
+ "chilan-berry": {
+  "name": "Chilan Berry",
+  "category": "type-protection",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a Normal-type attack to halve the damage."
+ },
+ "liechi-berry": {
+  "name": "Liechi Berry",
+  "category": "in-a-pinch",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/4 max HP to boost Attack."
+ },
+ "ganlon-berry": {
+  "name": "Ganlon Berry",
+  "category": "in-a-pinch",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/4 max HP to boost Defense."
+ },
+ "salac-berry": {
+  "name": "Salac Berry",
+  "category": "in-a-pinch",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/4 max HP to boost Speed."
+ },
+ "petaya-berry": {
+  "name": "Petaya Berry",
+  "category": "in-a-pinch",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/4 max HP to boost Special Attack."
+ },
+ "apicot-berry": {
+  "name": "Apicot Berry",
+  "category": "in-a-pinch",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/4 max HP to boost Special Defense."
+ },
+ "lansat-berry": {
+  "name": "Lansat Berry",
+  "category": "in-a-pinch",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/4 max HP to boost critical hit ratio by two stages."
+ },
+ "starf-berry": {
+  "name": "Starf Berry",
+  "category": "in-a-pinch",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/4 max HP to boost a random stat by two stages."
+ },
+ "enigma-berry": {
+  "name": "Enigma Berry",
+  "category": "other",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed when struck by a super-effective attack to restore 1/4 max HP."
+ },
+ "micle-berry": {
+  "name": "Micle Berry",
+  "category": "in-a-pinch",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/4 max HP to boost accuracy of next move by 20%. (Gen IV: Perfect accuracy)"
+ },
+ "custap-berry": {
+  "name": "Custap Berry",
+  "category": "in-a-pinch",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed at 1/4 max HP when using a move to go first."
+ },
+ "jaboca-berry": {
+  "name": "Jaboca Berry",
+  "category": "other",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed to deal 1/8 attacker\u2019s max HP when holder is struck by a physical attack."
+ },
+ "rowap-berry": {
+  "name": "Rowap Berry",
+  "category": "other",
+  "pocket": "berries",
+  "cost": 80,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed to deal 1/8 attacker\u2019s max HP when holder is struck by a special attack."
+ },
+ "bright-powder": {
+  "name": "Bright Powder",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Increases the holder\u2019s evasion by 1/9 (11 1/9%)."
+ },
+ "white-herb": {
+  "name": "White Herb",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Resets all lowered stats to normal at end of turn. Consumed after use."
+ },
+ "macho-brace": {
+  "name": "Macho Brace",
+  "category": "effort-training",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 60,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder gains double effort values from battles, but has halved Speed in battle."
+ },
+ "exp-share": {
+  "name": "Exp Share",
+  "category": "training",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Half the experience from a battle is split between Pok\u00e9mon holding this item."
+ },
+ "quick-claw": {
+  "name": "Quick Claw",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 80,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder has a 3/16 (18.75%) chance to move first."
+ },
+ "soothe-bell": {
+  "name": "Soothe Bell",
+  "category": "training",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Doubles the happiness earned by the holder."
+ },
+ "mental-herb": {
+  "name": "Mental Herb",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consumed to cure infatuation. Gen V: Also removes Taunt, Encore, Torment, Disable, and Cursed Body."
  },
  "choice-band": {
   "name": "Choice Band",
-  "category": "held"
+  "category": "choice",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Increases Attack by 50%, but restricts the holder to only one move."
  },
- "choice-specs": {
-  "name": "Choice Specs",
-  "category": "held"
+ "kings-rock": {
+  "name": "Kings Rock",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 5000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Damaging moves gain a 10% chance to make their target flinch. Traded on a Poliwhirl: Holder evolves into Politoed. Traded on a Slowpoke: Holder evolves into Slowking."
  },
- "choice-scarf": {
-  "name": "Choice Scarf",
-  "category": "held"
+ "silver-powder": {
+  "name": "Silver Powder",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Bug-Type moves from holder do 20% more damage."
  },
- "life-orb": {
-  "name": "Life Orb",
-  "category": "held"
+ "amulet-coin": {
+  "name": "Amulet Coin",
+  "category": "training",
+  "pocket": "misc",
+  "cost": 10000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Doubles the money earned from a battle. Does not stack with Luck Incense."
  },
- "focus-sash": {
-  "name": "Focus Sash",
-  "category": "held"
+ "cleanse-tag": {
+  "name": "Cleanse Tag",
+  "category": "training",
+  "pocket": "misc",
+  "cost": 5000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Prevents wild encounters of level lower than your party\u2019s lead Pok\u00e9mon."
+ },
+ "soul-dew": {
+  "name": "Soul Dew",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Raises Latias and Latios\u2019s Special Attack and Special Defense by 50%."
+ },
+ "deep-sea-tooth": {
+  "name": "Deep Sea Tooth",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Doubles Clamperl\u2019s Special Attack. Traded on a Clamperl: Holder evolves into Huntail."
+ },
+ "deep-sea-scale": {
+  "name": "Deep Sea Scale",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Doubles Clamperl\u2019s Special Defense. Traded on a Clamperl: Holder evolves into Gorebyss."
+ },
+ "smoke-ball": {
+  "name": "Smoke Ball",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Allows the Holder to escape from any wild battle."
+ },
+ "everstone": {
+  "name": "Everstone",
+  "category": "training",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Prevents level-based evolution from occuring."
+ },
+ "focus-band": {
+  "name": "Focus Band",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder has 10% chance to survive attacks or self-inflicted damage at 1 HP."
+ },
+ "lucky-egg": {
+  "name": "Lucky Egg",
+  "category": "training",
+  "pocket": "misc",
+  "cost": 10000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Increases EXP earned in battle by 50%."
  },
  "scope-lens": {
   "name": "Scope Lens",
-  "category": "held"
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Raises the holder\u2019s critical hit ratio by one stage."
+ },
+ "metal-coat": {
+  "name": "Metal Coat",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Steel-Type moves from holder do 20% more damage."
+ },
+ "leftovers": {
+  "name": "Leftovers",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Restores 1/16 (6.25%) holder\u2019s max HP at the end of each turn."
+ },
+ "dragon-scale": {
+  "name": "Dragon Scale",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Traded on a Seadra: Holder evolves into Kingdra."
+ },
+ "light-ball": {
+  "name": "Light Ball",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Doubles Pikachu\u2019s Attack and Special Attack. Breed on Pikachu or Raichu: Pichu Egg will have Volt Tackle."
+ },
+ "soft-sand": {
+  "name": "Soft Sand",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Ground-Type moves from holder do 20% more damage."
+ },
+ "hard-stone": {
+  "name": "Hard Stone",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 100,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Rock-Type moves from holder do 20% more damage."
+ },
+ "miracle-seed": {
+  "name": "Miracle Seed",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Grass-Type moves from holder do 20% more damage."
+ },
+ "black-glasses": {
+  "name": "Black Glasses",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Dark-Type moves from holder do 20% more damage."
+ },
+ "black-belt": {
+  "name": "Black Belt",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Fighting-Type moves from holder do 20% more damage."
+ },
+ "magnet": {
+  "name": "Magnet",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Electric-Type moves from holder do 20% more damage."
+ },
+ "mystic-water": {
+  "name": "Mystic Water",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Water-Type moves from holder do 20% more damage."
+ },
+ "sharp-beak": {
+  "name": "Sharp Beak",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 50,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Flying-Type moves from holder do 20% more damage."
+ },
+ "poison-barb": {
+  "name": "Poison Barb",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 70,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Poison-Type moves from holder do 20% more damage."
+ },
+ "never-melt-ice": {
+  "name": "Never Melt Ice",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Ice-Type moves from holder do 20% more damage."
+ },
+ "spell-tag": {
+  "name": "Spell Tag",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Ghost-Type moves from holder do 20% more damage."
+ },
+ "twisted-spoon": {
+  "name": "Twisted Spoon",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Psychic-Type moves from holder do 20% more damage."
+ },
+ "charcoal": {
+  "name": "Charcoal",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Fire-Type moves from holder do 20% more damage."
+ },
+ "dragon-fang": {
+  "name": "Dragon Fang",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 70,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Dragon-Type moves from holder do 20% more damage."
+ },
+ "silk-scarf": {
+  "name": "Silk Scarf",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Normal-Type moves from holder do 20% more damage."
+ },
+ "up-grade": {
+  "name": "Up Grade",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Traded on a Porygon: Holder evolves into Porygon2."
+ },
+ "shell-bell": {
+  "name": "Shell Bell",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder receives 1/8 of the damage it deals when attacking."
+ },
+ "sea-incense": {
+  "name": "Sea Incense",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Water-Type moves from holder do 20% more damage. Breeding: Marill or Azumarill beget an Azurill Egg."
+ },
+ "lax-incense": {
+  "name": "Lax Incense",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 5000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder\u2019s evasion is increased by 5%. Breeding: Wobbuffet begets a Wynaut Egg."
+ },
+ "lucky-punch": {
+  "name": "Lucky Punch",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 40,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Raises Chansey\u2019s critical hit ratio by two stages."
+ },
+ "metal-powder": {
+  "name": "Metal Powder",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Raises Ditto\u2019s Defense and Special Defense by 50%. The boost is lost after transforming."
+ },
+ "thick-club": {
+  "name": "Thick Club",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Doubles Cubone or Marowak\u2019s Attack."
+ },
+ "stick": {
+  "name": "Stick",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 60,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Raises Farfetch\u2019d\u2019s critical hit ratio by two stages."
+ },
+ "red-scarf": {
+  "name": "Red Scarf",
+  "category": "scarves",
+  "pocket": "misc",
+  "cost": 100,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Raises the holder\u2019s Coolness while in a contest."
+ },
+ "blue-scarf": {
+  "name": "Blue Scarf",
+  "category": "scarves",
+  "pocket": "misc",
+  "cost": 100,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Raises the holder\u2019s Beauty while in a contest."
+ },
+ "pink-scarf": {
+  "name": "Pink Scarf",
+  "category": "scarves",
+  "pocket": "misc",
+  "cost": 100,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Raises the holder\u2019s Cuteness while in a contest."
+ },
+ "green-scarf": {
+  "name": "Green Scarf",
+  "category": "scarves",
+  "pocket": "misc",
+  "cost": 100,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Raises the holder\u2019s Smartness while in a contest."
+ },
+ "yellow-scarf": {
+  "name": "Yellow Scarf",
+  "category": "scarves",
+  "pocket": "misc",
+  "cost": 100,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Raises the holder\u2019s Toughness while in a contest."
+ },
+ "wide-lens": {
+  "name": "Wide Lens",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Provides a 1/10 (10%) boost in accuracy to the holder."
+ },
+ "muscle-band": {
+  "name": "Muscle Band",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Boosts the damage of physical moves used by the holder by 10%."
+ },
+ "wise-glasses": {
+  "name": "Wise Glasses",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Boosts the damage of special moves used by the holder by 1/10 (10%)."
+ },
+ "expert-belt": {
+  "name": "Expert Belt",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder\u2019s Super Effective moves do 20% extra damage."
+ },
+ "light-clay": {
+  "name": "Light Clay",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Light Screen and Reflect used by the holder last 8 rounds instead of 5."
+ },
+ "life-orb": {
+  "name": "Life Orb",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder\u2019s moves inflict 30% extra damage, but cost 10% max HP."
+ },
+ "power-herb": {
+  "name": "Power Herb",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Both turns of a two-turn charge move happen at once. Consumed upon use."
+ },
+ "toxic-orb": {
+  "name": "Toxic Orb",
+  "category": "bad-held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Inflicts Toxic on the holder at the end of the turn. Activates after Poison damage would occur."
+ },
+ "flame-orb": {
+  "name": "Flame Orb",
+  "category": "bad-held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Inflicts Burn on the holder at the end of the turn. Activates after Burn damage would occur."
+ },
+ "quick-powder": {
+  "name": "Quick Powder",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Doubles Ditto\u2019s Speed when held. The boost is lost after transforming."
+ },
+ "focus-sash": {
+  "name": "Focus Sash",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder survives any single-hit attack at 1 HP if at max HP, then the item is consumed."
+ },
+ "zoom-lens": {
+  "name": "Zoom Lens",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Provides a 1/5 (20%) boost in accuracy if the holder moves after the target."
+ },
+ "metronome": {
+  "name": "Metronome",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Consectutive uses of the same attack have a cumulative damage boost of 10%. Maximum 100% boost."
+ },
+ "iron-ball": {
+  "name": "Iron Ball",
+  "category": "bad-held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 130,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder\u2019s Speed is halved. Negates all Ground-type immunities, and makes Flying-types take neutral damage from Ground-type moves. Arena Trap. Spikes, and Toxic Spikes affect the holder."
+ },
+ "lagging-tail": {
+  "name": "Lagging Tail",
+  "category": "bad-held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder moves last in its priority bracket."
+ },
+ "destiny-knot": {
+  "name": "Destiny Knot",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Infatuates opposing Pok\u00e9mon when holder is inflicted with infatuation."
+ },
+ "black-sludge": {
+  "name": "Black Sludge",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Poison-type holder recovers 1/16 (6.25%) max HP each turn. Non-Poison-Types take 1/8 (12.5%) max HP damage."
+ },
+ "icy-rock": {
+  "name": "Icy Rock",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 40,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Hail by the holder lasts 8 rounds instead of 5."
+ },
+ "smooth-rock": {
+  "name": "Smooth Rock",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Sandstorm by the holder lasts 8 rounds instead of 5."
+ },
+ "heat-rock": {
+  "name": "Heat Rock",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 60,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Sunny Day by the holder lasts 8 rounds instead of 5."
+ },
+ "damp-rock": {
+  "name": "Damp Rock",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 60,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Rain Dance by the holder lasts 8 rounds instead of 5."
+ },
+ "grip-claw": {
+  "name": "Grip Claw",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder\u2019s multi-turn trapping moves last 5 turns."
+ },
+ "choice-scarf": {
+  "name": "Choice Scarf",
+  "category": "choice",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Increases Speed by 50%, but restricts the holder to only one move."
+ },
+ "sticky-barb": {
+  "name": "Sticky Barb",
+  "category": "bad-held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 80,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder takes 1/8 (12.5%) its max HP at the end of each turn. When the holder is hit by a contact move, the attacking Pok\u00e9mon takes 1/8 its max HP in damage and receive the item if not holding one."
+ },
+ "power-bracer": {
+  "name": "Power Bracer",
+  "category": "effort-training",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 70,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder gains 4 Attack effort values, but has halved Speed in battle."
+ },
+ "power-belt": {
+  "name": "Power Belt",
+  "category": "effort-training",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 70,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder gains 4 Defense effort values, but has halved Speed in battle."
+ },
+ "power-lens": {
+  "name": "Power Lens",
+  "category": "effort-training",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 70,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder gains 4 Special Attack effort values, but has halved Speed in battle."
+ },
+ "power-band": {
+  "name": "Power Band",
+  "category": "effort-training",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 70,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder gains 4 Special Defense effort values, but has halved Speed in battle."
+ },
+ "power-anklet": {
+  "name": "Power Anklet",
+  "category": "effort-training",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 70,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder gains 4 Speed effort values, but has halved Speed in battle."
+ },
+ "power-weight": {
+  "name": "Power Weight",
+  "category": "effort-training",
+  "pocket": "misc",
+  "cost": 3000,
+  "fling_power": 70,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder gains 4 HP effort values, but has halved Speed in battle."
+ },
+ "shed-shell": {
+  "name": "Shed Shell",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder can bypass all trapping effects and switch out. Multi-turn moves still cannot be switched out of."
+ },
+ "big-root": {
+  "name": "Big Root",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Increases HP recovered from draining moves, Ingrain, and Aqua Ring by 3/10 (30%)."
+ },
+ "choice-specs": {
+  "name": "Choice Specs",
+  "category": "choice",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Increases Special Attack by 50%, but restricts the holder to only one move."
+ },
+ "flame-plate": {
+  "name": "Flame Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Fire-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Fire."
+ },
+ "splash-plate": {
+  "name": "Splash Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Water-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Water."
+ },
+ "zap-plate": {
+  "name": "Zap Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Electric-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Electric."
+ },
+ "meadow-plate": {
+  "name": "Meadow Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Grass-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Grass."
+ },
+ "icicle-plate": {
+  "name": "Icicle Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Ice-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Ice."
+ },
+ "fist-plate": {
+  "name": "Fist Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Fighting-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Fighting."
+ },
+ "toxic-plate": {
+  "name": "Toxic Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Poison-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Poison."
+ },
+ "earth-plate": {
+  "name": "Earth Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Ground-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Ground."
+ },
+ "sky-plate": {
+  "name": "Sky Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Flying-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Flying."
+ },
+ "mind-plate": {
+  "name": "Mind Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Psychic-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Psychic."
+ },
+ "insect-plate": {
+  "name": "Insect Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Bug-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Bug."
+ },
+ "stone-plate": {
+  "name": "Stone Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Rock-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Rock."
+ },
+ "spooky-plate": {
+  "name": "Spooky Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Ghost-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Ghost."
+ },
+ "draco-plate": {
+  "name": "Draco Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Dragon-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Dragon."
+ },
+ "dread-plate": {
+  "name": "Dread Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Dark-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Dark."
+ },
+ "iron-plate": {
+  "name": "Iron Plate",
+  "category": "plates",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 90,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Steel-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Steel."
+ },
+ "odd-incense": {
+  "name": "Odd Incense",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Psychic-Type moves from holder do 20% more damage. Breeding: Mr. Mime begets a Mime Jr. Egg."
+ },
+ "rock-incense": {
+  "name": "Rock Incense",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Rock-Type moves from holder do 20% more damage. Breeding: Sudowoodo begets a Bonsly Egg."
+ },
+ "full-incense": {
+  "name": "Full Incense",
+  "category": "bad-held-items",
+  "pocket": "misc",
+  "cost": 5000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Holder moves last in its priority bracket. Breeding: Snorlax begets a Munchlax Egg."
+ },
+ "wave-incense": {
+  "name": "Wave Incense",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Water-Type moves from holder do 20% more damage. Breeding: Mantine begets a Mantyke Egg."
+ },
+ "rose-incense": {
+  "name": "Rose Incense",
+  "category": "type-enhancement",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Grass-Type moves from holder do 20% more damage. Breeding: Roselia or Roserade beget a Budew Egg."
+ },
+ "luck-incense": {
+  "name": "Luck Incense",
+  "category": "training",
+  "pocket": "misc",
+  "cost": 11000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Doubles the money earned from a battle. Does not stack with Amulet Coin. Breeding: Chansey and Blissey beget a Happiny Egg."
+ },
+ "pure-incense": {
+  "name": "Pure Incense",
+  "category": "training",
+  "pocket": "misc",
+  "cost": 6000,
+  "fling_power": 10,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Prevents wild encounters of level lower than your party\u2019s lead Pok\u00e9mon. Breeding: Chimecho begets a Chingling Egg."
+ },
+ "protector": {
+  "name": "Protector",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 80,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Traded on a Rhydon: Holder evolves into Rhyperior."
+ },
+ "electirizer": {
+  "name": "Electirizer",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 80,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Traded on an Electabuzz: Holder evolves into Electivire."
+ },
+ "magmarizer": {
+  "name": "Magmarizer",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 80,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Traded on a Magmar: Holder evolves into Magmortar."
+ },
+ "dubious-disc": {
+  "name": "Dubious Disc",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 50,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Traded on a Porygon2: Holder evolves into Porygon-Z."
+ },
+ "reaper-cloth": {
+  "name": "Reaper Cloth",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Traded on a Dusclops: Holder evolves into Dusknoir."
  },
  "razor-claw": {
   "name": "Razor Claw",
-  "category": "held"
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 5000,
+  "fling_power": 80,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Raises the holder\u2019s critical hit ratio by one stage. Held by a Sneasel while levelling up at night: Holder evolves into Weavile."
+ },
+ "razor-fang": {
+  "name": "Razor Fang",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 5000,
+  "fling_power": 30,
+  "holdable": true,
+  "battle_usable": false,
+  "short_effect": "Held: Damaging moves gain a 10% chance to make their target flinch. Held by a Gligar while levelling up: Holder evolves into Gliscor."
+ },
+ "tm01": {
+  "name": "Tm01",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 40000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Hone Claws to a compatible Pok\u00e9mon. (Gen IV & III: Focus Punch Gen II: DynamicPunch Gen I: Mega Punch)"
+ },
+ "tm02": {
+  "name": "Tm02",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Dragon Claw to a compatible Pok\u00e9mon. (Gen II: Headbutt Gen I: Razor Wind)"
+ },
+ "tm03": {
+  "name": "Tm03",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 50000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Psyshock to a compatible Pok\u00e9mon. (Gen IV & III: Water Pulse Gen II: Curse Gen I: Swords Dance)"
+ },
+ "tm04": {
+  "name": "Tm04",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 50000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Calm Mind to a compatible Pok\u00e9mon. (Gen II: Rollout Gen I: Whirlwind)"
+ },
+ "tm05": {
+  "name": "Tm05",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 50000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Roar to a compatible Pok\u00e9mon. (Gen I: Mega Kick)"
+ },
+ "tm06": {
+  "name": "Tm06",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Toxic to a compatible Pok\u00e9mon."
+ },
+ "tm07": {
+  "name": "Tm07",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Hail to a compatible Pok\u00e9mon. (Gen II: Zap Cannon Gen I: Horn Drill)"
+ },
+ "tm08": {
+  "name": "Tm08",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 50000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Bulk Up to a compatible Pok\u00e9mon. (Gen II: Rock Smash Gen I: Body Slam)"
+ },
+ "tm09": {
+  "name": "Tm09",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 50000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Venoshock to a compatible Pok\u00e9mon. (Gen IV & III: Bullet Seed Gen II: Psych Up Gen I: Take Down)"
+ },
+ "tm10": {
+  "name": "Tm10",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Hidden Power to a compatible Pok\u00e9mon. (Gen I: Double-Edge)"
+ },
+ "tm11": {
+  "name": "Tm11",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Sunny Day to a compatible Pok\u00e9mon. (Gen I: BubbleBeam)"
+ },
+ "tm12": {
+  "name": "Tm12",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 50000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Taunt to a compatible Pok\u00e9mon. (Gen II: Sweet Scent Gen I: Water Gun)"
+ },
+ "tm13": {
+  "name": "Tm13",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Ice Beam to a compatible Pok\u00e9mon. (Gen II: Snore)"
+ },
+ "tm14": {
+  "name": "Tm14",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Blizzard to a compatible Pok\u00e9mon."
+ },
+ "tm15": {
+  "name": "Tm15",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Hyper Beam to a compatible Pok\u00e9mon."
+ },
+ "tm16": {
+  "name": "Tm16",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Light Screen to a compatible Pok\u00e9mon. (Gen II: Icy Wind Gen I: Pay Day)"
+ },
+ "tm17": {
+  "name": "Tm17",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Protect to a compatible Pok\u00e9mon. (Gen I: Submission)"
+ },
+ "tm18": {
+  "name": "Tm18",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Rain Dance to a compatible Pok\u00e9mon. (Gen I: Counter)"
+ },
+ "tm19": {
+  "name": "Tm19",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Telekinesis to a compatible Pok\u00e9mon. (Gen IV & III & II: Giga Drain Gen I: Seismic Toss)"
+ },
+ "tm20": {
+  "name": "Tm20",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 100000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Safeguard to a compatible Pok\u00e9mon. (Gen II: Endure Gen I: Rage)"
+ },
+ "tm21": {
+  "name": "Tm21",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Frustration to a compatible Pok\u00e9mon. (Gen I: Mega Drain)"
+ },
+ "tm22": {
+  "name": "Tm22",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches SolarBeam to a compatible Pok\u00e9mon."
+ },
+ "tm23": {
+  "name": "Tm23",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Smack Down to a compatible Pok\u00e9mon. (Gen IV & III & II: Iron Tail Gen I: Dragon Rage)"
+ },
+ "tm24": {
+  "name": "Tm24",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Thunderbolt to a compatible Pok\u00e9mon. (Gen II: DragonBreath)"
+ },
+ "tm25": {
+  "name": "Tm25",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Thunder to a compatible Pok\u00e9mon."
+ },
+ "tm26": {
+  "name": "Tm26",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Earthquake to a compatible Pok\u00e9mon."
+ },
+ "tm27": {
+  "name": "Tm27",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Return to a compatible Pok\u00e9mon. (Gen I: Fissure)"
+ },
+ "tm28": {
+  "name": "Tm28",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 100000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Dig to a compatible Pok\u00e9mon."
+ },
+ "tm29": {
+  "name": "Tm29",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Psychic to a compatible Pok\u00e9mon."
+ },
+ "tm30": {
+  "name": "Tm30",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Shadow Ball to a compatible Pok\u00e9mon. (Gen I: Teleport)"
+ },
+ "tm31": {
+  "name": "Tm31",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Brick Break to a compatible Pok\u00e9mon. (Gen II: Mud-Slap Gen I: Mimic)"
+ },
+ "tm32": {
+  "name": "Tm32",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Double Team to a compatible Pok\u00e9mon."
+ },
+ "tm33": {
+  "name": "Tm33",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Reflect to a compatible Pok\u00e9mon. (Gen II: Ice Punch)"
+ },
+ "tm34": {
+  "name": "Tm34",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Sludge Wave to a compatible Pok\u00e9mon. (Gen IV & III: Shock Wave Gen II: Swagger Gen I: Bide)"
+ },
+ "tm35": {
+  "name": "Tm35",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Flamethrower to a compatible Pok\u00e9mon. (Gen II: Sleep Talk Gen I: Metronome)"
+ },
+ "tm36": {
+  "name": "Tm36",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Sludge Bomb to a compatible Pok\u00e9mon. (Gen I: Selfdestruct)"
+ },
+ "tm37": {
+  "name": "Tm37",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Sandstorm to a compatible Pok\u00e9mon. (Gen I: Egg Bomb)"
+ },
+ "tm38": {
+  "name": "Tm38",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Fire Blast to a compatible Pok\u00e9mon."
+ },
+ "tm39": {
+  "name": "Tm39",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Rock Tomb to a compatible Pok\u00e9mon. (Gen II & I: Swift)"
+ },
+ "tm40": {
+  "name": "Tm40",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Aerial Ace to a compatible Pok\u00e9mon. (Gen II: Defense Curl Gen I: Skull Bash)"
+ },
+ "tm41": {
+  "name": "Tm41",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Torment to a compatible Pok\u00e9mon. (Gen II: ThunderPunch Gen I: Softboiled)"
+ },
+ "tm42": {
+  "name": "Tm42",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Facade to a compatible Pok\u00e9mon. (Gen II & I: Dream Eater)"
+ },
+ "tm43": {
+  "name": "Tm43",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Flame Charge to a compatible Pok\u00e9mon. (Gen IV & III: Secret Power Gen II: Detect Gen I: Sky Attack)"
+ },
+ "tm44": {
+  "name": "Tm44",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 100000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Rest to a compatible Pok\u00e9mon."
+ },
+ "tm45": {
+  "name": "Tm45",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Attract to a compatible Pok\u00e9mon. (Gen I: Thunder Wave)"
+ },
+ "tm46": {
+  "name": "Tm46",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 30000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Thief to a compatible Pok\u00e9mon. (Gen I: Psywave)"
+ },
+ "tm47": {
+  "name": "Tm47",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Low Sweep to a compatible Pok\u00e9mon. (Gen IV & III & II: Steel Wing Gen I: Explosion)"
+ },
+ "tm48": {
+  "name": "Tm48",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Round to a compatible Pok\u00e9mon. (Gen IV & III: Skill Swap Gen II: Fire Punch Gen I: Rock Slide)"
+ },
+ "tm49": {
+  "name": "Tm49",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Echoed Voice to a compatible Pok\u00e9mon. (Gen IV & III: Snatch Gen II: Fury Cutter Gen I: Tri Attack)"
+ },
+ "tm50": {
+  "name": "Tm50",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Overheat to a compatible Pok\u00e9mon. (Gen II: Nightmare Gen I: Substitute)"
+ },
+ "tm51": {
+  "name": "Tm51",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Ally Switch to a compatible Pok\u00e9mon. (Gen IV: Roost)"
+ },
+ "tm52": {
+  "name": "Tm52",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 100000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Focus Blast to a compatible Pok\u00e9mon."
+ },
+ "tm53": {
+  "name": "Tm53",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Energy Ball to a compatible Pok\u00e9mon."
+ },
+ "tm54": {
+  "name": "Tm54",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches False Swipe to a compatible Pok\u00e9mon."
+ },
+ "tm55": {
+  "name": "Tm55",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Scald to a compatible Pok\u00e9mon. (Gen IV: Brine)"
+ },
+ "tm56": {
+  "name": "Tm56",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Fling to a compatible Pok\u00e9mon."
+ },
+ "tm57": {
+  "name": "Tm57",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Charge Beam to a compatible Pok\u00e9mon."
+ },
+ "tm58": {
+  "name": "Tm58",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Sky Drop to a compatible Pok\u00e9mon. (Gen IV: Endure)"
+ },
+ "tm59": {
+  "name": "Tm59",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 100000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Incinerate to a compatible Pok\u00e9mon. (Gen IV: Dragon Pulse)"
+ },
+ "tm60": {
+  "name": "Tm60",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 30000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Quash to a compatible Pok\u00e9mon. (Gen IV: Drain Punch)"
+ },
+ "tm61": {
+  "name": "Tm61",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 30000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Will-O-Wisp to a compatible Pok\u00e9mon."
+ },
+ "tm62": {
+  "name": "Tm62",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 30000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Acrobatics to a compatible Pok\u00e9mon. (Gen IV: Silver Wind)"
+ },
+ "tm63": {
+  "name": "Tm63",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 50000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Embargo to a compatible Pok\u00e9mon."
+ },
+ "tm64": {
+  "name": "Tm64",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Explosion to a compatible Pok\u00e9mon."
+ },
+ "tm65": {
+  "name": "Tm65",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Shadow Claw to a compatible Pok\u00e9mon."
+ },
+ "tm66": {
+  "name": "Tm66",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 30000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Payback to a compatible Pok\u00e9mon."
+ },
+ "tm67": {
+  "name": "Tm67",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 30000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Retaliate to a compatible Pok\u00e9mon. (Gen IV: Recycle)"
+ },
+ "tm68": {
+  "name": "Tm68",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 30000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Giga Impact to a compatible Pok\u00e9mon."
+ },
+ "tm69": {
+  "name": "Tm69",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Rock Polish to a compatible Pok\u00e9mon."
+ },
+ "tm70": {
+  "name": "Tm70",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 50000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Flash to a compatible Pok\u00e9mon."
+ },
+ "tm71": {
+  "name": "Tm71",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 50000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Stone Edge to a compatible Pok\u00e9mon."
+ },
+ "tm72": {
+  "name": "Tm72",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 50000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Volt Switch to a compatible Pok\u00e9mon. (Gen IV: Avalanche)"
+ },
+ "tm73": {
+  "name": "Tm73",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Thunder Wave to a compatible Pok\u00e9mon."
+ },
+ "tm74": {
+  "name": "Tm74",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Gyro Ball to a compatible Pok\u00e9mon."
+ },
+ "tm75": {
+  "name": "Tm75",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Swords Dance to a compatible Pok\u00e9mon."
+ },
+ "tm76": {
+  "name": "Tm76",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Struggle Bug to a compatible Pok\u00e9mon. (Gen IV: Stealth Rock)"
+ },
+ "tm77": {
+  "name": "Tm77",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Psych Up to a compatible Pok\u00e9mon."
+ },
+ "tm78": {
+  "name": "Tm78",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Bulldoze to a compatible Pok\u00e9mon. (Gen IV: Captivate)"
+ },
+ "tm79": {
+  "name": "Tm79",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Frost Breath to a compatible Pok\u00e9mon. (Gen IV: Dark Pulse)"
+ },
+ "tm80": {
+  "name": "Tm80",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Rock Slide to a compatible Pok\u00e9mon."
+ },
+ "tm81": {
+  "name": "Tm81",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches X-Scissor to a compatible Pok\u00e9mon."
+ },
+ "tm82": {
+  "name": "Tm82",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Dragon Tail to a compatible Pok\u00e9mon. (Gen IV: Sleep Talk)"
+ },
+ "tm83": {
+  "name": "Tm83",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 100000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Work Up to a compatible Pok\u00e9mon. (Gen IV: Natural Gift)"
+ },
+ "tm84": {
+  "name": "Tm84",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Poison Jab to a compatible Pok\u00e9mon."
+ },
+ "tm85": {
+  "name": "Tm85",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Dream Eater to a compatible Pok\u00e9mon."
+ },
+ "tm86": {
+  "name": "Tm86",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Grass Knot to a compatible Pok\u00e9mon."
+ },
+ "tm87": {
+  "name": "Tm87",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Swagger to a compatible Pok\u00e9mon."
+ },
+ "tm88": {
+  "name": "Tm88",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 20000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Pluck to a compatible Pok\u00e9mon."
+ },
+ "tm89": {
+  "name": "Tm89",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 20000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches U-turn to a compatible Pok\u00e9mon."
+ },
+ "tm90": {
+  "name": "Tm90",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 20000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Substitute to a compatible Pok\u00e9mon."
+ },
+ "tm91": {
+  "name": "Tm91",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 20000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Flash Cannon to a compatible Pok\u00e9mon."
+ },
+ "tm92": {
+  "name": "Tm92",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 100000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Trick Room to a compatible Pok\u00e9mon."
+ },
+ "hm01": {
+  "name": "Hm01",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Cut to a compatible Pok\u00e9mon."
+ },
+ "hm02": {
+  "name": "Hm02",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Fly to a compatible Pok\u00e9mon."
+ },
+ "hm03": {
+  "name": "Hm03",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Surf to a compatible Pok\u00e9mon."
+ },
+ "hm04": {
+  "name": "Hm04",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Strength to a compatible Pok\u00e9mon."
+ },
+ "hm05": {
+  "name": "Hm05",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Waterfall to a compatible Pok\u00e9mon. (HS: Whirlpool DPP: Defog Gen III & II & I: Flash)"
+ },
+ "hm06": {
+  "name": "Hm06",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Dive to a compatible Pok\u00e9mon. (Gen IV & III: Rock Smash Gen II: Whirlpool)"
+ },
+ "hm07": {
+  "name": "Hm07",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches a move to a compatible Pok\u00e9mon. (Gen IV & III & II: Waterfall)"
+ },
+ "hm08": {
+  "name": "Hm08",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches a move to a compatible Pok\u00e9mon. (Gen IV: Rock Climb Gen III: Dive)"
+ },
+ "explorer-kit": {
+  "name": "Explorer Kit",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Allows visiting the Underground."
+ },
+ "loot-sack": {
+  "name": "Loot Sack",
+  "category": "unused",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Carries coal mine loot."
+ },
+ "rule-book": {
+  "name": "Rule Book",
+  "category": "unused",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "List of battle types and their rules."
+ },
+ "poke-radar": {
+  "name": "Poke Radar",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Use to track down rare or shiny Pok\u00e9mon. 50 steps to recharge."
+ },
+ "point-card": {
+  "name": "Point Card",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Keeps count of Battle Points earned."
+ },
+ "journal": {
+  "name": "Journal",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records prior significant activities the player took."
+ },
+ "seal-case": {
+  "name": "Seal Case",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Stores Seals that can be applied to Pok\u00e9 Ball capsules."
+ },
+ "fashion-case": {
+  "name": "Fashion Case",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Holds Pok\u00e9mon Accessories for use in Contests."
+ },
+ "seal-bag": {
+  "name": "Seal Bag",
+  "category": "unused",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Holds ten Seals for Pok\u00e9 Balls."
+ },
+ "pal-pad": {
+  "name": "Pal Pad",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Use to record Friend Codes and check your own."
+ },
+ "works-key": {
+  "name": "Works Key",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Grants access to Valley Windworks."
+ },
+ "old-charm": {
+  "name": "Old Charm",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Trade to Cynthia\u2019s grandmother in Celestic Town for HM04 (Surf)."
+ },
+ "galactic-key": {
+  "name": "Galactic Key",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Grants access to Galactic HQ in Veilstone City."
+ },
+ "red-chain": {
+  "name": "Red Chain",
+  "category": "unused",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to bind Palkia and Dialga."
+ },
+ "town-map": {
+  "name": "Town Map",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Use to see the overworld map."
+ },
+ "vs-seeker": {
+  "name": "Vs Seeker",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Allows rebattling of on-screen trainers. 100 steps to recharge."
+ },
+ "coin-case": {
+  "name": "Coin Case",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Holds coins for the Game Corner."
+ },
+ "old-rod": {
+  "name": "Old Rod",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to catch Pok\u00e9mon in bodies of water."
+ },
+ "good-rod": {
+  "name": "Good Rod",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to catch Pok\u00e9mon in bodies of water."
+ },
+ "super-rod": {
+  "name": "Super Rod",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to catch Pok\u00e9mon in bodies of water."
+ },
+ "sprayduck": {
+  "name": "Sprayduck",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to water berries."
+ },
+ "poffin-case": {
+  "name": "Poffin Case",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Holds Poffins."
+ },
+ "bicycle": {
+  "name": "Bicycle",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Use for fast transit."
+ },
+ "suite-key": {
+  "name": "Suite Key",
+  "category": "event-items",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Opens a locked building in the Lakeside Resort."
+ },
+ "oaks-letter": {
+  "name": "Oaks Letter",
+  "category": "event-items",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Allows access to Seabreak path, Flower Paradise, and Shaymin."
+ },
+ "lunar-wing": {
+  "name": "Lunar Wing",
+  "category": "event-items",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Cures sailor\u2019s son of nightmares in Canalave City."
+ },
+ "member-card": {
+  "name": "Member Card",
+  "category": "event-items",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Allows access to Newmoon Island and Darkrai."
+ },
+ "azure-flute": {
+  "name": "Azure Flute",
+  "category": "event-items",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Allows entry into the Hall of Origin. Unreleased."
+ },
+ "ss-ticket": {
+  "name": "Ss Ticket",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Ticket for a ship. (RSE: S.S. Tidal LF: S.S. Anne HG: S.S. Aqua)"
+ },
+ "contest-pass": {
+  "name": "Contest Pass",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Allows participation in Pok\u00e9mon Contests."
+ },
+ "magma-stone": {
+  "name": "Magma Stone",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Magma is sealed inside."
+ },
+ "parcel": {
+  "name": "Parcel",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Given to the trainer\u2019s rival in Jubilife City. Contains Town Maps."
+ },
+ "coupon-1": {
+  "name": "Coupon 1",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "The first of three tickets used to obtain a Pok\u00e9tch."
+ },
+ "coupon-2": {
+  "name": "Coupon 2",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "The second of three tickets used to obtain a Pok\u00e9tch."
+ },
+ "coupon-3": {
+  "name": "Coupon 3",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "The last of three tickets used to obtain a Pok\u00e9tch."
+ },
+ "storage-key": {
+  "name": "Storage Key",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Grants access to the Team Galactic warehouse in Veilstone City."
+ },
+ "secret-potion": {
+  "name": "Secret Potion",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to heal the Ampharos at the top of Olivine Lighthouse."
+ },
+ "griseous-orb": {
+  "name": "Griseous Orb",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 60,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Boosts the damage from Giratina\u2019s Dragon-type and Ghost-type moves by 20%, and transforms it into Origin Forme."
+ },
+ "vs-recorder": {
+  "name": "Vs Recorder",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records wireless, Wi-Fi, or Battle Frontier battles, and stores points."
+ },
+ "gracidea": {
+  "name": "Gracidea",
+  "category": "event-items",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Changes an unfrozen Shaymin to Sky Forme in the day."
+ },
+ "secret-key": {
+  "name": "Secret Key",
+  "category": "event-items",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Gen IV: The key to Rotom\u2019s appliance room. Gen III: The key to Cinnabar Gym."
+ },
+ "apricorn-box": {
+  "name": "Apricorn Box",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Holds Apricorns."
+ },
+ "berry-pots": {
+  "name": "Berry Pots",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Allows portable berry growing."
+ },
+ "squirt-bottle": {
+  "name": "Squirt Bottle",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Use on Sudowoodo blocking the path on Route 36. Also waters berries."
+ },
+ "lure-ball": {
+  "name": "Lure Ball",
+  "category": "apricorn-balls",
+  "pocket": "pokeballs",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "3\u00d7 effectiveness while fishing. Made from Blu Apricorn.",
+  "ball_rate": 3.0
+ },
+ "level-ball": {
+  "name": "Level Ball",
+  "category": "apricorn-balls",
+  "pocket": "pokeballs",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Success rate based off of fraction target Pok\u00e9mon is of user\u2019s Pok\u00e9mon. Made from Red Apricorn.",
+  "ball_rate": 2.0
+ },
+ "moon-ball": {
+  "name": "Moon Ball",
+  "category": "apricorn-balls",
+  "pocket": "pokeballs",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "4\u00d7 effectiveness on familes of Pok\u00e9mon with a Moon Stone evolution. Made from Ylw Apricorn.",
+  "ball_rate": 3.0
+ },
+ "heavy-ball": {
+  "name": "Heavy Ball",
+  "category": "apricorn-balls",
+  "pocket": "pokeballs",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Has flat bonus or penalty to catch rate depending on weight class of target. Made from Blk Apricorn.",
+  "ball_rate": 1.5
+ },
+ "fast-ball": {
+  "name": "Fast Ball",
+  "category": "apricorn-balls",
+  "pocket": "pokeballs",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "4\u00d7 effectiveness on Pok\u00e9mon with 100 or greater base speed. (Gen II: Roaming or Fleeing Pok\u00e9mon). Made from Wht Apricorn.",
+  "ball_rate": 4.0
+ },
+ "friend-ball": {
+  "name": "Friend Ball",
+  "category": "apricorn-balls",
+  "pocket": "pokeballs",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Caught Pok\u00e9mon start with 200 happiness. Made from Grn Apricorn.",
+  "ball_rate": 1.0
+ },
+ "love-ball": {
+  "name": "Love Ball",
+  "category": "apricorn-balls",
+  "pocket": "pokeballs",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "8\u00d7 effectiveness on opposite sex, same species targets of the Active Pok\u00e9mon. Made from Pnk Apricorn.",
+  "ball_rate": 4.0
+ },
+ "park-ball": {
+  "name": "Park Ball",
+  "category": "standard-balls",
+  "pocket": "pokeballs",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Catches Pok\u00e9mon in the Pal Park every time.",
+  "ball_rate": 255.0
+ },
+ "sport-ball": {
+  "name": "Sport Ball",
+  "category": "standard-balls",
+  "pocket": "pokeballs",
+  "cost": 300,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Tries to catch a Pok\u00e9mon in the Bug-Catching contest in National Park. (Gen II: Park Ball)",
+  "ball_rate": 1.5
+ },
+ "red-apricorn": {
+  "name": "Red Apricorn",
+  "category": "apricorn-box",
+  "pocket": "key",
+  "cost": 200,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to make a Level Ball."
+ },
+ "blue-apricorn": {
+  "name": "Blue Apricorn",
+  "category": "apricorn-box",
+  "pocket": "key",
+  "cost": 200,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to make a Lure Ball."
+ },
+ "yellow-apricorn": {
+  "name": "Yellow Apricorn",
+  "category": "apricorn-box",
+  "pocket": "key",
+  "cost": 200,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to make a Moon Ball."
+ },
+ "green-apricorn": {
+  "name": "Green Apricorn",
+  "category": "apricorn-box",
+  "pocket": "key",
+  "cost": 200,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to make a Friend Ball."
+ },
+ "pink-apricorn": {
+  "name": "Pink Apricorn",
+  "category": "apricorn-box",
+  "pocket": "key",
+  "cost": 200,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to make a Love Ball."
+ },
+ "white-apricorn": {
+  "name": "White Apricorn",
+  "category": "apricorn-box",
+  "pocket": "key",
+  "cost": 200,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to make a Fast Ball."
+ },
+ "black-apricorn": {
+  "name": "Black Apricorn",
+  "category": "apricorn-box",
+  "pocket": "key",
+  "cost": 200,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to make a Heavy Ball."
+ },
+ "dowsing-machine": {
+  "name": "Dowsing Machine",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Use to find hidden items on the field. AKA Itemfinder."
+ },
+ "rage-candy-bar": {
+  "name": "Rage Candy Bar",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 350,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "HS: Traded for TM64. Gen II & Gen V: Acts as a Potion."
+ },
+ "red-orb": {
+  "name": "Red Orb",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Summons Groudon to the Embedded Tower."
+ },
+ "blue-orb": {
+  "name": "Blue Orb",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Summons Kyogre to the Embedded Tower."
+ },
+ "jade-orb": {
+  "name": "Jade Orb",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Summons Rayquaza to the Embedded Tower."
+ },
+ "enigma-stone": {
+  "name": "Enigma Stone",
+  "category": "event-items",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "S: Summons Latias H: Summons Latios."
+ },
+ "unown-report": {
+  "name": "Unown Report",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Keeps track of Unown types caught."
+ },
+ "blue-card": {
+  "name": "Blue Card",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Keeps track of points from Buena\u2019s show."
+ },
+ "slowpoke-tail": {
+  "name": "Slowpoke Tail",
+  "category": "unused",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "A tasty tail that sells for a high price."
+ },
+ "clear-bell": {
+  "name": "Clear Bell",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "HS: Allows Kimono-girls to summon Ho-oh. C: Summons Suicune to the Tin Tower."
+ },
+ "card-key": {
+  "name": "Card Key",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "HS: Opens doors in the Radio Tower. Gen III: Unlocks Silph Co Doors."
+ },
+ "basement-key": {
+  "name": "Basement Key",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "HS: Key to the tunnel under Goldenrod City. Gen III: Key to New Mauville."
+ },
+ "red-scale": {
+  "name": "Red Scale",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Trade to Mr. Pok\u00e9mon for an Exp. Share."
+ },
+ "lost-item": {
+  "name": "Lost Item",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "A Pok\u00e9 Doll lost by the Copycat who lives in Saffron City. Trade for a Pass."
+ },
+ "pass": {
+  "name": "Pass",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Grants access to ride the Magnet Train between Goldenrod City and Saffron City."
+ },
+ "machine-part": {
+  "name": "Machine Part",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Must be replaced in the Power Plant to power the Magnet Train."
+ },
+ "silver-wing": {
+  "name": "Silver Wing",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Summons Lugia to the Whirl Islands."
+ },
+ "rainbow-wing": {
+  "name": "Rainbow Wing",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Summons Ho-Oh at the top of the Bell Tower."
+ },
+ "mystery-egg": {
+  "name": "Mystery Egg",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Deliver to Professor Elm."
+ },
+ "gb-sounds": {
+  "name": "Gb Sounds",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Use to listen to GameBoy era audio."
+ },
+ "tidal-bell": {
+  "name": "Tidal Bell",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Allows Kimono-girls to summon Lugia."
+ },
+ "data-card-01": {
+  "name": "Data Card 01",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in first place overall in the Pok\u00e9athlon."
+ },
+ "data-card-02": {
+  "name": "Data Card 02",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in last place overall in the Pok\u00e9athlon."
+ },
+ "data-card-03": {
+  "name": "Data Card 03",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer\u2019s Pok\u00e9mon have dashed in the Pok\u00e9athlon."
+ },
+ "data-card-04": {
+  "name": "Data Card 04",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer\u2019s Pok\u00e9mon have jumped in the Pok\u00e9athlon."
+ },
+ "data-card-05": {
+  "name": "Data Card 05",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in first in the Pok\u00e9athlon Hurdle Dash."
+ },
+ "data-card-06": {
+  "name": "Data Card 06",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in first in the Pok\u00e9athlon Relay Run."
+ },
+ "data-card-07": {
+  "name": "Data Card 07",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in first in the Pok\u00e9athlon Pennant Capture."
+ },
+ "data-card-08": {
+  "name": "Data Card 08",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in first in the Pok\u00e9athlon Block Smash."
+ },
+ "data-card-09": {
+  "name": "Data Card 09",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in first in the Pok\u00e9athlon Disc Catch."
+ },
+ "data-card-10": {
+  "name": "Data Card 10",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in first in the Pok\u00e9athlon Snow Throw."
+ },
+ "data-card-11": {
+  "name": "Data Card 11",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of points the trainer has earned in the Pok\u00e9athlon."
+ },
+ "data-card-12": {
+  "name": "Data Card 12",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer\u2019s Pok\u00e9mon have messed up in the Pok\u00e9athlon."
+ },
+ "data-card-13": {
+  "name": "Data Card 13",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer\u2019s Pok\u00e9mon have defeated themselves in the Pok\u00e9athlon."
+ },
+ "data-card-14": {
+  "name": "Data Card 14",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer\u2019s Pok\u00e9mon have tackled in the Pok\u00e9athlon."
+ },
+ "data-card-15": {
+  "name": "Data Card 15",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer\u2019s Pok\u00e9mon have fallen in the Pok\u00e9athlon."
+ },
+ "data-card-16": {
+  "name": "Data Card 16",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in first in the Pok\u00e9athlon Ring Drop."
+ },
+ "data-card-17": {
+  "name": "Data Card 17",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in first in the Pok\u00e9athlon Lamp Jump."
+ },
+ "data-card-18": {
+  "name": "Data Card 18",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in first in the Pok\u00e9athlon Circle Push."
+ },
+ "data-card-19": {
+  "name": "Data Card 19",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in first place overall in the Pok\u00e9athlon over wirelss."
+ },
+ "data-card-20": {
+  "name": "Data Card 20",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in last place overall in the Pok\u00e9athlon over wireless."
+ },
+ "data-card-21": {
+  "name": "Data Card 21",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in first across all Pok\u00e9athlon events."
+ },
+ "data-card-22": {
+  "name": "Data Card 22",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in last across all Pok\u00e9athlon events."
+ },
+ "data-card-23": {
+  "name": "Data Card 23",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has switched Pok\u00e9mon in the Pok\u00e9athlon."
+ },
+ "data-card-24": {
+  "name": "Data Card 24",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has come in first in the Pok\u00e9athlon Goal Roll."
+ },
+ "data-card-25": {
+  "name": "Data Card 25",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer\u2019s Pok\u00e9mon received prizes in the Pok\u00e9athlon."
+ },
+ "data-card-26": {
+  "name": "Data Card 26",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the number of times the trainer has instructed Pok\u00e9mon in the Pok\u00e9athlon."
+ },
+ "data-card-27": {
+  "name": "Data Card 27",
+  "category": "data-cards",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records the total time spent in the Pok\u00e9athlon."
+ },
+ "lock-capsule": {
+  "name": "Lock Capsule",
+  "category": "unused",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Contains TM95 (Snarl)."
+ },
+ "photo-album": {
+  "name": "Photo Album",
+  "category": "unused",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Stores photos from your adventure."
+ },
+ "orange-mail": {
+  "name": "Orange Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "harbor-mail": {
+  "name": "Harbor Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "glitter-mail": {
+  "name": "Glitter Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "mech-mail": {
+  "name": "Mech Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "wood-mail": {
+  "name": "Wood Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "wave-mail": {
+  "name": "Wave Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "bead-mail": {
+  "name": "Bead Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "shadow-mail": {
+  "name": "Shadow Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "tropic-mail": {
+  "name": "Tropic Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "dream-mail": {
+  "name": "Dream Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "fab-mail": {
+  "name": "Fab Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "retro-mail": {
+  "name": "Retro Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "mach-bike": {
+  "name": "Mach Bike",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Faster than the Acro Bike, and can ride up sandy slopes and across cracked floors."
+ },
+ "acro-bike": {
+  "name": "Acro Bike",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "More maneuverable than the Mach Bike, and allows hopping along rails."
+ },
+ "wailmer-pail": {
+  "name": "Wailmer Pail",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to water berries."
+ },
+ "devon-goods": {
+  "name": "Devon Goods",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Contains mechanical parts to be delivered to Captain Stern."
+ },
+ "soot-sack": {
+  "name": "Soot Sack",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Stores volcanic ash from Route 113."
+ },
+ "pokeblock-case": {
+  "name": "Pokeblock Case",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Holds Pok\u00e9blocks."
+ },
+ "letter": {
+  "name": "Letter",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "A letter to Steven from the Devon Corp president."
+ },
+ "eon-ticket": {
+  "name": "Eon Ticket",
+  "category": "event-items",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Provides access to Southern Island and Latias or Latios."
+ },
+ "scanner": {
+  "name": "Scanner",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Trade to Captain Stern for a DeepSeaTooth or DeepSeaScale."
+ },
+ "go-goggles": {
+  "name": "Go Goggles",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Allows passage through windy deserts."
+ },
+ "meteorite": {
+  "name": "Meteorite",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "FL: Deliver to Lostelle\u2019s father. RSE: Trade to Professor Cozmo for TM27 (Return)."
+ },
+ "rm-1-key": {
+  "name": "Rm 1 Key",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Unlocks room 1 on the Abandoned Ship."
+ },
+ "rm-2-key": {
+  "name": "Rm 2 Key",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Unlocks room 2 on the Abandoned Ship."
+ },
+ "rm-4-key": {
+  "name": "Rm 4 Key",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Unlocks room 4 on the Abandoned Ship."
+ },
+ "rm-6-key": {
+  "name": "Rm 6 Key",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Unlocks room 6 on the Abandoned Ship."
+ },
+ "devon-scope": {
+  "name": "Devon Scope",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Allows spotting of invisible Kecleon."
+ },
+ "oaks-parcel": {
+  "name": "Oaks Parcel",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Trade to Prof. Oak for a Pok\u00e9dex."
+ },
+ "poke-flute": {
+  "name": "Poke Flute",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Use to awaken sleeping Pok\u00e9mon, including Snorlax on roads."
+ },
+ "bike-voucher": {
+  "name": "Bike Voucher",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Trade in Cerulean bike shop for a Bicycle."
+ },
+ "gold-teeth": {
+  "name": "Gold Teeth",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "The Safari Zone Warden\u2019s dentures. Trade for HM04 (Strength)."
+ },
+ "lift-key": {
+  "name": "Lift Key",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Operates the elevator in Team Rocket\u2019s Celadon Hideout."
+ },
+ "silph-scope": {
+  "name": "Silph Scope",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Used to identify the true forms of ghosts in Pok\u00e9mon Tower."
+ },
+ "fame-checker": {
+  "name": "Fame Checker",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Records information about NPCs."
+ },
+ "tm-case": {
+  "name": "Tm Case",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Holds TMs."
+ },
+ "berry-pouch": {
+  "name": "Berry Pouch",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Holds berries."
+ },
+ "teachy-tv": {
+  "name": "Teachy Tv",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teachers basic trainer advice."
+ },
+ "tri-pass": {
+  "name": "Tri Pass",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Grants access to the first three Sevii Islands."
+ },
+ "rainbow-pass": {
+  "name": "Rainbow Pass",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Grants access to all of the Sevii Islands."
+ },
+ "tea": {
+  "name": "Tea",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Grants access to Saffron City."
+ },
+ "mysticticket": {
+  "name": "Mysticticket",
+  "category": "event-items",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Allows access to Navel Rock and Lugia or Ho-oh."
+ },
+ "auroraticket": {
+  "name": "Auroraticket",
+  "category": "event-items",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Allows access to Birth Island and Deoxys."
+ },
+ "powder-jar": {
+  "name": "Powder Jar",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Stores Berry Powder made using a Berry Crusher."
+ },
+ "ruby": {
+  "name": "Ruby",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Give to Celio with Sapphire to activate Network Machine and get Rainbow Pass."
+ },
+ "sapphire": {
+  "name": "Sapphire",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Give to Celio with Ruby to activate Network Machine and get Rainbow Pass."
+ },
+ "magma-emblem": {
+  "name": "Magma Emblem",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Provides access to the Team Magma Hideout in the Jagged Pass."
+ },
+ "old-sea-map": {
+  "name": "Old Sea Map",
+  "category": "event-items",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Allows access to Faraway Island and Mew. Unreleased outside of Japan."
+ },
+ "douse-drive": {
+  "name": "Douse Drive",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 70,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Grants Genesect a blue, Water-type Techno Blast."
+ },
+ "shock-drive": {
+  "name": "Shock Drive",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 70,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Grants Genesect a yellow, Electric-type Techno Blast."
+ },
+ "burn-drive": {
+  "name": "Burn Drive",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 70,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Grants Genesect a red, Fire-type Techno Blast."
+ },
+ "chill-drive": {
+  "name": "Chill Drive",
+  "category": "species-specific",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 70,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Grants Genesect a white, Ice-type Techno Blast."
+ },
+ "sweet-heart": {
+  "name": "Sweet Heart",
+  "category": "healing",
+  "pocket": "medicine",
+  "cost": 3000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Restores 20 HP."
+ },
+ "greet-mail": {
+  "name": "Greet Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "favored-mail": {
+  "name": "Favored Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "rsvp-mail": {
+  "name": "Rsvp Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "thanks-mail": {
+  "name": "Thanks Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "inquiry-mail": {
+  "name": "Inquiry Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "like-mail": {
+  "name": "Like Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "reply-mail": {
+  "name": "Reply Mail",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "bridge-mail-s": {
+  "name": "Bridge Mail S",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "bridge-mail-d": {
+  "name": "Bridge Mail D",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "bridge-mail-t": {
+  "name": "Bridge Mail T",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "bridge-mail-v": {
+  "name": "Bridge Mail V",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "bridge-mail-m": {
+  "name": "Bridge Mail M",
+  "category": "all-mail",
+  "pocket": "mail",
+  "cost": 50,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Lets a Trainer write a message and send it via Pok\u00e9mon trade."
+ },
+ "prism-scale": {
+  "name": "Prism Scale",
+  "category": "evolution",
+  "pocket": "misc",
+  "cost": 2000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Traded on a Feebas: Holder evolves into Milotic."
+ },
+ "eviolite": {
+  "name": "Eviolite",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 40,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: Holder has 1.5\u00d7 Defense and Special Defense, as long as it\u2019s not fully evolved."
+ },
+ "float-stone": {
+  "name": "Float Stone",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: Holder has 0.5\u00d7 weight."
+ },
+ "rocky-helmet": {
+  "name": "Rocky Helmet",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 60,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder is hit by a contact move, the attacking Pok\u00e9mon takes 1/6 its max HP in damage."
+ },
+ "air-balloon": {
+  "name": "Air Balloon",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: Grants immunity to Ground-type moves, Spikes, and Toxic Spikes. Consumed when the holder takes damage from a move."
+ },
+ "red-card": {
+  "name": "Red Card",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder takes damage from a move, the opponent switches out for another random party Pok\u00e9mon. Consumed after use."
+ },
+ "ring-target": {
+  "name": "Ring Target",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 10,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: Negates the holder\u2019s type immunities. Ability immunities are not removed."
+ },
+ "binding-band": {
+  "name": "Binding Band",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: Doubles the per-turn damage of multi-turn trapping moves."
+ },
+ "absorb-bulb": {
+  "name": "Absorb Bulb",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: Raises the holder\u2019s Special Attack by one stage when it takes Water-type damage."
+ },
+ "cell-battery": {
+  "name": "Cell Battery",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: Raises the holder\u2019s Attack by one stage when it takes Electric-type damage."
+ },
+ "eject-button": {
+  "name": "Eject Button",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder takes damage from a move, it switches out for a party Pok\u00e9mon of the Trainer\u2019s choice."
+ },
+ "fire-gem": {
+  "name": "Fire Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Fire-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "water-gem": {
+  "name": "Water Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Water-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "electric-gem": {
+  "name": "Electric Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Electric-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "grass-gem": {
+  "name": "Grass Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Grass-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "ice-gem": {
+  "name": "Ice Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Ice-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "fighting-gem": {
+  "name": "Fighting Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Fighting-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "poison-gem": {
+  "name": "Poison Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Poison-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "ground-gem": {
+  "name": "Ground Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Ground-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "flying-gem": {
+  "name": "Flying Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Flying-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "psychic-gem": {
+  "name": "Psychic Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Psychic-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "bug-gem": {
+  "name": "Bug Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Bug-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "rock-gem": {
+  "name": "Rock Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Rock-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "ghost-gem": {
+  "name": "Ghost Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Ghost-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "dark-gem": {
+  "name": "Dark Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Dark-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "steel-gem": {
+  "name": "Steel Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Steel-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "health-wing": {
+  "name": "Health Wing",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 300,
+  "fling_power": 20,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Increases HP effort by 1."
+ },
+ "muscle-wing": {
+  "name": "Muscle Wing",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 300,
+  "fling_power": 20,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Increases Attack effort by 1."
+ },
+ "resist-wing": {
+  "name": "Resist Wing",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 300,
+  "fling_power": 20,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Increases Defense effort by 1."
+ },
+ "genius-wing": {
+  "name": "Genius Wing",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 300,
+  "fling_power": 20,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Increases Special Attack effort by 1."
+ },
+ "clever-wing": {
+  "name": "Clever Wing",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 300,
+  "fling_power": 20,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Increases Special Defense effort by 1."
+ },
+ "swift-wing": {
+  "name": "Swift Wing",
+  "category": "vitamins",
+  "pocket": "medicine",
+  "cost": 300,
+  "fling_power": 20,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Increases Speed effort by 1."
+ },
+ "pretty-wing": {
+  "name": "Pretty Wing",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 1000,
+  "fling_power": 20,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell for 100 Pok\u00e9dollars."
+ },
+ "cover-fossil": {
+  "name": "Cover Fossil",
+  "category": "dex-completion",
+  "pocket": "misc",
+  "cost": 7000,
+  "fling_power": 100,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Can be revived into a Tirtouga."
+ },
+ "plume-fossil": {
+  "name": "Plume Fossil",
+  "category": "dex-completion",
+  "pocket": "misc",
+  "cost": 7000,
+  "fling_power": 100,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Can be revived into an Archen."
+ },
+ "liberty-pass": {
+  "name": "Liberty Pass",
+  "category": "event-items",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Allows access to Liberty Garden and Victini."
+ },
+ "pass-orb": {
+  "name": "Pass Orb",
+  "category": "held-items",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Activates Pass Powers."
+ },
+ "dream-ball": {
+  "name": "Dream Ball",
+  "category": "special-balls",
+  "pocket": "pokeballs",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Catches Pok\u00e9mon found in the Dream World.",
+  "ball_rate": 255.0
+ },
+ "poke-toy": {
+  "name": "Poke Toy",
+  "category": "spelunking",
+  "pocket": "misc",
+  "cost": 100,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Ends a wild battle."
+ },
+ "prop-case": {
+  "name": "Prop Case",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Stores props for the Pok\u00e9mon Musical."
+ },
+ "dragon-skull": {
+  "name": "Dragon Skull",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Return to the museum in Nacrene City."
+ },
+ "balm-mushroom": {
+  "name": "Balm Mushroom",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 15000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell to Hungry Maid for 25000 Pok\u00e9dollars."
+ },
+ "big-nugget": {
+  "name": "Big Nugget",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 40000,
+  "fling_power": 130,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell to Ore Collector for 30000 Pok\u00e9dollars."
+ },
+ "pearl-string": {
+  "name": "Pearl String",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 20000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell to Ore Collector for 25000 Pok\u00e9dollars."
+ },
+ "comet-shard": {
+  "name": "Comet Shard",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 25000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell to Ore Collector for 60000 Pok\u00e9dollars."
+ },
+ "relic-copper": {
+  "name": "Relic Copper",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell to Villa Owner for 1000 Pok\u00e9dollars."
+ },
+ "relic-silver": {
+  "name": "Relic Silver",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell to Villa Owner 5000 Pok\u00e9dollars."
+ },
+ "relic-gold": {
+  "name": "Relic Gold",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 60000,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell to Villa Owner 10000 Pok\u00e9dollars."
+ },
+ "relic-vase": {
+  "name": "Relic Vase",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell to Villa Owner 50000 Pok\u00e9dollars."
+ },
+ "relic-band": {
+  "name": "Relic Band",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell to Villa Owner for 100000 Pok\u00e9dollars."
+ },
+ "relic-statue": {
+  "name": "Relic Statue",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell to Villa Owner 200000 Pok\u00e9dollars."
+ },
+ "relic-crown": {
+  "name": "Relic Crown",
+  "category": "loot",
+  "pocket": "misc",
+  "cost": 0,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Sell to Villa Owner for 300000 Pok\u00e9dollars."
+ },
+ "casteliacone": {
+  "name": "Casteliacone",
+  "category": "status-cures",
+  "pocket": "medicine",
+  "cost": 350,
+  "fling_power": 30,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Cures any status ailment and confusion.",
+  "cures": [
+   "all"
+  ]
+ },
+ "dire-hit-2": {
+  "name": "Dire Hit 2",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises critical hit rate by two stages in battle.  Wonder Launcher only."
+ },
+ "x-speed-2": {
+  "name": "X Speed 2",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Speed by two stages in battle.  Wonder Launcher only."
+ },
+ "x-sp-atk-2": {
+  "name": "X Sp Atk 2",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Special Attack by two stages in battle.  Wonder Launcher only."
+ },
+ "x-sp-def-2": {
+  "name": "X Sp Def 2",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Special Defense by two stages in battle.  Wonder Launcher only."
+ },
+ "x-defense-2": {
+  "name": "X Defense 2",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Defense by two stages in battle.  Wonder Launcher only."
+ },
+ "x-attack-2": {
+  "name": "X Attack 2",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Attack by two stages in battle.  Wonder Launcher only."
+ },
+ "x-accuracy-2": {
+  "name": "X Accuracy 2",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises accuracy by two stages in battle.  Wonder Launcher only."
+ },
+ "x-speed-3": {
+  "name": "X Speed 3",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Speed by three stages in battle.  Wonder Launcher only."
+ },
+ "x-sp-atk-3": {
+  "name": "X Sp Atk 3",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Special Attack by three stages in battle.  Wonder Launcher only."
+ },
+ "x-sp-def-3": {
+  "name": "X Sp Def 3",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Special Defense by three stages in battle.  Wonder Launcher only."
+ },
+ "x-defense-3": {
+  "name": "X Defense 3",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Defense by three stages in battle.  Wonder Launcher only."
+ },
+ "x-attack-3": {
+  "name": "X Attack 3",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Attack by three stages in battle.  Wonder Launcher only."
+ },
+ "x-accuracy-3": {
+  "name": "X Accuracy 3",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises accuracy by three stages in battle.  Wonder Launcher only."
+ },
+ "x-speed-6": {
+  "name": "X Speed 6",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Speed by six stages in battle.  Wonder Launcher only."
+ },
+ "x-sp-atk-6": {
+  "name": "X Sp Atk 6",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Special Attack by six stages in battle.  Wonder Launcher only."
+ },
+ "x-sp-def-6": {
+  "name": "X Sp Def 6",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Special Defense by six stages in battle.  Wonder Launcher only."
+ },
+ "x-defense-6": {
+  "name": "X Defense 6",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Defense by six stages in battle.  Wonder Launcher only."
+ },
+ "x-attack-6": {
+  "name": "X Attack 6",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises Attack by six stages in battle.  Wonder Launcher only."
+ },
+ "x-accuracy-6": {
+  "name": "X Accuracy 6",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises accuracy by six stages in battle.  Wonder Launcher only."
+ },
+ "ability-urge": {
+  "name": "Ability Urge",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Forcibly activates a friendly Pok\u00e9mon\u2019s ability."
+ },
+ "item-drop": {
+  "name": "Item Drop",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Forces a friendly Pok\u00e9mon to drop its held item."
+ },
+ "item-urge": {
+  "name": "Item Urge",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Forcibly activates a friendly Pok\u00e9mon\u2019s held item."
+ },
+ "reset-urge": {
+  "name": "Reset Urge",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Resets a friendly Pok\u00e9mon\u2019s stat changes."
+ },
+ "dire-hit-3": {
+  "name": "Dire Hit 3",
+  "category": "miracle-shooter",
+  "pocket": "battle",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises critical hit rate by three stages in battle.  Wonder Launcher only."
+ },
+ "light-stone": {
+  "name": "Light Stone",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Summons Reshiram for the final battle against N."
+ },
+ "dark-stone": {
+  "name": "Dark Stone",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Summons Zekrom for the final battle against N."
+ },
+ "tm93": {
+  "name": "Tm93",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Wild Charge to a compatible Pok\u00e9mon."
+ },
+ "tm94": {
+  "name": "Tm94",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 10000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Rock Smash to a compatible Pok\u00e9mon."
+ },
+ "tm95": {
+  "name": "Tm95",
+  "category": "all-machines",
+  "pocket": "machines",
+  "cost": 1000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Teaches Snarl to a compatible Pok\u00e9mon."
+ },
+ "xtransceiver": {
+  "name": "Xtransceiver",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Makes four-way video calls."
+ },
+ "god-stone": {
+  "name": "God Stone",
+  "category": "unused",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Unknown.  Currently unused."
+ },
+ "gram-1": {
+  "name": "Gram 1",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Part of a sidequest to obtain TM89."
+ },
+ "gram-2": {
+  "name": "Gram 2",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Part of a sidequest to obtain TM89."
+ },
+ "gram-3": {
+  "name": "Gram 3",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Part of a sidequest to obtain TM89."
+ },
+ "dragon-gem": {
+  "name": "Dragon Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 200,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Dragon-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "normal-gem": {
+  "name": "Normal Gem",
+  "category": "jewels",
+  "pocket": "misc",
+  "cost": 4000,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Held: When the holder uses a damaging Normal-type move, the move has 1.5\u00d7 power and this item is consumed."
+ },
+ "medal-box": {
+  "name": "Medal Box",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Holds medals recieved in the medal rally."
+ },
+ "dna-splicers": {
+  "name": "Dna Splicers",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Fuses Kyurem with Reshiram or Zekrom, or splits them apart again."
+ },
+ "permit": {
+  "name": "Permit",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Grants access to the Nature Preserve."
+ },
+ "oval-charm": {
+  "name": "Oval Charm",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Doubles the chance of two Pok\u00e9mon producing an egg at the daycare every 255 steps."
+ },
+ "shiny-charm": {
+  "name": "Shiny Charm",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Raises the chance of finding a shiny Pok\u00e9mon."
+ },
+ "plasma-card": {
+  "name": "Plasma Card",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Required to progress in the Plasma Frigate."
+ },
+ "grubby-hanky": {
+  "name": "Grubby Hanky",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Appears in the Caf\u00e9 Warehouse on Sunday; return to the customer with a Patrat on Thursday."
+ },
+ "colress-machine": {
+  "name": "Colress Machine",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Wakes up the Crustle blocking the way in Seaside Cave."
+ },
+ "dropped-item": {
+  "name": "Dropped Item",
+  "category": "plot-advancement",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Returned to Curtis or Yancy as part of a sidequest."
+ },
+ "reveal-glass": {
+  "name": "Reveal Glass",
+  "category": "gameplay",
+  "pocket": "key",
+  "cost": 0,
+  "fling_power": 0,
+  "holdable": false,
+  "battle_usable": false,
+  "short_effect": "Switches Tornadus, Thundurus, and Landorus between Incarnate and Therian Forme."
  }
 }

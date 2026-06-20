@@ -148,5 +148,13 @@
    "echoed-voice",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "liepard",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  }
+ ]
 }

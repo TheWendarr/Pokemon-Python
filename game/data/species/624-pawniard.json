@@ -155,5 +155,13 @@
    "retaliate",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "bisharp",
+   "trigger": "level-up",
+   "level": 52,
+   "item": null
+  }
+ ]
 }

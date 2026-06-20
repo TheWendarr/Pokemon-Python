@@ -134,5 +134,13 @@
    "incinerate",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "skuntank",
+   "trigger": "level-up",
+   "level": 34,
+   "item": null
+  }
+ ]
 }

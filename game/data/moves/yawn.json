@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Target sleeps at the end of the next turn.",
  "flags": [
   "mirror",
   "protect",

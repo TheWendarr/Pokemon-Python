@@ -135,5 +135,13 @@
    "scald",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "quagsire",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  }
+ ]
 }

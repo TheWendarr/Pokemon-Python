@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Power increases as happiness decreases, up to a maximum of 102.",
  "flags": [
   "contact",
   "mirror",

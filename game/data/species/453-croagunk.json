@@ -163,5 +163,13 @@
    "bulldoze",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "toxicroak",
+   "trigger": "level-up",
+   "level": 37,
+   "item": null
+  }
+ ]
 }

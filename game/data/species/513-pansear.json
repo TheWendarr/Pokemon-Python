@@ -149,5 +149,13 @@
    "acrobatics",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "simisear",
+   "trigger": "use-item",
+   "level": null,
+   "item": "fire-stone"
+  }
+ ]
 }

@@ -120,5 +120,13 @@
    "echoed-voice",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "lombre",
+   "trigger": "level-up",
+   "level": 14,
+   "item": null
+  }
+ ]
 }

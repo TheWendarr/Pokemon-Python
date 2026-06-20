@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Raises the target\u2019s Special Attack by one stage and confuses the target.",
  "flags": [
   "mirror",
   "protect",

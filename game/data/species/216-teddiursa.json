@@ -148,5 +148,13 @@
    "bulldoze",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "ursaring",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

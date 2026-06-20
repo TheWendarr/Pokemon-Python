@@ -123,5 +123,13 @@
    "retaliate",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "shiftry",
+   "trigger": "use-item",
+   "level": null,
+   "item": "leaf-stone"
+  }
+ ]
 }

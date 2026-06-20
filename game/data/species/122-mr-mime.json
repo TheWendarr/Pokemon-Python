@@ -3,8 +3,7 @@
  "name": "Mr Mime",
  "dex": 122,
  "types": [
-  "psychic",
-  "fairy"
+  "psychic"
  ],
  "base_stats": {
   "hp": 40,
@@ -200,5 +199,6 @@
    "telekinesis",
    "round"
   ]
- }
+ },
+ "evolves_to": []
 }

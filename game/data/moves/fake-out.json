@@ -9,6 +9,7 @@
  "priority": 3,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Can only be used as the first move after the user enters battle.  Causes the target to flinch.",
  "flags": [
   "contact",
   "mirror",

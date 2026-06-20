@@ -131,5 +131,13 @@
    "incinerate",
    "dragon-tail"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "dragonite",
+   "trigger": "level-up",
+   "level": 55,
+   "item": null
+  }
+ ]
 }

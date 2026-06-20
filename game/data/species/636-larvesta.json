@@ -121,5 +121,13 @@
    "struggle-bug",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "volcarona",
+   "trigger": "level-up",
+   "level": 59,
+   "item": null
+  }
+ ]
 }

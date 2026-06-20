@@ -144,5 +144,13 @@
    "round",
    "echoed-voice"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "dewgong",
+   "trigger": "level-up",
+   "level": 34,
+   "item": null
+  }
+ ]
 }

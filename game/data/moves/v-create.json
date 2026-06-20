@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Lowers the user\u2019s Defense, Special Defense, and Speed by one stage each.",
  "flags": [
   "contact",
   "mirror",

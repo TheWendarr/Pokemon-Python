@@ -14,8 +14,7 @@
   "speed": 40
  },
  "abilities": [
-  "torrent",
-  "competitive"
+  "torrent"
  ],
  "base_experience": 63,
  "growth_rate": "medium-slow",
@@ -132,5 +131,13 @@
    "scald",
    "quash"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "prinplup",
+   "trigger": "level-up",
+   "level": 16,
+   "item": null
+  }
+ ]
 }

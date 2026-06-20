@@ -157,5 +157,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "medicham",
+   "trigger": "level-up",
+   "level": 37,
+   "item": null
+  }
+ ]
 }

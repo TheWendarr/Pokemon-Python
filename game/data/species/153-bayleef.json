@@ -127,5 +127,13 @@
    "round",
    "echoed-voice"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "meganium",
+   "trigger": "level-up",
+   "level": 32,
+   "item": null
+  }
+ ]
 }

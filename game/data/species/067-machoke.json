@@ -141,5 +141,13 @@
    "bulldoze",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "machamp",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

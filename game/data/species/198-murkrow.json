@@ -148,5 +148,13 @@
    "retaliate",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "honchkrow",
+   "trigger": "use-item",
+   "level": null,
+   "item": "dusk-stone"
+  }
+ ]
 }

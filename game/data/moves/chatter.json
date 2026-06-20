@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Has a higher chance to confuse the target when the recorded sound is louder.",
  "flags": [
   "authentic",
   "distance",

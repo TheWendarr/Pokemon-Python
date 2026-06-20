@@ -3,8 +3,7 @@
  "name": "Kirlia",
  "dex": 281,
  "types": [
-  "psychic",
-  "fairy"
+  "psychic"
  ],
  "base_stats": {
   "hp": 38,
@@ -158,5 +157,19 @@
    "echoed-voice",
    "ally-switch"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "gardevoir",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  },
+  {
+   "species": "gallade",
+   "trigger": "use-item",
+   "level": null,
+   "item": "dawn-stone"
+  }
+ ]
 }

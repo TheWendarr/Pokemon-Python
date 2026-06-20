@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Has double power if a friendly Pok\u00e9mon fainted last turn.",
  "flags": [
   "contact",
   "mirror",

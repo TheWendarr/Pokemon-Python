@@ -122,5 +122,13 @@
    "echoed-voice",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "palpitoad",
+   "trigger": "level-up",
+   "level": 25,
+   "item": null
+  }
+ ]
 }

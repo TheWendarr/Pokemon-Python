@@ -1,0 +1,67 @@
+{
+ "nurse_heal": [
+  {
+   "say": "Nurse Hazel: Welcome!|Shall I heal your Pokemon?"
+  },
+  {
+   "heal": true
+  },
+  {
+   "say": "Nurse Hazel: There you go!|They're fighting fit again."
+  }
+ ],
+ "rival_battle": [
+  {
+   "face_npc": {
+    "name": "Hugh",
+    "facing": "left"
+   }
+  },
+  {
+   "say": "Hugh: Hey! Hold up!|You got a Pokemon from the lab too, right?|Let's see what it can do!"
+  },
+  {
+   "battle": {
+    "trainer": "Rival Hugh",
+    "party": "snivy:8",
+    "prize": 500,
+    "flag": "beat_rival"
+   }
+  },
+  {
+   "say": "Hugh: Hmph. Not bad at all.|Take care of that partner of yours."
+  },
+  {
+   "give_item": {
+    "item": "potion",
+    "qty": 2
+   }
+  },
+  {
+   "say": "Hugh handed over two Potions!"
+  }
+ ],
+ "pc_access": [
+  {
+   "say": "Booting up the storage PC..."
+  },
+  {
+   "pc": true
+  }
+ ],
+ "rival_after": [
+  {
+   "if_flag": "beat_rival",
+   "then": [
+    {
+     "say": "Hugh: I'm off to train.|Next time will be different."
+    }
+   ],
+   "else": [
+    {
+     "say": "Hugh: ..."
+    }
+   ]
+  }
+ ]
+}

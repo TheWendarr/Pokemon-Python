@@ -67,6 +67,18 @@ ITEMS = {
     "focus-sash": {"name": "Focus Sash", "category": "held"},
     "scope-lens": {"name": "Scope Lens", "category": "held"},
     "razor-claw": {"name": "Razor Claw", "category": "held"},
+    # bag mechanics (full-catalog fields)
+    "x-attack": {"name": "X Attack", "category": "stat-boosts",
+                 "pocket": "battle", "battle_usable": True,
+                 "stages": {"attack": 1}},
+    "dire-hit": {"name": "Dire Hit", "category": "stat-boosts",
+                 "pocket": "battle", "battle_usable": True, "crit": 2},
+    "guard-spec": {"name": "Guard Spec.", "category": "stat-boosts",
+                   "pocket": "battle", "battle_usable": True, "guard": True},
+    "revive": {"name": "Revive", "category": "revival",
+               "pocket": "medicine", "revive": 0.5},
+    "full-restore": {"name": "Full Restore", "category": "healing",
+                     "pocket": "medicine", "heal": "full", "cures": ["all"]},
 }
 
 

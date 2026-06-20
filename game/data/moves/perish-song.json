@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "all-pokemon",
  "crit_stage": 0,
+ "short_effect": "User and target both faint after three turns.",
  "flags": [
   "authentic",
   "distance",

@@ -152,5 +152,13 @@
    "wild-charge",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "arcanine",
+   "trigger": "use-item",
+   "level": null,
+   "item": "fire-stone"
+  }
+ ]
 }

@@ -145,5 +145,13 @@
    "incinerate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "darmanitan",
+   "trigger": "use-item",
+   "level": null,
+   "item": "ice-stone"
+  }
+ ]
 }

@@ -120,5 +120,13 @@
    "venoshock",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "breloom",
+   "trigger": "level-up",
+   "level": 23,
+   "item": null
+  }
+ ]
 }

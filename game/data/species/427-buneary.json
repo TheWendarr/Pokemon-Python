@@ -155,5 +155,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "lopunny",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="26" height="15" tilewidth="16" tileheight="16" infinite="0" nextobjectid="99">
+ <tileset firstgid="1" source="../tiles.tsx"/>
+ <layer id="1" name="ground" width="26" height="15">
+  <data encoding="csv">
+5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,5,1,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,
+5,1,1,1,1,1,1,1,1,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,
+5,1,1,1,2,2,2,2,2,2,1,3,3,1,1,1,1,1,1,1,1,1,1,3,3,5,
+5,1,1,1,2,2,2,2,2,2,1,3,3,1,1,1,5,1,1,1,1,1,1,3,3,5,
+5,1,3,3,3,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,3,3,3,
+5,1,3,3,3,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,3,3,3,
+5,1,3,3,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,5,
+5,1,3,3,1,1,10,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,5,
+5,1,3,3,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,5,
+5,1,3,3,1,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,5,1,1,1,1,5,
+5,1,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,5,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+</data>
+ </layer>
+ <objectgroup id="2" name="objects">
+  <object id="1" name="warp" x="32" y="224" width="16" height="16"><properties><property name="to_map" value="verdant"/><property name="to_x" type="int" value="16"/><property name="to_y" type="int" value="1"/><property name="facing" value="down"/></properties></object>
+  <object id="2" name="warp" x="48" y="224" width="16" height="16"><properties><property name="to_map" value="verdant"/><property name="to_x" type="int" value="17"/><property name="to_y" type="int" value="1"/><property name="facing" value="down"/></properties></object>
+  <object id="3" name="warp" x="400" y="112" width="16" height="16"><properties><property name="to_map" value="mistral"/><property name="to_x" type="int" value="1"/><property name="to_y" type="int" value="5"/><property name="facing" value="right"/></properties></object>
+  <object id="4" name="warp" x="400" y="128" width="16" height="16"><properties><property name="to_map" value="mistral"/><property name="to_x" type="int" value="1"/><property name="to_y" type="int" value="6"/><property name="facing" value="right"/></properties></object>
+  <object id="5" name="spawn" x="32" y="208" width="16" height="16"><properties></properties></object>
+  <object id="6" name="sign" x="192" y="80" width="16" height="16"><properties><property name="dialog" value="CANOPY PATH - Watch for falling caterpillars."/></properties></object>
+  <object id="7" name="trigger" x="96" y="160" width="16" height="16"><properties><property name="script" value="canopy_item"/><property name="unless_flag" value="got_canopy_potion"/></properties></object>
+  <object id="8" name="trainer" x="128" y="80" width="16" height="16"><properties><property name="display" value="Bug Catcher Nino"/><property name="facing" value="down"/><property name="sight" type="int" value="2"/><property name="party" value="sewaddle:8|venipede:8"/><property name="prize" type="int" value="160"/><property name="flag" value="beat_nino"/><property name="before" value="Nino: My bugs never bug out!"/><property name="after" value="Nino: Back to the long grass..."/></properties></object>
+  <object id="9" name="trainer" x="288" y="64" width="16" height="16"><properties><property name="display" value="Pokefan Lila"/><property name="facing" value="down"/><property name="sight" type="int" value="3"/><property name="party" value="lillipup:10@oran-berry"/><property name="prize" type="int" value="240"/><property name="flag" value="beat_lila"/><property name="before" value="Lila: My precious pup is undefeated!"/><property name="after" value="Lila: Such good sportsmanship!"/></properties></object>
+ </objectgroup>
+</map>

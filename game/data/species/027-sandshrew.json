@@ -149,5 +149,13 @@
    "round",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "sandslash",
+   "trigger": "use-item",
+   "level": null,
+   "item": "ice-stone"
+  }
+ ]
 }

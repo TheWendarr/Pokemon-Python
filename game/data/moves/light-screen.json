@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "users-field",
  "crit_stage": 0,
+ "short_effect": "Reduces damage from special attacks by 50% for five turns.",
  "flags": [
   "snatch"
  ],

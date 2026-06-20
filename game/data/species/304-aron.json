@@ -147,5 +147,13 @@
    "round",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "lairon",
+   "trigger": "level-up",
+   "level": 32,
+   "item": null
+  }
+ ]
 }

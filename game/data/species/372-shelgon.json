@@ -129,5 +129,13 @@
    "round",
    "incinerate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "salamence",
+   "trigger": "level-up",
+   "level": 50,
+   "item": null
+  }
+ ]
 }

@@ -120,5 +120,13 @@
    "incinerate",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "garchomp",
+   "trigger": "level-up",
+   "level": 48,
+   "item": null
+  }
+ ]
 }

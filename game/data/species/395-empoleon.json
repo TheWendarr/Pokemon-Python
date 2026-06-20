@@ -15,8 +15,7 @@
   "speed": 60
  },
  "abilities": [
-  "torrent",
-  "competitive"
+  "torrent"
  ],
  "base_experience": 239,
  "growth_rate": "medium-slow",
@@ -150,5 +149,6 @@
    "quash",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": []
 }

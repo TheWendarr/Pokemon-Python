@@ -146,5 +146,13 @@
    "round",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "metagross",
+   "trigger": "level-up",
+   "level": 45,
+   "item": null
+  }
+ ]
 }

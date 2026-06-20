@@ -132,5 +132,13 @@
    "wild-charge",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "manectric",
+   "trigger": "level-up",
+   "level": 26,
+   "item": null
+  }
+ ]
 }

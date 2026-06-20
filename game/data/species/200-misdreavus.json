@@ -147,5 +147,13 @@
    "round",
    "echoed-voice"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "mismagius",
+   "trigger": "use-item",
+   "level": null,
+   "item": "dusk-stone"
+  }
+ ]
 }

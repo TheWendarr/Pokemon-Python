@@ -133,5 +133,13 @@
    "sludge-wave",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "swalot",
+   "trigger": "level-up",
+   "level": 26,
+   "item": null
+  }
+ ]
 }

@@ -126,5 +126,13 @@
    "scald",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "seismitoad",
+   "trigger": "level-up",
+   "level": 36,
+   "item": null
+  }
+ ]
 }

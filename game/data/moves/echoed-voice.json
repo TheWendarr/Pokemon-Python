@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Power increases by 100% for each consecutive use by any friendly Pok\u00e9mon, to a maximum of 200.",
  "flags": [
   "authentic",
   "mirror",

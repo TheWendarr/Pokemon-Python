@@ -131,3 +131,234 @@ Known simplifications (documented so they're decisions, not surprises):
 * **`tools/make_assets.py`** — procedurally draws the tileset and
   character strips and writes the .tmx maps, so the repo ships no
   third-party art.
+
+## Data pipeline (full-catalog restructure)
+
+`pkmn/datagen/fetch.py` builds `game/data/` from PokeAPI with two
+interchangeable, fully cached sources: the REST API (pokeapi.co/api/v2;
+every response cached in `.pokeapi_cache/`, so refreshing one resource
+means deleting its cache file and re-running) and PokeAPI's own CSV
+database on GitHub (`--source csv`, much faster for full builds).
+Both emit identical normalized JSON.
+
+The dataset is now the complete Gen 1-5 catalog: `abilities.json` (164,
+generation + effect text), `items.json` (678, category/pocket/flags/
+cost/effect text), per-move `short_effect` strings, and species
+back-dated to Gen 5 — `pokemon_types_past` restores pre-Fairy typings
+(22 species) and post-Gen-5 abilities are filtered out.
+
+Battle *behavior* is deliberately a separate layer from data:
+
+* `pkmn/datagen/mechanics.py` — structured bag mechanics (medicine
+  heal/cure/revive amounts, X-item stages, ball multipliers) merged
+  into items.json at build time, since PokeAPI stores these as prose.
+  Conditional balls use flat simplified rates.
+* `pkmn/battle/passives.py` — held-item and ability hooks, with
+  explicit `IMPLEMENTED_ABILITIES` / `IMPLEMENTED_HELD` registries.
+* Anything without an entry in either layer is *data-only and inert* —
+  visible, listable, holdable, but without battle effect. Nothing in
+  the catalog can crash the engine by existing.
+
+`python -m pkmn.cli.audit` prints catalog counts, implementation
+coverage, and cross-validates every reference (species -> abilities,
+learnsets -> moves, types -> chart); it exits nonzero on any dangling
+reference, making it CI-able alongside `pkmn.cli.coverage`.
+
+## Phase 4 additions (events & scripting)
+
+* **`pkmn/game/script.py`** — a tiny interpreter over JSON command
+  lists. It runs commands until one needs a scene (dialogue, battle,
+  NPC walk), yields, and the overworld resumes it on scene pop;
+  `if_flag` splices its branch into the queue so conditionals nest.
+  Battle steps gate everything after them on victory, and apply prize
+  money / defeat flags on resume.
+* **Triggers** — Tiled objects (`trigger`) fire scripts on step-on or
+  map entry, each gated by `unless_flag`; trainers (`trainer` objects)
+  carry party specs ("snivy:8|patrat:5"), sight range, prize, defeat
+  flag, and pre/post dialogue directly in map properties.
+* **Cutscenes** — trainer spotting pauses input, shows the "!", walks
+  the trainer adjacent with the same grid interpolation as the player,
+  then hands control to a generated script. `move_npc` reuses the same
+  walking machinery from scripts.
+* **GameState** gains `flags` (a set) and `money`; whiteout during a
+  scripted battle aborts the script naturally because the map reload
+  drops the runner.
+
+## Phase 5 additions (game systems)
+
+* **`pkmn/core/experience.py`** — all six official growth curves with
+  the canonical piecewise formulas, plus the classic flat battle award
+  (base * level / 7, x1.5 vs trainers).
+* **Growth lives on the core, not the client** — `gain_exp()` /
+  `evolve()` in `pkmn/core/pokemon.py` mutate PokemonState (level-up
+  move learning, stat recalc preserving the HP delta, evolution edges
+  from the dataset). The battle scene only narrates the results and
+  defers evolutions to after victory, as the games do. Move learning
+  auto-skips when all four slots are full (replacement prompt is a UI
+  nicety for later).
+* **Persistence** — `GameState.to_dict()/from_dict()` round-trips the
+  party, PC box, bag, money, flags, and location through one JSON file
+  (`pkmn/game/save.py`, atomic via os.replace). The flag store from
+  Phase 4 is what makes world progress save for free.
+* **`pkmn/game/menus.py`** — pause/party/summary/bag/PC scenes on the
+  same translucent scene-stack pattern as dialogs; the PC refuses to
+  deposit your last able Pokemon.
+
+## Phase 6 additions (authoring toolkit)
+
+* **Game folders** — the client is fully parameterized by a content
+  directory: `Game(game_dir=...)` loads game.json and threads the root
+  through Assets, TileMap, encounters, and scripts. GameState.new_game
+  is manifest-driven (starter, bag, money, start location, flags).
+  Hexton (`game/assets/`) is simply the reference folder; nothing in
+  the engine refers to its content by name.
+* **`pkmn/cli/lint.py`** — headless validation (pytmx base loader, no
+  pygame window) of every cross-reference an author can break: warps,
+  scripts, party specs, encounter tables, items, the optional dex
+  subset, spawn/start walkability, and sprite presence. Exit codes make
+  it CI-able next to `audit` and `coverage`.
+* **`examples/isleton/`** — the proof region: its own tileset, sprites,
+  manifest, two maps, a trainer gate, and a flag-gated ending, with no
+  engine code in the folder. `tools/make_example_region.py` rebuilds it.
+
+## Polish & extensibility pass
+
+* **Feature flags** — `Game.feature(name)` / `Game.setting(name)` read
+  the manifest; encounters, trainer battles, experience, evolution,
+  move-replacement prompts, running, and each pause-menu entry are
+  individually toggleable, defaulting ON. Systems check their own flag
+  at the call site, so a disabled system simply never engages.
+* **Per-map properties** — Tiled map properties carry `weather`
+  (overworld tint + initial battle weather via engine.set_weather) and
+  `encounter_chance`; the manifest's `settings` provides globals.
+* **Deeper scripts** — choice (modal options spliced into the queue
+  like if_flag), shop (catalog-priced, script-overridable), give_pokemon,
+  take_money, if_money. Trainer/party specs accept `@held-item`.
+* **Move replacement** — gain_exp surfaces `full_moves`; the battle
+  scene runs an interactive forget/learn prompt (or auto-skips when the
+  feature is off).
+* **Form aliases** — repository.species() resolves base names to the
+  default form (basculin -> basculin-red-striped), so content authors
+  never need to know PokeAPI's form suffixes.
+* **`examples/triad/`** — the showcase: 6 maps, 8 trainers (held items
+  included), 3 shops, weather routes, a gift-Pokemon choice, a roadblock
+  NPC on `visible_unless`, and a doubly flag-gated finale.
+
+## Gen 5 sprites (cached)
+
+`pkmn/game/sprites.py` resolves a species' national dex number to a Gen
+5 Black/White sprite from github.com/PokeAPI/sprites (the same files the
+REST API exposes), caching each PNG under `.sprite_cache/gen5/{front,
+back}/{dex}.png`. `Assets.battler(species_id, name, dex=, back=)` loads
+the cached sprite (foe = front, player's side = back), scales 96x96 down
+to SPRITE_PX (64), memoizes per (species, back), and falls back to the
+procedural blob when a sprite isn't available. Fetching is opt-in
+(`sprites.FETCH_ENABLED`, turned on by `play.py` and the sprites CLI,
+force-off via `PKMN_NO_SPRITE_FETCH`), so cache hits work everywhere but
+the test suite never touches the network. `python -m pkmn.cli.sprites`
+pre-warms the cache for a whole game folder (dex subset, starter, wild
+encounters, gift Pokemon, and every trainer party) or the full 1-649
+dex. This keeps the philosophy intact — the repo ships no third-party
+assets; the cache is populated on demand.
+
+## Sequenced battle animations
+
+The engine still resolves a whole turn and returns an ordered Event
+list; the battle scene no longer dumps it. `_enqueue` translates events
+into a queue of timed *steps* (`pkmn/game/battle_scene.py`):
+
+* `text` -- a message page; may carry a lunge animation for the mover.
+  Auto-advances after a readable hold; A/B skips it.
+* `hp` -- eases `disp_hp[side]` toward the event's `remaining_hp` (every
+  HP-changing event carries it), with a hit-flash on damage. Completes
+  when the bar settles.
+* `faint` -- sinks + fades the sprite over FAINT_DUR.
+* `send` -- instantly snaps a freshly sent-in Pokemon's bar.
+
+`update()` plays one step at a time and only advances when the current
+one finishes, so a turn reads: mover lunges + "X used Y!" -> target bar
+drains -> "super effective!" -> next mover -> its target drains -> faints
+sink. `disp_hp` now tracks a per-side target the steps drive, decoupled
+from the engine's already-final HP, which is what lets the bar stop at
+correct intermediate values. The message box persists the last line
+through HP/faint beats so text stays aligned with what is happening.
+
+## Default art + character animation
+
+`tools/art.py` is the shared art library every bundled region draws from,
+so the detailed default look lives in one place and the repo still ships
+no third-party image files. It provides shaded/textured tile painters
+(grass, tall grass, path, water, sand, tree, rock, flower, sign, fence,
+brick wall, roof, floor, rug, counter, mat, dune, dead tree, reed, plank,
+palm, shell) parameterised by palette, plus `character_sheet(...)` which
+renders a 4-direction x 4-frame walk-cycle (outline, 3-tone shading,
+swinging arms, striding legs, head-bob, ground shadow).
+
+Character sheets are a grid: 4 rows (down, up, left, right) x N columns
+(walk frames), each cell 16 wide x 24 tall. `Assets._char_sheet`
+auto-detects this against the legacy 64x16 single-frame strip and reports
+the frame height; the overworld blits with a `(frame_h - TILE)` y-offset
+so a taller sprite stands a head above its tile. `OverworldScene`
+advances a per-mover `walk_t` while moving (player and walking NPCs) and
+picks the frame via `_frame_idx` (an 8-tick 0-1-2-3 cycle); idle snaps to
+frame 0. The three `tools/make_*` scripts compose each region's tileset
+and sprites from `art.py` with their own palettes, then write the PNGs.
+
+## Render resolution & display scaling
+
+The game renders at a high native resolution so text and sprites have
+real pixels rather than relying on upscaling a tiny canvas. `config.py`
+defines a `SCALE` (default 4) over a 256x192 design grid:
+`BASE_TILE = 16` is the grid art is authored on, `TILE = BASE_TILE *
+SCALE = 64` is the on-screen tile, and `LOGICAL_W/H = 1024x768` is the
+canvas every scene draws to. All on-screen geometry and font sizes
+derive from `SCALE`, `TILE`, or `LOGICAL_*`, so changing `SCALE` rescales
+the whole UI uniformly.
+
+Art stays authored at 16px on disk (no regeneration when SCALE changes):
+`TileMap` upscales each tile to `TILE` at load with nearest-neighbour
+(cached), and `Assets._char_sheet` slices character sheets on the
+`BASE_TILE` grid and upscales frames to the render size. Object
+coordinates in maps are interpreted with the map's own `tilewidth`
+(16), independent of the render `TILE` -- so the `.tmx` files and the
+lint CLI need no changes. Gen 5 battlers (96px) are upscaled to
+`SPRITE_PX` (192) via a crisp integer scale, never downscaled.
+
+`Game._present` then scales the 1024x768 canvas to the window. By
+default `Game._fit` uses the largest *integer* 4:3 factor (1:1 at 1080p)
+and centres it -- integer scaling keeps every pixel uniform. `--fill`
+switches to sharp-bilinear (integer pre-scale, then one gentle
+`smoothscale` to the exact size) to fill the screen without uneven
+pixels; because the source is already high-resolution, the result stays
+crisp. Headless mode renders the canvas 1:1 so tests are unaffected.
+
+## The content contract (`pkmn/game/contract.py`)
+
+`contract.py` is the single authority for what a region may contain: the
+`ENGINE_VERSION`, the tile flags (`blocked`, `grass`), the per-map
+properties (`weather`, `encounter_chance`, the `connect_*`/`offset_*`
+seamless metadata, `border`), the object types and their property keys,
+the script-command set, and the weather names. Both the runtime and the
+linter import these constants, so the validator and the engine cannot
+drift — a duplicated `COMMANDS` set in the linter was the smell this
+removed. `Game` checks the manifest's `engine_version` on load (a region
+targeting a newer engine is refused with a clear message), and
+`pkmn.cli.lint` rejects unknown flags/objects/commands and bad versions
+in addition to its referential checks, making "if it lints, it runs" a
+real guarantee.
+
+## Seamless overworld (`World` in `tilemap.py`)
+
+A region is a graph of maps. Discrete maps are linked by `warp` objects;
+maps that declare per-edge `connect_*` + `offset_*` properties are
+stitched into one continuous, scrolling overworld. All of that seamless
+behaviour flows through a single recursive primitive, `World.resolve`,
+mirroring Gen 1's `get_tile`: an in-bounds coordinate returns its own
+tile; an off-edge coordinate recurses into the neighbour on that edge
+(shifted by the offset and the crossed map's size); an unconnected edge
+returns nothing (a border tile / wall). Rendering (`World.draw`, with the
+camera centred and unclamped), collision (`World.blocked`), and seamless
+boundary crossing in the overworld all call through `resolve`, so the
+stitch is defined in exactly one place. A map with no connections keeps
+the original clamped single-map path, so a region mixes both topologies
+per map. See `examples/seamless` and `docs/ENGINE_PHILOSOPHY.md`.

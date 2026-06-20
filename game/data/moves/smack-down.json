@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Removes any immunity to Ground damage.",
  "flags": [
   "mirror",
   "non-sky-battle",

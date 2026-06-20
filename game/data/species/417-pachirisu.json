@@ -137,5 +137,6 @@
    "echoed-voice",
    "volt-switch"
   ]
- }
+ },
+ "evolves_to": []
 }

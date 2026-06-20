@@ -135,5 +135,13 @@
    "volt-switch",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "lanturn",
+   "trigger": "level-up",
+   "level": 27,
+   "item": null
+  }
+ ]
 }

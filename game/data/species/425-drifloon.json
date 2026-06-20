@@ -146,5 +146,13 @@
    "round",
    "acrobatics"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "drifblim",
+   "trigger": "level-up",
+   "level": 28,
+   "item": null
+  }
+ ]
 }

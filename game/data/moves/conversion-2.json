@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Changes the user\u2019s type to a random type either resistant or immune to the last move used against it.",
  "flags": [
   "authentic"
  ],

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "User is immune to Ground moves and effects for five turns.",
  "flags": [
   "gravity",
   "snatch"

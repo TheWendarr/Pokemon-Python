@@ -145,5 +145,13 @@
    "round",
    "incinerate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "muk",
+   "trigger": "level-up",
+   "level": 38,
+   "item": null
+  }
+ ]
 }

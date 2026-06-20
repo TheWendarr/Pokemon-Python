@@ -16,7 +16,6 @@
  },
  "abilities": [
   "steadfast",
-  "sharpness",
   "justified"
  ],
  "base_experience": 233,
@@ -190,5 +189,6 @@
    "bulldoze",
    "work-up"
   ]
- }
+ },
+ "evolves_to": []
 }

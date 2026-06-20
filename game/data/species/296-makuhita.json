@@ -154,5 +154,13 @@
    "bulldoze",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "hariyama",
+   "trigger": "level-up",
+   "level": 24,
+   "item": null
+  }
+ ]
 }

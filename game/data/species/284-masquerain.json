@@ -130,5 +130,6 @@
    "scald",
    "struggle-bug"
   ]
- }
+ },
+ "evolves_to": []
 }

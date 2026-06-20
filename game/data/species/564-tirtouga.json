@@ -152,5 +152,13 @@
    "scald",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "carracosta",
+   "trigger": "level-up",
+   "level": 37,
+   "item": null
+  }
+ ]
 }

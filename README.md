@@ -1,8 +1,93 @@
 # pokemon-python
 
 A Gen 4/5-style Pokemon engine and (eventually) game-authoring toolkit,
-written in Python. Ground-up rewrite — the original prototype's code was
-used as inspiration only.
+written in Python.
+
+**Data: the full PokeAPI Gen 1-5 catalog.** `game/data/` now carries
+every species (649), every move (559, B2W2 values), every ability (164,
+with effect text), and every Gen 1-5 item (678, with categories, flags,
+and effect text) — built by `python -m pkmn.datagen.fetch` from either
+pokeapi.co (cached REST, the default at home) or PokeAPI's CSV mirror
+(`--source csv`). Anything in the catalog can be referenced by maps,
+trainers, or scripts with no pipeline work; battle behavior is layered
+on top (`pkmn/battle/passives.py` for held items/abilities,
+`pkmn/datagen/mechanics.py` for bag items and balls), and
+`python -m pkmn.cli.audit` reports exactly what is implemented versus
+data-only and cross-validates every reference.
+
+**High-resolution, crisp rendering.** The game renders at a high native
+resolution -- a 256x192 design grid scaled 4x to a 1024x768 canvas with
+64px tiles -- so text and sprites are drawn with enough real pixels to
+stay sharp, and the final scale to the window is gentle (1:1 on a 1080p
+screen). Art is authored at 16px and upscaled once at load, and Gen 5
+battlers are *upscaled* rather than shrunk, so nothing is blurred by a
+lossy downscale. The default window is pixel-perfect (integer scaling,
+4:3, centered); `--fill` fills the screen with clean sharp-bilinear
+scaling, and `--fullscreen` (or F11) runs at native resolution. To raise
+or lower the whole render resolution, change `SCALE` in
+`pkmn/game/config.py`.
+
+**Detailed default art + walking animation.** The bundled regions use a
+shared procedural art library (`tools/art.py`): shaded, textured 16x16
+tiles (grass with blades, rippled water, layered tree canopies, brick
+walls, shingled roofs, dunes, reeds) and a 4-direction, 4-frame animated
+character walk-cycle that strides as you move. Sprite sheets are a grid
+(4 rows of facings x N walk frames, 16x24 cells so characters stand a
+head above their tile); the loader still accepts the old 64x16 strips.
+Regenerate any region's art with its `tools/make_*` script.
+
+**Sequenced battle animations.** Turns play out beat by beat instead
+of all at once: the first mover lunges as its move text shows, the
+target's HP bar drains with a hit-flash, any "super effective!" line
+follows, then the second mover repeats, and fainted Pokemon sink and
+fade away. Text stays aligned with the action and auto-advances after a
+readable beat; tap A/B to skip ahead.
+
+**Real Gen 5 sprites, cached.** Species battlers are the authentic
+Black/White front (foe) and back (player) sprites, pulled from the
+PokeAPI sprite repository on first sight and cached on disk by national
+dex number — every later load is a pure disk read. Pre-warm a game's
+sprites so play is hitch-free with `python -m pkmn.cli.sprites --game
+examples/triad` (or `--all` for the full dex). Fully offline (or with
+`--no-sprite-fetch`), the engine falls back to its hashed-hue
+placeholder blobs, so it always runs. Overworld characters stay
+procedural.
+
+**Showcase: the Triad region.** `python -m pkmn.game.play --game
+examples/triad` — three themed cities on a triangle of three distinct
+routes: the Canopy Path's bug catchers and hidden items, the rain-soaked
+Shoreline Run (per-map weather that carries into every battle), and the
+sandstorm-scoured Mirage Crossing with its flag-gated ranger roadblock.
+Shops with real catalog prices, a choice-driven gift Frillish, trainers
+with held items, and a Sheriff finale locked behind both wardens.
+Designers control everything from the manifest: feature toggles strip
+the engine down to a walking sim or up to a full RPG, starters come
+with chosen movesets, and hold B to run.
+
+**Phase 6 status: authoring toolkit.** Games are content folders, no
+Python required: a `game.json` manifest plus Tiled maps, your own
+tileset and sprites, scripts, and encounter tables. Run any folder
+with `python -m pkmn.game.play --game DIR`, validate it with
+`python -m pkmn.cli.lint --game DIR`, and see `docs/AUTHORING.md` for
+the full format. `examples/isleton` is a complete second region built
+only with the toolkit — try
+`python -m pkmn.game.play --game examples/isleton`.
+
+**Phase 5 status: game systems.** Press Enter for the pause menu:
+party (with summaries and order swapping), bag (use medicine on any
+member), and save. Your team earns EXP on every knockout, levels up,
+learns moves, and evolves after battle; catches beyond six go to the
+PC box on the clinic terminal. `python -m pkmn.game.play` now resumes
+from `save.json` automatically (`--save` to change the path).
+Controls: arrows/WASD move, Z/Space confirm, X/Esc cancel, Enter menu.
+
+**Phase 4 status: events & scripting.** Route 1 now has a scripted
+rival ambush (Hugh and his Snivy), a line-of-sight trainer in the tall
+grass, and the Hexton clinic interior where Nurse Hazel heals via an
+event script. Game logic is data: triggers and NPCs in the Tiled maps
+reference JSON scripts (`game/assets/scripts.json`) with a small
+command set (dialogue, battles, items, money, flags, warps, NPC
+movement), and progress flags gate every trigger and dialogue branch.
 
 **Phase 3 status: playable overworld.** `python -m pkmn.game.play`
 opens a Pygame-CE window: walk Hexton town, head north into Route 1's

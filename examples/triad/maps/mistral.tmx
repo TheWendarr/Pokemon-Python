@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="22" height="14" tilewidth="16" tileheight="16" infinite="0" nextobjectid="99">
+ <tileset firstgid="1" source="../tiles.tsx"/>
+ <layer id="1" name="ground" width="22" height="14">
+  <data encoding="csv">
+4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,
+4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,
+4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,
+4,1,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,15,15,1,4,
+4,1,3,3,1,1,1,1,13,13,13,13,1,1,13,13,13,13,1,1,1,4,
+3,3,3,3,1,1,1,1,12,12,12,12,1,1,12,12,12,12,1,1,1,4,
+3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,
+4,1,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,
+4,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1,1,4,
+4,1,1,1,3,3,1,1,1,1,1,1,1,1,1,1,11,1,1,1,1,4,
+4,1,1,1,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,
+4,1,1,1,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,
+4,1,1,1,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,
+4,4,4,4,9,9,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+</data>
+ </layer>
+ <objectgroup id="2" name="objects">
+  <object id="1" name="warp" x="0" y="80" width="16" height="16"><properties><property name="to_map" value="route_canopy"/><property name="to_x" type="int" value="24"/><property name="to_y" type="int" value="7"/><property name="facing" value="left"/></properties></object>
+  <object id="2" name="warp" x="0" y="96" width="16" height="16"><properties><property name="to_map" value="route_canopy"/><property name="to_x" type="int" value="24"/><property name="to_y" type="int" value="8"/><property name="facing" value="left"/></properties></object>
+  <object id="3" name="warp" x="64" y="208" width="16" height="16"><properties><property name="to_map" value="route_shoreline"/><property name="to_x" type="int" value="4"/><property name="to_y" type="int" value="1"/><property name="facing" value="down"/></properties></object>
+  <object id="4" name="warp" x="80" y="208" width="16" height="16"><properties><property name="to_map" value="route_shoreline"/><property name="to_x" type="int" value="5"/><property name="to_y" type="int" value="1"/><property name="facing" value="down"/></properties></object>
+  <object id="5" name="spawn" x="176" y="144" width="16" height="16"><properties></properties></object>
+  <object id="6" name="npc" x="144" y="96" width="16" height="16"><properties><property name="display" value="Nurse Brooke"/><property name="facing" value="down"/><property name="script" value="heal_mistral"/></properties></object>
+  <object id="7" name="npc" x="240" y="96" width="16" height="16"><properties><property name="display" value="Clerk Moa"/><property name="facing" value="down"/><property name="script" value="shop_mistral"/></properties></object>
+  <object id="8" name="npc" x="192" y="128" width="16" height="16"><properties><property name="display" value="Old Salt"/><property name="facing" value="down"/><property name="script" value="frillish_gift"/></properties></object>
+  <object id="9" name="sign" x="256" y="128" width="16" height="16"><properties><property name="dialog" value="MISTRAL CITY - The lake keeps our secrets.|W: Canopy Path. S: Shoreline Run."/></properties></object>
+  <object id="10" name="trainer" x="288" y="160" width="16" height="16"><properties><property name="display" value="Captain Gale"/><property name="facing" value="left"/><property name="sight" type="int" value="3"/><property name="party" value="ducklett:12@sitrus-berry|frillish:12"/><property name="prize" type="int" value="600"/><property name="flag" value="beat_gale"/><property name="before" value="Gale: Wind and water answer only to me!"/><property name="after" value="Gale: The gusts carry your name now."/></properties></object>
+ </objectgroup>
+</map>

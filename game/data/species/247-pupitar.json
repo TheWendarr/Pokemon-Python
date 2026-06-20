@@ -136,5 +136,13 @@
    "bulldoze",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "tyranitar",
+   "trigger": "level-up",
+   "level": 55,
+   "item": null
+  }
+ ]
 }

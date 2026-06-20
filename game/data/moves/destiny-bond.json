@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "If the user faints this turn, the target automatically will, too.",
  "flags": [
   "authentic"
  ],

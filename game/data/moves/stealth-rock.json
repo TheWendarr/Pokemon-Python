@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "opponents-field",
  "crit_stage": 0,
+ "short_effect": "Causes damage when opposing Pok\u00e9mon switch in.",
  "flags": [
   "reflectable"
  ],

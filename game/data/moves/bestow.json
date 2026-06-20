@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Gives the user\u2019s held item to the target.",
  "flags": [
   "authentic",
   "mirror"

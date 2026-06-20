@@ -3,7 +3,7 @@
  "name": "Snubbull",
  "dex": 209,
  "types": [
-  "fairy"
+  "normal"
  ],
  "base_stats": {
   "hp": 60,
@@ -159,5 +159,13 @@
    "wild-charge",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "granbull",
+   "trigger": "level-up",
+   "level": 23,
+   "item": null
+  }
+ ]
 }

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Randomly inflicts damage with power from 40 to 120 or heals the target for 1/4 its max HP.",
  "flags": [
   "mirror",
   "protect"

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Power doubles every turn this move is used in succession after the first, resetting after five turns.",
  "flags": [
   "contact",
   "mirror",

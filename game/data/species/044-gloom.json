@@ -117,5 +117,19 @@
    "venoshock",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "vileplume",
+   "trigger": "use-item",
+   "level": null,
+   "item": "leaf-stone"
+  },
+  {
+   "species": "bellossom",
+   "trigger": "use-item",
+   "level": null,
+   "item": "sun-stone"
+  }
+ ]
 }

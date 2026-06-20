@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Lowers the PP of the target\u2019s last used move by 4.",
  "flags": [
   "authentic",
   "mirror",

@@ -133,5 +133,13 @@
    "volt-switch",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "ampharos",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

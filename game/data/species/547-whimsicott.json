@@ -3,8 +3,7 @@
  "name": "Whimsicott",
  "dex": 547,
  "types": [
-  "grass",
-  "fairy"
+  "grass"
  ],
  "base_stats": {
   "hp": 60,
@@ -98,5 +97,6 @@
    "grass-knot",
    "round"
   ]
- }
+ },
+ "evolves_to": []
 }

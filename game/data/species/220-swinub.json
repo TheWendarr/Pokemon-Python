@@ -138,5 +138,13 @@
    "round",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "piloswine",
+   "trigger": "level-up",
+   "level": 33,
+   "item": null
+  }
+ ]
 }

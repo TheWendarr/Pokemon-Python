@@ -134,5 +134,13 @@
    "round",
    "acrobatics"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "grovyle",
+   "trigger": "level-up",
+   "level": 16,
+   "item": null
+  }
+ ]
 }

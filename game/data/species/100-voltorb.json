@@ -121,5 +121,13 @@
    "volt-switch",
    "wild-charge"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "electrode",
+   "trigger": "use-item",
+   "level": null,
+   "item": "leaf-stone"
+  }
+ ]
 }

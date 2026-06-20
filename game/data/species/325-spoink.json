@@ -148,5 +148,13 @@
    "telekinesis",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "grumpig",
+   "trigger": "level-up",
+   "level": 32,
+   "item": null
+  }
+ ]
 }

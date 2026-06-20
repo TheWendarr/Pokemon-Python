@@ -148,5 +148,13 @@
    "bulldoze",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "machoke",
+   "trigger": "level-up",
+   "level": 28,
+   "item": null
+  }
+ ]
 }

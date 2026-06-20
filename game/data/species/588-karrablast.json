@@ -126,5 +126,13 @@
    "round",
    "struggle-bug"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "escavalier",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

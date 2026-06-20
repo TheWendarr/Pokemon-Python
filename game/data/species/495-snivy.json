@@ -139,5 +139,13 @@
    "grass-knot",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "servine",
+   "trigger": "level-up",
+   "level": 17,
+   "item": null
+  }
+ ]
 }

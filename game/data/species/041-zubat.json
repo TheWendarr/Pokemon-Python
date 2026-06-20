@@ -132,5 +132,13 @@
    "round",
    "acrobatics"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "golbat",
+   "trigger": "level-up",
+   "level": 22,
+   "item": null
+  }
+ ]
 }

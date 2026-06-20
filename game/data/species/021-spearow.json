@@ -116,5 +116,13 @@
    "echoed-voice",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "fearow",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  }
+ ]
 }

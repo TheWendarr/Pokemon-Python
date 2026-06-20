@@ -136,5 +136,13 @@
    "retaliate",
    "snarl"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "mightyena",
+   "trigger": "level-up",
+   "level": 18,
+   "item": null
+  }
+ ]
 }

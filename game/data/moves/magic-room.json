@@ -9,6 +9,7 @@
  "priority": -7,
  "target": "entire-field",
  "crit_stage": 0,
+ "short_effect": "Negates held items for five turns.",
  "flags": [
   "mirror"
  ],

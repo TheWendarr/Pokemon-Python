@@ -127,5 +127,13 @@
    "echoed-voice",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "tranquill",
+   "trigger": "level-up",
+   "level": 21,
+   "item": null
+  }
+ ]
 }

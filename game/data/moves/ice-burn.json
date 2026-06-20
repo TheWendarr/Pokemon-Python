@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Requires a turn to charge before attacking.  Has a chance to burn the target.",
  "flags": [
   "charge",
   "mirror",

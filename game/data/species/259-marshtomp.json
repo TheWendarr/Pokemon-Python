@@ -133,5 +133,13 @@
    "scald",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "swampert",
+   "trigger": "level-up",
+   "level": 36,
+   "item": null
+  }
+ ]
 }

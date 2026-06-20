@@ -112,5 +112,13 @@
    "grass-knot",
    "round"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "cherrim",
+   "trigger": "level-up",
+   "level": 25,
+   "item": null
+  }
+ ]
 }

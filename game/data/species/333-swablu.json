@@ -135,5 +135,13 @@
    "round",
    "echoed-voice"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "altaria",
+   "trigger": "level-up",
+   "level": 35,
+   "item": null
+  }
+ ]
 }

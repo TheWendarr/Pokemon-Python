@@ -38,5 +38,13 @@
    "electroweb"
   ],
   "machine": []
- }
+ },
+ "evolves_to": [
+  {
+   "species": "butterfree",
+   "trigger": "level-up",
+   "level": 10,
+   "item": null
+  }
+ ]
 }

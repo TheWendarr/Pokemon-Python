@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pygame
 
-from .config import A, B, LOGICAL_H, LOGICAL_W
+from .config import A, B, LOGICAL_H, LOGICAL_W, SCALE as S
 from .scene import Scene
 
 BOX_BG = (248, 248, 240)
@@ -13,8 +13,8 @@ TEXT = (40, 44, 52)
 
 
 def draw_box(surf, rect) -> None:
-    pygame.draw.rect(surf, BOX_BG, rect, border_radius=4)
-    pygame.draw.rect(surf, BOX_BORDER, rect, width=2, border_radius=4)
+    pygame.draw.rect(surf, BOX_BG, rect, border_radius=4 * S)
+    pygame.draw.rect(surf, BOX_BORDER, rect, width=2 * S, border_radius=4 * S)
 
 
 def wrap_text(font, text, width) -> list:
@@ -40,7 +40,7 @@ class DialogScene(Scene):
         self.pages: list = []
         font = game.assets.font
         for line in lines:
-            self.pages.extend(wrap_chunks(font, line, LOGICAL_W - 28))
+            self.pages.extend(wrap_chunks(font, line, LOGICAL_W - 28 * S))
         self.idx = 0
         self.on_close = on_close
 
@@ -53,13 +53,14 @@ class DialogScene(Scene):
                     self.on_close()
 
     def draw(self, surf) -> None:
-        rect = pygame.Rect(4, LOGICAL_H - 52, LOGICAL_W - 8, 48)
+        rect = pygame.Rect(4 * S, LOGICAL_H - 52 * S, LOGICAL_W - 8 * S, 48 * S)
         draw_box(surf, rect)
         font = self.game.assets.font
         for i, line in enumerate(self.pages[self.idx]):
-            surf.blit(font.render(line, True, TEXT), (rect.x + 8, rect.y + 7 + i * 14))
+            surf.blit(font.render(line, True, TEXT),
+                      (rect.x + 8 * S, rect.y + 7 * S + i * 14 * S))
         surf.blit(font.render("v", True, BOX_BORDER),
-                  (rect.right - 14, rect.bottom - 14))
+                  (rect.right - 14 * S, rect.bottom - 14 * S))
 
 
 def wrap_chunks(font, text, width, per_page: int = 2) -> list:

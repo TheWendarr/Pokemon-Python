@@ -9,6 +9,7 @@
  "priority": 1,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Only works if the target is about to use a damaging move.",
  "flags": [
   "contact",
   "mirror",

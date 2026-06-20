@@ -129,5 +129,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "blastoise",
+   "trigger": "level-up",
+   "level": 36,
+   "item": null
+  }
+ ]
 }

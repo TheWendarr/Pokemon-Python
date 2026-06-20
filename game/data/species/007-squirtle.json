@@ -136,5 +136,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "wartortle",
+   "trigger": "level-up",
+   "level": 16,
+   "item": null
+  }
+ ]
 }

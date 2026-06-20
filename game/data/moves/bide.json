@@ -9,6 +9,7 @@
  "priority": 1,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "User waits for two turns, then hits back for twice the damage it took.",
  "flags": [
   "contact",
   "protect"

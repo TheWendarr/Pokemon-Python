@@ -3,7 +3,7 @@
  "name": "Granbull",
  "dex": 210,
  "types": [
-  "fairy"
+  "normal"
  ],
  "base_stats": {
   "hp": 90,
@@ -156,5 +156,6 @@
    "wild-charge",
    "snarl"
   ]
- }
+ },
+ "evolves_to": []
 }

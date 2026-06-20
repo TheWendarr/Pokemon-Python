@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 1,
+ "short_effect": "Has an increased chance for a critical hit and a chance to poison the target.",
  "flags": [
   "contact",
   "mirror",

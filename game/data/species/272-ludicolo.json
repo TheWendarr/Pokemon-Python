@@ -96,5 +96,6 @@
    "echoed-voice",
    "scald"
   ]
- }
+ },
+ "evolves_to": []
 }

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "User faints.  Its replacement has its HP fully restored and any major status effect removed.",
  "flags": [
   "heal",
   "snatch"

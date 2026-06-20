@@ -127,5 +127,49 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "vaporeon",
+   "trigger": "use-item",
+   "level": null,
+   "item": "water-stone"
+  },
+  {
+   "species": "jolteon",
+   "trigger": "use-item",
+   "level": null,
+   "item": "thunder-stone"
+  },
+  {
+   "species": "flareon",
+   "trigger": "use-item",
+   "level": null,
+   "item": "fire-stone"
+  },
+  {
+   "species": "espeon",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  },
+  {
+   "species": "umbreon",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  },
+  {
+   "species": "leafeon",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  },
+  {
+   "species": "glaceon",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

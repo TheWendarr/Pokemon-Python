@@ -135,5 +135,13 @@
    "round",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "excadrill",
+   "trigger": "level-up",
+   "level": 31,
+   "item": null
+  }
+ ]
 }

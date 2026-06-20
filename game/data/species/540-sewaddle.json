@@ -108,5 +108,13 @@
    "round",
    "struggle-bug"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "swadloon",
+   "trigger": "level-up",
+   "level": 20,
+   "item": null
+  }
+ ]
 }

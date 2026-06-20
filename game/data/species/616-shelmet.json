@@ -124,5 +124,13 @@
    "round",
    "struggle-bug"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "accelgor",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

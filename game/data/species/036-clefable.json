@@ -3,7 +3,7 @@
  "name": "Clefable",
  "dex": 36,
  "types": [
-  "fairy"
+  "normal"
  ],
  "base_stats": {
   "hp": 95,
@@ -120,5 +120,6 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": []
 }

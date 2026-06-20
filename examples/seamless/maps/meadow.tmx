@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="20" height="16" tilewidth="16" tileheight="16" infinite="0" nextobjectid="99">
+ <properties><property name="connect_south" value="glade"/><property name="offset_south" type="int" value="0"/><property name="border" type="int" value="1"/></properties>
+ <tileset firstgid="1" source="../tiles.tsx"/>
+ <layer id="1" name="ground" width="20" height="16">
+  <data encoding="csv">
+3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
+3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,
+3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,
+3,1,1,1,1,1,1,1,1,1,1,1,1,5,5,5,1,1,1,3,
+3,1,1,1,4,1,1,1,1,1,1,1,1,5,5,5,1,1,1,3,
+3,1,1,1,1,1,1,1,1,1,1,1,1,5,5,5,1,1,1,3,
+3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,
+3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,
+3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,
+3,1,1,1,1,1,1,1,7,7,7,7,1,1,1,1,1,1,1,3,
+3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,
+3,1,1,1,1,4,1,1,1,1,1,1,1,1,1,1,4,1,1,3,
+3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,
+3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,
+3,1,1,1,1,1,1,1,2,2,2,2,1,1,1,1,1,1,1,3,
+3,1,1,1,1,1,1,1,2,2,2,2,1,1,1,1,1,1,1,3
+</data>
+ </layer>
+ <objectgroup id="2" name="objects">
+  <object id="1" name="spawn" x="160" y="96" width="16" height="16"><properties></properties></object>
+  <object id="2" name="sign" x="208" y="96" width="16" height="16"><properties><property name="dialog" value="VALE MEADOW.|Hop the ledge, keep south - the world doesn't stop."/></properties></object>
+ </objectgroup>
+</map>

@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Raises the user\u2019s Defense by one stage.  User charges for one turn before attacking.",
  "flags": [
   "charge",
   "contact",

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="18" height="17" tilewidth="16" tileheight="16" infinite="0" nextobjectid="99">
+ <properties><property name="weather" value="rain"/></properties>
+ <tileset firstgid="1" source="../tiles.tsx"/>
+ <layer id="1" name="ground" width="18" height="17">
+  <data encoding="csv">
+4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,
+4,4,4,4,9,9,4,4,4,4,4,4,4,4,4,4,4,4,
+4,4,4,4,9,9,4,4,4,4,4,4,4,4,4,4,4,4,
+4,4,4,4,9,9,4,4,4,4,4,4,4,4,4,4,4,4,
+4,4,4,4,9,9,4,4,4,4,4,4,4,4,4,4,4,4,
+4,4,15,15,9,9,4,4,4,4,4,4,4,4,4,4,4,4,
+4,4,15,15,9,9,4,11,4,4,4,4,4,4,4,4,4,4,
+4,4,4,4,9,9,9,9,9,9,9,9,9,9,4,4,4,4,
+4,4,4,4,9,9,9,9,9,9,9,9,9,9,9,4,4,4,
+4,4,4,4,4,4,4,4,4,4,4,4,4,9,9,4,4,4,
+4,4,4,4,4,4,4,4,4,4,4,4,4,9,9,15,15,4,
+4,4,4,4,4,4,4,4,4,4,4,4,4,9,9,15,15,4,
+4,4,4,4,4,4,4,4,4,4,4,15,15,9,9,4,4,4,
+4,4,4,4,4,4,4,4,4,4,4,15,15,9,9,4,4,4,
+4,4,4,4,4,4,4,4,4,4,4,4,4,9,9,4,4,4,
+4,4,4,4,4,4,4,4,4,4,4,4,4,9,9,4,4,4,
+4,4,4,4,4,4,4,4,4,4,4,4,4,9,9,4,4,4
+</data>
+ </layer>
+ <objectgroup id="2" name="objects">
+  <object id="1" name="warp" x="64" y="0" width="16" height="16"><properties><property name="to_map" value="mistral"/><property name="to_x" type="int" value="4"/><property name="to_y" type="int" value="12"/><property name="facing" value="up"/></properties></object>
+  <object id="2" name="warp" x="80" y="0" width="16" height="16"><properties><property name="to_map" value="mistral"/><property name="to_x" type="int" value="5"/><property name="to_y" type="int" value="12"/><property name="facing" value="up"/></properties></object>
+  <object id="3" name="warp" x="208" y="256" width="16" height="16"><properties><property name="to_map" value="duston"/><property name="to_x" type="int" value="17"/><property name="to_y" type="int" value="1"/><property name="facing" value="down"/></properties></object>
+  <object id="4" name="warp" x="224" y="256" width="16" height="16"><properties><property name="to_map" value="duston"/><property name="to_x" type="int" value="18"/><property name="to_y" type="int" value="1"/><property name="facing" value="down"/></properties></object>
+  <object id="5" name="spawn" x="64" y="32" width="16" height="16"><properties></properties></object>
+  <object id="6" name="sign" x="112" y="96" width="16" height="16"><properties><property name="dialog" value="SHORELINE RUN - It always rains on the run."/></properties></object>
+  <object id="7" name="trainer" x="128" y="96" width="16" height="16"><properties><property name="display" value="Fisherman Wade"/><property name="facing" value="down"/><property name="sight" type="int" value="2"/><property name="party" value="basculin:11"/><property name="prize" type="int" value="280"/><property name="flag" value="beat_wade"/><property name="before" value="Wade: Fresh catch, coming right up!"/><property name="after" value="Wade: Slippery one, you are."/></properties></object>
+  <object id="8" name="trainer" x="208" y="176" width="16" height="16"><properties><property name="display" value="Fisherman Otto"/><property name="facing" value="up"/><property name="sight" type="int" value="3"/><property name="party" value="tympole:10|tympole:11"/><property name="prize" type="int" value="260"/><property name="flag" value="beat_otto"/><property name="before" value="Otto: The rain doubles my tadpoles' fun!"/><property name="after" value="Otto: Even swift swimmers sink."/></properties></object>
+ </objectgroup>
+</map>

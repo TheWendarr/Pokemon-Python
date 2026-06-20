@@ -156,5 +156,13 @@
    "acrobatics",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "archeops",
+   "trigger": "level-up",
+   "level": 37,
+   "item": null
+  }
+ ]
 }

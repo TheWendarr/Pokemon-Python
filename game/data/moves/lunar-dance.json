@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "User faints, and its replacement is fully healed.",
  "flags": [
   "dance",
   "heal",

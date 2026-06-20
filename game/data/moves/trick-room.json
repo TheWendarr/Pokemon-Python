@@ -9,6 +9,7 @@
  "priority": -7,
  "target": "entire-field",
  "crit_stage": 0,
+ "short_effect": "For five turns, slower Pok\u00e9mon will act before faster Pok\u00e9mon.",
  "flags": [
   "mirror"
  ],

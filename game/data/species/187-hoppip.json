@@ -145,5 +145,13 @@
    "round",
    "acrobatics"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "skiploom",
+   "trigger": "level-up",
+   "level": 18,
+   "item": null
+  }
+ ]
 }

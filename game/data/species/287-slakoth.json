@@ -125,5 +125,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "vigoroth",
+   "trigger": "level-up",
+   "level": 18,
+   "item": null
+  }
+ ]
 }

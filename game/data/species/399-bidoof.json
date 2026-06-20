@@ -132,5 +132,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "bibarel",
+   "trigger": "level-up",
+   "level": 15,
+   "item": null
+  }
+ ]
 }

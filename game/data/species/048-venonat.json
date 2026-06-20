@@ -126,5 +126,13 @@
    "round",
    "struggle-bug"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "venomoth",
+   "trigger": "level-up",
+   "level": 31,
+   "item": null
+  }
+ ]
 }

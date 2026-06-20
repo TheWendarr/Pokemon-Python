@@ -123,5 +123,13 @@
    "round",
    "incinerate"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "shelgon",
+   "trigger": "level-up",
+   "level": 30,
+   "item": null
+  }
+ ]
 }

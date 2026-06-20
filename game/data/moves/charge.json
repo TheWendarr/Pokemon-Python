@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "user",
  "crit_stage": 0,
+ "short_effect": "Raises the user\u2019s Special Defense by one stage.  User\u2019s Electric moves have doubled power next turn.",
  "flags": [
   "snatch"
  ],

@@ -147,5 +147,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "cinccino",
+   "trigger": "use-item",
+   "level": null,
+   "item": "shiny-stone"
+  }
+ ]
 }

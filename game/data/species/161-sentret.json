@@ -147,5 +147,13 @@
    "retaliate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "furret",
+   "trigger": "level-up",
+   "level": 15,
+   "item": null
+  }
+ ]
 }

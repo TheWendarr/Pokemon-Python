@@ -124,5 +124,13 @@
    "round",
    "scald"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "poliwhirl",
+   "trigger": "level-up",
+   "level": 25,
+   "item": null
+  }
+ ]
 }

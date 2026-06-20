@@ -14,8 +14,7 @@
   "speed": 50
  },
  "abilities": [
-  "torrent",
-  "competitive"
+  "torrent"
  ],
  "base_experience": 142,
  "growth_rate": "medium-slow",
@@ -130,5 +129,13 @@
    "scald",
    "quash"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "empoleon",
+   "trigger": "level-up",
+   "level": 36,
+   "item": null
+  }
+ ]
 }

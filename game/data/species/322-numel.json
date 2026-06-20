@@ -142,5 +142,13 @@
    "incinerate",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "camerupt",
+   "trigger": "level-up",
+   "level": 33,
+   "item": null
+  }
+ ]
 }

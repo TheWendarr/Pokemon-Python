@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Power is 100 times the amount of energy Stockpiled.",
  "flags": [
   "protect"
  ],

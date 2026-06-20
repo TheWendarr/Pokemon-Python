@@ -125,5 +125,19 @@
    "scald",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "poliwrath",
+   "trigger": "use-item",
+   "level": null,
+   "item": "water-stone"
+  },
+  {
+   "species": "politoed",
+   "trigger": "trade",
+   "level": null,
+   "item": null
+  }
+ ]
 }

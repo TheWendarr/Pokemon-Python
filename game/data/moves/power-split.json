@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Averages Attack and Special Attack with the target.",
  "flags": [
   "protect"
  ],

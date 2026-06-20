@@ -107,5 +107,13 @@
    "incinerate",
    "work-up"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "chansey",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

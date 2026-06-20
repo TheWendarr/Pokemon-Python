@@ -144,5 +144,13 @@
    "volt-switch",
    "bulldoze"
   ]
- }
+ },
+ "evolves_to": [
+  {
+   "species": "probopass",
+   "trigger": "level-up",
+   "level": null,
+   "item": null
+  }
+ ]
 }

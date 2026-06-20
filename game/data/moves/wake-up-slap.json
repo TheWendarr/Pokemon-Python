@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "If the target is asleep, has double power and wakes it up.",
  "flags": [
   "contact",
   "mirror",

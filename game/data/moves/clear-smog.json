@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 0,
+ "short_effect": "Removes all of the target\u2019s stat modifiers.",
  "flags": [
   "mirror",
   "protect"

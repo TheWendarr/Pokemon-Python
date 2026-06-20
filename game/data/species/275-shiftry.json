@@ -16,7 +16,6 @@
  },
  "abilities": [
   "chlorophyll",
-  "wind-rider",
   "pickpocket"
  ],
  "base_experience": 216,
@@ -111,5 +110,6 @@
    "retaliate",
    "snarl"
   ]
- }
+ },
+ "evolves_to": []
 }

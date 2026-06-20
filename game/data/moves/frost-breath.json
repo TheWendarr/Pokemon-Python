@@ -9,6 +9,7 @@
  "priority": 0,
  "target": "selected-pokemon",
  "crit_stage": 6,
+ "short_effect": "Always scores a critical hit.",
  "flags": [
   "mirror",
   "protect"
