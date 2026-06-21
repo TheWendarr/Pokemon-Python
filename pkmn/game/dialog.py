@@ -46,6 +46,7 @@ class DialogScene(Scene):
 
     def handle(self, inp) -> None:
         if A in inp.pressed or B in inp.pressed:
+            self.game.audio.play_sfx("menu_move")   # advance through text
             self.idx += 1
             if self.idx >= len(self.pages):
                 self.game.pop()

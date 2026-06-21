@@ -10,6 +10,7 @@ import os
 import pygame
 
 from ..core.pokemon import PokemonState
+from . import daytime
 from .battle_scene import BattleScene
 from .config import (A, ASSET_DIR, DIRS, DOWN, ENCOUNTER_CHANCE, LEFT,
                      LOGICAL_H, LOGICAL_W, RIGHT, START, TILE, TURN_FRAMES,
@@ -54,12 +55,15 @@ class OverworldScene(Scene):
         super().__init__(game)
         root = game.game_dir
         try:
-            self._encounters = json.load(open(os.path.join(
-                root, "encounters.json")))
+            with open(os.path.join(root, "encounters.json"),
+                      encoding="utf-8") as f:
+                self._encounters = json.load(f)
         except FileNotFoundError:
             self._encounters = {}
         try:
-            self.scripts = json.load(open(os.path.join(root, "scripts.json")))
+            with open(os.path.join(root, "scripts.json"),
+                      encoding="utf-8") as f:
+                self.scripts = json.load(f)
         except FileNotFoundError:
             self.scripts = {}
         self.map: TileMap = None
@@ -89,13 +93,15 @@ class OverworldScene(Scene):
         self.moving = False
         self.move_px = 0
         self.jump = False
+        self.bump_cool = 0          # throttles the wall-bump sound
         self.script = None
         self.cutscene = None
         self.surfing = self.map.is_surf(*self.game.state.tile)
         self.game.audio.play_music(self.map.props.get("music", "route"))
+        self.game.battle_bg = self.map.props.get("battle_bg", "field")
         for trig in self.map.triggers:        # 'auto' triggers on entry
-            if trig.when == "enter" and not (
-                    trig.unless_flag and trig.unless_flag in flags):
+            if (trig.when == "enter" and self._time_ok(trig) and not (
+                    trig.unless_flag and trig.unless_flag in flags)):
                 self.start_script(self.scripts.get(trig.script, []))
                 break
 
@@ -158,6 +164,12 @@ class OverworldScene(Scene):
         self.surfing = tm.is_surf(*tile)
 
     # ── scripts & cutscenes ──────────────────────────────────────────
+    def _time_ok(self, trig) -> bool:
+        """A trigger with a `time` field only fires during those phases."""
+        if not getattr(trig, "time", ""):
+            return True
+        return self.game.time_phase() in {p.strip() for p in trig.time.split(",")}
+
     def start_script(self, steps, npc=None) -> None:
         if not steps:
             return
@@ -270,6 +282,9 @@ class OverworldScene(Scene):
         if self._walkable(nx, ny):
             self.moving, self.move_px = True, 0
             self._dest, self._move_dist, self.jump = (nx, ny), TILE, False
+        elif self.bump_cool == 0:                 # walked into something solid
+            self.game.audio.play_sfx("bump")
+            self.bump_cool = 12
 
     def _interact(self) -> None:
         st = self.game.state
@@ -279,6 +294,7 @@ class OverworldScene(Scene):
             if npc.tile != front or npc.hidden:
                 continue
             npc.facing = OPPOSITE[st.facing]
+            self.game.audio.play_sfx("confirm")   # begin speaking
             if isinstance(npc, Trainer):
                 if not self.game.feature("trainers"):
                     self.game.push(DialogScene(self.game, npc.before))
@@ -303,6 +319,7 @@ class OverworldScene(Scene):
             return
         sign = self.map.signs.get(front)
         if sign:
+            self.game.audio.play_sfx("confirm")   # begin reading the sign
             if sign.script and sign.script in self.scripts:
                 self.start_script(self.scripts[sign.script])
             else:
@@ -318,6 +335,8 @@ class OverworldScene(Scene):
                 self.game.state.facing = facing
             self.moving = False
             return
+        if self.bump_cool > 0:
+            self.bump_cool -= 1
         self._update_cutscene()
         self._update_npc_walks()
         if self.turn_cool > 0 and not self.moving:
@@ -384,8 +403,9 @@ class OverworldScene(Scene):
             self.load_map(warp.to_map, warp.to_tile)
             return
         for trig in self.map.triggers:
-            if trig.when == "step" and trig.tile == st.tile and not (
-                    trig.unless_flag and trig.unless_flag in st.flags):
+            if (trig.when == "step" and trig.tile == st.tile
+                    and self._time_ok(trig) and not (
+                    trig.unless_flag and trig.unless_flag in st.flags)):
                 self.start_script(self.scripts.get(trig.script, []))
                 return
         if self.game.feature("trainers") and self._check_trainer_los():
@@ -496,3 +516,8 @@ class OverworldScene(Scene):
             overlay = pygame.Surface(surf.get_size(), pygame.SRCALPHA)
             overlay.fill(tint)
             surf.blit(overlay, (0, 0))
+        day = daytime.tint(self.game.time_phase())
+        if day[3]:
+            dov = pygame.Surface(surf.get_size(), pygame.SRCALPHA)
+            dov.fill(day)
+            surf.blit(dov, (0, 0))

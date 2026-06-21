@@ -245,3 +245,67 @@ def test_battle_cursor_memory_and_switch_reset():
     frame({DOWN})                                # -> benched mon
     frame({A})                                   # switch to it
     assert bs.cursors["moves"] == 0
+
+
+def test_held_item_give_and_take(game):
+    from pkmn.game.menus import HeldItemPicker, PartyScene
+    st = game.state
+    mon = st.party[0]
+    mon.held_item = None
+    st.bag["leftovers"] = 1
+    ps = PartyScene(game)
+    game.push(ps)
+    ps.cursor = 0
+
+    ps._toggle_item(mon)                      # nothing held -> opens the picker
+    assert isinstance(game.top, HeldItemPicker)
+    picker = game.top
+    names = [iid for iid, _, _ in picker.items()]
+    assert "leftovers" in names               # holdable item is offered
+    assert not any(game.data.item(i).is_ball for i in names)   # balls excluded
+    picker.cursor = names.index("leftovers")
+    press(game, A)                            # give it
+    assert mon.held_item == "leftovers"
+    assert st.bag.get("leftovers", 0) == 0    # moved out of the bag
+    assert game.top is ps                     # picker closed
+
+    ps._toggle_item(mon)                      # holding -> takes it back
+    assert mon.held_item is None
+    assert st.bag.get("leftovers", 0) == 1    # returned to the bag
+
+
+def test_held_item_picker_swaps(game):
+    from pkmn.game.menus import HeldItemPicker
+    st = game.state
+    mon = st.party[0]
+    mon.held_item = "oran-berry"              # already holding something
+    st.bag["leftovers"] = 1
+    picker = HeldItemPicker(game, mon)
+    game.push(picker)
+    picker.cursor = [i for i, _, _ in picker.items()].index("leftovers")
+    press(game, A)                            # give leftovers -> swaps
+    assert mon.held_item == "leftovers"
+    assert st.bag.get("oran-berry", 0) == 1   # old item returned to the bag
+    assert st.bag.get("leftovers", 0) == 0
+
+
+def test_held_item_persists(game):
+    from pkmn.game.menus import PartyScene
+    from pkmn.game.save import load_game, save_game
+    import os
+    import tempfile
+    st = game.state
+    mon = st.party[0]
+    mon.held_item = None
+    st.bag["leftovers"] = 1
+    ps = PartyScene(game)
+    game.push(ps)
+    ps.cursor = 0
+    ps._toggle_item(mon)
+    picker = game.top
+    picker.cursor = [i for i, _, _ in picker.items()].index("leftovers")
+    press(game, A)
+    assert mon.held_item == "leftovers"
+    path = os.path.join(tempfile.mkdtemp(), "s.json")
+    save_game(st, path)
+    assert load_game(game.data, path).party[0].held_item == "leftovers"

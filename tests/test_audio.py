@@ -60,7 +60,8 @@ def test_midi_export_is_valid_smf(tmp_path):
     paths = export_songs_to_midi(str(tmp_path))
     assert len(paths) == len(SONGS)
     for p in paths:
-        raw = open(p, "rb").read()
+        with open(p, "rb") as fh:
+            raw = fh.read()
         assert raw[:4] == b"MThd"
         size, fmt, ntrk, div = struct.unpack(">IHHH", raw[4:14])
         assert (size, fmt, div) == (6, 1, 480)
@@ -168,4 +169,72 @@ def test_overworld_plays_map_music():
     g.push(ow)
     ow.on_resume()                                 # e.g. returning from a menu
     assert calls, "overworld did not request map music on resume"
+    pygame.quit()
+
+
+@pytest.mark.skipif(not _REAL, reason="needs full game data + region")
+def test_overworld_bump_sound_is_throttled():
+    import pygame
+
+    from pkmn.game.config import DOWN
+    from pkmn.game.overworld import OverworldScene
+    from pkmn.game.scene import Game
+
+    g = Game(headless=True, seed=5)
+    ow = OverworldScene(g)
+    g.push(ow)
+    calls = []
+    g.audio.play_sfx = lambda name: calls.append(name)
+    ow._walkable = lambda x, y: False                  # everything is solid
+    ow._has_ledge = lambda x, y, d: False
+    ow.moving, ow.bump_cool, ow.turn_cool = False, 0, 0
+    g.state.facing = DOWN
+    inp = type("I", (), {"pressed": set(), "held": {DOWN}})()
+    ow.handle(inp)
+    assert calls.count("bump") == 1                    # bumped the wall once
+    ow.handle(inp)
+    assert calls.count("bump") == 1                    # throttled: no rapid repeat
+    pygame.quit()
+
+
+@pytest.mark.skipif(not _REAL, reason="needs full game data + region")
+def test_overworld_talk_sound_on_interact():
+    import pygame
+
+    from pkmn.game.config import DIRS, DOWN
+    from pkmn.game.overworld import Npc, OverworldScene
+    from pkmn.game.scene import Game
+
+    g = Game(headless=True, seed=5)
+    ow = OverworldScene(g)
+    g.push(ow)
+    calls = []
+    g.audio.play_sfx = lambda name: calls.append(name)
+    st = g.state
+    st.facing = DOWN
+    dx, dy = DIRS[DOWN]
+    front = (st.tile[0] + dx, st.tile[1] + dy)
+    spawn = type("S", (), {"tile": front, "name": "Greeter", "facing": "up",
+                           "dialog": ["Hi!"], "heal": False, "script": ""})()
+    ow.npcs = [Npc(spawn)]
+    ow._interact()
+    assert "confirm" in calls                          # speaking blips
+    pygame.quit()
+
+
+@pytest.mark.skipif(not _REAL, reason="needs full game data + region")
+def test_dialogue_advance_blip():
+    import pygame
+
+    from pkmn.game.config import A
+    from pkmn.game.dialog import DialogScene
+    from pkmn.game.scene import Game
+
+    g = Game(headless=True, seed=5)
+    calls = []
+    g.audio.play_sfx = lambda name: calls.append(name)
+    dlg = DialogScene(g, ["First page.", "Second page."])
+    g.push(dlg)
+    dlg.handle(type("I", (), {"pressed": {A}, "held": set()})())
+    assert "menu_move" in calls                         # advancing text blips
     pygame.quit()

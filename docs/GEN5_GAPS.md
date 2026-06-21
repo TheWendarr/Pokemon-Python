@@ -37,14 +37,33 @@ dependency that must be cleared first.
   damage, since their base power is `null` in the data).
 - **Weather-tinted battle backdrop** — sky-over-ground replaces the flat fill,
   tinted for rain / sun / sandstorm / hail.
+- **Held items give/take** — a party-menu ITEM action equips a holdable bag
+  item to a Pokemon (swapping any current one) or takes it back; the held
+  item shows on the party list and summary. This unlocks the held-item
+  *effects* the battle engine already implements (Leftovers, Choice items,
+  Life Orb, Focus Sash, berries, ...).
 - **Audio** — a full procedural chiptune system (no asset files required):
   per-species cries seeded by dex number, 18 sound effects, and 7 looping
   songs (title / town / route / wild & trainer battle / victory / heal),
   wired to send-outs, hits, faints, the catch sequence, healing, level-ups,
-  menus, and saving; map `music` property; external OGG/MP3/WAV/MIDI
+  wall bumps, NPC/sign dialogue (start + advance), menu navigation, and
+  saving; map `music` property; external OGG/MP3/WAV/MIDI
   override; a MIDI exporter + `pkmn.cli.audio` CLI; volume settings + `--mute`.
 
 ---
+
+- **Day/night cycle** — phases (morning / day / evening / night) derived from
+  the system clock tint the overworld and the battle backdrop. Configurable
+  per region via the `daynight` setting ("auto" / "off" / a pinned phase) and
+  overridable at launch with `--time` (`auto`/`off`/phase/hour). Triggers gain
+  a `time` property so events can be day- or night-only; `Game.time_phase()`
+  exposes the current phase to the rest of the engine.
+
+- **Location/terrain battle backdrops** — a `battle_bg` map property selects
+  the backdrop palette (field / forest / cave / water / sand / snow / mountain
+  / indoor); weather recolours the sky over it and the day/night tint blends
+  on top. The overworld sets it per map and `Game.battle_bg` carries it into
+  both wild and trainer battles (the Triad's Shoreline Run uses `water`).
 
 ## TODO — Battle mechanics & presentation
 
@@ -52,16 +71,12 @@ dependency that must be cleared first.
       capped 252/stat & 510 total. **BLOCKED**: species JSON has no
       `effort`/`ev_yield`; needs a PokeAPI regen through `datagen` (pokeapi.co is
       unreachable in this sandbox). Wiring is **S** once the data exists.
-- [ ] **Double / Triple / Rotation battles** — Gen 5 signature. The engine is
-      single-active (`active(side)`); this is an **L** refactor of targeting,
-      turn order, spread moves, and the battle UI.
 - [ ] **Animated battle sprites** — Gen 5 signature; the current battler is one
       frame. Needs multi-frame sprite data + a sheet pipeline. **M**.
 - [ ] **Per-move animations / particle effects** and **stat-change / status
       flashes**. **M** / **S–M**.
 - [ ] **Trainer VS intro** — trainer sprite slide-in and ball-throw at battle
       start. **M**.
-- [ ] **Location/terrain battle backgrounds** beyond the weather tint. **S**.
 - [ ] **PP Up / PP Max** items and a few remaining battle items
       (verify Dire Hit / Guard Spec coverage). **S**.
 
@@ -87,7 +102,6 @@ dependency that must be cleared first.
 - [ ] **Seasons** (spring / summer / autumn / winter) — *the* Gen 5 signature.
       Affects encounter tables, tile appearance, and some forms/evolutions. Needs
       a time system + season-keyed region data. **M–L**.
-- [ ] **Day/night cycle** — encounter/appearance shifts + a screen tint. **M**.
 - [ ] **Overworld weather + particles** — weather already feeds battles but isn't
       drawn in the field (rain/snow/sand). **M**.
 - [ ] **Hidden items** (Dowsing Machine). **S–M**.
@@ -105,8 +119,6 @@ dependency that must be cleared first.
 
 ## TODO — Items, bag & shops
 
-- [ ] **Held-item give/take UI** in the party menu (`held_item` exists on the
-      model; no UI to set it outside battle). **S–M**.
 - [ ] **Bag pockets** (Items / Medicine / Poké Balls / Berries / TMs / Key Items)
       + sorting + a quick-use registration slot. **S–M**.
 
@@ -120,10 +132,20 @@ dependency that must be cleared first.
 
 ---
 
+## TODO — Game shell
+
+- [ ] **Configurable title screen** — a start screen shown before the
+      overworld (logo/art, a "Press Start" prompt, New Game / Continue),
+      with the region manifest supplying the title art, text, and music.
+      The game currently boots straight into the overworld. **M**.
+
 ## Out of scope (online / heavily post-game)
 
 Battle Subway, Entralink, Dream World, Pokémon Musical, C-Gear / wireless,
 Global Link, Xtransceiver video calls, Pokéstar Studios (Pokéwood), Join Avenue.
+
+Multi-Pokemon battle formats — **double, triple, and rotation battles** — are
+intentionally excluded by project decision. The engine stays single-active.
 These depend on networking or large post-game subsystems outside this engine's
 single-player, region-as-data scope.
 

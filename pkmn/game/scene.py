@@ -14,6 +14,8 @@ import pygame
 from ..data.repository import GameData
 from .assets import Assets
 from .audio import AudioManager
+from . import keybinds
+from . import daytime
 from . import contract
 import math
 
@@ -22,15 +24,8 @@ from .config import (A, B, DATA_DIR, DOWN, FPS, LEFT, LOGICAL_H, LOGICAL_W,
 from .save import load_game
 from .state import GameState
 
-KEYMAP = {
-    pygame.K_UP: UP, pygame.K_w: UP,
-    pygame.K_DOWN: DOWN, pygame.K_s: DOWN,
-    pygame.K_LEFT: LEFT, pygame.K_a: LEFT,
-    pygame.K_RIGHT: RIGHT, pygame.K_d: RIGHT,
-    pygame.K_z: A, pygame.K_SPACE: A,
-    pygame.K_x: B, pygame.K_BACKSPACE: B, pygame.K_ESCAPE: B,
-    pygame.K_RETURN: START,
-}
+# Physical key bindings are configurable per Game (see pkmn.game.keybinds);
+# Game builds self.keymap = {keycode: action} from the loaded bindings.
 
 
 class Input:
@@ -39,16 +34,21 @@ class Input:
     def __init__(self):
         self.pressed: set = set()
         self.held: set = set()
+        self.raw: set = set()          # raw keycodes this frame (rebind menu)
 
     def press(self, name: str) -> None:
         self.pressed.add(name)
         self.held.add(name)
+
+    def press_raw(self, code: int) -> None:
+        self.raw.add(code)
 
     def release(self, name: str) -> None:
         self.held.discard(name)
 
     def clear_frame(self) -> None:
         self.pressed.clear()
+        self.raw.clear()
 
 
 class Scene:
@@ -69,7 +69,8 @@ class Game:
     def __init__(self, *, headless: bool = False, seed: int | None = None,
                  data_dir: str | None = None, save_path: str | None = None,
                  game_dir: str = "game/assets", fullscreen: bool = False,
-                 fill: bool = False, mute: bool = False):
+                 fill: bool = False, mute: bool = False,
+                 controls_path: str | None = None, daynight=None):
         self.headless = headless
         if headless:
             os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
@@ -104,6 +105,15 @@ class Game:
         self.last_battle = None    # winner of the most recent battle
         self.running = True
         self.audio = AudioManager(game_dir, manifest=self.manifest, mute=mute)
+        self.controls_path = controls_path
+        self.bindings = keybinds.load(controls_path)
+        self.keymap = keybinds.resolve(self.bindings)
+        dn = daynight if daynight is not None else self.setting("daynight", "auto")
+        self.clock_hour = None
+        if isinstance(dn, str) and dn.isdigit():
+            self.clock_hour, dn = int(dn) % 24, "auto"
+        self.daynight = dn
+        self.battle_bg = "field"          # set per map; battles read it
 
     def feature(self, name: str, default: bool = True) -> bool:
         """Designer toggle: manifest["features"][name]; default ON."""
@@ -111,6 +121,21 @@ class Game:
 
     def setting(self, name: str, default):
         return self.manifest.get("settings", {}).get(name, default)
+
+    def apply_bindings(self, bindings: dict) -> None:
+        """Adopt a new key->action mapping and persist it to controls_path."""
+        self.bindings = keybinds.normalize(bindings)
+        self.keymap = keybinds.resolve(self.bindings)
+        keybinds.save(self.bindings, self.controls_path)
+
+    def time_phase(self) -> str:
+        """Current day/night phase: 'morning' | 'day' | 'evening' | 'night'."""
+        dn = self.daynight
+        if dn in (False, "off", "none", None):
+            return "day"
+        if dn in daytime.PHASES:                 # pinned to one phase
+            return dn
+        return daytime.current_phase(self.clock_hour)
 
     def whiteout_location(self):
         """Where the player reappears after whiting out: the manifest's
@@ -219,10 +244,12 @@ class Game:
                     self.running = False
                 elif ev.type == pygame.KEYDOWN and ev.key == pygame.K_F11:
                     self._open_window(not self.fullscreen)
-                elif ev.type == pygame.KEYDOWN and ev.key in KEYMAP:
-                    self.input.press(KEYMAP[ev.key])
-                elif ev.type == pygame.KEYUP and ev.key in KEYMAP:
-                    self.input.release(KEYMAP[ev.key])
+                elif ev.type == pygame.KEYDOWN:
+                    self.input.press_raw(ev.key)        # for the rebind menu
+                    if ev.key in self.keymap:
+                        self.input.press(self.keymap[ev.key])
+                elif ev.type == pygame.KEYUP and ev.key in self.keymap:
+                    self.input.release(self.keymap[ev.key])
                 elif ev.type == pygame.VIDEORESIZE and not self.fullscreen:
                     self.window = pygame.display.set_mode(
                         (ev.w, ev.h), pygame.RESIZABLE)

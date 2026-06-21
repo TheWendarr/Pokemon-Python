@@ -1,0 +1,31 @@
+{
+  "a": [
+    "z",
+    "space"
+  ],
+  "b": [
+    "left shift"
+  ],
+  "down": [
+    "down",
+    "s"
+  ],
+  "left": [
+    "left",
+    "a"
+  ],
+  "right": [
+    "right",
+    "d"
+  ],
+  "select": [
+    "right shift"
+  ],
+  "start": [
+    "tab"
+  ],
+  "up": [
+    "up",
+    "w"
+  ]
+}

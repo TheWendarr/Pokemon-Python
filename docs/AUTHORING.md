@@ -65,14 +65,26 @@ lint reports, never something the engine guesses.
       "encounter_chance": 8,     // 1-in-N per grass step
       "audio_volume": 0.7,       // master (0..1)
       "music_volume": 0.6, "sfx_volume": 0.8,
-      "midi": false              // play external .mid files (see Audio)
+      "midi": false,             // play external .mid files (see Audio)
+      "daynight": "auto"         // "auto" (clock) | "off" | a phase name
     }
 
 Turn systems off to ship anything from a pure narrative walking sim to
 a full RPG. Maps can override per-map values via Tiled *map properties*:
 `weather` ("rain"|"sun"|"sandstorm"|"hail" — tints the overworld and
 opens every battle there under that weather), `encounter_chance`, and
-`music` (the track name to play on that map — see Audio).
+`music` (the track name to play on that map — see Audio), and `battle_bg`
+(the battle backdrop palette — `"field"` (default), `"forest"`, `"cave"`,
+`"water"`, `"sand"`, `"snow"`, `"mountain"`, or `"indoor"`; weather still
+recolours the sky over it and the day/night tint blends on top).
+
+**Day/night.** Phases — morning / day / evening / night — come from the
+system clock and apply a subtle tint to the overworld and the battle
+backdrop. The `daynight` setting picks the source: `"auto"` follows the
+clock, `"off"` disables tinting (always day), and a phase name pins one
+phase. `python -m pkmn.game.play --time auto|off|<phase>|<hour 0-23>`
+overrides it at launch. Triggers take an optional `time` property (a
+comma-separated phase list) so an event can be day- or night-only.
 
 ## Tiles
 
@@ -135,7 +147,7 @@ docs/ENGINE_PHILOSOPHY.md for the design.
 | warp    | to_map, to_x, to_y, facing |
 | npc     | display, facing, dialog ("line\|next page") or script, heal, visible_unless |
 | sign    | dialog or script |
-| trigger | script, unless_flag, when ("step" or "enter") |
+| trigger | script, unless_flag, when ("step" or "enter"), time (phase list, e.g. "night,evening") |
 | trainer | display, facing, sight, party ("krabby:7\|wingull:7@oran-berry" — `@item` equips a held item), prize, flag, before, after |
 
 Trainers spot the player along their facing within `sight` tiles, walk
@@ -197,9 +209,10 @@ number, the same way the renderer falls back to procedural sprites.
 What plays where, automatically: a map's `music` property (default
 `route`) sets the field track; wild battles use `battle_wild`, trainer
 battles `battle_trainer`, a win plays `victory`; cries fire on send-out,
-and SFX cover hits, faints, the catch sequence, healing, level-ups, menu
-moves, and saving. Built-in songs: `title`, `town`, `route`,
-`battle_wild`, `battle_trainer`, `victory`, `heal`.
+and SFX cover hits, faints, the catch sequence, healing, level-ups,
+bumping into walls, starting and advancing dialogue, menu cursor moves,
+and saving. Built-in songs: `title`, `town`, `route`, `battle_wild`,
+`battle_trainer`, `victory`, `heal`.
 
 **Bring your own audio.** Drop files in `<game>/audio/music/<name>.<ext>`
 and they override the synth for that track. `.ogg`/`.mp3`/`.wav` play
@@ -214,6 +227,27 @@ To start from the built-in tunes as editable MIDI:
 
 Volumes live in `settings` (`audio_volume`, `music_volume`, `sfx_volume`);
 `--mute` (or a device-less / headless host) disables audio safely.
+
+## Controls (key bindings)
+
+Input is expressed as logical *actions*, so the physical keys are fully
+configurable. The actions are **Up, Down, Left, Right, Confirm, Cancel,
+Start, Select**. Defaults: arrows or WASD move; Confirm = Z / Space;
+Cancel = X / Backspace / Escape; Start = Enter; Select = right shift.
+(F11 toggles fullscreen and is reserved.)
+
+Players remap keys in-game from the pause menu's **CONTROLS** screen —
+pick an action, press the new key (Esc aborts), or choose *Reset to
+defaults*. Changes save immediately to the bindings file
+(`controls.json` by default; `python -m pkmn.game.play --controls PATH`
+to relocate it). The file is plain JSON mapping each action to one or
+more pygame key names, so it can also be hand-edited:
+
+    {"a": ["z", "space"], "b": ["x", "escape"], "up": ["up", "w"],
+     "start": ["return"], "select": ["right shift"]}
+
+(Internally Confirm is `a` and Cancel is `b`.) An action present with an
+empty list is left unbound; an omitted action keeps its default.
 
 ## Validation (the contract)
 

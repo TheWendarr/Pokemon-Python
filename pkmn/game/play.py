@@ -18,6 +18,10 @@ def main() -> None:
     ap.add_argument("--no-sprite-fetch", action="store_true",
                     help="never download sprites; use cache + blobs only")
     ap.add_argument("--mute", action="store_true", help="disable all audio")
+    ap.add_argument("--controls", default="controls.json",
+                    help="path to the key-bindings file (created on rebind)")
+    ap.add_argument("--time", default=None,
+                    help="day/night: auto|off|morning|day|evening|night|<hour>")
     ap.add_argument("--fullscreen", action="store_true",
                     help="run fullscreen at the display's native resolution")
     ap.add_argument("--fill", action="store_true",
@@ -28,7 +32,8 @@ def main() -> None:
     sprites.FETCH_ENABLED = not args.no_sprite_fetch
     game = Game(headless=args.headless, seed=args.seed,
                 save_path=args.save, game_dir=args.game,
-                fullscreen=args.fullscreen, fill=args.fill, mute=args.mute)
+                fullscreen=args.fullscreen, fill=args.fill, mute=args.mute,
+                controls_path=args.controls, daynight=args.time)
     game.push(OverworldScene(game))
     game.run()
 

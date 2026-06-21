@@ -49,7 +49,7 @@ CAPABILITY_FLAGS: set[str] = {"can_surf", "can_cut"}
 # with no connections is a discrete, warp-linked map.
 DIRECTIONS: tuple[str, ...] = ("north", "south", "east", "west")
 MAP_PROPS: set[str] = (
-    {"weather", "border", "encounter_chance", "music"}
+    {"weather", "border", "encounter_chance", "music", "battle_bg"}
     | {f"connect_{d}" for d in DIRECTIONS}
     | {f"offset_{d}" for d in DIRECTIONS}
 )
@@ -75,7 +75,7 @@ OBJECT_TYPES: dict[str, set[str]] = {
                 "visible_unless"},
     "trainer": {"display", "facing", "sight", "party", "prize", "flag",
                 "before", "after"},
-    "trigger": {"script", "unless_flag", "when"},
+    "trigger": {"script", "unless_flag", "when", "time"},
     "sign":    {"dialog", "script"},
     "spawn":   set(),
 }

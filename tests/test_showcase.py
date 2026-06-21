@@ -126,7 +126,7 @@ def test_features_disable_systems(game):
 
 def test_pause_menu_options_follow_features(game):
     game.manifest["features"].update({"menu_bag": False, "saving": False,
-                                      "pokedex": False})
+                                      "pokedex": False, "controls": False})
     press(game, START)
     assert isinstance(game.top, PauseScene)
     assert game.top.OPTIONS == ("POKEMON", "CLOSE")

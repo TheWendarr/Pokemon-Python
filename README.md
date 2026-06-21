@@ -1,7 +1,8 @@
 # pokemon-python
 
 A Gen 4/5-style Pokemon engine and (eventually) game-authoring toolkit,
-written in Python.
+written in Python. Ground-up rewrite — the original prototype's code was
+used as inspiration only.
 
 **Data: the full PokeAPI Gen 1-5 catalog.** `game/data/` now carries
 every species (649), every move (559, B2W2 values), every ability (164,
@@ -74,12 +75,15 @@ only with the toolkit — try
 `python -m pkmn.game.play --game examples/isleton`.
 
 **Phase 5 status: game systems.** Press Enter for the pause menu:
-party (with summaries and order swapping), bag (use medicine on any
-member), and save. Your team earns EXP on every knockout, levels up,
+party (with summaries, order swapping, and giving/taking held items),
+bag (use medicine on any member), and save. Your team earns EXP on every knockout, levels up,
 learns moves, and evolves after battle; catches beyond six go to the
 PC box on the clinic terminal. `python -m pkmn.game.play` now resumes
 from `save.json` automatically (`--save` to change the path).
-Controls: arrows/WASD move, Z/Space confirm, X/Esc cancel, Enter menu.
+Controls (all rebindable): arrows/WASD move, Z/Space confirm, X/Esc
+cancel, Enter for the menu, right-shift select. Remap any key in-game
+from the pause menu's CONTROLS screen (saved to `controls.json`; use
+`--controls PATH` to relocate it), or hand-edit that JSON.
 
 **Phase 4 status: events & scripting.** Route 1 now has a scripted
 rival ambush (Hugh and his Snivy), a line-of-sight trainer in the tall
@@ -88,6 +92,12 @@ event script. Game logic is data: triggers and NPCs in the Tiled maps
 reference JSON scripts (`game/assets/scripts.json`) with a small
 command set (dialogue, battles, items, money, flags, warps, NPC
 movement), and progress flags gate every trigger and dialogue branch.
+
+**Day/night cycle.** A clock-driven cycle tints the overworld and battle
+backdrops through morning, day, evening, and night. It is configurable per
+region (the `daynight` setting) or at launch with `--time`
+(`auto`/`off`/a phase/an hour), and map triggers can be gated to specific
+phases — so an event or encounter can be night-only.
 
 **Phase 3 status: playable overworld.** `python -m pkmn.game.play`
 opens a Pygame-CE window: walk Hexton town, head north into Route 1's

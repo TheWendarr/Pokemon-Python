@@ -50,6 +50,7 @@ class TriggerSpawn:
     script: str
     unless_flag: str = ""
     when: str = "step"             # 'step' | 'enter' (map load)
+    time: str = ""                 # phases it may fire in (e.g. "night,evening")
 
 
 @dataclass
@@ -110,7 +111,7 @@ class TileMap:
             elif obj.name == "trigger":
                 self.triggers.append(TriggerSpawn(
                     t, p.get("script", ""), p.get("unless_flag", ""),
-                    p.get("when", "step")))
+                    p.get("when", "step"), p.get("time", "")))
             elif obj.name == "sign":
                 self.signs[t] = SignSpawn(t, p.get("dialog", "...").split("|"),
                                           p.get("script", ""))

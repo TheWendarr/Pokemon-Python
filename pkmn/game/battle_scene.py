@@ -21,6 +21,25 @@ import math
 
 import pygame
 
+from . import daytime
+
+# Battle backdrop palettes by location: (sky, ground). Weather recolours the
+# sky on top of this, and the day/night tint is blended over everything.
+_BACKDROPS = {
+    "field":    ((200, 226, 240), (176, 210, 150)),
+    "forest":   ((176, 208, 222), (120, 168, 104)),
+    "cave":     ((58, 54, 70),    (96, 86, 80)),
+    "water":    ((158, 206, 236), (110, 174, 208)),
+    "sand":     ((238, 222, 172), (216, 196, 150)),
+    "snow":     ((220, 234, 246), (232, 240, 248)),
+    "mountain": ((196, 210, 226), (158, 150, 140)),
+    "indoor":   ((150, 140, 158), (182, 166, 150)),
+}
+_WEATHER_SKY = {
+    "rain": (150, 164, 186), "sun": (250, 226, 168),
+    "sandstorm": (222, 198, 150), "hail": (214, 230, 240),
+}
+
 from ..battle.ai import GreedyAI, RandomAI
 from ..battle.engine import BattleEngine, Phase
 from ..battle.events import E
@@ -58,10 +77,12 @@ BALL_D = 12 * S         # pokeball diameter
 
 class BattleScene(Scene):
     def __init__(self, game, foe_party, *, wild: bool = True,
-                 trainer_name: str | None = None, weather: str | None = None):
+                 trainer_name: str | None = None, weather: str | None = None,
+                 backdrop: str | None = None):
         super().__init__(game)
         st = game.state
         self.wild = wild
+        self.backdrop = backdrop or getattr(game, "battle_bg", "field")
         self.eng = BattleEngine(game.data, st.party, foe_party,
                                 wild=wild, rng=st.rng,
                                 dex_caught=len(st.caught))
@@ -540,20 +561,17 @@ class BattleScene(Scene):
     def _draw_backdrop(self, surf) -> None:
         """A simple sky-over-ground backdrop, tinted by the weather, in
         place of a flat fill (the platform band sits on the ground)."""
-        sky, ground = (200, 226, 240), (176, 210, 150)
-        w = self.eng.weather
-        if w == "rain":
-            sky, ground = (150, 164, 186), (138, 168, 150)
-        elif w == "sun":
-            sky, ground = (250, 226, 168), (198, 214, 148)
-        elif w == "sandstorm":
-            sky, ground = (222, 198, 150), (198, 176, 126)
-        elif w == "hail":
-            sky, ground = (214, 230, 240), (206, 222, 226)
+        sky, ground = _BACKDROPS.get(self.backdrop, _BACKDROPS["field"])
+        sky = _WEATHER_SKY.get(self.eng.weather, sky)   # weather recolours sky
         surf.fill(sky)
         pygame.draw.rect(surf, ground, (0, LOGICAL_H - 84 * S, LOGICAL_W, 84 * S))
         pygame.draw.rect(surf, tuple(max(0, c - 16) for c in ground),
                          (0, LOGICAL_H - 76 * S, LOGICAL_W, 6 * S))
+        day = daytime.tint(self.game.time_phase())     # dusk/night wash
+        if day[3]:
+            dov = pygame.Surface(surf.get_size(), pygame.SRCALPHA)
+            dov.fill(day)
+            surf.blit(dov, (0, 0))
 
     def draw(self, surf) -> None:
         self._draw_backdrop(surf)

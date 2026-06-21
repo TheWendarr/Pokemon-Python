@@ -48,7 +48,8 @@ class Lint:
                 self.err(name, "missing")
             return {}
         try:
-            return json.load(open(path, encoding="utf-8"))
+            with open(path, encoding="utf-8") as f:
+                return json.load(f)
         except Exception as e:
             self.err(name, f"invalid JSON ({e})")
             return {}

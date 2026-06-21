@@ -6,6 +6,7 @@ import pygame
 from ..core.pokemon import PokemonState
 from .config import A, B, DOWN, LEFT, LOGICAL_H, LOGICAL_W, RIGHT, SCALE as S, UP
 from .dialog import BOX_BORDER, TEXT, draw_box, wrap_text
+from . import keybinds
 from .save import save_game
 from .scene import Scene
 
@@ -29,7 +30,8 @@ class PauseScene(Scene):
         self.note = ""
         self.OPTIONS = tuple(
             o for o, feat in (("POKEMON", "menu_party"), ("BAG", "menu_bag"),
-                              ("SAVE", "saving"), ("POKEDEX", "pokedex"))
+                              ("SAVE", "saving"), ("POKEDEX", "pokedex"),
+                              ("CONTROLS", "controls"))
             if game.feature(feat)) + ("CLOSE",)
 
     def handle(self, inp) -> None:
@@ -41,6 +43,8 @@ class PauseScene(Scene):
             pick = self.OPTIONS[self.cursor]
             if pick == "POKEDEX":
                 self.game.push(PokedexScene(self.game))
+            elif pick == "CONTROLS":
+                self.game.push(ControlsScene(self.game))
             elif pick == "POKEMON":
                 self.game.push(PartyScene(self.game))
             elif pick == "BAG":
@@ -75,21 +79,25 @@ class PartyScene(Scene):
     Choosing MOVE picks the mon up; pick another slot to swap them into
     place. B backs out (cancelling a move-in-progress first)."""
     translucent = True
-    ACTIONS = ("SUMMARY", "MOVE", "CANCEL")
+    ACTIONS = ("SUMMARY", "MOVE", "ITEM", "CANCEL")
 
     def __init__(self, game):
         super().__init__(game)
         self.cursor = 0
         self.held: int | None = None      # slot being moved
         self.menu: int | None = None      # action-menu cursor (None = closed)
+        self.note = ""
 
     def handle(self, inp) -> None:
         party = self.game.state.party
         if self.menu is not None:                     # action menu is open
+            before = self.menu
             if UP in inp.pressed:
                 self.menu = max(0, self.menu - 1)
             if DOWN in inp.pressed:
                 self.menu = min(len(self.ACTIONS) - 1, self.menu + 1)
+            if self.menu != before:
+                self.game.audio.play_sfx("menu_move")
             if B in inp.pressed:
                 self.menu = None
             elif A in inp.pressed:
@@ -99,6 +107,8 @@ class PartyScene(Scene):
                     self.game.push(SummaryScene(self.game, party[self.cursor]))
                 elif act == "MOVE":
                     self.held = self.cursor
+                elif act == "ITEM":
+                    self._toggle_item(party[self.cursor])
             return
         nav_list(self, inp, len(party))
         if B in inp.pressed:
@@ -115,6 +125,17 @@ class PartyScene(Scene):
             else:
                 self.menu = 0                         # open the action menu
 
+    def _toggle_item(self, mon) -> None:
+        st = self.game.state
+        if mon.held_item:                              # take it back
+            it = self.game.data.item(mon.held_item)
+            st.bag[mon.held_item] = st.bag.get(mon.held_item, 0) + 1
+            self.note = f"Took the {it.name if it else mon.held_item}."
+            mon.held_item = None
+            self.game.audio.play_sfx("confirm")
+        else:
+            self.game.push(HeldItemPicker(self.game, mon))
+
     def draw(self, surf) -> None:
         party = self.game.state.party
         rect = pygame.Rect(8 * S, 8 * S, LOGICAL_W - 16 * S,
@@ -124,13 +145,17 @@ class PartyScene(Scene):
         for i, p in enumerate(party):
             y = rect.y + 7 * S + i * 18 * S
             mark = ">" if i == self.cursor else ("^" if i == self.held else " ")
+            held = ""
+            if p.held_item:
+                hit = self.game.data.item(p.held_item)
+                held = f"  @{hit.name if hit else p.held_item}"
             label = (f"{mark} {(p.nickname or p.species_id.title())} "
                      f"Lv{p.level}  {max(0, p.current_hp)}/{p.max_hp}"
-                     f"{'  ' + p.status.upper()[:3] if p.status else ''}")
+                     f"{'  ' + p.status.upper()[:3] if p.status else ''}{held}")
             color = (216, 152, 60) if i == self.held else TEXT
             surf.blit(font.render(label, True, color), (rect.x + 6 * S, y))
-        hint = ("Pick a slot to swap into." if self.held is not None
-                else "A: options   B: back")
+        hint = (self.note or ("Pick a slot to swap into." if self.held is not None
+                else "A: options   B: back"))
         surf.blit(font.render(hint, True, BOX_BORDER),
                   (rect.x + 6 * S, rect.bottom + 4 * S))
         if self.menu is not None:                     # action-menu popup
@@ -199,6 +224,9 @@ class SummaryScene(Scene):
         ab = m.ability.replace("-", " ").title() if m.ability else "-"
         meta.append(f"Ability: {ab}")
         meta.append(f"Friendship: {m.friendship}")
+        if m.held_item:
+            hit = self.game.data.item(m.held_item)
+            meta.append(f"Item: {hit.name if hit else m.held_item}")
         for ln in meta:
             surf.blit(font.render(ln, True, TEXT), (cx, cy))
             cy += 12 * S
@@ -290,10 +318,13 @@ class BagScene(Scene):
                     self.note = "Can't use that here."
             return
         # choosing a target party member
+        before = self.pick_cursor
         if DOWN in inp.pressed:
             self.pick_cursor = min(len(st.party) - 1, self.pick_cursor + 1)
         if UP in inp.pressed:
             self.pick_cursor = max(0, self.pick_cursor - 1)
+        if self.pick_cursor != before:
+            self.game.audio.play_sfx("menu_move")
         if B in inp.pressed:
             self.picking = None
             return
@@ -393,10 +424,13 @@ class PCScene(Scene):
     def handle(self, inp) -> None:
         party, box = self._lists()
         cols = (party, box)
+        before_col = self.col
         if LEFT in inp.pressed:
             self.col = 0
         if RIGHT in inp.pressed:
             self.col = 1
+        if self.col != before_col:
+            self.game.audio.play_sfx("menu_move")
         cur = cols[self.col]
         nav_list(self, inp, len(cur))
         self.cursor = min(self.cursor, max(0, len(cur) - 1))
@@ -565,3 +599,131 @@ class ShopScene(Scene):
                   (foot.x + 6 * S, foot.y + 4 * S))
         surf.blit(font.render(self.note, True, BOX_BORDER),
                   (foot.x + 6 * S, foot.y + 17 * S))
+
+
+class ControlsScene(Scene):
+    """Remap keys to the game's actions. Up/Down choose an action, Confirm
+    starts a rebind (then press any key; Esc aborts), Cancel goes back, and
+    a Reset row restores the defaults. Changes save immediately."""
+    translucent = True
+
+    def __init__(self, game):
+        super().__init__(game)
+        self.cursor = 0
+        self.binding = False
+        self.rows = list(keybinds.ACTION_IDS) + ["__reset__"]
+        self.note = "Confirm: rebind    Cancel: back"
+
+    def handle(self, inp) -> None:
+        if self.binding:
+            for code in sorted(inp.raw):
+                name = keybinds.key_name(code)
+                if name == "escape":
+                    self.binding = False
+                    self.note = "Rebind cancelled."
+                    return
+                if name == "?" or name in keybinds.RESERVED:
+                    continue
+                action = self.rows[self.cursor]
+                self.game.apply_bindings(
+                    keybinds.rebind(self.game.bindings, action, name))
+                self.binding = False
+                self.game.audio.play_sfx("confirm")
+                self.note = f"{keybinds.label(action)} -> '{name}'"
+                return
+            return
+        nav_list(self, inp, len(self.rows))
+        if B in inp.pressed:
+            self.game.audio.play_sfx("menu_back")
+            self.game.pop()
+            return
+        if A in inp.pressed:
+            row = self.rows[self.cursor]
+            if row == "__reset__":
+                self.game.apply_bindings(keybinds.default_bindings())
+                self.game.audio.play_sfx("confirm")
+                self.note = "Restored default controls."
+            else:
+                self.binding = True
+                self.note = f"Press a key for {keybinds.label(row)}  (Esc: cancel)"
+
+    def draw(self, surf) -> None:
+        font, big = self.game.assets.font, self.game.assets.font_big
+        rect = pygame.Rect(8 * S, 8 * S, LOGICAL_W - 16 * S, LOGICAL_H - 16 * S)
+        draw_box(surf, rect)
+        surf.blit(big.render("CONTROLS", True, TEXT), (rect.x + 8 * S, rect.y + 8 * S))
+        y = rect.y + 32 * S
+        for i, row in enumerate(self.rows):
+            sel = (i == self.cursor)
+            if sel:
+                surf.blit(font.render(">", True, TEXT), (rect.x + 6 * S, y))
+            if row == "__reset__":
+                surf.blit(font.render("Reset to defaults", True, TEXT),
+                          (rect.x + 16 * S, y))
+            else:
+                keys = ("< press a key >" if sel and self.binding
+                        else keybinds.keys_label(self.game.bindings, row))
+                surf.blit(font.render(f"{keybinds.label(row):<9} {keys}",
+                                      True, TEXT), (rect.x + 16 * S, y))
+            y += 13 * S
+        surf.blit(font.render(self.note, True, BOX_BORDER),
+                  (rect.x + 8 * S, rect.bottom - 20 * S))
+
+
+class HeldItemPicker(Scene):
+    """Choose a holdable bag item for `mon` to hold; swaps any current item."""
+    translucent = True
+
+    def __init__(self, game, mon):
+        super().__init__(game)
+        self.mon = mon
+        self.cursor = 0
+
+    def items(self):
+        out = []
+        for iid, qty in sorted(self.game.state.bag.items()):
+            it = self.game.data.item(iid)
+            if qty > 0 and it and it.holdable and not it.is_ball:
+                out.append((iid, it.name, qty))
+        return out
+
+    def handle(self, inp) -> None:
+        items = self.items()
+        nav_list(self, inp, len(items))
+        if B in inp.pressed:
+            self.game.audio.play_sfx("menu_back")
+            self.game.pop()
+            return
+        if A in inp.pressed and items:
+            iid, name, _ = items[min(self.cursor, len(items) - 1)]
+            st = self.game.state
+            if self.mon.held_item:                     # return the old one
+                st.bag[self.mon.held_item] = \
+                    st.bag.get(self.mon.held_item, 0) + 1
+            st.bag[iid] = st.bag.get(iid, 0) - 1
+            if st.bag[iid] <= 0:
+                del st.bag[iid]
+            self.mon.held_item = iid
+            self.game.audio.play_sfx("confirm")
+            self.game.pop()
+
+    def draw(self, surf) -> None:
+        font = self.game.assets.font
+        items = self.items()
+        rect = pygame.Rect(8 * S, 8 * S, 200 * S,
+                           14 * S * max(1, len(items)) + 46 * S)
+        draw_box(surf, rect)
+        who = self.mon.nickname or self.mon.species_id.title()
+        surf.blit(font.render(f"Give to {who}:", True, TEXT),
+                  (rect.x + 8 * S, rect.y + 6 * S))
+        if not items:
+            surf.blit(font.render("(no holdable items)", True, TEXT),
+                      (rect.x + 14 * S, rect.y + 24 * S))
+        for i, (iid, name, qty) in enumerate(items):
+            y = rect.y + 24 * S + i * 14 * S
+            if i == self.cursor:
+                surf.blit(font.render(">", True, TEXT), (rect.x + 5 * S, y))
+            surf.blit(font.render(f"{name}  x{qty}", True, TEXT),
+                      (rect.x + 14 * S, y))
+        surf.blit(font.render("A: give   B: cancel", True, BOX_BORDER),
+                  (rect.x + 8 * S, rect.bottom - 18 * S))
