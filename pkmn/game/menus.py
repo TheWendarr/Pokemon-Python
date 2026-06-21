@@ -11,10 +11,13 @@ from .scene import Scene
 
 
 def nav_list(scene, inp, n) -> None:
+    before = scene.cursor
     if DOWN in inp.pressed:
         scene.cursor = min(max(0, n - 1), scene.cursor + 1)
     if UP in inp.pressed:
         scene.cursor = max(0, scene.cursor - 1)
+    if scene.cursor != before:
+        scene.game.audio.play_sfx("menu_move")
 
 
 class PauseScene(Scene):
@@ -45,6 +48,7 @@ class PauseScene(Scene):
             elif pick == "SAVE":
                 save_game(self.game.state,
                           self.game.save_path or "save.json")
+                self.game.audio.play_sfx("save")
                 self.note = "Game saved!"
             else:
                 self.game.pop()

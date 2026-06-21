@@ -81,6 +81,7 @@ class ScriptRunner:
                 return WAIT
             elif "heal" in step:
                 st.heal_party()
+                self.game.audio.play_sfx("heal")
             elif "give_item" in step:
                 g = step["give_item"]
                 st.bag[g["item"]] = st.bag.get(g["item"], 0) + int(g.get("qty", 1))

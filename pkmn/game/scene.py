@@ -13,6 +13,7 @@ import pygame
 
 from ..data.repository import GameData
 from .assets import Assets
+from .audio import AudioManager
 from . import contract
 import math
 
@@ -68,7 +69,7 @@ class Game:
     def __init__(self, *, headless: bool = False, seed: int | None = None,
                  data_dir: str | None = None, save_path: str | None = None,
                  game_dir: str = "game/assets", fullscreen: bool = False,
-                 fill: bool = False):
+                 fill: bool = False, mute: bool = False):
         self.headless = headless
         if headless:
             os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
@@ -102,6 +103,7 @@ class Game:
         self.input = Input()
         self.last_battle = None    # winner of the most recent battle
         self.running = True
+        self.audio = AudioManager(game_dir, manifest=self.manifest, mute=mute)
 
     def feature(self, name: str, default: bool = True) -> bool:
         """Designer toggle: manifest["features"][name]; default ON."""

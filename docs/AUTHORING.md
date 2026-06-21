@@ -61,12 +61,18 @@ lint reports, never something the engine guesses.
       "running": true,           // hold B to move at double speed
       "menu_party": true, "menu_bag": true, "saving": true
     },
-    "settings": {"encounter_chance": 8}   // 1-in-N per grass step
+    "settings": {
+      "encounter_chance": 8,     // 1-in-N per grass step
+      "audio_volume": 0.7,       // master (0..1)
+      "music_volume": 0.6, "sfx_volume": 0.8,
+      "midi": false              // play external .mid files (see Audio)
+    }
 
 Turn systems off to ship anything from a pure narrative walking sim to
 a full RPG. Maps can override per-map values via Tiled *map properties*:
 `weather` ("rain"|"sun"|"sandstorm"|"hail" — tints the overworld and
-opens every battle there under that weather) and `encounter_chance`.
+opens every battle there under that weather), `encounter_chance`, and
+`music` (the track name to play on that map — see Audio).
 
 ## Tiles
 
@@ -180,6 +186,34 @@ battle hooks are inert (never crash). To add behavior, see
 `pkmn/datagen/mechanics.py` (bag items, balls), and the `@handler`
 registry in `pkmn/battle/moves.py` — then check your coverage with
 `python -m pkmn.cli.audit` and `python -m pkmn.cli.coverage`.
+
+## Audio
+
+The engine **synthesizes all audio procedurally at runtime** (numpy ->
+pygame.mixer) — chiptune cries, sound effects, and music — so audio files
+are entirely optional. Every species gets a unique cry seeded by its dex
+number, the same way the renderer falls back to procedural sprites.
+
+What plays where, automatically: a map's `music` property (default
+`route`) sets the field track; wild battles use `battle_wild`, trainer
+battles `battle_trainer`, a win plays `victory`; cries fire on send-out,
+and SFX cover hits, faints, the catch sequence, healing, level-ups, menu
+moves, and saving. Built-in songs: `title`, `town`, `route`,
+`battle_wild`, `battle_trainer`, `victory`, `heal`.
+
+**Bring your own audio.** Drop files in `<game>/audio/music/<name>.<ext>`
+and they override the synth for that track. `.ogg`/`.mp3`/`.wav` play
+out of the box. `.mid` files play only when you set `"midi": true` in
+settings — SDL/pygame MIDI playback depends on a system soft-synth /
+soundfont and can fail *silently*, so the robust synth is the default.
+To start from the built-in tunes as editable MIDI:
+
+    python -m pkmn.cli.audio --export-midi          # -> game/assets/audio/music
+    python -m pkmn.cli.audio --list                 # songs + SFX names
+    python -m pkmn.cli.audio --render-wav out/wav    # audition as .wav
+
+Volumes live in `settings` (`audio_volume`, `music_volume`, `sfx_volume`);
+`--mute` (or a device-less / headless host) disables audio safely.
 
 ## Validation (the contract)
 

@@ -68,6 +68,7 @@ class BattleScene(Scene):
         for fp in foe_party:                 # Pokedex: these have been seen
             st.register_seen(fp.species_id)
         self.ai = (RandomAI(P2, st.rng) if wild else GreedyAI(P2, st.rng))
+        game.audio.play_music("battle_wild" if wild else "battle_trainer")
         self.mode = "anim"
         self.cursor = 0
         self.cursors = {"menu": 0, "moves": 0, "bag": 0}   # remembered per mode
@@ -135,29 +136,32 @@ class BattleScene(Scene):
                 if extra:
                     self._say_page([" ".join(extra)])
             elif t == E.FAINT:
-                self.steps.append({"kind": "faint", "side": side})
+                self.steps.append({"kind": "faint", "side": side, "sfx": "faint"})
                 self._say(format_event(ev))
             elif t == E.SEND_IN:
                 name = d.get("pokemon", "")
                 if side == P1:                       # player throws a ball
                     self._say(f"Go {name}!")
-                    self.steps.append({"kind": "throw", "side": P1})
+                    self.steps.append({"kind": "throw", "side": P1,
+                                       "cry": self._cry_for(P1)})
                 elif self.wild:                      # wild foe just appears
-                    self.steps.append({"kind": "send", "side": P2})
+                    self.steps.append({"kind": "send", "side": P2,
+                                       "cry": self._cry_for(P2)})
                     self._say(f"A wild {name} appeared!")
                 else:                                # trainer sends a ball
                     self._say(f"{name} was sent out!")
-                    self.steps.append({"kind": "throw", "side": P2})
+                    self.steps.append({"kind": "throw", "side": P2,
+                                       "cry": self._cry_for(P2)})
             elif t == E.CATCH_ATTEMPT:
                 self._say(format_event(ev))          # "Threw a Ball at X!"
-                self.steps.append({"kind": "catch_throw"})
+                self.steps.append({"kind": "catch_throw", "sfx": "ball_throw"})
             elif t == E.CATCH_SHAKE:
-                self.steps.append({"kind": "catch_shake"})   # wobble, no text
+                self.steps.append({"kind": "catch_shake", "sfx": "ball_shake"})
             elif t == E.CATCH_SUCCESS:
-                self.steps.append({"kind": "catch_click"})
+                self.steps.append({"kind": "catch_click", "sfx": "ball_click"})
                 self._say(format_event(ev))          # "Gotcha! X was caught!"
             elif t == E.CATCH_FAIL:
-                self.steps.append({"kind": "catch_break"})
+                self.steps.append({"kind": "catch_break", "sfx": "ball_break"})
                 self._say(format_event(ev))          # "It broke free!"
             elif "remaining_hp" in d and side in (P1, P2):
                 self._say(format_event(ev))
@@ -196,6 +200,8 @@ class BattleScene(Scene):
                                 winner_level=winner.level)
             res = gain_exp(winner.state, self.game.data, amount)
             self._say_page([f"{winner.name} gained {amount} EXP!"])
+            if res["levels"]:
+                self.game.audio.play_sfx("level_up")
             for lvl in res["levels"]:
                 self._say_page([f"{winner.name} grew to Lv{lvl}!"])
             for mid in res["moves"]:
@@ -243,6 +249,8 @@ class BattleScene(Scene):
             return
         self._posted = True
         st = self.game.state
+        if self.eng.winner == P1:
+            self.game.audio.play_music("victory", loop=False)
         if self.eng.winner == "caught" and self.eng.caught_pokemon is not None:
             mon = self.eng.caught_pokemon
             st.register_caught(mon.species_id)
@@ -354,7 +362,10 @@ class BattleScene(Scene):
             c += columns
         if UP in inp.pressed:
             c -= columns
-        self.cursor = c % n                       # wrap around
+        new = c % n                               # wrap around
+        if new != self.cursor:
+            self.game.audio.play_sfx("menu_move")
+        self.cursor = new
         if self.mode in self._MEMO:
             self.cursors[self.mode] = self.cursor
 
@@ -465,6 +476,10 @@ class BattleScene(Scene):
             return self.anim is None
         return True
 
+    def _cry_for(self, side):
+        sp = self.eng.active(side).state.species
+        return getattr(sp, "dex", 0) or 0
+
     def _advance_steps(self) -> None:
         while self.cur is None:
             if not self.steps:
@@ -472,6 +487,10 @@ class BattleScene(Scene):
                 return
             step = self.steps.pop(0)
             self.cur = step
+            if step.get("sfx"):
+                self.game.audio.play_sfx(step["sfx"])
+            if step.get("cry"):
+                self.game.audio.play_cry(step["cry"])
             kind = step["kind"]
             if kind == "text":
                 self.message = step["lines"]
@@ -482,9 +501,10 @@ class BattleScene(Scene):
                                  "t": 0, "dur": LUNGE_DUR}
             elif kind == "hp":
                 s = step["side"]
-                self.hp_target[s] = float(step["to"])
                 if step["to"] < self.disp_hp[s] - 0.5:
                     self.flash[s] = FLASH_DUR
+                    self.game.audio.play_sfx("hit")
+                self.hp_target[s] = float(step["to"])
             elif kind == "faint":
                 self.anim = {"type": "faint", "side": step["side"],
                              "t": 0, "dur": FAINT_DUR}

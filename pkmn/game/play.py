@@ -17,6 +17,7 @@ def main() -> None:
                     help="game folder (manifest, maps, scripts, sprites)")
     ap.add_argument("--no-sprite-fetch", action="store_true",
                     help="never download sprites; use cache + blobs only")
+    ap.add_argument("--mute", action="store_true", help="disable all audio")
     ap.add_argument("--fullscreen", action="store_true",
                     help="run fullscreen at the display's native resolution")
     ap.add_argument("--fill", action="store_true",
@@ -27,7 +28,7 @@ def main() -> None:
     sprites.FETCH_ENABLED = not args.no_sprite_fetch
     game = Game(headless=args.headless, seed=args.seed,
                 save_path=args.save, game_dir=args.game,
-                fullscreen=args.fullscreen, fill=args.fill)
+                fullscreen=args.fullscreen, fill=args.fill, mute=args.mute)
     game.push(OverworldScene(game))
     game.run()
 

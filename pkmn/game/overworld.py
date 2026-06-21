@@ -92,6 +92,7 @@ class OverworldScene(Scene):
         self.script = None
         self.cutscene = None
         self.surfing = self.map.is_surf(*self.game.state.tile)
+        self.game.audio.play_music(self.map.props.get("music", "route"))
         for trig in self.map.triggers:        # 'auto' triggers on entry
             if trig.when == "enter" and not (
                     trig.unless_flag and trig.unless_flag in flags):
@@ -172,6 +173,8 @@ class OverworldScene(Scene):
         if self.script is not None:
             if self.script.resume() == DONE:
                 self.script = None
+        if self.map is not None:              # resume the field track after battle
+            self.game.audio.play_music(self.map.props.get("music", "route"))
 
     def start_npc_walk(self, npc, dest: tuple) -> None:
         """Straight-line walk (scripts are responsible for clear paths)."""

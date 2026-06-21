@@ -37,6 +37,12 @@ dependency that must be cleared first.
   damage, since their base power is `null` in the data).
 - **Weather-tinted battle backdrop** — sky-over-ground replaces the flat fill,
   tinted for rain / sun / sandstorm / hail.
+- **Audio** — a full procedural chiptune system (no asset files required):
+  per-species cries seeded by dex number, 18 sound effects, and 7 looping
+  songs (title / town / route / wild & trainer battle / victory / heal),
+  wired to send-outs, hits, faints, the catch sequence, healing, level-ups,
+  menus, and saving; map `music` property; external OGG/MP3/WAV/MIDI
+  override; a MIDI exporter + `pkmn.cli.audio` CLI; volume settings + `--mute`.
 
 ---
 
@@ -111,12 +117,6 @@ dependency that must be cleared first.
 - [ ] **Trainer card**. **S**.
 - [ ] **PC box** — naming, wallpaper, sorting, search, multiple boxes (a single
       box exists). **M**.
-
-## TODO — Audio (none exists; SDL audio is stubbed)
-
-- [ ] **Pokémon cries** on send-out / faint. **M** (asset pipeline).
-- [ ] **Music** — battle / route / town themes. **M**.
-- [ ] **UI & move SFX**. **S–M**.
 
 ---
 

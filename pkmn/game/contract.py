@@ -49,7 +49,7 @@ CAPABILITY_FLAGS: set[str] = {"can_surf", "can_cut"}
 # with no connections is a discrete, warp-linked map.
 DIRECTIONS: tuple[str, ...] = ("north", "south", "east", "west")
 MAP_PROPS: set[str] = (
-    {"weather", "border", "encounter_chance"}
+    {"weather", "border", "encounter_chance", "music"}
     | {f"connect_{d}" for d in DIRECTIONS}
     | {f"offset_{d}" for d in DIRECTIONS}
 )
