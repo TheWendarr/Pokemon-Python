@@ -1,0 +1,18 @@
+{
+ "engine_version": 3,
+ "name": "Event Lab (Phase 8 demo)",
+ "start": {
+  "map": "lab",
+  "tile": [
+   3,
+   7
+  ],
+  "facing": "up"
+ },
+ "starter": null,
+ "bag": {
+  "potion": 3
+ },
+ "money": 1000,
+ "flags": []
+}

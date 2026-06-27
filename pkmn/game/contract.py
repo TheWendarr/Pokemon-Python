@@ -20,7 +20,7 @@ when the contract changes in a way that could affect existing regions.
 """
 from __future__ import annotations
 
-ENGINE_VERSION = 1
+ENGINE_VERSION = 3
 
 # ── tiles ────────────────────────────────────────────────────────────
 # Per-tile properties, set on tiles in the tileset (.tsx). Anything else
@@ -30,14 +30,41 @@ LEDGE_FLAGS: dict[str, str] = {            # facing the player jumps -> flag
     "down": "ledge_down", "up": "ledge_up",
     "left": "ledge_left", "right": "ledge_right",
 }
+# Per-direction passage (RMXP partial passability). A tile carrying
+# `block_<dir>` cannot be crossed moving in that direction -- counters you
+# talk over, one-way fences, cliff edges, bridge sides. `blocked` is the
+# all-directions case kept as a shorthand.
+DIR_BLOCK_FLAGS: dict[str, str] = {
+    "down": "block_down", "up": "block_up",
+    "left": "block_left", "right": "block_right",
+}
+REVERSE_DIR: dict[str, str] = {"up": "down", "down": "up",
+                               "left": "right", "right": "left"}
 TILE_FLAGS: set[str] = {
-    "blocked",     # solid: cannot be entered
+    "blocked",     # solid: cannot be entered from any direction
     "grass",       # tall grass: rolls for a wild encounter on entry
     "surf",        # water: crossable only while surfing (needs can_surf)
     "cuttable",    # obstacle removed by Cut (needs can_cut); then walkable
     *LEDGE_FLAGS.values(),   # one-way ledges: jumped over in that direction
+    *DIR_BLOCK_FLAGS.values(),   # per-direction (partial) passability
 }
 TILE_META: set[str] = {"id", "width", "height", "frames", "type", "name"}
+
+# Render-only tile properties (do not affect collision/behaviour).
+#   over: draw this tile *above* the player sprite (RMXP "priority > 0":
+#         tree canopies, roofs, bridges, second-floor overpasses).
+RENDER_FLAGS: set[str] = {"over"}
+
+# Every property the linter accepts on a tileset tile.
+TILE_PROPS: set[str] = TILE_FLAGS | RENDER_FLAGS
+
+# Maps are multi-layer (engine_version >= 2). All tile layers are drawn
+# bottom-to-top; tiles flagged `over` draw in a second pass above the
+# player. Collision and terrain flags (blocked/grass/surf/...) are OR'd
+# across every layer at a cell. `BASE_LAYER` must exist on every map as
+# the bottom layer; additional tile layers are optional and unnamed-order
+# is their draw order.
+BASE_LAYER: str = "ground"
 
 # Reserved state flags the engine reads as field-move capabilities. Content
 # grants them like HMs (e.g. {"set_flag": "can_cut"} from an NPC script).
@@ -79,16 +106,26 @@ OBJECT_TYPES: dict[str, set[str]] = {
     "sign":    {"dialog", "script"},
     "spawn":   set(),
 }
-TRIGGER_WHEN: set[str] = {"step", "enter"}
+TRIGGER_WHEN: set[str] = {"step", "enter", "autorun", "parallel"}
 
 # ── scripts ──────────────────────────────────────────────────────────
-# Command keys the script interpreter (pkmn/game/script.py) implements.
-# A step is a dict with exactly one of these as its command key.
+# Command keys the event runtime (pkmn/game/script.py) implements. A leaf
+# step is a dict with exactly one of these as its command key; structured
+# steps (if/while/choice) carry nested command lists. Conditions used by
+# if/while/event-pages: flag, var, self_switch, item, money, not, all, any.
 SCRIPT_COMMANDS: set[str] = {
-    "say", "heal", "give_item", "give_money", "take_money",
-    "set_flag", "clear_flag", "if_flag", "if_money",
-    "warp", "move_npc", "face_npc", "hide_npc",
-    "choice", "shop", "give_pokemon", "pc", "battle",
+    # dialogue / flow
+    "say", "wait", "choice", "shop", "pc", "battle",
+    # state: flags / money / items
+    "heal", "give_item", "give_money", "take_money",
+    "set_flag", "clear_flag", "give_pokemon",
+    # state: variables / self-switches (event runtime)
+    "set_var", "add_var", "set_self_switch", "clear_self_switch",
+    # control flow
+    "if", "if_flag", "if_money", "if_var", "if_self_switch",
+    "while", "label", "goto",
+    # world / npcs
+    "warp", "move_npc", "move_route", "face_npc", "hide_npc", "screen",
 }
 
 # ── helpers ──────────────────────────────────────────────────────────

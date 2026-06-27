@@ -2,6 +2,14 @@
 
 Each phase has acceptance criteria; a phase isn't done until they pass.
 
+**Direction (updated).** Phases 0–6 below built a complete, well-tested v1
+engine and authoring format. The project's goal has since expanded: the new
+north star is **reliable parity with RPG Maker XP + Pokémon Essentials,
+delivered as pure Python** (see `docs/ENGINE_PHILOSOPHY.md`). Phases 7+
+pursue that parity; their detailed feature breakdown, effort estimates, and
+sequencing live in `docs/ESSENTIALS_COMPAT.md`, and the phases here are the
+high-level milestones.
+
 ## Phase 0 — Foundations  [DONE]
 Repo structure, canonical data models, GameData repository, PokeAPI
 pipeline (REST + CSV) generating Gen 1-5 data with Gen 5 values.
@@ -89,3 +97,81 @@ aliases, and the `examples/triad` showcase (3 cities / 3 themed routes
 verified to contain no .py files — and plays it start to finish:
 manifest-driven new game, cross the island, forced-grass cove, Sailor
 Brom's line-of-sight battle, and the flag-gated shrine ending.
+
+---
+
+# Essentials-parity track (Phases 7+)
+
+These milestones map to the tiers in `docs/ESSENTIALS_COMPAT.md`, which is
+the authoritative breakdown. The acceptance test across all of them is the
+**parity oracle**: the RMXP→engine converter carries the corresponding
+Essentials construct across *mechanically*, with no semantic flattening.
+
+## Phase 7 — Map & rendering parity  ✅ DONE (functional)
+Multiple tile layers with draw priority, configurable tile size, autotile
+rendering (interior + animation; full edge-blending deferred as cosmetic),
+directional/partial passability, and tile animation. Wired through
+contract → tilemap → overworld → lint; the RMXP converter emits the format
+and `examples/kanto_frlg` (converted from the FireRed bootleg) plays on it.
+Panorama/fog layers and 47-piece autotile blending remain as cosmetic
+follow-ups. (Compat Tier 1.)
+*Accepted:* `tests/test_layers.py` locks cross-layer collision, the
+over/below render split, 32px tiles, and directional passability; the full
+suite is green and converted maps render overhead layers + animated water.
+
+## Phase 8 — Event runtime  ✅ DONE (core) — the architectural centerpiece
+The JSON interpreter is now a compiled, IP-based event VM: integer
+variables + arithmetic, per-event self-switches, multi-page conditional
+events (last-active-page), `autorun`/`parallel` triggers (spawn autoruns
+deferred to scene activation), move routes, and control flow (if/then/else
+over a general condition object, while loops, label/goto, wait) — exposed
+as data *and* as a Python authoring API (`events.py`), with a
+`register_command` extension seam. The save schema (v2) holds variables and
+self-switches. (Compat Tier 2.)
+*Accepted:* `tests/test_events.py` + `tests/test_eventlab.py` are green, the
+full suite is green, and `examples/eventlab` (autorun intro, give-once
+multi-page Professor, parallel move-route NPC, a while/if puzzle sign)
+lints 0/0 and plays. *Thin/deferred:* screen effects (tint/flash/shake) are
+minimal, show-picture / weather / audio-control / name-input and a named
+shared-event call are follow-ups; move routes are directional (no
+speed/jump/through flags yet).
+
+## Phase 9 — Game systems & multi-active battles  [IN PROGRESS]
+Full trainer spec, EV yield, badges + HM gating, multi-method encounters,
+the remaining HM/field moves, Bike, and double/triple/rotation battles.
+(Compat Tier 3.)
+
+*Done so far:* **multi-method encounters** — per-method tables
+(land/surf/old-rod/good-rod/super-rod, plus rock-smash/headbutt/cave in the
+schema), with surf rolls while surfing and fishing on A-press facing water;
+the RMXP importer emits every PBS method, so the converted Kanto game fishes
+and surfs with authentic water rosters. **Rich trainer parties** — battle
+parties accept a full per-mon list (IVs/EVs/nature/ability/moves/item)
+alongside the compact string. (`tests/test_encounters_methods.py`,
+`tests/test_trainerspec.py`; full suite green; all examples lint clean.)
+
+*Remaining, in order:* trainer AI level + rematches + EV yield (the last
+blocked on an `ev_yield` datagen pull); badges + HM field gating; the
+remaining HM/field moves (Strength/Rock Smash/Headbutt now have encounter
+hooks waiting on the move); Bike.
+
+*The XL piece — double / triple / rotation battles.* The pure engine is
+single-active: `active(side)` is one slot and `_do_move` reads the defender
+as `active(other(side))`, so every move in `moves.py` is single-target.
+Multi-active is a dedicated battle-module refactor, not a bolt-on, planned
+as: (1) generalize `active_idx[side]` → an active-slot list (singles =
+length 1, preserving today's behavior and tests); (2) parameterize the
+defender/target through `_do_move` and the `moves.py` damage path;
+(3) add target selection + spread-move iteration (with the spread damage
+multiplier) and ally/redirection handling; (4) order all actors in a turn;
+(5) per-slot faints/replacement; (6) doubles UI + AI in `battle_scene.py`.
+*Acceptance:* a double battle resolves through the pure engine under test.
+
+## Phase 10 — Importer & shell  [PLANNED]
+Promote the converter to a supported PBS/RMXP importer (map + event
+parsing, tileset terrain/passage mapping, full PBS ingestion with ID
+normalization); add Town Map / Fly data, richer map metadata, audio
+loop-point metadata, and a configurable title / new-game-or-continue shell.
+(Compat Tier 4.)
+*Acceptance:* a clean, full Essentials project imports and plays without
+hand-editing — the parity oracle passes end to end.

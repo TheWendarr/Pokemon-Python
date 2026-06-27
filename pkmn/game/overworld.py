@@ -17,10 +17,14 @@ from .config import (A, ASSET_DIR, DIRS, DOWN, ENCOUNTER_CHANCE, LEFT,
                      UP, WALK_SPEED, SCALE as S)
 from .dialog import DialogScene
 from .scene import Scene
-from .script import DONE, ScriptRunner
+from .script import DONE, ScriptRunner, resolve_script
 from .tilemap import TileMap, World
 
 OPPOSITE = {"up": "down", "down": "up", "left": "right", "right": "left"}
+# fishing: rod item id -> encounter method, best-first
+ROD_METHOD = {"old-rod": "old_rod", "good-rod": "good_rod",
+              "super-rod": "super_rod"}
+ROD_ORDER = ("super-rod", "good-rod", "old-rod")
 JUMP_H = int(TILE * 0.6)        # ledge-jump arc height in px
 
 
@@ -79,7 +83,10 @@ class OverworldScene(Scene):
         self.surfing = False                # riding water (Surf)
         self.jump = False                   # mid ledge-hop
         self._move_dist = TILE              # px for the current step (2x on a jump)
+        self._booted = False                # first load_map defers entry events
+        self._pending_entry = None          # (steps, event_key) to fire on boot
         self.load_map(game.state.map_id, game.state.tile)
+        self._booted = True
 
     # ── world management ─────────────────────────────────────────────
     def load_map(self, map_id: str, tile=None) -> None:
@@ -95,15 +102,28 @@ class OverworldScene(Scene):
         self.jump = False
         self.bump_cool = 0          # throttles the wall-bump sound
         self.script = None
+        self.parallel: list = []      # parallel-process event runners
+        self.screen_fx = None
         self.cutscene = None
         self.surfing = self.map.is_surf(*self.game.state.tile)
         self.game.audio.play_music(self.map.props.get("music", "route"))
         self.game.battle_bg = self.map.props.get("battle_bg", "field")
-        for trig in self.map.triggers:        # 'auto' triggers on entry
-            if (trig.when == "enter" and self._time_ok(trig) and not (
-                    trig.unless_flag and trig.unless_flag in flags)):
-                self.start_script(self.scripts.get(trig.script, []))
-                break
+        blocking_started = False
+        self._pending_entry = None
+        for trig in self.map.triggers:        # entry / autorun / parallel
+            if (trig.unless_flag and trig.unless_flag in flags) \
+                    or not self._time_ok(trig):
+                continue
+            ek = f"{map_id}:trig:{trig.script}:{trig.tile}"
+            steps = self.scripts.get(trig.script, [])
+            if trig.when == "parallel":
+                self.start_script(steps, event_key=ek, parallel=True)
+            elif trig.when in ("enter", "autorun") and not blocking_started:
+                blocking_started = True
+                if self._booted:
+                    self.start_script(steps, event_key=ek)
+                else:               # spawn-map event: fire once we're on top
+                    self._pending_entry = (steps, ek)
 
     def find_npc(self, name: str):
         for n in self.npcs:
@@ -132,6 +152,16 @@ class OverworldScene(Scene):
             r = self.world.resolve(self.map.id, x, y)
             return bool(r) and r[0].has_ledge(r[1], r[2], facing)
         return self.map.has_ledge(x, y, facing)
+
+    def _can_cross(self, src, d, dst) -> bool:
+        """Directional (partial) passability: you must be able to leave the
+        source tile toward `d` and enter the destination from the reverse."""
+        rev = OPPOSITE[d]
+        if self.map.is_seamless:
+            return (self.world.passable(self.map.id, src[0], src[1], d)
+                    and self.world.passable(self.map.id, dst[0], dst[1], rev))
+        return (self.map.passable(src[0], src[1], d)
+                and self.map.passable(dst[0], dst[1], rev))
 
     def _try_cut(self, x, y) -> bool:
         if not self.game.state.can_cut:
@@ -170,12 +200,36 @@ class OverworldScene(Scene):
             return True
         return self.game.time_phase() in {p.strip() for p in trig.time.split(",")}
 
-    def start_script(self, steps, npc=None) -> None:
-        if not steps:
+    def start_script(self, steps, npc=None, event_key="",
+                     parallel=False) -> None:
+        if npc is not None and not event_key:
+            event_key = f"{self.map.id}:npc:{npc.name}"
+        program = resolve_script(steps, self.game.state, event_key)
+        if not program:
             return
-        self.script = ScriptRunner(self.game, self, steps)
+        runner = ScriptRunner(self.game, self, program,
+                              event_key=event_key, parallel=parallel)
+        if parallel:
+            self.parallel.append(runner)
+            if runner.advance() == DONE:
+                self.parallel.remove(runner)
+            return
+        self.script = runner
         if self.script.advance() == DONE:
             self.script = None
+
+    def start_npc_route(self, npc, route) -> None:
+        """Walk an NPC through a sequence of direction steps (a move route).
+        Scripts are responsible for keeping the path clear."""
+        x, y = npc.tile
+        path = []
+        for step in route:
+            d = DIRS.get(step)
+            if d:
+                x, y = x + d[0], y + d[1]
+                path.append((x, y))
+        npc.path = path
+        npc.move_px = 0
 
     def on_resume(self) -> None:
         st = self.game.state
@@ -279,7 +333,7 @@ class OverworldScene(Scene):
                 self.moving, self.move_px = True, 0
                 self._dest, self._move_dist, self.jump = (lx, ly), 2 * TILE, True
             return
-        if self._walkable(nx, ny):
+        if self._walkable(nx, ny) and self._can_cross(st.tile, d, (nx, ny)):
             self.moving, self.move_px = True, 0
             self._dest, self._move_dist, self.jump = (nx, ny), TILE, False
         elif self.bump_cool == 0:                 # walked into something solid
@@ -317,6 +371,8 @@ class OverworldScene(Scene):
             return
         if self._try_cut(*front):
             return
+        if self._try_fish(front):
+            return
         sign = self.map.signs.get(front)
         if sign:
             self.game.audio.play_sfx("confirm")   # begin reading the sign
@@ -337,8 +393,13 @@ class OverworldScene(Scene):
             return
         if self.bump_cool > 0:
             self.bump_cool -= 1
+        if self._pending_entry is not None and self.script is None:
+            steps, ek = self._pending_entry
+            self._pending_entry = None
+            self.start_script(steps, event_key=ek)
         self._update_cutscene()
         self._update_npc_walks()
+        self._tick_waits()
         if self.turn_cool > 0 and not self.moving:
             self.turn_cool -= 1
         if not self.moving:
@@ -370,6 +431,22 @@ class OverworldScene(Scene):
         self.cutscene = None
         if then:
             then()
+
+    def _tick_waits(self) -> None:
+        """Drive timed `wait`/`screen` commands for the blocking script and
+        any parallel-process runners; resume them when the timer elapses."""
+        s = self.script
+        if s is not None and s.wait_frames > 0 and not self.moving:
+            s.wait_frames -= 1
+            if s.wait_frames == 0:
+                self.screen_fx = None
+                if s.resume() == DONE:
+                    self.script = None
+        for r in list(self.parallel):
+            if r.wait_frames > 0:
+                r.wait_frames -= 1
+                if r.wait_frames == 0 and r.resume() == DONE:
+                    self.parallel.remove(r)
 
     def _update_npc_walks(self) -> None:
         for npc in self.npcs:
@@ -406,34 +483,69 @@ class OverworldScene(Scene):
             if (trig.when == "step" and trig.tile == st.tile
                     and self._time_ok(trig) and not (
                     trig.unless_flag and trig.unless_flag in st.flags)):
-                self.start_script(self.scripts.get(trig.script, []))
+                ek = f"{self.map.id}:trig:{trig.script}:{trig.tile}"
+                self.start_script(self.scripts.get(trig.script, []),
+                                  event_key=ek)
                 return
         if self.game.feature("trainers") and self._check_trainer_los():
             return
         repel = st.repel_steps > 0                  # counts down every step
         if repel:
             st.repel_steps -= 1
-        if self.game.feature("encounters") and self.map.is_grass(*st.tile) \
-                and st.first_able():
-            if repel:
-                return                              # repel keeps wild mons away
-            chance = int(self.map.props.get(
-                "encounter_chance",
-                self.game.setting("encounter_chance", ENCOUNTER_CHANCE)))
-            if st.rng.randint(1, max(1, chance)) == 1:
-                self._wild_encounter()
+        if self.game.feature("encounters") and st.first_able() and not repel:
+            method = ("land" if self.map.is_grass(*st.tile)
+                      else "surf" if self.surfing and self._is_surf(*st.tile)
+                      else None)
+            if method:
+                chance = int(self.map.props.get(
+                    "encounter_chance",
+                    self.game.setting("encounter_chance", ENCOUNTER_CHANCE)))
+                if st.rng.randint(1, max(1, chance)) == 1:
+                    self._roll_encounter(method)
+
+    def _enc_table(self, method: str):
+        """Encounter slots for the current map and method. Back-compat: a
+        bare list (legacy format) is treated as the `land` table."""
+        t = self._encounters.get(self.map.id)
+        if t is None:
+            return None
+        if isinstance(t, list):
+            return t if method == "land" else None
+        return t.get(method)
 
     def _wild_encounter(self) -> None:
+        self._roll_encounter("land")             # legacy land-table entry point
+
+    def _roll_encounter(self, method: str) -> bool:
         st = self.game.state
-        table = self._encounters.get(self.map.id)
+        table = self._enc_table(method)
         if not table:
-            return
-        weights = [e["weight"] for e in table]
+            return False
+        weights = [e.get("weight", 1) for e in table]
         entry = st.rng.choices(table, weights=weights, k=1)[0]
         level = st.rng.randint(entry["min"], entry["max"])
         wild = PokemonState.generate(st.data, entry["species"], level, rng=st.rng)
         self.game.push(BattleScene(self.game, [wild], wild=True,
                                    weather=self.map.props.get("weather")))
+        return True
+
+    def _try_fish(self, front) -> bool:
+        """Press A facing water with a rod: roll that rod's encounter table.
+        Uses the best rod owned; a bite is not guaranteed."""
+        st = self.game.state
+        if not self.game.feature("encounters") or self.surfing:
+            return False
+        if not self._is_surf(*front):
+            return False
+        rod = next((r for r in ROD_ORDER if st.bag.get(r, 0) > 0), None)
+        if rod is None or not self._enc_table(ROD_METHOD[rod]):
+            return False
+        self.game.audio.play_sfx("confirm")
+        if st.first_able() and st.rng.random() < 0.5 \
+                and self._roll_encounter(ROD_METHOD[rod]):
+            return True
+        self.game.push(DialogScene(self.game, ["Not even a nibble..."]))
+        return True
 
     # ── render ───────────────────────────────────────────────────────
     @staticmethod
@@ -509,6 +621,12 @@ class OverworldScene(Scene):
                                 (6, TILE // 2 + 3, TILE - 12, TILE // 4))
             surf.blit(mt, (px - cam_x, py - cam_y))
         surf.blit(pimg, (px - cam_x, py - cam_y - pyoff))
+        # second tile pass: tiles flagged `over` (canopies, roofs, bridges)
+        # draw above the player and NPCs.
+        if self.map.is_seamless:
+            self.world.draw(surf, self.map.id, cam_x, cam_y, over=True)
+        else:
+            self.map.draw(surf, cam_x, cam_y, over=True)
         tint = {"rain": (40, 70, 130, 60), "sandstorm": (180, 150, 70, 60),
                 "hail": (200, 220, 240, 55), "sun": (255, 220, 120, 35)}.get(
                     self.map.props.get("weather"))

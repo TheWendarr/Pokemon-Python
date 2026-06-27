@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="12" height="10" tilewidth="16" tileheight="16" infinite="0" nextobjectid="7">
+ <tileset firstgid="1" source="../tiles.tsx"/>
+ <layer id="1" name="ground" width="12" height="10"><data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1
+</data></layer>
+ <objectgroup id="2" name="objects">
+  <object id="1" name="spawn" x="48" y="112" width="16" height="16"><properties></properties></object>
+  <object id="2" name="npc" x="80" y="64" width="16" height="16"><properties><property name="display" value="Prof. Birch"/><property name="facing" value="down"/><property name="script" value="prof"/></properties></object>
+  <object id="3" name="npc" x="128" y="64" width="16" height="16"><properties><property name="display" value="Walker"/><property name="facing" value="down"/><property name="dialog" value="I like to pace."/></properties></object>
+  <object id="4" name="sign" x="96" y="112" width="16" height="16"><properties><property name="script" value="puzzle"/></properties></object>
+  <object id="5" name="trigger" x="0" y="0" width="16" height="16"><properties><property name="script" value="intro"/><property name="when" value="autorun"/><property name="unless_flag" value="intro_seen"/></properties></object>
+  <object id="6" name="trigger" x="16" y="0" width="16" height="16"><properties><property name="script" value="wander"/><property name="when" value="parallel"/></properties></object>
+ </objectgroup>
+</map>

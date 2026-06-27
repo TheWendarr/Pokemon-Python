@@ -1,215 +1,140 @@
-# Engine philosophy: an agnostic engine over an editable data contract
+# Engine philosophy: an Essentials-class engine you author in Python
 
-This document sets the design philosophy for turning the codebase into a
-true *engine* — one that knows nothing about any particular region and
-runs whatever conforming content it is handed. It is informed by the
-Lazy Devs Professor's teardown of how Pokémon Gen 1 stores Kanto and
-rebuilds it on a constrained platform (Pico8). The thesis it crystallises:
+This document sets the design philosophy for the project. It supersedes
+the earlier version, which framed the engine as a deliberately *minimal*
+set of primitives and treated simplicity as a hard ceiling — explicitly
+ruling out an eventing VM, per-region extension, layered maps, and
+multi-active battles. That ceiling is gone. The thesis now is:
 
-> **A game engine is a small set of composable, content-agnostic
-> primitives operating over a simple, human-editable data contract. The
-> region is pure data; the engine never knows its name.**
+> **Reliably reproduce the full functionality of RPG Maker XP + Pokémon
+> Essentials, delivered as pure Python. Anything you can build in
+> Essentials, you can build here — without RPG Maker, without Ruby,
+> without a proprietary editor. The engine is a set of modular,
+> independently usable subsystems over an editable content contract, and
+> it is designed to be extended.**
 
-## What Gen 1 actually teaches (notes)
+Three goals, co-equal:
 
-The video's value is not the Game Boy tricks themselves — it is the
-*shape* of the design.
+1. **Parity.** Essentials is the functional target. When it has a
+   capability we do not, that is a gap to close, not a feature to decline.
+   The migration converter doubles as the parity oracle: parity is reached
+   when a real Essentials project round-trips and plays faithfully (see
+   `ESSENTIALS_COMPAT.md`).
+2. **Modularity.** The engine is composed of subsystems — data, battle,
+   overworld, event runtime, rendering, audio — each with a clean seam and
+   a stable interface, each usable on its own and replaceable without
+   touching the others. A person should be able to take the battle engine
+   alone, or swap the renderer, or register their own systems.
+3. **Pure-Python authoring.** Making a Pokémon game here means writing
+   Python and editing content folders — not learning Ruby or a GUI editor.
+   Events are expressible as data *and* as a documented Python API.
 
-1. **A clean atomic → composite hierarchy with maximal reuse.** Gen 1
-   has three levels: 8x8 *tiles* (graphics), 16x16 *squares* (the
-   gameplay/movement/collision grid), 32x32 *blocks* (the map-storage
-   unit). Maps are sequences of block indices; blocks reference tiles
-   from one *shared* blockset used by the entire overworld. Pallet Town
-   is 1,440 tiles but stores in 90 numbers. The lesson is reuse and a
-   layered model, not the specific 32px packing.
+## What changed, and why
 
-2. **Seamless world = connections + offsets, not a global map.** Kanto
-   is not one big map and not a perfect jigsaw. Each map header lists up
-   to four neighbours (N/S/E/W) and a per-edge *offset* (Viridian is -5
-   relative to Route 1 because their widths differ). That is the entire
-   stitching system. The author's own lesson: he over-engineered his
-   worries (C-shaped routes, mismatched widths) and the dead-simple
-   connection+offset model handled all of them. *Never let the perfect
-   be the enemy of the good.*
+The old doc drew a sharp line: "a game engine is a small set of composable
+primitives over a simple data contract," "fixed vocabulary, not plugins,"
+"custom engine code per region is out of scope," "designers get power by
+composing primitives, not by forking the engine." That philosophy produced
+a clean, well-tested core — and it is exactly why the engine cannot yet run
+real Essentials content without a converter that throws most of it away.
 
-3. **One recursive primitive produces the whole world.** `get_tile(map,
-   x, y)`: if the coordinate is on the map, return its tile; if it is
-   off the edge, look up the neighbour in that direction, adjust by the
-   offset and dimension, and **call `get_tile` recursively** on that
-   neighbour; if there is no neighbour, return the map's *border tile*.
-   Stitching, borders, and seamless scrolling all fall out of this one
-   function. This is what an engine primitive should look like.
+We are choosing capability. "Scalable games" in the Pokémon-fan sense — the
+kind people actually build in Essentials — require integer variables,
+self-switches, common events, autorun/parallel triggers, move routes, and
+control flow. Those are not optional flourishes; they are the substrate of
+gym puzzles, cutscenes, and progression. So we build them.
 
-4. **Every transition is a warp.** Doors, stairs, cave mouths, floors,
-   building interiors — all are entries in a uniform table mapping
-   `(map, location) -> (target map, location, post-step facing)`.
-   Interiors are just more maps. One mechanism, kept as readable data.
+**Simplicity is not abandoned — it is relocated.** It stops being a cap on
+*what the engine can do* and becomes a standard for *how each module is
+built*: small, readable, deterministic where possible, data-driven where it
+helps, and behind a clean interface. A larger engine made of disciplined,
+well-bounded modules is the goal — not a small engine with a small feature
+set.
 
-5. **Tile flags are the entire interaction vocabulary.** Collision and
-   behaviour are bitflags on tiles, sampled from the bottom of the
-   square you step into: blocked, ledge (per direction), cuttable,
-   water/surf, tall-grass. Content sets flags; the engine implements
-   behaviour. Ledges = "take two steps"; cut = swap the tile; surf =
-   different sprite over water; grass = the split-sprite overlap effect.
+## What we keep (these are good modularity, not minimalism)
 
-6. **The world moves, not the player.** The player stays dead-centre;
-   the map scrolls underneath. Movement is a small state machine
-   (idle -> walk -> snap). Animation advances every N frames.
+Several disciplines from the original design directly serve the new goals
+and are retained without change:
 
-7. **Editability is a deliberate tradeoff against efficiency.** He packs
-   bulk map data into compact binary, but keeps the warp list as plain,
-   readable data *on purpose* — "it allows us to modify the data in case
-   we want to change something," even at a token cost.
+- **The pure battle engine.** Actions in, typed `Event`s out, one injected
+  RNG, no I/O, no rendering knowledge. This is the model module: a
+  subsystem with a hard interface that anyone can drive. Multi-active
+  battle formats will extend it *from the inside*, never by making it
+  import game state.
+- **One source of truth for state.** `PokemonState` owns the persistent
+  Pokémon; the world owns flags/money and (soon) variables and
+  self-switches. No parallel copies to drift.
+- **The content contract + "if it lints, it runs."** `pkmn/game/contract.py`
+  is the single spec both the runtime and the linter read. Every new tile
+  flag, layer rule, object type, event command, and trigger kind is added
+  there first. This is how a growing feature set stays safe to author
+  against.
+- **An agnostic core.** No region literals in engine code; everything is
+  learned from the content folder. The test still holds: grep the engine
+  for a region string and every hit is a bug.
+- **Uniform world primitives.** Every transition is a warp; interiors are
+  just maps; the seamless overworld is one recursive `World.resolve`
+  (Gen 1's `get_tile`); terrain behavior keys off a documented tile-flag
+  vocabulary. We *expand* these vocabularies; we do not abandon the idea of
+  having them.
 
-8. **Scope realism.** "It's easy to catastrophically underestimate how
-   big this game is." Adopt proven patterns, ship incrementally, and
-   prefer designing something new over boiling the ocean.
+## What we reverse
 
-## What we adopt — and what we deliberately do not
+The "fixed vocabulary, not plugins" fork is resolved the other way:
 
-The single most important reading of this video is **critical**: much of
-the cleverness is in service of Game Boy constraints — tiny RAM, 32x32
-VRAM, cartridge size, Pico8's token budget. We run on Python/Pygame on a
-modern machine and author maps in Tiled. Those constraints do not apply,
-and the author says so himself ("with modern computers we get to just
-load in all the maps at once").
+- **The script layer becomes a real event runtime** — variables,
+  self-switches, common events, multi-page conditional events,
+  autorun/parallel triggers, move routes, control flow — exposed in both
+  data and Python. (`ESSENTIALS_COMPAT.md`, Tier 2.)
+- **Per-game extension is supported, not forbidden.** A content folder may
+  register custom commands and custom systems against stable engine
+  interfaces. Composition is still preferred *within* a module, but the
+  engine is now explicitly built to be extended rather than forked.
+- **Map richness expands** to Essentials' model: multiple layers with draw
+  priority, configurable tile size, autotiles, directional passability,
+  panorama/fog. (Tier 1.)
+- **Multi-active battles (double/triple/rotation) move into scope.**
+  Previously a permanent exclusion; Essentials supports them, so they are a
+  large, in-scope battle-module project.
 
-**Adopt (timeless):**
-- Composable, content-agnostic primitives — especially a recursive
-  tile-lookup as the core of the world.
-- Connections + offsets for an optional *seamless* overworld.
-- A uniform warp table for every transition; interiors are just maps.
-- A small, fixed, documented **tile-flag vocabulary** as the terrain
-  interaction language.
-- Human-editable content at the contract boundary; validate it.
-- Scope realism and incremental delivery.
+## The model we commit to
 
-**Do NOT cargo-cult (constraint-driven hacks):**
-- 32x32 metatile/"block" compression — Tiled already gives us tilesets
-  (reuse) and arbitrary map sizes; packing tiles into blocks would add
-  complexity and *hurt* editability for zero benefit here.
-- "Wallace & Gromit" VRAM strip-drawing and wraparound — we already redraw
-  the visible tiles each frame, centred on the player; that is fine.
-- Binary string packing of map data — our maps are `.tmx` and our data is
-  JSON precisely so a region stays human- and tool-editable.
+Still three layers with a hard wall between them — the wall is what makes
+the system modular even as it grows:
 
-In short: copy the *architecture of ideas*, not the *workarounds*.
+- **Core** — the loop, renderer, scene stack, deterministic rules, and the
+  *interpreters/runtimes* for maps, warps, events, and data. The event
+  runtime joins the battle engine as a first-class, pure-where-possible
+  subsystem. No region-specific literal lives here.
+- **Contract** — the versioned, validated spec of the content-folder
+  format. It grows; the linter grows with it; they never diverge.
+- **Content** — a game folder conforming to the contract, plus optional
+  Python extension modules registered through documented seams. Nothing in
+  it is privileged; the engine learns everything from it.
 
-## The engine model we commit to
+## Lessons we still take from Gen 1 (reframed)
 
-Three layers, with a hard wall between them:
+The Lazy Devs teardown of Gen 1 Kanto remains instructive for *structure* —
+a clean atomic→composite hierarchy with maximal reuse, connections+offsets
+for a seamless world, a uniform warp table, and tile flags as an
+interaction vocabulary. We keep all of that. What we explicitly **do not**
+take is its constraint-driven minimalism as a design ceiling: the Game Boy
+packed data and refused features because of tiny RAM and cartridge limits.
+We run Python on modern machines and our north star is Essentials, not a
+1996 cartridge. Copy the architecture of ideas; do not inherit the
+limitations they were working around.
 
-- **Core** — the loop, renderer, scene stack, deterministic rules
-  (the `BattleEngine` is the exemplar: actions in, typed events out, no
-  rendering knowledge), and the *interpreters* for maps, warps, scripts,
-  and data. The core must never contain a region-specific literal.
-- **Contract** — a versioned, validated spec of the region-folder format.
-  The only thing core and content agree on.
-- **Content** — a region folder conforming to the contract. Nothing in it
-  is privileged; the engine learns everything from data.
+## Agnosticism & safety rules (unchanged, and now load-bearing)
 
-## The world contract
-
-**A region is a graph of maps.** Each map carries: a tile grid (`.tmx`,
-Tiled-editable), tile flags, an object layer, and map metadata (weather,
-music, border tile, and — new — optional edge **connections with
-offsets**). The engine supports two topologies *through one data model*,
-and a region picks per map:
-
-1. **Warp-linked** discrete maps (towns, interiors, caves) — what we have
-   today, transitions via warps.
-2. **Seamless** overworld — adjacent maps declare connections+offsets and
-   the engine renders/scrolls across them continuously via a recursive
-   `tile_at(map, x, y)` that handles neighbours and borders exactly as in
-   Gen 1.
-
-This is the concrete answer to "ingest a greatly customised region": the
-region declares its own topology, scale, and connectivity; the engine
-just walks the graph.
-
-**The interaction vocabulary is fixed and documented.** Tile flags:
-`blocked`, `grass` (today) plus `ledge_{up,down,left,right}`,
-`water`/`surf`, `cuttable` and friends. Object types: `warp`, `npc`,
-`trainer`, `trigger`, `sign`, `spawn`. The engine implements behaviour for
-each; content only sets them.
-
-**Everything that changes maps is a warp.** Interiors and floors are maps;
-doors and stairs are warps. No special interior system.
-
-**Events are the one controlled extension point.** Bespoke behaviour
-(cutscenes, gifts, shops, branching) is expressed in `scripts.json`
-through a **fixed command vocabulary** run by the script interpreter —
-data, not engine code.
-
-## The decision the video settles for us: fixed vocabulary, not plugins
-
-Last time we flagged an open fork: a fixed, composable vocabulary versus a
-plugin system where a region registers custom engine behaviour. The video
-argues decisively for the former — its entire expressive range comes from
-*combining* tile flags, a warp table, and a few movement modes, and it
-explicitly prefers simple systems over extensible ones. We follow suit:
-
-- Terrain/interaction behaviour: a **fixed tile-flag vocabulary**.
-- Map topology: a **fixed map/object schema** (with the connections
-  addition).
-- Bespoke events: the **fixed script command set** (this is our
-  data-driven "composition" layer — powerful, but not arbitrary code).
-- Custom *content* (species, moves, types, abilities, items, tilesets,
-  sprites, maps, music) is wide open; custom *engine code* per region is
-  out of scope. Designers get power by composing primitives, not by
-  forking the engine.
-
-## Agnosticism rules
-
-- **No region literals in core.** Whiteout destination, starters, rival,
-  intro — currently hardcoded (e.g. whiteout warps to `"town"`) — move
-  into the manifest/data. The test: grep the engine for a region string;
-  every hit is a bug.
-- **If it lints, it runs.** `lint` is the contract enforcer: schema-check
-  the manifest/scripts, verify referential integrity (every connection,
-  warp, script id, and species/move id resolves), confirm spawns are
-  walkable, and reject unknown flags. A region that passes is guaranteed
-  loadable.
-- **The manifest declares an `engine_version`** so content and engine can
+- **No region literals in core.** Entry point, starter, rival, whiteout,
+  intro — all manifest/data.
+- **If it lints, it runs.** Extend `contract.py` first; the linter is the
+  gate that keeps a bigger contract authorable.
+- **`engine_version` in the manifest** so content and a fast-moving engine
   evolve without silent breakage.
+- **Every subsystem ships behind a feature flag and a stable interface**,
+  so a game uses as much or as little of the engine as it wants — a pure
+  walking sim, a battle-only tool, or a full Essentials-class RPG.
 
-## How we proceed (proposed sequence)
-
-1. **De-hardcode the engine.** *(done)* Region specifics now live in the
-   manifest: the whiteout return point (`whiteout`, falling back to
-   `start`), the starter (absent/null -> empty party), and the start map
-   no longer carry engine fallbacks. The engine contains no region
-   literal; lint reports a missing entry point instead of the engine
-   guessing one. (This also fixed a latent bug where every region's
-   whiteout warped to a literal `"town"` that does not exist in Triad.)
-2. **Formalise + validate the contract.** *(done)* `pkmn/game/contract.py`
-   is now the single source of truth — engine version, tile flags, map
-   properties, object types, and script commands — imported by both the
-   runtime and the linter, so they cannot drift. The manifest declares an
-   `engine_version` the engine checks on load, and `lint` is the gate: it
-   rejects unknown flags/objects/commands and bad versions on top of the
-   existing referential checks. "If it lints, it runs."
-3. **Seamless world primitive.** *(done)* Maps may declare per-edge
-   `connect_*` + `offset_*` properties, and a recursive `World.resolve`
-   stitches them into one continuous, scrolling overworld — rendering,
-   collision, border fill, and seamless boundary crossing all flow through
-   that one primitive, exactly as Gen 1's `get_tile` does. Discrete
-   warp-linked maps are unchanged, so a region mixes both topologies per
-   map. `examples/seamless` is the worked demo.
-4. **Expand the tile-flag vocabulary** *(done)* Ledges (one-way two-tile
-   hops), surf (water gated by `can_surf`), and cut (clearing `cuttable`
-   obstacles, gated by `can_cut`) are engine behaviours keyed off tile
-   flags, with capabilities granted like HMs via state flags. All three
-   resolve across seamless connections too, and `examples/seamless`
-   exercises each. The interaction vocabulary stays fixed and composable —
-   content sets flags, the engine implements behaviour.
-5. **Open the data layer fully** (region-supplied species/moves/types/
-   abilities; type chart and curves as data), so a custom region is not
-   tied to the bundled catalog.
-6. **Conformance harness** — a "golden region" exercising every contract
-   feature, with lint in CI.
-
-Steps 1–4 are done: the backbone (de-hardcoding + a validated contract),
-the headline seamless overworld, and the full field-move vocabulary
-(ledges, surf, cut). Steps 5–6 (opening the data layer, a conformance
-harness) remain, and none requires the Game Boy compression tricks.
+See `ESSENTIALS_COMPAT.md` for the concrete feature roadmap, effort
+estimates, and sequencing that turn this philosophy into work.

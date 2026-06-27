@@ -12,6 +12,13 @@ Effort key: **S** = small (hours), **M** = medium (a focused session),
 **L** = large (multi-session / architectural). "BLOCKED" notes a hard
 dependency that must be cleared first.
 
+> **Relation to the parity goal.** Most of the TODOs in this tracker are
+> now part of the broader push for RPG Maker XP + Essentials parity (see
+> `docs/ESSENTIALS_COMPAT.md`, which organizes the work into tiers with
+> sequencing). This file remains the fine-grained, Gen 5-specific checklist;
+> `ESSENTIALS_COMPAT.md` is the higher-level roadmap. Where they overlap,
+> the compat tiers take precedence on ordering.
+
 ---
 
 ## Done (this pass)
@@ -142,12 +149,18 @@ dependency that must be cleared first.
 ## Out of scope (online / heavily post-game)
 
 Battle Subway, Entralink, Dream World, Pokémon Musical, C-Gear / wireless,
-Global Link, Xtransceiver video calls, Pokéstar Studios (Pokéwood), Join Avenue.
+Global Link, Xtransceiver video calls, Pokéstar Studios (Pokéwood), Join
+Avenue. These remain out of scope because they are online or Game Freak
+service features — not part of what the Essentials authoring toolkit
+reproduces — so they fall outside the parity goal.
 
-Multi-Pokemon battle formats — **double, triple, and rotation battles** — are
-intentionally excluded by project decision. The engine stays single-active.
-These depend on networking or large post-game subsystems outside this engine's
-single-player, region-as-data scope.
+**Multi-Pokemon battle formats — double, triple, and rotation battles — are
+now IN scope.** They were previously excluded by project decision; under the
+Essentials-parity goal (`docs/ESSENTIALS_COMPAT.md`) they are a large but
+intended battle-module project. The pure engine is single-active today, so
+this is real architectural work — multiple active slots, targeting, spread
+moves, ally interactions — done from *inside* the engine without breaking
+its purity (actions in, typed events out). Tracked as Compat Tier 3 (XL).
 
 ---
 

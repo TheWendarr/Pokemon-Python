@@ -1,0 +1,98 @@
+{
+ "intro": [
+  {
+   "say": "Welcome to the Event Lab!|Talk to Prof. Birch, then read the sign."
+  },
+  {
+   "set_flag": "intro_seen"
+  }
+ ],
+ "prof": {
+  "pages": [
+   {
+    "when": {
+     "not": {
+      "self_switch": "A"
+     }
+    },
+    "do": [
+     {
+      "say": "Take this partner!"
+     },
+     {
+      "give_pokemon": {
+       "species": "charmander",
+       "level": 5
+      }
+     },
+     {
+      "set_self_switch": "A"
+     }
+    ]
+   },
+   {
+    "when": {
+     "self_switch": "A"
+    },
+    "do": [
+     {
+      "say": "How is CHARMANDER doing?"
+     }
+    ]
+   }
+  ]
+ },
+ "puzzle": [
+  {
+   "set_var": {
+    "var": "x",
+    "value": 0
+   }
+  },
+  {
+   "while": {
+    "var": "x",
+    "op": "<",
+    "value": 3
+   },
+   "do": [
+    {
+     "add_var": {
+      "var": "x",
+      "by": 1
+     }
+    }
+   ]
+  },
+  {
+   "if_var": {
+    "var": "x",
+    "op": "==",
+    "value": 3,
+    "then": [
+     {
+      "say": "Counted to three with a while-loop!"
+     }
+    ],
+    "else": [
+     {
+      "say": "...?"
+     }
+    ]
+   }
+  }
+ ],
+ "wander": [
+  {
+   "move_route": {
+    "name": "Walker",
+    "route": [
+     "left",
+     "left",
+     "right",
+     "right"
+    ]
+   }
+  }
+ ]
+}

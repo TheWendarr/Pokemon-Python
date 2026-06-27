@@ -1,7 +1,15 @@
 # Authoring a game
 
-A game is a **folder of content** — no Python required. Point the
-engine at it:
+> **Where this fits.** The content-folder format documented here is the
+> *base* authoring layer: a simple region needs no engine code. The
+> project's goal is full RPG Maker XP + Essentials parity authored in pure
+> Python (`docs/ESSENTIALS_COMPAT.md`), so this format is being extended — a
+> richer event model (variables, self-switches, common events, move routes)
+> and a Python authoring API for events are the next major track. The format
+> below is stable and current; treat it as the foundation, not the ceiling.
+
+A game is a **folder of content** — a simple region needs no engine code.
+Point the engine at it:
 
     python -m pkmn.game.play --game examples/isleton
 
@@ -262,3 +270,111 @@ The linter checks referential integrity (warps, connections, scripts,
 species, items), flags unknown tile/map/object properties and unknown
 commands, and verifies `engine_version`. The goal is simple: **if it
 lints, it runs.**
+
+## Event runtime (Phase 8)
+
+Scripts in `scripts.json` (or built with the Python API) are command lists
+run by a compiled VM. State has three kinds: **flags** (booleans),
+**vars** (integers), and **self-switches** (per-event booleans, the "did
+this once" backbone). All three persist in saves.
+
+**Conditions** (used by `if`, `while`, and event pages) are dicts:
+`{"flag": n}`, `{"var": n, "op": ">=", "value": k}`, `{"self_switch": "A"}`,
+`{"item": id, "qty": k}`, `{"money": k}`, `{"not": c}`, `{"all": [..]}`,
+`{"any": [..]}`.
+
+**Commands.** Dialogue/flow: `say`, `wait` (frames), `choice`, `shop`,
+`pc`, `battle`. State: `heal`, `give_item`, `give_money`, `take_money`,
+`set_flag`, `clear_flag`, `set_var`, `add_var`, `set_self_switch`,
+`clear_self_switch`, `give_pokemon`. Control flow: `if`/`then`/`else`,
+`if_flag`/`if_money`/`if_var`/`if_self_switch`, `while`/`do`, `label`,
+`goto`. World/NPC: `warp`, `move_npc`, `move_route`, `face_npc`,
+`hide_npc`, `screen`.
+
+`then`/`else` are top-level on `if`/`if_flag` but nested in the payload for
+`if_money`/`if_var`/`if_self_switch` (matching legacy content).
+
+**Triggers** (map trigger object `when`): `step`, `enter`, `autorun`
+(locks the player; a spawn-map autorun fires once the scene is active),
+`parallel` (non-blocking, ticked each frame). Gate one-shot autoruns with
+the trigger's `unless_flag`, or set a self-switch inside.
+
+**Multi-page events.** A script id may resolve to
+`{"pages": [{"when": <cond>, "do": [...]}, ...]}`; the runtime runs the
+**last** page whose `when` holds. Example — a Professor who hands out a
+starter exactly once:
+
+```json
+{"pages": [
+  {"when": {"not": {"self_switch": "A"}},
+   "do": [{"say": "Take this!"},
+          {"give_pokemon": {"species": "charmander", "level": 5}},
+          {"set_self_switch": "A"}]},
+  {"when": {"self_switch": "A"}, "do": [{"say": "How is it doing?"}]}
+]}
+```
+
+**Python authoring** (`pkmn/game/events.py`) builds the same command dicts:
+
+```python
+from pkmn.game.events import Event, var, self_switch
+
+prof = Event.pages([
+    page(~self_switch("A"),
+         Event().say("Take this!")
+                .give_pokemon("charmander", level=5)
+                .set_self_switch("A")),
+    page(self_switch("A"), Event().say("How is it doing?")),
+])
+
+puzzle = (Event()
+    .set_var("x", 0)
+    .while_(var("x") < 3, Event().add_var("x", 1))
+    .if_(var("x") >= 3, Event().say("Solved!"))
+    .build())
+```
+
+**Extending the runtime.** Register a custom command without forking:
+
+```python
+from pkmn.game.script import register_command
+register_command("quake", lambda runner, payload: runner.ow.shake(payload))
+```
+
+See `examples/eventlab` for a small playable map using autorun, a
+multi-page NPC, a parallel move-route, and a while/if puzzle.
+
+## Wild encounters (multi-method)
+
+`encounters.json` maps a map id to either a flat list (legacy = the `land`
+table) or per-method tables:
+
+```json
+{"route_1": {
+  "land":      [{"species": "pidgey", "min": 2, "max": 5, "weight": 45}],
+  "surf":      [{"species": "tentacool", "min": 5, "max": 40, "weight": 100}],
+  "old_rod":   [{"species": "magikarp", "min": 5, "max": 10, "weight": 70}],
+  "good_rod":  [{"species": "krabby", "min": 10, "max": 20, "weight": 60}],
+  "super_rod": [{"species": "staryu", "min": 15, "max": 25, "weight": 40}]
+}}
+```
+
+Methods: `land` (walking on grass), `surf` (rolled each step while
+surfing), `old_rod`/`good_rod`/`super_rod` (press A facing water holding the
+rod item — `old-rod`/`good-rod`/`super-rod` in the bag; the best rod owned
+is used), plus `rock_smash`, `headbutt`, and `cave` (schema + importer
+support; their field triggers arrive with those moves).
+
+## Rich trainer parties
+
+A `battle` command's (or trainer's) `party` may be the compact string
+`"species:level@item|species:level"` or a full per-mon list:
+
+```json
+{"battle": {"trainer": "Champion", "party": [
+  {"species": "gengar", "level": 58, "nature": "timid", "ability": "levitate",
+   "item": "black-sludge",
+   "moves": ["shadow-ball", "sludge-bomb", "thunderbolt", "destiny-bond"],
+   "ivs": {"speed": 31}}
+]}}
+```

@@ -1,8 +1,31 @@
 # pokemon-python
 
-A Gen 4/5-style Pokemon engine and (eventually) game-authoring toolkit,
-written in Python. Ground-up rewrite — the original prototype's code was
-used as inspiration only.
+A Gen 4/5-style Pokemon engine and game-authoring toolkit, written in
+Python. Ground-up rewrite — the original prototype's code was used as
+inspiration only.
+
+## Project direction
+
+**The goal is to reliably reproduce the full functionality of RPG Maker XP
++ Pokémon Essentials, delivered as pure Python** — so anyone can build a
+complete Pokémon game using only Python and editable content folders, with
+no RPG Maker, no Ruby, and no proprietary editor.
+
+Three co-equal goals drive the design:
+
+1. **Parity** — Essentials is the functional target; where it has a
+   capability we don't, that's a gap to close.
+2. **Modularity** — the engine is a set of independently usable, swappable
+   subsystems (data, battle, overworld, event runtime, rendering, audio)
+   behind stable interfaces.
+3. **Pure-Python authoring** — make games by writing Python and editing
+   content folders; events are expressible as data *and* as a Python API.
+
+Simplicity is still a value, but as a standard for *how each module is
+built*, not as a cap on what the engine can do. The capability roadmap,
+effort estimates, and sequencing live in **`docs/ESSENTIALS_COMPAT.md`**;
+the design rationale is in **`docs/ENGINE_PHILOSOPHY.md`**. The sections
+below describe what works today.
 
 **Data: the full PokeAPI Gen 1-5 catalog.** `game/data/` now carries
 every species (649), every move (559, B2W2 values), every ability (164,
@@ -65,14 +88,16 @@ Designers control everything from the manifest: feature toggles strip
 the engine down to a walking sim or up to a full RPG, starters come
 with chosen movesets, and hold B to run.
 
-**Phase 6 status: authoring toolkit.** Games are content folders, no
-Python required: a `game.json` manifest plus Tiled maps, your own
-tileset and sprites, scripts, and encounter tables. Run any folder
-with `python -m pkmn.game.play --game DIR`, validate it with
-`python -m pkmn.cli.lint --game DIR`, and see `docs/AUTHORING.md` for
-the full format. `examples/isleton` is a complete second region built
-only with the toolkit — try
-`python -m pkmn.game.play --game examples/isleton`.
+**Phase 6 status: authoring toolkit.** Games are content folders: a
+`game.json` manifest plus Tiled maps, your own tileset and sprites,
+scripts, and encounter tables — a simple region needs no engine code at
+all. Run any folder with `python -m pkmn.game.play --game DIR`, validate it
+with `python -m pkmn.cli.lint --game DIR`, and see `docs/AUTHORING.md` for
+the full format. `examples/isleton` is a complete second region built only
+with the toolkit. (Toward the parity goal, this format is the *base* layer;
+a Python authoring API and a full event runtime — variables, self-switches,
+common events, move routes — are the next major track, see
+`docs/ESSENTIALS_COMPAT.md`.)
 
 **Phase 5 status: game systems.** Press Enter for the pause menu:
 party (with summaries, order swapping, and giving/taking held items),
@@ -157,19 +182,35 @@ docs/        architecture notes and roadmap
 
 ## Design rules
 
+These are the disciplines that keep a growing, Essentials-class engine
+modular and safe to author against. They are retained from the original
+design because they *enable* the parity goal, not despite it.
+
 1. **One source of truth.** `PokemonState` owns HP/status/PP/IVs/moves.
    The battle engine wraps it with battle-only volatiles and mutates it
    directly — HP, status, and PP persist after battle like on cartridge,
-   with no copy-back step to forget.
+   with no copy-back step to forget. (Extends to flags/money and, as the
+   event runtime lands, variables and self-switches.)
 2. **The engine is pure.** No disk I/O, no printing, one injected RNG.
    Inputs are `Action`s, outputs are typed `Event`s. Seeds reproduce
-   battles exactly; the CLI and the future pygame UI are just renderers.
+   battles exactly; the CLI and pygame UI are just renderers. Multi-active
+   battle formats extend the engine from the inside, never by importing
+   game state.
 3. **Moves are data, not code.** A metadata interpreter executes the
    majority of moves from their PokeAPI-derived effect description; a
    handler registry covers the rest, one named function at a time.
 4. **Gen 5 numbers, verified.** 2.0x crits, 85-100% damage rolls, exact
    stage fractions, 1/8 burn, n/16 toxic, Gen 5 catch/flee formulas —
    with hand-calculated damage values locked in by tests.
+5. **Modular subsystems behind stable interfaces.** Data, battle,
+   overworld, event runtime, rendering, and audio are independently usable
+   and replaceable; each ships behind a feature flag so a game uses as much
+   or as little of the engine as it wants — a walking sim, a battle-only
+   tool, or a full RPG.
+6. **If it lints, it runs.** `pkmn/game/contract.py` is the single spec the
+   runtime and linter share. Every new tile flag, layer rule, object type,
+   event command, and trigger kind is added there first, so the contract
+   can grow without the validator and engine drifting.
 
 ## Sprites and assets
 

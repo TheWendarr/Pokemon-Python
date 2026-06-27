@@ -1,0 +1,35 @@
+{
+ "engine_version": 2,
+ "name": "Kanto (converted from JohtoBlaziken FRLG bootleg)",
+ "start": {
+  "map": "m002_lappet_town",
+  "tile": [
+   15,
+   9
+  ],
+  "facing": "down"
+ },
+ "whiteout": {
+  "map": "m002_lappet_town",
+  "facing": "down"
+ },
+ "starter": {
+  "species": "charmander",
+  "level": 5
+ },
+ "bag": {
+  "potion": 5,
+  "poke-ball": 10,
+  "old-rod": 1,
+  "good-rod": 1,
+  "super-rod": 1
+ },
+ "money": 3000,
+ "flags": [
+  "can_surf"
+ ],
+ "settings": {
+  "encounter_chance": 8,
+  "daynight": "off"
+ }
+}

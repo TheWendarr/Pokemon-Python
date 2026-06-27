@@ -19,7 +19,9 @@ class GameState:
     tile: tuple = None  # None -> use the map's spawn object
     facing: str = "down"
     rng: random.Random = field(default_factory=random.Random)
-    flags: set = field(default_factory=set)   # event/progress flags
+    flags: set = field(default_factory=set)   # event/progress flags (booleans)
+    vars: dict = field(default_factory=dict)  # integer event variables
+    self_switches: set = field(default_factory=set)  # "map:event:SW" keys
     money: int = 1500
     pc: list = field(default_factory=list)    # PC box (PokemonState)
     seen: set = field(default_factory=set)    # Pokedex: species encountered
@@ -83,11 +85,13 @@ class GameState:
 
     # ── persistence ──────────────────────────────────────────────────
     def to_dict(self) -> dict:
-        return {"version": 1,
+        return {"version": 2,
                 "party": [p.to_dict() for p in self.party],
                 "pc": [p.to_dict() for p in self.pc],
                 "bag": dict(self.bag), "money": self.money,
                 "flags": sorted(self.flags),
+                "vars": dict(self.vars),
+                "self_switches": sorted(self.self_switches),
                 "map_id": self.map_id, "tile": list(self.tile or (0, 0)),
                 "facing": self.facing,
                 "seen": sorted(self.seen), "caught": sorted(self.caught),
@@ -103,6 +107,8 @@ class GameState:
         st.bag = dict(d.get("bag", {}))
         st.money = int(d.get("money", 0))
         st.flags = set(d.get("flags", []))
+        st.vars = {k: int(v) for k, v in d.get("vars", {}).items()}
+        st.self_switches = set(d.get("self_switches", []))
         st.map_id = d.get("map_id", "")
         st.tile = tuple(d.get("tile") or (0, 0))
         st.facing = d.get("facing", "down")

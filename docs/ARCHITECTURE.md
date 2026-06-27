@@ -1,5 +1,37 @@
 # Architecture
 
+## Project direction (architectural implications)
+
+The project's goal has expanded to **parity with RPG Maker XP + Pokémon
+Essentials, delivered as pure Python** (see `ENGINE_PHILOSOPHY.md` and the
+`ESSENTIALS_COMPAT.md` roadmap). Most of what follows in this document is
+the factual record of the v1 engine and is retained — those subsystems are
+the modular foundation parity is built on. What the new direction adds,
+architecturally:
+
+- **An event runtime** joins the battle engine as a first-class subsystem.
+  Today's `pkmn/game/script.py` is a flat JSON interpreter; it grows into a
+  runtime with integer variables, self-switches, common events,
+  autorun/parallel triggers, move routes, and control flow — kept
+  pure-where-possible and driven the same way the battle engine is (data in,
+  effects/events out), and exposed through a Python authoring API as well as
+  data.
+- **The map model gains layers.** The pytmx wrapper and `World` move from a
+  single composited ground layer to multiple layers with per-tile draw
+  priority, configurable tile size, autotiles, and directional passability.
+- **The save schema and `GameState`** extend to persist variables and
+  self-switches alongside today's flags/money/party/box.
+- **The battle engine gains multiple active slots** for double/triple/
+  rotation formats — extended from the inside, preserving purity (no game
+  state imported).
+- **Extension seams become supported.** A content folder may register custom
+  commands and systems against stable interfaces; the engine is designed to
+  be extended, not forked.
+
+Every one of these lands behind the existing invariants: it goes into
+`pkmn/game/contract.py` first ("if it lints, it runs"), ships behind a
+feature flag and a stable interface, and adds no region literal to core.
+
 ## Why a rewrite
 
 The autopsy of the original prototype found structural problems that

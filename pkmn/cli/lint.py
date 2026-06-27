@@ -16,8 +16,9 @@ import os
 import pytmx
 
 from ..data.repository import GameData
-from ..game.contract import (DIRECTIONS, ENGINE_VERSION, MAP_PROPS,
-                             OBJECT_TYPES, OPPOSITE, SCRIPT_COMMANDS,
+from ..game.contract import (BASE_LAYER, DIRECTIONS, ENGINE_VERSION,
+                             MAP_PROPS, OBJECT_TYPES, OPPOSITE,
+                             RENDER_FLAGS, SCRIPT_COMMANDS,
                              TILE_FLAGS, TILE_META, TRIGGER_WHEN, WEATHERS,
                              compatible)
 
@@ -66,6 +67,16 @@ class Lint:
             self.err(where, f"bad level {level} for {sid}")
 
     def check_party_spec(self, where, spec):
+        if isinstance(spec, list):                # rich per-mon party
+            for m in spec:
+                self.check_species(where, m.get("species", "?"),
+                                   m.get("level", 5))
+                if m.get("item"):
+                    self.check_item(where, m["item"])
+                for mv in (m.get("moves") or []):
+                    if not self.data.has_move(mv):
+                        self.warn(where, f"unknown move {mv!r}")
+            return
         for part in str(spec).split("|"):
             sid, _, rest = part.strip().partition(":")
             lvl, _, item = rest.partition("@")
@@ -93,9 +104,9 @@ class Lint:
                 self.err(f"maps/{fn}", f"failed to parse ({e})")
         for mid, tm in self.maps.items():
             try:
-                tm.get_layer_by_name("ground")
+                tm.get_layer_by_name(BASE_LAYER)
             except Exception:
-                self.err(f"maps/{mid}", "no 'ground' layer")
+                self.err(f"maps/{mid}", f"no {BASE_LAYER!r} layer")
             props = getattr(tm, "properties", {}) or {}
             w = props.get("weather")
             if w and w not in WEATHERS:
@@ -104,18 +115,24 @@ class Lint:
                 if key not in MAP_PROPS:
                     self.warn(f"maps/{mid}", f"unknown map property {key!r}")
             # tile flags: typos here silently disable collision/grass
+            allowed = TILE_FLAGS | RENDER_FLAGS | TILE_META
             for tp in getattr(tm, "tile_properties", {}).values():
                 for key in tp:
-                    if key not in TILE_FLAGS and key not in TILE_META:
+                    if key not in allowed:
                         self.err(f"maps/{mid}",
                                  f"unknown tile flag {key!r} "
-                                 f"(known: {sorted(TILE_FLAGS)})")
+                                 f"(known: {sorted(TILE_FLAGS | RENDER_FLAGS)})")
 
     def _blocked(self, tm, x, y) -> bool:
         if not (0 <= x < tm.width and 0 <= y < tm.height):
             return True
-        props = tm.get_tile_properties(x, y, 0) or {}
-        return bool(props.get("blocked"))
+        layers = [i for i, l in enumerate(tm.layers)
+                  if isinstance(l, pytmx.TiledTileLayer)]
+        for li in layers:
+            props = tm.get_tile_properties(x, y, li) or {}
+            if props.get("blocked"):
+                return True
+        return False
 
     def check_connections(self):
         for mid, tm in self.maps.items():
@@ -193,33 +210,38 @@ class Lint:
                 self.warn(where, "no spawn object")
 
     def check_scripts(self):
+        def branches(step):
+            out = []
+            if "if" in step or "if_flag" in step:
+                out += [step.get("then", []), step.get("else", [])]
+            for k in ("if_money", "if_var", "if_self_switch"):
+                if k in step:
+                    out += [step[k].get("then", []), step[k].get("else", [])]
+            if "while" in step:
+                out.append(step.get("do", []))
+            if "choice" in step:
+                out += [o.get("then", [])
+                        for o in step["choice"].get("options", [])]
+            return out
+
         def walk(name, steps):
             if not isinstance(steps, list):
                 self.err(f"scripts.json[{name}]", "not a list")
                 return
             for i, step in enumerate(steps):
                 where = f"scripts.json[{name}][{i}]"
-                keys = set(step) & SCRIPT_COMMANDS
-                if not keys:
+                if not isinstance(step, dict) or not set(step) & SCRIPT_COMMANDS:
                     self.err(where, f"unknown command in {sorted(step)}")
                     continue
-                if "if_flag" in step:
-                    walk(f"{name}.then", step.get("then", []))
-                    walk(f"{name}.else", step.get("else", []))
                 if "battle" in step:
                     self.check_party_spec(where, step["battle"].get("party", ""))
                 if "give_item" in step:
                     self.check_item(where, step["give_item"].get("item", "?"))
-                if "warp" in step:
-                    if step["warp"].get("map") not in self.maps:
-                        self.err(where, f"warp to unknown map "
-                                        f"{step['warp'].get('map')!r}")
-                if "choice" in step:
-                    opts = step["choice"].get("options", [])
-                    if not opts:
-                        self.err(where, "choice with no options")
-                    for j, o in enumerate(opts):
-                        walk(f"{name}.choice[{j}]", o.get("then", []))
+                if "warp" in step and step["warp"].get("map") not in self.maps:
+                    self.err(where, f"warp to unknown map "
+                                    f"{step['warp'].get('map')!r}")
+                if "choice" in step and not step["choice"].get("options"):
+                    self.err(where, "choice with no options")
                 if "shop" in step:
                     for iid in step["shop"].get("items", []):
                         self.check_item(where, iid)
@@ -231,20 +253,42 @@ class Lint:
                                        g.get("level", 5))
                     if g.get("item"):
                         self.check_item(where, g["item"])
-        for name, steps in self.scripts.items():
-            walk(name, steps)
+                for j, sub in enumerate(branches(step)):
+                    walk(f"{name}.{i}.{j}", sub)
+
+        for name, defn in self.scripts.items():
+            if isinstance(defn, dict) and "pages" in defn:
+                for pi, page in enumerate(defn["pages"]):
+                    walk(f"{name}.page{pi}", page.get("do", []))
+            else:
+                walk(name, defn)
+
+    ENC_METHODS = {"land", "surf", "old_rod", "good_rod", "super_rod",
+                   "rock_smash", "headbutt", "cave"}
 
     def check_encounters(self, enc):
-        for mid, table in enc.items():
-            where = f"encounters.json[{mid}]"
-            if mid not in self.maps:
-                self.err(where, "unknown map")
+        def check_table(where, table):
+            if not isinstance(table, list):
+                self.err(where, "encounter table must be a list")
+                return
             for e in table:
                 self.check_species(where, e.get("species", "?"))
                 if int(e.get("min", 1)) > int(e.get("max", 1)):
                     self.err(where, f"min > max for {e.get('species')}")
                 if int(e.get("weight", 1)) <= 0:
                     self.err(where, "non-positive weight")
+
+        for mid, table in enc.items():
+            where = f"encounters.json[{mid}]"
+            if mid not in self.maps:
+                self.err(where, "unknown map")
+            if isinstance(table, dict):           # per-method tables
+                for method, slots in table.items():
+                    if method not in self.ENC_METHODS:
+                        self.warn(where, f"unknown encounter method {method!r}")
+                    check_table(f"{where}.{method}", slots)
+            else:                                 # legacy flat list == land
+                check_table(where, table)
 
     def check_manifest(self, m):
         if not m:

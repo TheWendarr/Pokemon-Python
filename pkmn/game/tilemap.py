@@ -6,10 +6,12 @@ import os
 from dataclasses import dataclass
 
 import pygame
+from pytmx import TiledTileLayer
 from pytmx.util_pygame import load_pygame
 
 from .config import ASSET_DIR, TILE
-from .contract import DIRECTIONS, LEDGE_FLAGS, rebase
+from .contract import (BASE_LAYER, DIR_BLOCK_FLAGS, DIRECTIONS,
+                       LEDGE_FLAGS, rebase)
 
 
 @dataclass
@@ -79,7 +81,18 @@ class TileMap:
         self.border = self.props.get("border")     # gid filling open edges
         self._border_img = None
         self.cut: set[tuple] = set()                # tiles cleared by Cut
-        self.ground = self.tmx.get_layer_by_name("ground")
+        # All tile layers, in draw order (bottom -> top). pytmx indexes
+        # tile lookups by the layer's position among *all* layers, so we
+        # keep the global indices. BASE_LAYER must be present.
+        self.tile_layers = [i for i, lyr in enumerate(self.tmx.layers)
+                            if isinstance(lyr, TiledTileLayer)]
+        self.ground = self.tmx.get_layer_by_name(BASE_LAYER)   # base (required)
+        # animated tiles: base gid -> [(frame_gid, duration_ms), ...]
+        self.anim: dict[int, list] = {}
+        for gid, props in (getattr(self.tmx, "tile_properties", {}) or {}).items():
+            frames = props.get("frames") if props else None
+            if frames:
+                self.anim[gid] = [(f.gid, f.duration) for f in frames]
         self.warps: dict[tuple, Warp] = {}
         self.npcs: list[NpcSpawn] = []
         self.trainers: list[TrainerSpawn] = []
@@ -122,32 +135,57 @@ class TileMap:
     def in_bounds(self, x: int, y: int) -> bool:
         return 0 <= x < self.width and 0 <= y < self.height
 
-    def _props(self, x: int, y: int) -> dict:
+    def _merged(self, x: int, y: int) -> dict:
+        """Behaviour flags OR'd across every tile layer at a cell.
+
+        A cell is blocked/grass/surf/... if *any* layer's tile carries
+        that flag -- so an overhead tree on an upper layer still blocks,
+        and tall grass painted over a path still triggers encounters.
+        """
         if not self.in_bounds(x, y):
             return {"blocked": True}
-        return self.tmx.get_tile_properties(x, y, 0) or {}
+        out: dict = {}
+        for li in self.tile_layers:
+            tp = self.tmx.get_tile_properties(x, y, li)
+            if tp:
+                for k, v in tp.items():
+                    if v:
+                        out[k] = v
+        return out
 
     def blocked(self, x: int, y: int) -> bool:
         if (x, y) in self.cut:                      # cut down -> walkable
             return False
-        p = self._props(x, y)
+        p = self._merged(x, y)
         if p.get("blocked"):
             return True
         return any(p.get(f) for f in LEDGE_FLAGS.values())   # ledges block
 
     def is_grass(self, x: int, y: int) -> bool:
-        return bool(self._props(x, y).get("grass"))
+        return bool(self._merged(x, y).get("grass"))
 
     def is_surf(self, x: int, y: int) -> bool:
-        return bool(self._props(x, y).get("surf"))
+        return bool(self._merged(x, y).get("surf"))
 
     def is_cuttable(self, x: int, y: int) -> bool:
         return ((x, y) not in self.cut
-                and bool(self._props(x, y).get("cuttable")))
+                and bool(self._merged(x, y).get("cuttable")))
 
     def has_ledge(self, x: int, y: int, facing: str) -> bool:
         """True if a tile is a ledge jumped over by moving `facing`."""
-        return bool(self._props(x, y).get(LEDGE_FLAGS.get(facing, "")))
+        return bool(self._merged(x, y).get(LEDGE_FLAGS.get(facing, "")))
+
+    def passable(self, x: int, y: int, direction: str) -> bool:
+        """Is this tile's edge open for crossing in `direction`? This is the
+        *directional* (partial) check only -- full solidity and surf access
+        are decided by the walkability path, so a blocked+surf water tile is
+        still crossable here. Out-of-bounds is never crossable."""
+        if (x, y) in self.cut:
+            return True
+        if not self.in_bounds(x, y):
+            return False
+        m = self._merged(x, y)
+        return not m.get(DIR_BLOCK_FLAGS.get(direction, ""))
 
     def do_cut(self, x: int, y: int) -> bool:
         if self.is_cuttable(x, y):
@@ -165,17 +203,58 @@ class TileMap:
             self._border_img = self._scaled(img) if img else None
         return self._border_img
 
-    def tile_image(self, x: int, y: int):
-        """The scaled image to draw at a cell; a cut tile shows the border
-        tile (e.g. grass) in place of the cleared obstacle."""
+    def _is_over(self, x: int, y: int, li: int) -> bool:
+        tp = self.tmx.get_tile_properties(x, y, li)
+        return bool(tp and tp.get("over"))
+
+    def _anim_gid(self, gid: int) -> int:
+        """Current frame gid for an animated tile (cycles on the wall clock),
+        or the gid unchanged for a static tile."""
+        fr = self.anim.get(gid)
+        if not fr:
+            return gid
+        total = sum(d for _, d in fr) or 1
+        t = pygame.time.get_ticks() % total
+        acc = 0
+        for fg, d in fr:
+            acc += d
+            if t < acc:
+                return fg
+        return fr[-1][0]
+
+    def _cell_image(self, x: int, y: int, li: int):
+        """Scaled image for one layer at a cell, or None. Resolves tile
+        animation; a cuttable tile on a cut cell is hidden so the layers
+        beneath it show through."""
+        gid = self.tmx.get_tile_gid(x, y, li)
+        if not gid:
+            return None
         if (x, y) in self.cut:
-            return self.border_image()
-        img = self.tmx.get_tile_image(x, y, 0)
+            tp = self.tmx.get_tile_properties(x, y, li)
+            if tp and tp.get("cuttable"):
+                return None
+        img = self.tmx.get_tile_image_by_gid(self._anim_gid(gid))
         return self._scaled(img) if img else None
+
+    def draw_cell(self, surf, lx: int, ly: int, sx: int, sy: int,
+                  over: bool = False) -> None:
+        """Blit every tile layer at one cell that matches the draw phase.
+        Below pass (over=False) also paints the border under a cut tile so
+        a felled obstacle leaves ground, not a hole."""
+        if not over and (lx, ly) in self.cut:
+            b = self.border_image()
+            if b:
+                surf.blit(b, (sx, sy))
+        for li in self.tile_layers:
+            if self._is_over(lx, ly, li) != over:
+                continue
+            img = self._cell_image(lx, ly, li)
+            if img:
+                surf.blit(img, (sx, sy))
 
     # ── drawing ──────────────────────────────────────────────────────
     def _scaled(self, img):
-        """Upscale an authored tile (e.g. 16px) to the render TILE size
+        """Upscale an authored tile (16px or 32px) to the render TILE size
         with nearest-neighbour, cached so it happens once per tile."""
         key = id(img)
         out = self._tile_cache.get(key)
@@ -184,16 +263,16 @@ class TileMap:
             self._tile_cache[key] = out
         return out
 
-    def draw(self, surf: pygame.Surface, cam_x: int, cam_y: int) -> None:
+    def draw(self, surf: pygame.Surface, cam_x: int, cam_y: int,
+             over: bool = False) -> None:
         x0 = max(0, cam_x // TILE)
         y0 = max(0, cam_y // TILE)
         x1 = min(self.width, (cam_x + surf.get_width()) // TILE + 2)
         y1 = min(self.height, (cam_y + surf.get_height()) // TILE + 2)
         for y in range(y0, y1):
             for x in range(x0, x1):
-                img = self.tile_image(x, y)
-                if img:
-                    surf.blit(img, (x * TILE - cam_x, y * TILE - cam_y))
+                self.draw_cell(surf, x, y, x * TILE - cam_x,
+                               y * TILE - cam_y, over)
 
     @property
     def px_size(self) -> tuple:
@@ -266,11 +345,16 @@ class World:
         r = self.resolve(map_id, x, y)
         return bool(r) and r[0].is_surf(r[1], r[2])
 
+    def passable(self, map_id: str, x: int, y: int, direction: str) -> bool:
+        r = self.resolve(map_id, x, y)
+        return bool(r) and r[0].passable(r[1], r[2], direction)
+
     def draw(self, surf: pygame.Surface, map_id: str,
-             cam_x: int, cam_y: int) -> None:
+             cam_x: int, cam_y: int, over: bool = False) -> None:
         """Draw the viewport across map boundaries via `resolve`; the
         camera is not clamped, so neighbours scroll seamlessly into view
-        and open edges show the current map's border tile."""
+        and open edges show the current map's border tile. Called twice
+        per frame: below the player (over=False) then above (over=True)."""
         cur = self._try(map_id)
         x0, y0 = cam_x // TILE, cam_y // TILE        # floor (handles cam<0)
         x1 = (cam_x + surf.get_width()) // TILE
@@ -281,10 +365,8 @@ class World:
                 r = self.resolve(map_id, tx, ty)
                 if r:
                     tm, lx, ly = r
-                    img = tm.tile_image(lx, ly)
-                    if img:
-                        surf.blit(img, (sx, sy))
-                elif cur is not None:
+                    tm.draw_cell(surf, lx, ly, sx, sy, over)
+                elif not over and cur is not None:
                     b = cur.border_image()
                     if b:
                         surf.blit(b, (sx, sy))
