@@ -448,6 +448,8 @@ class OverworldScene(Scene):
             self.game.state.tile = self._dest
             self.moving = False
             self.move_px = 0
+            if self.jump:
+                self.game.audio.play_sfx("ledge_jump")
             self.jump = False
             self._on_arrive()
             self.surfing = self._is_surf(*self.game.state.tile)

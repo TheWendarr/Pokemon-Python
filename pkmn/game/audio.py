@@ -204,6 +204,11 @@ def _sfx(name, rng):
         return _seq(["c5", "g5", "c6"], 0.10, "tri")
     if name == "bump":
         return triangle(_freq("c3"), 0.06) * envelope(_n(0.06))
+    if name == "ledge_jump":
+        # landing thud: noise burst mixed with a low tone (hop-land feel)
+        n = _n(0.10)
+        return (0.55 * noise(0.10, rng) * envelope(n, release=0.06)
+              + 0.45 * triangle(_freq("g3"), 0.10) * envelope(n, release=0.06))
     if name == "evo_done":
         return _seq(["c5", "e5", "g5", "c6", "e6", "g6", "c7"], 0.05, "tri")
     return np.zeros(_n(0.05))
@@ -212,7 +217,7 @@ def _sfx(name, rng):
 SFX_NAMES = ("menu_move", "menu_select", "menu_back", "confirm", "hit",
              "hit_super", "hit_weak", "faint", "ball_throw", "ball_shake",
              "ball_click", "ball_break", "heal", "level_up", "low_hp",
-             "run", "save", "bump", "evo_done")
+             "run", "save", "bump", "ledge_jump", "evo_done")
 
 
 # ── music: chord/pattern helpers keep songs tiny to author ───────────

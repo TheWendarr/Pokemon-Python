@@ -47,11 +47,11 @@ class EvolutionScene(Scene):
         new_dex = getattr(new_sp, "dex", None)
         self._new_dex = new_dex or 0
         self._old_sprite = game.assets.battler(
-            state.species_id, self._old_name, dex=old_dex, back=True)
+            state.species_id, self._old_name, dex=old_dex, back=False)
         self._new_sprite = game.assets.battler(
             target_species,
             target_species.replace("-", " ").title(),
-            dex=new_dex, back=True)
+            dex=new_dex, back=False)
         self._white_old = _white_surface(self._old_sprite)
 
         self._phase     = "text1"
