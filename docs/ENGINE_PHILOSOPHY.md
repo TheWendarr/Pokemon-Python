@@ -19,7 +19,7 @@ Three goals, co-equal:
    capability we do not, that is a gap to close, not a feature to decline.
    The migration converter doubles as the parity oracle: parity is reached
    when a real Essentials project round-trips and plays faithfully (see
-   `ESSENTIALS_COMPAT.md`).
+   `docs/ROADMAP.md`).
 2. **Modularity.** The engine is composed of subsystems — data, battle,
    overworld, event runtime, rendering, audio — each with a clean seam and
    a stable interface, each usable on its own and replaceable without
@@ -85,7 +85,7 @@ The "fixed vocabulary, not plugins" fork is resolved the other way:
 - **The script layer becomes a real event runtime** — variables,
   self-switches, common events, multi-page conditional events,
   autorun/parallel triggers, move routes, control flow — exposed in both
-  data and Python. (`ESSENTIALS_COMPAT.md`, Tier 2.)
+  data and Python. (Compat Tier 2; see `docs/Features.md`.)
 - **Per-game extension is supported, not forbidden.** A content folder may
   register custom commands and custom systems against stable engine
   interfaces. Composition is still preferred *within* a module, but the
@@ -136,5 +136,6 @@ limitations they were working around.
   so a game uses as much or as little of the engine as it wants — a pure
   walking sim, a battle-only tool, or a full Essentials-class RPG.
 
-See `ESSENTIALS_COMPAT.md` for the concrete feature roadmap, effort
-estimates, and sequencing that turn this philosophy into work.
+See `docs/ROADMAP.md` for the phased project history and future milestones,
+`docs/Features.md` for feature status, and `docs/PhaseProgress.md` for
+current progress and acceptance criteria.

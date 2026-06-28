@@ -3,7 +3,7 @@
 > **Where this fits.** The content-folder format documented here is the
 > *base* authoring layer: a simple region needs no engine code. The
 > project's goal is full RPG Maker XP + Essentials parity authored in pure
-> Python (`docs/ESSENTIALS_COMPAT.md`), so this format is being extended — a
+> Python (see `docs/ROADMAP.md`), so this format is being extended — a
 > richer event model (variables, self-switches, common events, move routes)
 > and a Python authoring API for events are the next major track. The format
 > below is stable and current; treat it as the foundation, not the ceiling.
@@ -58,7 +58,7 @@ omitting `starter` (or `"starter": null`) begins with an empty party
 map name or starter the manifest does not supply is a content error the
 lint reports, never something the engine guesses.
 
-11## features and settings (all optional; most default ON)
+## features and settings (all optional; most default ON)
 
     "features": {
       "encounters": true,        // wild battles in grass

@@ -6,9 +6,9 @@ Each phase has acceptance criteria; a phase isn't done until they pass.
 engine and authoring format. The project's goal has since expanded: the new
 north star is **reliable parity with RPG Maker XP + Pokémon Essentials,
 delivered as pure Python** (see `docs/ENGINE_PHILOSOPHY.md`). Phases 7+
-pursue that parity; their detailed feature breakdown, effort estimates, and
-sequencing live in `docs/ESSENTIALS_COMPAT.md`, and the phases here are the
-high-level milestones.
+pursue that parity; detailed feature status lives in `docs/Features.md` and
+current progress tracking in `docs/PhaseProgress.md`. The phases below are
+the high-level milestones.
 
 ## Phase 0 — Foundations  [DONE]
 Repo structure, canonical data models, GameData repository, PokeAPI
@@ -102,10 +102,11 @@ Brom's line-of-sight battle, and the flag-gated shrine ending.
 
 # Essentials-parity track (Phases 7+)
 
-These milestones map to the tiers in `docs/ESSENTIALS_COMPAT.md`, which is
-the authoritative breakdown. The acceptance test across all of them is the
-**parity oracle**: the RMXP→engine converter carries the corresponding
-Essentials construct across *mechanically*, with no semantic flattening.
+These milestones map to the feature statuses in `docs/Features.md` and the
+acceptance criteria in `docs/PhaseProgress.md`. The acceptance test across
+all of them is the **parity oracle**: the RMXP→engine converter carries the
+corresponding Essentials construct across *mechanically*, with no semantic
+flattening.
 
 ## Phase 7 — Map & rendering parity  ✅ DONE (functional)
 Multiple tile layers with draw priority, configurable tile size, autotile
@@ -187,3 +188,21 @@ loop-point metadata, and a configurable title / new-game-or-continue shell.
 (Compat Tier 4.)
 *Acceptance:* a clean, full Essentials project imports and plays without
 hand-editing — the parity oracle passes end to end.
+
+---
+
+## v1.0 release sequencing
+
+**Scope.** v1.0 targets a working, installable product: title/new-game
+shell, recommended example region, green test suite, and clear packaging.
+Full parity with RPG Maker + Essentials is the 1.x+ program.
+
+**Gate.** Phase A acceptance criteria are largely satisfied by the current
+codebase. The remaining v1.0 gate is Phase B1 (ability coverage push).
+
+**Sequencing.** A → v1.0-rc → v1.0 tag. A and B1 gate the release. B2/B3
+are fast-follows. C (multi-active battles) runs as a parallel XL program
+across 1.x. D (importer + parity long tail) is the open-ended parity tail.
+
+See `docs/Features.md` for feature status and `docs/PhaseProgress.md` for
+per-task acceptance criteria and current status.

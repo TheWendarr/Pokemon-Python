@@ -3,8 +3,8 @@
 ## Project direction (architectural implications)
 
 The project's goal has expanded to **parity with RPG Maker XP + Pokémon
-Essentials, delivered as pure Python** (see `ENGINE_PHILOSOPHY.md` and the
-`ESSENTIALS_COMPAT.md` roadmap). Most of what follows in this document is
+Essentials, delivered as pure Python** (see `docs/ENGINE_PHILOSOPHY.md` and
+`docs/ROADMAP.md`). Most of what follows in this document is
 the factual record of the v1 engine and is retained — those subsystems are
 the modular foundation parity is built on. What the new direction adds,
 architecturally:
