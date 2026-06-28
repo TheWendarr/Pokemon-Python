@@ -63,6 +63,8 @@ FAINT_DUR = 26          # frames for a fainting sprite to sink + fade
 FLASH_DUR = 15          # frames a struck sprite blinks
 HP_LERP = 0.2           # HP bar easing factor per frame
 HP_SNAP = 0.6           # close enough to call the drain finished
+EXP_FILL_DUR = 60       # frames for a full EXP bar sweep (scales by distance)
+LEVELUP_DUR  = 48       # frames for the blue level-up glow (sine pulse)
 THROW_ARC = 14          # frames a thrown ball is in flight (send-out)
 THROW_DUR = 26          # send-out: ball flight + materialise
 CATCH_FLY = 14          # catch: ball flying at the foe
@@ -114,8 +116,18 @@ class BattleScene(Scene):
         self.disp_hp = {P1: float(self.eng.active(P1).current_hp),
                         P2: float(self.eng.active(P2).current_hp)}
         self.hp_target = dict(self.disp_hp)
+        # display_mon tracks which BattlePokemon is *visually* on field for
+        # each side — it lags the engine's active pointer so that the faint
+        # animation always shows the fainted mon's sprite, not the replacement.
+        self.display_mon = {P1: self.eng.active(P1), P2: self.eng.active(P2)}
+        # revealed[side] gates drawing: info boxes and sprites are hidden until
+        # the send-in animation (throw/send step) starts for that side.
+        self.revealed = {P1: False, P2: False}
+        # EXP bar: animated display position (0.0–1.0 within the current level).
+        self.disp_exp_frac = self._exp_frac(self.eng.active(P1).state)
         if self.doubles:
             self.mode = "menu"     # skip the singles send-in animation timeline
+            self.revealed = {P1: True, P2: True}
         self.foe_absorbed = False         # foe is currently inside a ball
         self.ball_pos = None              # resting ball position when absorbed
         self._ball_img = None             # cached pokeball surface
@@ -130,11 +142,7 @@ class BattleScene(Scene):
             # simple intro line in the message box and go straight to FIGHT.
             self.message = ["A double battle began!"]
         else:
-            self._enqueue(self.eng._start_events)
-            if trainer_name:
-                self.steps.insert(0, {"kind": "text",
-                                      "lines": [f"{trainer_name} wants to battle!"],
-                                      "anim": None})
+            self._enqueue_intro(trainer_name)
 
     # ── building the timeline ────────────────────────────────────────
     def _say(self, text: str, anim=None) -> None:
@@ -210,6 +218,29 @@ class BattleScene(Scene):
         # linger ~2s (longer for longer text); always A/B-skippable
         return max(110, min(190, 40 + sum(len(s) for s in lines) * 2))
 
+    @staticmethod
+    def _exp_frac(st) -> float:
+        """EXP bar fill fraction (0–1) for the given PokemonState."""
+        if st.level >= 100:
+            return 1.0
+        exp_at  = exp_total(st.species.growth_rate, st.level)
+        exp_nxt = exp_total(st.species.growth_rate, st.level + 1)
+        return max(0.0, min(1.0, (st.exp - exp_at) / max(1, exp_nxt - exp_at)))
+
+    def _enqueue_intro(self, trainer_name: str | None = None) -> None:
+        """Build the battle intro in the correct visual order:
+        trainer text → foe sends out → player sends out → entry effects."""
+        events = self.eng._start_events
+        p2_sendins = [e for e in events if e.type == E.SEND_IN and e.side == P2]
+        p1_sendins = [e for e in events if e.type == E.SEND_IN and e.side == P1]
+        others = [e for e in events
+                  if e.type not in (E.BATTLE_START, E.SEND_IN)]
+        if trainer_name:
+            self._say(f"{trainer_name} wants to battle!")
+        self._enqueue(p2_sendins)   # foe comes out first (trainer throws / wild appears)
+        self._enqueue(p1_sendins)   # player sends out second
+        self._enqueue(others)       # entry ability/weather effects after both are on field
+
     # ── turn submission ──────────────────────────────────────────────
     def _submit(self, action) -> None:
         ev = self.eng.submit_turn(action, self.ai.choose_action(self.eng))
@@ -234,12 +265,25 @@ class BattleScene(Scene):
                                 foe.level, trainer=not self.wild,
                                 winner_level=winner.level)
             self._award_evs(winner.state, foe.state.species.ev_yield)
-            res = gain_exp(winner.state, self.game.data, amount)
+            st = winner.state
+            pre_frac = self._exp_frac(st)           # bar position before gain
+            res = gain_exp(st, self.game.data, amount)
             self._say_page([f"{winner.name} gained {amount} EXP!"])
-            if res["levels"]:
-                self.game.audio.play_sfx("level_up")
-            for lvl in res["levels"]:
-                self._say_page([f"{winner.name} grew to Lv{lvl}!"])
+            if not res["levels"]:
+                # No level-up: bar drifts from old position to new position.
+                self.steps.append({"kind": "exp", "from": pre_frac,
+                                   "to": self._exp_frac(st)})
+            else:
+                # One or more level-ups: bar fills to 100%, then a blue glow
+                # plays (with the SFX), then the level-up text, then the bar
+                # refills from 0 for the next level (or to the final position).
+                self.steps.append({"kind": "exp", "from": pre_frac, "to": 1.0})
+                for i, lvl in enumerate(res["levels"]):
+                    self.steps.append({"kind": "levelup"})   # glow + SFX
+                    self._say_page([f"{winner.name} grew to Lv{lvl}!"])
+                    last = i == len(res["levels"]) - 1
+                    self.steps.append({"kind": "exp", "from": 0.0,
+                                       "to": self._exp_frac(st) if last else 1.0})
             for mid in res["moves"]:
                 self._say_page([f"{winner.name} learned "
                                 f"{self.game.data.move(mid).name}!"])
@@ -674,6 +718,10 @@ class BattleScene(Scene):
                 else cur + (tgt - cur) * HP_LERP
         if self.anim:
             self.anim["t"] += 1
+            if self.anim["type"] == "exp_fill":
+                a = self.anim
+                progress = min(1.0, a["t"] / a["dur"])
+                self.disp_exp_frac = a["from"] + (a["to"] - a["from"]) * progress
             if self.anim["t"] >= self.anim["dur"]:
                 kind = self.anim["type"]
                 if kind == "faint":
@@ -683,6 +731,8 @@ class BattleScene(Scene):
                     self.ball_pos = self._ball_rest()
                 elif kind == "catch_break":
                     self.foe_absorbed = False          # foe pops back out
+                elif kind == "exp_fill":
+                    self.disp_exp_frac = self.anim["to"]  # snap to final
                 self.anim = None
         if self.mode != "anim":
             return
@@ -703,8 +753,8 @@ class BattleScene(Scene):
             s = self.cur["side"]
             return (abs(self.disp_hp[s] - self.hp_target[s]) < HP_SNAP
                     and self.flash[s] == 0)
-        if k in ("faint", "throw", "catch_throw", "catch_shake",
-                 "catch_click", "catch_break"):
+        if k in ("faint", "throw", "exp", "levelup", "catch_throw",
+                 "catch_shake", "catch_click", "catch_break"):
             return self.anim is None
         return True
 
@@ -742,6 +792,8 @@ class BattleScene(Scene):
                              "t": 0, "dur": FAINT_DUR}
             elif kind == "send":
                 s = step["side"]
+                self.revealed[s] = True
+                self.display_mon[s] = self.eng.active(s)
                 self.faint[s] = 0.0
                 v = float(self.eng.active(s).current_hp)
                 self.disp_hp[s] = self.hp_target[s] = v
@@ -749,11 +801,22 @@ class BattleScene(Scene):
                 continue
             elif kind == "throw":
                 s = step["side"]
+                self.revealed[s] = True
+                self.display_mon[s] = self.eng.active(s)
                 self.faint[s] = 0.0
                 v = float(self.eng.active(s).current_hp)
                 self.disp_hp[s] = self.hp_target[s] = v
                 self.anim = {"type": "throw", "side": s,
                              "t": 0, "dur": THROW_DUR}
+            elif kind == "exp":
+                span = abs(step["to"] - step["from"])
+                dur = max(20, int(span * EXP_FILL_DUR))
+                self.disp_exp_frac = step["from"]
+                self.anim = {"type": "exp_fill", "t": 0, "dur": dur,
+                             "from": step["from"], "to": step["to"]}
+            elif kind == "levelup":
+                self.game.audio.play_sfx("level_up")
+                self.anim = {"type": "levelup", "t": 0, "dur": LEVELUP_DUR}
             elif kind == "catch_throw":
                 self.anim = {"type": "catch_throw", "t": 0,
                              "dur": CATCH_THROW_DUR}
@@ -983,7 +1046,9 @@ class BattleScene(Scene):
             prog = min(1.0, a["t"] / a["dur"])
         if prog >= 1.0:
             return
-        bp = self.eng.active(side)
+        if not self.revealed[side]:
+            return
+        bp = self.display_mon[side]
         dex = getattr(self.game.data.species(bp.state.species_id), "dex", None)
         img = self.game.assets.battler(bp.state.species_id, bp.name,
                                        dex=dex, back=(side == P1))
@@ -1007,10 +1072,28 @@ class BattleScene(Scene):
         if alpha < 255:
             img = img.copy()
             img.fill((255, 255, 255, alpha), special_flags=pygame.BLEND_RGBA_MULT)
+        # Level-up glow: blue radial rings that pulse in then out (player only).
+        if a and a.get("type") == "levelup" and side == P1:
+            progress = a["t"] / max(1, a["dur"])
+            glow_alpha = int(200 * math.sin(math.pi * progress))
+            if glow_alpha > 0:
+                cx = x + SPRITE_PX // 2
+                cy = y + SPRITE_PX // 2
+                glow_w = SPRITE_PX * 3
+                glow = pygame.Surface((glow_w, glow_w), pygame.SRCALPHA)
+                gc = glow_w // 2
+                for i, r_frac in enumerate((0.65, 0.85, 1.05)):
+                    radius = int(SPRITE_PX * r_frac)
+                    ring_a = max(0, glow_alpha >> i)   # halve alpha each ring out
+                    pygame.draw.circle(glow, (80, 150, 255, ring_a),
+                                       (gc, gc), radius, max(1, 3 * S))
+                surf.blit(glow, (cx - gc, cy - gc))
         surf.blit(img, (x, y))
 
     def _draw_info(self, surf, side, rect, *, numbers: bool = False) -> None:
-        bp = self.eng.active(side)
+        if not self.revealed[side]:
+            return
+        bp = self.display_mon[side]
         draw_box(surf, rect)
         font = self.game.assets.font
         surf.blit(font.render(f"{bp.name}  Lv{bp.level}", True, TEXT),
@@ -1028,15 +1111,9 @@ class BattleScene(Scene):
             surf.blit(font.render(
                 f"{max(0, int(round(self.disp_hp[side])))}/{bp.max_hp}",
                 True, TEXT), (rect.x + 6 * S, rect.y + 24 * S))
-            # EXP progress bar (player side only)
-            st = bp.state
-            if st.level < 100:
-                exp_at  = exp_total(st.species.growth_rate, st.level)
-                exp_nxt = exp_total(st.species.growth_rate, st.level + 1)
-                exp_frac = max(0.0, min(1.0,
-                    (st.exp - exp_at) / max(1, exp_nxt - exp_at)))
-            else:
-                exp_frac = 1.0
+            # EXP progress bar (player side only) — uses the animated display
+            # position so the bar fills smoothly rather than snapping on gain.
+            exp_frac = self.disp_exp_frac
             exp_bar = pygame.Rect(rect.x + 6 * S, rect.y + 36 * S,
                                   rect.width - 12 * S, 3 * S)
             pygame.draw.rect(surf, (50, 58, 80), exp_bar, border_radius=S)
