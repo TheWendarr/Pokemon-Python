@@ -9,28 +9,37 @@ the factual record of the v1 engine and is retained — those subsystems are
 the modular foundation parity is built on. What the new direction adds,
 architecturally:
 
-- **An event runtime** joins the battle engine as a first-class subsystem.
-  Today's `pkmn/game/script.py` is a flat JSON interpreter; it grows into a
-  runtime with integer variables, self-switches, common events,
-  autorun/parallel triggers, move routes, and control flow — kept
-  pure-where-possible and driven the same way the battle engine is (data in,
-  effects/events out), and exposed through a Python authoring API as well as
-  data.
-- **The map model gains layers.** The pytmx wrapper and `World` move from a
-  single composited ground layer to multiple layers with per-tile draw
-  priority, configurable tile size, autotiles, and directional passability.
-- **The save schema and `GameState`** extend to persist variables and
-  self-switches alongside today's flags/money/party/box.
-- **The battle engine gains multiple active slots** for double/triple/
-  rotation formats — extended from the inside, preserving purity (no game
-  state imported).
-- **Extension seams become supported.** A content folder may register custom
-  commands and systems against stable interfaces; the engine is designed to
-  be extended, not forked.
+**Done (Phases 7–9):**
 
-Every one of these lands behind the existing invariants: it goes into
-`pkmn/game/contract.py` first ("if it lints, it runs"), ships behind a
-feature flag and a stable interface, and adds no region literal to core.
+- **Event VM** (`pkmn/game/script.py`): promoted from a flat JSON interpreter
+  to a compiled, IP-based VM with integer variables, self-switches, multi-page
+  conditional events, autorun/parallel triggers, move routes, and full control
+  flow — exposed through a Python authoring API (`pkmn/game/events.py`) and a
+  `register_command` extension seam. Save schema v2 persists variables and
+  self-switches alongside flags/money/party/box/badges.
+- **Layered maps** (`pkmn/game/tilemap.py`): multiple tile layers with per-tile
+  draw priority (`over`), configurable tile size, autotile rendering (interior
+  + animation), and directional/partial passability (`block_<dir>` flags).
+- **Badges, HM gating, field moves**: `GameState.badges`, `give_badge` script
+  command, badge/visited conditions, `FlyScene`, `visited_maps`, Rock Smash,
+  Waterfall, Headbutt, Flash, and the `dark_cave` overlay.
+- **Multi-method encounters**: per-method tables (land/surf/old_rod/good_rod/
+  super_rod/rock_smash/headbutt/cave), surf rolls while surfing, fishing on
+  A-press.
+- **Rich trainer parties**: full per-mon specs (IVs/EVs/nature/ability/moves/
+  item) alongside the compact string format.
+- **Extension seams**: `register_command` lets a content folder add custom
+  script commands without forking the engine.
+
+**Planned (Phase C):**
+
+- **Multi-active battles**: generalize `active_idx[side]` → an active-slot
+  list; parameterize `_do_move` for target(s); add spread moves, ally/
+  redirection, per-slot faints, and doubles UI. See `docs/PhaseProgress.md`.
+
+All additions go into `pkmn/game/contract.py` first ("if it lints, it runs"),
+ship behind a feature flag and a stable interface, and add no region literal
+to core.
 
 ## Why a rewrite
 
@@ -110,15 +119,6 @@ Known simplifications (documented so they're decisions, not surprises):
 * Run/item/switch ordering uses fixed category priorities (run > item >
   switch > moves) rather than per-gen edge cases like Pursuit.
 
-## Phase 2 hook points
-
-* `BattleEngine.crit_chance_for` — Focus Energy, Scope Lens, Super Luck.
-* `_end_of_turn` — weather, Leftovers, hazard bookkeeping.
-* `HANDLERS` registry — two-turn moves, counters, field effects.
-* `BattlePokemon` — held-item slot and ability triggers.
-* `MoveData.flags` already carries PokeAPI flags (`contact`, `protect`,
-  `defrost`, ...) for ability/item interactions.
-
 ## Phase 2 additions
 
 * **`pkmn/battle/passives.py`** — every ability and held-item hook in
@@ -139,8 +139,9 @@ Known simplifications (documented so they're decisions, not surprises):
 
 ### Documented simplifications
 * Attract ignores gender (genders aren't modeled yet) and always takes.
-* Baton Pass sends a random able bench member (a client will prompt in
-  Phase 3); stages and passable volatiles carry over, hazards apply.
+* Baton Pass sends a random able bench member (replacement prompt is a UI
+  nicety deferred to a later pass); stages and passable volatiles carry
+  over, hazards apply.
 * Mud/Water Sport last 5 turns instead of "while the user is active".
 * Weather moves ignore the duration-extending rocks (Damp Rock etc.).
 * Sleep counters tick on failed move attempts, not elapsed turns.
@@ -153,7 +154,8 @@ Known simplifications (documented so they're decisions, not surprises):
   headless in CI.
 * **`tilemap.py`** — pytmx wrapper exposing the gameplay queries
   (blocked / tall grass via tile properties; warps, NPCs, signs, spawn
-  via the object layer). Maps remain ordinary Tiled files.
+  via the object layer). Maps remain ordinary Tiled files. Extended in
+  Phase 7 to support multiple layers, autotiles, and directional passability.
 * **`overworld.py`** — grid movement with pixel interpolation, NPC
   collision + interaction, warp handling, encounter rolls.
 * **`battle_scene.py`** — a state machine (msg/menu/moves/bag/party)
@@ -198,12 +200,10 @@ reference, making it CI-able alongside `pkmn.cli.coverage`.
 
 ## Phase 4 additions (events & scripting)
 
-* **`pkmn/game/script.py`** — a tiny interpreter over JSON command
-  lists. It runs commands until one needs a scene (dialogue, battle,
-  NPC walk), yields, and the overworld resumes it on scene pop;
-  `if_flag` splices its branch into the queue so conditionals nest.
-  Battle steps gate everything after them on victory, and apply prize
-  money / defeat flags on resume.
+* **`pkmn/game/script.py`** — initially a flat JSON interpreter; later
+  promoted to a compiled event VM in Phase 8 (see below). The Phase 4
+  additions established the trigger/cutscene model, trainer battle wiring,
+  and the yield/resume pattern the VM builds on.
 * **Triggers** — Tiled objects (`trigger`) fire scripts on step-on or
   map entry, each gated by `unless_flag`; trainers (`trainer` objects)
   carry party specs ("snivy:8|patrat:5"), sight range, prize, defeat
@@ -232,8 +232,8 @@ reference, making it CI-able alongside `pkmn.cli.coverage`.
   party, PC box, bag, money, flags, vars, self-switches, badges,
   visited_maps, and location through one JSON file (`pkmn/game/save.py`,
   atomic via `os.replace`). The flag store from Phase 4 is what makes
-  world progress save for free; `badges` and `visited_maps` (Phase D)
-  extend the same pattern.
+  world progress save for free; `badges` and `visited_maps` extend the
+  same pattern.
 * **`pkmn/game/menus.py`** — pause/party/summary/bag/PC scenes on the
   same translucent scene-stack pattern as dialogs; the PC refuses to
   deposit your last able Pokemon.
@@ -277,6 +277,76 @@ reference, making it CI-able alongside `pkmn.cli.coverage`.
 * **`examples/triad/`** — the showcase: 6 maps, 8 trainers (held items
   included), 3 shops, weather routes, a gift-Pokemon choice, a roadblock
   NPC on `visible_unless`, and a doubly flag-gated finale.
+
+## Phase 7 additions (map & rendering parity)
+
+* **Multiple tile layers** — `TileMap` loads all layers and composites them in
+  order; `over`-flagged tiles draw above the player sprite (tree canopies,
+  roofs, bridges, second-floor overpasses).
+* **Configurable tile size** — `tilewidth` is read from the `.tmx` rather than
+  hard-coded; `examples/kanto_frlg` uses 32×32 tiles.
+* **Autotile rendering** — interior-fill autotiles animate via `frames` metadata
+  (water shimmer, etc.). Full 47-piece edge-blending is deferred as cosmetic.
+* **Directional / partial passability** — `block_<dir>` tile flags gate movement
+  by crossing direction (counters you can talk over, one-way fences, cliff
+  edges). `ledge_<dir>` tiles produce two-tile hops.
+* **`tools/rmxp2kanto.py`** — converts RMXP/Essentials PBS + TMX data to the
+  engine's format, emitting autotile frames, per-method encounter tables, and
+  directional flags.
+
+## Phase 8 additions (event VM)
+
+* **Compiled IP-based VM** (`pkmn/game/script.py`) — scripts compile to an
+  instruction list; the runner holds an instruction pointer that yields to
+  scenes and resumes when they pop.
+* **Variables and self-switches** — integer `vars` and per-event boolean
+  `self_switches` are first-class state types alongside flags; all three persist
+  in saves (schema v2).
+* **Multi-page conditional events** — a script id may resolve to
+  `{"pages": [...]}` where each page has a `when` condition; the runtime
+  activates the last page whose condition holds. The backbone of one-shot NPCs,
+  gym puzzles, and branching dialogue.
+* **Autorun / parallel triggers** — `when: "autorun"` locks the player and runs
+  once the scene activates; `when: "parallel"` ticks each frame without blocking
+  input. Both are deferred to scene activation so autoruns never fire during a
+  warp transition.
+* **Move routes** — the `move_route` script command walks an NPC along a path
+  using the same pixel-interpolation machinery as the player.
+* **General condition object** — `if` / `while` / event pages share one schema:
+  `{"flag":...}`, `{"var":..., "op":..., "value":...}`, `{"self_switch":...}`,
+  `{"badge":...}`, `{"visited":...}`, `{"not":...}`, `{"all":[...]}`,
+  `{"any":[...]}`.
+* **Python authoring API** (`pkmn/game/events.py`) — the `Event` builder and
+  `page()` helper produce valid VM programs without writing raw JSON.
+* **`register_command` seam** — a content folder registers custom commands
+  against the VM without forking engine code.
+
+## Phase 9 additions (game systems & field moves)
+
+* **Badges + HM gating** — `GameState.badges: set`, `give_badge` script command,
+  `{"badge": name}` / `{"badge_count": n}` conditions, and `BadgesScene`
+  pause-menu entry (opt-in `"badges"` feature).
+* **Expanded capability flags** — `can_rock_smash`, `can_flash`, `can_waterfall`,
+  `can_dive`, `can_fly`, `can_headbutt`, `can_strength` added to `contract.py`
+  and `GameState`.
+* **Field moves** — Rock Smash (clears `rock_smash` tiles like Cut), Waterfall
+  (blocks upward surf on `waterfall` tiles without `can_waterfall`), Headbutt
+  (rolls the map's `headbutt` encounter table from `headbutt_tree` tiles), Flash
+  (halves encounter rate; lifts the `dark_cave` overlay).
+* **Fly / Town Map** — `FlyScene` lists maps that declare a `fly_name` property
+  and warps the player to the chosen one (opt-in `"fly"` feature; requires
+  `can_fly`).
+* **`visited_maps`** — `GameState.visited_maps: set` tracks entered maps and
+  persists in saves; powers the `{"visited": map_id}` condition.
+* **Map metadata** — `heal_point`, `escape_point`, `dark_cave`, `fly_name` added
+  to `MAP_PROPS` and `contract.py`.
+* **Multi-method encounters** — per-method tables (land/surf/old_rod/good_rod/
+  super_rod, plus rock_smash/headbutt/cave in the schema); surf rolls while
+  surfing; fishing on A-press facing water.
+* **Rich trainer parties** — battle parties accept a full per-mon list
+  (IVs/EVs/nature/ability/moves/item) alongside the compact string format.
+* **EV yield** — species `effort` data wired through `pkmn/datagen/fetch.py`;
+  EVs awarded on knockout, capped per stat.
 
 ## Gen 5 sprites (cached)
 
@@ -372,9 +442,9 @@ crisp. Headless mode renders the canvas 1:1 so tests are unaffected.
 `ENGINE_VERSION`, tile flags (`blocked`, `grass`, `surf`, `cuttable`,
 `rock_smash`, `waterfall`, `headbutt_tree`, ledges, directional blocks),
 per-map properties (`weather`, `encounter_chance`, the `connect_*`/`offset_*`
-seamless metadata, `border`, plus Phase-D additions `heal_point`,
-`escape_point`, `dark_cave`, `fly_name`), the object types and their property
-keys, the script-command set (`give_badge` added in Phase D), the weather
+seamless metadata, `border`, `heal_point`, `escape_point`, `dark_cave`,
+`fly_name`), the object types and their property keys, the script-command set
+(including `give_badge`, `set_var`, `add_var`, `set_self_switch`), the weather
 names, reserved `CAPABILITY_FLAGS` (`can_surf`, `can_cut`, `can_rock_smash`,
 `can_flash`, `can_waterfall`, `can_dive`, `can_fly`, `can_headbutt`,
 `can_strength`), and the manifest `FEATURES`/`SETTINGS` key sets (so the

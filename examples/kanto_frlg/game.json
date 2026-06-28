@@ -1,6 +1,6 @@
 {
  "engine_version": 2,
- "name": "Kanto (converted from JohtoBlaziken FRLG bootleg)",
+ "name": "Kanto JohtoBlaziken",
  "start": {
   "map": "m002_lappet_town",
   "tile": [
