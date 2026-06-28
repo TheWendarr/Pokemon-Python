@@ -46,8 +46,8 @@ from ..battle.events import E
 from ..battle.state import (CatchAction, ItemAction, MoveAction, P1, P2,
                             RunAction, SwitchAction)
 from ..cli.battle_demo import format_event
-from ..core.experience import battle_exp
-from ..core.pokemon import evolve, gain_exp
+from ..core.experience import battle_exp, exp_total
+from ..core.pokemon import gain_exp
 from .config import (A, B, DOWN, LEFT, LOGICAL_H, LOGICAL_W, RIGHT, SCALE as S,
                      SPRITE_PX, UP)
 from .dialog import BOX_BORDER, TEXT, draw_box, wrap_chunks
@@ -273,6 +273,12 @@ class BattleScene(Scene):
             self.cursor = 0
             return
         if self.eng.over:
+            if self._pending_evos:
+                from .evolution import EvolutionScene
+                for state, target in reversed(self._pending_evos):
+                    self.game.push(EvolutionScene(self.game, state, target))
+                self._pending_evos = []
+                return    # suspended under EvolutionScene(s); resumes after pop
             self.mode = "done"
             return
         if self.eng.phase == Phase.WAITING_REPLACEMENT:
@@ -298,14 +304,12 @@ class BattleScene(Scene):
                 st.pc.append(mon)
                 self._say_page([f"{mon.nickname or mon.species_id.title()}"
                                 " was sent to the PC box."])
-        for mon, target in self._pending_evos:
-            if self.eng.winner == P1 and mon.current_hp > 0:
-                old = mon.nickname or mon.species_id.title()
-                evolve(mon, self.game.data, target)
-                self._say_page([f"What? {old} is evolving!",
-                                f"{old} evolved into "
-                                f"{mon.species_id.title()}!"])
-        self._pending_evos = []
+        # Filter to valid evos (P1 won, mon still conscious).
+        # The cutscene (EvolutionScene) handles the evolve() call and text.
+        self._pending_evos = [
+            (m, t) for m, t in self._pending_evos
+            if self.eng.winner == P1 and m.current_hp > 0
+        ]
         if self.eng.winner == P2:
             st.heal_party()
             st.map_id, st.tile, st.facing = self.game.whiteout_location()
@@ -597,7 +601,7 @@ class BattleScene(Scene):
         self._draw_ball_overlay(surf)
         self._draw_info(surf, P2, pygame.Rect(6 * S, 6 * S, 110 * S, 30 * S))
         self._draw_info(surf, P1,
-                        pygame.Rect(LOGICAL_W - 122 * S, 98 * S, 116 * S, 38 * S),
+                        pygame.Rect(LOGICAL_W - 122 * S, 98 * S, 116 * S, 41 * S),
                         numbers=True)
         rect = pygame.Rect(4 * S, LOGICAL_H - 52 * S, LOGICAL_W - 8 * S, 48 * S)
         draw_box(surf, rect)
@@ -831,3 +835,19 @@ class BattleScene(Scene):
             surf.blit(font.render(
                 f"{max(0, int(round(self.disp_hp[side])))}/{bp.max_hp}",
                 True, TEXT), (rect.x + 6 * S, rect.y + 24 * S))
+            # EXP progress bar (player side only)
+            st = bp.state
+            if st.level < 100:
+                exp_at  = exp_total(st.species.growth_rate, st.level)
+                exp_nxt = exp_total(st.species.growth_rate, st.level + 1)
+                exp_frac = max(0.0, min(1.0,
+                    (st.exp - exp_at) / max(1, exp_nxt - exp_at)))
+            else:
+                exp_frac = 1.0
+            exp_bar = pygame.Rect(rect.x + 6 * S, rect.y + 36 * S,
+                                  rect.width - 12 * S, 3 * S)
+            pygame.draw.rect(surf, (50, 58, 80), exp_bar, border_radius=S)
+            if exp_frac > 0:
+                fill = exp_bar.copy()
+                fill.width = max(1, int(exp_bar.width * exp_frac))
+                pygame.draw.rect(surf, (72, 136, 220), fill, border_radius=S)

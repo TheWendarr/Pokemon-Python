@@ -204,13 +204,15 @@ def _sfx(name, rng):
         return _seq(["c5", "g5", "c6"], 0.10, "tri")
     if name == "bump":
         return triangle(_freq("c3"), 0.06) * envelope(_n(0.06))
+    if name == "evo_done":
+        return _seq(["c5", "e5", "g5", "c6", "e6", "g6", "c7"], 0.05, "tri")
     return np.zeros(_n(0.05))
 
 
 SFX_NAMES = ("menu_move", "menu_select", "menu_back", "confirm", "hit",
              "hit_super", "hit_weak", "faint", "ball_throw", "ball_shake",
              "ball_click", "ball_break", "heal", "level_up", "low_hp",
-             "run", "save", "bump")
+             "run", "save", "bump", "evo_done")
 
 
 # ── music: chord/pattern helpers keep songs tiny to author ───────────
@@ -294,6 +296,22 @@ SONGS = {
     "heal": {"bpm": 120, "loop": False, "tracks": [
         {"inst": "tri", "vol": 0.5, "pan": 0.5,
          "notes": [("c5", 0.5), ("e5", 0.5), ("g5", 0.5), ("c6", 1.0)]}]},
+    "evolution": {"bpm": 88, "loop": False, "tracks": [
+        # Gentle ascending arpeggios, then a held resolution
+        {"inst": "tri", "vol": 0.52, "pan": 0.48,
+         "notes": (arp([("C", "maj"), ("A", "min"), ("F", "maj"), ("G", "maj"),
+                        ("C", "maj")], [0, 1, 2, 1], 5, 0.5)
+                   + [("c5", 0.5), ("e5", 0.5), ("g5", 0.5), ("c6", 2.0)])},
+        # Quiet counter-melody a third below
+        {"inst": "pulse50", "vol": 0.25, "pan": 0.52,
+         "notes": (arp([("C", "maj"), ("A", "min"), ("F", "maj"), ("G", "maj"),
+                        ("C", "maj")], [0, 2, 1, 2], 4, 0.5)
+                   + [("e4", 0.5), ("g4", 0.5), ("b4", 0.5), ("c5", 2.0)])},
+        # Warm bass
+        {"inst": "tri", "vol": 0.48, "pan": 0.5,
+         "notes": (bass([("C", "maj"), ("A", "min"), ("F", "maj"), ("G", "maj"),
+                         ("C", "maj")], 3, 1.0, 2)
+                   + [("c3", 3.0)])}]},
 }
 
 
