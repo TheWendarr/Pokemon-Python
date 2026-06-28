@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" orientation="orthogonal" renderorder="right-down" width="60" height="43" tilewidth="32" tileheight="32" infinite="0" nextobjectid="2">
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="60" height="43" tilewidth="32" tileheight="32" infinite="0" nextobjectid="11">
  <properties><property name="connect_south" value="m005_route_1" /><property name="offset_south" type="int" value="-2" /><property name="connect_west" value="m044_route_6" /><property name="offset_west" type="int" value="5" /><property name="offset_east" type="int" value="0" /><property name="connect_north" value="m021_route_2" /><property name="offset_north" type="int" value="21" /><property name="border" type="int" value="1" /></properties>
  <tileset firstgid="1" source="../tiles.tsx" />
  <layer id="1" name="ground" width="60" height="43">

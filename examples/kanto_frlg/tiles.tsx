@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset version="1.10" name="kanto_frlg" tilewidth="32" tileheight="32" tilecount="1595" columns="1595">
- <image source="tiles.png" width="51040" height="32"/>
+ <image source="tiles.png" trans="202820" width="51040" height="32"/>
   <tile id="0"><properties><property name="blocked" type="bool" value="true"/></properties></tile>
   <tile id="1"><properties><property name="blocked" type="bool" value="true"/></properties></tile>
   <tile id="2"><properties><property name="blocked" type="bool" value="true"/></properties></tile>

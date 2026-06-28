@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" orientation="orthogonal" renderorder="right-down" width="32" height="21" tilewidth="32" tileheight="32" infinite="0" nextobjectid="2">
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="32" height="21" tilewidth="32" tileheight="32" infinite="0" nextobjectid="5">
  <properties><property name="connect_north" value="m005_route_1"/><property name="offset_north" type="int" value="-4"/><property name="connect_west" value="m066_safari_zone"/><property name="offset_west" type="int" value="0"/><property name="connect_south" value="m069_route_8"/><property name="offset_south" type="int" value="-12"/><property name="border" type="int" value="1"/></properties>
  <tileset firstgid="1" source="../tiles.tsx"/>
  <layer id="1" name="ground" width="32" height="21">
@@ -79,5 +79,8 @@
  </layer>
  <objectgroup id="4" name="objects">
   <object id="1" name="spawn" x="480" y="288" width="32" height="32"><properties></properties></object>
+  <object id="2" name="warp" x="256" y="224" width="32" height="32"><properties><property name="to_map" value="m002_lappet_town_house"/><property name="to_x" type="int" value="5"/><property name="to_y" type="int" value="3"/><property name="facing" value="up"/></properties></object>
+  <object id="3" name="warp" x="544" y="224" width="32" height="32"><properties><property name="to_map" value="m002_lappet_town_house"/><property name="to_x" type="int" value="5"/><property name="to_y" type="int" value="3"/><property name="facing" value="up"/></properties></object>
+  <object id="4" name="warp" x="576" y="416" width="32" height="32"><properties><property name="to_map" value="m002_lappet_town_house"/><property name="to_x" type="int" value="5"/><property name="to_y" type="int" value="3"/><property name="facing" value="up"/></properties></object>
  </objectgroup>
 </map>
