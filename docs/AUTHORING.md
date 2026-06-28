@@ -58,7 +58,7 @@ omitting `starter` (or `"starter": null`) begins with an empty party
 map name or starter the manifest does not supply is a content error the
 lint reports, never something the engine guesses.
 
-## features and settings (all optional, all default ON)
+11## features and settings (all optional; most default ON)
 
     "features": {
       "encounters": true,        // wild battles in grass
@@ -67,7 +67,11 @@ lint reports, never something the engine guesses.
       "evolution": true,
       "move_replacement": true,  // prompt to forget a move when full
       "running": true,           // hold B to move at double speed
-      "menu_party": true, "menu_bag": true, "saving": true
+      "menu_party": true, "menu_bag": true, "saving": true,
+      "pokedex": true, "controls": true,
+      "badges": false,           // Badge display in pause menu (default OFF)
+      "fly": false               // Fly/Town Map scene in pause menu (default OFF;
+                                 //   requires can_fly flag and fly_name on maps)
     },
     "settings": {
       "encounter_chance": 8,     // 1-in-N per grass step
@@ -79,12 +83,18 @@ lint reports, never something the engine guesses.
 
 Turn systems off to ship anything from a pure narrative walking sim to
 a full RPG. Maps can override per-map values via Tiled *map properties*:
-`weather` ("rain"|"sun"|"sandstorm"|"hail" — tints the overworld and
-opens every battle there under that weather), `encounter_chance`, and
-`music` (the track name to play on that map — see Audio), and `battle_bg`
-(the battle backdrop palette — `"field"` (default), `"forest"`, `"cave"`,
-`"water"`, `"sand"`, `"snow"`, `"mountain"`, or `"indoor"`; weather still
-recolours the sky over it and the day/night tint blends on top).
+
+| map property | meaning |
+|---|---|
+| weather | `"rain"`, `"sun"`, `"sandstorm"`, or `"hail"` — tints the overworld and opens every battle under that weather |
+| encounter_chance | 1-in-N chance per grass/surf step (overrides the manifest setting) |
+| music | track name for this map |
+| battle_bg | battle backdrop: `"field"` (default), `"forest"`, `"cave"`, `"water"`, `"sand"`, `"snow"`, `"mountain"`, `"indoor"` |
+| border | GID of the tile filling unconnected edges on a seamless map |
+| heal_point | JSON `{"map": "id", "tile": [x, y]}` — whiteout respawn for this map (overrides manifest `whiteout`) |
+| escape_point | JSON `{"map": "id", "tile": [x, y]}` — Escape Rope destination for this map |
+| dark_cave | `true` — renders a pitch-black overlay with a lit radius around the player; `can_flash` lifts it and halves the encounter rate |
+| fly_name | display name shown in the Fly / Town Map scene; only maps that declare this appear as Fly destinations |
 
 **Day/night.** Phases — morning / day / evening / night — come from the
 system clock and apply a subtle tint to the overworld and the battle
@@ -105,26 +115,35 @@ optional; a tile with none is plain ground.
 | grass | tall grass — rolls a wild encounter on entry |
 | surf | water — enterable only while surfing |
 | cuttable | obstacle the player can clear with Cut (then walkable) |
+| rock_smash | boulder the player can clear with Rock Smash (then walkable) |
+| waterfall | surf tile that also blocks upward movement without can_waterfall |
+| headbutt_tree | tree that rolls the map's `headbutt` encounter table when pressed with can_headbutt |
 | ledge_down / ledge_up / ledge_left / ledge_right | one-way ledge: hop over it in that direction (a two-tile jump); blocked the other way |
+| block_down / block_up / block_left / block_right | directional partial passability: blocks movement crossing that edge only |
 
 ## Field moves and capabilities
 
-`surf` and `cuttable` tiles are gated by *capability flags* the engine
-reads from game state, granted like HMs from a script
-(e.g. an NPC with `{"set_flag": "can_surf"}`) or listed in the manifest's
-`flags`:
+Certain tile types are gated by *capability flags* the engine reads from
+game state. Grant them like HMs — from a script (`{"set_flag": "can_surf"}`)
+or by listing them in the manifest's `flags` array:
 
-- **can_surf** — lets the player step onto `surf` water (a mount appears;
-  stepping back onto land dismounts). Without it, water is impassable.
-- **can_cut** — pressing the action button while facing a `cuttable`
-  tile clears it for the session (it makes that tile walkable). Without
-  it, the obstacle stays.
+| capability | effect |
+|---|---|
+| can_surf | lets the player step onto `surf` water tiles; a surf mount renders underneath |
+| can_cut | pressing A while facing a `cuttable` tile clears it for the session |
+| can_rock_smash | pressing A while facing a `rock_smash` tile clears it for the session |
+| can_waterfall | allows upward movement onto `waterfall` tiles while surfing |
+| can_headbutt | pressing A while facing a `headbutt_tree` rolls that map's `headbutt` encounter table |
+| can_flash | halves the wild encounter rate; also illuminates `dark_cave` maps |
+| can_fly | opens the Fly / Town Map scene from the pause menu (requires `"fly": true` in features) |
+| can_strength | reserved for push-able `strength_block` boulders (tile type forthcoming) |
+| can_dive | reserved for underwater dive tiles (forthcoming) |
 
 Ledges need no capability — they are pure tile behaviour: walking into a
 `ledge_<dir>` tile while facing `<dir>` makes the player hop two tiles in
 that direction; approached from any other side it blocks. `examples/seamless`
-demonstrates all three (a ledge in *meadow*, surf water in *glade*, a
-cuttable bush in *dell*).
+demonstrates surf in *glade*, a ledge in *meadow*, a cuttable bush in *dell*,
+and Rock Smash / waterfall / headbutt_tree tiles in *rock*.
 
 ## Seamless overworld (map connections)
 
@@ -280,16 +299,17 @@ this once" backbone). All three persist in saves.
 
 **Conditions** (used by `if`, `while`, and event pages) are dicts:
 `{"flag": n}`, `{"var": n, "op": ">=", "value": k}`, `{"self_switch": "A"}`,
-`{"item": id, "qty": k}`, `{"money": k}`, `{"not": c}`, `{"all": [..]}`,
-`{"any": [..]}`.
+`{"item": id, "qty": k}`, `{"money": k}`, `{"badge": "name"}`,
+`{"badge_count": 1, "op": ">=", "value": n}`, `{"visited": "map_id"}`,
+`{"not": c}`, `{"all": [..]}`, `{"any": [..]}`.
 
 **Commands.** Dialogue/flow: `say`, `wait` (frames), `choice`, `shop`,
 `pc`, `battle`. State: `heal`, `give_item`, `give_money`, `take_money`,
-`set_flag`, `clear_flag`, `set_var`, `add_var`, `set_self_switch`,
-`clear_self_switch`, `give_pokemon`. Control flow: `if`/`then`/`else`,
-`if_flag`/`if_money`/`if_var`/`if_self_switch`, `while`/`do`, `label`,
-`goto`. World/NPC: `warp`, `move_npc`, `move_route`, `face_npc`,
-`hide_npc`, `screen`.
+`set_flag`, `clear_flag`, `give_badge`, `set_var`, `add_var`,
+`set_self_switch`, `clear_self_switch`, `give_pokemon`. Control flow:
+`if`/`then`/`else`, `if_flag`/`if_money`/`if_var`/`if_self_switch`,
+`while`/`do`, `label`, `goto`. World/NPC: `warp`, `move_npc`,
+`move_route`, `face_npc`, `hide_npc`, `screen`.
 
 `then`/`else` are top-level on `if`/`if_flag` but nested in the payload for
 `if_money`/`if_var`/`if_self_switch` (matching legacy content).

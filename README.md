@@ -88,35 +88,38 @@ Designers control everything from the manifest: feature toggles strip
 the engine down to a walking sim or up to a full RPG, starters come
 with chosen movesets, and hold B to run.
 
-**Phase 6 status: authoring toolkit.** Games are content folders: a
-`game.json` manifest plus Tiled maps, your own tileset and sprites,
-scripts, and encounter tables — a simple region needs no engine code at
-all. Run any folder with `python -m pkmn.game.play --game DIR`, validate it
-with `python -m pkmn.cli.lint --game DIR`, and see `docs/AUTHORING.md` for
-the full format. `examples/isleton` is a complete second region built only
-with the toolkit. (Toward the parity goal, this format is the *base* layer;
-a Python authoring API and a full event runtime — variables, self-switches,
-common events, move routes — are the next major track, see
-`docs/ESSENTIALS_COMPAT.md`.)
+**Phase D status: badges, field moves, Fly.** Badges are earned via
+`give_badge` script commands and checked with `{"badge": "name"}`
+conditions. Field moves — Rock Smash (clears boulders), Waterfall
+(directional surf restriction), Headbutt (tree encounters), and Flash
+(halves encounter rate, lifts dark-cave darkness) — are all gated by the
+corresponding `can_*` capability flags. The Fly / Town Map scene opens from
+the pause menu when `can_fly` is set and `"fly": true` is declared in
+features, listing every visited map that has a `fly_name` property. New
+map metadata — `heal_point`, `escape_point`, `dark_cave`, `fly_name` — is
+declared as Tiled map properties and validated by the linter.
 
-**Phase 5 status: game systems.** Press Enter for the pause menu:
-party (with summaries, order swapping, and giving/taking held items),
-bag (use medicine on any member), and save. Your team earns EXP on every knockout, levels up,
-learns moves, and evolves after battle; catches beyond six go to the
-PC box on the clinic terminal. `python -m pkmn.game.play` now resumes
-from `save.json` automatically (`--save` to change the path).
-Controls (all rebindable): arrows/WASD move, Z/Space confirm, X/Esc
-cancel, Enter for the menu, right-shift select. Remap any key in-game
-from the pause menu's CONTROLS screen (saved to `controls.json`; use
-`--controls PATH` to relocate it), or hand-edit that JSON.
+**Phase 8 status: event runtime.** Scripts are compiled to a flat instruction
+array and run by a tiny VM with integer variables, per-event self-switches,
+multi-page conditional events, `autorun`/`parallel` triggers, move routes,
+and control flow (`if`/`while`/`label`/`goto`/`wait`). Exposed as data
+*and* as a Python authoring API (`events.py`). See `docs/AUTHORING.md` for
+the full command reference, `examples/eventlab` for a worked demo. Save
+schema v2 persists variables, self-switches, badges, and visited maps.
 
-**Phase 4 status: events & scripting.** Route 1 now has a scripted
-rival ambush (Hugh and his Snivy), a line-of-sight trainer in the tall
-grass, and the Hexton clinic interior where Nurse Hazel heals via an
-event script. Game logic is data: triggers and NPCs in the Tiled maps
-reference JSON scripts (`game/assets/scripts.json`) with a small
-command set (dialogue, battles, items, money, flags, warps, NPC
-movement), and progress flags gate every trigger and dialogue branch.
+**Phase 6/7 status: authoring toolkit + rendering parity.** Games are
+content folders: a `game.json` manifest plus Tiled maps, your own tileset
+and sprites, scripts, and encounter tables. Multiple tile layers with draw
+priority, directional/partial passability, tile animation, and configurable
+tile size. Run with `python -m pkmn.game.play --game DIR`, validate with
+`python -m pkmn.cli.lint --game DIR`. See `docs/AUTHORING.md`.
+
+**Phase 5 status: game systems.** Press Enter for the pause menu: party
+(summaries, order swapping, held items), bag (medicine, Repels,
+Escape Rope), save, Pokédex, and optionally Badges + Fly. Your team earns
+EXP on every knockout, levels up, learns moves, and evolves after battle;
+catches beyond six go to the PC box. Controls (all rebindable): arrows/WASD
+move, Z/Space confirm, X/Esc cancel, Enter for the menu.
 
 **Day/night cycle.** A clock-driven cycle tints the overworld and battle
 backdrops through morning, day, evening, and night. It is configurable per

@@ -117,8 +117,11 @@ dependency that must be cleared first.
 - [ ] **Hidden Grottoes**. **M**.
 - [ ] **Fishing** — rod items + water encounter tables. **M**.
 - [ ] **Bicycle** — faster movement + bike-only terrain. **S–M**.
-- [ ] **Remaining HMs** — Fly, Strength, Waterfall, Dive, Rock Smash, Rock Climb,
-      Flash (only Surf + Cut exist today). ~**M** each.
+- [~] **Remaining HMs** — **Done (Phase D):** Fly (`FlyScene` + `fly_name`
+      map prop), Waterfall (`waterfall` tile flag), Rock Smash (`rock_smash`
+      tile flag), Flash (`dark_cave` map prop + halved encounter rate),
+      Headbutt (`headbutt_tree` tile flag). **Remaining:** Strength (pushable
+      boulders), Dive (underwater tiles), Rock Climb, Whirlpool. ~**M** each.
 - [ ] **Field-move v1 shortcuts** — cut trees should regrow on re-entry; add a
       dedicated surf sprite. **S**.
 - [ ] **Berry planting / growth over time**; **Sweet Scent / Honey** forced
@@ -131,7 +134,9 @@ dependency that must be cleared first.
 
 ## TODO — NPCs, services & progression gating
 
-- [ ] **Badges + obedience + HM field-use gating**. **M**.
+- [~] **Badges + HM field-use gating** — `give_badge` command, `{"badge": …}`
+      conditions, `BadgesScene`, all capability flags implemented (Phase D).
+      **Remaining:** battle obedience checks by badge count. **S**.
 - [ ] **Trainer rematches / Vs Seeker**. **M**.
 - [ ] **Trainer card**. **S**.
 - [ ] **PC box** — naming, wallpaper, sorting, search, multiple boxes (a single

@@ -22,19 +22,19 @@ gating the tag on it means never shipping. **This plan ships v1.0 on the
 strength of what already works, parks parity as the 1.x program, and is
 explicit about which gaps are release-blockers versus post-tag work.**
 
-## Baseline (measured this session)
+## Baseline (updated after Phase D)
 
 | Signal | Value | Tool |
 |---|---|---|
-| Test suite | 241 passed, 1 skipped (236 test fns) | `pytest -q` |
-| Example regions linting clean | 6/6 with 0 errors | `pkmn.cli.lint` |
-| `kanto_frlg` warnings | 17 (12 missing spawn, 5 one-way) | `pkmn.cli.lint` |
+| Test suite | 343 passed, 1 skipped | `pytest -q` |
+| Example regions linting clean | 6/6 with 0 errors, 0 warnings | `pkmn.cli.lint` |
+| `kanto_frlg` warnings | 0 (fixed in Phase A) | `pkmn.cli.lint` |
 | Battle effect-skip rate | 4.20% (200 battles) | `pkmn.cli.coverage` |
-| Abilities battle-implemented | 40 / 164 used (24%) | `pkmn.cli.audit` |
+| Abilities battle-implemented | 85 / 164 used (~52%) | `pkmn.cli.audit` |
 | Held-item battle effects | 11 / 678 items | `pkmn.cli.audit` |
 | Battle active slots | 1 (single-active) | `pkmn/battle/engine.py` |
-| Title / new-game shell | none (boots into overworld) | — |
-| EV-yield data | absent; **mirror reachable** | `datagen` / GitHub CSV |
+| Title / new-game shell | ✅ `TitleScene` (Phase A) | — |
+| EV-yield data | ✅ all 649 species (Phase A) | `datagen` |
 
 ---
 
@@ -155,13 +155,18 @@ non-regression contract is the whole point).
 Post-1.0, open-ended; ship incrementally. From `ESSENTIALS_COMPAT.md`
 Tiers 3–4 and `GEN5_GAPS.md`, in dependency order:
 
-- **Badges + HM field gating** *(M)* → unblocks the field-move set.
-- **Remaining HM/field moves** (Strength, Rock Smash, Headbutt already have
-  encounter hooks; Fly needs Town Map; Waterfall/Dive/Flash) *(~M each)*.
-- **Town Map / Fly data** *(M)* and richer map metadata (heal/escape
-  points, dark-cave) *(S)*.
-- **Importer promotion** — `.rxdata` map+event parsing, tileset
-  terrain/passage mapping, full PBS ingestion with ID normalization *(L)*.
+- ✅ **Badges + HM field gating** — `give_badge` command, `{"badge": …}`
+  conditions, `BadgesScene`, `visited_maps` tracking, all capability flags.
+- ✅ **Field moves** — Rock Smash, Waterfall, Headbutt, Flash, dark-cave
+  rendering; Fly / Town Map (`FlyScene`).
+- ✅ **Richer map metadata** — `heal_point`, `escape_point`, `dark_cave`,
+  `fly_name` in `MAP_PROPS`.
+- **Strength** *(M)* — push-able `strength_block` boulders; needs
+  per-session per-map boulder-position state (deferred).
+- **Dive** *(M)* — underwater tiles and map-pair linking (deferred; needs
+  map-model support for depth layers).
+- **Importer promotion** *(L)* — `.rxdata` map+event parsing, tileset
+  terrain/passage mapping, full PBS ingestion with ID normalization.
   This is the parity oracle: when a clean full Essentials project
   round-trips and plays, parity is reached.
 - **Long tail** — breeding, move relearner/deleter/tutors, reusable TMs,

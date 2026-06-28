@@ -148,11 +148,12 @@ the full suite is green and `examples/eventlab` lints 0/0 and plays.
   teams; vision + intro/defeat/after text already exist. **Remaining:** an
   explicit AI level, held-item use in AI, rematches, and the doubles flag
   (the last waits on multi-active battles). **L**
-- [ ] **EV yield from battle** — award foe effort values (cap 252/stat,
-  510 total). BLOCKED on an `effort`/`ev_yield` data pull in `datagen`.
-  Wiring is **S** once data exists.
-- [ ] **Badges + badge-gated mechanics** — obedience, HM field gating,
-  stat boosts. **M**
+- [x] **EV yield from battle** — `ev_yield` on all 649 species (Phase A);
+  awarded on knockout, capped 252/stat and 510 total.
+- [~] **Badges + badge-gated mechanics** — `give_badge` command,
+  `{"badge": …}`/`{"badge_count": …}` conditions, `BadgesScene` in the pause
+  menu (Phase D). **Remaining:** obedience checks (HM field gating exists,
+  battle obedience by badge count deferred). **S** remaining.
 - [x] **Multi-method encounters** — per-method tables
   (`{map: {method: [...]}}`, back-compat with the legacy flat list):
   **land**, **surf** (rolled while surfing), **old/good/super rod**
@@ -162,10 +163,14 @@ the full suite is green and `examples/eventlab` lints 0/0 and plays.
   surfs with the bootleg's real Kanto water rosters (Tentacool, Magikarp,
   Staryu, …). *Thin:* day/night & season variants, and the `rock_smash`/
   `headbutt` field *triggers*, ride on the remaining field moves below.
-- [ ] **Remaining HM/field moves** — Strength (pushable boulders → needs
-  variables + pushable events), Flash (cave light radius), Fly (needs Town
-  Map), Dig, Waterfall, Dive, Rock Smash, Headbutt, Whirlpool. Surf + Cut
-  exist. ~**M** each.
+- [~] **Remaining HM/field moves** — **Done (Phase D):** Rock Smash
+  (`rock_smash` tile flag, clears boulders like Cut), Waterfall (`waterfall`
+  flag, blocks upward surf without `can_waterfall`), Headbutt (`headbutt_tree`
+  flag, rolls encounter table), Flash (`can_flash` halves encounter rate,
+  lifts `dark_cave` overlay), Fly (`FlyScene` lists visited maps with
+  `fly_name`). **Remaining:** Strength (pushable boulders — needs per-map
+  boulder-position state), Dive (underwater depth layer), Dig (warp to last
+  outdoor map), Whirlpool, Bicycle terrain. ~**M** each.
 - [ ] **Bike** (speed + cycling-only terrain) and **Escape Rope** polish.
   **S–M**
 - [ ] **Breeding, move relearner/deleter/tutors, reusable TMs, nicknaming,
@@ -182,11 +187,12 @@ the full suite is green and `examples/eventlab` lints 0/0 and plays.
 *Glue, metadata, and the importer that makes "run the files" near-
 mechanical.*
 
-- [ ] **Town Map / region data** for Fly destinations and "you are here."
-  **M**
-- [ ] **Richer map metadata** — healing/escape points, dark-cave flag,
-  bicycle-allowed, dungeon flag (some already exist: weather, battle_bg,
-  day/night). **S**
+- [~] **Town Map / Fly data** — `FlyScene` lists visited maps that declare a
+  `fly_name` property (Phase D). **Remaining:** graphical Town Map overlay
+  showing region geography. **M**
+- [~] **Richer map metadata** — `heal_point`, `escape_point`, `dark_cave`,
+  `fly_name` added to `MAP_PROPS` (Phase D). **Remaining:** bicycle-allowed
+  flag, dungeon flag. **S**
 - [ ] **A first-class PBS / RMXP importer** — promote the converter to a
   supported tool: `.rxdata` map + event parsing, `Tilesets.rxdata`
   terrain/passage mapping, and PBS ingestion (species/move/item/ability/

@@ -147,13 +147,25 @@ schema), with surf rolls while surfing and fishing on A-press facing water;
 the RMXP importer emits every PBS method, so the converted Kanto game fishes
 and surfs with authentic water rosters. **Rich trainer parties** — battle
 parties accept a full per-mon list (IVs/EVs/nature/ability/moves/item)
-alongside the compact string. (`tests/test_encounters_methods.py`,
-`tests/test_trainerspec.py`; full suite green; all examples lint clean.)
+alongside the compact string. (**Phase D:**) **Badges + HM field gating** —
+`GameState.badges: set`, `give_badge` script command, `{"badge": …}`
+/`{"badge_count": …}`/`{"visited": …}` conditions; `BadgesScene` pause menu
+entry (opt-in feature). **Expanded capability flags** — `can_rock_smash`,
+`can_flash`, `can_waterfall`, `can_dive`, `can_fly`, `can_headbutt`,
+`can_strength` added to contract + `GameState`. **Field moves** — Rock Smash
+(clears `rock_smash` boulders like Cut), Waterfall (directional surf
+restriction on `waterfall` tiles), Headbutt (rolls `headbutt` encounter table
+from `headbutt_tree` tiles), Flash (halves encounter rate; lifts `dark_cave`
+overlay). **Fly / Town Map** — `FlyScene` lists visited maps with `fly_name`
+prop and warps to the chosen one (opt-in `"fly"` feature). **Map metadata** —
+`heal_point`, `escape_point`, `dark_cave`, `fly_name` added to `MAP_PROPS`
+and `contract.py`. **visited_maps** — `GameState.visited_maps: set`
+serialized in saves. (`tests/test_phase_d.py`: 23 tests; full suite 343
+passed, 1 skipped; all examples lint 0/0.)
 
-*Remaining, in order:* trainer AI level + rematches + EV yield (the last
-blocked on an `ev_yield` datagen pull); badges + HM field gating; the
-remaining HM/field moves (Strength/Rock Smash/Headbutt now have encounter
-hooks waiting on the move); Bike.
+*Remaining, in order:* trainer AI level + rematches + EV yield; Strength
+(push-able boulders need persistent per-map state); Bike; Dive (needs
+underwater maps in the map model).
 
 *The XL piece — double / triple / rotation battles.* The pure engine is
 single-active: `active(side)` is one slot and `_do_move` reads the defender

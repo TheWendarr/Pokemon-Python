@@ -229,9 +229,11 @@ reference, making it CI-able alongside `pkmn.cli.coverage`.
   auto-skips when all four slots are full (replacement prompt is a UI
   nicety for later).
 * **Persistence** — `GameState.to_dict()/from_dict()` round-trips the
-  party, PC box, bag, money, flags, and location through one JSON file
-  (`pkmn/game/save.py`, atomic via os.replace). The flag store from
-  Phase 4 is what makes world progress save for free.
+  party, PC box, bag, money, flags, vars, self-switches, badges,
+  visited_maps, and location through one JSON file (`pkmn/game/save.py`,
+  atomic via `os.replace`). The flag store from Phase 4 is what makes
+  world progress save for free; `badges` and `visited_maps` (Phase D)
+  extend the same pattern.
 * **`pkmn/game/menus.py`** — pause/party/summary/bag/PC scenes on the
   same translucent scene-stack pattern as dialogs; the PC refuses to
   deposit your last able Pokemon.
@@ -367,17 +369,21 @@ crisp. Headless mode renders the canvas 1:1 so tests are unaffected.
 ## The content contract (`pkmn/game/contract.py`)
 
 `contract.py` is the single authority for what a region may contain: the
-`ENGINE_VERSION`, the tile flags (`blocked`, `grass`), the per-map
-properties (`weather`, `encounter_chance`, the `connect_*`/`offset_*`
-seamless metadata, `border`), the object types and their property keys,
-the script-command set, and the weather names. Both the runtime and the
-linter import these constants, so the validator and the engine cannot
-drift — a duplicated `COMMANDS` set in the linter was the smell this
-removed. `Game` checks the manifest's `engine_version` on load (a region
-targeting a newer engine is refused with a clear message), and
-`pkmn.cli.lint` rejects unknown flags/objects/commands and bad versions
-in addition to its referential checks, making "if it lints, it runs" a
-real guarantee.
+`ENGINE_VERSION`, tile flags (`blocked`, `grass`, `surf`, `cuttable`,
+`rock_smash`, `waterfall`, `headbutt_tree`, ledges, directional blocks),
+per-map properties (`weather`, `encounter_chance`, the `connect_*`/`offset_*`
+seamless metadata, `border`, plus Phase-D additions `heal_point`,
+`escape_point`, `dark_cave`, `fly_name`), the object types and their property
+keys, the script-command set (`give_badge` added in Phase D), the weather
+names, reserved `CAPABILITY_FLAGS` (`can_surf`, `can_cut`, `can_rock_smash`,
+`can_flash`, `can_waterfall`, `can_dive`, `can_fly`, `can_headbutt`,
+`can_strength`), and the manifest `FEATURES`/`SETTINGS` key sets (so the
+linter catches typo'd toggle names). Both the runtime and the linter import
+these constants, so the validator and the engine cannot drift. `Game` checks
+the manifest's `engine_version` on load (a region targeting a newer engine is
+refused with a clear message), and `pkmn.cli.lint` rejects unknown
+flags/objects/commands and bad versions in addition to its referential checks,
+making "if it lints, it runs" a real guarantee.
 
 ## Seamless overworld (`World` in `tilemap.py`)
 

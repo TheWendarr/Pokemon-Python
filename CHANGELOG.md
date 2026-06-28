@@ -34,6 +34,50 @@
 
 ---
 
+## Phase D — Badges, field moves, Fly, map metadata
+
+### Added
+- **Badge system** — `GameState.badges: set`; `give_badge` script command;
+  `{"badge": "name"}`, `{"badge_count": n, "op": ..., "value": n}`, and
+  `{"visited": "map_id"}` conditions in `eval_condition`. `BadgesScene`
+  in the pause menu (opt-in via `"badges": true` in `features`).
+- **Expanded capability flags** — `can_rock_smash`, `can_flash`,
+  `can_waterfall`, `can_dive`, `can_fly`, `can_headbutt`, `can_strength`
+  added to `CAPABILITY_FLAGS` in `contract.py` and as `@property` shortcuts
+  on `GameState`.
+- **Rock Smash** — `rock_smash` tile flag; pressing A while facing one clears
+  the boulder (per-session, like Cut) when `can_rock_smash` is set. A
+  `smashed` set on `TileMap` tracks cleared boulders; cleared tiles are hidden
+  in rendering.
+- **Waterfall** — `waterfall` tile flag (a surf tile that blocks upward
+  movement without `can_waterfall`). `_walkable_dir` extends `_walkable` with
+  a direction parameter to enforce the directional restriction.
+- **Headbutt** — `headbutt_tree` tile flag; pressing A while facing one rolls
+  the map's `headbutt` encounter table (50% chance) when `can_headbutt` is
+  set; without the capability a dialogue fires.
+- **Flash / dark cave** — `dark_cave` map property; when set and `can_flash`
+  is not in flags, a pitch-black radial overlay renders around the player.
+  `can_flash` also halves the encounter rate while active.
+- **Fly / Town Map** — `FlyScene` (opt-in via `"fly": true` in `features`)
+  opens from the pause menu when `can_fly` is set; lists visited maps that
+  declare a `fly_name` map property and warps to the selected one.
+- **`visited_maps`** — `GameState.visited_maps: set` accumulates every
+  `map_id` passed to `load_map`; serialized in saves; tested by the
+  `{"visited": …}` condition.
+- **New map properties** — `heal_point`, `escape_point` (JSON
+  `{map, tile}` overrides for whiteout/Escape Rope), `dark_cave` (bool),
+  `fly_name` (display name for Fly) — all added to `MAP_PROPS` in
+  `contract.py`.
+- **seamless example updated** — tileset extended with `rock_smash` (GID 9),
+  `waterfall` (GID 10), and `headbutt_tree` (GID 11) tiles; `rock.tmx` demo
+  map; `game.json` grants all new capabilities and enables `badges`/`fly`.
+- **23 new tests** in `tests/test_phase_d.py` covering every new system.
+
+### Test suite
+343 passed, 1 skipped (baseline before Phase D: 320 passed, 1 skipped).
+
+---
+
 ## Phase 8 — Event runtime  (core complete)
 
 Compiled IP-based event VM: integer variables + arithmetic, per-event
