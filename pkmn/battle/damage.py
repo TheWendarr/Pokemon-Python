@@ -49,6 +49,11 @@ def calc_damage(data, attacker, defender, move, *, rng, crit: bool = False,
     if crit:
         a_stage = max(0, a_stage)
         d_stage = min(0, d_stage)
+    # Unaware: ignore the opponent's relevant stat stages
+    if passives.abil(attacker) == "unaware":
+        d_stage = 0   # ignore defender's defense/sp.defense boost when attacking
+    if passives.abil(defender) == "unaware":
+        a_stage = 0   # ignore attacker's attack/sp.attack boost when defending
     A = int(attacker.stats[a_key] * stage_multiplier(a_stage))
     A = int(A * passives.attack_stat_mod(attacker, move))
     D = max(1, int(defender.stats[d_key] * stage_multiplier(d_stage)))
@@ -62,6 +67,9 @@ def calc_damage(data, attacker, defender, move, *, rng, crit: bool = False,
 
     if crit:
         dmg *= 2
+    # Sniper: crits do 2.25× (extra ×1.5 on top of the ×2 above)
+    if crit and passives.abil(attacker) == "sniper":
+        dmg = dmg * 3 // 2
 
     r = rng.randint(85, 100)
     dmg = dmg * r // 100
@@ -113,7 +121,20 @@ def accuracy_check(move, attacker, defender, *, rng,
     # Wonder Skin: non-damaging moves targeting defender have 50% accuracy
     if passives.abil(defender) == "wonder-skin" and not move.is_damaging:
         acc = min(acc, 50)
-    stage = max(-6, min(6, attacker.stages[ACCURACY] - defender.stages[EVASION]))
+    # Keen Eye: ignore foe's positive evasion stages
+    ev_stage = defender.stages[EVASION]
+    if passives.abil(attacker) == "keen-eye":
+        ev_stage = min(0, ev_stage)   # only negative evasion counts
+    # Snow Cloak: +1 effective evasion stage in hail
+    if weather == "hail" and passives.abil(defender) == "snow-cloak":
+        ev_stage = min(6, ev_stage + 1)
+    # Sand Veil: +1 effective evasion stage in sandstorm
+    if weather == "sandstorm" and passives.abil(defender) == "sand-veil":
+        ev_stage = min(6, ev_stage + 1)
+    # Tangled Feet: +2 effective evasion when holder is confused
+    if passives.abil(defender) == "tangled-feet" and defender.vol.confusion_turns > 0:
+        ev_stage = min(6, ev_stage + 2)
+    stage = max(-6, min(6, attacker.stages[ACCURACY] - ev_stage))
     threshold = acc * accuracy_multiplier(stage)
     # Compound Eyes: x1.3 accuracy
     if passives.abil(attacker) == "compound-eyes":

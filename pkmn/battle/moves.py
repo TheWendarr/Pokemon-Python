@@ -16,6 +16,7 @@ from ..data.models import MoveData, MoveEffect, STATUS
 from . import passives
 from .damage import accuracy_check, calc_damage
 from .events import E, Event
+from .passives import SOUND_MOVES, POWDER_MOVES
 from .state import BattlePokemon, other
 
 # ── Built-in pseudo-moves ────────────────────────────────────────────
@@ -101,6 +102,9 @@ def apply_status(eng, target: BattlePokemon, status: str, events, *,
         return False
     if passives.status_blocked(target, status):
         return False
+    # Leaf Guard: immune to all status in sun
+    if passives.abil(target) == "leaf-guard" and eng.weather == "sun":
+        return False
     target.status = status
     if status == "toxic":
         target.vol.toxic_counter = 0
@@ -165,6 +169,9 @@ def apply_ailment(eng, user: BattlePokemon, target: BattlePokemon,
                                 {"pokemon": target.name}))
         return
     if ailment == "infatuation":
+        # Oblivious is immune to infatuation
+        if passives.abil(target) == "oblivious":
+            return
         # Simplification: genders aren't modeled yet, so Attract always
         # takes (documented in ARCHITECTURE.md).
         if not target.vol.infatuated and not target.fainted:
@@ -228,6 +235,8 @@ def apply_stat_changes(eng, user, target, move: MoveData, events, *,
                 continue
             if _ra == "big-pecks" and sc.stat == "defense":
                 continue
+            if _ra == "keen-eye" and sc.stat == "accuracy":
+                continue
         applied = recipient.modify_stage(sc.stat, sc.change)
         side = eng.side_of(recipient)
         if applied == 0:
@@ -280,11 +289,14 @@ def deal_damage(eng, target: BattlePokemon, amount: int, events,
     return dealt
 
 
-def roll_hits(eng, eff: MoveEffect) -> int:
+def roll_hits(eng, eff: MoveEffect, user=None) -> int:
     if not eff.min_hits:
         return 1
     if eff.min_hits == eff.max_hits:
         return eff.min_hits
+    # Skill Link: always hit the maximum number of times
+    if user is not None and passives.abil(user) == "skill-link":
+        return eff.max_hits
     if (eff.min_hits, eff.max_hits) == (2, 5):
         pool = [n for n, w in MULTI_HIT_WEIGHTS for _ in range(w)]
         return eng.rng.choice(pool)
@@ -294,6 +306,9 @@ def roll_hits(eng, eff: MoveEffect) -> int:
 def force_switch(eng, target_side: str, events) -> bool:
     """Roar/Whirlwind/Dragon Tail. Wild battles end; trainer battles drag
     a random able benched Pokemon in."""
+    target = eng.active(target_side)
+    if passives.abil(target) == "suction-cups":
+        return False
     if eng.wild:
         events.append(Event(E.RUN_SUCCESS, target_side, {"forced": True}))
         eng._end_battle("escaped", events)
@@ -327,6 +342,22 @@ def execute_move(eng, side: str, move: MoveData, events,
     if target is None:
         target = eng.active(other(side))
 
+    # Mold Breaker: suppress the target's abilities for this move's duration
+    _mb = (passives.abil(user) == "mold-breaker"
+           and not move.targets_user and target is not None)
+    if _mb:
+        events.append(Event(E.ABILITY, side,
+                            {"ability": "mold-breaker", "pokemon": user.name}))
+        passives.mb_suppress(target)
+
+    try:
+        _execute_move_inner(eng, side, move, events, power_mult, user, target)
+    finally:
+        if _mb:
+            passives.mb_clear(target)
+
+
+def _execute_move_inner(eng, side, move, events, power_mult, user, target):
     events.append(Event(E.MOVE_USED, side, {"pokemon": user.name, "move": move.name}))
 
     targets_foe = not move.targets_user
@@ -345,6 +376,22 @@ def execute_move(eng, side: str, move: MoveData, events,
             events.append(Event(E.MOVE_MISSED, side, {"move": move.name}))
             return
         power_mult *= mult
+
+    # Soundproof: immune to sound-based moves
+    if targets_foe and move.id in SOUND_MOVES and passives.soundproof_immune(target):
+        events.append(Event(E.ABILITY, eng.side_of(target),
+                            {"ability": "soundproof", "pokemon": target.name}))
+        events.append(Event(E.MOVE_IMMUNE, eng.side_of(target),
+                            {"pokemon": target.name}))
+        return
+
+    # Overcoat: immune to powder / spore moves
+    if targets_foe and move.id in POWDER_MOVES and passives.powder_immune(target):
+        events.append(Event(E.ABILITY, eng.side_of(target),
+                            {"ability": "overcoat", "pokemon": target.name}))
+        events.append(Event(E.MOVE_IMMUNE, eng.side_of(target),
+                            {"pokemon": target.name}))
+        return
 
     if move.id in HANDLERS:
         HANDLERS[move.id](eng, user, target, move, events)
@@ -416,7 +463,9 @@ def execute_move(eng, side: str, move: MoveData, events,
         if move.type == "fire" and eng.sport["water"] > 0:
             power_mult *= 0.33
 
-        screened = eng.screened(eng.side_of(target), move)
+        # Infiltrator: bypass Light Screen, Reflect
+        screened = (eng.screened(eng.side_of(target), move)
+                    and passives.abil(user) != "infiltrator")
         if move.id in FIXED_DAMAGE:
             deal_damage(eng, target, FIXED_DAMAGE[move.id], events,
                         {"effectiveness": 1.0, "crit": False})
@@ -426,7 +475,7 @@ def execute_move(eng, side: str, move: MoveData, events,
                         {"effectiveness": 1.0, "crit": False})
             total, landed = user.level, 1
         else:
-            hits = roll_hits(eng, move.effect)
+            hits = roll_hits(eng, move.effect, user)
             total, landed = 0, 0
             for _ in range(hits):
                 if target.fainted or user.fainted:
@@ -481,19 +530,71 @@ def execute_move(eng, side: str, move: MoveData, events,
         if drain > 0 and user.vol.heal_block_turns > 0:
             drain = 0
         if drain > 0 and total > 0 and not user.fainted:
-            healed = user.heal(max(1, total * drain // 100))
-            if healed:
-                events.append(Event(E.DRAIN, side, {"pokemon": user.name, "amount": healed}))
+            if passives.liquid_ooze_reverses(target):
+                # Liquid Ooze: drain deals damage to the drainer instead
+                rec = max(1, total * drain // 100)
+                user.take_damage(rec)
+                events.append(Event(E.ABILITY, eng.side_of(target),
+                                    {"ability": "liquid-ooze", "pokemon": target.name}))
+                events.append(Event(E.RECOIL, side,
+                                    {"pokemon": user.name, "amount": rec,
+                                     "remaining_hp": user.current_hp}))
+                eng.announce_faint(user, events)
+            else:
+                healed = user.heal(max(1, total * drain // 100))
+                if healed:
+                    events.append(Event(E.DRAIN, side, {"pokemon": user.name, "amount": healed}))
         elif drain < 0 and total > 0 and not user.fainted:
-            rec = max(1, total * (-drain) // 100)
-            user.take_damage(rec)
-            events.append(Event(E.RECOIL, side, {"pokemon": user.name, "amount": rec,
-                                                 "remaining_hp": user.current_hp}))
-            eng.announce_faint(user, events)
+            if passives.abil(user) != "rock-head":
+                rec = max(1, total * (-drain) // 100)
+                user.take_damage(rec)
+                events.append(Event(E.RECOIL, side, {"pokemon": user.name, "amount": rec,
+                                                     "remaining_hp": user.current_hp}))
+                eng.announce_faint(user, events)
 
         # Contact abilities punish the attacker
         if landed and "contact" in move.flags and not user.fainted:
             passives.on_contact(eng, user, target, events)
+
+        # Rattled: hit by Dark/Ghost/Bug -> +1 Speed
+        if landed and not target.fainted and passives.abil(target) == "rattled" \
+                and move.type in ("dark", "ghost", "bug"):
+            events.append(Event(E.ABILITY, eng.side_of(target),
+                                {"ability": "rattled", "pokemon": target.name}))
+            applied = target.modify_stage("speed", 1)
+            if applied:
+                events.append(Event(E.STAT_CHANGE, eng.side_of(target),
+                                    {"pokemon": target.name, "stat": "speed",
+                                     "change": applied,
+                                     "stage": target.stages["speed"]}))
+
+        # Anger Point: critical hit -> maximize attack
+        if landed and not target.fainted and passives.abil(target) == "anger-point":
+            last_detail = None
+            for ev in reversed(events):
+                if ev.type == E.DAMAGE and ev.side == eng.side_of(target):
+                    last_detail = ev.data
+                    break
+            if last_detail and last_detail.get("crit"):
+                events.append(Event(E.ABILITY, eng.side_of(target),
+                                    {"ability": "anger-point", "pokemon": target.name}))
+                applied = target.modify_stage("attack", 12)  # max out at +6
+                if applied:
+                    events.append(Event(E.STAT_CHANGE, eng.side_of(target),
+                                        {"pokemon": target.name, "stat": "attack",
+                                         "change": applied,
+                                         "stage": target.stages["attack"]}))
+
+        # Moxie: user KOs foe -> +1 Attack
+        if target.fainted and not user.fainted and passives.abil(user) == "moxie":
+            events.append(Event(E.ABILITY, side,
+                                {"ability": "moxie", "pokemon": user.name}))
+            applied = user.modify_stage("attack", 1)
+            if applied:
+                events.append(Event(E.STAT_CHANGE, side,
+                                    {"pokemon": user.name, "stat": "attack",
+                                     "change": applied,
+                                     "stage": user.stages["attack"]}))
 
         # Secondary effects only land if the target is still standing
         # Sheer Force removes all secondaries (they were already skipped in power_mod)
@@ -506,7 +607,8 @@ def execute_move(eng, side: str, move: MoveData, events,
             if move.effect.ailment and eng.rng.randint(1, 100) <= ail_chance:
                 apply_ailment(eng, user, target, move, events)
             flinch = move.effect.flinch_chance * sec_mult
-            if flinch and not target.vol.has_moved:
+            if flinch and not target.vol.has_moved \
+                    and passives.abil(target) != "inner-focus":
                 if eng.rng.randint(1, 100) <= flinch:
                     target.vol.flinched = True
         if not sheer:
@@ -577,6 +679,18 @@ def execute_move(eng, side: str, move: MoveData, events,
             return
     if targets_foe and not _hits(eng, user, target, move):
         events.append(Event(E.MOVE_MISSED, side, {"move": move.name}))
+        return
+
+    # Magic Bounce: reflect foe-targeted status moves back at the user
+    if targets_foe and not move.is_damaging and kind != "force-switch" \
+            and passives.abil(target) == "magic-bounce":
+        events.append(Event(E.ABILITY, eng.side_of(target),
+                            {"ability": "magic-bounce", "pokemon": target.name}))
+        # Apply the move's ailment/stat effects to the original user instead
+        if move.effect.ailment:
+            apply_ailment(eng, target, user, move, events)
+        if move.effect.stat_changes:
+            apply_stat_changes(eng, target, user, move, events)
         return
 
     if kind == "force-switch":

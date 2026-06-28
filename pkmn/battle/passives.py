@@ -20,7 +20,21 @@ WEATHER_SETTERS = {"drizzle": "rain", "drought": "sun",
                    "sand-stream": "sandstorm", "snow-warning": "hail"}
 WEATHER_SPEED = {"swift-swim": "rain", "chlorophyll": "sun",
                  "sand-rush": "sandstorm"}
-SAND_IMMUNE_ABILITIES = ("sand-rush", "sand-veil", "sand-force")
+SAND_IMMUNE_ABILITIES = ("sand-rush", "sand-veil", "sand-force", "overcoat")
+
+# Sound moves: blocked by Soundproof
+SOUND_MOVES = {
+    "growl", "roar", "sing", "supersonic", "screech", "snore",
+    "bug-buzz", "chatter", "echoed-voice", "round", "hyper-voice",
+    "uproar", "perish-song", "grasswhistle", "heal-bell",
+    "noble-roar", "relic-song", "boomburst", "sonic-boom",
+}
+
+# Powder moves: blocked by Overcoat and Grass types (Gen 6+; here just Overcoat)
+POWDER_MOVES = {
+    "stun-spore", "sleep-powder", "poison-powder", "cotton-spore",
+    "spore", "powder", "rage-powder", "magic-powder",
+}
 
 # Absorb-and-raise family: type immunity + raise on hit
 ABSORB_RAISE = {
@@ -82,6 +96,65 @@ IMPLEMENTED_ABILITIES = frozenset({
     "clear-body", "hyper-cutter", "white-smoke",  # stat-lower immunity
     "big-pecks",    # Defense cannot be lowered
     "damp",         # explosion/selfdestruct fail
+    # Batch: 58 newly implemented / registered abilities
+    "inner-focus",      # prevents flinching
+    "keen-eye",         # blocks accuracy drops; ignores foe evasion
+    "run-away",         # wild-battle escape (trainer battles: no effect)
+    "oblivious",        # blocks infatuation / attract
+    "hydration",        # cures status in rain each turn
+    "gluttony",         # registered (pinch berries not yet implemented)
+    "rock-head",        # no self-recoil from recoil moves
+    "unnerve",          # foe cannot eat berries
+    "overcoat",         # immune to weather chip + powder moves
+    "regenerator",      # heal 1/3 HP on switch-out
+    "rivalry",          # registered (genders not modeled)
+    "shed-skin",        # 33% chance to cure status each turn
+    "frisk",            # reveals foe's held item on entry
+    "leaf-guard",       # blocks status in sun
+    "telepathy",        # doubles-only; registered
+    "infiltrator",      # bypasses screens
+    "soundproof",       # immune to sound moves
+    "sniper",           # crits do 2.25× instead of 2×
+    "mold-breaker",     # moves ignore target's abilities
+    "analytic",         # +30% power if moving last
+    "cute-charm",       # 30% infatuate on contact
+    "rattled",          # +1 Speed hit by Dark/Ghost/Bug
+    "prankster",        # status moves gain +1 priority
+    "moxie",            # +1 Attack after KO
+    "pickup",           # overworld only; registered
+    "snow-cloak",       # +evasion in hail
+    "stench",           # 10% flinch on contact
+    "quick-feet",       # +50% Speed when statused; ignores paralysis penalty
+    "sticky-hold",      # held item cannot be stolen
+    "aftermath",        # 25% damage to attacker when holder faints from contact
+    "plus",             # doubles-only; registered
+    "klutz",            # cannot use held item in battle
+    "anticipation",     # reveals dangerous moves on entry
+    "unaware",          # ignores foe's stat stages
+    "moody",            # +2 random stat, -1 another, each turn
+    "anger-point",      # maxes Attack on critical hit taken
+    "tangled-feet",     # evasion boost when confused
+    "skill-link",       # always hits max times on multi-hit moves
+    "cloud-nine",       # suppresses weather effects
+    "cursed-body",      # 30% disable on contact
+    "illuminate",       # overworld only; registered
+    "forewarn",         # reveals foe's highest-power move on entry
+    "minus",            # doubles-only; registered
+    "heavy-metal",      # doubles weight (weight-based moves)
+    "healer",           # doubles-only; registered
+    "light-metal",      # halves weight
+    "simple",           # doubles stat-stage changes
+    "friend-guard",     # doubles-only; registered
+    "poison-touch",     # 30% poison on contact
+    "shadow-tag",       # prevents foe from switching
+    "magnet-pull",      # prevents Steel-type foe from switching
+    "pickpocket",       # steals attacker's item on contact
+    "liquid-ooze",      # drain moves damage instead of heal
+    "suction-cups",     # resists forced switching
+    "arena-trap",       # traps non-Flying/Levitate foes
+    "truant",           # can only act every other turn
+    "magic-bounce",     # reflects status moves
+    "harvest",          # registered (pinch berries not yet implemented)
 })
 
 # Held items with battle behavior in this module / deal_damage.
@@ -109,21 +182,61 @@ IMPLEMENTED_HELD = frozenset({
 })
 
 
+# Mold Breaker: set of id()s whose ability is suppressed for the current move
+_mb_targets: set = set()
+
+
 def abil(bp) -> str:
     v = getattr(bp, "vol", None)
     if v is not None:
-        if v.ability_suppressed:
+        if v.ability_suppressed or id(bp) in _mb_targets:
             return ""
         if v.ability_override:
             return v.ability_override
     return (bp.state.ability or "").lower()
 
 
+def mb_suppress(target) -> None:
+    _mb_targets.add(id(target))
+
+
+def mb_clear(target) -> None:
+    _mb_targets.discard(id(target))
+
+
 def held(bp) -> str:
     v = getattr(bp, "vol", None)
     if v is not None and v.embargo_turns > 0:
         return ""
+    if abil(bp) == "klutz":
+        return ""
     return bp.state.held_item or ""
+
+
+def suppress_weather(eng) -> bool:
+    """True if Cloud Nine or Air Lock suppresses weather effects."""
+    for side in ("p1", "p2"):
+        try:
+            if abil(eng.active(side)) in ("cloud-nine", "air-lock"):
+                return True
+        except Exception:
+            pass
+    return False
+
+
+def powder_immune(bp) -> bool:
+    """True if the Pokemon is immune to powder / spore moves."""
+    return abil(bp) == "overcoat"
+
+
+def soundproof_immune(bp) -> bool:
+    """True if the Pokemon is immune to sound-based moves."""
+    return abil(bp) == "soundproof"
+
+
+def liquid_ooze_reverses(defender) -> bool:
+    """True if drain moves deal damage to the drainer instead of healing."""
+    return abil(defender) == "liquid-ooze"
 
 
 def on_item_consumed(bp) -> None:
@@ -190,6 +303,10 @@ def power_mod(attacker, defender, move, weather) -> float:
     # Sand Force: Rock/Ground/Steel in sandstorm x1.3
     if a == "sand-force" and weather == "sandstorm" \
             and move.type in ("rock", "ground", "steel"):
+        m *= 1.3
+
+    # Analytic: +30% power when moving last (flag set by engine)
+    if a == "analytic" and getattr(attacker.vol, "analytic_active", False):
         m *= 1.3
 
     # Sheer Force: secondary effect moves x1.3 (secondaries are skipped in execute_move)
@@ -286,6 +403,8 @@ def speed_mod(bp, weather) -> float:
         m *= 2.0
     if getattr(bp.vol, "unburden_active", False):
         m *= 2.0
+    if abil(bp) == "quick-feet" and bp.status:
+        m *= 1.5
     return m
 
 
@@ -440,6 +559,62 @@ def on_contact(eng, attacker, defender, events) -> None:
             events.append(Event(E.ABILITY, eng.side_of(attacker),
                                 {"ability": "mummy", "pokemon": attacker.name,
                                  "overridden": True}))
+    # Stench: 10% chance to flinch the attacker (if they haven't moved yet)
+    if a == "stench" and not attacker.fainted and not attacker.vol.has_moved:
+        if eng.rng.randint(1, 100) <= 10:
+            if abil(attacker) != "inner-focus":
+                attacker.vol.flinched = True
+                events.append(Event(E.ABILITY, eng.side_of(defender),
+                                    {"ability": "stench", "pokemon": defender.name}))
+    # Cute Charm: 30% chance to infatuate the attacker
+    if a == "cute-charm" and not attacker.fainted \
+            and not attacker.vol.infatuated and abil(attacker) != "oblivious":
+        if eng.rng.randint(1, 100) <= 30:
+            attacker.vol.infatuated = True
+            events.append(Event(E.ABILITY, eng.side_of(defender),
+                                {"ability": "cute-charm", "pokemon": defender.name}))
+            events.append(Event(E.CONFUSED, eng.side_of(attacker),
+                                {"pokemon": attacker.name, "start": True,
+                                 "infatuated": True}))
+    # Aftermath: if the defender fainted from this contact hit, deal 25% to attacker
+    if a == "aftermath" and defender.fainted and not attacker.fainted:
+        dmg = max(1, attacker.max_hp // 4)
+        attacker.take_damage(dmg)
+        events.append(Event(E.ABILITY, eng.side_of(defender),
+                            {"ability": "aftermath", "pokemon": defender.name}))
+        events.append(Event(E.DAMAGE, eng.side_of(attacker),
+                            {"pokemon": attacker.name, "amount": dmg,
+                             "remaining_hp": attacker.current_hp,
+                             "max_hp": attacker.max_hp,
+                             "crit": False, "effectiveness": 1.0}))
+        eng.announce_faint(attacker, events)
+    # Poison Touch: 30% chance to poison the attacker
+    if a == "poison-touch" and not attacker.fainted and not attacker.status:
+        if eng.rng.randint(1, 100) <= 30:
+            from .moves import apply_status
+            if apply_status(eng, attacker, "poison", events):
+                events.insert(-1, Event(E.ABILITY, eng.side_of(defender),
+                                        {"ability": "poison-touch", "pokemon": defender.name}))
+    # Pickpocket: steal attacker's item if defender has no item
+    if a == "pickpocket" and not attacker.fainted \
+            and not defender.state.held_item and attacker.state.held_item:
+        if abil(attacker) != "sticky-hold":
+            stolen = attacker.state.held_item
+            attacker.state.held_item = None
+            defender.state.held_item = stolen
+            events.append(Event(E.ABILITY, eng.side_of(defender),
+                                {"ability": "pickpocket", "pokemon": defender.name,
+                                 "stolen_item": stolen}))
+    # Cursed Body: 30% chance to disable the move the attacker just used
+    if a == "cursed-body" and not attacker.fainted and attacker.vol.last_move:
+        if eng.rng.randint(1, 100) <= 30:
+            move_id = attacker.vol.last_move
+            slot = attacker.state.move_slot(move_id)
+            if slot is not None and slot.pp > 0:
+                attacker.vol.choice_lock = move_id  # reuse choice_lock as disable
+                events.append(Event(E.ABILITY, eng.side_of(defender),
+                                    {"ability": "cursed-body", "pokemon": defender.name,
+                                     "disabled_move": move_id}))
 
 
 def switch_in(eng, side: str, bp, events) -> None:
@@ -490,6 +665,60 @@ def switch_in(eng, side: str, bp, events) -> None:
                 events.append(Event(E.ABILITY, side,
                                     {"ability": "trace", "pokemon": bp.name,
                                      "traced": foe_abil}))
+    # Frisk: reveal foe's held item
+    if a == "frisk":
+        foe = eng.active(foe_side)
+        if not foe.fainted and foe.state.held_item:
+            events.append(Event(E.ABILITY, side,
+                                {"ability": "frisk", "pokemon": bp.name,
+                                 "revealed_item": foe.state.held_item,
+                                 "revealed_for": foe.name}))
+    # Forewarn: reveal foe's highest-power move
+    if a == "forewarn":
+        foe = eng.active(foe_side)
+        if not foe.fainted:
+            best_move = None
+            best_power = -1
+            for slot in foe.state.moves:
+                try:
+                    mv = eng.data.move(slot.move_id)
+                    p = mv.power or 0
+                    if p > best_power:
+                        best_power = p
+                        best_move = mv.name
+                except Exception:
+                    pass
+            if best_move:
+                events.append(Event(E.ABILITY, side,
+                                    {"ability": "forewarn", "pokemon": bp.name,
+                                     "warned_move": best_move,
+                                     "warned_from": foe.name}))
+    # Anticipation: warn if foe has SE or OHKO moves
+    if a == "anticipation":
+        foe = eng.active(foe_side)
+        if not foe.fainted:
+            found_threat = False
+            for slot in foe.state.moves:
+                try:
+                    mv = eng.data.move(slot.move_id)
+                    if mv.effect.kind == "ohko":
+                        found_threat = True
+                        break
+                    eff = eng.data.effectiveness(mv.type, bp.types)
+                    if eff > 1.0 and mv.is_damaging:
+                        found_threat = True
+                        break
+                except Exception:
+                    pass
+            if found_threat:
+                events.append(Event(E.ABILITY, side,
+                                    {"ability": "anticipation", "pokemon": bp.name}))
+    # Unnerve: announce that foe cannot eat berries
+    if a == "unnerve":
+        foe = eng.active(foe_side)
+        if not foe.fainted:
+            events.append(Event(E.ABILITY, side,
+                                {"ability": "unnerve", "pokemon": bp.name}))
 
 
 def on_switch_out(bp, events, side) -> None:
@@ -499,9 +728,31 @@ def on_switch_out(bp, events, side) -> None:
         events.append(Event(E.STATUS_CURED, side,
                             {"pokemon": bp.name, "status": cured,
                              "ability": "natural-cure"}))
+    if abil(bp) == "regenerator" and not bp.fainted:
+        healed = bp.heal(max(1, bp.max_hp // 3))
+        if healed:
+            events.append(Event(E.ABILITY, side,
+                                {"ability": "regenerator", "pokemon": bp.name}))
+            events.append(Event(E.HEAL, side,
+                                {"pokemon": bp.name, "amount": healed,
+                                 "remaining_hp": bp.current_hp}))
+
+
+def _unnerved(eng, bp) -> bool:
+    """True if a foe with Unnerve is on the field, suppressing berry use."""
+    for side in ("p1", "p2"):
+        try:
+            foe = eng.active(side)
+            if foe is not bp and not foe.fainted and abil(foe) == "unnerve":
+                return True
+        except Exception:
+            pass
+    return False
 
 
 def check_hp_berry(eng, bp, events) -> None:
+    if _unnerved(eng, bp):
+        return
     it = held(bp)
     if bp.fainted or it not in ("oran-berry", "sitrus-berry"):
         return
@@ -545,7 +796,7 @@ STATUS_BERRIES = {
 def check_status_berry(eng, bp, events) -> None:
     """Called after a non-volatile status is applied or confusion set.
     Cures specific status berries."""
-    if bp.fainted:
+    if bp.fainted or _unnerved(eng, bp):
         return
     it = held(bp)
     # Non-volatile status berries
@@ -645,6 +896,42 @@ def end_of_turn(eng, side: str, bp, events) -> None:
                                 {"weather": "sun", "pokemon": bp.name,
                                  "amount": dmg, "remaining_hp": bp.current_hp}))
             eng.announce_faint(bp, events)
+    # Shed Skin: 33% chance to cure status each turn
+    if a == "shed-skin" and bp.status and not bp.fainted:
+        if eng.rng.randint(1, 3) == 1:
+            cured = bp.status
+            bp.status = None
+            bp.vol.toxic_counter = 0
+            events.append(Event(E.ABILITY, side, {"ability": "shed-skin",
+                                                  "pokemon": bp.name}))
+            events.append(Event(E.STATUS_CURED, side,
+                                {"pokemon": bp.name, "status": cured,
+                                 "ability": "shed-skin"}))
+    # Hydration: cure status in rain each turn
+    if a == "hydration" and bp.status and eng.weather == "rain" and not bp.fainted:
+        cured = bp.status
+        bp.status = None
+        bp.vol.toxic_counter = 0
+        events.append(Event(E.ABILITY, side, {"ability": "hydration",
+                                              "pokemon": bp.name}))
+        events.append(Event(E.STATUS_CURED, side,
+                            {"pokemon": bp.name, "status": cured,
+                             "ability": "hydration"}))
+    # Moody: +2 one random stat, -1 another random stat each turn
+    if a == "moody" and not bp.fainted:
+        from ..data.models import STAGE_KEYS
+        raise_stat = eng.rng.choice(STAGE_KEYS)
+        lower_pool = [s for s in STAGE_KEYS if s != raise_stat]
+        lower_stat = eng.rng.choice(lower_pool)
+        events.append(Event(E.ABILITY, side, {"ability": "moody",
+                                              "pokemon": bp.name}))
+        for stat, change in ((raise_stat, 2), (lower_stat, -1)):
+            applied = bp.modify_stage(stat, change)
+            if applied:
+                events.append(Event(E.STAT_CHANGE, side,
+                                    {"pokemon": bp.name, "stat": stat,
+                                     "change": applied,
+                                     "stage": bp.stages[stat]}))
     # Flame Orb: apply burn at end of turn if no status
     if held(bp) == "flame-orb" and not bp.status and not bp.fainted:
         from .moves import apply_status

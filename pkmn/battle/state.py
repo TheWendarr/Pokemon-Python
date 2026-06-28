@@ -104,6 +104,9 @@ class Volatiles:
     transformed: bool = False
     nightmare: bool = False
     unburden_active: bool = False
+    # Batch-3 ability volatiles
+    truant_resting: bool = False    # Truant: True on the loafing turn
+    analytic_active: bool = False   # Analytic: foe already moved this turn
 
 
 class BattlePokemon:
@@ -148,15 +151,17 @@ class BattlePokemon:
     def effective_speed(self, weather: Optional[str] = None) -> int:
         s = int(self.stats[SPEED] * stage_multiplier(self.stages[SPEED]))
         s = int(s * passives.speed_mod(self, weather))
-        if self.status == "paralysis":
-            s //= 4  # Gen 5 paralysis quarters speed
+        if self.status == "paralysis" and passives.abil(self) != "quick-feet":
+            s //= 4  # Gen 5 paralysis quarters speed (Quick Feet ignores this)
         return s
 
     def modify_stage(self, stat: str, change: int) -> int:
         """Returns the actual change applied (0 if already capped).
-        Contrary inverts all stat stage changes."""
+        Contrary inverts; Simple doubles all stat stage changes."""
         if passives.abil(self) == "contrary":
             change = -change
+        elif passives.abil(self) == "simple":
+            change *= 2
         before = self.stages[stat]
         after = max(-6, min(6, before + change))
         self.stages[stat] = after

@@ -157,6 +157,12 @@ class BattleEngine:
         return ((move.category == "physical" and ss.reflect > 0)
                 or (move.category == "special" and ss.light_screen > 0))
 
+    def effective_weather(self) -> Optional[str]:
+        """Weather is suppressed when Cloud Nine or Air Lock is active."""
+        if passives.suppress_weather(self):
+            return None
+        return self.weather
+
     def set_weather(self, kind: str, turns: int, events) -> None:
         self.weather = kind
         self.weather_turns = turns
@@ -191,21 +197,43 @@ class BattleEngine:
                       if self.data.move(s.move_id).is_damaging]
         actions: list = ([MoveAction(s.move_id) for s in usable]
                          if usable else [MoveAction("struggle")])
+        # Check ability-based trapping by the foe
+        _trapped_by_foe = False
         if v.trap_turns <= 0 and not v.no_escape and not v.ingrained:
-            actions += [SwitchAction(i) for i in self.bench(side)]
-        if self.wild and side == P1:
+            foe = self.active(other(side))
+            fa = passives.abil(foe)
+            user_bp = self.active(side)
+            if fa == "shadow-tag":
+                _trapped_by_foe = True
+            elif fa == "magnet-pull" and "steel" in user_bp.types:
+                _trapped_by_foe = True
+            elif fa == "arena-trap":
+                grounded = ("flying" not in user_bp.types
+                            and passives.abil(user_bp) != "levitate"
+                            and user_bp.vol.magnet_rise_turns <= 0)
+                if grounded:
+                    _trapped_by_foe = True
+            if not _trapped_by_foe:
+                actions += [SwitchAction(i) for i in self.bench(side)]
+        if self.wild and side == P1 and not _trapped_by_foe:
             actions.append(RunAction())
         return actions
 
     # ── action ordering ──────────────────────────────────────────────
-    def _category_priority(self, action) -> int:
+    def _category_priority(self, action, side: str | None = None) -> int:
         if isinstance(action, RunAction):
             return 8
         if isinstance(action, (ItemAction, CatchAction)):
             return 7
         if isinstance(action, SwitchAction):
             return 6
-        return self._resolve_move(action).priority
+        move = self._resolve_move(action)
+        p = move.priority
+        # Prankster: status moves gain +1 priority
+        if side is not None and not move.is_damaging:
+            if passives.abil(self.active(side)) == "prankster":
+                p += 1
+        return p
 
     def _resolve_move(self, action: MoveAction):
         if action.move_id == "struggle":
@@ -231,7 +259,7 @@ class BattleEngine:
             v.last_hit = None
 
         pairs = [(P1, p1_action), (P2, p2_action)]
-        pairs.sort(key=lambda pa: (self._category_priority(pa[1]),
+        pairs.sort(key=lambda pa: (self._category_priority(pa[1], pa[0]),
                                    self.speed_of(pa[0]),
                                    self.rng.random()),
                    reverse=True)
@@ -269,7 +297,7 @@ class BattleEngine:
                 action = acts[slot] if slot < len(acts) else MoveAction("struggle")
                 actors.append((side, slot, action,
                                self.parties[side][self.active_slots[side][slot]]))
-        actors.sort(key=lambda a: (self._category_priority(a[2]),
+        actors.sort(key=lambda a: (self._category_priority(a[2], a[0]),
                                    self.speed_of_slot(a[0], a[1]),
                                    self.rng.random()),
                     reverse=True)
@@ -472,6 +500,9 @@ class BattleEngine:
         user.vol.has_moved = True
         if move.id not in ("struggle", "recharge"):
             user.vol.last_move = move.id
+        # Analytic: set flag if the foe has already moved this turn
+        foe_for_analytic = targets[0][0] if targets else self.active(other(side))
+        user.vol.analytic_active = foe_for_analytic.vol.has_moved
         if targets is None:
             movex.execute_move(self, side, move, events)
         else:
@@ -493,8 +524,18 @@ class BattleEngine:
                                                        "fatigue": True}))
 
     def _can_act(self, side, user: BattlePokemon, move, events) -> bool:
-        """Pre-move incapacity gauntlet: sleep/freeze -> flinch ->
+        """Pre-move incapacity gauntlet: truant -> sleep/freeze -> flinch ->
         confusion -> paralysis."""
+        # Truant: loaf every other turn
+        if passives.abil(user) == "truant":
+            if user.vol.truant_resting:
+                user.vol.truant_resting = False
+                events.append(Event(E.ABILITY, side,
+                                    {"ability": "truant", "pokemon": user.name,
+                                     "loafing": True}))
+                return False
+            else:
+                user.vol.truant_resting = True
         if user.status == "sleep":
             # sleep_turns == failed turns remaining; -1 means re-entered
             # while asleep, so the counter re-rolls (Gen 5 behavior).
