@@ -302,23 +302,30 @@ def force_switch(eng, target_side: str, events) -> bool:
     if not bench:
         return False
     old = eng.active(target_side)
+    slot = next((i for i, idx in enumerate(eng.active_slots[target_side])
+                 if eng.parties[target_side][idx] is old), 0)
     old.on_switch_out()
-    eng.active_idx[target_side] = eng.rng.choice(bench)
+    eng._set_active(target_side, eng.rng.choice(bench), slot)
     events.append(Event(E.DRAGGED, target_side,
-                        {"pokemon": eng.active(target_side).name}))
-    events.append(eng._send_in_event(target_side))
-    eng._switch_in_effects(target_side, events)
+                        {"pokemon": eng.parties[target_side][
+                            eng.active_slots[target_side][slot]].name}))
+    events.append(eng._send_in_event(target_side, slot))
+    eng._switch_in_effects(target_side, events, slot)
     return True
 
 
 # ── Main entry ───────────────────────────────────────────────────────
 
 def execute_move(eng, side: str, move: MoveData, events,
-                 power_mult: float = 1.0) -> None:
+                 power_mult: float = 1.0,
+                 target: BattlePokemon | None = None) -> None:
     """Execute `move` by the active Pokemon on `side`. Incapacity checks,
-    PP, and two-turn/rampage bookkeeping happen in the engine before this."""
+    PP, and two-turn/rampage bookkeeping happen in the engine before this.
+    `target` defaults to the lone foe (singles); the doubles path passes an
+    explicit target."""
     user = eng.active(side)
-    target = eng.active(other(side))
+    if target is None:
+        target = eng.active(other(side))
 
     events.append(Event(E.MOVE_USED, side, {"pokemon": user.name, "move": move.name}))
 
@@ -409,7 +416,7 @@ def execute_move(eng, side: str, move: MoveData, events,
         if move.type == "fire" and eng.sport["water"] > 0:
             power_mult *= 0.33
 
-        screened = eng.screened(other(side), move)
+        screened = eng.screened(eng.side_of(target), move)
         if move.id in FIXED_DAMAGE:
             deal_damage(eng, target, FIXED_DAMAGE[move.id], events,
                         {"effectiveness": 1.0, "crit": False})
@@ -1182,15 +1189,17 @@ def _baton_pass(eng, user, target, move, events):
     carry = {"crit_bonus": v.crit_bonus, "leech_seeded": v.leech_seeded,
              "confusion_turns": v.confusion_turns, "ingrained": v.ingrained,
              "aqua_ring": v.aqua_ring, "no_escape": v.no_escape}
+    slot = next((i for i, idx in enumerate(eng.active_slots[side])
+                 if eng.parties[side][idx] is user), 0)
     user.on_switch_out()
     events.append(Event(E.SWITCH_OUT, side, {"pokemon": user.name}))
-    eng.active_idx[side] = eng.rng.choice(bench)
-    incoming = eng.active(side)
+    eng._set_active(side, eng.rng.choice(bench), slot)
+    incoming = eng.parties[side][eng.active_slots[side][slot]]
     incoming.stages.update(carry_stages)
     for k, val in carry.items():
         setattr(incoming.vol, k, val)
-    events.append(eng._send_in_event(side))
-    eng._switch_in_effects(side, events)
+    events.append(eng._send_in_event(side, slot))
+    eng._switch_in_effects(side, events, slot)
 
 
 @handler("belly-drum")

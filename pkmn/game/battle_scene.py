@@ -78,14 +78,21 @@ BALL_D = 12 * S         # pokeball diameter
 class BattleScene(Scene):
     def __init__(self, game, foe_party, *, wild: bool = True,
                  trainer_name: str | None = None, weather: str | None = None,
-                 backdrop: str | None = None):
+                 backdrop: str | None = None, format: str = "single"):
         super().__init__(game)
         st = game.state
         self.wild = wild
+        self.format = format
+        self.doubles = format == "double"
         self.backdrop = backdrop or getattr(game, "battle_bg", "field")
         self.eng = BattleEngine(game.data, st.party, foe_party,
                                 wild=wild, rng=st.rng,
-                                dex_caught=len(st.caught))
+                                dex_caught=len(st.caught), format=format)
+        # Doubles UI: collected per-slot move choices, and which slot we are
+        # currently picking a move for.
+        self.pending_actions: list = []
+        self.pick_slot = 0
+        self.target_choice = 0
         for fp in foe_party:                 # Pokedex: these have been seen
             st.register_seen(fp.species_id)
         self.ai = (RandomAI(P2, st.rng) if wild else GreedyAI(P2, st.rng))
@@ -107,6 +114,8 @@ class BattleScene(Scene):
         self.disp_hp = {P1: float(self.eng.active(P1).current_hp),
                         P2: float(self.eng.active(P2).current_hp)}
         self.hp_target = dict(self.disp_hp)
+        if self.doubles:
+            self.mode = "menu"     # skip the singles send-in animation timeline
         self.foe_absorbed = False         # foe is currently inside a ball
         self.ball_pos = None              # resting ball position when absorbed
         self._ball_img = None             # cached pokeball surface
@@ -116,11 +125,16 @@ class BattleScene(Scene):
             self.eng.set_weather(weather, -1, ev)
             self.eng.log.extend(ev)
             self.eng._start_events = list(self.eng._start_events) + ev
-        self._enqueue(self.eng._start_events)
-        if trainer_name:
-            self.steps.insert(0, {"kind": "text",
-                                  "lines": [f"{trainer_name} wants to battle!"],
-                                  "anim": None})
+        if self.doubles:
+            # Minimal doubles flow drives the engine synchronously; show a
+            # simple intro line in the message box and go straight to FIGHT.
+            self.message = ["A double battle began!"]
+        else:
+            self._enqueue(self.eng._start_events)
+            if trainer_name:
+                self.steps.insert(0, {"kind": "text",
+                                      "lines": [f"{trainer_name} wants to battle!"],
+                                      "anim": None})
 
     # ── building the timeline ────────────────────────────────────────
     def _say(self, text: str, anim=None) -> None:
@@ -321,6 +335,10 @@ class BattleScene(Scene):
         held = getattr(inp, "held", ())
         self._ff = (A in held) or (B in held)    # hold A/B: fast-forward text
         m = self.mode
+        if self.doubles and m in ("menu", "moves", "d_move", "d_target",
+                                  "d_done"):
+            self._handle_doubles(inp)
+            return
         if m == "anim":
             if (A in inp.pressed or B in inp.pressed) and self.cur:
                 self._skip_step()
@@ -378,6 +396,176 @@ class BattleScene(Scene):
                 self._pick_party(self.cursor)
             elif B in inp.pressed and self.eng.phase != Phase.WAITING_REPLACEMENT:
                 self._enter("menu")
+
+    # ── doubles UI (minimal but playable) ────────────────────────────
+    def _doubles_move_actions(self, slot: int) -> list:
+        return [a for a in self.eng.legal_actions(P1, slot)
+                if isinstance(a, MoveAction)]
+
+    def _handle_doubles(self, inp) -> None:
+        eng = self.eng
+        # Replacement first: fill any of our fainted slots in turn.
+        if eng.phase == Phase.WAITING_REPLACEMENT:
+            self._enter_doubles_replacement()
+            return
+        if eng.over:
+            self.mode = "d_done"
+            if A in inp.pressed or B in inp.pressed:
+                self.game.last_battle = eng.winner
+                self.game.pop()
+            return
+        if self.mode in ("menu",):
+            # Begin choosing moves for slot 0.
+            self.pending_actions = []
+            self.pick_slot = 0
+            self.mode = "d_move"
+            self.cursor = 0
+        if self.mode == "d_move":
+            acts = self._doubles_move_actions(self.pick_slot)
+            self._nav(inp, acts or [0], columns=2)
+            if A in inp.pressed and acts:
+                self._chosen_move = acts[self.cursor]
+                mv = (None if self._chosen_move.move_id
+                      in ("struggle", "recharge")
+                      else self.game.data.move(self._chosen_move.move_id))
+                spread = mv is not None and mv.target == "all-other-pokemon"
+                self_t = mv is not None and (mv.targets_user
+                                             or mv.target == "user")
+                if spread or self_t:
+                    self._commit_doubles_move(self._chosen_move.move_id,
+                                              target_slot=0)
+                else:
+                    self.target_choice = 0
+                    self.cursor = 0
+                    self.mode = "d_target"
+        elif self.mode == "d_target":
+            foes = [b for b in self.eng.actives(P2)]
+            self._nav(inp, foes, columns=2)
+            if A in inp.pressed:
+                self._commit_doubles_move(self._chosen_move.move_id,
+                                          target_slot=self.cursor)
+            elif B in inp.pressed:
+                self.mode = "d_move"
+                self.cursor = 0
+
+    def _commit_doubles_move(self, move_id: str, target_slot: int) -> None:
+        self.pending_actions.append(MoveAction(move_id, target_slot=target_slot))
+        n_slots = len(self.eng.active_slots[P1])
+        if self.pick_slot + 1 < n_slots:
+            self.pick_slot += 1
+            self.mode = "d_move"
+            self.cursor = 0
+        else:
+            self._submit_doubles()
+
+    def _submit_doubles(self) -> None:
+        eng = self.eng
+        foe_actions = self.ai.choose_actions(eng, n=len(eng.active_slots[P2]))
+        ev = eng.submit_turn(self.pending_actions, foe_actions)
+        self._award_exp(ev)
+        self.message = [format_event(e) for e in ev
+                        if "remaining_hp" in e.data or e.type == E.MOVE_USED][-4:] \
+            or ["..."]
+        for s in (P1, P2):
+            self.disp_hp[s] = float(self.eng.active(s).current_hp)
+            self.hp_target[s] = self.disp_hp[s]
+        self.pending_actions = []
+        self.pick_slot = 0
+        if eng.over:
+            self.mode = "d_done"
+        elif eng.phase == Phase.WAITING_REPLACEMENT:
+            self._enter_doubles_replacement()
+        else:
+            self.mode = "menu"
+        self.cursor = 0
+
+    def _enter_doubles_replacement(self) -> None:
+        eng = self.eng
+        # Auto-handle the foe; let the player pick for their own slots.
+        for item in list(eng.pending_replacements):
+            s, slot = item if isinstance(item, tuple) else (item, 0)
+            if s == P2 and eng.bench(P2):
+                eng.submit_replacement(P2, self.ai.choose_replacement(eng, slot),
+                                       slot=slot)
+        # Player replacements: pick the first benched mon for each slot.
+        for item in list(eng.pending_replacements):
+            s, slot = item if isinstance(item, tuple) else (item, 0)
+            if s == P1 and eng.bench(P1):
+                eng.submit_replacement(P1, eng.bench(P1)[0], slot=slot)
+        for s in (P1, P2):
+            self.disp_hp[s] = float(self.eng.active(s).current_hp)
+            self.hp_target[s] = self.disp_hp[s]
+        self.mode = "d_done" if eng.over else "menu"
+
+    def _doubles_pos(self, side, slot):
+        """Top-left of a doubles battler sprite (slot 1 sits slightly in)."""
+        if side == P1:
+            base_x, base_y = 8 * S, 84 * S
+            return (base_x + slot * 56 * S, base_y - slot * 6 * S)
+        base_x, base_y = LOGICAL_W - 66 * S, 24 * S
+        return (base_x - slot * 52 * S, base_y + slot * 6 * S)
+
+    def _draw_doubles(self, surf) -> None:
+        self._draw_backdrop(surf)
+        font = self.game.assets.font
+        for side in (P2, P1):
+            for slot, bp in enumerate(self.eng.actives(side)):
+                if bp.fainted:
+                    continue
+                pos = self._doubles_pos(side, slot)
+                dex = getattr(self.game.data.species(bp.state.species_id),
+                              "dex", None)
+                img = self.game.assets.battler(bp.state.species_id, bp.name,
+                                               dex=dex, back=(side == P1))
+                w = int(SPRITE_PX * 0.78)
+                surf.blit(pygame.transform.scale(img, (w, w)), pos)
+        # Compact info boxes, one per active slot.
+        boxes = {
+            (P2, 0): pygame.Rect(6 * S, 6 * S, 80 * S, 22 * S),
+            (P2, 1): pygame.Rect(92 * S, 18 * S, 80 * S, 22 * S),
+            (P1, 0): pygame.Rect(LOGICAL_W - 86 * S, 70 * S, 80 * S, 22 * S),
+            (P1, 1): pygame.Rect(LOGICAL_W - 166 * S, 86 * S, 80 * S, 22 * S),
+        }
+        for side in (P1, P2):
+            for slot, bp in enumerate(self.eng.actives(side)):
+                rect = boxes[(side, slot)]
+                draw_box(surf, rect)
+                surf.blit(font.render(f"{bp.name} Lv{bp.level}", True, TEXT),
+                          (rect.x + 4 * S, rect.y + 2 * S))
+                frac = max(0.0, min(1.0, bp.current_hp / bp.max_hp))
+                bar = pygame.Rect(rect.x + 4 * S, rect.y + 14 * S,
+                                  rect.width - 8 * S, 4 * S)
+                pygame.draw.rect(surf, (90, 96, 110), bar, border_radius=S)
+                if frac > 0:
+                    color = GREEN if frac > 0.5 else YELLOW if frac > 0.2 else RED
+                    fill = bar.copy()
+                    fill.width = max(1, int(bar.width * frac))
+                    pygame.draw.rect(surf, color, fill, border_radius=S)
+        rect = pygame.Rect(4 * S, LOGICAL_H - 52 * S, LOGICAL_W - 8 * S, 48 * S)
+        draw_box(surf, rect)
+        if self.mode in ("menu", "d_done"):
+            self._draw_msg(surf, rect)
+        elif self.mode == "d_move":
+            head = font.render(f"[slot {self.pick_slot}] choose a move",
+                               True, TEXT)
+            surf.blit(head, (rect.x + 8 * S, rect.y + 4 * S))
+            labels = []
+            for a in self._doubles_move_actions(self.pick_slot):
+                if a.move_id in ("struggle", "recharge"):
+                    labels.append(a.move_id.title())
+                else:
+                    labels.append(self.game.data.move(a.move_id).name)
+            self._draw_grid(surf, pygame.Rect(rect.x, rect.y + 14 * S,
+                                              rect.width, rect.height - 14 * S),
+                            labels, columns=2)
+        elif self.mode == "d_target":
+            surf.blit(font.render("Target:", True, TEXT),
+                      (rect.x + 8 * S, rect.y + 4 * S))
+            labels = [f"foe{slot} ({bp.name})"
+                      for slot, bp in enumerate(self.eng.actives(P2))]
+            self._draw_grid(surf, pygame.Rect(rect.x, rect.y + 14 * S,
+                                              rect.width, rect.height - 14 * S),
+                            labels, columns=2)
 
     def _skip_step(self) -> None:
         k = self.cur["kind"]
@@ -476,6 +664,8 @@ class BattleScene(Scene):
 
     # ── frame update: drive the timeline ─────────────────────────────
     def update(self) -> None:
+        if self.doubles:
+            return   # the doubles flow drives the engine synchronously
         for s in (P1, P2):
             if self.flash[s] > 0:
                 self.flash[s] -= 1
@@ -595,6 +785,9 @@ class BattleScene(Scene):
             surf.blit(dov, (0, 0))
 
     def draw(self, surf) -> None:
+        if self.doubles:
+            self._draw_doubles(surf)
+            return
         self._draw_backdrop(surf)
         self._draw_battler(surf, P2, self._pos(P2))
         self._draw_battler(surf, P1, self._pos(P1))      # just above the box

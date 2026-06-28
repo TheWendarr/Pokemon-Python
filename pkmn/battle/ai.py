@@ -34,7 +34,22 @@ class RandomAI:
         moves = [a for a in eng.legal_actions(self.side) if isinstance(a, MoveAction)]
         return self.rng.choice(moves)
 
-    def choose_replacement(self, eng: BattleEngine) -> int:
+    def choose_actions(self, eng: BattleEngine, n: int = 1) -> list:
+        """Return n actions (1 for singles, 2 for doubles). Doubles picks
+        random moves targeting foe slot 0."""
+        out = []
+        for slot in range(n):
+            moves = [a for a in eng.legal_actions(self.side, slot)
+                     if isinstance(a, MoveAction)]
+            if not moves:
+                out.append(MoveAction("struggle", target_slot=0))
+                continue
+            a = self.rng.choice(moves)
+            out.append(MoveAction(a.move_id, target_slot=0)
+                       if a.target_slot < 0 else a)
+        return out
+
+    def choose_replacement(self, eng: BattleEngine, slot: int = 0) -> int:
         return self.rng.choice(eng.bench(self.side))
 
 
@@ -73,7 +88,26 @@ class GreedyAI:
             return self.rng.choice(moves)
         return best
 
-    def choose_replacement(self, eng: BattleEngine) -> int:
+    def choose_actions(self, eng: BattleEngine, n: int = 1) -> list:
+        """Return n actions (1 for singles, 2 for doubles). Doubles targets
+        foe slot 0 by default and picks each slot's own highest-damage move."""
+        out = []
+        for slot in range(n):
+            moves = [a for a in eng.legal_actions(self.side, slot)
+                     if isinstance(a, MoveAction)]
+            if not moves:
+                out.append(MoveAction("struggle", target_slot=0))
+                continue
+            scored = [(self._expected_damage(eng, a.move_id), self.rng.random(), a)
+                      for a in moves]
+            scored.sort(reverse=True, key=lambda t: (t[0], t[1]))
+            best_dmg, _, best = scored[0]
+            a = best if best_dmg > 0 else self.rng.choice(moves)
+            out.append(MoveAction(a.move_id, target_slot=0)
+                       if a.target_slot < 0 else a)
+        return out
+
+    def choose_replacement(self, eng: BattleEngine, slot: int = 0) -> int:
         # Send the benched Pokemon with the highest remaining HP fraction.
         bench = eng.bench(self.side)
         return max(bench, key=lambda i: eng.parties[self.side][i].current_hp

@@ -25,6 +25,7 @@ def other(side: str) -> str:
 @dataclass(frozen=True)
 class MoveAction:
     move_id: str
+    target_slot: int = -1   # -1 = auto; in doubles: 0 or 1 (which foe slot)
 
 
 @dataclass(frozen=True)

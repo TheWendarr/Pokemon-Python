@@ -41,17 +41,24 @@ class BattleError(Exception):
 class BattleEngine:
     def __init__(self, data: GameData, party1: list, party2: list, *,
                  wild: bool = False, rng: Optional[random.Random] = None,
-                 dex_caught: int = 0):
+                 dex_caught: int = 0, format: str = "single"):
         if not party1 or not party2:
             raise BattleError("Both sides need at least one Pokemon")
         self.data = data
         self.rng = rng or random.Random()
         self.wild = wild
+        self.format = format
         self.parties = {P1: [BattlePokemon(data, s) for s in party1],
                         P2: [BattlePokemon(data, s) for s in party2]}
-        self.active_idx = {P1: self._first_able(P1), P2: self._first_able(P2)}
-        if self.active_idx[P1] is None or self.active_idx[P2] is None:
-            raise BattleError("Both sides need at least one able Pokemon")
+        n_slots = 2 if format == "double" else 1
+        self.active_slots: dict[str, list[int]] = {}
+        for side in SIDES:
+            able = [i for i, bp in enumerate(self.parties[side]) if not bp.fainted]
+            if not able:
+                raise BattleError("Both sides need at least one able Pokemon")
+            self.active_slots[side] = able[:n_slots]
+        self.active_idx = {P1: self.active_slots[P1][0],
+                           P2: self.active_slots[P2][0]}
         self.phase = Phase.WAITING_ACTIONS
         self.pending_replacements: set = set()
         self.winner: Optional[str] = None   # 'p1' | 'p2' | 'draw' | 'escaped' | 'caught'
@@ -66,10 +73,14 @@ class BattleEngine:
         self.log: list[Event] = []
         ev = [Event(E.BATTLE_START, None, {"wild": wild})]
         for side in SIDES:
-            ev.append(self._send_in_event(side))
-        for side in sorted(SIDES, key=lambda s: self.active(s).effective_speed(),
-                           reverse=True):
-            passives.switch_in(self, side, self.active(side), ev)
+            for slot in range(len(self.active_slots[side])):
+                ev.append(self._send_in_event(side, slot))
+        sendin = [(side, slot) for side in SIDES
+                  for slot in range(len(self.active_slots[side]))]
+        sendin.sort(key=lambda ss: self.actives(ss[0])[ss[1]].effective_speed(),
+                    reverse=True)
+        for side, slot in sendin:
+            passives.switch_in(self, side, self.actives(side)[slot], ev)
         self.log.extend(ev)
         self._start_events = ev
 
@@ -83,6 +94,16 @@ class BattleEngine:
     def active(self, side: str) -> BattlePokemon:
         return self.parties[side][self.active_idx[side]]
 
+    def actives(self, side: str) -> list[BattlePokemon]:
+        return [self.parties[side][i] for i in self.active_slots[side]]
+
+    def _set_active(self, side: str, party_index: int, slot: int = 0) -> None:
+        """Point a slot at a new party member, keeping active_idx (slot 0
+        mirror) and active_slots in sync."""
+        self.active_slots[side][slot] = party_index
+        if slot == 0:
+            self.active_idx[side] = party_index
+
     def side_of(self, bp: BattlePokemon) -> str:
         for side in SIDES:
             if self.active(side) is bp:
@@ -92,11 +113,12 @@ class BattleEngine:
                 return side
         return "?"
 
-    def _send_in_event(self, side: str) -> Event:
-        bp = self.active(side)
+    def _send_in_event(self, side: str, slot: int = 0) -> Event:
+        idx = self.active_slots[side][slot]
+        bp = self.parties[side][idx]
         return Event(E.SEND_IN, side, {"pokemon": bp.name, "level": bp.level,
                                        "hp": bp.current_hp, "max_hp": bp.max_hp,
-                                       "party_index": self.active_idx[side]})
+                                       "party_index": idx, "slot": slot})
 
     def crit_chance_for(self, user: BattlePokemon, move,
                         defender: Optional[BattlePokemon] = None) -> float:
@@ -114,6 +136,13 @@ class BattleEngine:
             s *= 2
         return s
 
+    def speed_of_slot(self, side: str, slot: int) -> int:
+        bp = self.parties[side][self.active_slots[side][slot]]
+        s = bp.effective_speed(self.weather)
+        if self.sides[side].tailwind > 0:
+            s *= 2
+        return s
+
     def announce_faint(self, bp: BattlePokemon, events) -> None:
         if bp.fainted and not getattr(bp, "_faint_announced", False):
             bp._faint_announced = True
@@ -121,7 +150,7 @@ class BattleEngine:
 
     def bench(self, side: str) -> list[int]:
         return [i for i, bp in enumerate(self.parties[side])
-                if i != self.active_idx[side] and not bp.fainted]
+                if i not in self.active_slots[side] and not bp.fainted]
 
     def screened(self, defender_side: str, move) -> bool:
         ss = self.sides[defender_side]
@@ -133,10 +162,12 @@ class BattleEngine:
         self.weather_turns = turns
         events.append(Event(E.WEATHER_START, None, {"weather": kind}))
 
-    def legal_actions(self, side: str) -> list:
+    def legal_actions(self, side: str, slot: int = 0) -> list:
         if self.phase != Phase.WAITING_ACTIONS:
             return []
-        bp = self.active(side)
+        if slot >= len(self.active_slots[side]):
+            return []
+        bp = self.parties[side][self.active_slots[side][slot]]
         v = bp.vol
         if v.recharging:
             return [MoveAction("recharge")]
@@ -187,6 +218,8 @@ class BattleEngine:
     def submit_turn(self, p1_action, p2_action) -> list[Event]:
         if self.phase != Phase.WAITING_ACTIONS:
             raise BattleError(f"Cannot submit actions in phase {self.phase}")
+        if isinstance(p1_action, list):
+            return self._submit_turn_doubles(p1_action, p2_action)
         self.turn += 1
         events: list[Event] = [Event(E.TURN_START, None, {"turn": self.turn})]
         for side in SIDES:
@@ -216,20 +249,80 @@ class BattleEngine:
         self.log.extend(events)
         return events
 
-    def submit_replacement(self, side: str, party_index: int) -> list[Event]:
-        if self.phase != Phase.WAITING_REPLACEMENT or side not in self.pending_replacements:
+    def _submit_turn_doubles(self, p1_actions: list, p2_actions: list) -> list[Event]:
+        self.turn += 1
+        events: list[Event] = [Event(E.TURN_START, None, {"turn": self.turn})]
+        for side in SIDES:
+            for bp in self.actives(side):
+                v = bp.vol
+                v.has_moved = False
+                v.flinched = False
+                v.protected = False
+                v.endured = False
+                v.last_hit = None
+
+        # One actor per (side, slot). Capture the BattlePokemon so a slot's
+        # action still resolves against the right mon if active_slots mutate.
+        actors = []
+        for side, acts in ((P1, p1_actions), (P2, p2_actions)):
+            for slot in range(len(self.active_slots[side])):
+                action = acts[slot] if slot < len(acts) else MoveAction("struggle")
+                actors.append((side, slot, action,
+                               self.parties[side][self.active_slots[side][slot]]))
+        actors.sort(key=lambda a: (self._category_priority(a[2]),
+                                   self.speed_of_slot(a[0], a[1]),
+                                   self.rng.random()),
+                    reverse=True)
+
+        for side, slot, action, bp in actors:
+            if self.phase == Phase.OVER:
+                break
+            if bp.fainted:
+                continue
+            self._execute_action_doubles(side, slot, action, bp, events)
+
+        if self.phase != Phase.OVER:
+            self._end_of_turn(events)
+        self._resolve_faints(events)
+        self.log.extend(events)
+        return events
+
+    def _execute_action_doubles(self, side, slot, action, bp, events) -> None:
+        if isinstance(action, MoveAction):
+            self._do_move_doubles(side, slot, action, bp, events)
+        elif isinstance(action, SwitchAction):
+            self._do_switch_slot(side, slot, action.party_index, events)
+        else:
+            # Item/Catch/Run fall back to the singles path (slot-agnostic).
+            self._execute_action(side, action, events)
+
+    def submit_replacement(self, side: str, party_index: int,
+                           slot: int = 0) -> list[Event]:
+        token = (side, slot) if self.format == "double" else side
+        if self.phase != Phase.WAITING_REPLACEMENT \
+                or token not in self.pending_replacements:
             raise BattleError(f"No replacement pending for {side}")
         if party_index not in self.bench(side):
             raise BattleError("Replacement must be an able, benched Pokemon")
-        self.active_idx[side] = party_index
-        self.active(side)._faint_announced = False
-        self.active(side).on_switch_out()  # fresh volatiles
-        ev = [self._send_in_event(side)]
-        self._switch_in_effects(side, ev)
-        self.pending_replacements.discard(side)
-        if self.phase != Phase.OVER and self.active(side).fainted:
+        self._set_active(side, party_index, slot)
+        bp = self.parties[side][party_index]
+        bp._faint_announced = False
+        bp.on_switch_out()  # fresh volatiles
+        ev = [self._send_in_event(side, slot)]
+        self._switch_in_effects(side, ev, slot)
+        self.pending_replacements.discard(token)
+        if self.format == "double":
+            if self.phase != Phase.OVER and bp.fainted:
+                # Re-derive pending from the board (handles a hazard KO on
+                # switch-in and depleted benches without ending the battle).
+                self._resolve_faints_doubles(ev)
+            # Drop any pending slots whose side has nothing left to send.
+            self.pending_replacements = {
+                (s, sl) for (s, sl) in self.pending_replacements
+                if self.bench(s)}
+        elif self.phase != Phase.OVER and bp.fainted:
             if self.bench(side):
-                self.pending_replacements.add(side)
+                self.pending_replacements.add(token)
                 ev.append(Event(E.REPLACEMENT_NEEDED, side, {}))
             else:
                 self._end_battle(other(side), ev)
@@ -239,8 +332,8 @@ class BattleEngine:
         return ev
 
     # ── switch-in pipeline (hazards, then abilities) ─────────────────
-    def _switch_in_effects(self, side: str, events) -> None:
-        bp = self.active(side)
+    def _switch_in_effects(self, side: str, events, slot: int = 0) -> None:
+        bp = self.parties[side][self.active_slots[side][slot]]
         ss = self.sides[side]
         if ss.stealth_rock and not bp.fainted and not passives.magic_guard(bp):
             eff = self.data.effectiveness("rock", bp.types)
@@ -298,9 +391,12 @@ class BattleEngine:
         else:
             raise BattleError(f"Unknown action: {action!r}")
 
-    def _do_move(self, side: str, action: MoveAction, events) -> None:
+    def _do_move(self, side: str, action: MoveAction, events,
+                 targets=None) -> None:
         user = self.active(side)
-        target = self.active(other(side))
+        # `targets`: optional [(BattlePokemon, power_mult), ...] override used
+        # by the doubles path. None -> singles default (the lone foe).
+        target = targets[0][0] if targets else self.active(other(side))
 
         if user.vol.recharging:
             user.vol.recharging = False
@@ -308,7 +404,7 @@ class BattleEngine:
             events.append(Event(E.RECHARGING, side, {"pokemon": user.name}))
             return
 
-        if target.fainted:
+        if targets is None and target.fainted:
             return  # nothing to hit; mainline skips the second move
 
         move = self._resolve_move(action)
@@ -376,7 +472,14 @@ class BattleEngine:
         user.vol.has_moved = True
         if move.id not in ("struggle", "recharge"):
             user.vol.last_move = move.id
-        movex.execute_move(self, side, move, events)
+        if targets is None:
+            movex.execute_move(self, side, move, events)
+        else:
+            for t, pmult in targets:
+                if t.fainted or user.fainted or self.over:
+                    continue
+                movex.execute_move(self, side, move, events,
+                                   power_mult=pmult, target=t)
 
         # Rampage fatigue -> confusion
         if move.id in movex.RAMPAGE_MOVES and user.vol.rampage_move \
@@ -464,9 +567,72 @@ class BattleEngine:
         passives.on_switch_out(old, events, side)
         old.on_switch_out()
         events.append(Event(E.SWITCH_OUT, side, {"pokemon": old.name}))
-        self.active_idx[side] = new_index
+        self._set_active(side, new_index)
         events.append(self._send_in_event(side))
         self._switch_in_effects(side, events)
+
+    def _do_switch_slot(self, side: str, slot: int, new_index: int, events) -> None:
+        if new_index not in self.bench(side):
+            raise BattleError(f"Illegal switch to index {new_index}")
+        old = self.parties[side][self.active_slots[side][slot]]
+        passives.on_switch_out(old, events, side)
+        old.on_switch_out()
+        events.append(Event(E.SWITCH_OUT, side, {"pokemon": old.name}))
+        self._set_active(side, new_index, slot)
+        events.append(self._send_in_event(side, slot))
+        self._switch_in_effects(side, events, slot)
+
+    def _do_move_doubles(self, side: str, slot: int, action: MoveAction,
+                         bp: BattlePokemon, events) -> None:
+        # The slot's mon may have moved to a different position via earlier
+        # switches; re-resolve its current slot index. If it's no longer
+        # active (switched out / replaced), skip.
+        try:
+            cur_slot = self.active_slots[side].index(
+                next(i for i in self.active_slots[side]
+                     if self.parties[side][i] is bp))
+        except StopIteration:
+            return
+        move = self._resolve_move(action)
+        foe = other(side)
+        live_foes = [b for b in self.actives(foe) if not b.fainted]
+        if move.target == "all-other-pokemon":
+            targets = [(b, 0.75) for b in live_foes]
+            targets += [(b, 0.75) for b in self.actives(side)
+                        if b is not bp and not b.fainted]
+        elif move.targets_user or move.target in ("user", "users-field",
+                                                   "user-and-allies",
+                                                   "entire-field", "user-side"):
+            targets = [(bp, 1.0)]
+        elif move.target == "ally":
+            ally = [b for b in self.actives(side) if b is not bp and not b.fainted]
+            targets = [(ally[0], 1.0)] if ally else [(bp, 1.0)]
+        else:
+            # Single-target foe move: pick the requested foe slot, falling
+            # back to any live foe.
+            want = action.target_slot
+            chosen = None
+            if 0 <= want < len(self.active_slots[foe]):
+                cand = self.parties[foe][self.active_slots[foe][want]]
+                if not cand.fainted:
+                    chosen = cand
+            if chosen is None:
+                chosen = live_foes[0] if live_foes else None
+            if chosen is None:
+                return  # no foe to hit
+            targets = [(chosen, 1.0)]
+
+        # Point slot 0 at this actor so the existing _do_move bookkeeping
+        # (user = self.active(side), PP, choice lock, etc.) operates on it.
+        saved0 = self.active_slots[side][0]
+        saved_idx = self.active_idx[side]
+        self.active_slots[side][0] = self.active_slots[side][cur_slot]
+        self.active_idx[side] = self.active_slots[side][0]
+        try:
+            self._do_move(side, action, events, targets=targets)
+        finally:
+            self.active_slots[side][0] = saved0
+            self.active_idx[side] = saved_idx
 
     def _do_item(self, side: str, action: ItemAction, events) -> None:
         item = self.data.item(action.item_id)
@@ -609,21 +775,21 @@ class BattleEngine:
         # 1. weather chip + expiry
         if self.weather in ("sandstorm", "hail"):
             for side in order:
-                bp = self.active(side)
-                if bp.fainted:
-                    continue
-                if self.weather == "sandstorm" and passives.sand_immune(bp):
-                    continue
-                if self.weather == "hail" and "ice" in bp.types:
-                    continue
-                if passives.magic_guard(bp):
-                    continue
-                dmg = max(1, bp.max_hp // 16)
-                bp.take_damage(dmg)
-                events.append(Event(E.WEATHER_DAMAGE, side,
-                                    {"weather": self.weather, "pokemon": bp.name,
-                                     "amount": dmg, "remaining_hp": bp.current_hp}))
-                self.announce_faint(bp, events)
+                for bp in self.actives(side):
+                    if bp.fainted:
+                        continue
+                    if self.weather == "sandstorm" and passives.sand_immune(bp):
+                        continue
+                    if self.weather == "hail" and "ice" in bp.types:
+                        continue
+                    if passives.magic_guard(bp):
+                        continue
+                    dmg = max(1, bp.max_hp // 16)
+                    bp.take_damage(dmg)
+                    events.append(Event(E.WEATHER_DAMAGE, side,
+                                        {"weather": self.weather, "pokemon": bp.name,
+                                         "amount": dmg, "remaining_hp": bp.current_hp}))
+                    self.announce_faint(bp, events)
         if self.weather and self.weather_turns > 0:
             self.weather_turns -= 1
             if self.weather_turns == 0:
@@ -631,101 +797,73 @@ class BattleEngine:
                 self.weather = None
         # 2. item/ability residuals (Leftovers, berries, Speed Boost)
         for side in order:
-            passives.end_of_turn(self, side, self.active(side), events)
+            for bp in self.actives(side):
+                passives.end_of_turn(self, side, bp, events)
         # 2b. Ingrain heal
         for side in order:
-            bp = self.active(side)
-            if not bp.fainted and (bp.vol.ingrained or bp.vol.aqua_ring) \
-                    and bp.current_hp < bp.max_hp:
-                healed = bp.heal(max(1, bp.max_hp // 16))
-                events.append(Event(E.HEAL, side,
-                                    {"pokemon": bp.name, "amount": healed,
-                                     "remaining_hp": bp.current_hp,
-                                     "ingrain": True}))
-        # 3. Leech Seed
-        for side in order:
-            bp = self.active(side)
-            if bp.fainted or not bp.vol.leech_seeded:
-                continue
-            if passives.magic_guard(bp):
-                continue
-            foe = self.active(other(side))
-            dmg = max(1, bp.max_hp // 8)
-            dealt = bp.take_damage(dmg)
-            events.append(Event(E.LEECH_DRAIN, side,
-                                {"pokemon": bp.name, "amount": dealt,
-                                 "remaining_hp": bp.current_hp}))
-            self.announce_faint(bp, events)
-            if not foe.fainted and dealt:
-                healed = foe.heal(dealt)
-                if healed:
-                    events.append(Event(E.HEAL, other(side),
-                                        {"pokemon": foe.name, "amount": healed,
-                                         "remaining_hp": foe.current_hp}))
-        # 4. status damage
-        for side in order:
-            bp = self.active(side)
-            if bp.fainted:
-                continue
-            if bp.status in ("poison", "toxic") and passives.abil(bp) == "poison-heal":
-                # Poison Heal: heal 1/8 max HP instead of taking damage
-                healed = bp.heal(max(1, bp.max_hp // 8))
-                if healed:
-                    events.append(Event(E.ABILITY, side,
-                                        {"ability": "poison-heal", "pokemon": bp.name}))
+            for bp in self.actives(side):
+                if not bp.fainted and (bp.vol.ingrained or bp.vol.aqua_ring) \
+                        and bp.current_hp < bp.max_hp:
+                    healed = bp.heal(max(1, bp.max_hp // 16))
                     events.append(Event(E.HEAL, side,
                                         {"pokemon": bp.name, "amount": healed,
-                                         "remaining_hp": bp.current_hp}))
-                if bp.status == "toxic":
-                    bp.vol.toxic_counter += 1
-                continue
-            if passives.magic_guard(bp):
-                # Magic Guard: immune to indirect damage; skip status damage
-                if bp.status == "toxic":
-                    bp.vol.toxic_counter += 1
-                continue
-            if bp.status == "burn":
+                                         "remaining_hp": bp.current_hp,
+                                         "ingrain": True}))
+        # 3. Leech Seed
+        for side in order:
+            for bp in self.actives(side):
+                if bp.fainted or not bp.vol.leech_seeded:
+                    continue
+                if passives.magic_guard(bp):
+                    continue
+                foe = next((b for b in self.actives(other(side))
+                            if not b.fainted), None)
                 dmg = max(1, bp.max_hp // 8)
-            elif bp.status == "poison":
-                dmg = max(1, bp.max_hp // 8)
-            elif bp.status == "toxic":
-                bp.vol.toxic_counter += 1
-                dmg = max(1, bp.max_hp * min(bp.vol.toxic_counter, 15) // 16)
-            else:
-                continue
-            bp.take_damage(dmg)
-            events.append(Event(E.STATUS_DAMAGE, side,
-                                {"pokemon": bp.name, "status": bp.status,
-                                 "amount": dmg, "remaining_hp": bp.current_hp}))
-            self.announce_faint(bp, events)
+                dealt = bp.take_damage(dmg)
+                events.append(Event(E.LEECH_DRAIN, side,
+                                    {"pokemon": bp.name, "amount": dealt,
+                                     "remaining_hp": bp.current_hp}))
+                self.announce_faint(bp, events)
+                if foe is not None and not foe.fainted and dealt:
+                    healed = foe.heal(dealt)
+                    if healed:
+                        events.append(Event(E.HEAL, other(side),
+                                            {"pokemon": foe.name, "amount": healed,
+                                             "remaining_hp": foe.current_hp}))
+        # 4. status damage
+        for side in order:
+            for bp in self.actives(side):
+                if bp.fainted:
+                    continue
+                self._status_chip(side, bp, events)
         # 4b. Curse chip
         for side in order:
-            bp = self.active(side)
-            if bp.fainted or not bp.vol.cursed:
-                continue
-            if passives.magic_guard(bp):
-                continue
-            dmg = max(1, bp.max_hp // 4)
-            bp.take_damage(dmg)
-            events.append(Event(E.STATUS_DAMAGE, side,
-                                {"pokemon": bp.name, "status": "curse",
-                                 "amount": dmg, "remaining_hp": bp.current_hp}))
-            self.announce_faint(bp, events)
-        # 5. partial trapping
-        for side in order:
-            bp = self.active(side)
-            if bp.fainted or bp.vol.trap_turns <= 0:
-                continue
-            if not passives.magic_guard(bp):
-                dmg = max(1, bp.max_hp // 16)
+            for bp in self.actives(side):
+                if bp.fainted or not bp.vol.cursed:
+                    continue
+                if passives.magic_guard(bp):
+                    continue
+                dmg = max(1, bp.max_hp // 4)
                 bp.take_damage(dmg)
-                events.append(Event(E.TRAP_DAMAGE, side,
-                                    {"pokemon": bp.name, "move": bp.vol.trap_name,
+                events.append(Event(E.STATUS_DAMAGE, side,
+                                    {"pokemon": bp.name, "status": "curse",
                                      "amount": dmg, "remaining_hp": bp.current_hp}))
                 self.announce_faint(bp, events)
-            bp.vol.trap_turns -= 1
-            if bp.vol.trap_turns == 0:
-                events.append(Event(E.TRAP_END, side, {"pokemon": bp.name}))
+        # 5. partial trapping
+        for side in order:
+            for bp in self.actives(side):
+                if bp.fainted or bp.vol.trap_turns <= 0:
+                    continue
+                if not passives.magic_guard(bp):
+                    dmg = max(1, bp.max_hp // 16)
+                    bp.take_damage(dmg)
+                    events.append(Event(E.TRAP_DAMAGE, side,
+                                        {"pokemon": bp.name, "move": bp.vol.trap_name,
+                                         "amount": dmg, "remaining_hp": bp.current_hp}))
+                    self.announce_faint(bp, events)
+                bp.vol.trap_turns -= 1
+                if bp.vol.trap_turns == 0:
+                    events.append(Event(E.TRAP_END, side, {"pokemon": bp.name}))
         # 6. side-condition + volatile countdowns
         for side in SIDES:
             ss = self.sides[side]
@@ -737,25 +875,62 @@ class BattleEngine:
                     if turns - 1 == 0:
                         events.append(Event(E.SCREEN_END, side,
                                             {"screen": attr.replace("_", "-")}))
-            v = self.active(side).vol
-            if v.taunt_turns > 0:
-                v.taunt_turns -= 1
-            if v.telekinesis_turns > 0:
-                v.telekinesis_turns -= 1
-            if v.heal_block_turns > 0:
-                v.heal_block_turns -= 1
-            if v.embargo_turns > 0:
-                v.embargo_turns -= 1
-            if v.encore_turns > 0:
-                v.encore_turns -= 1
-                if v.encore_turns == 0:
-                    v.encore_move = None
+            for bp in self.actives(side):
+                v = bp.vol
+                if v.taunt_turns > 0:
+                    v.taunt_turns -= 1
+                if v.telekinesis_turns > 0:
+                    v.telekinesis_turns -= 1
+                if v.heal_block_turns > 0:
+                    v.heal_block_turns -= 1
+                if v.embargo_turns > 0:
+                    v.embargo_turns -= 1
+                if v.encore_turns > 0:
+                    v.encore_turns -= 1
+                    if v.encore_turns == 0:
+                        v.encore_move = None
         for k in self.sport:
             if self.sport[k] > 0:
                 self.sport[k] -= 1
 
+    def _status_chip(self, side, bp, events) -> None:
+        if bp.status in ("poison", "toxic") and passives.abil(bp) == "poison-heal":
+            # Poison Heal: heal 1/8 max HP instead of taking damage
+            healed = bp.heal(max(1, bp.max_hp // 8))
+            if healed:
+                events.append(Event(E.ABILITY, side,
+                                    {"ability": "poison-heal", "pokemon": bp.name}))
+                events.append(Event(E.HEAL, side,
+                                    {"pokemon": bp.name, "amount": healed,
+                                     "remaining_hp": bp.current_hp}))
+            if bp.status == "toxic":
+                bp.vol.toxic_counter += 1
+            return
+        if passives.magic_guard(bp):
+            # Magic Guard: immune to indirect damage; skip status damage
+            if bp.status == "toxic":
+                bp.vol.toxic_counter += 1
+            return
+        if bp.status == "burn":
+            dmg = max(1, bp.max_hp // 8)
+        elif bp.status == "poison":
+            dmg = max(1, bp.max_hp // 8)
+        elif bp.status == "toxic":
+            bp.vol.toxic_counter += 1
+            dmg = max(1, bp.max_hp * min(bp.vol.toxic_counter, 15) // 16)
+        else:
+            return
+        bp.take_damage(dmg)
+        events.append(Event(E.STATUS_DAMAGE, side,
+                            {"pokemon": bp.name, "status": bp.status,
+                             "amount": dmg, "remaining_hp": bp.current_hp}))
+        self.announce_faint(bp, events)
+
     def _resolve_faints(self, events) -> None:
         if self.phase == Phase.OVER:
+            return
+        if self.format == "double":
+            self._resolve_faints_doubles(events)
             return
         needed = {s for s in SIDES if self.active(s).fainted}
         if not needed:
@@ -773,6 +948,35 @@ class BattleEngine:
         self.pending_replacements = needed
         self.phase = Phase.WAITING_REPLACEMENT
         for s in needed:
+            events.append(Event(E.REPLACEMENT_NEEDED, s, {}))
+
+    def _able_count(self, side: str) -> int:
+        return sum(1 for bp in self.parties[side] if not bp.fainted)
+
+    def _resolve_faints_doubles(self, events) -> None:
+        # A side loses only when it has no able Pokemon at all (active or
+        # benched). Otherwise, every empty active slot that can be refilled
+        # becomes a pending replacement.
+        wiped = {s for s in SIDES if self._able_count(s) == 0}
+        if wiped == set(SIDES):
+            self._end_battle("draw", events)
+            return
+        if P1 in wiped:
+            self._end_battle(P2, events)
+            return
+        if P2 in wiped:
+            self._end_battle(P1, events)
+            return
+        pending = set()
+        for s in SIDES:
+            for slot, idx in enumerate(self.active_slots[s]):
+                if self.parties[s][idx].fainted and self.bench(s):
+                    pending.add((s, slot))
+        if not pending:
+            return
+        self.pending_replacements = pending
+        self.phase = Phase.WAITING_REPLACEMENT
+        for s, _slot in sorted(pending):
             events.append(Event(E.REPLACEMENT_NEEDED, s, {}))
 
     def _end_battle(self, winner: str, events) -> None:
