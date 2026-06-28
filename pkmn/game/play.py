@@ -27,13 +27,17 @@ def main() -> None:
     ap.add_argument("--fill", action="store_true",
                     help="fill the screen (sharp-bilinear) instead of the "
                          "default pixel-perfect integer scaling")
+    ap.add_argument("--cheat", default="F",
+                    help="enable cheat console (T to enable; opens with ~)")
     args = ap.parse_args()
     from . import sprites
     sprites.FETCH_ENABLED = not args.no_sprite_fetch
+    cheat = args.cheat.strip().upper() in ("T", "TRUE", "1", "YES", "ON")
     game = Game(headless=args.headless, seed=args.seed,
                 save_path=args.save, game_dir=args.game,
                 fullscreen=args.fullscreen, fill=args.fill, mute=args.mute,
-                controls_path=args.controls, daynight=args.time)
+                controls_path=args.controls, daynight=args.time,
+                cheat=cheat)
     game.push(TitleScene(game))
     game.run()
 

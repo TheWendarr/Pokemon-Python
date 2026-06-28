@@ -35,6 +35,7 @@ class Input:
         self.pressed: set = set()
         self.held: set = set()
         self.raw: set = set()          # raw keycodes this frame (rebind menu)
+        self.key_downs: list = []      # (keycode, unicode) pairs this frame
 
     def press(self, name: str) -> None:
         self.pressed.add(name)
@@ -49,6 +50,7 @@ class Input:
     def clear_frame(self) -> None:
         self.pressed.clear()
         self.raw.clear()
+        self.key_downs.clear()
 
 
 class Scene:
@@ -70,7 +72,8 @@ class Game:
                  data_dir: str | None = None, save_path: str | None = None,
                  game_dir: str = "game/assets", fullscreen: bool = False,
                  fill: bool = False, mute: bool = False,
-                 controls_path: str | None = None, daynight=None):
+                 controls_path: str | None = None, daynight=None,
+                 cheat: bool = False):
         self.headless = headless
         if headless:
             os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
@@ -114,6 +117,7 @@ class Game:
         if isinstance(dn, str) and dn.isdigit():
             self.clock_hour, dn = int(dn) % 24, "auto"
         self.daynight = dn
+        self.cheat = cheat                 # cheat console enabled
         self.battle_bg = "field"          # set per map; battles read it
 
     def feature(self, name: str, default: bool = True) -> bool:
@@ -238,6 +242,7 @@ class Game:
 
     # ── interactive loop ─────────────────────────────────────────────
     def run(self) -> None:
+        from .cheat import CheatConsoleScene
         clock = pygame.time.Clock()
         while self.running:
             for ev in pygame.event.get():
@@ -245,7 +250,16 @@ class Game:
                     self.running = False
                 elif ev.type == pygame.KEYDOWN and ev.key == pygame.K_F11:
                     self._open_window(not self.fullscreen)
+                elif (ev.type == pygame.KEYDOWN
+                      and ev.key == pygame.K_BACKQUOTE
+                      and self.cheat):
+                    # Toggle cheat console with ~ (backquote)
+                    if self.scenes and isinstance(self.scenes[-1], CheatConsoleScene):
+                        self.pop()
+                    else:
+                        self.push(CheatConsoleScene(self))
                 elif ev.type == pygame.KEYDOWN:
+                    self.input.key_downs.append((ev.key, ev.unicode))
                     self.input.press_raw(ev.key)        # for the rebind menu
                     if ev.key in self.keymap:
                         self.input.press(self.keymap[ev.key])
