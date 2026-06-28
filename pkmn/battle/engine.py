@@ -103,6 +103,9 @@ class BattleEngine:
         if defender is not None and \
                 self.sides[self.side_of(defender)].lucky_chant > 0:
             return 0.0
+        if defender is not None and \
+                passives.abil(defender) in ("battle-armor", "shell-armor"):
+            return 0.0
         return crit_chance(move.crit_stage + passives.crit_bonus(user))
 
     def speed_of(self, side: str) -> int:
@@ -239,7 +242,7 @@ class BattleEngine:
     def _switch_in_effects(self, side: str, events) -> None:
         bp = self.active(side)
         ss = self.sides[side]
-        if ss.stealth_rock and not bp.fainted:
+        if ss.stealth_rock and not bp.fainted and not passives.magic_guard(bp):
             eff = self.data.effectiveness("rock", bp.types)
             if eff > 0:
                 dmg = max(1, int(bp.max_hp * eff) // 8)
@@ -249,8 +252,9 @@ class BattleEngine:
                                      "amount": dmg, "remaining_hp": bp.current_hp}))
                 self.announce_faint(bp, events)
         grounded = ("flying" not in bp.types
-                    and passives.abil(bp) != "levitate")
-        if not bp.fainted and grounded and ss.spikes > 0:
+                    and passives.abil(bp) != "levitate"
+                    and bp.vol.magnet_rise_turns <= 0)
+        if not bp.fainted and grounded and ss.spikes > 0 and not passives.magic_guard(bp):
             dmg = max(1, bp.max_hp // {1: 8, 2: 6}.get(ss.spikes, 4))
             bp.take_damage(dmg)
             events.append(Event(E.HAZARD_DAMAGE, side,
@@ -361,6 +365,14 @@ class BattleEngine:
                 and move.id not in ("struggle", "recharge"):
             user.vol.choice_lock = move.id
 
+        # Pressure: foe uses 2 PP per move (extra -1 PP)
+        if move.id not in ("struggle", "recharge") and not releasing and not rampaging:
+            foe_active = self.active(other(side))
+            if passives.abil(foe_active) == "pressure":
+                slot = user.state.move_slot(move.id)
+                if slot is not None and slot.pp > 0:
+                    slot.pp -= 1
+
         user.vol.has_moved = True
         if move.id not in ("struggle", "recharge"):
             user.vol.last_move = move.id
@@ -384,7 +396,11 @@ class BattleEngine:
             # sleep_turns == failed turns remaining; -1 means re-entered
             # while asleep, so the counter re-rolls (Gen 5 behavior).
             if user.vol.sleep_turns < 0:
-                user.vol.sleep_turns = self.rng.randint(1, 3)
+                base = self.rng.randint(1, 3)
+                # Early Bird: halves sleep counter
+                if passives.abil(user) == "early-bird":
+                    base = max(1, base // 2)
+                user.vol.sleep_turns = base
             if user.vol.sleep_turns > 0:
                 user.vol.sleep_turns -= 1
                 events.append(Event(E.ASLEEP, side, {"pokemon": user.name}))
@@ -401,6 +417,16 @@ class BattleEngine:
 
         if user.vol.flinched:
             events.append(Event(E.FLINCHED, side, {"pokemon": user.name}))
+            # Steadfast: flinch causes +1 Speed
+            if passives.abil(user) == "steadfast":
+                applied = user.modify_stage("speed", 1)
+                if applied:
+                    events.append(Event(E.ABILITY, side,
+                                        {"ability": "steadfast", "pokemon": user.name}))
+                    events.append(Event(E.STAT_CHANGE, side,
+                                        {"pokemon": user.name, "stat": "speed",
+                                         "change": applied,
+                                         "stage": user.stages["speed"]}))
             return False
 
         if user.vol.confusion_turns > 0:
@@ -590,6 +616,8 @@ class BattleEngine:
                     continue
                 if self.weather == "hail" and "ice" in bp.types:
                     continue
+                if passives.magic_guard(bp):
+                    continue
                 dmg = max(1, bp.max_hp // 16)
                 bp.take_damage(dmg)
                 events.append(Event(E.WEATHER_DAMAGE, side,
@@ -619,6 +647,8 @@ class BattleEngine:
             bp = self.active(side)
             if bp.fainted or not bp.vol.leech_seeded:
                 continue
+            if passives.magic_guard(bp):
+                continue
             foe = self.active(other(side))
             dmg = max(1, bp.max_hp // 8)
             dealt = bp.take_damage(dmg)
@@ -636,6 +666,23 @@ class BattleEngine:
         for side in order:
             bp = self.active(side)
             if bp.fainted:
+                continue
+            if bp.status in ("poison", "toxic") and passives.abil(bp) == "poison-heal":
+                # Poison Heal: heal 1/8 max HP instead of taking damage
+                healed = bp.heal(max(1, bp.max_hp // 8))
+                if healed:
+                    events.append(Event(E.ABILITY, side,
+                                        {"ability": "poison-heal", "pokemon": bp.name}))
+                    events.append(Event(E.HEAL, side,
+                                        {"pokemon": bp.name, "amount": healed,
+                                         "remaining_hp": bp.current_hp}))
+                if bp.status == "toxic":
+                    bp.vol.toxic_counter += 1
+                continue
+            if passives.magic_guard(bp):
+                # Magic Guard: immune to indirect damage; skip status damage
+                if bp.status == "toxic":
+                    bp.vol.toxic_counter += 1
                 continue
             if bp.status == "burn":
                 dmg = max(1, bp.max_hp // 8)
@@ -656,6 +703,8 @@ class BattleEngine:
             bp = self.active(side)
             if bp.fainted or not bp.vol.cursed:
                 continue
+            if passives.magic_guard(bp):
+                continue
             dmg = max(1, bp.max_hp // 4)
             bp.take_damage(dmg)
             events.append(Event(E.STATUS_DAMAGE, side,
@@ -667,12 +716,13 @@ class BattleEngine:
             bp = self.active(side)
             if bp.fainted or bp.vol.trap_turns <= 0:
                 continue
-            dmg = max(1, bp.max_hp // 16)
-            bp.take_damage(dmg)
-            events.append(Event(E.TRAP_DAMAGE, side,
-                                {"pokemon": bp.name, "move": bp.vol.trap_name,
-                                 "amount": dmg, "remaining_hp": bp.current_hp}))
-            self.announce_faint(bp, events)
+            if not passives.magic_guard(bp):
+                dmg = max(1, bp.max_hp // 16)
+                bp.take_damage(dmg)
+                events.append(Event(E.TRAP_DAMAGE, side,
+                                    {"pokemon": bp.name, "move": bp.vol.trap_name,
+                                     "amount": dmg, "remaining_hp": bp.current_hp}))
+                self.announce_faint(bp, events)
             bp.vol.trap_turns -= 1
             if bp.vol.trap_turns == 0:
                 events.append(Event(E.TRAP_END, side, {"pokemon": bp.name}))

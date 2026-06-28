@@ -92,7 +92,7 @@ def _hits(eng, user, target, move) -> bool:
 
 
 def apply_status(eng, target: BattlePokemon, status: str, events, *,
-                 turns: int | None = None) -> bool:
+                 turns: int | None = None, from_attacker: BattlePokemon | None = None) -> bool:
     """Apply a non-volatile status with Gen 5 rules. Returns success."""
     if target.fainted or target.status is not None:
         return False
@@ -105,10 +105,28 @@ def apply_status(eng, target: BattlePokemon, status: str, events, *,
     if status == "toxic":
         target.vol.toxic_counter = 0
     if status == "sleep":
-        target.vol.sleep_turns = turns if turns is not None else eng.rng.randint(1, 3)
+        if turns is not None:
+            rolled = turns
+        else:
+            rolled = eng.rng.randint(1, 3)
+            if passives.abil(target) == "early-bird":
+                rolled = max(1, rolled // 2)
+        target.vol.sleep_turns = rolled
     events.append(Event(E.STATUS_APPLIED, eng.side_of(target),
                         {"status": status, "pokemon": target.name}))
     passives.check_lum(eng, target, events)
+    passives.check_status_berry(eng, target, events)
+    # Synchronize: mirror status back to attacker
+    if from_attacker is not None and not from_attacker.fainted \
+            and passives.abil(target) == "synchronize" \
+            and status in ("burn", "poison", "toxic", "paralysis"):
+        mirror = "poison" if status == "toxic" else status
+        if not from_attacker.status:
+            from_attacker.status = mirror
+            events.append(Event(E.ABILITY, eng.side_of(target),
+                                {"ability": "synchronize", "pokemon": target.name}))
+            events.append(Event(E.STATUS_APPLIED, eng.side_of(from_attacker),
+                                {"status": mirror, "pokemon": from_attacker.name}))
     return True
 
 
@@ -133,7 +151,8 @@ def apply_ailment(eng, user: BattlePokemon, target: BattlePokemon,
         return
     if ailment in NONVOLATILE_AILMENTS:
         status = "toxic" if (ailment == "poison" and move.id in TOXIC_MOVES) else ailment
-        ok = apply_status(eng, target, status, events)
+        attacker_ref = user if target is not user else None
+        ok = apply_status(eng, target, status, events, from_attacker=attacker_ref)
         if not ok and move.category == STATUS:
             events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
         return
@@ -187,6 +206,13 @@ def apply_stat_changes(eng, user, target, move: MoveData, events, *,
         return
     misted = (recipient is target and recipient is not user
               and eng.sides[eng.side_of(recipient)].mist > 0)
+    lowering_target = (recipient is target and recipient is not user)
+    # Clear Body / White Smoke: no stat lowering by foes at all
+    # Hyper Cutter: only Attack cannot be lowered by foes
+    # Big Pecks: only Defense cannot be lowered by foes
+    foe_lowering = lowering_target
+    _ra = passives.abil(recipient) if lowering_target else ""
+    _stat_block_all = _ra in ("clear-body", "white-smoke")
     for sc in eff.stat_changes:
         if recipient.fainted:
             continue
@@ -194,6 +220,14 @@ def apply_stat_changes(eng, user, target, move: MoveData, events, *,
             events.append(Event(E.MOVE_FAILED, eng.side_of(user),
                                 {"move": move.name, "mist": True}))
             continue
+        # Ability-based stat lower immunity
+        if foe_lowering and sc.change < 0:
+            if _stat_block_all:
+                continue
+            if _ra == "hyper-cutter" and sc.stat == "attack":
+                continue
+            if _ra == "big-pecks" and sc.stat == "defense":
+                continue
         applied = recipient.modify_stage(sc.stat, sc.change)
         side = eng.side_of(recipient)
         if applied == 0:
@@ -205,6 +239,10 @@ def apply_stat_changes(eng, user, target, move: MoveData, events, *,
                                 {"pokemon": recipient.name, "stat": sc.stat,
                                  "change": applied,
                                  "stage": recipient.stages[sc.stat]}))
+        # Defiant / Competitive: triggered when foe lowers our stat
+        if lowering_target and sc.change < 0 and not recipient.fainted:
+            passives.on_defiant_competitive(eng, recipient, sc.stat, sc.change,
+                                            True, events)
 
 
 # ── Damage application helpers ───────────────────────────────────────
@@ -337,14 +375,28 @@ def execute_move(eng, side: str, move: MoveData, events,
             events.append(Event(E.ABILITY, eng.side_of(target),
                                 {"ability": passives.abil(target),
                                  "pokemon": target.name}))
-            healed = target.heal(max(1, target.max_hp // 4))
+            if passives.abil(target) == "dry-skin":
+                # Dry Skin heals 25% on water hit
+                healed = target.heal(max(1, target.max_hp // 4))
+            else:
+                healed = target.heal(max(1, target.max_hp // 4))
             if healed:
                 events.append(Event(E.HEAL, eng.side_of(target),
                                     {"pokemon": target.name, "amount": healed,
                                      "remaining_hp": target.current_hp}))
             return
+        if absorb == "flash-fire":
+            passives.on_flash_fire(eng, eng.side_of(target), target, move, events)
+            return
+        if absorb == "absorb-raise":
+            passives.on_absorb_raise(eng, eng.side_of(target), target, move, events)
+            return
         eff_mult = (1.0 if move.type == "typeless"
                     else eng.data.effectiveness(move.type, target.types))
+        # Scrappy: Normal/Fighting bypass Ghost immunity
+        if eff_mult == 0 and passives.abil(user) == "scrappy" \
+                and move.type in ("normal", "fighting") and "ghost" in target.types:
+            eff_mult = 1.0
         if eff_mult == 0:
             events.append(Event(E.MOVE_IMMUNE, eng.side_of(target), {"pokemon": target.name}))
             return
@@ -388,6 +440,35 @@ def execute_move(eng, side: str, move: MoveData, events,
             target.status = None
             events.append(Event(E.THAWED, eng.side_of(target), {"pokemon": target.name}))
 
+        # Dry Skin: fire hits do extra 25% damage
+        if move.type == "fire" and not target.fainted and landed:
+            passives.on_dry_skin_fire(eng, target, total, events)
+
+        # Justified: hit by dark move -> +1 Atk
+        if move.type == "dark" and not target.fainted and landed \
+                and passives.abil(target) == "justified":
+            events.append(Event(E.ABILITY, eng.side_of(target),
+                                {"ability": "justified", "pokemon": target.name}))
+            applied = target.modify_stage("attack", 1)
+            if applied:
+                events.append(Event(E.STAT_CHANGE, eng.side_of(target),
+                                    {"pokemon": target.name, "stat": "attack",
+                                     "change": applied,
+                                     "stage": target.stages["attack"]}))
+
+        # Weak Armor: hit by physical move -> -1 Def, +1 Speed (Gen 5)
+        if move.category == "physical" and not target.fainted and landed \
+                and passives.abil(target) == "weak-armor":
+            events.append(Event(E.ABILITY, eng.side_of(target),
+                                {"ability": "weak-armor", "pokemon": target.name}))
+            for stat, change in (("defense", -1), ("speed", 1)):
+                applied = target.modify_stage(stat, change)
+                if applied:
+                    events.append(Event(E.STAT_CHANGE, eng.side_of(target),
+                                        {"pokemon": target.name, "stat": stat,
+                                         "change": applied,
+                                         "stage": target.stages[stat]}))
+
         # Drain / recoil
         drain = move.effect.drain
         if drain > 0 and user.vol.heal_block_turns > 0:
@@ -408,7 +489,9 @@ def execute_move(eng, side: str, move: MoveData, events,
             passives.on_contact(eng, user, target, events)
 
         # Secondary effects only land if the target is still standing
-        if not target.fainted and landed:
+        # Sheer Force removes all secondaries (they were already skipped in power_mod)
+        sheer = passives.abil(user) == "sheer-force" and passives._has_secondary(move)
+        if not target.fainted and landed and not sheer:
             sec_mult = passives.secondary_mult(user, True, target)
             ail_chance = move.effect.ailment_chance or (100 if move.effect.ailment else 0)
             if ail_chance < 100:
@@ -419,7 +502,8 @@ def execute_move(eng, side: str, move: MoveData, events,
             if flinch and not target.vol.has_moved:
                 if eng.rng.randint(1, 100) <= flinch:
                     target.vol.flinched = True
-        apply_stat_changes(eng, user, target, move, events)
+        if not sheer:
+            apply_stat_changes(eng, user, target, move, events)
 
         # Force-switch riders (Dragon Tail / Circle Throw)
         if kind == "force-switch" and not target.fainted and not eng.over:
@@ -445,9 +529,41 @@ def execute_move(eng, side: str, move: MoveData, events,
 
         if move.id in RECHARGE_MOVES and landed and not user.fainted:
             user.vol.recharging = True
+
+        # Destiny Bond: if target fainted and had destiny-bond, user also faints
+        if target.fainted and target.vol.destiny_bond and not user.fainted:
+            user.take_damage(user.current_hp)
+            events.append(Event(E.ABILITY, eng.side_of(target),
+                                {"ability": "destiny-bond", "pokemon": target.name}))
+            eng.announce_faint(user, events)
+
+        # Grudge: if target fainted and had grudge, KO move PP -> 0
+        if target.fainted and target.vol.grudge:
+            slot = user.state.move_slot(move.id)
+            if slot is not None:
+                slot.pp = 0
+                events.append(Event(E.ABILITY, eng.side_of(target),
+                                    {"ability": "grudge", "pokemon": target.name,
+                                     "move": move.id}))
         return
 
     # ── Status moves ──
+    # Snatch: steal user-targeted buffing moves
+    if move.targets_user and not move.is_damaging:
+        foe = eng.active(other(side))
+        if foe.vol.snatch_active:
+            foe.vol.snatch_active = False
+            events.append(Event(E.ABILITY, eng.side_of(foe),
+                                {"ability": "snatch", "pokemon": foe.name,
+                                 "stolen": move.name}))
+            # Execute the stolen move for the snatcher
+            execute_move(eng, eng.side_of(foe), move, events)
+            return
+    # Assault Vest: user cannot use status moves
+    if passives.held(user) == "assault-vest" and not move.is_damaging:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name,
+                                                   "reason": "assault-vest"}))
+        return
     if move.effect.ailment and move.effect.ailment in NONVOLATILE_AILMENTS:
         if eng.data.effectiveness(move.type, target.types) == 0:
             events.append(Event(E.MOVE_IMMUNE, eng.side_of(target), {"pokemon": target.name}))
@@ -627,6 +743,10 @@ def _explode(eng, user, target, move, events):
         user.take_damage(user.current_hp)
         eng.announce_faint(user, events)
 
+    # Damp ability blocks explosion/self-destruct
+    if passives.abil(user) == "damp" or passives.abil(target) == "damp":
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
     if target.vol.protected:
         events.append(Event(E.PROTECTED, eng.side_of(target),
                             {"pokemon": target.name, "setup": False}))
@@ -1115,3 +1235,193 @@ def _role_play(eng, user, target, move, events):
     events.append(Event(E.ABILITY, eng.side_of(user),
                         {"ability": new, "pokemon": user.name,
                          "overridden": True}))
+
+
+# ── Phase B move handlers ──────────────────────────────────────────────
+
+@handler("destiny-bond")
+def _destiny_bond(eng, user, target, move, events):
+    user.vol.destiny_bond = True
+    events.append(Event(E.ABILITY, eng.side_of(user),
+                        {"ability": "destiny-bond", "pokemon": user.name}))
+
+
+@handler("grudge")
+def _grudge(eng, user, target, move, events):
+    user.vol.grudge = True
+    events.append(Event(E.ABILITY, eng.side_of(user),
+                        {"ability": "grudge", "pokemon": user.name}))
+
+
+@handler("snatch")
+def _snatch(eng, user, target, move, events):
+    user.vol.snatch_active = True
+    events.append(Event(E.ABILITY, eng.side_of(user),
+                        {"ability": "snatch", "pokemon": user.name}))
+
+
+@handler("magnet-rise")
+def _magnet_rise(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if user.vol.magnet_rise_turns > 0 or passives.abil(user) == "levitate":
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    user.vol.magnet_rise_turns = 5
+    events.append(Event(E.ABILITY, side,
+                        {"ability": "magnet-rise", "pokemon": user.name}))
+
+
+@handler("guard-swap")
+def _guard_swap(eng, user, target, move, events):
+    for stat in ("defense", "special_defense"):
+        user.stages[stat], target.stages[stat] = target.stages[stat], user.stages[stat]
+    events.append(Event(E.STAGES_RESET, eng.side_of(user),
+                        {"pokemon": user.name, "swap": "guard"}))
+
+
+@handler("power-swap")
+def _power_swap(eng, user, target, move, events):
+    for stat in ("attack", "special_attack"):
+        user.stages[stat], target.stages[stat] = target.stages[stat], user.stages[stat]
+    events.append(Event(E.STAGES_RESET, eng.side_of(user),
+                        {"pokemon": user.name, "swap": "power"}))
+
+
+@handler("yawn")
+def _yawn(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if target.status == "sleep" or target.vol.yawn_turns > 0 \
+            or passives.status_blocked(target, "sleep"):
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    target.vol.yawn_turns = 2
+    events.append(Event(E.ABILITY, eng.side_of(target),
+                        {"ability": "yawn", "pokemon": target.name}))
+
+
+@handler("perish-song")
+def _perish_song(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if user.vol.perish_count > 0 or target.vol.perish_count > 0:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    user.vol.perish_count = 3
+    target.vol.perish_count = 3
+    events.append(Event(E.ABILITY, side,
+                        {"ability": "perish-song", "pokemon": user.name,
+                         "count": 3}))
+    events.append(Event(E.ABILITY, eng.side_of(target),
+                        {"ability": "perish-song", "pokemon": target.name,
+                         "count": 3}))
+
+
+@handler("transform")
+def _transform(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if user.vol.transformed or target.vol.transformed:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    # Copy target's types, stats (not HP), ability override, and moves
+    user.species = target.species
+    for k, v in target.stats.items():
+        if k != "hp":
+            user.state.stats[k] = v
+    user.vol.ability_override = passives.abil(target)
+    user.vol.transformed = True
+    # Copy moves with pp_max and pp = 5
+    from ..core.pokemon import MoveSlot
+    new_moves = []
+    for slot in target.state.moves:
+        new_moves.append(MoveSlot(move_id=slot.move_id, pp=5, pp_max=5))
+    user.state.moves = new_moves
+    events.append(Event(E.ABILITY, side,
+                        {"ability": "transform", "pokemon": user.name,
+                         "target": target.name}))
+
+
+@handler("metronome")
+def _metronome(eng, user, target, move, events):
+    import os
+    side = eng.side_of(user)
+    moves_dir = os.path.join(eng.data.data_dir, "moves")
+    exclude = {"metronome", "struggle", "after-you", "assist", "belch",
+               "bestow", "chatter", "copycat", "counter", "covet",
+               "destiny-bond", "detect", "endure", "feint",
+               "focus-punch", "follow-me", "helping-hand", "me-first",
+               "mimic", "mirror-coat", "mirror-move", "protect",
+               "rage-powder", "sketch", "sleep-talk", "snatch",
+               "snore", "spite", "transform"}
+    try:
+        available = [f[:-5] for f in os.listdir(moves_dir)
+                     if f.endswith(".json") and f[:-5] not in exclude]
+    except Exception:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    if not available:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    chosen_id = eng.rng.choice(sorted(available))
+    try:
+        chosen = eng.data.move(chosen_id)
+    except Exception:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    events.append(Event(E.ABILITY, side,
+                        {"ability": "metronome", "pokemon": user.name,
+                         "chosen": chosen_id}))
+    execute_move(eng, side, chosen, events)
+
+
+_ACUPRESSURE_STATS = ["attack", "defense", "special_attack", "special_defense",
+                       "speed", "accuracy", "evasion"]
+
+
+@handler("acupressure")
+def _acupressure(eng, user, target, move, events):
+    side = eng.side_of(user)
+    available = [s for s in _ACUPRESSURE_STATS if user.stages.get(s, 0) < 6]
+    if not available:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    chosen = eng.rng.choice(available)
+    applied = user.modify_stage(chosen, 2)
+    if applied:
+        events.append(Event(E.STAT_CHANGE, side,
+                            {"pokemon": user.name, "stat": chosen,
+                             "change": applied,
+                             "stage": user.stages[chosen]}))
+
+
+@handler("nightmare")
+def _nightmare(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if target.status != "sleep":
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    if target.vol.nightmare:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    target.vol.nightmare = True
+    events.append(Event(E.ABILITY, eng.side_of(target),
+                        {"ability": "nightmare", "pokemon": target.name}))
+
+
+@handler("after-you")
+def _after_you(eng, user, target, move, events):
+    events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+
+
+@handler("quick-guard")
+def _quick_guard(eng, user, target, move, events):
+    events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+
+
+@handler("wide-guard")
+def _wide_guard(eng, user, target, move, events):
+    events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+
+
+@handler("wonder-room")
+def _wonder_room(eng, user, target, move, events):
+    events.append(Event(E.EFFECT_SKIPPED, eng.side_of(user),
+                        {"move": move.id, "effect": "wonder-room"}))

@@ -92,6 +92,17 @@ class Volatiles:
     imprison: bool = False
     heal_block_turns: int = 0
     embargo_turns: int = 0
+    # Phase B volatiles
+    flash_fire_active: bool = False
+    destiny_bond: bool = False
+    grudge: bool = False
+    snatch_active: bool = False
+    magnet_rise_turns: int = 0
+    yawn_turns: int = 0
+    perish_count: int = 0
+    transformed: bool = False
+    nightmare: bool = False
+    unburden_active: bool = False
 
 
 class BattlePokemon:
@@ -141,7 +152,10 @@ class BattlePokemon:
         return s
 
     def modify_stage(self, stat: str, change: int) -> int:
-        """Returns the actual change applied (0 if already capped)."""
+        """Returns the actual change applied (0 if already capped).
+        Contrary inverts all stat stage changes."""
+        if passives.abil(self) == "contrary":
+            change = -change
         before = self.stages[stat]
         after = max(-6, min(6, before + change))
         self.stages[stat] = after

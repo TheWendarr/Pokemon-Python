@@ -2,8 +2,8 @@
 
 Pipeline with integer floors:
     base = ((2L/5 + 2) * Power * A / D) / 50 + 2
-    -> x2 crit -> x(R/100), R in 85..100 -> x1.5 STAB -> xType
-    -> x0.5 burn (physical, unless Guts) -> screens/Life Orb -> min 1
+    -> x2 crit -> x(R/100), R in 85..100 -> STAB (1.5 or 2.0 Adaptability)
+    -> xType -> xFilter/Multiscale -> burn -> screens/Life Orb -> min 1
 
 Gen 4/5 specifics honored: 2.0x crits at 1/16 base, 85-100% rolls,
 crits ignoring helpful stages and screens.
@@ -52,7 +52,10 @@ def calc_damage(data, attacker, defender, move, *, rng, crit: bool = False,
     A = int(attacker.stats[a_key] * stage_multiplier(a_stage))
     A = int(A * passives.attack_stat_mod(attacker, move))
     D = max(1, int(defender.stats[d_key] * stage_multiplier(d_stage)))
-    D = max(1, int(D * passives.spdef_mod(defender, move, weather)))
+    if move.category == PHYSICAL:
+        D = max(1, int(D * passives.def_mod(defender, move)))
+    else:
+        D = max(1, int(D * passives.spdef_mod(defender, move, weather)))
 
     L = attacker.level
     dmg = ((2 * L) // 5 + 2) * power * A // D // 50 + 2
@@ -65,10 +68,21 @@ def calc_damage(data, attacker, defender, move, *, rng, crit: bool = False,
 
     stab = move.type != TYPELESS and move.type in attacker.types
     if stab:
-        dmg = dmg * 3 // 2
+        stab_mult = passives.stab_mod(attacker, move)
+        dmg = int(dmg * stab_mult)
 
     eff = 1.0 if move.type == TYPELESS else data.effectiveness(move.type, defender.types)
     dmg = int(dmg * eff)
+
+    # Tinted Lens: resisted moves x2
+    if eff < 1.0 and passives.abil(attacker) == "tinted-lens":
+        dmg *= 2
+
+    # Defender damage modifiers (Filter, Solid Rock, Multiscale, Shadow Shield)
+    dmg = int(dmg * passives.defender_damage_mod(defender, eff))
+
+    # Expert Belt: attacker bonus for super-effective hits
+    dmg = int(dmg * passives.attacker_eff_bonus(attacker, eff))
 
     if move.category == PHYSICAL and attacker.status == "burn" \
             and not passives.burn_ignored(attacker):
@@ -84,6 +98,9 @@ def accuracy_check(move, attacker, defender, *, rng,
                    weather: str | None = None) -> bool:
     """Single accuracy roll; accuracy None never misses. Weather perfect-
     accuracy interactions: Thunder/Hurricane in rain, Blizzard in hail."""
+    # No Guard: always hit
+    if passives.abil(attacker) == "no-guard" or passives.abil(defender) == "no-guard":
+        return True
     if move.accuracy is None:
         return True
     if weather == "rain" and move.id in ("thunder", "hurricane"):
@@ -93,6 +110,15 @@ def accuracy_check(move, attacker, defender, *, rng,
     acc = move.accuracy
     if weather == "sun" and move.id in ("thunder", "hurricane"):
         acc = 50
+    # Wonder Skin: non-damaging moves targeting defender have 50% accuracy
+    if passives.abil(defender) == "wonder-skin" and not move.is_damaging:
+        acc = min(acc, 50)
     stage = max(-6, min(6, attacker.stages[ACCURACY] - defender.stages[EVASION]))
     threshold = acc * accuracy_multiplier(stage)
+    # Compound Eyes: x1.3 accuracy
+    if passives.abil(attacker) == "compound-eyes":
+        threshold *= 1.3
+    # Hustle: x0.8 accuracy for physical moves
+    if passives.abil(attacker) == "hustle" and move.category == "physical":
+        threshold *= 0.8
     return rng.randint(1, 100) <= threshold
