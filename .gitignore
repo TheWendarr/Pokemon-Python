@@ -1,8 +1,0 @@
-__pycache__/
-*.pyc
-.pytest_cache/
-.pokeapi_cache/
-*.egg-info/
-dist/
-build/
-.claude/worktrees/agent-a834b04e2f3abbd88
