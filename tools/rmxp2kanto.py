@@ -325,14 +325,23 @@ def esc(v):
     return (v.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
              .replace('"', "&quot;").replace("'", "&apos;"))
 
-# connection props per map (only between chosen maps)
+# connection props per map (only between chosen maps).
+# Skip a connection if the target direction slot is already claimed by a
+# different map (two RMXP maps can stitch to the same TMX from one side
+# -- first wins; without this guard the loser direction is dangling/one-way).
 mapprops = defaultdict(dict)
 for a, ea, oa, b, eb, ob in conns:
-    if a in chosen_set and b in chosen_set:
-        mapprops[a][f"connect_{EDGE[ea]}"] = stem[b]
-        mapprops[a][f"offset_{EDGE[ea]}"] = oa - ob
-        mapprops[b][f"connect_{EDGE[eb]}"] = stem[a]
-        mapprops[b][f"offset_{EDGE[eb]}"] = ob - oa
+    if a not in chosen_set or b not in chosen_set:
+        continue
+    dir_a = f"connect_{EDGE[ea]}"
+    dir_b = f"connect_{EDGE[eb]}"
+    if (mapprops[a].get(dir_a, stem[b]) != stem[b]
+            or mapprops[b].get(dir_b, stem[a]) != stem[a]):
+        continue   # slot already taken by a different neighbour; skip
+    mapprops[a][dir_a] = stem[b]
+    mapprops[a][f"offset_{EDGE[ea]}"] = oa - ob
+    mapprops[b][dir_b] = stem[a]
+    mapprops[b][f"offset_{EDGE[eb]}"] = ob - oa
 
 DIRW = {2: "down", 4: "left", 6: "right", 8: "up", 0: "down"}
 
@@ -358,9 +367,8 @@ def find_spawn(mid):
 def write_tmx(mid):
     layers = map_layers[mid]; h = len(layers[0]); w = len(layers[0][0])
     objs = []
-    if mid == SEED:
-        sx, sy = find_spawn(mid)
-        objs.append(("spawn", sx, sy, {}))
+    sx, sy = find_spawn(mid)
+    objs.append(("spawn", sx, sy, {}))
     for (ex, ey, tmid, tx, ty, tdir) in transfers(mapcache[mid]):
         if tmid in chosen_set:
             objs.append(("warp", ex, ey, {"to_map": stem[tmid], "to_x": tx,

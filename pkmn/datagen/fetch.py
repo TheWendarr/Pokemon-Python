@@ -302,11 +302,16 @@ def build_from_csv(out: str, cache: str, *, log=print) -> None:
         })
     growth = {int(r["id"]): r["identifier"] for r in _csv_rows("growth_rates.csv", cache)}
     stats_by_pkmn: dict[int, dict] = {}
+    ev_yield_by_pkmn: dict[int, dict] = {}
     for r in _csv_rows("pokemon_stats.csv", cache):
         pid = int(r["pokemon_id"])
         if pid <= MAX_DEX:
             stats_by_pkmn.setdefault(pid, {})[STAT_ID_TO_KEY[int(r["stat_id"])]] = \
                 int(r["base_stat"])
+            effort = int(r["effort"])
+            if effort > 0:
+                ev_yield_by_pkmn.setdefault(pid, {})[
+                    STAT_ID_TO_KEY[int(r["stat_id"])]] = effort
     types_by_pkmn: dict[int, list] = {}
     for r in _csv_rows("pokemon_types.csv", cache):
         pid = int(r["pokemon_id"])
@@ -360,6 +365,7 @@ def build_from_csv(out: str, cache: str, *, log=print) -> None:
             "gender_rate": int(sp["gender_rate"]),
             "learnset": learn.get(pid, {}),
             "evolves_to": evolves_to.get(int(r["species_id"]), []),
+            "ev_yield": ev_yield_by_pkmn.get(pid, {}),
         }
         _write(os.path.join(out, "species", f"{pid:03d}-{r['identifier']}.json"), species)
         n_species += 1
@@ -553,6 +559,8 @@ def build_from_rest(out: str, cache: str, *, delay: float = 0.0, log=print) -> N
             "types": _gen5_types_rest(pk),
             "base_stats": {s["stat"]["name"].replace("-", "_"): s["base_stat"]
                            for s in pk["stats"]},
+            "ev_yield": {s["stat"]["name"].replace("-", "_"): s["effort"]
+                         for s in pk["stats"] if s["effort"] > 0},
             "abilities": [a["ability"]["name"] for a in sorted(
                 pk["abilities"], key=lambda a: (a["is_hidden"], a["slot"]))
                 if a["ability"]["name"] in gen5_abilities],

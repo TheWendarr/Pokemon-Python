@@ -154,6 +154,8 @@ class SpeciesData:
     learnset: dict = field(default_factory=dict)
     # learnset = {'level_up': [LearnsetEntry...], 'machine': [str...],
     #             'egg': [str...], 'tutor': [str...]}
+    ev_yield: dict = field(default_factory=dict)
+    # ev_yield = {stat_key: amount}, e.g. {'special_attack': 1}
 
     def level_up_moves(self, level: int) -> list[str]:
         """Moves learnable by level-up at or below `level`, in learn order."""
@@ -186,6 +188,8 @@ class SpeciesData:
             catch_rate=int(d.get("catch_rate") or 45),
             gender_rate=int(d.get("gender_rate", 4)),
             learnset=learnset,
+            ev_yield={norm_stat(k): int(v)
+                      for k, v in d.get("ev_yield", {}).items()},
         )
 
 

@@ -158,5 +158,9 @@
    "incinerate"
   ]
  },
- "evolves_to": []
+ "evolves_to": [],
+ "ev_yield": {
+  "attack": 1,
+  "defense": 1
+ }
 }

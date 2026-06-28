@@ -163,5 +163,8 @@
    "level": null,
    "item": "ice-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "speed": 1
+ }
 }

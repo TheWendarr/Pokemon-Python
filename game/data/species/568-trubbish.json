@@ -141,5 +141,8 @@
    "level": 36,
    "item": null
   }
- ]
+ ],
+ "ev_yield": {
+  "speed": 1
+ }
 }

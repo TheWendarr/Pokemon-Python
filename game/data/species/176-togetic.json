@@ -167,5 +167,8 @@
    "level": null,
    "item": "shiny-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "special_defense": 2
+ }
 }

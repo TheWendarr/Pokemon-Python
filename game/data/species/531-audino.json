@@ -168,5 +168,8 @@
    "wild-charge"
   ]
  },
- "evolves_to": []
+ "evolves_to": [],
+ "ev_yield": {
+  "hp": 2
+ }
 }

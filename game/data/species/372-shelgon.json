@@ -137,5 +137,8 @@
    "level": 50,
    "item": null
   }
- ]
+ ],
+ "ev_yield": {
+  "defense": 2
+ }
 }

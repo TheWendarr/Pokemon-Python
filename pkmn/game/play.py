@@ -3,8 +3,8 @@ from __future__ import annotations
 
 import argparse
 
-from .overworld import OverworldScene
 from .scene import Game
+from .title import TitleScene
 
 
 def main() -> None:
@@ -34,7 +34,7 @@ def main() -> None:
                 save_path=args.save, game_dir=args.game,
                 fullscreen=args.fullscreen, fill=args.fill, mute=args.mute,
                 controls_path=args.controls, daynight=args.time)
-    game.push(OverworldScene(game))
+    game.push(TitleScene(game))
     game.run()
 
 

@@ -140,29 +140,53 @@ deterministic, covered by 91 tests, with a 3.6% unimplemented-effect
 rate across the full Gen 5 movepool (`python -m pkmn.cli.coverage`).
 See `docs/ROADMAP.md` for what comes next.
 
+## Play this first
+
+**Start here:** the Triad region is the showcase — three themed cities, five
+trainer battles, fishing, scripted events, and a flag-gated finale.
+
+```bash
+# from a clean clone
+pip install -e ".[dev]"
+python -m pkmn.game.play --game examples/triad
+```
+
+Arrow keys / WASD to move · Z / Space to confirm · X / Esc to cancel ·
+Enter for the pause menu (party, bag, save, Pokédex, controls).
+
+> **IP note:** This engine ships zero Nintendo assets. Downloading sprites
+> with `pkmn-sprites` or `pkmn-fetch-data --sprites` is for personal use
+> only — don't commit or redistribute them. See `LICENSE`.
+
 ## Quickstart
 
 ```bash
 # from the repo root
 pip install -e ".[dev]"
 
-# generate game data from PokeAPI (Gen 1-5, with correct Gen 5 values)
-pkmn-fetch-data --out game/data                 # REST API (run at home)
-pkmn-fetch-data --out game/data --source csv    # GitHub CSV mirror
+# play the showcase region (start here!)
+python -m pkmn.game.play --game examples/triad
 
 # watch two AIs fight (seeded => reproducible)
 pkmn-demo --auto --seed 42
 
-# play a battle yourself in the terminal
+# play a battle in the terminal
 pkmn-demo
 
 # run the test suite (no network or game data needed)
 pytest
+
+# validate a game folder
+pkmn-lint --game examples/triad
+
+# generate fresh game data from PokeAPI (optional; pre-generated data ships)
+pkmn-fetch-data --out game/data                 # REST API (run at home)
+pkmn-fetch-data --out game/data --source csv    # GitHub CSV mirror
 ```
 
-A pre-generated `game/data` folder (649 species, 556 moves, Gen 5 type
-chart, natures, starter items) ships in this repo, so the demo works
-immediately.
+A pre-generated `game/data` folder (649 species with EV yields, 559 moves,
+Gen 5 type chart, natures, items) ships in this repo, so demos work
+immediately after install.
 
 ## Layout
 

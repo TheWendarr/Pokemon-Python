@@ -17,8 +17,8 @@ import pytmx
 
 from ..data.repository import GameData
 from ..game.contract import (BASE_LAYER, DIRECTIONS, ENGINE_VERSION,
-                             MAP_PROPS, OBJECT_TYPES, OPPOSITE,
-                             RENDER_FLAGS, SCRIPT_COMMANDS,
+                             FEATURES, MAP_PROPS, OBJECT_TYPES, OPPOSITE,
+                             RENDER_FLAGS, SCRIPT_COMMANDS, SETTINGS,
                              TILE_FLAGS, TILE_META, TRIGGER_WHEN, WEATHERS,
                              compatible)
 
@@ -316,6 +316,16 @@ class Lint:
             elif loc.get("tile") and self._blocked(self.maps[loc["map"]],
                                                    *loc["tile"]):
                 self.err("game.json", f"{key} tile {loc['tile']} is blocked")
+        for key in m.get("features", {}):
+            if key not in FEATURES:
+                self.err("game.json features",
+                         f"unknown feature toggle {key!r} "
+                         f"(known: {sorted(FEATURES)})")
+        for key in m.get("settings", {}):
+            if key not in SETTINGS:
+                self.err("game.json settings",
+                         f"unknown setting {key!r} "
+                         f"(known: {sorted(SETTINGS)})")
         for iid in m.get("bag", {}):
             self.check_item("game.json bag", iid)
         for spr in ("player.png", "npc.png"):

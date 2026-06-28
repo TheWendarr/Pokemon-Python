@@ -171,5 +171,8 @@
    "level": null,
    "item": "dawn-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "special_attack": 2
+ }
 }

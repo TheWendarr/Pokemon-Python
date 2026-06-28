@@ -155,5 +155,8 @@
    "level": null,
    "item": "shiny-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "speed": 1
+ }
 }

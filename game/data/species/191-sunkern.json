@@ -148,5 +148,8 @@
    "level": null,
    "item": "sun-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "special_attack": 1
+ }
 }

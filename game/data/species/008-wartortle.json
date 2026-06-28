@@ -137,5 +137,9 @@
    "level": 36,
    "item": null
   }
- ]
+ ],
+ "ev_yield": {
+  "defense": 1,
+  "special_defense": 1
+ }
 }

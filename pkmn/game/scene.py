@@ -96,6 +96,7 @@ class Game:
                              or DATA_DIR)
         self.assets = Assets(game_dir)
         self.save_path = save_path
+        self._seed = seed
         loaded = load_game(self.data, save_path) if save_path else None
         self.state = loaded or GameState.new_game(
             self.data, manifest=self.manifest, seed=seed)

@@ -157,5 +157,8 @@
    "level": null,
    "item": "moon-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "hp": 2
+ }
 }

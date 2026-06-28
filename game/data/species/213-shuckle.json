@@ -155,5 +155,9 @@
    "bulldoze"
   ]
  },
- "evolves_to": []
+ "evolves_to": [],
+ "ev_yield": {
+  "defense": 1,
+  "special_defense": 1
+ }
 }

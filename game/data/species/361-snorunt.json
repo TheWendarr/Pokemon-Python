@@ -128,5 +128,8 @@
    "level": null,
    "item": "dawn-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "hp": 1
+ }
 }

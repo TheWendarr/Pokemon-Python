@@ -158,5 +158,8 @@
    "level": null,
    "item": "water-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "speed": 1
+ }
 }

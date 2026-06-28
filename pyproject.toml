@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pokemon-python"
+version = "0.9.0"
+description = "Gen 4/5-style Pokémon engine and game-authoring toolkit, pure Python."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+dependencies = [
+    "pygame>=2.5",
+    "pytmx>=3.31",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "Pillow>=10",
+    "rubymarshal>=1.2",   # RMXP converter (tools/rmxp2kanto.py)
+]
+
+[project.scripts]
+pkmn-demo        = "pkmn.cli.battle_demo:main"
+pkmn-play        = "pkmn.game.play:main"
+pkmn-fetch-data  = "pkmn.datagen.fetch:main"
+pkmn-lint        = "pkmn.cli.lint:main"
+pkmn-audit       = "pkmn.cli.audit:main"
+pkmn-coverage    = "pkmn.cli.coverage:main"
+pkmn-sprites     = "pkmn.cli.sprites:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pkmn*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

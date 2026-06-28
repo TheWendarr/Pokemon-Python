@@ -61,5 +61,8 @@
    "level": 7,
    "item": null
   }
- ]
+ ],
+ "ev_yield": {
+  "hp": 1
+ }
 }

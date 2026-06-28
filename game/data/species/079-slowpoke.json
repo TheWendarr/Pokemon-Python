@@ -175,5 +175,8 @@
    "level": null,
    "item": "galarica-wreath"
   }
- ]
+ ],
+ "ev_yield": {
+  "hp": 1
+ }
 }

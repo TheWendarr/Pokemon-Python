@@ -167,5 +167,8 @@
    "ally-switch"
   ]
  },
- "evolves_to": []
+ "evolves_to": [],
+ "ev_yield": {
+  "special_attack": 3
+ }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" orientation="orthogonal" renderorder="right-down" width="39" height="77" tilewidth="32" tileheight="32" infinite="0" nextobjectid="1">
- <properties><property name="connect_east" value="m047_route_7"/><property name="offset_east" type="int" value="77"/><property name="connect_south" value="m007_cedolan_city"/><property name="offset_south" type="int" value="-21"/><property name="border" type="int" value="1"/></properties>
- <tileset firstgid="1" source="../tiles.tsx"/>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="39" height="77" tilewidth="32" tileheight="32" infinite="0" nextobjectid="2">
+ <properties><property name="connect_east" value="m047_route_7" /><property name="offset_east" type="int" value="77" /><property name="connect_south" value="m007_cedolan_city" /><property name="offset_south" type="int" value="-21" /><property name="border" type="int" value="1" /></properties>
+ <tileset firstgid="1" source="../tiles.tsx" />
  <layer id="1" name="ground" width="39" height="77">
   <data encoding="csv">
 1091,1091,1091,1091,1091,1091,1091,1092,1093,1093,1093,1094,1091,1091,1091,1091,1091,1095,1092,1093,1093,1094,1091,1091,1091,1091,1091,1091,1091,1091,1091,1096,1095,1095,1095,1096,26,6,2,
@@ -246,5 +246,5 @@
 </data>
  </layer>
  <objectgroup id="4" name="objects">
- </objectgroup>
+ <object id="1" name="spawn" x="512" y="1120" width="32" height="32"><properties /></object></objectgroup>
 </map>

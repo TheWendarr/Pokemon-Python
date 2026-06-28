@@ -128,6 +128,19 @@ SCRIPT_COMMANDS: set[str] = {
     "warp", "move_npc", "move_route", "face_npc", "hide_npc", "screen",
 }
 
+# ── manifest features / settings ─────────────────────────────────────
+# Designer toggles: manifest["features"][name] turns optional engine
+# systems on or off (default ON). The linter flags unknown keys.
+FEATURES: set[str] = {
+    "encounters", "trainers", "experience", "evolution",
+    "move_replacement", "running",
+    "menu_party", "menu_bag", "saving", "pokedex", "controls",
+}
+
+# Numeric / string knobs: manifest["settings"][name]. The linter flags
+# unknown keys so typos can't silently disable a setting.
+SETTINGS: set[str] = {"encounter_chance", "daynight"}
+
 # ── helpers ──────────────────────────────────────────────────────────
 def compatible(region_version) -> bool:
     """True if a region targeting `region_version` runs on this engine."""

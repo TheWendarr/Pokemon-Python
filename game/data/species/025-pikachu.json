@@ -130,5 +130,8 @@
    "level": null,
    "item": "thunder-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "speed": 2
+ }
 }

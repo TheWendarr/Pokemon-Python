@@ -133,5 +133,8 @@
    "work-up"
   ]
  },
- "evolves_to": []
+ "evolves_to": [],
+ "ev_yield": {
+  "special_defense": 3
+ }
 }

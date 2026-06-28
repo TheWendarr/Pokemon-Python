@@ -137,5 +137,8 @@
    "level": 15,
    "item": null
   }
- ]
+ ],
+ "ev_yield": {
+  "special_attack": 1
+ }
 }

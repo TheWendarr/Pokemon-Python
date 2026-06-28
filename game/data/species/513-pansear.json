@@ -157,5 +157,8 @@
    "level": null,
    "item": "fire-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "speed": 1
+ }
 }

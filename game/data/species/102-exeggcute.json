@@ -151,5 +151,8 @@
    "level": null,
    "item": "leaf-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "defense": 1
+ }
 }

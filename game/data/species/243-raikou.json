@@ -128,5 +128,9 @@
    "snarl"
   ]
  },
- "evolves_to": []
+ "evolves_to": [],
+ "ev_yield": {
+  "special_attack": 1,
+  "speed": 2
+ }
 }

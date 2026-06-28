@@ -219,6 +219,7 @@ class BattleScene(Scene):
             amount = battle_exp(foe.state.species.base_experience,
                                 foe.level, trainer=not self.wild,
                                 winner_level=winner.level)
+            self._award_evs(winner.state, foe.state.species.ev_yield)
             res = gain_exp(winner.state, self.game.data, amount)
             self._say_page([f"{winner.name} gained {amount} EXP!"])
             if res["levels"]:
@@ -238,6 +239,22 @@ class BattleScene(Scene):
                                     f"{self.game.data.move(mid).name}..."])
             if res["evolution"] and self.game.feature("evolution"):
                 self._pending_evos.append((winner.state, res["evolution"]))
+
+    @staticmethod
+    def _award_evs(ps, ev_yield: dict) -> None:
+        """Award effort values from ev_yield, capping 252/stat and 510 total."""
+        if not ev_yield:
+            return
+        total = sum(ps.evs.values())
+        for stat, amount in ev_yield.items():
+            if total >= 510:
+                break
+            stat = stat.replace("-", "_")
+            current = ps.evs.get(stat, 0)
+            gain = min(amount, 252 - current, 510 - total)
+            if gain > 0:
+                ps.evs[stat] = current + gain
+                total += gain
 
     def _auto_replace_foe(self) -> None:
         while (self.eng.phase == Phase.WAITING_REPLACEMENT

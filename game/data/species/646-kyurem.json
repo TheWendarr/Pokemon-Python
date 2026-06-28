@@ -142,5 +142,10 @@
    "dragon-tail"
   ]
  },
- "evolves_to": []
+ "evolves_to": [],
+ "ev_yield": {
+  "hp": 1,
+  "attack": 1,
+  "special_attack": 1
+ }
 }

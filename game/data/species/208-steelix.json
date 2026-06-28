@@ -176,5 +176,8 @@
    "dragon-tail"
   ]
  },
- "evolves_to": []
+ "evolves_to": [],
+ "ev_yield": {
+  "defense": 2
+ }
 }

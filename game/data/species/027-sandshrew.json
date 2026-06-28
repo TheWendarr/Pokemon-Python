@@ -157,5 +157,8 @@
    "level": null,
    "item": "ice-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "defense": 1
+ }
 }

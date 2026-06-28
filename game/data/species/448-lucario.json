@@ -164,5 +164,9 @@
    "work-up"
   ]
  },
- "evolves_to": []
+ "evolves_to": [],
+ "ev_yield": {
+  "attack": 1,
+  "special_attack": 1
+ }
 }

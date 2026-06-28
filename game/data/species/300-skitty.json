@@ -165,5 +165,8 @@
    "level": null,
    "item": "moon-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "speed": 1
+ }
 }

@@ -142,5 +142,8 @@
    "level": null,
    "item": "sun-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "speed": 1
+ }
 }

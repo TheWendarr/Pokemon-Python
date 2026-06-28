@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" orientation="orthogonal" renderorder="right-down" width="46" height="35" tilewidth="32" tileheight="32" infinite="0" nextobjectid="1">
- <properties><property name="connect_north" value="m002_lappet_town"/><property name="offset_north" type="int" value="12"/><property name="border" type="int" value="1"/></properties>
- <tileset firstgid="1" source="../tiles.tsx"/>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="46" height="35" tilewidth="32" tileheight="32" infinite="0" nextobjectid="2">
+ <properties><property name="connect_north" value="m002_lappet_town" /><property name="offset_north" type="int" value="12" /><property name="border" type="int" value="1" /></properties>
+ <tileset firstgid="1" source="../tiles.tsx" />
  <layer id="1" name="ground" width="46" height="35">
   <data encoding="csv">
 192,193,192,193,192,193,192,193,192,193,192,193,192,193,192,193,192,193,192,194,195,196,204,204,212,220,221,222,195,223,223,195,224,193,192,193,192,193,192,193,192,193,192,193,192,193,
@@ -120,5 +120,5 @@
 </data>
  </layer>
  <objectgroup id="4" name="objects">
- </objectgroup>
+ <object id="1" name="spawn" x="864" y="416" width="32" height="32"><properties /></object></objectgroup>
 </map>

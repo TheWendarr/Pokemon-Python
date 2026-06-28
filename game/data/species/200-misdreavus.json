@@ -155,5 +155,8 @@
    "level": null,
    "item": "dusk-stone"
   }
- ]
+ ],
+ "ev_yield": {
+  "special_defense": 1
+ }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" orientation="orthogonal" renderorder="right-down" width="44" height="36" tilewidth="32" tileheight="32" infinite="0" nextobjectid="1">
- <properties><property name="connect_west" value="m047_route_7"/><property name="offset_west" type="int" value="-8"/><property name="border" type="int" value="1"/></properties>
- <tileset firstgid="1" source="../tiles.tsx"/>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="44" height="36" tilewidth="32" tileheight="32" infinite="0" nextobjectid="2">
+ <properties><property name="connect_west" value="m047_route_7" /><property name="offset_west" type="int" value="-8" /><property name="border" type="int" value="1" /></properties>
+ <tileset firstgid="1" source="../tiles.tsx" />
  <layer id="1" name="ground" width="44" height="36">
   <data encoding="csv">
 1091,1091,1091,1091,1097,1093,1093,1093,1093,1093,1093,1098,1091,1091,1091,1091,1091,1099,1091,1091,1091,1091,1091,1091,1091,1097,1093,1093,1093,1093,1093,1093,1093,1093,1098,1091,1091,1092,1093,1098,1091,1091,1092,1098,
@@ -123,5 +123,5 @@
 </data>
  </layer>
  <objectgroup id="4" name="objects">
- </objectgroup>
+ <object id="1" name="spawn" x="704" y="576" width="32" height="32"><properties /></object></objectgroup>
 </map>
