@@ -162,7 +162,18 @@ prop and warps to the chosen one (opt-in `"fly"` feature). **Map metadata** —
 `heal_point`, `escape_point`, `dark_cave`, `fly_name` added to `MAP_PROPS`
 and `contract.py`. **visited_maps** — `GameState.visited_maps: set`
 serialized in saves. (`tests/test_phase_d.py`: 23 tests; full suite 343
-passed, 1 skipped; all examples lint 0/0.)
+passed, 1 skipped; all examples lint 0/0.) **Ability coverage** — 143/164
+Gen 5 abilities (87%) implemented; exceeds the v1.0 target. **Move coverage**
+— 559/559 Gen 5 moves (100%) handled (EFFECT_SKIPPED rate 0%). Major moves
+added: Substitute with absorption mechanics, Trick Room, Gravity, Magic Room,
+Wish/Lunar Dance delayed healing, Disable, Sleep Talk, Foresight/Miracle Eye
+type-immunity bypass, Skill Swap, Heart Swap, Power Trick, Soak/Reflect Type/
+Conversion type overrides, Mirror Move, Magic Coat, Assist, Sketch, Recycle,
+and more. New volatile fields: `substitute_hp`, `type_override`,
+`foresight_active`, `miracle_eye_active`, `disabled_move`, `magic_coat_active`,
+`last_received_move`, `last_used_item`, `power_trick_swapped`; side fields:
+`wish_turns`, `wish_hp`, `lunar_dance`; engine fields: `trick_room`,
+`gravity_turns`, `magic_room`. (Full suite: 337 passed, 1 skipped.)
 
 *Remaining, in order:* trainer AI level + rematches + EV yield; Strength
 (push-able boulders need persistent per-map state); Bike; Dive (needs
@@ -198,7 +209,8 @@ shell, recommended example region, green test suite, and clear packaging.
 Full parity with RPG Maker + Essentials is the 1.x+ program.
 
 **Gate.** Phase A acceptance criteria are largely satisfied by the current
-codebase. The remaining v1.0 gate is Phase B1 (ability coverage push).
+codebase. Phase B1 (ability coverage) and B2 (move coverage) are complete.
+The remaining v1.0 gate is B3 (held-item breadth) and a packaging smoke-run.
 
 **Sequencing.** A → v1.0-rc → v1.0 tag. A and B1 gate the release. B2/B3
 are fast-follows. C (multi-active battles) runs as a parallel XL program

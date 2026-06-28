@@ -26,13 +26,17 @@ Complete (ready / tested)
   `tests/test_title.py`).
 - EV yield data present for 649 species and wired through battle/exp
   (`pkmn/datagen/fetch.py`, `tests/test_ev_yield.py`).
+- Ability coverage — 143/164 Gen 5 abilities (87%) implemented in
+  `pkmn/battle/passives.py`. Remaining 21 are doubles/cosmetic/unreachable-in-singles.
+- Move coverage — 559/559 Gen 5 moves (100%) handled; EFFECT_SKIPPED rate 0%.
+  Includes Substitute, Wish, Lunar Dance, Trick Room, Gravity, Magic Room,
+  Sleep Talk, Skill Swap, Heart Swap, Conversion, Mirror Move, and 30+ others.
+  `quash` (doubles-only) and `me-first` (look-ahead infeasible) stub to MOVE_FAILED.
 
 
 Partially implemented (close / cosmetic / blocked by data or assets)
 - Autotile full 47-piece edge-blending — cosmetic deferred.
 - Panorama & fog layers — cosmetic, not required for importer.
-- Abilities coverage — partial; audit shows ~50–52% implemented; B1 targets
-  raising this.
 - Held-item effect breadth — infrastructure and held-item UI exist
   (`HeldItemPicker`, trainer held items), but many item effects remain to
   be implemented and tested.

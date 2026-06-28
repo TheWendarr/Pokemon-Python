@@ -6,8 +6,9 @@ and short-term next steps for each phase. See also: `docs/ROADMAP.md`
 
 **v1.0 scope:** a releasable product — installable, title/new-game shell,
 recommended example region, passing test suite, clear packaging. Essentials
-parity is the 1.x program. **Current gate: Phase A is largely satisfied;
-Phase B1 (ability coverage) is the remaining v1.0 blocker.**
+parity is the 1.x program. **Phase A is satisfied; Phase B1 and B2 are
+complete (ability 87%, move 100%). Remaining v1.0 work: B3 (held items) and
+packaging smoke-run.**
 
 Phase A — Release hardening (v1.0 gate)
 - Acceptance
@@ -32,19 +33,23 @@ title shell, EV-yield, badges/Fly/Town Map, event runtime, layered maps,
 and the example regions. The remaining gating work for v1.0 is Phase B1
 (ability coverage) per the release sequencing.
 
-Phase B — Battle credibility
+Phase B — Battle credibility  ✅ B1 + B2 DONE
 - Acceptance
   - `pkmn.cli.audit` shows targeted ability/item coverage improvements
   - Effect-skip rate reduced; new handlers unit-tested
 - Verify: `python -m pkmn.cli.audit` / `python -m pkmn.cli.coverage`
 - Current status / next actions
-  - B1 (v1.0 gate): ability coverage is partial (~50–52% implemented); add
-    handlers to reach ~80 implemented handlers for used abilities.
-    (`pkmn/battle/passives.py`, `IMPLEMENTED_ABILITIES` registry)
-  - B2 (fast-follow): implement top skipped move handlers (destiny-bond,
-    perish-song, yawn, transform, snatch, etc.).
-  - B3 (fast-follow): broaden held-item effect coverage; infrastructure exists
-    but many item effects remain.
+  - B1 (v1.0 gate): DONE. Ability coverage reached 143/164 (87%) in
+    `pkmn/battle/passives.py`. Exceeds the 80% target. Remaining 21 are
+    doubles-only, cosmetic, or unreachable in singles.
+  - B2 (fast-follow): DONE. Move coverage is 559/559 (100%); EFFECT_SKIPPED
+    rate is 0%. Implemented Substitute, Wish, Lunar Dance, Trick Room,
+    Gravity, Magic Room, Magic Coat, Disable, Sleep Talk, Skill Swap,
+    Heart Swap, Conversions, Mirror Move, Assist, Sketch, Recycle, and more.
+    Field infrastructure added: `trick_room`, `gravity_turns`, `magic_room`,
+    `substitute_hp`, `type_override`, `foresight_active`, `wish_turns`, etc.
+  - B3 (fast-follow): held-item effect breadth remains partial; infrastructure
+    and held-item UI exist but many item effects unimplemented.
 
 Phase C — Multi-active battles (XL)
 - Acceptance
