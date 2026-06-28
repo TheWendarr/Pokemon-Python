@@ -19,6 +19,9 @@ class SideState:
     lucky_chant: int = 0
     tailwind: int = 0
     healing_wish: bool = False
+    lunar_dance: bool = False
+    wish_turns: int = 0
+    wish_hp: int = 0
 
     def clear_hazards(self) -> list[str]:
         cleared = []

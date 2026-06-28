@@ -70,6 +70,9 @@ class BattleEngine:
         self.weather_turns = 0              # -1 == ability weather (no expiry)
         self.sides = {P1: SideState(), P2: SideState()}
         self.sport = {"mud": 0, "water": 0}   # Mud/Water Sport (5 turns)
+        self.trick_room: int = 0
+        self.gravity_turns: int = 0
+        self.magic_room: int = 0
         self.log: list[Event] = []
         ev = [Event(E.BATTLE_START, None, {"wild": wild})]
         for side in SIDES:
@@ -188,6 +191,8 @@ class BattleEngine:
             usable = [s for s in usable if s.move_id == v.encore_move]
         if v.tormented and v.last_move:
             usable = [s for s in usable if s.move_id != v.last_move]
+        if v.disable_turns > 0 and v.disabled_move:
+            usable = [s for s in usable if s.move_id != v.disabled_move]
         foe = self.active(other(side))
         if foe.vol.imprison:
             sealed = {s.move_id for s in foe.state.moves}
@@ -208,9 +213,10 @@ class BattleEngine:
             elif fa == "magnet-pull" and "steel" in user_bp.types:
                 _trapped_by_foe = True
             elif fa == "arena-trap":
-                grounded = ("flying" not in user_bp.types
-                            and passives.abil(user_bp) != "levitate"
-                            and user_bp.vol.magnet_rise_turns <= 0)
+                grounded = (self.gravity_turns > 0
+                            or ("flying" not in user_bp.types
+                                and passives.abil(user_bp) != "levitate"
+                                and user_bp.vol.magnet_rise_turns <= 0))
                 if grounded:
                     _trapped_by_foe = True
             if not _trapped_by_foe:
@@ -257,10 +263,12 @@ class BattleEngine:
             v.protected = False
             v.endured = False
             v.last_hit = None
+            v.magic_coat_active = False
 
         pairs = [(P1, p1_action), (P2, p2_action)]
+        spd_sign = -1 if self.trick_room > 0 else 1
         pairs.sort(key=lambda pa: (self._category_priority(pa[1], pa[0]),
-                                   self.speed_of(pa[0]),
+                                   spd_sign * self.speed_of(pa[0]),
                                    self.rng.random()),
                    reverse=True)
 
@@ -288,6 +296,7 @@ class BattleEngine:
                 v.protected = False
                 v.endured = False
                 v.last_hit = None
+                v.magic_coat_active = False
 
         # One actor per (side, slot). Capture the BattlePokemon so a slot's
         # action still resolves against the right mon if active_slots mutate.
@@ -297,8 +306,9 @@ class BattleEngine:
                 action = acts[slot] if slot < len(acts) else MoveAction("struggle")
                 actors.append((side, slot, action,
                                self.parties[side][self.active_slots[side][slot]]))
+        spd_sign = -1 if self.trick_room > 0 else 1
         actors.sort(key=lambda a: (self._category_priority(a[2], a[0]),
-                                   self.speed_of_slot(a[0], a[1]),
+                                   spd_sign * self.speed_of_slot(a[0], a[1]),
                                    self.rng.random()),
                     reverse=True)
 
@@ -372,9 +382,10 @@ class BattleEngine:
                                     {"hazard": "stealth-rock", "pokemon": bp.name,
                                      "amount": dmg, "remaining_hp": bp.current_hp}))
                 self.announce_faint(bp, events)
-        grounded = ("flying" not in bp.types
-                    and passives.abil(bp) != "levitate"
-                    and bp.vol.magnet_rise_turns <= 0)
+        grounded = (self.gravity_turns > 0
+                    or ("flying" not in bp.types
+                        and passives.abil(bp) != "levitate"
+                        and bp.vol.magnet_rise_turns <= 0))
         if not bp.fainted and grounded and ss.spikes > 0 and not passives.magic_guard(bp):
             dmg = max(1, bp.max_hp // {1: 8, 2: 6}.get(ss.spikes, 4))
             bp.take_damage(dmg)
@@ -401,6 +412,19 @@ class BattleEngine:
                                     {"pokemon": bp.name, "amount": healed,
                                      "remaining_hp": bp.current_hp,
                                      "healing_wish": True}))
+        if not bp.fainted and ss.lunar_dance:
+            ss.lunar_dance = False
+            bp.status = None
+            bp.vol.toxic_counter = 0
+            healed = bp.heal(bp.max_hp)
+            if healed:
+                events.append(Event(E.HEAL, side,
+                                    {"pokemon": bp.name, "amount": healed,
+                                     "remaining_hp": bp.current_hp,
+                                     "lunar_dance": True}))
+            # Also restore all PP
+            for slot in bp.state.moves:
+                slot.pp = slot.pp_max
         if not bp.fainted:
             passives.switch_in(self, side, bp, events)
 
@@ -548,9 +572,12 @@ class BattleEngine:
             if user.vol.sleep_turns > 0:
                 user.vol.sleep_turns -= 1
                 events.append(Event(E.ASLEEP, side, {"pokemon": user.name}))
-                return False
-            user.status = None
-            events.append(Event(E.WOKE_UP, side, {"pokemon": user.name}))
+                if move.id != "sleep-talk":
+                    return False
+                # Sleep Talk fires while asleep; fall through to execute
+            else:
+                user.status = None
+                events.append(Event(E.WOKE_UP, side, {"pokemon": user.name}))
         elif user.status == "freeze":
             if "defrost" in move.flags or self.rng.random() < 0.20:
                 user.status = None
@@ -836,6 +863,21 @@ class BattleEngine:
             if self.weather_turns == 0:
                 events.append(Event(E.WEATHER_END, None, {"weather": self.weather}))
                 self.weather = None
+        # 1b. Wish healing
+        for side in SIDES:
+            ss = self.sides[side]
+            if ss.wish_turns > 0:
+                ss.wish_turns -= 1
+                if ss.wish_turns == 0:
+                    bp = self.active(side)
+                    if not bp.fainted and bp.current_hp < bp.max_hp \
+                            and bp.vol.heal_block_turns <= 0:
+                        healed = bp.heal(ss.wish_hp)
+                        if healed:
+                            events.append(Event(E.HEAL, side,
+                                                {"pokemon": bp.name, "amount": healed,
+                                                 "remaining_hp": bp.current_hp,
+                                                 "wish": True}))
         # 2. item/ability residuals (Leftovers, berries, Speed Boost)
         for side in order:
             for bp in self.actives(side):
@@ -930,9 +972,23 @@ class BattleEngine:
                     v.encore_turns -= 1
                     if v.encore_turns == 0:
                         v.encore_move = None
+                if v.disable_turns > 0:
+                    v.disable_turns -= 1
+                    if v.disable_turns == 0:
+                        v.disabled_move = None
         for k in self.sport:
             if self.sport[k] > 0:
                 self.sport[k] -= 1
+        # Whole-field condition countdowns
+        for field_attr, screen_name in (
+                ("trick_room", "trick-room"),
+                ("gravity_turns", "gravity"),
+                ("magic_room", "magic-room")):
+            turns = getattr(self, field_attr)
+            if turns > 0:
+                setattr(self, field_attr, turns - 1)
+                if turns - 1 == 0:
+                    events.append(Event(E.SCREEN_END, None, {"screen": screen_name}))
 
     def _status_chip(self, side, bp, events) -> None:
         if bp.status in ("poison", "toxic") and passives.abil(bp) == "poison-heal":

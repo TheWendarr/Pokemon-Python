@@ -107,6 +107,17 @@ class Volatiles:
     # Batch-3 ability volatiles
     truant_resting: bool = False    # Truant: True on the loafing turn
     analytic_active: bool = False   # Analytic: foe already moved this turn
+    # Move-effect volatiles
+    foresight_active: bool = False   # Foresight/Odor Sleuth: Normal/Fight hits Ghost
+    miracle_eye_active: bool = False # Miracle Eye: Psychic hits Dark
+    disabled_move: Optional[str] = None   # Disable: locked-out move id
+    disable_turns: int = 0
+    substitute_hp: int = 0          # >0 = substitute is active with this HP
+    power_trick_swapped: bool = False  # Power Trick: Atk/Def physically swapped
+    type_override: Optional[list] = None  # Soak/Reflect Type/Conversion forced type(s)
+    last_received_move: Optional[str] = None  # Mirror Move: last move that hit this mon
+    last_used_item: Optional[str] = None  # Recycle: last consumed item
+    magic_coat_active: bool = False  # Magic Coat: reflects status moves this turn
 
 
 class BattlePokemon:
@@ -139,7 +150,10 @@ class BattlePokemon:
     @property
     def fainted(self): return self.state.fainted
     @property
-    def types(self): return self.species.types
+    def types(self):
+        if self.vol.type_override is not None:
+            return self.vol.type_override
+        return self.species.types
     @property
     def held_item(self): return self.state.held_item
     @property
@@ -171,6 +185,9 @@ class BattlePokemon:
         """Reset everything battle-volatile (Gen 5 behavior: stages,
         confusion, flinch, and the toxic counter all reset; the sleep
         counter re-rolls on re-entry)."""
+        if self.vol.power_trick_swapped:
+            self.state.stats["attack"], self.state.stats["defense"] = (
+                self.state.stats["defense"], self.state.stats["attack"])
         self.stages = {k: 0 for k in STAGE_KEYS}
         self.vol = Volatiles()
 

@@ -78,6 +78,8 @@ class E(str, Enum):
     ABILITY = "ability"                  # generic ability proc
     ITEM_HELD = "item_held"              # held-item proc
 
+    SUBSTITUTE_BROKEN = "substitute_broken"
+
     EFFECT_SKIPPED = "effect_skipped"    # honest marker for unimplemented effects
     BATTLE_END = "battle_end"
 

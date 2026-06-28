@@ -239,8 +239,10 @@ def liquid_ooze_reverses(defender) -> bool:
     return abil(defender) == "liquid-ooze"
 
 
-def on_item_consumed(bp) -> None:
-    """Call after any held item is consumed. Activates Unburden."""
+def on_item_consumed(bp, item_id: str | None = None) -> None:
+    """Call after any held item is consumed. Records item for Recycle, activates Unburden."""
+    if item_id:
+        bp.vol.last_used_item = item_id
     if abil(bp) == "unburden":
         bp.vol.unburden_active = True
 
@@ -324,7 +326,7 @@ def power_mod(attacker, defender, move, weather) -> float:
     if gem_type and move.type == gem_type:
         m *= 1.5
         attacker.state.held_item = None
-        on_item_consumed(attacker)
+        on_item_consumed(attacker, item)
 
     return m
 
@@ -758,7 +760,7 @@ def check_hp_berry(eng, bp, events) -> None:
         return
     if bp.current_hp * 2 <= bp.max_hp:
         bp.state.held_item = None
-        on_item_consumed(bp)
+        on_item_consumed(bp, it)
         amount = 10 if it == "oran-berry" else max(1, bp.max_hp // 4)
         healed = bp.heal(amount)
         events.append(Event(E.ITEM_HELD, eng.side_of(bp),
@@ -777,7 +779,7 @@ def check_lum(eng, bp, events) -> None:
         bp.vol.confusion_turns = 0
         bp.vol.toxic_counter = 0
         bp.state.held_item = None
-        on_item_consumed(bp)
+        on_item_consumed(bp, "lum-berry")
         events.append(Event(E.ITEM_HELD, eng.side_of(bp),
                             {"item": "lum-berry", "pokemon": bp.name}))
         events.append(Event(E.STATUS_CURED, eng.side_of(bp),
@@ -806,7 +808,7 @@ def check_status_berry(eng, bp, events) -> None:
         if cures == "toxic":
             bp.vol.toxic_counter = 0
         bp.state.held_item = None
-        on_item_consumed(bp)
+        on_item_consumed(bp, it)
         events.append(Event(E.ITEM_HELD, eng.side_of(bp),
                             {"item": it, "pokemon": bp.name}))
         events.append(Event(E.STATUS_CURED, eng.side_of(bp),
@@ -816,7 +818,7 @@ def check_status_berry(eng, bp, events) -> None:
     if it == "persim-berry" and bp.vol.confusion_turns > 0:
         bp.vol.confusion_turns = 0
         bp.state.held_item = None
-        on_item_consumed(bp)
+        on_item_consumed(bp, "persim-berry")
         events.append(Event(E.ITEM_HELD, eng.side_of(bp),
                             {"item": "persim-berry", "pokemon": bp.name}))
         events.append(Event(E.STATUS_CURED, eng.side_of(bp),

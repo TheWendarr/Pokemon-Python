@@ -17,7 +17,7 @@ from . import passives
 from .damage import accuracy_check, calc_damage
 from .events import E, Event
 from .passives import SOUND_MOVES, POWDER_MOVES
-from .state import BattlePokemon, other
+from .state import BattlePokemon, SIDES, other
 
 # ── Built-in pseudo-moves ────────────────────────────────────────────
 
@@ -458,6 +458,18 @@ def _execute_move_inner(eng, side, move, events, power_mult, user, target):
             events.append(Event(E.MOVE_MISSED, side, {"move": move.name}))
             return
 
+        # Foresight/Odor Sleuth: Normal/Fighting bypass Ghost immunity
+        if eff_mult == 0 and move.type in ("normal", "fighting") \
+                and "ghost" in target.types and target.vol.foresight_active:
+            eff_mult = 1.0
+        # Miracle Eye: Psychic bypasses Dark immunity
+        if eff_mult == 0 and move.type == "psychic" \
+                and "dark" in target.types and target.vol.miracle_eye_active:
+            eff_mult = 1.0
+        # Gravity: Ground bypasses Flying/Levitate immunity
+        if eff_mult == 0 and move.type == "ground" and eng.gravity_turns > 0:
+            eff_mult = 1.0
+
         if move.type == "electric" and eng.sport["mud"] > 0:
             power_mult *= 0.33
         if move.type == "fire" and eng.sport["water"] > 0:
@@ -466,14 +478,17 @@ def _execute_move_inner(eng, side, move, events, power_mult, user, target):
         # Infiltrator: bypass Light Screen, Reflect
         screened = (eng.screened(eng.side_of(target), move)
                     and passives.abil(user) != "infiltrator")
+        sub_was_hit = False
         if move.id in FIXED_DAMAGE:
             deal_damage(eng, target, FIXED_DAMAGE[move.id], events,
                         {"effectiveness": 1.0, "crit": False})
             total, landed = FIXED_DAMAGE[move.id], 1
+            target.vol.last_received_move = move.id
         elif move.id in LEVEL_DAMAGE:
             deal_damage(eng, target, user.level, events,
                         {"effectiveness": 1.0, "crit": False})
             total, landed = user.level, 1
+            target.vol.last_received_move = move.id
         else:
             hits = roll_hits(eng, move.effect, user)
             total, landed = 0, 0
@@ -485,8 +500,30 @@ def _execute_move_inner(eng, side, move, events, power_mult, user, target):
                                           rng=eng.rng, crit=crit,
                                           weather=eng.weather, screened=screened,
                                           power_mult=power_mult)
+                # Substitute: absorb damage before reaching the Pokémon
+                if target.vol.substitute_hp > 0 and targets_foe \
+                        and move.id not in SOUND_MOVES:
+                    sub_dmg = min(dmg, target.vol.substitute_hp)
+                    target.vol.substitute_hp -= sub_dmg
+                    total += sub_dmg
+                    landed += 1
+                    sub_was_hit = True
+                    tside = eng.side_of(target)
+                    events.append(Event(E.DAMAGE, tside,
+                                        {"pokemon": target.name, "amount": sub_dmg,
+                                         "remaining_hp": target.current_hp,
+                                         "max_hp": target.max_hp,
+                                         "substitute": True,
+                                         "crit": detail.get("crit", False),
+                                         "effectiveness": detail.get("effectiveness", 1.0)}))
+                    if target.vol.substitute_hp == 0:
+                        events.append(Event(E.SUBSTITUTE_BROKEN, tside,
+                                            {"pokemon": target.name}))
+                    continue
+                sub_was_hit = False
                 total += deal_damage(eng, target, dmg, events, detail)
                 landed += 1
+                target.vol.last_received_move = move.id
             if hits > 1:
                 events.append(Event(E.MULTI_HIT, side, {"hits": landed}))
         if total > 0:
@@ -552,8 +589,8 @@ def _execute_move_inner(eng, side, move, events, power_mult, user, target):
                                                      "remaining_hp": user.current_hp}))
                 eng.announce_faint(user, events)
 
-        # Contact abilities punish the attacker
-        if landed and "contact" in move.flags and not user.fainted:
+        # Contact abilities punish the attacker (but not through a substitute)
+        if landed and "contact" in move.flags and not user.fainted and not sub_was_hit:
             passives.on_contact(eng, user, target, events)
 
         # Rattled: hit by Dark/Ghost/Bug -> +1 Speed
@@ -596,10 +633,10 @@ def _execute_move_inner(eng, side, move, events, power_mult, user, target):
                                      "change": applied,
                                      "stage": user.stages["attack"]}))
 
-        # Secondary effects only land if the target is still standing
-        # Sheer Force removes all secondaries (they were already skipped in power_mod)
+        # Secondary effects only land if the target is still standing and wasn't
+        # fully behind a substitute; Sheer Force removes all secondaries
         sheer = passives.abil(user) == "sheer-force" and passives._has_secondary(move)
-        if not target.fainted and landed and not sheer:
+        if not target.fainted and landed and not sheer and not sub_was_hit:
             sec_mult = passives.secondary_mult(user, True, target)
             ail_chance = move.effect.ailment_chance or (100 if move.effect.ailment else 0)
             if ail_chance < 100:
@@ -681,11 +718,21 @@ def _execute_move_inner(eng, side, move, events, power_mult, user, target):
         events.append(Event(E.MOVE_MISSED, side, {"move": move.name}))
         return
 
-    # Magic Bounce: reflect foe-targeted status moves back at the user
+    # Substitute: block foe-targeted non-damaging moves (not sound moves)
     if targets_foe and not move.is_damaging and kind != "force-switch" \
-            and passives.abil(target) == "magic-bounce":
+            and target.vol.substitute_hp > 0 and move.id not in SOUND_MOVES:
+        events.append(Event(E.PROTECTED, eng.side_of(target),
+                            {"pokemon": target.name, "setup": False, "substitute": True}))
+        return
+
+    # Magic Bounce / Magic Coat: reflect foe-targeted status moves back at the user
+    if targets_foe and not move.is_damaging and kind != "force-switch" \
+            and (passives.abil(target) == "magic-bounce"
+                 or target.vol.magic_coat_active):
+        ability_name = ("magic-bounce" if passives.abil(target) == "magic-bounce"
+                        else "magic-coat")
         events.append(Event(E.ABILITY, eng.side_of(target),
-                            {"ability": "magic-bounce", "pokemon": target.name}))
+                            {"ability": ability_name, "pokemon": target.name}))
         # Apply the move's ailment/stat effects to the original user instead
         if move.effect.ailment:
             apply_ailment(eng, target, user, move, events)
@@ -1548,3 +1595,439 @@ def _wide_guard(eng, user, target, move, events):
 def _wonder_room(eng, user, target, move, events):
     events.append(Event(E.EFFECT_SKIPPED, eng.side_of(user),
                         {"move": move.id, "effect": "wonder-room"}))
+
+
+# ── Batch: remaining Gen 5 moves ─────────────────────────────────────
+
+# Foresight / Odor Sleuth — allow Normal/Fighting to hit Ghost
+def _foresight(eng, user, target, move, events):
+    if target.vol.foresight_active:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    target.vol.foresight_active = True
+    events.append(Event(E.ABILITY, eng.side_of(target),
+                        {"ability": "foresight", "pokemon": target.name}))
+
+HANDLERS["foresight"] = _foresight
+HANDLERS["odor-sleuth"] = _foresight
+
+
+@handler("miracle-eye")
+def _miracle_eye(eng, user, target, move, events):
+    if target.vol.miracle_eye_active:
+        events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+        return
+    target.vol.miracle_eye_active = True
+    events.append(Event(E.ABILITY, eng.side_of(target),
+                        {"ability": "miracle-eye", "pokemon": target.name}))
+
+
+@handler("disable")
+def _disable(eng, user, target, move, events):
+    side = eng.side_of(user)
+    last = target.vol.last_move
+    slot = target.state.move_slot(last) if last else None
+    if not last or target.vol.disable_turns > 0 or slot is None or slot.pp <= 0:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    target.vol.disabled_move = last
+    target.vol.disable_turns = 4
+    events.append(Event(E.TRAPPED, eng.side_of(target),
+                        {"pokemon": target.name, "move": move.name,
+                         "disabled": last}))
+
+
+@handler("wish")
+def _wish(eng, user, target, move, events):
+    side = eng.side_of(user)
+    ss = eng.sides[side]
+    if ss.wish_turns > 0:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    ss.wish_turns = 2
+    ss.wish_hp = max(1, user.max_hp // 2)
+    events.append(Event(E.ABILITY, side,
+                        {"ability": "wish", "pokemon": user.name}))
+
+
+@handler("substitute")
+def _substitute(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if user.vol.substitute_hp > 0:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    cost = max(1, user.max_hp // 4)
+    if user.current_hp <= cost:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    user.take_damage(cost)
+    user.vol.substitute_hp = cost
+    events.append(Event(E.DAMAGE, side,
+                        {"pokemon": user.name, "amount": cost,
+                         "remaining_hp": user.current_hp, "max_hp": user.max_hp,
+                         "substitute_set": True, "crit": False, "effectiveness": 1.0}))
+    events.append(Event(E.PROTECTED, side,
+                        {"pokemon": user.name, "setup": True, "substitute": True}))
+
+
+@handler("sleep-talk")
+def _sleep_talk(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if user.status != "sleep":
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    exclude = {"sleep-talk", "snore", "focus-punch", "uproar"}
+    usable = [s for s in user.state.moves if s.move_id not in exclude and s.pp > 0]
+    if not usable:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    chosen_slot = eng.rng.choice(usable)
+    if not eng.data.has_move(chosen_slot.move_id):
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    chosen = eng.data.move(chosen_slot.move_id)
+    events.append(Event(E.ABILITY, side,
+                        {"ability": "sleep-talk", "pokemon": user.name,
+                         "chosen": chosen.id}))
+    execute_move(eng, side, chosen, events)
+
+
+def _trick_swap(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if passives.abil(target) == "sticky-hold":
+        events.append(Event(E.ABILITY, eng.side_of(target),
+                            {"ability": "sticky-hold", "pokemon": target.name}))
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    user_item = user.state.held_item
+    target_item = target.state.held_item
+    if user_item == target_item:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    user.state.held_item = target_item
+    target.state.held_item = user_item
+    events.append(Event(E.ITEM_HELD, side,
+                        {"item": target_item or "none",
+                         "pokemon": user.name, "trick": True}))
+    events.append(Event(E.ITEM_HELD, eng.side_of(target),
+                        {"item": user_item or "none",
+                         "pokemon": target.name, "trick": True}))
+
+HANDLERS["trick"] = _trick_swap
+HANDLERS["switcheroo"] = _trick_swap
+
+
+@handler("skill-swap")
+def _skill_swap(eng, user, target, move, events):
+    side = eng.side_of(user)
+    user_abil = passives.abil(user)
+    target_abil = passives.abil(target)
+    if not user_abil or not target_abil or user_abil == target_abil:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    user.vol.ability_override = target_abil
+    target.vol.ability_override = user_abil
+    events.append(Event(E.ABILITY, side,
+                        {"ability": user_abil, "pokemon": user.name,
+                         "swapped_to": target_abil}))
+    events.append(Event(E.ABILITY, eng.side_of(target),
+                        {"ability": target_abil, "pokemon": target.name,
+                         "swapped_to": user_abil}))
+
+
+@handler("psycho-shift")
+def _psycho_shift(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if not user.status or target.status:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    status = user.status
+    user.status = None
+    user.vol.toxic_counter = 0
+    transferred = "poison" if status == "toxic" else status
+    ok = apply_status(eng, target, transferred, events)
+    if not ok:
+        user.status = status
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+
+
+@handler("heart-swap")
+def _heart_swap(eng, user, target, move, events):
+    user.stages, target.stages = dict(target.stages), dict(user.stages)
+    events.append(Event(E.STAGES_RESET, eng.side_of(user),
+                        {"pokemon": user.name, "swap": "heart"}))
+
+
+def _stat_split(stat_list):
+    def fn(eng, user, target, move, events):
+        side = eng.side_of(user)
+        for stat in stat_list:
+            avg = (user.stats[stat] + target.stats[stat]) // 2
+            user.state.stats[stat] = avg
+            target.state.stats[stat] = avg
+        events.append(Event(E.STAGES_RESET, side,
+                            {"pokemon": user.name, "split": stat_list}))
+    return fn
+
+HANDLERS["guard-split"] = _stat_split(["defense", "special_defense"])
+HANDLERS["power-split"] = _stat_split(["attack", "special_attack"])
+
+
+@handler("power-trick")
+def _power_trick(eng, user, target, move, events):
+    side = eng.side_of(user)
+    user.state.stats["attack"], user.state.stats["defense"] = (
+        user.state.stats["defense"], user.state.stats["attack"])
+    user.vol.power_trick_swapped = not user.vol.power_trick_swapped
+    events.append(Event(E.STAT_CHANGE, side,
+                        {"pokemon": user.name, "power_trick": True,
+                         "swapped": user.vol.power_trick_swapped}))
+
+
+@handler("soak")
+def _soak(eng, user, target, move, events):
+    target.vol.type_override = ["water"]
+    events.append(Event(E.ABILITY, eng.side_of(target),
+                        {"ability": "soak", "pokemon": target.name,
+                         "type": "water"}))
+
+
+@handler("reflect-type")
+def _reflect_type(eng, user, target, move, events):
+    side = eng.side_of(user)
+    user.vol.type_override = list(target.types)
+    events.append(Event(E.ABILITY, side,
+                        {"ability": "reflect-type", "pokemon": user.name,
+                         "types": list(target.types)}))
+
+
+@handler("conversion")
+def _conversion(eng, user, target, move, events):
+    side = eng.side_of(user)
+    types_available = list({
+        eng.data.move(s.move_id).type
+        for s in user.state.moves
+        if eng.data.has_move(s.move_id)
+        and eng.data.move(s.move_id).type not in ("typeless", None)
+    })
+    if not types_available:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    chosen = eng.rng.choice(sorted(types_available))
+    user.vol.type_override = [chosen]
+    events.append(Event(E.ABILITY, side,
+                        {"ability": "conversion", "pokemon": user.name,
+                         "type": chosen}))
+
+
+_ALL_TYPES = ["normal", "fire", "water", "electric", "grass", "ice",
+              "fighting", "poison", "ground", "flying", "psychic",
+              "bug", "rock", "ghost", "dragon", "dark", "steel"]
+
+
+@handler("conversion-2")
+def _conversion2(eng, user, target, move, events):
+    side = eng.side_of(user)
+    last = target.vol.last_move
+    if not last or not eng.data.has_move(last):
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    last_type = eng.data.move(last).type
+    if last_type in ("typeless", None):
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    resistant = [t for t in _ALL_TYPES
+                 if eng.data.effectiveness(last_type, [t]) < 1.0]
+    if not resistant:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    chosen = eng.rng.choice(resistant)
+    user.vol.type_override = [chosen]
+    events.append(Event(E.ABILITY, side,
+                        {"ability": "conversion-2", "pokemon": user.name,
+                         "type": chosen}))
+
+
+@handler("camouflage")
+def _camouflage(eng, user, target, move, events):
+    side = eng.side_of(user)
+    new_type = "normal"  # No terrain in Gen 5; indoor/no terrain = Normal
+    user.vol.type_override = [new_type]
+    events.append(Event(E.ABILITY, side,
+                        {"ability": "camouflage", "pokemon": user.name,
+                         "type": new_type}))
+
+
+@handler("nature-power")
+def _nature_power(eng, user, target, move, events):
+    side = eng.side_of(user)
+    chosen_id = "tri-attack"  # Gen 5 Wi-Fi / no terrain: Tri Attack
+    if not eng.data.has_move(chosen_id):
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    chosen = eng.data.move(chosen_id)
+    events.append(Event(E.ABILITY, side,
+                        {"ability": "nature-power", "pokemon": user.name,
+                         "chosen": chosen_id}))
+    execute_move(eng, side, chosen, events)
+
+
+@handler("lunar-dance")
+def _lunar_dance(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if not eng.bench(side):
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    eng.sides[side].lunar_dance = True
+    user.take_damage(user.current_hp)
+    eng.announce_faint(user, events)
+
+
+@handler("recycle")
+def _recycle(eng, user, target, move, events):
+    side = eng.side_of(user)
+    item = user.vol.last_used_item
+    if not item or user.state.held_item:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    user.state.held_item = item
+    user.vol.last_used_item = None
+    events.append(Event(E.ITEM_HELD, side,
+                        {"item": item, "pokemon": user.name, "recycle": True}))
+
+
+@handler("mirror-move")
+def _mirror_move(eng, user, target, move, events):
+    side = eng.side_of(user)
+    last = user.vol.last_received_move
+    if not last or not eng.data.has_move(last):
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    chosen = eng.data.move(last)
+    execute_move(eng, side, chosen, events)
+
+
+@handler("trick-room")
+def _trick_room(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if eng.trick_room > 0:
+        eng.trick_room = 0
+        events.append(Event(E.SCREEN_END, None, {"screen": "trick-room"}))
+    else:
+        eng.trick_room = 5
+        events.append(Event(E.SCREEN_START, None, {"screen": "trick-room"}))
+
+
+@handler("gravity")
+def _gravity(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if eng.gravity_turns > 0:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    eng.gravity_turns = 5
+    events.append(Event(E.SCREEN_START, None, {"screen": "gravity"}))
+    # Cancel Magnet Rise and Telekinesis for all active Pokémon
+    for s in SIDES:
+        for bp in eng.actives(s):
+            if bp.vol.magnet_rise_turns > 0:
+                bp.vol.magnet_rise_turns = 0
+            if bp.vol.telekinesis_turns > 0:
+                bp.vol.telekinesis_turns = 0
+
+
+@handler("magic-room")
+def _magic_room(eng, user, target, move, events):
+    if eng.magic_room > 0:
+        eng.magic_room = 0
+        events.append(Event(E.SCREEN_END, None, {"screen": "magic-room"}))
+    else:
+        eng.magic_room = 5
+        events.append(Event(E.SCREEN_START, None, {"screen": "magic-room"}))
+
+
+_ASSIST_EXCLUDE = {
+    "assist", "chatter", "copycat", "counter", "covet", "destiny-bond",
+    "detect", "endure", "feint", "focus-punch", "follow-me", "helping-hand",
+    "me-first", "metronome", "mimic", "mirror-coat", "mirror-move",
+    "protect", "rage-powder", "sketch", "sleep-talk", "snatch",
+    "snore", "spite", "struggle", "transform",
+}
+
+
+@handler("assist")
+def _assist(eng, user, target, move, events):
+    side = eng.side_of(user)
+    available = []
+    for bp in eng.parties[side]:
+        if bp is not user:
+            for slot in bp.state.moves:
+                if slot.move_id not in _ASSIST_EXCLUDE \
+                        and eng.data.has_move(slot.move_id):
+                    available.append(slot.move_id)
+    if not available:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    chosen_id = eng.rng.choice(sorted(set(available)))
+    chosen = eng.data.move(chosen_id)
+    events.append(Event(E.ABILITY, side,
+                        {"ability": "assist", "pokemon": user.name,
+                         "chosen": chosen_id}))
+    execute_move(eng, side, chosen, events)
+
+
+@handler("sketch")
+def _sketch(eng, user, target, move, events):
+    side = eng.side_of(user)
+    last = target.vol.last_move
+    if not last or last == "sketch" or not eng.data.has_move(last):
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    slot = user.state.move_slot("sketch")
+    if slot is None:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    new_mv = eng.data.move(last)
+    slot.move_id = last
+    slot.pp = new_mv.pp
+    slot.pp_max = new_mv.pp
+    events.append(Event(E.ABILITY, side,
+                        {"ability": "sketch", "pokemon": user.name,
+                         "move": last}))
+
+
+@handler("mimic")
+def _mimic(eng, user, target, move, events):
+    side = eng.side_of(user)
+    last = target.vol.last_move
+    if not last or not eng.data.has_move(last):
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    chosen = eng.data.move(last)
+    events.append(Event(E.ABILITY, side,
+                        {"ability": "mimic", "pokemon": user.name,
+                         "move": last}))
+    execute_move(eng, side, chosen, events)
+
+
+@handler("magic-coat")
+def _magic_coat(eng, user, target, move, events):
+    side = eng.side_of(user)
+    if user.vol.magic_coat_active:
+        events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
+        return
+    user.vol.magic_coat_active = True
+    events.append(Event(E.PROTECTED, side,
+                        {"pokemon": user.name, "setup": True, "magic_coat": True}))
+
+
+@handler("quash")
+def _quash(eng, user, target, move, events):
+    # Doubles-only: no effect in singles
+    events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
+
+
+@handler("me-first")
+def _me_first(eng, user, target, move, events):
+    # Me First requires knowing the foe's not-yet-executed move this turn,
+    # which isn't accessible after actions are submitted simultaneously.
+    events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
