@@ -106,6 +106,7 @@ class OverworldScene(Scene):
         self.screen_fx = None
         self.cutscene = None
         self.surfing = self.map.is_surf(*self.game.state.tile)
+        self.game.state.visited_maps.add(map_id)
         self.game.audio.play_music(self.map.props.get("music", "route"))
         self.game.battle_bg = self.map.props.get("battle_bg", "field")
         blocking_started = False
@@ -171,12 +172,41 @@ class OverworldScene(Scene):
             return bool(r) and r[0].do_cut(r[1], r[2])
         return self.map.do_cut(x, y)
 
+    def _try_rock_smash(self, x, y) -> bool:
+        if not self.game.state.can_rock_smash:
+            return False
+        if self.map.is_seamless:
+            r = self.world.resolve(self.map.id, x, y)
+            return bool(r) and r[0].do_rock_smash(r[1], r[2])
+        return self.map.do_rock_smash(x, y)
+
+    def _is_waterfall(self, x, y) -> bool:
+        if self.map.is_seamless:
+            r = self.world.resolve(self.map.id, x, y)
+            return bool(r) and r[0].is_waterfall(r[1], r[2])
+        return self.map.is_waterfall(x, y)
+
+    def _is_headbutt_tree(self, x, y) -> bool:
+        if self.map.is_seamless:
+            r = self.world.resolve(self.map.id, x, y)
+            return bool(r) and r[0].is_headbutt_tree(r[1], r[2])
+        return self.map.is_headbutt_tree(x, y)
+
     def _walkable(self, x, y) -> bool:
         if self._occupied(x, y):
             return False
         if self._is_surf(x, y):                # water: only if able to surf
             return self.surfing or self.game.state.can_surf
         return not self._blocked(x, y)
+
+    def _walkable_dir(self, x, y, direction: str) -> bool:
+        """Like _walkable but also blocks waterfall upward movement."""
+        if not self._walkable(x, y):
+            return False
+        if (direction == "up" and self._is_waterfall(x, y)
+                and not self.game.state.can_waterfall):
+            return False
+        return True
 
     def _cross_to(self, tm: TileMap, tile: tuple) -> None:
         """Seamless boundary crossing: make a neighbour the current map and
@@ -333,7 +363,7 @@ class OverworldScene(Scene):
                 self.moving, self.move_px = True, 0
                 self._dest, self._move_dist, self.jump = (lx, ly), 2 * TILE, True
             return
-        if self._walkable(nx, ny) and self._can_cross(st.tile, d, (nx, ny)):
+        if self._walkable_dir(nx, ny, d) and self._can_cross(st.tile, d, (nx, ny)):
             self.moving, self.move_px = True, 0
             self._dest, self._move_dist, self.jump = (nx, ny), TILE, False
         elif self.bump_cool == 0:                 # walked into something solid
@@ -370,6 +400,10 @@ class OverworldScene(Scene):
                 self.game.push(DialogScene(self.game, npc.dialog, on_close=close))
             return
         if self._try_cut(*front):
+            return
+        if self._try_rock_smash(*front):
+            return
+        if self._try_headbutt(*front):
             return
         if self._try_fish(front):
             return
@@ -500,6 +534,8 @@ class OverworldScene(Scene):
                 chance = int(self.map.props.get(
                     "encounter_chance",
                     self.game.setting("encounter_chance", ENCOUNTER_CHANCE)))
+                if st.can_flash:                     # Flash halves encounter rate
+                    chance *= 2
                 if st.rng.randint(1, max(1, chance)) == 1:
                     self._roll_encounter(method)
 
@@ -527,6 +563,23 @@ class OverworldScene(Scene):
         wild = PokemonState.generate(st.data, entry["species"], level, rng=st.rng)
         self.game.push(BattleScene(self.game, [wild], wild=True,
                                    weather=self.map.props.get("weather")))
+        return True
+
+    def _try_headbutt(self, x, y) -> bool:
+        if not self.game.feature("encounters"):
+            return False
+        if not self._is_headbutt_tree(x, y):
+            return False
+        if not self.game.state.can_headbutt:
+            self.game.push(DialogScene(self.game, ["A sturdy tree. Use Headbutt?"]))
+            return True
+        if not self.game.state.first_able():
+            return False
+        table = self._enc_table("headbutt")
+        if table and self.game.state.rng.random() < 0.5:
+            self._roll_encounter("headbutt")
+        else:
+            self.game.push(DialogScene(self.game, ["Nothing fell from the tree."]))
         return True
 
     def _try_fish(self, front) -> bool:
@@ -639,3 +692,19 @@ class OverworldScene(Scene):
             dov = pygame.Surface(surf.get_size(), pygame.SRCALPHA)
             dov.fill(day)
             surf.blit(dov, (0, 0))
+        if self.map.props.get("dark_cave") and not self.game.state.can_flash:
+            self._draw_dark_cave(surf, px - (cam_x if not self.map.is_seamless else cx),
+                                 py - (cam_y if not self.map.is_seamless else cy))
+
+    def _draw_dark_cave(self, surf, player_sx: int, player_sy: int) -> None:
+        """Render a pitch-black overlay with a small lit circle around the player."""
+        dark = pygame.Surface(surf.get_size(), pygame.SRCALPHA)
+        dark.fill((0, 0, 0, 240))
+        # punch a soft radial hole of radius ~2.5 tiles
+        radius = TILE * 2 + TILE // 2
+        cx = player_sx + TILE // 2
+        cy = player_sy + TILE // 2
+        for r in range(radius, 0, -1):
+            alpha = max(0, int(240 * (r / radius) ** 2))
+            pygame.draw.circle(dark, (0, 0, 0, alpha), (cx, cy), r)
+        surf.blit(dark, (0, 0))

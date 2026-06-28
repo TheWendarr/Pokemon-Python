@@ -77,6 +77,14 @@ def eval_condition(cond, st, event_key: str = "") -> bool:
         return all(eval_condition(c, st, event_key) for c in cond["all"])
     if "any" in cond:
         return any(eval_condition(c, st, event_key) for c in cond["any"])
+    if "badge" in cond:
+        return cond["badge"] in st.badges
+    if "badge_count" in cond:
+        cur = len(st.badges)
+        return _CMP.get(cond.get("op", ">="), operator.ge)(
+            cur, int(cond.get("value", 0)))
+    if "visited" in cond:
+        return cond["visited"] in st.visited_maps
     return False
 
 
@@ -378,6 +386,8 @@ class ScriptRunner:
                 npc.facing = f["facing"]
         elif key == "hide_npc":
             self.ow.hide_npc(step["hide_npc"])
+        elif key == "give_badge":
+            st.badges.add(step["give_badge"])
         elif key == "give_pokemon":
             g = step["give_pokemon"]
             mon = PokemonState.generate(

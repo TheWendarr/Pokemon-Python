@@ -81,6 +81,7 @@ class TileMap:
         self.border = self.props.get("border")     # gid filling open edges
         self._border_img = None
         self.cut: set[tuple] = set()                # tiles cleared by Cut
+        self.smashed: set[tuple] = set()            # tiles cleared by Rock Smash
         # All tile layers, in draw order (bottom -> top). pytmx indexes
         # tile lookups by the layer's position among *all* layers, so we
         # keep the global indices. BASE_LAYER must be present.
@@ -156,6 +157,8 @@ class TileMap:
     def blocked(self, x: int, y: int) -> bool:
         if (x, y) in self.cut:                      # cut down -> walkable
             return False
+        if (x, y) in self.smashed:                  # smashed -> walkable
+            return False
         p = self._merged(x, y)
         if p.get("blocked"):
             return True
@@ -170,6 +173,22 @@ class TileMap:
     def is_cuttable(self, x: int, y: int) -> bool:
         return ((x, y) not in self.cut
                 and bool(self._merged(x, y).get("cuttable")))
+
+    def is_rock_smash(self, x: int, y: int) -> bool:
+        return ((x, y) not in self.smashed
+                and bool(self._merged(x, y).get("rock_smash")))
+
+    def do_rock_smash(self, x: int, y: int) -> bool:
+        if self.is_rock_smash(x, y):
+            self.smashed.add((x, y))
+            return True
+        return False
+
+    def is_waterfall(self, x: int, y: int) -> bool:
+        return bool(self._merged(x, y).get("waterfall"))
+
+    def is_headbutt_tree(self, x: int, y: int) -> bool:
+        return bool(self._merged(x, y).get("headbutt_tree"))
 
     def has_ledge(self, x: int, y: int, facing: str) -> bool:
         """True if a tile is a ledge jumped over by moving `facing`."""
@@ -232,6 +251,10 @@ class TileMap:
         if (x, y) in self.cut:
             tp = self.tmx.get_tile_properties(x, y, li)
             if tp and tp.get("cuttable"):
+                return None
+        if (x, y) in self.smashed:
+            tp = self.tmx.get_tile_properties(x, y, li)
+            if tp and tp.get("rock_smash"):
                 return None
         img = self.tmx.get_tile_image_by_gid(self._anim_gid(gid))
         return self._scaled(img) if img else None

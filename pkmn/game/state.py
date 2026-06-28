@@ -28,6 +28,8 @@ class GameState:
     caught: set = field(default_factory=set)  # Pokedex: species owned
     regiondex: list = field(default_factory=list)  # region roster (dex order)
     repel_steps: int = 0                      # remaining steps of repel
+    badges: set = field(default_factory=set)  # earned badge ids (strings)
+    visited_maps: set = field(default_factory=set)  # map ids seen (for Fly)
 
     @classmethod
     def new_game(cls, data: GameData, *, manifest: dict | None = None,
@@ -83,6 +85,34 @@ class GameState:
     def can_cut(self) -> bool:
         return "can_cut" in self.flags
 
+    @property
+    def can_strength(self) -> bool:
+        return "can_strength" in self.flags
+
+    @property
+    def can_rock_smash(self) -> bool:
+        return "can_rock_smash" in self.flags
+
+    @property
+    def can_flash(self) -> bool:
+        return "can_flash" in self.flags
+
+    @property
+    def can_waterfall(self) -> bool:
+        return "can_waterfall" in self.flags
+
+    @property
+    def can_dive(self) -> bool:
+        return "can_dive" in self.flags
+
+    @property
+    def can_fly(self) -> bool:
+        return "can_fly" in self.flags
+
+    @property
+    def can_headbutt(self) -> bool:
+        return "can_headbutt" in self.flags
+
     # ── persistence ──────────────────────────────────────────────────
     def to_dict(self) -> dict:
         return {"version": 2,
@@ -96,7 +126,9 @@ class GameState:
                 "facing": self.facing,
                 "seen": sorted(self.seen), "caught": sorted(self.caught),
                 "regiondex": list(self.regiondex),
-                "repel_steps": self.repel_steps}
+                "repel_steps": self.repel_steps,
+                "badges": sorted(self.badges),
+                "visited_maps": sorted(self.visited_maps)}
 
     @classmethod
     def from_dict(cls, data: GameData, d: dict,
@@ -116,4 +148,6 @@ class GameState:
         st.caught = set(d.get("caught", []))
         st.regiondex = list(d.get("regiondex", []))
         st.repel_steps = int(d.get("repel_steps", 0))
+        st.badges = set(d.get("badges", []))
+        st.visited_maps = set(d.get("visited_maps", []))
         return st

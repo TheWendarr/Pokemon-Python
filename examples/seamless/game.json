@@ -20,8 +20,16 @@
  "money": 600,
  "flags": [
   "can_surf",
-  "can_cut"
+  "can_cut",
+  "can_rock_smash",
+  "can_waterfall",
+  "can_headbutt",
+  "can_fly"
  ],
+ "features": {
+  "badges": true,
+  "fly": true
+ },
  "dex": [
   "chikorita",
   "bayleef",

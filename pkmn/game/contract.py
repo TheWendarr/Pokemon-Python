@@ -41,10 +41,13 @@ DIR_BLOCK_FLAGS: dict[str, str] = {
 REVERSE_DIR: dict[str, str] = {"up": "down", "down": "up",
                                "left": "right", "right": "left"}
 TILE_FLAGS: set[str] = {
-    "blocked",     # solid: cannot be entered from any direction
-    "grass",       # tall grass: rolls for a wild encounter on entry
-    "surf",        # water: crossable only while surfing (needs can_surf)
-    "cuttable",    # obstacle removed by Cut (needs can_cut); then walkable
+    "blocked",         # solid: cannot be entered from any direction
+    "grass",           # tall grass: rolls for a wild encounter on entry
+    "surf",            # water: crossable only while surfing (needs can_surf)
+    "cuttable",        # obstacle removed by Cut (needs can_cut); then walkable
+    "rock_smash",      # boulder removed by Rock Smash (needs can_rock_smash); then walkable
+    "waterfall",       # surf tile that blocks upward movement without can_waterfall
+    "headbutt_tree",   # tree that rolls a headbutt encounter when bumped (A)
     *LEDGE_FLAGS.values(),   # one-way ledges: jumped over in that direction
     *DIR_BLOCK_FLAGS.values(),   # per-direction (partial) passability
 }
@@ -68,7 +71,17 @@ BASE_LAYER: str = "ground"
 
 # Reserved state flags the engine reads as field-move capabilities. Content
 # grants them like HMs (e.g. {"set_flag": "can_cut"} from an NPC script).
-CAPABILITY_FLAGS: set[str] = {"can_surf", "can_cut"}
+CAPABILITY_FLAGS: set[str] = {
+    "can_surf",        # ride water tiles
+    "can_cut",         # clear cuttable obstacles
+    "can_strength",    # push strength_block boulders
+    "can_rock_smash",  # break rock_smash obstacles
+    "can_flash",       # illuminate dark caves / reduce encounter rate
+    "can_waterfall",   # climb waterfall tiles while surfing
+    "can_dive",        # dive into/from underwater tiles
+    "can_fly",         # open the Town Map to fly to visited locations
+    "can_headbutt",    # headbutt trees to trigger encounters
+}
 
 # ── maps ─────────────────────────────────────────────────────────────
 # Per-map custom properties, set on the map (.tmx). Connections + offsets
@@ -76,7 +89,12 @@ CAPABILITY_FLAGS: set[str] = {"can_surf", "can_cut"}
 # with no connections is a discrete, warp-linked map.
 DIRECTIONS: tuple[str, ...] = ("north", "south", "east", "west")
 MAP_PROPS: set[str] = (
-    {"weather", "border", "encounter_chance", "music", "battle_bg"}
+    {"weather", "border", "encounter_chance", "music", "battle_bg",
+     "heal_point",      # JSON {map, tile}: whiteout respawn override for this map
+     "escape_point",    # JSON {map, tile}: Escape Rope destination for this map
+     "dark_cave",       # bool: cave is pitch-black without Flash
+     "fly_name",        # display name shown in the Town Map / Fly list
+     }
     | {f"connect_{d}" for d in DIRECTIONS}
     | {f"offset_{d}" for d in DIRECTIONS}
 )
@@ -116,9 +134,9 @@ TRIGGER_WHEN: set[str] = {"step", "enter", "autorun", "parallel"}
 SCRIPT_COMMANDS: set[str] = {
     # dialogue / flow
     "say", "wait", "choice", "shop", "pc", "battle",
-    # state: flags / money / items
+    # state: flags / money / items / badges
     "heal", "give_item", "give_money", "take_money",
-    "set_flag", "clear_flag", "give_pokemon",
+    "set_flag", "clear_flag", "give_pokemon", "give_badge",
     # state: variables / self-switches (event runtime)
     "set_var", "add_var", "set_self_switch", "clear_self_switch",
     # control flow
@@ -135,6 +153,8 @@ FEATURES: set[str] = {
     "encounters", "trainers", "experience", "evolution",
     "move_replacement", "running",
     "menu_party", "menu_bag", "saving", "pokedex", "controls",
+    "badges",   # badge display in the pause menu
+    "fly",      # Town Map / Fly scene accessible when can_fly is set
 }
 
 # Numeric / string knobs: manifest["settings"][name]. The linter flags

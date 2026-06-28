@@ -29,10 +29,13 @@ class PauseScene(Scene):
         self.cursor = 0
         self.note = ""
         self.OPTIONS = tuple(
-            o for o, feat in (("POKEMON", "menu_party"), ("BAG", "menu_bag"),
-                              ("SAVE", "saving"), ("POKEDEX", "pokedex"),
-                              ("CONTROLS", "controls"))
-            if game.feature(feat)) + ("CLOSE",)
+            o for o, feat, default in (
+                ("POKEMON", "menu_party", True), ("BAG", "menu_bag", True),
+                ("SAVE", "saving", True), ("POKEDEX", "pokedex", True),
+                ("BADGES", "badges", False), ("CONTROLS", "controls", True))
+            if game.feature(feat, default)) + (
+            ("FLY",) if (game.feature("fly", False) and game.state.can_fly) else ()
+        ) + ("CLOSE",)
 
     def handle(self, inp) -> None:
         nav_list(self, inp, len(self.OPTIONS))
@@ -43,6 +46,10 @@ class PauseScene(Scene):
             pick = self.OPTIONS[self.cursor]
             if pick == "POKEDEX":
                 self.game.push(PokedexScene(self.game))
+            elif pick == "BADGES":
+                self.game.push(BadgesScene(self.game))
+            elif pick == "FLY":
+                self.game.push(FlyScene(self.game))
             elif pick == "CONTROLS":
                 self.game.push(ControlsScene(self.game))
             elif pick == "POKEMON":
@@ -667,6 +674,94 @@ class ControlsScene(Scene):
                                       True, TEXT), (rect.x + 16 * S, y))
             y += 13 * S
         surf.blit(font.render(self.note, True, BOX_BORDER),
+                  (rect.x + 8 * S, rect.bottom - 20 * S))
+
+
+class BadgesScene(Scene):
+    """Display earned badges."""
+    translucent = True
+
+    def __init__(self, game):
+        super().__init__(game)
+
+    def handle(self, inp) -> None:
+        if A in inp.pressed or B in inp.pressed:
+            self.game.pop()
+
+    def draw(self, surf) -> None:
+        font, big = self.game.assets.font, self.game.assets.font_big
+        rect = pygame.Rect(8 * S, 8 * S, LOGICAL_W - 16 * S, LOGICAL_H - 16 * S)
+        draw_box(surf, rect)
+        surf.blit(big.render("BADGES", True, TEXT), (rect.x + 8 * S, rect.y + 8 * S))
+        badges = sorted(self.game.state.badges)
+        if not badges:
+            surf.blit(font.render("No badges yet.", True, TEXT),
+                      (rect.x + 8 * S, rect.y + 32 * S))
+        else:
+            for i, badge in enumerate(badges):
+                y = rect.y + 32 * S + i * 14 * S
+                surf.blit(font.render(f"  {badge.replace('-', ' ').title()} Badge",
+                                      True, TEXT), (rect.x + 8 * S, y))
+        surf.blit(font.render(f"Total: {len(badges)}", True, BOX_BORDER),
+                  (rect.x + 8 * S, rect.bottom - 20 * S))
+
+
+class FlyScene(Scene):
+    """Town Map / Fly destination chooser. Only maps with `fly_name` in their
+    props and present in `visited_maps` are shown."""
+    translucent = True
+
+    def __init__(self, game):
+        super().__init__(game)
+        self.cursor = 0
+        self._spots = self._build_spots()
+
+    def _build_spots(self):
+        """Return list of (display_name, map_id, spawn_tile) for all visited
+        maps that declare a fly_name."""
+        st = self.game.state
+        ow = self.game.scenes[0] if self.game.scenes else None
+        world = getattr(ow, "world", None)
+        spots = []
+        for mid in sorted(st.visited_maps):
+            if world is not None:
+                try:
+                    tm = world.get(mid)
+                    name = tm.props.get("fly_name")
+                    if name:
+                        spots.append((name, mid, tm.spawn))
+                except Exception:
+                    pass
+        return spots
+
+    def handle(self, inp) -> None:
+        nav_list(self, inp, len(self._spots))
+        if B in inp.pressed:
+            self.game.pop()
+            return
+        if A in inp.pressed and self._spots:
+            name, mid, spawn = self._spots[min(self.cursor, len(self._spots) - 1)]
+            self.game.state.facing = "down"
+            self.game.pending_warp = (mid, spawn, "down")
+            while len(self.game.scenes) > 1:
+                self.game.pop()
+
+    def draw(self, surf) -> None:
+        font, big = self.game.assets.font, self.game.assets.font_big
+        rect = pygame.Rect(8 * S, 8 * S, LOGICAL_W - 16 * S, LOGICAL_H - 16 * S)
+        draw_box(surf, rect)
+        surf.blit(big.render("FLY TO WHERE?", True, TEXT),
+                  (rect.x + 8 * S, rect.y + 8 * S))
+        if not self._spots:
+            surf.blit(font.render("No destinations visited yet.", True, TEXT),
+                      (rect.x + 8 * S, rect.y + 32 * S))
+        else:
+            for i, (name, mid, _) in enumerate(self._spots):
+                y = rect.y + 32 * S + i * 14 * S
+                if i == self.cursor:
+                    surf.blit(font.render(">", True, TEXT), (rect.x + 6 * S, y))
+                surf.blit(font.render(name, True, TEXT), (rect.x + 16 * S, y))
+        surf.blit(font.render("A: fly there   B: cancel", True, BOX_BORDER),
                   (rect.x + 8 * S, rect.bottom - 20 * S))
 
 
