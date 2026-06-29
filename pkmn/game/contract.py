@@ -11,16 +11,23 @@ the headless linter.
 
 Versioning
 ----------
-`ENGINE_VERSION` is the contract version. A region declares the version
-it was authored against in `game.json` ("engine_version"). The engine
-loads a region whose declared version is <= its own (older content keeps
-working); a region targeting a *newer* engine is refused with a clear
-message rather than failing deep in a scene. Bump `ENGINE_VERSION` only
-when the contract changes in a way that could affect existing regions.
+`ENGINE_VERSION` is the public semver of this engine release ("major.minor").
+A game declares the version it was authored for in `game.json`
+("engine_version"). Compatibility is determined by major version only:
+
+  - A game targeting major N runs on any engine whose major is >= N.
+  - A game targeting major N cannot run on an engine whose major is < N.
+
+This means all 1.x games run on every 1.x engine and on any future 2.x+
+engine. A game built for 2.0 cannot run on a 1.x engine.
+
+Bump the MAJOR component only when adding features that old engines cannot
+safely ignore. Bump the MINOR component for additive, backward-compatible
+additions (new optional fields, new commands, new tile flags).
 """
 from __future__ import annotations
 
-ENGINE_VERSION = 3
+ENGINE_VERSION = "1.0"
 
 # ── tiles ────────────────────────────────────────────────────────────
 # Per-tile properties, set on tiles in the tileset (.tsx). Anything else
@@ -165,10 +172,17 @@ SETTINGS: set[str] = {"encounter_chance", "daynight"}
 
 # ── helpers ──────────────────────────────────────────────────────────
 def compatible(region_version) -> bool:
-    """True if a region targeting `region_version` runs on this engine."""
+    """True if a region targeting `region_version` runs on this engine.
+
+    Compatibility is major-version only: game.major <= engine.major.
+    Accepts both the legacy integer format (1, 2, 3) and the semver
+    string format ("1.0", "1.9", "2.0").
+    """
     try:
-        return 1 <= int(region_version) <= ENGINE_VERSION
-    except (TypeError, ValueError):
+        game_major = int(str(region_version).split(".")[0])
+        engine_major = int(ENGINE_VERSION.split(".")[0])
+        return 0 < game_major <= engine_major
+    except (TypeError, ValueError, AttributeError):
         return False
 
 

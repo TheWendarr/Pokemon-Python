@@ -71,14 +71,14 @@ def test_rod_roll_uses_rod_table(ow):
 
 
 def test_fishing_requires_a_rod(ow):
-    # the converted Kanto game has real water tiles to fish in
-    g2 = Game(headless=True, seed=4, game_dir="examples/kanto_frlg")
+    # seamless example has real surf tiles to fish in
+    g2 = Game(headless=True, seed=4, game_dir="examples/seamless")
     o = OverworldScene(g2)
     g2.push(o)
     water = None
     import glob
     mids = [os.path.splitext(os.path.basename(p))[0]
-            for p in sorted(glob.glob("examples/kanto_frlg/maps/*.tmx"))]
+            for p in sorted(glob.glob("examples/seamless/maps/*.tmx"))]
     for mid in mids:
         try:
             o.load_map(mid)
@@ -90,7 +90,7 @@ def test_fishing_requires_a_rod(ow):
             break
     if water is None:
         pytest.skip("no map with water found")
-    o._encounters = {o.map.id: {"super_rod": [_slot("magikarp")]}}
+    o._encounters = {o.map.id: {"super_rod": [_slot("tentacool")]}}
     g = g2
     # no rod in the bag -> not a fishing action
     g.state.bag.pop("super-rod", None)

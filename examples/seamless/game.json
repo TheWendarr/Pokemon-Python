@@ -1,44 +1,44 @@
 {
- "engine_version": 1,
- "name": "Vale (seamless demo)",
- "start": {
-  "map": "meadow",
-  "tile": [
-   10,
-   6
+  "engine_version": "1.0",
+  "name": "Vale (seamless demo)",
+  "start": {
+    "map": "meadow",
+    "tile": [
+      10,
+      6
+    ],
+    "facing": "down"
+  },
+  "starter": {
+    "species": "chikorita",
+    "level": 8
+  },
+  "bag": {
+    "potion": 3,
+    "poke-ball": 5
+  },
+  "money": 600,
+  "flags": [
+    "can_surf",
+    "can_cut",
+    "can_rock_smash",
+    "can_waterfall",
+    "can_headbutt",
+    "can_fly"
   ],
-  "facing": "down"
- },
- "starter": {
-  "species": "chikorita",
-  "level": 8
- },
- "bag": {
-  "potion": 3,
-  "poke-ball": 5
- },
- "money": 600,
- "flags": [
-  "can_surf",
-  "can_cut",
-  "can_rock_smash",
-  "can_waterfall",
-  "can_headbutt",
-  "can_fly"
- ],
- "features": {
-  "badges": true,
-  "fly": true
- },
- "dex": [
-  "chikorita",
-  "bayleef",
-  "sentret",
-  "hoothoot",
-  "caterpie",
-  "pidgey",
-  "rattata",
-  "sunkern",
-  "hoppip"
- ]
+  "features": {
+    "badges": true,
+    "fly": true
+  },
+  "dex": [
+    "chikorita",
+    "bayleef",
+    "sentret",
+    "hoothoot",
+    "caterpie",
+    "pidgey",
+    "rattata",
+    "sunkern",
+    "hoppip"
+  ]
 }

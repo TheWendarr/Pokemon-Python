@@ -1,57 +1,57 @@
 {
- "engine_version": 1,
- "name": "Triad (showcase region)",
- "start": {
-  "map": "verdant",
-  "facing": "down"
- },
- "starter": {
-  "species": "tepig",
-  "level": 12,
-  "moves": [
-   "ember",
-   "tackle",
-   "defense-curl"
+  "engine_version": "1.0",
+  "name": "Triad (showcase region)",
+  "start": {
+    "map": "verdant",
+    "facing": "down"
+  },
+  "starter": {
+    "species": "tepig",
+    "level": 12,
+    "moves": [
+      "ember",
+      "tackle",
+      "defense-curl"
+    ]
+  },
+  "bag": {
+    "potion": 4,
+    "poke-ball": 8
+  },
+  "money": 2000,
+  "features": {
+    "encounters": true,
+    "trainers": true,
+    "experience": true,
+    "evolution": true,
+    "move_replacement": true,
+    "running": true,
+    "menu_party": true,
+    "menu_bag": true,
+    "saving": true
+  },
+  "settings": {
+    "encounter_chance": 9
+  },
+  "dex": [
+    "tepig",
+    "pignite",
+    "emboar",
+    "sewaddle",
+    "venipede",
+    "petilil",
+    "lillipup",
+    "pidove",
+    "ducklett",
+    "frillish",
+    "basculin",
+    "tympole",
+    "sandile",
+    "dwebble",
+    "darumaka",
+    "roggenrola",
+    "drilbur",
+    "trapinch",
+    "maractus"
   ]
- },
- "bag": {
-  "potion": 4,
-  "poke-ball": 8
- },
- "money": 2000,
- "features": {
-  "encounters": true,
-  "trainers": true,
-  "experience": true,
-  "evolution": true,
-  "move_replacement": true,
-  "running": true,
-  "menu_party": true,
-  "menu_bag": true,
-  "saving": true
- },
- "settings": {
-  "encounter_chance": 9
- },
- "dex": [
-  "tepig",
-  "pignite",
-  "emboar",
-  "sewaddle",
-  "venipede",
-  "petilil",
-  "lillipup",
-  "pidove",
-  "ducklett",
-  "frillish",
-  "basculin",
-  "tympole",
-  "sandile",
-  "dwebble",
-  "darumaka",
-  "roggenrola",
-  "drilbur",
-  "trapinch",
-  "maractus"
- ]
 }

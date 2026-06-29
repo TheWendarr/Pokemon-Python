@@ -12,7 +12,11 @@ import pytest
 from pkmn.game.overworld import OverworldScene
 from pkmn.game.scene import Game
 
-_EXAMPLES = sorted(os.path.dirname(p) for p in glob.glob("examples/*/game.json"))
+_GITIGNORED = {"kanto_frlg"}   # local-only; proprietary tiles, not in the repo
+_EXAMPLES = sorted(
+    os.path.dirname(p) for p in glob.glob("examples/*/game.json")
+    if os.path.basename(os.path.dirname(p)) not in _GITIGNORED
+)
 _IDS = [os.path.basename(p) for p in _EXAMPLES]
 
 

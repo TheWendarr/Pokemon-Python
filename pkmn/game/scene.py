@@ -91,8 +91,9 @@ class Game:
         if not contract.compatible(ev):
             raise ValueError(
                 f"region {self.manifest.get('name', game_dir)!r} targets "
-                f"engine v{ev}, but this engine is v{contract.ENGINE_VERSION}; "
-                f"update the engine or lower 'engine_version' in game.json")
+                f"engine v{ev}, but this engine is v{contract.ENGINE_VERSION}. "
+                f"This game requires a newer engine — update pokemon-python "
+                f"or lower 'engine_version' in game.json.")
         pygame.display.set_caption(self.manifest.get("name", "pkmn"))
         self.canvas = pygame.Surface((LOGICAL_W, LOGICAL_H))
         self.data = GameData(data_dir or self.manifest.get("data_dir")

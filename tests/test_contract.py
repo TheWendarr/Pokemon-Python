@@ -13,9 +13,11 @@ from pkmn.game import contract
 
 
 def test_compatible_accepts_le_and_rejects_newer_or_garbage():
-    assert contract.compatible(1)
+    assert contract.compatible(1)          # legacy integer format
+    assert contract.compatible("1.0")      # semver — same major as engine
+    assert contract.compatible("1.9")      # same major, higher minor — OK
     assert contract.compatible(contract.ENGINE_VERSION)
-    assert not contract.compatible(contract.ENGINE_VERSION + 1)
+    assert not contract.compatible("2.0")  # future major — not supported
     assert not contract.compatible("nope")
     assert not contract.compatible(None)
 

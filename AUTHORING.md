@@ -34,7 +34,7 @@ yourgame/
 
 ```json
 {
-  "engine_version": "0.9",
+  "engine_version": "1.0",
   "name": "Isleton (example region)",
   "start":    {"map": "isle_town", "tile": [8, 8], "facing": "down"},
   "whiteout": {"map": "isle_town", "facing": "down"},
@@ -48,7 +48,7 @@ yourgame/
 
 | Key | Notes |
 |-----|-------|
-| `engine_version` | Pin to the engine release you target (e.g. `"0.9"`). A mismatch is a hard error at startup. |
+| `engine_version` | The engine major version your game targets (e.g. `"1.0"`). See [versioning](#versioning-and-compatibility). |
 | `start.tile` | Omit to use the map's `spawn` object. |
 | `whiteout` | Respawn after loss. Omit to reuse `start`. |
 | `starter` | Omit `moves` for last-four level-up moves. `null` → empty party (walking-sim mode). |
@@ -384,6 +384,25 @@ moves), flags unknown tile/map/object properties and commands, and verifies
 
 ---
 
+## Versioning and compatibility
+
+Declare the engine version your game targets in `game.json`:
+
+```json
+"engine_version": "1.0"
+```
+
+**Compatibility rule:** A game targeting major version N runs on any engine whose major version is ≥ N.
+
+- A game for `"1.0"` runs on engine 1.0, 1.1, 1.9, 2.0, and any later version.
+- A game for `"2.0"` **cannot** run on a 1.x engine — it may use features that 1.x cannot handle.
+
+This means all 1.x games are permanently forward-compatible. You do not need to update `engine_version` when upgrading the engine within the same major version. Update it only when you intentionally depend on features from a newer major.
+
+Review [CHANGELOG.md](CHANGELOG.md) when updating the engine to see if any breaking changes affect your game folder.
+
+---
+
 ## Keeping private content out of this repository
 
 The engine is open-source; your game content (especially anything derived from
@@ -418,7 +437,7 @@ subprocess.run([sys.executable, "-m", "pkmn.game.play",
                 *sys.argv[1:]])
 ```
 
-**Pin the engine version** in `game.json` (`"engine_version": "0.9"`) and review
+**Pin the engine version** in `game.json` (`"engine_version": "1.0"`) and review
 `CHANGELOG.md` when you update the engine.
 
 **`local/` safety net.** The engine's `.gitignore` excludes `local/`. You may place
