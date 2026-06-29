@@ -204,23 +204,24 @@ class BattleEngine:
                          if usable else [MoveAction("struggle")])
         # Check ability-based trapping by the foe
         _trapped_by_foe = False
+        shed_shell = passives.held(self.active(side)) == "shed-shell"
         if v.trap_turns <= 0 and not v.no_escape and not v.ingrained:
             foe = self.active(other(side))
             fa = passives.abil(foe)
             user_bp = self.active(side)
-            if fa == "shadow-tag":
-                _trapped_by_foe = True
-            elif fa == "magnet-pull" and "steel" in user_bp.types:
-                _trapped_by_foe = True
-            elif fa == "arena-trap":
-                grounded = (self.gravity_turns > 0
-                            or ("flying" not in user_bp.types
-                                and passives.abil(user_bp) != "levitate"
-                                and user_bp.vol.magnet_rise_turns <= 0))
-                if grounded:
+            if not shed_shell:
+                if fa == "shadow-tag":
                     _trapped_by_foe = True
+                elif fa == "magnet-pull" and "steel" in user_bp.types:
+                    _trapped_by_foe = True
+                elif fa == "arena-trap":
+                    if passives.is_grounded(user_bp, self.gravity_turns):
+                        _trapped_by_foe = True
             if not _trapped_by_foe:
                 actions += [SwitchAction(i) for i in self.bench(side)]
+        elif v.trap_turns > 0 and shed_shell:
+            # Shed Shell escapes partial trapping too
+            actions += [SwitchAction(i) for i in self.bench(side)]
         if self.wild and side == P1 and not _trapped_by_foe:
             actions.append(RunAction())
         return actions
@@ -267,10 +268,32 @@ class BattleEngine:
 
         pairs = [(P1, p1_action), (P2, p2_action)]
         spd_sign = -1 if self.trick_room > 0 else 1
-        pairs.sort(key=lambda pa: (self._category_priority(pa[1], pa[0]),
-                                   spd_sign * self.speed_of(pa[0]),
-                                   self.rng.random()),
-                   reverse=True)
+        # Pre-compute speed overrides for order items (Quick Claw, Custap Berry,
+        # Lagging Tail, Full Incense) so the RNG is consumed in consistent order
+        speed_override = {}
+        for s, a in pairs:
+            if not isinstance(a, MoveAction):
+                continue
+            bp = self.active(s)
+            it = passives.held(bp)
+            if it == "quick-claw" and self.rng.randint(1, 16) <= 3:
+                speed_override[s] = 999999
+            elif it == "custap-berry" and bp.current_hp * 4 <= bp.max_hp:
+                bp.state.held_item = None
+                passives.on_item_consumed(bp, "custap-berry")
+                events.append(Event(E.ITEM_HELD, s,
+                                    {"item": "custap-berry", "pokemon": bp.name}))
+                speed_override[s] = 999999
+            elif it in ("lagging-tail", "full-incense"):
+                speed_override[s] = -999999
+
+        def _sort_key(pa):
+            s, a = pa
+            cat = self._category_priority(a, s)
+            spd = speed_override.get(s, spd_sign * self.speed_of(s))
+            return (cat, spd, self.rng.random())
+
+        pairs.sort(key=_sort_key, reverse=True)
 
         for side, action in pairs:
             if self.phase == Phase.OVER:
@@ -501,7 +524,9 @@ class BattleEngine:
             user.vol.charging = None
             user.vol.semi_invulnerable = None
         elif not rampaging and move.id not in ("struggle", "recharge"):
-            user.state.move_slot(move.id).pp -= 1  # PP spent even on a miss
+            slot = user.state.move_slot(move.id)
+            if slot is not None:
+                slot.pp -= 1  # PP spent even on a miss
 
         if move.id in movex.RAMPAGE_MOVES:
             if user.vol.rampage_move != move.id:
@@ -521,6 +546,19 @@ class BattleEngine:
                 if slot is not None and slot.pp > 0:
                     slot.pp -= 1
 
+        # Leppa Berry: restore 10 PP to any slot that reached 0
+        if move.id not in ("struggle", "recharge"):
+            passives.check_leppa_berry(self, user, events)
+
+        # Metronome item: track consecutive same-move streak for power bonus
+        if passives.held(user) == "metronome" \
+                and move.id not in ("struggle", "recharge") and move.is_damaging:
+            if user.vol.metronome_move == move.id:
+                user.vol.metronome_streak = min(user.vol.metronome_streak + 1, 6)
+            else:
+                user.vol.metronome_streak = 1
+                user.vol.metronome_move = move.id
+
         user.vol.has_moved = True
         if move.id not in ("struggle", "recharge"):
             user.vol.last_move = move.id
@@ -535,6 +573,7 @@ class BattleEngine:
                     continue
                 movex.execute_move(self, side, move, events,
                                    power_mult=pmult, target=t)
+        user.vol.micle_next = False  # Micle Berry effect lapses after move
 
         # Rampage fatigue -> confusion
         if move.id in movex.RAMPAGE_MOVES and user.vol.rampage_move \
@@ -882,12 +921,13 @@ class BattleEngine:
         for side in order:
             for bp in self.actives(side):
                 passives.end_of_turn(self, side, bp, events)
-        # 2b. Ingrain heal
+        # 2b. Ingrain / Aqua Ring heal (Big Root increases healing)
         for side in order:
             for bp in self.actives(side):
                 if not bp.fainted and (bp.vol.ingrained or bp.vol.aqua_ring) \
                         and bp.current_hp < bp.max_hp:
-                    healed = bp.heal(max(1, bp.max_hp // 16))
+                    mult = passives.drain_mult(bp)
+                    healed = bp.heal(max(1, int(bp.max_hp * mult // 16)))
                     events.append(Event(E.HEAL, side,
                                         {"pokemon": bp.name, "amount": healed,
                                          "remaining_hp": bp.current_hp,
@@ -938,7 +978,8 @@ class BattleEngine:
                 if bp.fainted or bp.vol.trap_turns <= 0:
                     continue
                 if not passives.magic_guard(bp):
-                    dmg = max(1, bp.max_hp // 16)
+                    divisor = 8 if bp.vol.binding_band else 16
+                    dmg = max(1, bp.max_hp // divisor)
                     bp.take_damage(dmg)
                     events.append(Event(E.TRAP_DAMAGE, side,
                                         {"pokemon": bp.name, "move": bp.vol.trap_name,

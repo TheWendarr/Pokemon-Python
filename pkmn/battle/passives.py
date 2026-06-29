@@ -69,6 +69,59 @@ TYPE_GEMS = {
     "steel-gem": "steel", "normal-gem": "normal",
 }
 
+# Resist berries: halve super-effective damage for that type (chilan is neutral)
+RESIST_BERRIES = {
+    "occa-berry":   "fire",
+    "passho-berry": "water",
+    "wacan-berry":  "electric",
+    "rindo-berry":  "grass",
+    "yache-berry":  "ice",
+    "chople-berry": "fighting",
+    "kebia-berry":  "poison",
+    "shuca-berry":  "ground",
+    "coba-berry":   "flying",
+    "payapa-berry": "psychic",
+    "tanga-berry":  "bug",
+    "charti-berry": "rock",
+    "kasib-berry":  "ghost",
+    "haban-berry":  "dragon",
+    "colbur-berry": "dark",
+    "babiri-berry": "steel",
+    "chilan-berry": "normal",  # halves Normal even at neutral effectiveness
+}
+
+# Pinch berries: activate at ≤25% HP (or ≤50% with Gluttony)
+PINCH_BERRIES = {
+    "liechi-berry": ("attack",          1),
+    "ganlon-berry": ("defense",         1),
+    "salac-berry":  ("speed",           1),
+    "petaya-berry": ("special_attack",  1),
+    "apicot-berry": ("special_defense", 1),
+    "lansat-berry": ("crit",            2),    # raises crit stage by 2
+    "starf-berry":  ("random",          2),    # raises random stat by 2
+}
+
+# Flavor berries: heal 1/8 HP at ≤50% (nature-based confusion simplified away)
+FLAVOR_BERRIES = {
+    "figy-berry", "wiki-berry", "mago-berry", "aguav-berry", "iapapa-berry",
+}
+
+# Weather rocks: 8-turn weather when held by the move user
+WEATHER_ROCKS = {
+    "heat-rock":   "sun",
+    "damp-rock":   "rain",
+    "smooth-rock": "sandstorm",
+    "icy-rock":    "hail",
+}
+
+# Drives: change Techno Blast's type when held by Genesect
+DRIVES = {
+    "douse-drive":  "water",
+    "shock-drive":  "electric",
+    "burn-drive":   "fire",
+    "chill-drive":  "ice",
+}
+
 # Every ability id the battle hooks below act on. The audit CLI compares
 # this against the full abilities.json catalog; anything not listed is
 # inert in battle (data-only) until a hook is added.
@@ -179,6 +232,30 @@ IMPLEMENTED_HELD = frozenset({
     "poison-gem", "ground-gem", "flying-gem", "psychic-gem", "bug-gem",
     "rock-gem", "ghost-gem", "dragon-gem", "dark-gem", "steel-gem",
     "normal-gem",
+    # Batch A: damage passives
+    "muscle-band", "wise-glasses", "shell-bell", "big-root", "binding-band",
+    # Batch B: end-of-turn / on-switch
+    "black-sludge", "sticky-barb", "white-herb", "mental-herb",
+    "heat-rock", "damp-rock", "smooth-rock", "icy-rock", "light-clay",
+    # Batch C: accuracy / speed / order
+    "bright-powder", "wide-lens", "zoom-lens",
+    "quick-claw", "lagging-tail", "full-incense",
+    "iron-ball", "metronome", "kings-rock", "razor-fang",
+    # Batch D: reactive items
+    "air-balloon", "red-card", "eject-button", "ring-target",
+    "absorb-bulb", "cell-battery", "destiny-knot", "shed-shell", "grip-claw",
+    # Batch E: berries
+    *RESIST_BERRIES.keys(),
+    "liechi-berry", "ganlon-berry", "salac-berry", "petaya-berry", "apicot-berry",
+    "lansat-berry", "starf-berry", "micle-berry", "custap-berry",
+    *FLAVOR_BERRIES,
+    "enigma-berry", "jaboca-berry", "rowap-berry", "leppa-berry",
+    # Batch F: species items
+    "light-ball", "thick-club", "lucky-punch", "stick",
+    "deep-sea-tooth", "deep-sea-scale", "soul-dew",
+    "adamant-orb", "lustrous-orb", "griseous-orb",
+    "quick-powder", "metal-powder",
+    "douse-drive", "shock-drive", "burn-drive", "chill-drive",
 })
 
 
@@ -250,21 +327,56 @@ def on_item_consumed(bp, item_id: str | None = None) -> None:
 # ── damage-formula hooks ─────────────────────────────────────────────
 
 def attack_stat_mod(attacker, move) -> float:
-    m, a = 1.0, abil(attacker)
+    m, a, it = 1.0, abil(attacker), held(attacker)
+    sid = getattr(attacker, "species", None)
+    sid = getattr(sid, "id", "") if sid else ""
     if move.category == "physical":
         if a in ("huge-power", "pure-power"):
             m *= 2.0
         if a == "guts" and attacker.status:
             m *= 1.5
-        if held(attacker) == "choice-band":
+        if it == "choice-band":
             m *= 1.5
         if a == "hustle":
             m *= 1.5
-    else:
-        if held(attacker) == "choice-specs":
+        if it == "muscle-band":
+            m *= 1.1
+        # Species items (physical attack)
+        if it == "thick-club" and sid in ("cubone", "marowak"):
+            m *= 2.0
+        if it == "light-ball" and sid == "pikachu":
+            m *= 2.0
+        if it == "quick-powder" and sid == "ditto":
+            pass  # handled in speed_mod
+        if it == "griseous-orb" and sid == "giratina":
+            m *= 1.2
+        if it == "adamant-orb" and sid == "dialga" \
+                and move.type in ("dragon", "steel"):
+            m *= 1.2
+        if it == "lustrous-orb" and sid == "palkia" \
+                and move.type in ("water", "dragon"):
+            m *= 1.2
+    else:  # special
+        if it == "choice-specs":
             m *= 1.5
         if a == "solar-power" and getattr(attacker, "_weather_ref", None) == "sun":
             m *= 1.5
+        if it == "wise-glasses":
+            m *= 1.1
+        if it == "deep-sea-tooth" and sid == "clamperl":
+            m *= 2.0
+        if it == "light-ball" and sid == "pikachu":
+            m *= 2.0
+        if it == "soul-dew" and sid in ("latios", "latias"):
+            m *= 1.5
+        if it == "griseous-orb" and sid == "giratina":
+            m *= 1.2
+        if it == "adamant-orb" and sid == "dialga" \
+                and move.type in ("dragon", "steel"):
+            m *= 1.2
+        if it == "lustrous-orb" and sid == "palkia" \
+                and move.type in ("water", "dragon"):
+            m *= 1.2
     return m
 
 
@@ -328,6 +440,12 @@ def power_mod(attacker, defender, move, weather) -> float:
         attacker.state.held_item = None
         on_item_consumed(attacker, item)
 
+    # Metronome item: +20% per consecutive same-move (up to ×2.0 at 5 extra uses)
+    if item == "metronome" and move.is_damaging:
+        extra = min(attacker.vol.metronome_streak - 1, 5)
+        if extra > 0:
+            m *= 1.0 + 0.2 * extra
+
     return m
 
 
@@ -341,22 +459,31 @@ def _has_secondary(move) -> bool:
 def def_mod(defender, move) -> float:
     """Multiplier on physical Defense stat."""
     m = 1.0
-    a = abil(defender)
+    a, it = abil(defender), held(defender)
     if a == "marvel-scale" and defender.status:
         m *= 1.5
-    if held(defender) == "eviolite" and defender.species.evolves_to:
+    if it == "eviolite" and defender.species.evolves_to:
         m *= 1.5
+    sid = getattr(getattr(defender, "species", None), "id", "")
+    if it == "metal-powder" and sid == "ditto":
+        m *= 2.0
+    if it == "deep-sea-scale" and sid == "clamperl":
+        m *= 2.0
     return m
 
 
 def spdef_mod(defender, move, weather) -> float:
     m = 1.0
+    it = held(defender)
     if weather == "sandstorm" and move.category == "special" \
             and "rock" in defender.types:
         m *= 1.5
-    if held(defender) == "assault-vest" and move.category == "special":
+    if it == "assault-vest" and move.category == "special":
         m *= 1.5
-    if held(defender) == "eviolite" and defender.species.evolves_to:
+    if it == "eviolite" and defender.species.evolves_to:
+        m *= 1.5
+    sid = getattr(getattr(defender, "species", None), "id", "")
+    if it == "soul-dew" and sid in ("latios", "latias") and move.category == "special":
         m *= 1.5
     return m
 
@@ -399,7 +526,8 @@ def burn_ignored(attacker) -> bool:
 
 def speed_mod(bp, weather) -> float:
     m = 1.0
-    if held(bp) == "choice-scarf":
+    it = held(bp)
+    if it == "choice-scarf":
         m *= 1.5
     if weather and WEATHER_SPEED.get(abil(bp)) == weather:
         m *= 2.0
@@ -407,6 +535,11 @@ def speed_mod(bp, weather) -> float:
         m *= 2.0
     if abil(bp) == "quick-feet" and bp.status:
         m *= 1.5
+    if it == "iron-ball":
+        m *= 0.5
+    sid = getattr(getattr(bp, "species", None), "id", "")
+    if it == "quick-powder" and sid == "ditto":
+        m *= 2.0
     return m
 
 
@@ -414,8 +547,14 @@ def crit_bonus(bp) -> int:
     b = bp.vol.crit_bonus
     if abil(bp) == "super-luck":
         b += 1
-    if held(bp) in ("scope-lens", "razor-claw"):
+    it = held(bp)
+    if it in ("scope-lens", "razor-claw"):
         b += 1
+    sid = getattr(getattr(bp, "species", None), "id", "")
+    if it == "lucky-punch" and sid == "chansey":
+        b += 2
+    if it == "stick" and sid == "farfetchd":
+        b += 2
     return b
 
 
@@ -442,12 +581,26 @@ def confusion_blocked(bp) -> bool:
 
 
 def immunity_or_absorb(defender, move):
-    """'immune' | 'absorb' | None, for ability-based type interactions."""
+    """'immune' | 'absorb' | None, for ability/item-based type interactions."""
     a = abil(defender)
-    if a == "levitate" and move.type == "ground":
-        return "immune"
-    if getattr(defender.vol, "magnet_rise_turns", 0) > 0 and move.type == "ground":
-        return "immune"
+    it = held(defender)
+    # Ring Target removes ALL type immunities for this defender
+    ring_target = (it == "ring-target")
+    # Iron Ball grounds the holder (negates Levitate/Magnet Rise immunity)
+    iron_balled = (it == "iron-ball")
+
+    if move.type == "ground":
+        # Air Balloon: ground immune while active
+        if getattr(defender.vol, "air_balloon_active", False) and not ring_target:
+            return "immune"
+        # Levitate: ground immune (unless Iron Ball/Ring Target)
+        if a == "levitate" and not iron_balled and not ring_target:
+            return "immune"
+        # Magnet Rise: ground immune (unless Iron Ball/Ring Target)
+        if getattr(defender.vol, "magnet_rise_turns", 0) > 0 \
+                and not iron_balled and not ring_target:
+            return "immune"
+
     if a == "volt-absorb" and move.type == "electric":
         return "absorb"
     if a == "water-absorb" and move.type == "water":
@@ -498,6 +651,276 @@ def sand_immune(bp) -> bool:
 def magic_guard(bp) -> bool:
     """True if bp is immune to all indirect damage."""
     return abil(bp) == "magic-guard"
+
+
+def is_grounded(bp, gravity_turns: int = 0) -> bool:
+    """True if bp is grounded (affected by Ground moves and entry hazards)."""
+    if getattr(bp.vol, "magnet_rise_turns", 0) > 0 and gravity_turns <= 0:
+        return False
+    if held(bp) == "iron-ball":
+        return True
+    if gravity_turns > 0:
+        return True
+    if "flying" in bp.types:
+        return False
+    if abil(bp) == "levitate":
+        return False
+    return True
+
+
+def drain_mult(user) -> float:
+    """Multiplier for drain healing (Big Root ×1.3)."""
+    return 1.3 if held(user) == "big-root" else 1.0
+
+
+def resist_berry_mod(eng, defender, move_type: str, eff: float, events) -> float:
+    """Returns 0.5 and consumes the berry if holder's resist berry matches.
+    Chilan Berry triggers even at neutral (eff==1.0) for Normal moves."""
+    if _unnerved(eng, defender):
+        return 1.0
+    it = held(defender)
+    berry_type = RESIST_BERRIES.get(it)
+    if berry_type is None or berry_type != move_type:
+        return 1.0
+    if it == "chilan-berry":
+        triggers = (move_type == "normal")
+    else:
+        triggers = (eff >= 2.0)
+    if not triggers:
+        return 1.0
+    defender.state.held_item = None
+    on_item_consumed(defender, it)
+    events.append(Event(E.ITEM_HELD, eng.side_of(defender),
+                        {"item": it, "pokemon": defender.name}))
+    return 0.5
+
+
+def on_damage_dealt(eng, user, total: int, events) -> None:
+    """Called after all damage hits (excluding substitutes). Shell Bell."""
+    if total <= 0 or user.fainted or user.current_hp >= user.max_hp:
+        return
+    if held(user) == "shell-bell":
+        healed = user.heal(max(1, total // 8))
+        if healed:
+            events.append(Event(E.ITEM_HELD, eng.side_of(user),
+                                {"item": "shell-bell", "pokemon": user.name}))
+            events.append(Event(E.HEAL, eng.side_of(user),
+                                {"pokemon": user.name, "amount": healed,
+                                 "remaining_hp": user.current_hp}))
+
+
+def on_damage_received_item(eng, attacker, defender, total: int,
+                            move, events, *, sub_was_hit=False, eff=1.0) -> None:
+    """Called after all damage is received by defender (not through sub).
+    Handles reactive held items: Air Balloon pop, Absorb Bulb, Cell Battery,
+    Enigma Berry, Jaboca/Rowap Berry, Red Card, Eject Button, Sticky Barb."""
+    if total <= 0 or sub_was_hit or not move.is_damaging:
+        return
+
+    it = held(defender)
+
+    # Air Balloon: pop on any direct hit
+    if it == "air-balloon" and getattr(defender.vol, "air_balloon_active", False):
+        defender.vol.air_balloon_active = False
+        defender.state.held_item = None
+        on_item_consumed(defender, "air-balloon")
+        events.append(Event(E.ITEM_HELD, eng.side_of(defender),
+                            {"item": "air-balloon", "pokemon": defender.name,
+                             "popped": True}))
+
+    # Absorb Bulb: +1 SpAtk if hit by Water
+    elif it == "absorb-bulb" and move.type == "water":
+        defender.state.held_item = None
+        on_item_consumed(defender, "absorb-bulb")
+        events.append(Event(E.ITEM_HELD, eng.side_of(defender),
+                            {"item": "absorb-bulb", "pokemon": defender.name}))
+        applied = defender.modify_stage("special_attack", 1)
+        if applied:
+            events.append(Event(E.STAT_CHANGE, eng.side_of(defender),
+                                {"pokemon": defender.name, "stat": "special_attack",
+                                 "change": applied,
+                                 "stage": defender.stages["special_attack"]}))
+
+    # Cell Battery: +1 Atk if hit by Electric
+    elif it == "cell-battery" and move.type == "electric":
+        defender.state.held_item = None
+        on_item_consumed(defender, "cell-battery")
+        events.append(Event(E.ITEM_HELD, eng.side_of(defender),
+                            {"item": "cell-battery", "pokemon": defender.name}))
+        applied = defender.modify_stage("attack", 1)
+        if applied:
+            events.append(Event(E.STAT_CHANGE, eng.side_of(defender),
+                                {"pokemon": defender.name, "stat": "attack",
+                                 "change": applied, "stage": defender.stages["attack"]}))
+
+    # Enigma Berry: heal 25% HP when hit by super-effective move
+    elif it == "enigma-berry" and eff >= 2.0 and not _unnerved(eng, defender):
+        defender.state.held_item = None
+        on_item_consumed(defender, "enigma-berry")
+        healed = defender.heal(max(1, defender.max_hp // 4))
+        if healed:
+            events.append(Event(E.ITEM_HELD, eng.side_of(defender),
+                                {"item": "enigma-berry", "pokemon": defender.name}))
+            events.append(Event(E.HEAL, eng.side_of(defender),
+                                {"pokemon": defender.name, "amount": healed,
+                                 "remaining_hp": defender.current_hp}))
+
+    # Jaboca Berry: deal 1/8 damage to attacker on physical hit
+    if it == "jaboca-berry" and move.category == "physical" \
+            and not attacker.fainted and not _unnerved(eng, defender):
+        defender.state.held_item = None
+        on_item_consumed(defender, "jaboca-berry")
+        dmg = max(1, attacker.max_hp // 8)
+        attacker.take_damage(dmg)
+        events.append(Event(E.ITEM_HELD, eng.side_of(defender),
+                            {"item": "jaboca-berry", "pokemon": defender.name}))
+        events.append(Event(E.DAMAGE, eng.side_of(attacker),
+                            {"pokemon": attacker.name, "amount": dmg,
+                             "remaining_hp": attacker.current_hp,
+                             "max_hp": attacker.max_hp,
+                             "crit": False, "effectiveness": 1.0}))
+        eng.announce_faint(attacker, events)
+
+    # Rowap Berry: deal 1/8 damage to attacker on special hit
+    elif it == "rowap-berry" and move.category == "special" \
+            and not attacker.fainted and not _unnerved(eng, defender):
+        defender.state.held_item = None
+        on_item_consumed(defender, "rowap-berry")
+        dmg = max(1, attacker.max_hp // 8)
+        attacker.take_damage(dmg)
+        events.append(Event(E.ITEM_HELD, eng.side_of(defender),
+                            {"item": "rowap-berry", "pokemon": defender.name}))
+        events.append(Event(E.DAMAGE, eng.side_of(attacker),
+                            {"pokemon": attacker.name, "amount": dmg,
+                             "remaining_hp": attacker.current_hp,
+                             "max_hp": attacker.max_hp,
+                             "crit": False, "effectiveness": 1.0}))
+        eng.announce_faint(attacker, events)
+
+    # Red Card: force attacker to switch out
+    if held(defender) == "red-card" and not attacker.fainted:
+        defender.state.held_item = None
+        on_item_consumed(defender, "red-card")
+        events.append(Event(E.ITEM_HELD, eng.side_of(defender),
+                            {"item": "red-card", "pokemon": defender.name}))
+        from .moves import force_switch
+        force_switch(eng, eng.side_of(attacker), events)
+
+    # Eject Button: force defender (holder) to switch out
+    if held(defender) == "eject-button" and not defender.fainted:
+        defender.state.held_item = None
+        on_item_consumed(defender, "eject-button")
+        events.append(Event(E.ITEM_HELD, eng.side_of(defender),
+                            {"item": "eject-button", "pokemon": defender.name}))
+        from .moves import force_switch
+        force_switch(eng, eng.side_of(defender), events)
+
+
+def check_pinch_berry(eng, bp, events) -> None:
+    """Called after taking damage. Activates pinch berries at ≤25% HP
+    (or ≤50% with Gluttony)."""
+    if bp.fainted or _unnerved(eng, bp):
+        return
+    it = held(bp)
+    threshold = 2 if abil(bp) == "gluttony" else 4
+    if bp.current_hp * threshold > bp.max_hp:
+        return
+
+    berry_data = PINCH_BERRIES.get(it)
+    if berry_data is None:
+        return
+
+    bp.state.held_item = None
+    on_item_consumed(bp, it)
+    events.append(Event(E.ITEM_HELD, eng.side_of(bp),
+                        {"item": it, "pokemon": bp.name}))
+
+    stat, amount = berry_data
+    if stat == "crit":
+        bp.vol.crit_bonus = min(6, bp.vol.crit_bonus + amount)
+        events.append(Event(E.STAT_CHANGE, eng.side_of(bp),
+                            {"pokemon": bp.name, "stat": "crit_rate",
+                             "change": amount, "stage": bp.vol.crit_bonus}))
+    elif stat == "random":
+        from ..data.models import STAGE_KEYS
+        # Exclude ACCURACY and EVASION for random boost selection
+        boost_pool = [s for s in STAGE_KEYS if bp.stages.get(s, 0) < 6]
+        if boost_pool:
+            chosen = eng.rng.choice(boost_pool)
+            applied = bp.modify_stage(chosen, amount)
+            if applied:
+                events.append(Event(E.STAT_CHANGE, eng.side_of(bp),
+                                    {"pokemon": bp.name, "stat": chosen,
+                                     "change": applied,
+                                     "stage": bp.stages[chosen]}))
+    else:
+        applied = bp.modify_stage(stat, amount)
+        if applied:
+            events.append(Event(E.STAT_CHANGE, eng.side_of(bp),
+                                {"pokemon": bp.name, "stat": stat,
+                                 "change": applied, "stage": bp.stages[stat]}))
+
+    # Micle Berry is handled separately since it's a power-up, not a stat
+    if it == "micle-berry":
+        bp.vol.micle_next = True
+
+
+def check_micle_berry(eng, bp, events) -> None:
+    """Micle Berry: at ≤25% HP, set a flag giving +20% accuracy on next move."""
+    if bp.fainted or _unnerved(eng, bp):
+        return
+    if held(bp) != "micle-berry":
+        return
+    threshold = 2 if abil(bp) == "gluttony" else 4
+    if bp.current_hp * threshold > bp.max_hp:
+        return
+    bp.state.held_item = None
+    on_item_consumed(bp, "micle-berry")
+    bp.vol.micle_next = True
+    events.append(Event(E.ITEM_HELD, eng.side_of(bp),
+                        {"item": "micle-berry", "pokemon": bp.name}))
+
+
+def check_flavor_berry(eng, bp, events) -> None:
+    """Figy/Wiki/Mago/Aguav/Iapapa: heal 1/8 HP at ≤50% HP."""
+    if bp.fainted or _unnerved(eng, bp):
+        return
+    it = held(bp)
+    if it not in FLAVOR_BERRIES:
+        return
+    if bp.current_hp * 2 > bp.max_hp:
+        return
+    bp.state.held_item = None
+    on_item_consumed(bp, it)
+    healed = bp.heal(max(1, bp.max_hp // 8))
+    if healed:
+        events.append(Event(E.ITEM_HELD, eng.side_of(bp),
+                            {"item": it, "pokemon": bp.name}))
+        events.append(Event(E.HEAL, eng.side_of(bp),
+                            {"pokemon": bp.name, "amount": healed,
+                             "remaining_hp": bp.current_hp}))
+
+
+def check_leppa_berry(eng, bp, events) -> None:
+    """Called after PP is decremented. If Leppa Berry and a slot hits 0 PP,
+    restore 10 PP for that slot and consume the berry."""
+    if _unnerved(eng, bp) or bp.fainted:
+        return
+    if held(bp) != "leppa-berry":
+        return
+    for slot in bp.state.moves:
+        if slot.pp == 0:
+            slot.pp = min(slot.pp_max, slot.pp + 10)
+            bp.state.held_item = None
+            on_item_consumed(bp, "leppa-berry")
+            events.append(Event(E.ITEM_HELD, eng.side_of(bp),
+                                {"item": "leppa-berry", "pokemon": bp.name}))
+            break
+
+
+def techno_blast_type(user) -> str | None:
+    """Returns the type Techno Blast should use based on the held Drive."""
+    return DRIVES.get(held(user))
 
 
 # ── event-driven hooks ───────────────────────────────────────────────
@@ -617,6 +1040,25 @@ def on_contact(eng, attacker, defender, events) -> None:
                 events.append(Event(E.ABILITY, eng.side_of(defender),
                                     {"ability": "cursed-body", "pokemon": defender.name,
                                      "disabled_move": move_id}))
+    # Sticky Barb: transfers from defender to attacker on contact
+    if held(defender) == "sticky-barb" and not attacker.fainted \
+            and not attacker.state.held_item \
+            and abil(attacker) != "sticky-hold":
+        defender.state.held_item = None
+        on_item_consumed(defender, "sticky-barb")
+        attacker.state.held_item = "sticky-barb"
+        events.append(Event(E.ITEM_HELD, eng.side_of(defender),
+                            {"item": "sticky-barb", "pokemon": defender.name,
+                             "transferred_to": attacker.name}))
+    # Destiny Knot: spread infatuation back to the attacker
+    if held(defender) == "destiny-knot" and not attacker.fainted \
+            and defender.vol.infatuated and not attacker.vol.infatuated:
+        attacker.vol.infatuated = True
+        events.append(Event(E.ITEM_HELD, eng.side_of(defender),
+                            {"item": "destiny-knot", "pokemon": defender.name}))
+        events.append(Event(E.CONFUSED, eng.side_of(attacker),
+                            {"pokemon": attacker.name, "start": True,
+                             "infatuated": True}))
 
 
 def switch_in(eng, side: str, bp, events) -> None:
@@ -721,6 +1163,53 @@ def switch_in(eng, side: str, bp, events) -> None:
         if not foe.fainted:
             events.append(Event(E.ABILITY, side,
                                 {"ability": "unnerve", "pokemon": bp.name}))
+    # Air Balloon: activate ground immunity on switch-in
+    if held(bp) == "air-balloon":
+        bp.vol.air_balloon_active = True
+        events.append(Event(E.ITEM_HELD, side,
+                            {"item": "air-balloon", "pokemon": bp.name,
+                             "floated": True}))
+
+
+def check_white_herb(eng, bp, events) -> None:
+    """White Herb: immediately clear all negative stat stages (used once)."""
+    if held(bp) != "white-herb":
+        return
+    from ..data.models import STAGE_KEYS
+    if not any(bp.stages.get(s, 0) < 0 for s in STAGE_KEYS):
+        return
+    bp.state.held_item = None
+    on_item_consumed(bp, "white-herb")
+    events.append(Event(E.ITEM_HELD, eng.side_of(bp),
+                        {"item": "white-herb", "pokemon": bp.name}))
+    for s in STAGE_KEYS:
+        if bp.stages.get(s, 0) < 0:
+            bp.stages[s] = 0
+
+
+def check_mental_herb(eng, bp, events) -> None:
+    """Mental Herb: cures infatuation, encore, torment, disable, taunt,
+    and heal block when they are active."""
+    if held(bp) != "mental-herb":
+        return
+    v = bp.vol
+    affected = (v.infatuated or v.encore_move is not None or v.tormented
+                or v.disable_turns > 0 or v.taunt_turns > 0
+                or v.heal_block_turns > 0)
+    if not affected:
+        return
+    bp.state.held_item = None
+    on_item_consumed(bp, "mental-herb")
+    events.append(Event(E.ITEM_HELD, eng.side_of(bp),
+                        {"item": "mental-herb", "pokemon": bp.name}))
+    v.infatuated = False
+    v.encore_move = None
+    v.encore_turns = 0
+    v.tormented = False
+    v.disable_turns = 0
+    v.disabled_move = None
+    v.taunt_turns = 0
+    v.heal_block_turns = 0
 
 
 def on_switch_out(bp, events, side) -> None:
@@ -828,21 +1317,43 @@ def check_status_berry(eng, bp, events) -> None:
 def end_of_turn(eng, side: str, bp, events) -> None:
     if bp.fainted:
         return
-    if held(bp) == "leftovers" and bp.current_hp < bp.max_hp:
-        if not magic_guard(bp):
+    it = held(bp)
+    if it == "leftovers" and bp.current_hp < bp.max_hp:
+        healed = bp.heal(max(1, bp.max_hp // 16))
+        events.append(Event(E.ITEM_HELD, side, {"item": "leftovers",
+                                                "pokemon": bp.name}))
+        events.append(Event(E.HEAL, side, {"pokemon": bp.name, "amount": healed,
+                                           "remaining_hp": bp.current_hp}))
+    # Black Sludge: heal Poison types, damage others
+    elif it == "black-sludge" and not magic_guard(bp):
+        if "poison" in bp.types:
             healed = bp.heal(max(1, bp.max_hp // 16))
-            events.append(Event(E.ITEM_HELD, side, {"item": "leftovers",
+            events.append(Event(E.ITEM_HELD, side, {"item": "black-sludge",
                                                     "pokemon": bp.name}))
             events.append(Event(E.HEAL, side, {"pokemon": bp.name, "amount": healed,
                                                "remaining_hp": bp.current_hp}))
         else:
-            # Magic Guard doesn't block leftovers healing (it only blocks damage)
-            healed = bp.heal(max(1, bp.max_hp // 16))
-            events.append(Event(E.ITEM_HELD, side, {"item": "leftovers",
+            dmg = max(1, bp.max_hp // 8)
+            bp.take_damage(dmg)
+            events.append(Event(E.ITEM_HELD, side, {"item": "black-sludge",
                                                     "pokemon": bp.name}))
-            events.append(Event(E.HEAL, side, {"pokemon": bp.name, "amount": healed,
-                                               "remaining_hp": bp.current_hp}))
+            events.append(Event(E.STATUS_DAMAGE, side,
+                                {"pokemon": bp.name, "status": "black-sludge",
+                                 "amount": dmg, "remaining_hp": bp.current_hp}))
+            eng.announce_faint(bp, events)
+    # Sticky Barb: holder takes 1/8 damage per turn
+    if it == "sticky-barb" and not magic_guard(bp):
+        dmg = max(1, bp.max_hp // 8)
+        bp.take_damage(dmg)
+        events.append(Event(E.ITEM_HELD, side, {"item": "sticky-barb",
+                                                "pokemon": bp.name}))
+        events.append(Event(E.STATUS_DAMAGE, side,
+                            {"pokemon": bp.name, "status": "sticky-barb",
+                             "amount": dmg, "remaining_hp": bp.current_hp}))
+        eng.announce_faint(bp, events)
     check_hp_berry(eng, bp, events)
+    check_flavor_berry(eng, bp, events)
+    check_micle_berry(eng, bp, events)
     a = abil(bp)
     if a == "speed-boost":
         applied = bp.modify_stage("speed", 1)

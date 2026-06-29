@@ -118,6 +118,12 @@ class Volatiles:
     last_received_move: Optional[str] = None  # Mirror Move: last move that hit this mon
     last_used_item: Optional[str] = None  # Recycle: last consumed item
     magic_coat_active: bool = False  # Magic Coat: reflects status moves this turn
+    # Item-mechanic volatiles
+    air_balloon_active: bool = False   # Air Balloon: ground immunity until popped
+    metronome_streak: int = 0          # Metronome item: consecutive same-move uses
+    metronome_move: str = ""           # Metronome item: last move tracked
+    micle_next: bool = False           # Micle Berry: +20% accuracy on next move
+    binding_band: bool = False         # Binding Band: trap damage is doubled
 
 
 class BattlePokemon:

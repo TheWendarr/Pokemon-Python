@@ -134,6 +134,9 @@ def accuracy_check(move, attacker, defender, *, rng,
     # Tangled Feet: +2 effective evasion when holder is confused
     if passives.abil(defender) == "tangled-feet" and defender.vol.confusion_turns > 0:
         ev_stage = min(6, ev_stage + 2)
+    # Bright Powder / Lax Incense: raise effective evasion of holder
+    if passives.held(defender) in ("bright-powder", "lax-incense"):
+        ev_stage = min(6, ev_stage + 1)
     stage = max(-6, min(6, attacker.stages[ACCURACY] - ev_stage))
     threshold = acc * accuracy_multiplier(stage)
     # Compound Eyes: x1.3 accuracy
@@ -142,4 +145,13 @@ def accuracy_check(move, attacker, defender, *, rng,
     # Hustle: x0.8 accuracy for physical moves
     if passives.abil(attacker) == "hustle" and move.category == "physical":
         threshold *= 0.8
+    # Wide Lens: x1.1 accuracy for the holder
+    if passives.held(attacker) == "wide-lens":
+        threshold *= 1.1
+    # Zoom Lens: x1.2 if the user moves after the target this turn
+    if passives.held(attacker) == "zoom-lens" and attacker.vol.analytic_active:
+        threshold *= 1.2
+    # Micle Berry: +20% accuracy on next move
+    if getattr(attacker.vol, "micle_next", False):
+        threshold *= 1.2
     return rng.randint(1, 100) <= threshold

@@ -182,8 +182,12 @@ def apply_ailment(eng, user: BattlePokemon, target: BattlePokemon,
         return
     if ailment == "trap":
         if target.vol.trap_turns <= 0 and not target.fainted:
-            target.vol.trap_turns = eng.rng.randint(4, 5)
+            if passives.held(user) == "grip-claw":
+                target.vol.trap_turns = 5
+            else:
+                target.vol.trap_turns = eng.rng.randint(4, 5)
             target.vol.trap_name = move.name
+            target.vol.binding_band = (passives.held(user) == "binding-band")
             events.append(Event(E.TRAPPED, eng.side_of(target),
                                 {"pokemon": target.name, "move": move.name}))
         return
@@ -252,6 +256,12 @@ def apply_stat_changes(eng, user, target, move: MoveData, events, *,
         if lowering_target and sc.change < 0 and not recipient.fainted:
             passives.on_defiant_competitive(eng, recipient, sc.stat, sc.change,
                                             True, events)
+    # White Herb: restore cleared after any stat drop
+    if not recipient.fainted:
+        passives.check_white_herb(eng, recipient, events)
+    # Mental Herb: clear volatile afflictions
+    if not recipient.fainted:
+        passives.check_mental_herb(eng, recipient, events)
 
 
 # ── Damage application helpers ───────────────────────────────────────
@@ -285,7 +295,10 @@ def deal_damage(eng, target: BattlePokemon, amount: int, events,
                    "effectiveness": detail.get("effectiveness", 1.0)})
     events.append(Event(E.DAMAGE, eng.side_of(target), ev))
     eng.announce_faint(target, events)
-    passives.check_hp_berry(eng, target, events)
+    if not target.fainted:
+        passives.check_hp_berry(eng, target, events)
+        passives.check_pinch_berry(eng, target, events)
+        passives.check_flavor_berry(eng, target, events)
     return dealt
 
 
@@ -358,6 +371,12 @@ def execute_move(eng, side: str, move: MoveData, events,
 
 
 def _execute_move_inner(eng, side, move, events, power_mult, user, target):
+    # Techno Blast: Genesect's Drive changes the move's type
+    if move.id == "techno-blast":
+        import dataclasses as _dc
+        drive_type = passives.techno_blast_type(user)
+        if drive_type:
+            move = _dc.replace(move, type=drive_type)
     events.append(Event(E.MOVE_USED, side, {"pokemon": user.name, "move": move.name}))
 
     targets_foe = not move.targets_user
@@ -451,6 +470,13 @@ def _execute_move_inner(eng, side, move, events, power_mult, user, target):
         if eff_mult == 0 and passives.abil(user) == "scrappy" \
                 and move.type in ("normal", "fighting") and "ghost" in target.types:
             eff_mult = 1.0
+        # Ring Target: remove type-chart immunity
+        if eff_mult == 0 and passives.held(target) == "ring-target":
+            eff_mult = 1.0
+        # Iron Ball + Gravity: Flying types lose Ground immunity
+        if eff_mult == 0 and move.type == "ground":
+            if passives.held(target) == "iron-ball" or eng.gravity_turns > 0:
+                eff_mult = 1.0
         if eff_mult == 0:
             events.append(Event(E.MOVE_IMMUNE, eng.side_of(target), {"pokemon": target.name}))
             return
@@ -492,6 +518,7 @@ def _execute_move_inner(eng, side, move, events, power_mult, user, target):
         else:
             hits = roll_hits(eng, move.effect, user)
             total, landed = 0, 0
+            resist_berry_used = False
             for _ in range(hits):
                 if target.fainted or user.fainted:
                     break
@@ -521,13 +548,25 @@ def _execute_move_inner(eng, side, move, events, power_mult, user, target):
                                             {"pokemon": target.name}))
                     continue
                 sub_was_hit = False
-                total += deal_damage(eng, target, dmg, events, detail)
+                # Resist berry: halve damage on first SE hit (or neutral for Chilan)
+                if not resist_berry_used:
+                    berry_mult = passives.resist_berry_mod(
+                        eng, target, move.type, eff_mult, events)
+                    if berry_mult < 1.0:
+                        dmg = max(1, int(dmg * berry_mult))
+                        resist_berry_used = True
+                hit_dmg = deal_damage(eng, target, dmg, events, detail)
+                total += hit_dmg
                 landed += 1
                 target.vol.last_received_move = move.id
             if hits > 1:
                 events.append(Event(E.MULTI_HIT, side, {"hits": landed}))
         if total > 0:
             target.vol.last_hit = (move.category, total)
+
+        # Shell Bell: heal 1/8 of damage dealt (non-substitute)
+        if total > 0 and not sub_was_hit:
+            passives.on_damage_dealt(eng, user, total, events)
 
         if target.status == "freeze" and move.type == "fire" and not target.fainted:
             target.status = None
@@ -567,9 +606,10 @@ def _execute_move_inner(eng, side, move, events, power_mult, user, target):
         if drain > 0 and user.vol.heal_block_turns > 0:
             drain = 0
         if drain > 0 and total > 0 and not user.fainted:
+            drain_mult = passives.drain_mult(user)
             if passives.liquid_ooze_reverses(target):
                 # Liquid Ooze: drain deals damage to the drainer instead
-                rec = max(1, total * drain // 100)
+                rec = max(1, int(total * drain * drain_mult // 100))
                 user.take_damage(rec)
                 events.append(Event(E.ABILITY, eng.side_of(target),
                                     {"ability": "liquid-ooze", "pokemon": target.name}))
@@ -578,7 +618,7 @@ def _execute_move_inner(eng, side, move, events, power_mult, user, target):
                                      "remaining_hp": user.current_hp}))
                 eng.announce_faint(user, events)
             else:
-                healed = user.heal(max(1, total * drain // 100))
+                healed = user.heal(max(1, int(total * drain * drain_mult // 100)))
                 if healed:
                     events.append(Event(E.DRAIN, side, {"pokemon": user.name, "amount": healed}))
         elif drain < 0 and total > 0 and not user.fainted:
@@ -592,6 +632,12 @@ def _execute_move_inner(eng, side, move, events, power_mult, user, target):
         # Contact abilities punish the attacker (but not through a substitute)
         if landed and "contact" in move.flags and not user.fainted and not sub_was_hit:
             passives.on_contact(eng, user, target, events)
+
+        # Reactive held items after all hits
+        if landed and total > 0 and not target.fainted:
+            passives.on_damage_received_item(
+                eng, user, target, total, move, events,
+                sub_was_hit=sub_was_hit, eff=eff_mult)
 
         # Rattled: hit by Dark/Ghost/Bug -> +1 Speed
         if landed and not target.fainted and passives.abil(target) == "rattled" \
@@ -644,6 +690,9 @@ def _execute_move_inner(eng, side, move, events, power_mult, user, target):
             if move.effect.ailment and eng.rng.randint(1, 100) <= ail_chance:
                 apply_ailment(eng, user, target, move, events)
             flinch = move.effect.flinch_chance * sec_mult
+            # Kings Rock / Razor Fang add 10% flinch chance on damaging moves
+            if total > 0 and passives.held(user) in ("kings-rock", "razor-fang"):
+                flinch = max(flinch, 10 * sec_mult)
             if flinch and not target.vol.has_moved \
                     and passives.abil(target) != "inner-focus":
                 if eng.rng.randint(1, 100) <= flinch:
@@ -814,7 +863,8 @@ def _weather_move(kind):
         if eng.weather == kind:
             events.append(Event(E.MOVE_FAILED, eng.side_of(user), {"move": move.name}))
         else:
-            eng.set_weather(kind, 5, events)
+            duration = 8 if passives.WEATHER_ROCKS.get(passives.held(user)) == kind else 5
+            eng.set_weather(kind, duration, events)
     return fn
 
 
@@ -831,7 +881,8 @@ def _screen(attr):
         if getattr(ss, attr) > 0:
             events.append(Event(E.MOVE_FAILED, side, {"move": move.name}))
             return
-        setattr(ss, attr, 5)
+        duration = 8 if passives.held(user) == "light-clay" else 5
+        setattr(ss, attr, duration)
         events.append(Event(E.SCREEN_START, side, {"screen": attr.replace("_", "-")}))
     return fn
 
