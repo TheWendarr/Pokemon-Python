@@ -13,7 +13,8 @@ def main() -> None:
     ap.add_argument("--headless", action="store_true", help="dummy video (CI)")
     ap.add_argument("--save", default="save.json",
                     help="save file (loaded on start if it exists)")
-    ap.add_argument("--game", default="game/assets",
+    from .config import DEFAULT_GAME_DIR
+    ap.add_argument("--game", default=DEFAULT_GAME_DIR,
                     help="game folder (manifest, maps, scripts, sprites)")
     ap.add_argument("--no-sprite-fetch", action="store_true",
                     help="never download sprites; use cache + blobs only")

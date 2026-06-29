@@ -354,9 +354,11 @@ class Lint:
 
 
 def main() -> None:
+    import pathlib as _pl
+    _data_default = str(_pl.Path(__file__).resolve().parent.parent.parent / "game" / "data")
     ap = argparse.ArgumentParser()
     ap.add_argument("--game", default="game/assets")
-    ap.add_argument("--data", default="game/data")
+    ap.add_argument("--data", default=_data_default)
     a = ap.parse_args()
     raise SystemExit(Lint(a.game, GameData(a.data)).run())
 

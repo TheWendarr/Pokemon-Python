@@ -73,6 +73,7 @@ class BattleEngine:
         self.trick_room: int = 0
         self.gravity_turns: int = 0
         self.magic_room: int = 0
+        self.wonder_room: int = 0
         self.log: list[Event] = []
         ev = [Event(E.BATTLE_START, None, {"wild": wild})]
         for side in SIDES:
@@ -1024,7 +1025,8 @@ class BattleEngine:
         for field_attr, screen_name in (
                 ("trick_room", "trick-room"),
                 ("gravity_turns", "gravity"),
-                ("magic_room", "magic-room")):
+                ("magic_room", "magic-room"),
+                ("wonder_room", "wonder-room")):
             turns = getattr(self, field_attr)
             if turns > 0:
                 setattr(self, field_attr, turns - 1)

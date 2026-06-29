@@ -101,9 +101,11 @@ def run(dexes: list[int]) -> int:
 
 
 def main() -> None:
+    import pathlib as _pl
+    _data_default = str(_pl.Path(__file__).resolve().parent.parent.parent / "game" / "data")
     ap = argparse.ArgumentParser()
     ap.add_argument("--game", default="game/assets")
-    ap.add_argument("--data", default="game/data")
+    ap.add_argument("--data", default=_data_default)
     ap.add_argument("--all", action="store_true",
                     help="warm the full 1-649 national dex")
     a = ap.parse_args()

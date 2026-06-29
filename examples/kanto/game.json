@@ -1,0 +1,47 @@
+{
+ "engine_version": 1,
+ "name": "Kanto (proof of concept)",
+ "start": {
+  "map": "pallet_town",
+  "tile": [
+   10,
+   15
+  ],
+  "facing": "down"
+ },
+ "whiteout": {
+  "map": "viridian_city",
+  "facing": "down"
+ },
+ "starter": {
+  "species": "charmander",
+  "level": 5,
+  "moves": [
+   "scratch",
+   "growl",
+   "ember"
+  ]
+ },
+ "bag": {
+  "potion": 5,
+  "poke-ball": 10
+ },
+ "money": 3000,
+ "flags": [],
+ "settings": {
+  "encounter_chance": 8,
+  "daynight": "auto"
+ },
+ "dex": [
+  "charmander",
+  "charmeleon",
+  "charizard",
+  "pidgey",
+  "pidgeotto",
+  "pidgeot",
+  "rattata",
+  "raticate",
+  "spearow",
+  "fearow"
+ ]
+}

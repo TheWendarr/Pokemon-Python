@@ -1,0 +1,22 @@
+{
+ "route_01": [
+  {
+   "species": "pidgey",
+   "min": 2,
+   "max": 5,
+   "weight": 50
+  },
+  {
+   "species": "rattata",
+   "min": 2,
+   "max": 4,
+   "weight": 45
+  },
+  {
+   "species": "spearow",
+   "min": 3,
+   "max": 5,
+   "weight": 5
+  }
+ ]
+}

@@ -31,7 +31,7 @@ def _variable_power(attacker, move) -> int:
 
 def calc_damage(data, attacker, defender, move, *, rng, crit: bool = False,
                 weather: str | None = None, screened: bool = False,
-                power_mult: float = 1.0) -> tuple[int, dict]:
+                power_mult: float = 1.0, wonder_room: bool = False) -> tuple[int, dict]:
     """Returns (damage, detail). Assumes immunity was checked by caller."""
     power = _variable_power(attacker, move)
     if power <= 0:
@@ -43,6 +43,9 @@ def calc_damage(data, attacker, defender, move, *, rng, crit: bool = False,
         a_key, d_key = ATTACK, DEFENSE
     else:
         a_key, d_key = SP_ATTACK, SP_DEFENSE
+    # Wonder Room: swap Defense and Sp.Defense for all Pokémon
+    if wonder_room:
+        d_key = SP_DEFENSE if d_key == DEFENSE else DEFENSE
 
     a_stage = attacker.stages[a_key]
     d_stage = defender.stages[d_key]

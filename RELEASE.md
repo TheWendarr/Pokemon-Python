@@ -98,9 +98,10 @@
 | `examples/triad` | Showcase: 3 cities, 3 routes, scripted events, flag-gated finale |
 | `examples/isleton` | Minimal island region — recommended copy-paste starting point |
 | `examples/kanto` | Simplified Kanto layout using hand-authored content |
-| `examples/kanto_frlg` | Converted from a FireRed bootleg via `tools/rmxp2kanto.py` |
 | `examples/eventlab` | Demonstrates autorun, multi-page NPCs, parallel routes, puzzles |
 | `examples/seamless` | Demonstrates surf, ledges, Cut, Rock Smash, waterfall, headbutt |
+
+> `examples/kanto_frlg` was excluded from this repository: its tileset is derived from FireRed assets which cannot be redistributed. Use the engine's converter tools to build your own region.
 
 ---
 
@@ -108,7 +109,7 @@
 
 | Feature | Status |
 |---------|--------|
-| Held-item breadth | Infrastructure complete; Batch A (Muscle Band, Wise Glasses, Shell Bell, Big Root, Binding Band) needed for v1.0; Batches B–H are post-1.0. See `docs/ItemPlan.md`. |
+| Held-item breadth | All batches A–H fully implemented. See `docs/ItemPlan.md`. |
 | Autotile edge-blending | Basic animation works; full 47-piece edge blending deferred (cosmetic) |
 | Panorama / fog layers | Not implemented (cosmetic; not required for importer) |
 | Animated battle sprites | No per-move animations; static sprite with hit-flash only |
@@ -126,9 +127,9 @@
 - Full Essentials parity: breeding, PC multi-box, seasons, overworld weather, full title/config UI
 - Double / triple / rotation battles
 - Promoted RMXP + PBS importer (map parsing, tileset terrain mapping, event import)
-- Held-item Batches B–H (resist berries, pinch berries, accuracy modifiers, Red Card, Eject Button, etc.)
 - Strength persistence, Dive, full HM gating
 - Per-move battle animations
+- Bicycle
 
 ---
 
@@ -138,19 +139,19 @@ The v1.0 tag will not be cut until all items below are checked.
 
 | # | Criterion | Done? |
 |---|-----------|-------|
-| 1 | Clean wheel install works outside repo root (`pip install dist/*.whl` in a fresh venv; `pkmn-play --help` succeeds) | ☐ |
-| 2 | `pkmn-play` starts with bundled default/example content (no `--game` argument needed for the included region) | ☐ |
-| 3 | `pyproject.toml` dependency list matches actual runtime imports (`pip check` in a clean venv passes) | ☐ |
-| 4 | `pytest` fully green — 0 failures, 0 errors | ☐ |
-| 5 | `pkmn-lint` exits 0/0 for all six bundled examples | ☐ |
-| 6 | `pkmn-audit` has no broken cross-references across all bundled examples | ☐ |
-| 7 | `pkmn-coverage` reports 0 unexpected EFFECT_SKIPPED entries | ☐ |
-| 8 | Held-item Batch A implemented: Muscle Band, Wise Glasses, Shell Bell, Big Root, Binding Band | ☐ |
-| 9 | README, ROADMAP, RELEASE, and AUTHORING are internally consistent (version, phase status, feature list agree) | ☐ |
-| 10 | `CHANGELOG.md` documents all user-visible changes since last tag | ☐ |
-| 11 | No `__pycache__/` or `.pyc` files in the built wheel or sdist | ☐ |
-| 12 | CI pipeline runs: tests → lint (all examples) → audit → coverage → wheel build → package smoke test | ☐ |
-| 13 | IP / distribution note is explicit: `LICENSE` is MIT; README and LICENSE clearly state Game Freak / Nintendo assets are not included and must not be redistributed | ☐ |
+| 1 | Clean wheel install works outside repo root (`pip install dist/*.whl` in a fresh venv; `pkmn-play --help` succeeds) | ✅ |
+| 2 | `pkmn-play` starts with bundled default/example content (no `--game` argument needed for the included region) | ✅ |
+| 3 | `pyproject.toml` dependency list matches actual runtime imports (`pip check` in a clean venv passes) | ✅ |
+| 4 | `pytest` fully green — 0 failures, 0 errors | ✅ |
+| 5 | `pkmn-lint` exits 0/0 for all five bundled examples | ✅ |
+| 6 | `pkmn-audit` has no broken cross-references across all bundled examples | ✅ |
+| 7 | `pkmn-coverage` reports 0 unexpected EFFECT_SKIPPED entries | ✅ |
+| 8 | Held-item Batch A implemented: Muscle Band, Wise Glasses, Shell Bell, Big Root, Binding Band | ✅ |
+| 9 | README, ROADMAP, RELEASE, and AUTHORING are internally consistent (version, phase status, feature list agree) | ✅ |
+| 10 | `CHANGELOG.md` documents all user-visible changes since last tag | ✅ |
+| 11 | No `__pycache__/` or `.pyc` files in the built wheel or sdist | ✅ |
+| 12 | CI pipeline runs: tests → lint (all examples) → audit → coverage → wheel build → package smoke test | ✅ |
+| 13 | IP / distribution note is explicit: `LICENSE` is MIT; README and LICENSE clearly state Game Freak / Nintendo assets are not included and must not be redistributed | ✅ |
 
 ---
 

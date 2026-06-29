@@ -60,9 +60,11 @@ def run(data_dir: str, battles: int, seed: int) -> int:
 
 
 def main() -> None:
+    import pathlib as _pl
+    _data_default = str(_pl.Path(__file__).resolve().parent.parent.parent / "game" / "data")
     ap = argparse.ArgumentParser()
     ap.add_argument("--battles", type=int, default=200)
-    ap.add_argument("--data", default="game/data")
+    ap.add_argument("--data", default=_data_default)
     ap.add_argument("--seed", type=int, default=1)
     a = ap.parse_args()
     raise SystemExit(run(a.data, a.battles, a.seed))

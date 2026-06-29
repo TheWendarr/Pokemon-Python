@@ -71,9 +71,7 @@ milestones also landed here.
   `last_used_item`, `power_trick_swapped`; side fields: `wish_turns`, `wish_hp`,
   `lunar_dance`; engine fields: `trick_room`, `gravity_turns`, `magic_room`
 
-**Remaining for v1.0:**
-- Held-item Batch A (Muscle Band, Wise Glasses, Shell Bell, Big Root, Binding Band)
-- Packaging smoke-test and CI pipeline
+**Remaining for v1.0:** *(all done — see RELEASE.md gate table)*
 
 **Remaining for post-1.0:**
 - Strength boulder persistence (per-map, not per-session)
@@ -108,23 +106,6 @@ Planned approach:
 
 *Acceptance:* a double battle resolves through the pure engine under test with
 `tests/test_doubles.py` passing; all existing single-battle tests unchanged.
-
----
-
-## Held-item roadmap
-
-Full detail in `docs/ItemPlan.md`. Summary of batches:
-
-| Batch | Contents | Target |
-|-------|----------|--------|
-| A | Muscle Band, Wise Glasses, Shell Bell, Big Root, Binding Band | **v1.0** |
-| B | Black Sludge, Sticky Barb, White Herb, Mental Herb, Weather Rocks, Light Clay | 1.x |
-| C | Bright Powder, Wide Lens, Zoom Lens, Quick Claw, Lagging Tail, Iron Ball, Metronome, Kings Rock, Razor Fang | 1.x |
-| D | Air Balloon, Red Card, Eject Button, Ring Target, Absorb Bulb, Cell Battery, Destiny Knot, Shed Shell, Grip Claw | 1.x |
-| E | 9 pinch berries, 17 resist berries, 5 flavor berries, Enigma/Jaboca/Rowap, Leppa Berry | 1.x |
-| F | 16 species-specific items (Light Ball, Thick Club, Orbs, Lucky Punch, Drives…) | 1.x |
-| G | PP recovery + vitamins in bag (Ether, Elixir, HP Up, Protein…) | 1.x |
-| H | Overworld bag pockets, TM teaching, Repel step counter, held-item assignment | 1.x |
 
 ---
 

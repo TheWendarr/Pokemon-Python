@@ -526,7 +526,8 @@ def _execute_move_inner(eng, side, move, events, power_mult, user, target):
                 dmg, detail = calc_damage(eng.data, user, target, move,
                                           rng=eng.rng, crit=crit,
                                           weather=eng.weather, screened=screened,
-                                          power_mult=power_mult)
+                                          power_mult=power_mult,
+                                          wonder_room=eng.wonder_room > 0)
                 # Substitute: absorb damage before reaching the Pokémon
                 if target.vol.substitute_hp > 0 and targets_foe \
                         and move.id not in SOUND_MOVES:
@@ -923,7 +924,8 @@ def _rapid_spin(eng, user, target, move, events):
         crit = eng.rng.random() < eng.crit_chance_for(user, move, target)
         dmg, detail = calc_damage(eng.data, user, target, move, rng=eng.rng,
                                   crit=crit, weather=eng.weather,
-                                  screened=eng.screened(other(side), move))
+                                  screened=eng.screened(other(side), move),
+                                  wonder_room=eng.wonder_room > 0)
         deal_damage(eng, target, dmg, events, detail)
     else:
         events.append(Event(E.MOVE_IMMUNE, eng.side_of(target),
@@ -983,7 +985,8 @@ def _explode(eng, user, target, move, events):
     crit = eng.rng.random() < eng.crit_chance_for(user, move, target)
     dmg, detail = calc_damage(eng.data, user, target, move, rng=eng.rng,
                               crit=crit, weather=eng.weather,
-                              screened=eng.screened(other(side), move))
+                              screened=eng.screened(other(side), move),
+                              wonder_room=eng.wonder_room > 0)
     deal_damage(eng, target, dmg, events, detail)
     faint_user()
 
@@ -1005,7 +1008,8 @@ def _false_swipe(eng, user, target, move, events):
     crit = eng.rng.random() < eng.crit_chance_for(user, move, target)
     dmg, detail = calc_damage(eng.data, user, target, move, rng=eng.rng,
                               crit=crit, weather=eng.weather,
-                              screened=eng.screened(other(side), move))
+                              screened=eng.screened(other(side), move),
+                              wonder_room=eng.wonder_room > 0)
     dmg = min(dmg, max(0, target.current_hp - 1))
     if dmg:
         deal_damage(eng, target, dmg, events, detail)
@@ -1644,8 +1648,12 @@ def _wide_guard(eng, user, target, move, events):
 
 @handler("wonder-room")
 def _wonder_room(eng, user, target, move, events):
-    events.append(Event(E.EFFECT_SKIPPED, eng.side_of(user),
-                        {"move": move.id, "effect": "wonder-room"}))
+    if eng.wonder_room > 0:
+        eng.wonder_room = 0
+        events.append(Event(E.SCREEN_END, None, {"screen": "wonder-room"}))
+    else:
+        eng.wonder_room = 5
+        events.append(Event(E.SCREEN_START, None, {"screen": "wonder-room"}))
 
 
 # ── Batch: remaining Gen 5 moves ─────────────────────────────────────

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" orientation="orthogonal" renderorder="right-down" width="20" height="18" tilewidth="16" tileheight="16" infinite="0" nextobjectid="5">
+ <properties><property name="connect_north" value="route_01"/><property name="offset_north" type="int" value="0"/><property name="border" type="int" value="5"/><property name="music" value="town"/></properties>
+ <tileset firstgid="1" source="../tiles.tsx"/>
+ <layer id="1" name="ground" width="20" height="18">
+  <data encoding="csv">
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,
+5,1,1,7,7,7,7,7,1,1,1,1,7,7,7,7,7,1,1,5,
+5,1,1,7,7,7,7,7,1,1,1,1,7,7,7,7,7,1,1,5,
+5,1,1,6,6,8,6,6,1,1,1,1,6,6,8,6,6,1,1,5,
+5,1,1,1,1,1,1,1,4,4,4,4,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,4,4,4,4,1,1,1,1,1,1,1,5,
+5,1,1,1,1,1,1,1,4,4,4,4,1,1,1,1,1,1,1,5,
+5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+</data>
+ </layer>
+ <objectgroup id="2" name="objects">
+  <object id="1" name="spawn" x="160" y="240" width="16" height="16"><properties></properties></object>
+  <object id="2" name="warp" x="80" y="208" width="16" height="16"><properties><property name="to_map" value="oak_lab"/><property name="to_x" type="int" value="4"/><property name="to_y" type="int" value="6"/><property name="facing" value="up"/></properties></object>
+  <object id="3" name="npc" x="144" y="144" width="16" height="16"><properties><property name="display" value="Prof. Oak"/><property name="facing" value="down"/><property name="dialog" value="Hello there! Welcome to the world of POKEMON!|North through Route 1 lies Viridian City."/></properties></object>
+  <object id="4" name="sign" x="160" y="128" width="16" height="16"><properties><property name="dialog" value="PALLET TOWN - Shades of your journey await!"/></properties></object>
+ </objectgroup>
+</map>

@@ -7,6 +7,12 @@ crisp, and the final scale to the window is gentle (often 1:1). The
 gameplay viewport is unchanged (16x12 tiles); only the pixel density is.
 All on-screen geometry derives from SCALE, TILE, or LOGICAL_*.
 """
+import pathlib as _pl
+
+def _repo_root() -> _pl.Path:
+    """Project root: works whether running from source or via editable install."""
+    return _pl.Path(__file__).resolve().parent.parent.parent
+
 SCALE = 4                            # native render scale (base 16px -> 64px)
 BASE_TILE = 16                       # grid tiles & sprites are authored on (disk)
 TILE = BASE_TILE * SCALE             # 64: on-screen tile size (art upscaled at load)
@@ -16,8 +22,9 @@ FPS = 60
 WALK_SPEED = 2 * SCALE               # 8 px/frame -> still 8 frames per tile
 TURN_FRAMES = 5                      # tap-to-turn grace before stepping
 ENCOUNTER_CHANCE = 8                 # 1-in-N per tall-grass step
-ASSET_DIR = "game/assets"
-DATA_DIR = "game/data"
+ASSET_DIR = str(_repo_root() / "game" / "assets")
+DATA_DIR = str(_repo_root() / "game" / "data")
+DEFAULT_GAME_DIR = str(_repo_root() / "examples" / "triad")
 
 # input names
 A, B, UP, DOWN, LEFT, RIGHT = "a", "b", "up", "down", "left", "right"
