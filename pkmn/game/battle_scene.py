@@ -50,7 +50,9 @@ from ..core.experience import battle_exp, exp_total
 from ..core.pokemon import gain_exp
 from .config import (A, B, DOWN, LEFT, LOGICAL_H, LOGICAL_W, RIGHT, SCALE as S,
                      SPRITE_PX, UP)
-from .dialog import BOX_BORDER, TEXT, draw_box, wrap_chunks
+from .dialog import (BOX_BORDER, PANEL_DARK, PANEL_MID, PANEL_SEL, TEXT,
+                      TYPE_PALETTE, draw_box, draw_panel, draw_status_badge,
+                      draw_type_badge, wrap_chunks)
 from .scene import Scene
 
 GREEN = (88, 200, 96)
@@ -573,8 +575,8 @@ class BattleScene(Scene):
         for side in (P1, P2):
             for slot, bp in enumerate(self.eng.actives(side)):
                 rect = boxes[(side, slot)]
-                draw_box(surf, rect)
-                surf.blit(font.render(f"{bp.name} Lv{bp.level}", True, TEXT),
+                draw_panel(surf, rect, PANEL_DARK, BOX_BORDER, radius=4 * S)
+                surf.blit(font.render(f"{bp.name} Lv{bp.level}", True, (255, 255, 255)),
                           (rect.x + 4 * S, rect.y + 2 * S))
                 frac = max(0.0, min(1.0, bp.current_hp / bp.max_hp))
                 bar = pygame.Rect(rect.x + 4 * S, rect.y + 14 * S,
@@ -586,12 +588,12 @@ class BattleScene(Scene):
                     fill.width = max(1, int(bar.width * frac))
                     pygame.draw.rect(surf, color, fill, border_radius=S)
         rect = pygame.Rect(4 * S, LOGICAL_H - 52 * S, LOGICAL_W - 8 * S, 48 * S)
-        draw_box(surf, rect)
+        draw_panel(surf, rect, PANEL_DARK, BOX_BORDER, radius=5 * S)
         if self.mode in ("menu", "d_done"):
             self._draw_msg(surf, rect)
         elif self.mode == "d_move":
             head = font.render(f"[slot {self.pick_slot}] choose a move",
-                               True, TEXT)
+                               True, (255, 255, 255))
             surf.blit(head, (rect.x + 8 * S, rect.y + 4 * S))
             labels = []
             for a in self._doubles_move_actions(self.pick_slot):
@@ -603,7 +605,7 @@ class BattleScene(Scene):
                                               rect.width, rect.height - 14 * S),
                             labels, columns=2)
         elif self.mode == "d_target":
-            surf.blit(font.render("Target:", True, TEXT),
+            surf.blit(font.render("Target:", True, (255, 255, 255)),
                       (rect.x + 8 * S, rect.y + 4 * S))
             labels = [f"foe{slot} ({bp.name})"
                       for slot, bp in enumerate(self.eng.actives(P2))]
@@ -860,22 +862,13 @@ class BattleScene(Scene):
                         pygame.Rect(LOGICAL_W - 122 * S, 98 * S, 116 * S, 41 * S),
                         numbers=True)
         rect = pygame.Rect(4 * S, LOGICAL_H - 52 * S, LOGICAL_W - 8 * S, 48 * S)
-        draw_box(surf, rect)
+        draw_panel(surf, rect, PANEL_DARK, BOX_BORDER, radius=5 * S)
         if self.mode in ("anim", "done"):
             self._draw_msg(surf, rect)
         elif self.mode == "menu":
-            self._draw_grid(surf, rect, self._menu_items(), columns=2)
+            self._draw_menu_buttons(surf, rect)
         elif self.mode == "moves":
-            labels = []
-            for a in self._move_actions():
-                if a.move_id in ("struggle", "recharge"):
-                    labels.append(a.move_id.title())
-                else:
-                    mv = self.game.data.move(a.move_id)
-                    slot = self.eng.active(P1).state.move_slot(a.move_id)
-                    pp = f" {slot.pp}/{slot.pp_max}" if slot else ""
-                    labels.append(f"{mv.name}{pp}")
-            self._draw_grid(surf, rect, labels, columns=2)
+            self._draw_move_slots(surf, rect)
         elif self.mode == "bag":
             labels = [f"{k.replace('-', ' ').title()} x{v}"
                       for k, v in self._bag_items()] or ["(empty)"]
@@ -895,24 +888,132 @@ class BattleScene(Scene):
         font = self.game.assets.font
         lines = self.message or ["..."]
         for i, line in enumerate(lines):
-            surf.blit(font.render(line, True, TEXT),
+            surf.blit(font.render(line, True, (255, 255, 255)),
                       (rect.x + 8 * S, rect.y + 7 * S + i * 14 * S))
         waiting = self.mode == "done" or (self.cur is not None
                                           and self.cur["kind"] == "text")
         if waiting:
-            surf.blit(font.render("v", True, BOX_BORDER),
+            surf.blit(font.render("v", True, (180, 210, 255)),
                       (rect.right - 14 * S, rect.bottom - 14 * S))
 
     def _draw_grid(self, surf, rect, labels, *, columns: int) -> None:
+        """Generic text grid (used for party and bag mode)."""
         font = self.game.assets.font
+        FH = font.get_height()
         rows = max(1, -(-len(labels) // columns))
         for i, label in enumerate(labels):
             col, row = i % columns, i // columns
-            x = rect.x + 14 * S + col * (rect.width // columns)
-            y = rect.y + 6 * S + row * max(12 * S, (rect.height - 10 * S) // rows)
+            cw = rect.width // columns
+            ch = max(12 * S, (rect.height - 10 * S) // rows)
+            x = rect.x + 14 * S + col * cw
+            y = rect.y + 6 * S + row * ch
             if i == self.cursor:
-                surf.blit(font.render(">", True, TEXT), (x - 9 * S, y))
-            surf.blit(font.render(label, True, TEXT), (x, y))
+                hl = pygame.Rect(rect.x + 2 * S + col * cw, rect.y + 2 * S + row * ch,
+                                 cw - 4 * S, ch - 2 * S)
+                pygame.draw.rect(surf, PANEL_SEL, hl, border_radius=3 * S)
+            surf.blit(font.render(label, True,
+                                  (255, 255, 255) if i == self.cursor else TEXT),
+                      (x, y + (ch - FH) // 2))
+
+    # ── battle-specific styled grids ─────────────────────────────────
+    _MENU_COLORS = {
+        "FIGHT":  (185,  38,  38),
+        "BAG":    (185, 148,  32),
+        "PKMN":   ( 32, 156, 138),
+        "RUN":    ( 90, 100, 118),
+    }
+
+    def _draw_menu_buttons(self, surf, rect) -> None:
+        """Styled 2×2 FIGHT/BAG/PKMN/RUN action buttons."""
+        font = self.game.assets.font
+        FH = font.get_height()
+        items = self._menu_items()
+        cols, rows_n = 2, 2
+        cw = rect.width // cols
+        ch = rect.height // rows_n
+        pad = 5 * S
+        for i, label in enumerate(items):
+            col, row = i % cols, i // cols
+            bx = rect.x + col * cw + pad
+            by = rect.y + row * ch + pad
+            bw, bh = cw - pad * 2, ch - pad * 2
+            brect = pygame.Rect(bx, by, bw, bh)
+            base_col = self._MENU_COLORS.get(label, (80, 90, 110))
+            is_sel = (i == self.cursor)
+            btn_col = tuple(min(255, c + 35) for c in base_col) if is_sel else base_col
+            pygame.draw.rect(surf, btn_col, brect, border_radius=5 * S)
+            if is_sel:
+                pygame.draw.rect(surf, (255, 255, 255), brect,
+                                 width=2 * S, border_radius=5 * S)
+            tw, th = font.size(label)
+            surf.blit(font.render(label, True, (255, 255, 255)),
+                      (bx + (bw - tw) // 2, by + (bh - FH) // 2))
+
+    def _draw_move_slots(self, surf, rect) -> None:
+        """Type-coloured move slots with detail panel on the left."""
+        font = self.game.assets.font
+        FH = font.get_height()
+        acts = self._move_actions()
+        bp = self.eng.active(P1)
+
+        # Left: selected-move detail panel
+        DETAIL_W = 76 * S
+        drect = pygame.Rect(rect.x + 4 * S, rect.y + 4 * S,
+                            DETAIL_W, rect.height - 8 * S)
+        draw_panel(surf, drect, PANEL_DARK, None, radius=4 * S)
+        if acts:
+            sel = acts[min(self.cursor, len(acts) - 1)]
+            mv = self.game.data.move(sel.move_id) if sel.move_id not in (
+                "struggle", "recharge") else None
+            if mv:
+                dy = drect.y + 5 * S
+                surf.blit(font.render(mv.name, True, (250, 252, 255)), (drect.x + 5 * S, dy))
+                dy += FH + 2 * S
+                draw_type_badge(surf, font, mv.type, drect.x + 5 * S, dy)
+                dy += FH + 12 * S
+                slot = bp.state.move_slot(sel.move_id)
+                if slot:
+                    pp_col = ((240, 80, 64) if slot.pp == 0
+                              else (240, 200, 64) if slot.pp <= slot.pp_max // 4
+                              else (180, 220, 255))
+                    surf.blit(font.render(f"PP  {slot.pp}/{slot.pp_max}", True, pp_col),
+                              (drect.x + 5 * S, dy))
+
+        # Right: 2×2 move slot grid
+        GRID_X = rect.x + DETAIL_W + 8 * S
+        GRID_W = rect.right - GRID_X - 4 * S
+        GRID_H = rect.height
+        cols = 2
+        n = len(acts)
+        rows_n = max(1, -(-n // cols))
+        cw = GRID_W // cols
+        ch = GRID_H // max(2, rows_n)
+        pad = 4 * S
+        for i, a in enumerate(acts):
+            col, row = i % cols, i // cols
+            bx = GRID_X + col * cw + pad
+            by = rect.y + row * ch + pad
+            bw, bh = cw - pad * 2, ch - pad * 2
+            brect = pygame.Rect(bx, by, bw, bh)
+            mv = (None if a.move_id in ("struggle", "recharge")
+                  else self.game.data.move(a.move_id))
+            mtype = mv.type if mv else "typeless"
+            bg = TYPE_PALETTE.get(mtype, TYPE_PALETTE["typeless"])[0]
+            slot = bp.state.move_slot(a.move_id)
+            # Grey out if PP empty
+            if slot and slot.pp == 0:
+                bg = tuple(int(c * 0.35 + 18) for c in bg)
+            else:
+                bg = tuple(int(c * 0.55 + 20) for c in bg)
+            is_sel = (i == self.cursor)
+            pygame.draw.rect(surf, bg, brect, border_radius=4 * S)
+            border_col = (255, 255, 255) if is_sel else tuple(min(255, c + 50) for c in bg)
+            pygame.draw.rect(surf, border_col, brect,
+                             width=2 * S, border_radius=4 * S)
+            mv_name = (a.move_id.title() if a.move_id in ("struggle", "recharge")
+                       else (mv.name if mv else a.move_id))
+            surf.blit(font.render(mv_name, True, (255, 255, 255)),
+                      (bx + 5 * S, by + (bh - FH) // 2))
 
     # ── pokeball helpers (send-out + catch animations) ───────────────
     def _pos(self, side):
@@ -1094,29 +1195,35 @@ class BattleScene(Scene):
         if not self.revealed[side]:
             return
         bp = self.display_mon[side]
-        draw_box(surf, rect)
+        draw_panel(surf, rect, PANEL_DARK, BOX_BORDER, radius=4 * S)
         font = self.game.assets.font
-        surf.blit(font.render(f"{bp.name}  Lv{bp.level}", True, TEXT),
-                  (rect.x + 6 * S, rect.y + 4 * S))
+        FH = font.get_height()
+        # Name + level
+        surf.blit(font.render(f"{bp.name}", True, (250, 252, 255)),
+                  (rect.x + 6 * S, rect.y + 3 * S))
+        lv = f"Lv{bp.level}"
+        lw = font.size(lv)[0]
+        surf.blit(font.render(lv, True, (220, 236, 255)),
+                  (rect.right - lw - 5 * S, rect.y + 3 * S))
+        # Status badge (between name and Lv)
+        if bp.state.status:
+            draw_status_badge(surf, font, bp.state.status,
+                              rect.x + 6 * S, rect.y + 3 * S + FH + 1 * S)
+        # HP bar
         frac = max(0.0, min(1.0, self.disp_hp[side] / bp.max_hp))
-        bar = pygame.Rect(rect.x + 6 * S, rect.y + 17 * S,
+        bar = pygame.Rect(rect.x + 6 * S, rect.y + 18 * S,
                           rect.width - 12 * S, 5 * S)
-        pygame.draw.rect(surf, (90, 96, 110), bar, border_radius=2 * S)
-        if frac > 0:
-            color = GREEN if frac > 0.5 else YELLOW if frac > 0.2 else RED
-            fill = bar.copy()
-            fill.width = max(1, int(bar.width * frac))
-            pygame.draw.rect(surf, color, fill, border_radius=2 * S)
+        from .dialog import draw_hp_bar
+        draw_hp_bar(surf, bar, frac)
         if numbers:
-            surf.blit(font.render(
-                f"{max(0, int(round(self.disp_hp[side])))}/{bp.max_hp}",
-                True, TEXT), (rect.x + 6 * S, rect.y + 24 * S))
-            # EXP progress bar (player side only) — uses the animated display
-            # position so the bar fills smoothly rather than snapping on gain.
+            hp_txt = f"{max(0, int(round(self.disp_hp[side])))}/{bp.max_hp}"
+            surf.blit(font.render(hp_txt, True, (228, 244, 255)),
+                      (rect.x + 6 * S, rect.y + 25 * S))
+            # EXP bar
             exp_frac = self.disp_exp_frac
-            exp_bar = pygame.Rect(rect.x + 6 * S, rect.y + 36 * S,
+            exp_bar = pygame.Rect(rect.x + 6 * S, rect.y + 38 * S,
                                   rect.width - 12 * S, 3 * S)
-            pygame.draw.rect(surf, (50, 58, 80), exp_bar, border_radius=S)
+            pygame.draw.rect(surf, (35, 42, 65), exp_bar, border_radius=S)
             if exp_frac > 0:
                 fill = exp_bar.copy()
                 fill.width = max(1, int(exp_bar.width * exp_frac))

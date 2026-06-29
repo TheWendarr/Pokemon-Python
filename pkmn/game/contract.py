@@ -48,6 +48,8 @@ TILE_FLAGS: set[str] = {
     "rock_smash",      # boulder removed by Rock Smash (needs can_rock_smash); then walkable
     "waterfall",       # surf tile that blocks upward movement without can_waterfall
     "headbutt_tree",   # tree that rolls a headbutt encounter when bumped (A)
+    "z_up",            # stepping here raises the player's Z level by 1 (top of staircase)
+    "z_down",          # stepping here lowers the player's Z level by 1 (bottom of staircase)
     *LEDGE_FLAGS.values(),   # one-way ledges: jumped over in that direction
     *DIR_BLOCK_FLAGS.values(),   # per-direction (partial) passability
 }

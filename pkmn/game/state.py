@@ -18,6 +18,7 @@ class GameState:
     map_id: str = ""           # set from the region manifest / save
     tile: tuple = None  # None -> use the map's spawn object
     facing: str = "down"
+    z: int = 0                 # current elevation level (0 = ground; higher = bridge/overpass)
     rng: random.Random = field(default_factory=random.Random)
     flags: set = field(default_factory=set)   # event/progress flags (booleans)
     vars: dict = field(default_factory=dict)  # integer event variables
@@ -123,7 +124,7 @@ class GameState:
                 "vars": dict(self.vars),
                 "self_switches": sorted(self.self_switches),
                 "map_id": self.map_id, "tile": list(self.tile or (0, 0)),
-                "facing": self.facing,
+                "facing": self.facing, "z": self.z,
                 "seen": sorted(self.seen), "caught": sorted(self.caught),
                 "regiondex": list(self.regiondex),
                 "repel_steps": self.repel_steps,
@@ -144,6 +145,7 @@ class GameState:
         st.map_id = d.get("map_id", "")
         st.tile = tuple(d.get("tile") or (0, 0))
         st.facing = d.get("facing", "down")
+        st.z = int(d.get("z", 0))
         st.seen = set(d.get("seen", []))
         st.caught = set(d.get("caught", []))
         st.regiondex = list(d.get("regiondex", []))

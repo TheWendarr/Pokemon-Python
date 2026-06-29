@@ -101,6 +101,7 @@ class OverworldScene(Scene):
         self.move_px = 0
         self.jump = False
         self.bump_cool = 0          # throttles the wall-bump sound
+        self.game.state.z = 0      # elevation resets on map load (warps land at ground)
         self.script = None
         self.parallel: list = []      # parallel-process event runners
         self.screen_fx = None
@@ -141,56 +142,64 @@ class OverworldScene(Scene):
         return any(n.tile == (x, y) and not n.hidden for n in self.npcs)
 
     def _blocked(self, x, y) -> bool:
-        return (self.world.blocked(self.map.id, x, y) if self.map.is_seamless
-                else self.map.blocked(x, y))
+        z = self.game.state.z
+        return (self.world.blocked(self.map.id, x, y, z) if self.map.is_seamless
+                else self.map.blocked(x, y, z))
 
     def _is_surf(self, x, y) -> bool:
-        return (self.world.is_surf(self.map.id, x, y) if self.map.is_seamless
-                else self.map.is_surf(x, y))
+        z = self.game.state.z
+        return (self.world.is_surf(self.map.id, x, y, z) if self.map.is_seamless
+                else self.map.is_surf(x, y, z))
 
     def _has_ledge(self, x, y, facing) -> bool:
+        z = self.game.state.z
         if self.map.is_seamless:
             r = self.world.resolve(self.map.id, x, y)
-            return bool(r) and r[0].has_ledge(r[1], r[2], facing)
-        return self.map.has_ledge(x, y, facing)
+            return bool(r) and r[0].has_ledge(r[1], r[2], facing, z)
+        return self.map.has_ledge(x, y, facing, z)
 
     def _can_cross(self, src, d, dst) -> bool:
         """Directional (partial) passability: you must be able to leave the
         source tile toward `d` and enter the destination from the reverse."""
+        z = self.game.state.z
         rev = OPPOSITE[d]
         if self.map.is_seamless:
-            return (self.world.passable(self.map.id, src[0], src[1], d)
-                    and self.world.passable(self.map.id, dst[0], dst[1], rev))
-        return (self.map.passable(src[0], src[1], d)
-                and self.map.passable(dst[0], dst[1], rev))
+            return (self.world.passable(self.map.id, src[0], src[1], d, z)
+                    and self.world.passable(self.map.id, dst[0], dst[1], rev, z))
+        return (self.map.passable(src[0], src[1], d, z)
+                and self.map.passable(dst[0], dst[1], rev, z))
 
     def _try_cut(self, x, y) -> bool:
         if not self.game.state.can_cut:
             return False
+        z = self.game.state.z
         if self.map.is_seamless:
             r = self.world.resolve(self.map.id, x, y)
-            return bool(r) and r[0].do_cut(r[1], r[2])
-        return self.map.do_cut(x, y)
+            return bool(r) and r[0].do_cut(r[1], r[2], z)
+        return self.map.do_cut(x, y, z)
 
     def _try_rock_smash(self, x, y) -> bool:
         if not self.game.state.can_rock_smash:
             return False
+        z = self.game.state.z
         if self.map.is_seamless:
             r = self.world.resolve(self.map.id, x, y)
-            return bool(r) and r[0].do_rock_smash(r[1], r[2])
-        return self.map.do_rock_smash(x, y)
+            return bool(r) and r[0].do_rock_smash(r[1], r[2], z)
+        return self.map.do_rock_smash(x, y, z)
 
     def _is_waterfall(self, x, y) -> bool:
+        z = self.game.state.z
         if self.map.is_seamless:
             r = self.world.resolve(self.map.id, x, y)
-            return bool(r) and r[0].is_waterfall(r[1], r[2])
-        return self.map.is_waterfall(x, y)
+            return bool(r) and r[0].is_waterfall(r[1], r[2], z)
+        return self.map.is_waterfall(x, y, z)
 
     def _is_headbutt_tree(self, x, y) -> bool:
+        z = self.game.state.z
         if self.map.is_seamless:
             r = self.world.resolve(self.map.id, x, y)
-            return bool(r) and r[0].is_headbutt_tree(r[1], r[2])
-        return self.map.is_headbutt_tree(x, y)
+            return bool(r) and r[0].is_headbutt_tree(r[1], r[2], z)
+        return self.map.is_headbutt_tree(x, y, z)
 
     def _walkable(self, x, y) -> bool:
         if self._occupied(x, y):
@@ -515,6 +524,12 @@ class OverworldScene(Scene):
             st.facing = warp.facing
             self.load_map(warp.to_map, warp.to_tile)
             return
+        # Z-level transition (staircase tiles tagged z_up / z_down)
+        dz = (self.world.z_transition(self.map.id, st.tile[0], st.tile[1], st.z)
+              if self.map.is_seamless
+              else self.map.z_transition(st.tile[0], st.tile[1], st.z))
+        if dz != 0:
+            st.z = max(0, st.z + dz)
         for trig in self.map.triggers:
             if (trig.when == "step" and trig.tile == st.tile
                     and self._time_ok(trig) and not (
@@ -633,15 +648,16 @@ class OverworldScene(Scene):
         px, py = self._player_px()
         cx = px - LOGICAL_W // 2 + TILE // 2
         cy = py - LOGICAL_H // 2 + TILE // 2
+        player_z = self.game.state.z
         if self.map.is_seamless:
             # world scrolls under a centred player; neighbours fill the edges
-            self.world.draw(surf, self.map.id, cx, cy)
+            self.world.draw(surf, self.map.id, cx, cy, player_z=player_z)
             cam_x, cam_y = cx, cy
         else:
             mw, mh = self.map.px_size
             cam_x = max(0, min(cx, max(0, mw - LOGICAL_W)))
             cam_y = max(0, min(cy, max(0, mh - LOGICAL_H)))
-            self.map.draw(surf, cam_x, cam_y)
+            self.map.draw(surf, cam_x, cam_y, player_z=player_z)
         npc_img = self.game.assets.npc
         for npc in self.npcs:
             if npc.hidden:
@@ -676,12 +692,13 @@ class OverworldScene(Scene):
                                 (6, TILE // 2 + 3, TILE - 12, TILE // 4))
             surf.blit(mt, (px - cam_x, py - cam_y))
         surf.blit(pimg, (px - cam_x, py - cam_y - pyoff))
-        # second tile pass: tiles flagged `over` (canopies, roofs, bridges)
-        # draw above the player and NPCs.
+        # second tile pass: tiles from higher Z layers and tiles flagged `over`
+        # (canopies, roofs) draw above the player and NPCs.
         if self.map.is_seamless:
-            self.world.draw(surf, self.map.id, cam_x, cam_y, over=True)
+            self.world.draw(surf, self.map.id, cam_x, cam_y, over=True,
+                            player_z=player_z)
         else:
-            self.map.draw(surf, cam_x, cam_y, over=True)
+            self.map.draw(surf, cam_x, cam_y, over=True, player_z=player_z)
         tint = {"rain": (40, 70, 130, 60), "sandstorm": (180, 150, 70, 60),
                 "hail": (200, 220, 240, 55), "sun": (255, 220, 120, 35)}.get(
                     self.map.props.get("weather"))
