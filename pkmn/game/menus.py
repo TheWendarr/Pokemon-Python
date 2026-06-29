@@ -635,6 +635,15 @@ _VITAMIN_STAT = {
     "carbos":   "speed",
 }
 
+_EV_BERRY_STAT = {
+    "pomeg-berry":  "hp",
+    "kelpsy-berry": "attack",
+    "qualot-berry": "defense",
+    "hondew-berry": "special_attack",
+    "grepa-berry":  "special_defense",
+    "tamato-berry": "speed",
+}
+
 _PP_RESTORE_ONE = {"ether": 10, "max-ether": None}   # None = full restore
 _PP_RESTORE_ALL = {"elixir": 10, "max-elixir": None}  # None = full restore
 
@@ -676,6 +685,8 @@ class BagScene(Scene):
         if it.heal or it.cures or it.revive:
             return True
         if item_id in _VITAMIN_STAT:
+            return True
+        if item_id in _EV_BERRY_STAT:
             return True
         if item_id in _PP_RESTORE_ONE or item_id in _PP_RESTORE_ALL:
             return True
@@ -738,6 +749,10 @@ class BagScene(Scene):
         # Vitamins
         if item_id in _VITAMIN_STAT:
             self._apply_vitamin(item_id, it, mon)
+            return
+        # EV-reducing berries
+        if item_id in _EV_BERRY_STAT:
+            self._apply_ev_berry(item_id, it, mon)
             return
         # PP restore all moves (Elixir / Max Elixir)
         if item_id in _PP_RESTORE_ALL:
@@ -821,6 +836,21 @@ class BagScene(Scene):
         mon.bind(self.game.data)  # recalculate stats
         self.game.state.bag[item_id] -= 1
         self.note = f"Used the {it.name}! ({stat.replace('_',' ').title()} EVs: {mon.evs[stat]})"
+        self.game.audio.play_sfx("confirm")
+
+    def _apply_ev_berry(self, item_id, it, mon) -> None:
+        """EV-reducing berries (Pomeg/Kelpsy/Qualot/Hondew/Grepa/Tamato):
+        reduce the target stat's EVs by 10, minimum 0."""
+        stat = _EV_BERRY_STAT[item_id]
+        evs = mon.evs
+        current = evs.get(stat, 0)
+        if current <= 0:
+            self.note = "It won't have any effect."
+            return
+        evs[stat] = max(0, current - 10)
+        mon.bind(self.game.data)
+        self.game.state.bag[item_id] -= 1
+        self.note = f"Used the {it.name}! ({stat.replace('_', ' ').title()} EVs: {mon.evs[stat]})"
         self.game.audio.play_sfx("confirm")
 
     def _apply_elixir(self, item_id, it, mon) -> None:

@@ -58,6 +58,12 @@ TYPE_BOOST_ITEMS = {
     "sharp-beak": "flying", "poison-barb": "poison", "soft-sand": "ground",
     "spell-tag": "ghost", "metal-coat": "steel", "black-glasses": "dark",
     "silver-powder": "bug", "dragon-fang": "dragon",
+    # Incense type-boosters
+    "sea-incense":  "water",
+    "wave-incense": "water",
+    "odd-incense":  "psychic",
+    "rock-incense": "rock",
+    "rose-incense": "grass",
 }
 
 TYPE_GEMS = {
@@ -218,7 +224,8 @@ IMPLEMENTED_HELD = frozenset({
     # Phase B items
     "rocky-helmet", "assault-vest", "eviolite", "flame-orb", "toxic-orb",
     "expert-belt", "charcoal", "fire-gem",
-    "chesto-berry", "pecha-berry", "rawst-berry", "aspear-berry", "persim-berry",
+    "cheri-berry", "chesto-berry", "pecha-berry", "rawst-berry", "aspear-berry",
+    "persim-berry",
     # Type boost plates / items (all keys in TYPE_BOOST_ITEMS)
     "draco-plate", "dread-plate", "earth-plate", "fist-plate", "flame-plate",
     "icicle-plate", "insect-plate", "iron-plate", "meadow-plate", "mind-plate",
@@ -227,6 +234,8 @@ IMPLEMENTED_HELD = frozenset({
     "never-melt-ice", "hard-stone", "silk-scarf", "twisted-spoon", "black-belt",
     "sharp-beak", "poison-barb", "soft-sand", "spell-tag", "metal-coat",
     "black-glasses", "silver-powder", "dragon-fang",
+    "sea-incense", "wave-incense", "odd-incense", "rock-incense", "rose-incense",
+    "lax-incense",
     # All gems
     "water-gem", "electric-gem", "grass-gem", "ice-gem", "fighting-gem",
     "poison-gem", "ground-gem", "flying-gem", "psychic-gem", "bug-gem",
@@ -1277,9 +1286,10 @@ def check_lum(eng, bp, events) -> None:
 
 # Status berries: cure specific status on infliction
 STATUS_BERRIES = {
+    "cheri-berry":  "paralysis",
     "chesto-berry": "sleep",
-    "pecha-berry": "poison",
-    "rawst-berry": "burn",
+    "pecha-berry":  "poison",
+    "rawst-berry":  "burn",
     "aspear-berry": "freeze",
 }
 
