@@ -525,11 +525,11 @@ class OverworldScene(Scene):
             self.load_map(warp.to_map, warp.to_tile)
             return
         # Z-level transition (staircase tiles tagged z_up / z_down)
-        dz = (self.world.z_transition(self.map.id, st.tile[0], st.tile[1], st.z)
-              if self.map.is_seamless
-              else self.map.z_transition(st.tile[0], st.tile[1], st.z))
-        if dz != 0:
-            st.z = max(0, st.z + dz)
+        target_z = (self.world.z_transition(self.map.id, st.tile[0], st.tile[1], st.z)
+                    if self.map.is_seamless
+                    else self.map.z_transition(st.tile[0], st.tile[1], st.z))
+        if target_z is not None and target_z != st.z:
+            st.z = max(0, target_z)
         for trig in self.map.triggers:
             if (trig.when == "step" and trig.tile == st.tile
                     and self._time_ok(trig) and not (

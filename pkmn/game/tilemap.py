@@ -160,7 +160,7 @@ class TileMap:
             tp = self.tmx.get_tile_properties(x, y, li)
             if tp:
                 for k, v in tp.items():
-                    if v:
+                    if v is not None and v is not False:
                         out[k] = v
         return out
 
@@ -222,15 +222,22 @@ class TileMap:
             return True
         return False
 
-    def z_transition(self, x: int, y: int, player_z: int = 0) -> int:
-        """Returns +1 if this tile raises Z (top of staircase), -1 if it
-        lowers Z (bottom of staircase), or 0 for no change."""
+    def z_transition(self, x: int, y: int, player_z: int = 0) -> int | None:
+        """Returns the absolute target Z level if this tile triggers a Z
+        transition, or None for no change.
+
+        z_up / z_down tile properties must carry the integer destination level
+        (e.g. z_up: 1, z_down: 0).  Using an absolute target means stepping
+        on a staircase tile when already at the correct level is a no-op, so
+        backtracking never overshoots."""
         m = self._merged(x, y, player_z)
-        if m.get("z_up"):
-            return 1
-        if m.get("z_down"):
-            return -1
-        return 0
+        z_up = m.get("z_up")
+        if z_up is not None:
+            return int(z_up)
+        z_down = m.get("z_down")
+        if z_down is not None:
+            return int(z_down)
+        return None
 
     def border_image(self):
         """The scaled tile that fills this map's unconnected edges, or
@@ -407,9 +414,9 @@ class World:
         return bool(r) and r[0].passable(r[1], r[2], direction, player_z)
 
     def z_transition(self, map_id: str, x: int, y: int,
-                     player_z: int = 0) -> int:
+                     player_z: int = 0) -> int | None:
         r = self.resolve(map_id, x, y)
-        return r[0].z_transition(r[1], r[2], player_z) if r else 0
+        return r[0].z_transition(r[1], r[2], player_z) if r else None
 
     def draw(self, surf: pygame.Surface, map_id: str,
              cam_x: int, cam_y: int, over: bool = False,
